@@ -12,9 +12,9 @@
 <h2 align="center"><strong>Aplicaciones para Dispositivos Móviles </strong></h2>
 <h2 align="center">NRC</h2>
 <h2 align="center"><strong>13975</strong></h2>
-<h2 align="center"><strong>Informe del Trabajo Final</strong></h2>
 <h2 align="center">Docente</h2>
 <h2 align="center"><strong>Quevedo Velasco, David Gerardo </strong></h2>
+<h2 align="center"><strong>Informe del Trabajo Final</strong></h2>
 <h2 align="center">Equipo</h2>
 <h2 align="center"><strong>ADM</strong></h2>
 <h2 align="center">Proyecto</h2>
@@ -37,12 +37,12 @@
         <td align="center" >Beingolea Montalvo, Sebastian Martin </td>
       </tr>
       <tr>
-        <td align="center" >U20231C019</td>
-        <td align="center" >Ortega Muñoz, Saul </td>
-      </tr>
-      <tr>
         <td align="center" >U202315165</td>
         <td align="center" >Melgarejo Quiroz, Josep Eliu</td>
+      </tr>
+      <tr>
+        <td align="center" >U20231C019</td>
+        <td align="center" >Ortega Muñoz, Saul </td>
       </tr>
       <tr>
         <td align="center" >U202215979</td>
@@ -90,7 +90,7 @@
     - [1.2.2.4. Lean UX Canvas](#toc-1-2-2-4-lean-ux-canvas)
 - [1.3. Segmentos objetivo](#toc-1-3-segmentos-objetivo)
 
-## Capítulo II: Requirements Elicitation & Analysis
+## Capítulo II: Requirements Development and Software Solution Design
 
 - [2.1. Competidores](#toc-2-1-competidores)
   - [2.1.1. Análisis competitivo](#toc-2-1-1-analisis-competitivo)
@@ -104,97 +104,86 @@
   - [2.3.2. User Task Matrix](#toc-2-3-2-user-task-matrix)
   - [2.3.3. User Journey Mapping](#toc-2-3-3-user-journey-mapping)
   - [2.3.4. Empathy Mapping](#toc-2-3-4-empathy-mapping)
-  - [2.3.5. As-is Scenario Mapping](#toc-2-3-5-as-is-scenario-mapping)
-- [2.4. Big Picture EventStorming](#toc-2-4-big-picture-eventstorming)
-- [2.5. Ubiquitous Language](#toc-2-5-ubiquitous-language)
+  - [2.3.5. Big Picture EventStorming](#toc-2-3-5-Big-Picture-EventStorming)
+  - [2.3.6. Ubiquitous Language](#toc-2-3-6-ubiquitous-language)
+- [2.4. Requirements specification](#toc-2-4-Requirements-specification)
+  - [2.4.1. User Stories](#toc-2-4-1-user-stories)
+  - [2.4.2. Impact Mapping](#toc-2-4-2-impact-mapping)
+  - [2.4.3. Product Backlog](#toc-2-4-3-product-backlog)
+- [2.5. Strategic-Level Domain-Driven Design](#toc-2-5-strategic-level-domain-driven-design)
+  - [2.5.1. EventStorming](#toc-2-5-1-eventstorming)
+    - [2.5.1.1. Candidate Context Discovery](#toc-2-5-1-1-candidate-context-discovery)
+    - [2.5.1.2. Domain Message Flows Modeling](#toc-2-5-1-2-domain-message-flows-modeling)
+    - [2.5.1.3. Bounded Context Canvases](#toc-2-5-1-3-bounded-context-canvases)
+  - [2.5.2. Context Mapping](#toc-2-5-2-context-mapping)
+  - [2.5.3. Software Architecture](#toc-2-5-3-software-architecture)
+    - [2.5.3.1. Software Architecture Context Level Diagrams](#toc-2-5-3-1-software-architecture-context-level-diagrams)
+    - [2.5.3.2. Software Architecture Container Level Diagrams](#toc-2-5-3-2-software-architecture-container-level-diagrams)
+    - [2.5.3.3. Software Architecture Deployment Diagrams](#toc-2-5-3-3-software-architecture-deployment-diagrams)
+- [2.6. Tactical-Level Domain-Driven Design](#toc-2-6-tactical-level-domain-driven-design)
+  - [2.6.1. Bounded Context: <Bounded Context Name>](#toc-2-6-x-bounded-context-bounded-context-name)
+    - [2.6.1.1. Domain Layer](#toc-2-6-x-1-domain-layer)
+    - [2.6.1.2. Interface Layer](#toc-2-6-x-2-interface-layer)
+    - [2.6.1.3. Application Layer](#toc-2-6-x-3-application-layer)
+    - [2.6.1.4. Infrastructure Layer](#toc-2-6-x-4-infrastructure-layer)
+    - [2.6.1.5. Bounded Context Software Architecture Component Level Diagrams](#toc-2-6-x-5-bounded-context-software-architecture-component-level-diagrams)
+    - [2.6.1.6. Bounded Context Software Architecture Code Level Diagrams](#toc-2-6-x-6-bounded-context-software-architecture-code-level-diagrams)
+      - [2.6.1.6.1. Bounded Context Domain Layer Class Diagrams](#toc-2-6-x-6-1-bounded-context-domain-layer-class-diagrams)
+      - [2.6.1.6.2. Bounded Context Database Design Diagram](#toc-2-6-x-6-2-bounded-context-database-design-diagram)
 
-## Capítulo III: Requirements Specification
+## Capítulo III: Solution UI/UX Design
 
-- [3.1. User Stories](#toc-3-1-user-stories)
-- [3.2. Impact Mapping](#toc-3-2-impact-mapping)
-- [3.3. Product Backlog](#toc-3-3-product-backlog)
+- [3.1. Product Design](#toc-3-1-product-design)
 
-## Capítulo IV: Product Design
+  - [3.1.1. Style Guidelines](#toc-3-1-1-style-guidelines)
+    - [3.1.1.1. General Style Guidelines](#toc-3-1-1-1-general-style-guidelines)
+  - [3.1.2. Information Architecture](#toc-3-1-2-information-architecture)
+    - [3.1.2.1. Organization Systems](#toc-3-1-2-1-organization-systems)
+    - [3.1.2.2. Labelling Systems](#toc-3-1-2-2-labelling-systems)
+    - [3.1.2.3. SEO Tags and Meta Tags](#toc-3-1-2-3-seo-tags-and-meta-tags)
+    - [3.1.2.4. Searching Systems](#toc-3-1-2-4-searching-systems)
+    - [3.1.2.5. Navigation Systems](#toc-3-1-2-5-navigation-systems)
+  - [3.1.3. Landing Page UI Design](#toc-3-1-3-landing-page-ui-design)
+    - [3.1.3.1. Landing Page Wireframe](#toc-3-1-3-1-landing-page-wireframe)
+    - [3.1.3.2. Landing Page Mock-up](#toc-3-1-3-2-landing-page-mock-up)
+  - [3.1.4. Mobile Applications UX/UI Design](#toc-3-1-4-mobile-applications-ux-ui-design)
+    - [3.1.4.1. Mobile Applications Wireframes](#toc-3-1-4-1-mobile-applications-wireframes)
+    - [3.1.4.2. Mobile Applications Wireflow Diagrams](#toc-3-1-4-2-mobile-applications-wireflow-diagrams)
+    - [3.1.4.3. Mobile Applications Mock-ups](#toc-3-1-4-3-mobile-applications-mock-ups)
+    - [3.1.4.4. Mobile Applications User Flow Diagrams](#toc-3-1-4-4-mobile-applications-user-flow-diagrams)
+    - [3.1.4.5. Mobile Applications Prototyping](#toc-3-1-4-5-mobile-applications-prototyping)
 
-- [4.1. Style Guidelines](#toc-4-1-style-guidelines)
-  - [4.1.1. General Style Guidelines](#toc-4-1-1-general-style-guidelines)
-  - [4.1.2. Web Style Guidelines](#toc-4-1-2-web-style-guidelines)
-- [4.2. Information Architecture](#toc-4-2-information-architecture)
-  - [4.2.1. Organization Systems](#toc-4-2-1-organization-systems)
-  - [4.2.2. Labeling Systems](#toc-4-2-2-labeling-systems)
-  - [4.2.3. SEO Tags and Meta Tags](#toc-4-2-3-seo-tags-and-meta-tags)
-  - [4.2.4. Searching Systems](#toc-4-2-4-searching-systems)
-  - [4.2.5. Navigation Systems](#toc-4-2-5-navigation-systems)
-- [4.3. Landing Page UI Design](#toc-4-3-landing-page-ui-design)
-  - [4.3.1. Landing Page Wireframe](#toc-4-3-1-landing-page-wireframe)
-  - [4.3.2. Landing Page Mock-up](#toc-4-3-2-landing-page-mock-up)
-- [4.4. Web Applications UX/UI Design](#toc-4-4-web-applications-ux-ui-design)
-  - [4.4.1. Web Applications Wireframes](#toc-4-4-1-web-applications-wireframes)
-  - [4.4.2. Web Applications Wireflow Diagrams](#toc-4-4-2-web-applications-wireflow-diagrams)
-  - [4.4.2. Web Applications Mock-ups](#toc-4-4-2-web-applications-mock-ups)
-  - [4.4.3. Web Applications User Flow Diagrams](#toc-4-4-3-web-applications-user-flow-diagrams)
-- [4.5. Web Applications Prototyping](#toc-4-5-web-applications-prototyping)
-- [4.6. Domain-Driven Software Architecture](#toc-4-6-domain-driven-software-architecture)
-  - [4.6.1. Design-Level EventStorming](#toc-4-6-1-design-level-eventstorming)
-  - [4.6.2. Software Architecture Context Diagram](#toc-4-6-2-software-architecture-context-diagram)
-  - [4.6.3. Software Architecture Container Diagrams](#toc-4-6-3-software-architecture-container-diagrams)
-  - [4.6.4. Software Architecture Components Diagrams](#toc-4-6-4-software-architecture-components-diagrams)
-- [4.7. Software Object-Oriented Design](#toc-4-7-software-object-oriented-design)
-  - [4.7.1. Class Diagrams](#toc-4-7-1-class-diagrams)
-- [4.8. Database Design](#toc-4-8-database-design)
-  - [4.8.1. Database Diagrams](#toc-4-8-1-database-diagrams)
+## Capítulo IV: Product Implementation & Validation
 
-## Capítulo V: Product Implementation, Validation & Deployment
+- [4.1. Software Configuration Management](#toc-4-1-software-configuration-management)
 
-- [5.1. Software Configuration Management](#toc-5-1-software-configuration-management)
-  - [5.1.1. Software Development Environment Configuration](#toc-5-1-1-software-development-environment-configuration)
-  - [5.1.2. Source Code Management](#toc-5-1-2-source-code-management)
-  - [5.1.3. Source Code Style Guide & Conventions](#toc-5-1-3-source-code-style-guide-and-conventions)
-  - [5.1.4. Software Deployment Configuration](#toc-5-1-4-software-deployment-configuration)
-- [5.2. Landing Page, Services & Applications Implementation](#toc-5-2-landing-page-services-and-applications-implementation)
-  - [5.2.1. Sprint 1](#toc-5-2-1-sprint-1)
-    - [5.2.1.1. Sprint Planning 1](#toc-5-2-1-1-sprint-planning-1)
-    - [5.2.1.2. Aspect Leaders and Collaborators](#toc-5-2-1-2-aspect-leaders-and-collaborators)
-    - [5.2.1.3. Sprint Backlog 1](#toc-5-2-1-3-sprint-backlog-1)
-    - [5.2.1.4. Development Evidence for Sprint Review](#toc-5-2-1-4-development-evidence-for-sprint-review)
-    - [5.2.1.5. Execution Evidence for Sprint Review](#toc-5-2-1-5-execution-evidence-for-sprint-review)
-    - [5.2.1.6. Services Documentation Evidence for Sprint Review](#toc-5-2-1-6-services-documentation-evidence-for-sprint-review)
-    - [5.2.1.7. Software Deployment Evidence for Sprint Review](#toc-5-2-1-7-software-deployment-evidence-for-sprint-review)
-    - [5.2.1.8. Team Collaboration Insights during Sprint](#toc-5-2-1-8-team-collaboration-insights-during-sprint)
-  - [5.2.2. Sprint 2](#toc-5-2-2-sprint-2)
-    - [5.2.2.1. Sprint Planning 2](#toc-5-2-2-1-sprint-planning-2)
-    - [5.2.2.2. Aspect Leaders and Collaborators](#toc-5-2-2-2-aspect-leaders-and-collaborators)
-    - [5.2.2.3. Sprint Backlog 2](#toc-5-2-2-3-sprint-backlog-2)
-    - [5.2.2.4. Development Evidence for Sprint Review](#toc-5-2-2-4-development-evidence-for-sprint-review)
-    - [5.2.2.5. Execution Evidence for Sprint Review](#toc-5-2-2-5-execution-evidence-for-sprint-review)
-    - [5.2.2.6. Services Documentation Evidence for Sprint Review](#toc-5-2-2-6-services-documentation-evidence-for-sprint-review)
-    - [5.2.2.7. Software Deployment Evidence for Sprint Review](#toc-5-2-2-7-software-deployment-evidence-for-sprint-review)
-    - [5.2.2.8. Team Collaboration Insights during Sprint](#toc-5-2-2-8-team-collaboration-insights-during-sprint)
-  - [5.2.3. Sprint 3](#toc-5-2-3-sprint-3)
-    - [5.2.3.1. Sprint Planning 3](#toc-5-2-3-1-sprint-planning-3)
-    - [5.2.3.2. Aspects Leaders and Collaborators](#toc-5-2-3-2-aspects-leaders-and-collaborators)
-    - [5.2.3.3. Sprint Backlog 3](#toc-5-2-3-3-sprint-backlog-3)
-    - [5.2.3.4. Development Evidence for Sprint Review](#toc-5-2-3-4-development-evidence-for-sprint-review)
-    - [5.2.3.5. Execution Evidence for Sprint Review](#toc-5-2-3-5-execution-evidence-for-sprint-review)
-    - [5.2.3.6. Services Documentation Evidence for Sprint Review](#toc-5-2-3-6-services-documentation-evidence-for-sprint-review)
-    - [5.2.3.7. Software Deployment Evidence for Sprint Review](#toc-5-2-3-7-software-deployment-evidence-for-sprint-review)
-    - [5.2.3.8. Team Collaboration Insights during Sprint](#toc-5-2-3-8-team-collaboration-insights-during-sprint)
-  - [5.2.4. Sprint 4](#toc-5-2-4-sprint-4)
-    - [5.2.4.1. Sprint Planning 4](#toc-5-2-4-1-sprint-planning-4)
-    - [5.2.4.2. Aspect Leaders and Collaborators](#toc-5-2-4-2-aspect-leaders-and-collaborators)
-    - [5.2.4.3. Sprint Backlog 4](#toc-5-2-4-3-sprint-backlog-4)
-    - [5.2.4.4. Development Evidence for Sprint Review](#toc-5-2-4-4-development-evidence-for-sprint-review)
-    - [5.2.4.5. Execution Evidence for Sprint Review](#toc-5-2-4-5-execution-evidence-for-sprint-review)
-    - [5.2.4.6. Services Documentation Evidence for Sprint Review](#toc-5-2-4-6-services-documentation-evidence-for-sprint-review)
-    - [5.2.4.7. Software Deployment Evidence for Sprint Review](#toc-5-2-4-7-software-deployment-evidence-for-sprint-review)
-    - [5.2.4.8. Team Collaboration Insights during Sprint](#toc-5-2-4-8-team-collaboration-insights-during-sprint)
-- [5.3. Validation Interviews](#toc-5-3-validation-interviews)
-  - [5.3.1. Diseño de Entrevistas](#toc-5-3-1-diseno-de-entrevistas)
-  - [5.3.2. Registro de Entrevistas](#toc-5-3-2-registro-de-entrevistas)
-  - [5.3.3. Evaluaciones según heurísticas](#toc-5-3-3-evaluaciones-segun-heuristicas)
-- [5.4. Video About-the-Product](#toc-5-4-video-about-the-product)
+  - [4.1.1. Software Development Environment Configuration](#toc-4-1-1-software-development-environment-configuration)
+  - [4.1.2. Source Code Management](#toc-4-1-2-source-code-management)
+  - [4.1.3. Source Code Style Guide & Conventions](#toc-4-1-3-source-code-style-guide-conventions)
+  - [4.1.4. Software Deployment Configuration](#toc-4-1-4-software-deployment-configuration)
+
+- [4.2. Landing Page & Mobile Application Implementation](#toc-4-2-landing-page-mobile-application-implementation)
+
+  - [4.2.1. Sprint n](#toc-4-2-1-sprint-n)
+    - [4.2.1.1. Sprint Planning n](#toc-4-2-1-1-sprint-planning-n)
+    - [4.2.1.2. Aspect Leaders and Collaborators](#toc-4-2-1-2-aspect-leaders-and-collaborators)
+    - [4.2.1.3. Sprint Backlog n](#toc-4-2-1-3-sprint-backlog-n)
+    - [4.2.1.4. Development Evidence for Sprint Review](#toc-4-2-1-4-development-evidence-for-sprint-review)
+    - [4.2.1.5. Testing Suite Evidence for Sprint Review](#toc-4-2-1-5-testing-suite-evidence-for-sprint-review)
+    - [4.2.1.6. Execution Evidence for Sprint Review](#toc-4-2-1-6-execution-evidence-for-sprint-review)
+    - [4.2.1.7. Services Documentation Evidence for Sprint Review](#toc-4-2-1-7-services-documentation-evidence-for-sprint-review)
+    - [4.2.1.8. Software Deployment Evidence for Sprint Review](#toc-4-2-1-8-software-deployment-evidence-for-sprint-review)
+    - [4.2.1.9. Team Collaboration Insights during Sprint](#toc-4-2-1-9-team-collaboration-insights-during-sprint)
+
+- [4.3. Validation Interviews](#toc-4-3-validation-interviews)
+
+  - [4.3.1. Diseño de Entrevistas](#toc-4-3-1-diseno-de-entrevistas)
+  - [4.3.2. Registro de Entrevistas](#toc-4-3-2-registro-de-entrevistas)
+  - [4.3.3. Evaluaciones según heurísticas](#toc-4-3-3-evaluaciones-segun-heuristicas)
 
 ### [Conclusiones](#toc-conclusiones)
+
+### [Glosario](#toc-glosario)
 
 ### [Bibliografía](#toc-bibliografia)
 
