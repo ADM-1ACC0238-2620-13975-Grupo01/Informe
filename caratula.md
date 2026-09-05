@@ -8,15 +8,15 @@
 <h2 align="center"><strong>Universidad Peruana de Ciencias Aplicadas</strong></h2>
 <h2 align="center"><strong>Carrera de Ingeniería de Software</strong></h2>
 
-<h2 align="center"><strong>1ASI0730</strong></h2>
-<h2 align="center"><strong>Aplicaciones Web</strong></h2>
+<h2 align="center"><strong>1ACC0238</strong></h2>
+<h2 align="center"><strong>Aplicaciones para Dispositivos Móviles </strong></h2>
 <h2 align="center">NRC</h2>
-<h2 align="center"><strong>12206</strong></h2>
+<h2 align="center"><strong>13975</strong></h2>
 <h2 align="center"><strong>Informe del Trabajo Final</strong></h2>
 <h2 align="center">Docente</h2>
-<h2 align="center"><strong>Velásquez Núñez, Ángel Augusto</strong></h2>
+<h2 align="center"><strong>Quevedo Velasco, David Gerardo </strong></h2>
 <h2 align="center">Equipo</h2>
-<h2 align="center"><strong>Titan</strong></h2>
+<h2 align="center"><strong>ADM</strong></h2>
 <h2 align="center">Proyecto</h2>
 <h2 align="center"><strong>AniTec</strong></h2>
 
@@ -33,31 +33,31 @@
     </thead>
     <tbody>
       <tr>
-        <td align="center" >U20241C030</td>
-        <td align="center" >Ayala Fernandez, Jorge Brayan</td>
+        <td align="center" >U202217853</td>
+        <td align="center" >Beingolea Montalvo, Sebastian Martin </td>
       </tr>
       <tr>
-        <td align="center" >U202117762</td>
-        <td align="center" >Huaman Gallardo, Bruno Aldair</td>
+        <td align="center" >U20231C019</td>
+        <td align="center" >Ortega Muñoz, Saul </td>
       </tr>
       <tr>
         <td align="center" >U202315165</td>
         <td align="center" >Melgarejo Quiroz, Josep Eliu</td>
       </tr>
       <tr>
-        <td align="center" >U202318001</td>
-        <td align="center" >Raymundo Villarroel, Nadhim Abigail</td>
-      </tr>
-      <tr>
         <td align="center" >U202215979</td>
         <td align="center" >Sanchez Silva, Luciana Celeste</td>
+      </tr>
+      <tr>
+        <td align="center" >U20221C554</td>
+        <td align="center" > Villanueva Rodriguez, Giuseppe Adrian</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<h2 align="center"><strong>Período 202610</strong></h2>
-<h2 align="center"><strong>Julio 2026</strong></h2>
+<h2 align="center"><strong>Período 202620</strong></h2>
+<h2 align="center"><strong>Septiembre 2026</strong></h2>
 
 </div>
 <div style="font-size: 18px; line-height: 1.65;">
@@ -70,15 +70,15 @@
 
 </div>
 
-### [Registro de Versiones del Informe](#toc-registro-de-versiones-del-informe)
+### [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 
-### [Project Report Collaboration Insights](#toc-project-report-collaboration-insights)
+### [Project Report Collaboration Insights](#project-report-collaboration-insights)
 
 ### [Student Outcome](#toc-student-outcome)
 
 ## Capítulo I: Introducción
 
-- [1.1. Startup Profile](#toc-1-1-startup-profile)
+- [1.1. Startup Profile](#1-1-1-startup-profile)
   - [1.1.1. Descripción de la Startup](#toc-1-1-1-descripcion-de-la-startup)
   - [1.1.2. Perfiles de integrantes del equipo](#toc-1-1-2-perfiles-de-integrantes-del-equipo)
 - [1.2. Solution Profile](#toc-1-2-solution-profile)
