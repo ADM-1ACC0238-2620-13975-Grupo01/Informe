@@ -76,9 +76,9 @@
 
 ### [Student Outcome](#toc-student-outcome)
 
-## Capítulo I: Introducción
+## Capítulo I: Presentación
 
-- [1.1. Startup Profile](#1-1-1-startup-profile)
+- [1.1. Startup Profile](#toc-1-1-startup-profile)
   - [1.1.1. Descripción de la Startup](#toc-1-1-1-descripcion-de-la-startup)
   - [1.1.2. Perfiles de integrantes del equipo](#toc-1-1-2-perfiles-de-integrantes-del-equipo)
 - [1.2. Solution Profile](#toc-1-2-solution-profile)
@@ -104,9 +104,9 @@
   - [2.3.2. User Task Matrix](#toc-2-3-2-user-task-matrix)
   - [2.3.3. User Journey Mapping](#toc-2-3-3-user-journey-mapping)
   - [2.3.4. Empathy Mapping](#toc-2-3-4-empathy-mapping)
-  - [2.3.5. Big Picture EventStorming](#toc-2-3-5-Big-Picture-EventStorming)
+  - [2.3.5. Big Picture EventStorming](#toc-2-3-5-big-picture-eventstorming)
   - [2.3.6. Ubiquitous Language](#toc-2-3-6-ubiquitous-language)
-- [2.4. Requirements specification](#toc-2-4-Requirements-specification)
+- [2.4. Requirements specification](#toc-2-4-requirements-specification)
   - [2.4.1. User Stories](#toc-2-4-1-user-stories)
   - [2.4.2. Impact Mapping](#toc-2-4-2-impact-mapping)
   - [2.4.3. Product Backlog](#toc-2-4-3-product-backlog)
@@ -121,20 +121,19 @@
     - [2.5.3.2. Software Architecture Container Level Diagrams](#toc-2-5-3-2-software-architecture-container-level-diagrams)
     - [2.5.3.3. Software Architecture Deployment Diagrams](#toc-2-5-3-3-software-architecture-deployment-diagrams)
 - [2.6. Tactical-Level Domain-Driven Design](#toc-2-6-tactical-level-domain-driven-design)
-  - [2.6.1. Bounded Context: <Bounded Context Name>](#toc-2-6-x-bounded-context-bounded-context-name)
-    - [2.6.1.1. Domain Layer](#toc-2-6-x-1-domain-layer)
-    - [2.6.1.2. Interface Layer](#toc-2-6-x-2-interface-layer)
-    - [2.6.1.3. Application Layer](#toc-2-6-x-3-application-layer)
-    - [2.6.1.4. Infrastructure Layer](#toc-2-6-x-4-infrastructure-layer)
-    - [2.6.1.5. Bounded Context Software Architecture Component Level Diagrams](#toc-2-6-x-5-bounded-context-software-architecture-component-level-diagrams)
-    - [2.6.1.6. Bounded Context Software Architecture Code Level Diagrams](#toc-2-6-x-6-bounded-context-software-architecture-code-level-diagrams)
-      - [2.6.1.6.1. Bounded Context Domain Layer Class Diagrams](#toc-2-6-x-6-1-bounded-context-domain-layer-class-diagrams)
-      - [2.6.1.6.2. Bounded Context Database Design Diagram](#toc-2-6-x-6-2-bounded-context-database-design-diagram)
+  - [2.6.x. Bounded Context: &lt;Bounded Context Name&gt;](#toc-2-6-x-bounded-context-bounded-context-name)
+    - [2.6.x.1. Domain Layer](#toc-2-6-x-1-domain-layer)
+    - [2.6.x.2. Interface Layer](#toc-2-6-x-2-interface-layer)
+    - [2.6.x.3. Application Layer](#toc-2-6-x-3-application-layer)
+    - [2.6.x.4. Infrastructure Layer](#toc-2-6-x-4-infrastructure-layer)
+    - [2.6.x.5. Bounded Context Software Architecture Component Level Diagrams](#toc-2-6-x-5-bounded-context-software-architecture-component-level-diagrams)
+    - [2.6.x.6. Bounded Context Software Architecture Code Level Diagrams](#toc-2-6-x-6-bounded-context-software-architecture-code-level-diagrams)
+      - [2.6.x.6.1. Bounded Context Domain Layer Class Diagrams](#toc-2-6-x-6-1-bounded-context-domain-layer-class-diagrams)
+      - [2.6.x.6.2. Bounded Context Database Design Diagram](#toc-2-6-x-6-2-bounded-context-database-design-diagram)
 
 ## Capítulo III: Solution UI/UX Design
 
-- [3.1. Product Design](#toc-3-1-product-design)
-
+- [3.1. Product design](#toc-3-1-product-design)
   - [3.1.1. Style Guidelines](#toc-3-1-1-style-guidelines)
     - [3.1.1.1. General Style Guidelines](#toc-3-1-1-1-general-style-guidelines)
   - [3.1.2. Information Architecture](#toc-3-1-2-information-architecture)
@@ -155,31 +154,27 @@
 
 ## Capítulo IV: Product Implementation & Validation
 
-- [4.1. Software Configuration Management](#toc-4-1-software-configuration-management)
-
-  - [4.1.1. Software Development Environment Configuration](#toc-4-1-1-software-development-environment-configuration)
-  - [4.1.2. Source Code Management](#toc-4-1-2-source-code-management)
-  - [4.1.3. Source Code Style Guide & Conventions](#toc-4-1-3-source-code-style-guide-conventions)
-  - [4.1.4. Software Deployment Configuration](#toc-4-1-4-software-deployment-configuration)
-
-- [4.2. Landing Page & Mobile Application Implementation](#toc-4-2-landing-page-mobile-application-implementation)
-
-  - [4.2.1. Sprint n](#toc-4-2-1-sprint-n)
-    - [4.2.1.1. Sprint Planning n](#toc-4-2-1-1-sprint-planning-n)
-    - [4.2.1.2. Aspect Leaders and Collaborators](#toc-4-2-1-2-aspect-leaders-and-collaborators)
-    - [4.2.1.3. Sprint Backlog n](#toc-4-2-1-3-sprint-backlog-n)
-    - [4.2.1.4. Development Evidence for Sprint Review](#toc-4-2-1-4-development-evidence-for-sprint-review)
-    - [4.2.1.5. Testing Suite Evidence for Sprint Review](#toc-4-2-1-5-testing-suite-evidence-for-sprint-review)
-    - [4.2.1.6. Execution Evidence for Sprint Review](#toc-4-2-1-6-execution-evidence-for-sprint-review)
-    - [4.2.1.7. Services Documentation Evidence for Sprint Review](#toc-4-2-1-7-services-documentation-evidence-for-sprint-review)
-    - [4.2.1.8. Software Deployment Evidence for Sprint Review](#toc-4-2-1-8-software-deployment-evidence-for-sprint-review)
-    - [4.2.1.9. Team Collaboration Insights during Sprint](#toc-4-2-1-9-team-collaboration-insights-during-sprint)
-
-- [4.3. Validation Interviews](#toc-4-3-validation-interviews)
-
-  - [4.3.1. Diseño de Entrevistas](#toc-4-3-1-diseno-de-entrevistas)
-  - [4.3.2. Registro de Entrevistas](#toc-4-3-2-registro-de-entrevistas)
-  - [4.3.3. Evaluaciones según heurísticas](#toc-4-3-3-evaluaciones-segun-heuristicas)
+- [4. Product Implementation & Validation](#toc-4-product-implementation-validation)
+  - [4.1. Software Configuration Management](#toc-4-1-software-configuration-management)
+    - [4.1.1. Software Development Environment Configuration](#toc-4-1-1-software-development-environment-configuration)
+    - [4.1.2. Source Code Management](#toc-4-1-2-source-code-management)
+    - [4.1.3. Source Code Style Guide & Conventions](#toc-4-1-3-source-code-style-guide-conventions)
+    - [4.1.4. Software Deployment Configuration](#toc-4-1-4-software-deployment-configuration)
+  - [4.2. Landing Page & Mobile Application Implementation](#toc-4-2-landing-page-mobile-application-implementation)
+    - [4.2.1. Sprint n](#toc-4-2-1-sprint-n)
+      - [4.2.1.1. Sprint Planning n](#toc-4-2-1-1-sprint-planning-n)
+      - [4.2.1.2. Aspect Leaders and Collaborators](#toc-4-2-1-2-aspect-leaders-and-collaborators)
+      - [4.2.1.3. Sprint Backlog n](#toc-4-2-1-3-sprint-backlog-n)
+      - [4.2.1.4. Development Evidence for Sprint Review](#toc-4-2-1-4-development-evidence-for-sprint-review)
+      - [4.2.1.5. Testing Suite Evidence for Sprint Review](#toc-4-2-1-5-testing-suite-evidence-for-sprint-review)
+      - [4.2.1.6. Execution Evidence for Sprint Review](#toc-4-2-1-6-execution-evidence-for-sprint-review)
+      - [4.2.1.7. Services Documentation Evidence for Sprint Review](#toc-4-2-1-7-services-documentation-evidence-for-sprint-review)
+      - [4.2.1.8. Software Deployment Evidence for Sprint Review](#toc-4-2-1-8-software-deployment-evidence-for-sprint-review)
+      - [4.2.1.9. Team Collaboration Insights during Sprint](#toc-4-2-1-9-team-collaboration-insights-during-sprint)
+  - [4.3. Validation Interviews](#toc-4-3-validation-interviews)
+    - [4.3.1. Diseño de Entrevistas](#toc-4-3-1-diseno-de-entrevistas)
+    - [4.3.2. Registro de Entrevistas](#toc-4-3-2-registro-de-entrevistas)
+    - [4.3.3. Evaluaciones según heurísticas](#toc-4-3-3-evaluaciones-segun-heuristicas)
 
 ### [Conclusiones](#toc-conclusiones)
 

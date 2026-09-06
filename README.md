@@ -79,7 +79,7 @@
 
 ### [Student Outcome](./markdown/content/student-outcome.md)
 
-## Capítulo I: Introducción
+## Capítulo I: Presentación
 
 - [1.1. Startup Profile](./markdown/content/chapter-1/1-1-startup-profile.md)
   - [1.1.1. Descripción de la Startup](./markdown/content/chapter-1/1-1-startup-profile.md)
@@ -93,7 +93,7 @@
     - [1.2.2.4. Lean UX Canvas](./markdown/content/chapter-1/1-2-solution-profile.md)
 - [1.3. Segmentos objetivo](./markdown/content/chapter-1/1-3-segmentos-objetivo.md)
 
-## Capítulo II: Requirements Elicitation & Analysis
+## Capítulo II: Requirements Development and Software Solution Design
 
 - [2.1. Competidores](./markdown/content/chapter-2/2-1-competidores.md)
   - [2.1.1. Análisis competitivo](./markdown/content/chapter-2/2-1-competidores.md)
@@ -107,95 +107,77 @@
   - [2.3.2. User Task Matrix](./markdown/content/chapter-2/2-3-needfinding.md)
   - [2.3.3. User Journey Mapping](./markdown/content/chapter-2/2-3-needfinding.md)
   - [2.3.4. Empathy Mapping](./markdown/content/chapter-2/2-3-needfinding.md)
-  - [2.3.5. As-is Scenario Mapping](./markdown/content/chapter-2/2-3-needfinding.md)
-- [2.4. Big Picture EventStorming](./markdown/content/chapter-2/2-4-big-picture-eventstorming.md)
-- [2.5. Ubiquitous Language](./markdown/content/chapter-2/2-5-ubiquitous-language.md)
+  - [2.3.5. Big Picture EventStorming](./markdown/content/chapter-2/2-4-big-picture-eventstorming.md)
+  - [2.3.6. Ubiquitous Language](./markdown/content/chapter-2/2-5-ubiquitous-language.md)
+- 2.4. Requirements specification
+  - [2.4.1. User Stories](./markdown/content/chapter-3/3-1-user-stories.md)
+  - [2.4.2. Impact Mapping](./markdown/content/chapter-3/3-2-impact-mapping.md)
+  - [2.4.3. Product Backlog](./markdown/content/chapter-3/3-3-product-backlog.md)
+- 2.5. Strategic-Level Domain-Driven Design
+  - 2.5.1. EventStorming
+    - 2.5.1.1. Candidate Context Discovery
+    - 2.5.1.2. Domain Message Flows Modeling
+    - 2.5.1.3. Bounded Context Canvases
+  - 2.5.2. Context Mapping
+  - 2.5.3. Software Architecture
+    - 2.5.3.1. Software Architecture Context Level Diagrams
+    - 2.5.3.2. Software Architecture Container Level Diagrams
+    - 2.5.3.3. Software Architecture Deployment Diagrams
+- 2.6. Tactical-Level Domain-Driven Design
+  - 2.6.x. Bounded Context: `<Bounded Context Name>`
+    - 2.6.x.1. Domain Layer
+    - 2.6.x.2. Interface Layer
+    - 2.6.x.3. Application Layer
+    - 2.6.x.4. Infrastructure Layer
+    - 2.6.x.5. Bounded Context Software Architecture Component Level Diagrams
+    - 2.6.x.6. Bounded Context Software Architecture Code Level Diagrams
+      - 2.6.x.6.1. Bounded Context Domain Layer Class Diagrams
+      - 2.6.x.6.2. Bounded Context Database Design Diagram
 
-## Capítulo III: Requirements Specification
+## Capítulo III: Solution UI/UX Design
 
-- [3.1. User Stories](./markdown/content/chapter-3/3-1-user-stories.md)
-- [3.2. Impact Mapping](./markdown/content/chapter-3/3-2-impact-mapping.md)
-- [3.3. Product Backlog](./markdown/content/chapter-3/3-3-product-backlog.md)
+- 3.1. Product design
+  - [3.1.1. Style Guidelines](./markdown/content/chapter-4/4-1-style-guidelines.md)
+    - [3.1.1.1. General Style Guidelines](./markdown/content/chapter-4/4-1-style-guidelines.md)
+  - [3.1.2. Information Architecture](./markdown/content/chapter-4/4-2-information-architecture.md)
+    - [3.1.2.1. Organization Systems](./markdown/content/chapter-4/4-2-information-architecture.md)
+    - [3.1.2.2. Labelling Systems](./markdown/content/chapter-4/4-2-information-architecture.md)
+    - [3.1.2.3. SEO Tags and Meta Tags](./markdown/content/chapter-4/4-2-information-architecture.md)
+    - [3.1.2.4. Searching Systems](./markdown/content/chapter-4/4-2-information-architecture.md)
+    - [3.1.2.5. Navigation Systems](./markdown/content/chapter-4/4-2-information-architecture.md)
+  - [3.1.3. Landing Page UI Design](./markdown/content/chapter-4/4-3-landing-page-ui-design.md)
+    - [3.1.3.1. Landing Page Wireframe](./markdown/content/chapter-4/4-3-landing-page-ui-design.md)
+    - [3.1.3.2. Landing Page Mock-up](./markdown/content/chapter-4/4-3-landing-page-ui-design.md)
+  - 3.1.4. Mobile Applications UX/UI Design
+    - 3.1.4.1. Mobile Applications Wireframes
+    - 3.1.4.2. Mobile Applications Wireflow Diagrams
+    - 3.1.4.3. Mobile Applications Mock-ups
+    - 3.1.4.4. Mobile Applications User Flow Diagrams
+    - 3.1.4.5. Mobile Applications Prototyping
 
-## Capítulo IV: Product Design
+## Capítulo IV: Product Implementation & Validation
 
-- [4.1. Style Guidelines](./markdown/content/chapter-4/4-1-style-guidelines.md)
-  - [4.1.1. General Style Guidelines](./markdown/content/chapter-4/4-1-style-guidelines.md)
-  - [4.1.2. Web Style Guidelines](./markdown/content/chapter-4/4-1-style-guidelines.md)
-- [4.2. Information Architecture](./markdown/content/chapter-4/4-2-information-architecture.md)
-  - [4.2.1. Organization Systems](./markdown/content/chapter-4/4-2-information-architecture.md)
-  - [4.2.2. Labeling Systems](./markdown/content/chapter-4/4-2-information-architecture.md)
-  - [4.2.3. SEO Tags and Meta Tags](./markdown/content/chapter-4/4-2-information-architecture.md)
-  - [4.2.4. Searching Systems](./markdown/content/chapter-4/4-2-information-architecture.md)
-  - [4.2.5. Navigation Systems](./markdown/content/chapter-4/4-2-information-architecture.md)
-- [4.3. Landing Page UI Design](./markdown/content/chapter-4/4-3-landing-page-ui-design.md)
-  - [4.3.1. Landing Page Wireframe](./markdown/content/chapter-4/4-3-landing-page-ui-design.md)
-  - [4.3.2. Landing Page Mock-up](./markdown/content/chapter-4/4-3-landing-page-ui-design.md)
-- [4.4. Web Applications UX/UI Design](./markdown/content/chapter-4/4-4-web-applications-ux-ui-design.md)
-  - [4.4.1. Web Applications Wireframes](./markdown/content/chapter-4/4-4-web-applications-ux-ui-design.md)
-  - [4.4.2. Web Applications Wireflow Diagrams](./markdown/content/chapter-4/4-4-web-applications-ux-ui-design.md)
-  - [4.4.2. Web Applications Mock-ups](./markdown/content/chapter-4/4-4-web-applications-ux-ui-design.md)
-  - [4.4.3. Web Applications User Flow Diagrams](./markdown/content/chapter-4/4-4-web-applications-ux-ui-design.md)
-- [4.5. Web Applications Prototyping](./markdown/content/chapter-4/4-5-web-applications-prototyping.md)
-- [4.6. Domain-Driven Software Architecture](./markdown/content/chapter-4/4-6-domain-driven-software-architecture.md)
-  - [4.6.1. Design-Level EventStorming](./markdown/content/chapter-4/4-6-domain-driven-software-architecture.md)
-  - [4.6.2. Software Architecture Context Diagram](./markdown/content/chapter-4/4-6-domain-driven-software-architecture.md)
-  - [4.6.3. Software Architecture Container Diagrams](./markdown/content/chapter-4/4-6-domain-driven-software-architecture.md)
-  - [4.6.4. Software Architecture Components Diagrams](./markdown/content/chapter-4/4-6-domain-driven-software-architecture.md)
-- [4.7. Software Object-Oriented Design](./markdown/content/chapter-4/4-7-software-object-oriented-design.md)
-  - [4.7.1. Class Diagrams](./markdown/content/chapter-4/4-7-software-object-oriented-design.md)
-- [4.8. Database Design](./markdown/content/chapter-4/4-8-database-design.md)
-  - [4.8.1. Database Diagrams](./markdown/content/chapter-4/4-8-database-design.md)
-
-## Capítulo V: Product Implementation, Validation & Deployment
-
-- [5.1. Software Configuration Management](./markdown/content/chapter-5/5-1-software-configuration-management.md)
-  - [5.1.1. Software Development Environment Configuration](./markdown/content/chapter-5/5-1-software-configuration-management.md)
-  - [5.1.2. Source Code Management](./markdown/content/chapter-5/5-1-software-configuration-management.md)
-  - [5.1.3. Source Code Style Guide & Conventions](./markdown/content/chapter-5/5-1-software-configuration-management.md)
-  - [5.1.4. Software Deployment Configuration](./markdown/content/chapter-5/5-1-software-configuration-management.md)
-- [5.2. Landing Page, Services & Applications Implementation](./markdown/content/chapter-5/5-2-1-Sprint1.md)
-  - [5.2.1. Sprint 1](./markdown/content/chapter-5/5-2-1-Sprint1.md)
-    - [5.2.1.1. Sprint Planning 1](./markdown/content/chapter-5/5-2-1-Sprint1.md)
-    - [5.2.1.2. Aspect Leaders and Collaborators](./markdown/content/chapter-5/5-2-1-Sprint1.md)
-    - [5.2.1.3. Sprint Backlog 1](./markdown/content/chapter-5/5-2-1-Sprint1.md)
-    - [5.2.1.4. Development Evidence for Sprint Review](./markdown/content/chapter-5/5-2-1-Sprint1.md)
-    - [5.2.1.5. Execution Evidence for Sprint Review](./markdown/content/chapter-5/5-2-1-Sprint1.md)
-    - [5.2.1.6. Services Documentation Evidence for Sprint Review](./markdown/content/chapter-5/5-2-1-Sprint1.md)
-    - [5.2.1.7. Software Deployment Evidence for Sprint Review](./markdown/content/chapter-5/5-2-1-Sprint1.md)
-    - [5.2.1.8. Team Collaboration Insights during Sprint](./markdown/content/chapter-5/5-2-1-Sprint1.md)
-  - [5.2.2. Sprint 2](./markdown/content/chapter-5/5-2-2-Sprint2.md)
-    - [5.2.2.1. Sprint Planning 2](./markdown/content/chapter-5/5-2-2-Sprint2.md)
-    - [5.2.2.2. Aspect Leaders and Collaborators](./markdown/content/chapter-5/5-2-2-Sprint2.md)
-    - [5.2.2.3. Sprint Backlog 2](./markdown/content/chapter-5/5-2-2-Sprint2.md)
-    - [5.2.2.4. Development Evidence for Sprint Review](./markdown/content/chapter-5/5-2-2-Sprint2.md)
-    - [5.2.2.5. Execution Evidence for Sprint Review](./markdown/content/chapter-5/5-2-2-Sprint2.md)
-    - [5.2.2.6. Services Documentation Evidence for Sprint Review](./markdown/content/chapter-5/5-2-2-Sprint2.md)
-    - [5.2.2.7. Software Deployment Evidence for Sprint Review](./markdown/content/chapter-5/5-2-2-Sprint2.md)
-    - [5.2.2.8. Team Collaboration Insights during Sprint](./markdown/content/chapter-5/5-2-2-Sprint2.md)
-  - [5.2.3. Sprint 3](./markdown/content/chapter-5/5-2-3-Sprint3.md)
-    - [5.2.3.1. Sprint Planning 3](./markdown/content/chapter-5/5-2-3-Sprint3.md)
-    - [5.2.3.2. Aspects Leaders and Collaborators](./markdown/content/chapter-5/5-2-3-Sprint3.md)
-    - [5.2.3.3. Sprint Backlog 3](./markdown/content/chapter-5/5-2-3-Sprint3.md)
-    - [5.2.3.4. Development Evidence for Sprint Review](./markdown/content/chapter-5/5-2-3-Sprint3.md)
-    - [5.2.3.5. Execution Evidence for Sprint Review](./markdown/content/chapter-5/5-2-3-Sprint3.md)
-    - [5.2.3.6. Services Documentation Evidence for Sprint Review](./markdown/content/chapter-5/5-2-3-Sprint3.md)
-    - [5.2.3.7. Software Deployment Evidence for Sprint Review](./markdown/content/chapter-5/5-2-3-Sprint3.md)
-    - [5.2.3.8. Team Collaboration Insights during Sprint](./markdown/content/chapter-5/5-2-3-Sprint3.md)
-  - [5.2.4. Sprint 4](./markdown/content/chapter-5/5-2-4-Sprint4.md)
-    - [5.2.4.1. Sprint Planning 4](./markdown/content/chapter-5/5-2-4-Sprint4.md)
-    - [5.2.4.2. Aspect Leaders and Collaborators](./markdown/content/chapter-5/5-2-4-Sprint4.md)
-    - [5.2.4.3. Sprint Backlog 4](./markdown/content/chapter-5/5-2-4-Sprint4.md)
-    - [5.2.4.4. Development Evidence for Sprint Review](./markdown/content/chapter-5/5-2-4-Sprint4.md)
-    - [5.2.4.5. Execution Evidence for Sprint Review](./markdown/content/chapter-5/5-2-4-Sprint4.md)
-    - [5.2.4.6. Services Documentation Evidence for Sprint Review](./markdown/content/chapter-5/5-2-4-Sprint4.md)
-    - [5.2.4.7. Software Deployment Evidence for Sprint Review](./markdown/content/chapter-5/5-2-4-Sprint4.md)
-    - [5.2.4.8. Team Collaboration Insights during Sprint](./markdown/content/chapter-5/5-2-4-Sprint4.md)
-- [5.3. Validation Interviews](./markdown/content/chapter-5/5-3-validation-interviews.md)
-  - [5.3.1. Diseño de Entrevistas](./markdown/content/chapter-5/5-3-validation-interviews.md)
-  - [5.3.2. Registro de Entrevistas](./markdown/content/chapter-5/5-3-validation-interviews.md)
-  - [5.3.3. Evaluaciones según heurísticas](./markdown/content/chapter-5/5-3-validation-interviews.md)
-- [5.4. Video About-the-Product](./markdown/content/chapter-5/5-4-video-about-the-product.md)
+- 4. Product Implementation & Validation
+  - [4.1. Software Configuration Management](./markdown/content/chapter-5/5-1-software-configuration-management.md)
+    - [4.1.1. Software Development Environment Configuration](./markdown/content/chapter-5/5-1-software-configuration-management.md)
+    - [4.1.2. Source Code Management](./markdown/content/chapter-5/5-1-software-configuration-management.md)
+    - [4.1.3. Source Code Style Guide & Conventions](./markdown/content/chapter-5/5-1-software-configuration-management.md)
+    - [4.1.4. Software Deployment Configuration](./markdown/content/chapter-5/5-1-software-configuration-management.md)
+  - 4.2. Landing Page & Mobile Application Implementation
+    - 4.2.1. Sprint n
+      - 4.2.1.1. Sprint Planning n
+      - 4.2.1.2. Aspect Leaders and Collaborators
+      - 4.2.1.3. Sprint Backlog n
+      - 4.2.1.4. Development Evidence for Sprint Review
+      - 4.2.1.5. Testing Suite Evidence for Sprint Review
+      - 4.2.1.6. Execution Evidence for Sprint Review
+      - 4.2.1.7. Services Documentation Evidence for Sprint Review
+      - 4.2.1.8. Software Deployment Evidence for Sprint Review
+      - 4.2.1.9. Team Collaboration Insights during Sprint
+  - [4.3. Validation Interviews](./markdown/content/chapter-5/5-3-validation-interviews.md)
+    - [4.3.1. Diseño de Entrevistas](./markdown/content/chapter-5/5-3-validation-interviews.md)
+    - [4.3.2. Registro de Entrevistas](./markdown/content/chapter-5/5-3-validation-interviews.md)
+    - [4.3.3. Evaluaciones según heurísticas](./markdown/content/chapter-5/5-3-validation-interviews.md)
 
 ### [Conclusiones](./markdown/content/conclusiones.md)
 
