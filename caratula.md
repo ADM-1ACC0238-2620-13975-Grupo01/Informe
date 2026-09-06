@@ -12,9 +12,9 @@
 <h2 align="center"><strong>Aplicaciones para Dispositivos Móviles </strong></h2>
 <h2 align="center">NRC</h2>
 <h2 align="center"><strong>13975</strong></h2>
-<h2 align="center">Docente</h2>
-<h2 align="center"><strong>Quevedo Velasco, David Gerardo </strong></h2>
 <h2 align="center"><strong>Informe del Trabajo Final</strong></h2>
+<h2 align="center">Docente</h2>
+<h2 align="center"><strong>Mayta Guillermo, Jorge Luis </strong></h2>
 <h2 align="center">Equipo</h2>
 <h2 align="center"><strong>ADM</strong></h2>
 <h2 align="center">Proyecto</h2>

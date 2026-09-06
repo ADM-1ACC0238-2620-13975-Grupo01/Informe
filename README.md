@@ -6,15 +6,15 @@
 <h1 align="center">Universidad Peruana de Ciencias Aplicadas</h1>
 <h2 align="center">Carrera de Ingeniería de Software</h2>
 
-<h3 align="center"><strong>1ASI0730</strong></h3>
-<h3 align="center"><strong>Aplicaciones Web</strong></h3>
+<h3 align="center"><strong>1ACC0238</strong></h3>
+<h3 align="center"><strong>Aplicaciones para Dispositivos Móviles</strong></h3>
 <h4 align="center">NRC</h4>
-<h3 align="center"><strong>12206</strong></h3>
+<h3 align="center"><strong>13975</strong></h3>
 <h3 align="center"><strong>Informe del Trabajo Final</strong></h3>
 <h4 align="center">Docente</h4>
-<h3 align="center"><strong>Velásquez Núñez, Ángel Augusto</strong></h3>
+<h3 align="center"><strong>Mayta Guillermo, Jorge Luis</strong></h3>
 <h4 align="center">Equipo</h4>
-<h3 align="center"><strong>Titan</strong></h3>
+<h3 align="center"><strong>ADM</strong></h3>
 <h4 align="center">Proyecto</h4>
 <h3 align="center"><strong>AniTec</strong></h3>
 
@@ -31,31 +31,37 @@
     </thead>
     <tbody>
       <tr>
-        <td align="center">U20241C030</td>
-        <td align="center">Ayala Fernandez, Jorge Brayan</td>
+        <th align="center" >Código</th>
+        <th align="center" >Nombre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align="center" >U202217853</td>
+        <td align="center" >Beingolea Montalvo, Sebastian Martin </td>
       </tr>
       <tr>
-        <td align="center">U202117762</td>
-        <td align="center">Huaman Gallardo, Bruno Aldair</td>
+        <td align="center" >U202315165</td>
+        <td align="center" >Melgarejo Quiroz, Josep Eliu</td>
       </tr>
       <tr>
-        <td align="center">U202315165</td>
-        <td align="center">Melgarejo Quiroz, Josep Eliu</td>
+        <td align="center" >U20231C019</td>
+        <td align="center" >Ortega Muñoz, Saul </td>
       </tr>
       <tr>
-        <td align="center">U202318001</td>
-        <td align="center">Raymundo Villarroel, Nadhim Abigail</td>
+        <td align="center" >U202215979</td>
+        <td align="center" >Sanchez Silva, Luciana Celeste</td>
       </tr>
       <tr>
-        <td align="center">U202215979</td>
-        <td align="center">Sanchez Silva, Luciana Celeste</td>
+        <td align="center" >U20221C554</td>
+        <td align="center" > Villanueva Rodriguez, Giuseppe Adrian</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<h3 align="center"><strong>Período 202610</strong></h3>
-<h3 align="center"><strong>Junio 2026</strong></h3>
+<h3 align="center"><strong>Período 202620</strong></h3>
+<h3 align="center"><strong>Septiembre 2026</strong></h3>
 
 <div style="page-break-before: always;"></div>
 
