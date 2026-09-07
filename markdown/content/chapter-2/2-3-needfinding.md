@@ -111,7 +111,7 @@ El presente Big Picture Event Storming se ha desarrollado de manera colaborativa
 
 Enlace para acceder al miro: https://tinyurl.com/EventSorming
 
-## 2.3.6. Ubiquitous Language
+## 2.3.6. Ubiquitous Language.
 
 Siguiendo los conceptos de **Ubiquitous Language** definidos por **Eric Evans (2003)** en su obra _Domain-Driven Design: Tackling Complexity in the Heart of Software_, se presenta el siguiente glosario. Este conjunto de términos constituye el lenguaje común del proyecto, eliminando ambigüedades entre el equipo de ingeniería y los expertos del dominio ganadero.
 
