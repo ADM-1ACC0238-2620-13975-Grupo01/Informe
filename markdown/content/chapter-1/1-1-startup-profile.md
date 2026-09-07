@@ -1,26 +1,31 @@
 # 1.1. Startup Profile
 
-En esta sección se presenta la descripción del startup y los perfiles de los miembros del equipo.
+En esta sección se presenta la startup responsable de AniTec y a los integrantes del equipo que desarrollarán la solución durante el curso de Aplicaciones para Dispositivos Móviles.
 
-## 1.1.1. Descripción del startup.
+## 1.1.1. Descripción de la Startup
 
-Titan es una startup enfocada en brindar soluciones tecnológicas accesibles y efectivas para los pequeños y medianos ganaderos de Latinoamérica. A través de una plataforma web intuitiva, AniTec digitaliza la gestión del ganado mediante una estructura organizada en módulos clave que abarcan toda la operación productiva. Asimismo, la solución considera al segmento veterinario, permitiendo que los profesionales puedan revisar clientes asignados, consultar pacientes, registrar eventos sanitarios y dar seguimiento clínico a los animales atendidos.
+Titan es una startup tecnológica que desarrolla soluciones digitales para mejorar la gestión de pequeños y medianos productores ganaderos. Su producto, AniTec, nació como una aplicación web para centralizar la información sanitaria, productiva y económica del ganado. En este curso, la propuesta evoluciona hacia una solución móvil que permita realizar las tareas principales desde el teléfono, dispositivo que acompaña al usuario durante el trabajo de campo.
 
-La plataforma organiza la vida productiva del ganado en los siguientes módulos clave:
+AniTec contará con una aplicación nativa para Android desarrollada con Kotlin y con una experiencia multiplataforma. La tecnología de esta última se seleccionará mediante una evaluación técnica entre las alternativas permitidas por el curso. Ambas aplicaciones consumirán la API REST propia de AniTec y ofrecerán una experiencia coherente, accesible e internacionalizada.
 
-- Gestión integral de animales, incluyendo el registro individual (raza, edad, sexo y estado de salud), así como su listado, búsqueda, filtrado, edición y eliminación.
-- Registro y gestión del historial de las visitas médicas por cada animal
-- Calendario sanitario (eventos, vacunas, tratamientos)
-- Control económico (ingresos, egresos)
-- Visualización de reportes y estadísticas, con alertas automáticas según análisis de tendencias del ganado.
+La solución móvil se concentrará en las siguientes capacidades:
 
-Gracias a la integración de datos históricos y actualizados en tiempo real, AniTec permite a los ganaderos tomar decisiones informadas, mejorar la productividad, reducir pérdidas operativas y optimizar el control sanitario del ganado. De esta manera, se transforma la gestión tradicional en una ganadería más inteligente, eficiente y sostenible.
+- Registrar, consultar y actualizar animales y sus datos principales.
+- Consultar el historial sanitario y registrar atenciones, tratamientos y otros eventos.
+- Guardar borradores o información esencial localmente para afrontar conexiones inestables.
+- Programar y recibir recordatorios de vacunaciones, tratamientos y actividades.
+- Identificar animales con apoyo de la cámara, manteniendo una búsqueda manual como alternativa.
+- Consultar indicadores y resúmenes visuales que faciliten decisiones de campo.
+- Permitir que los veterinarios consulten los animales autorizados por sus clientes y registren el seguimiento correspondiente.
+- Gestionar planes mediante un servicio externo de pagos, sujeto a validación técnica y funcional.
 
-**Misión:** Revolucionar la gestión y trazabilidad del ganado en pequeños y medianos hatos ganaderos de Latinoamérica, mediante una plataforma digital accesible que optimice los procesos productivos, sanitarios y económicos.
+El ecosistema se complementará con la landing page existente, que comunicará la propuesta de valor y dirigirá a la descarga de las aplicaciones. El desarrollo también incluirá persistencia local, acceso a capacidades del dispositivo, manejo de errores de red, accesibilidad e internacionalización. Además, se incorporará una capacidad autónoma basada en una biblioteca o servicio no utilizado previamente en clase, cuya viabilidad se comprobará mediante una Spike Story antes de integrarla al producto.
 
-**Visión:** AniTec se proyecta como una de las plataformas más destacadas del sector ganadero en el registro y control integral de animales durante los próximos tres años. La startup busca consolidarse como un modelo de negocio sostenible, confiable y orientado a la mejora continua de la productividad rural a través de tecnología simple y efectiva.
+**Misión:** Facilitar la gestión y trazabilidad del ganado de pequeños y medianos productores mediante una experiencia móvil simple, accesible y útil en el trabajo de campo, que conecte al ganadero con la información de sus animales y con el seguimiento veterinario.
 
-## 1.1.2. Perfiles de los integrantes del equipo.
+**Visión:** Convertir a AniTec en una solución móvil confiable para la gestión ganadera en Latinoamérica, reconocida por adaptarse a las condiciones reales del entorno rural y por ayudar a tomar decisiones sanitarias y productivas basadas en información ordenada.
+
+## 1.1.2. Perfiles de integrantes del equipo
 
 <table>
   <tr>
@@ -54,36 +59,36 @@ Gracias a la integración de datos históricos y actualizados en tiempo real, An
       <img src="../../assets/chapter-1/Integrante-3.jpeg" width="180">
     </td>
     <td width="70%">
-      <h3>Abigail Nadhim Raymundo Villarroel</h3>
-      <h4>U202318001</h4>
+      <h3>Nombre</h3>
+      <h4>codigo</h4>
       <p>
-        Mi nombre es Abigail Nadhim Raymundo Villarroel, tengo 20 años y vivo en Lima. Actualmente estoy cursando el 5° ciclo de Ingeniería de Software, avanzando algunos cursos del ciclo superior. Desde siempre me ha apasionado crear, diseñar y programar para ofrecer soluciones, me gusta aprender constantemente para ampliar mis conocimientos y perfil profesional. Además, me encuentro en el nivel intermedio de inglés y me interesan mucho los idiomas, por lo que también estoy aprendiendo francés y portugués. En mi tiempo libre, disfruto dibujar, bailar y cantar, actividades que me ayudan a mantener mi creatividad y energía. Me comprometo a aportar con responsabilidad y dedicación al equipo, trabajar de manera colaborativa y contribuir a que juntos podamos desarrollar un proyecto sobresaliente. Mis principales habilidades incluyen creatividad, disciplina y trabajo en equipo, cualidades que aplico para lograr resultados efectivos y de calidad.
+        descripcion
       </p>
     </td>
   </tr>
 
-   <tr>
+  <tr>
     <td width="30%" align="center">
-      <img src="../../assets/chapter-1/Integrante-4.jpg" width="180">
+      <img src="../../assets/chapter-1/Integrante-3.jpeg" width="180">
     </td>
     <td width="70%">
-      <h3>Bruno Aldair Huaman Gallardo</h3>
-      <h4>U202117762</h4>
+      <h3>Nombre</h3>
+      <h4>codigo</h4>
       <p>
-        Mi nombre es Bruno Aldair Huaman Gallardo, tengo 21 años y vivo en Lima. Actualmente soy estudiante de Ingeniería de Software, me apasiona transformar ideas en realidades funcionales; desde el diseño de arquitecturas de red hasta la implementación de sistemas inteligentes. Soy una persona que valora el aprendizaje continuo, lo que me ha llevado a dominar herramientas como SQL Server, Node.js y Java, además de mantenerme en constante mejora de mi nivel de inglés para fortalecer mi perfil global. Me distingo por mi autodisciplina y mentalidad analítica, lo que me permite abordar desafíos técnicos con orden y eficiencia. Busco sumar al equipo no solo mis conocimientos en desarrollo, sino también mi compromiso con la calidad y la mejora continua. Soy un convencido de que la tecnología, cuando se maneja con creatividad y rigor, puede optimizar cualquier entorno.
+        descripcion
       </p>
     </td>
   </tr>
 
-   <tr>
+  <tr>
     <td width="30%" align="center">
-      <img src="../../assets/chapter-1/Integrante-5.png" width="180">
+      <img src="../../assets/chapter-1/Integrante-3.jpeg" width="180">
     </td>
     <td width="70%">
-      <h3>Jorge Brayan Ayala Fernandez</h3>
-      <h4>U20241C030</h4>
+      <h3>Nombre</h3>
+      <h4>codigo</h4>
       <p>
-        Mi nombre es Jorge Brayan Ayala Fernandez, tengo 20 años y vivo en Lima - Comas. Actualmente estoy cursando el 5to ciclo de la carrera de Ingeniería de Software. Me encanta examinar diversas problemáticas y crear soluciones a los retos que ocurren en el día a día. Me desempeño principalmente en el área de desarrollo web, mobile y desktop en lo cuales tuve experiencia anteriormente trabajando para proyectos relacionados a ello donde se desplegaron aplicaciones a producción satisfaciendo las demandas de los clientes en ese entonces. En cuanto a mis pasatiempos, me encanta salir a hacer todo tipo de deporte, escuchar música, mirar películas, series y programar activamente. En la medida de lo posible aportaré al grupo de manera colaborativa en las diversas tareas que haya para mejorar el producto que estamos creando.
+        descripcion
       </p>
     </td>
   </tr>
