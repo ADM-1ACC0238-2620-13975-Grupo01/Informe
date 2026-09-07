@@ -18,6 +18,12 @@ Ddd-By-Examples. (s. f.-b). library/docs/design-level.md at master. GitHub. htt
 
 Gothelf, J., & Seiden, J. (2021). _Lean UX: Designing great products with agile teams_ (3rd ed.). O'Reilly Media.
 
+Instituto Nacional de Estadística e Informática. (2014). _Características socioeconómicas del productor agropecuario en el Perú: IV Censo Nacional Agropecuario 2012_. https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1177/libro.pdf
+
+Instituto Nacional de Estadística e Informática. (2025a). _Estadísticas de las tecnologías de información y comunicación en los hogares: Enero-febrero-marzo 2025_. https://www.inei.gob.pe/media/MenuRecursivo/boletines/informe-tecnico_tecnologiasdelainformacion_ene_feb_mar2025.pdf
+
+Instituto Nacional de Estadística e Informática. (2026). _Estadísticas de las tecnologías de información y comunicación en los hogares: Octubre-noviembre-diciembre 2025_. https://www.inei.gob.pe/media/MenuRecursivo/boletines/boletin-tic-oct_dic2025.pdf
+
 Microsoft. (2026). _ASP.NET Core documentation_. https://learn.microsoft.com/aspnet/core/
 
 Microsoft. (2026). _Entity Framework Core documentation_. https://learn.microsoft.com/ef/core/
