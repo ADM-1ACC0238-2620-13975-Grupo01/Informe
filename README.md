@@ -107,34 +107,39 @@
   - [2.3.2. User Task Matrix](./markdown/content/chapter-2/2-3-needfinding.md)
   - [2.3.3. User Journey Mapping](./markdown/content/chapter-2/2-3-needfinding.md)
   - [2.3.4. Empathy Mapping](./markdown/content/chapter-2/2-3-needfinding.md)
-  - [2.3.5. Big Picture EventStorming](./markdown/content/chapter-2/2-4-big-picture-eventstorming.md)
-  - [2.3.6. Ubiquitous Language](./markdown/content/chapter-2/2-5-ubiquitous-language.md)
-- 2.4. Requirements specification
-  - [2.4.1. User Stories](./markdown/content/chapter-3/3-1-user-stories.md)
-  - [2.4.2. Impact Mapping](./markdown/content/chapter-3/3-2-impact-mapping.md)
-  - [2.4.3. Product Backlog](./markdown/content/chapter-3/3-3-product-backlog.md)
-- 2.5. Strategic-Level Domain-Driven Design
-  - 2.5.1. EventStorming
-    - 2.5.1.1. Candidate Context Discovery
-    - 2.5.1.2. Domain Message Flows Modeling
-    - 2.5.1.3. Bounded Context Canvases
-  - 2.5.2. Context Mapping
-  - 2.5.3. Software Architecture
-    - 2.5.3.1. Software Architecture Context Level Diagrams
-    - 2.5.3.2. Software Architecture Container Level Diagrams
-    - 2.5.3.3. Software Architecture Deployment Diagrams
-- 2.6. Tactical-Level Domain-Driven Design
-  - 2.6.x. Bounded Context: `<Bounded Context Name>`
-    - 2.6.x.1. Domain Layer
-    - 2.6.x.2. Interface Layer
-    - 2.6.x.3. Application Layer
-    - 2.6.x.4. Infrastructure Layer
-    - 2.6.x.5. Bounded Context Software Architecture Component Level Diagrams
-    - 2.6.x.6. Bounded Context Software Architecture Code Level Diagrams
-      - 2.6.x.6.1. Bounded Context Domain Layer Class Diagrams
-      - 2.6.x.6.2. Bounded Context Database Design Diagram
+  - [2.3.5. Big Picture EventStorming](./markdown/content/chapter-2/2-3-needfinding.md)
+  - [2.3.6. Ubiquitous Language](./markdown/content/chapter-2/2-3-needfinding.md)
+- [2.4. Requirements specification](./markdown/content/chapter-2/2-4-requirements-specification.md)
+  - [2.4.1. User Stories](./markdown/content/chapter-2/2-4-requirements-specification.md)
+  - [2.4.2. Impact Mapping](./markdown/content/chapter-2/2-4-requirements-specification.md)
+  - [2.4.3. Product Backlog](./markdown/content/chapter-2/2-4-requirements-specification.md)
+- [2.5. Strategic-Level Domain-Driven Design](./markdown/content/chapter-2/2-5-strategic-level-domain-driven-design.md)
+  - [2.5.1. EventStorming](./markdown/content/chapter-2/2-5-strategic-level-domain-driven-design.md)
+    - [2.5.1.1. Candidate Context Discovery](./markdown/content/chapter-2/2-5-strategic-level-domain-driven-design.md)
+    - [2.5.1.2. Domain Message Flows Modeling](./markdown/content/chapter-2/2-5-strategic-level-domain-driven-design.md)
+    - [2.5.1.3. Bounded Context Canvases](./markdown/content/chapter-2/2-5-strategic-level-domain-driven-design.md)
+  - [2.5.2. Context Mapping](./markdown/content/chapter-2/2-5-strategic-level-domain-driven-design.md)
+  - [2.5.3. Software Architecture](./markdown/content/chapter-2/2-5-strategic-level-domain-driven-design.md)
+    - [2.5.3.1. Software Architecture Context Level Diagrams](./markdown/content/chapter-2/2-5-strategic-level-domain-driven-design.md)
+    - [2.5.3.2. Software Architecture Container Level Diagrams](./markdown/content/chapter-2/2-5-strategic-level-domain-driven-design.md)
+    - [2.5.3.3. Software Architecture Deployment Diagrams](./markdown/content/chapter-2/2-5-strategic-level-domain-driven-design.md)
+- [2.6. Tactical-Level Domain-Driven Design](./markdown/content/chapter-2/2-6-tactical-level-domain-driven-design.md)
+  - [2.6.x. Bounded Context: `<Bounded Context Name>`](./markdown/content/chapter-2/2-6-tactical-level-domain-driven-design.md)
+    - [2.6.x.1. Domain Layer](./markdown/content/chapter-2/2-6-tactical-level-domain-driven-design.md)
+    - [2.6.x.2. Interface Layer](./markdown/content/chapter-2/2-6-tactical-level-domain-driven-design.md)
+    - [2.6.x.3. Application Layer](./markdown/content/chapter-2/2-6-tactical-level-domain-driven-design.md)
+    - [2.6.x.4. Infrastructure Layer](./markdown/content/chapter-2/2-6-tactical-level-domain-driven-design.md)
+    - [2.6.x.5. Bounded Context Software Architecture Component Level Diagrams](./markdown/content/chapter-2/2-6-tactical-level-domain-driven-design.md)
+    - [2.6.x.6. Bounded Context Software Architecture Code Level Diagrams](./markdown/content/chapter-2/2-6-tactical-level-domain-driven-design.md)
+      - [2.6.x.6.1. Bounded Context Domain Layer Class Diagrams](./markdown/content/chapter-2/2-6-tactical-level-domain-driven-design.md)
+      - [2.6.x.6.2. Bounded Context Database Design Diagram](./markdown/content/chapter-2/2-6-tactical-level-domain-driven-design.md)
 
-## Capítulo III: Solution UI/UX Design
+
+<!-- FALTA REFERENCIAR  -->
+<!-- FALTA REFERENCIAR  -->
+<!-- FALTA REFERENCIAR  -->
+
+## Capítulo III: Solution UI/UX Design 
 
 - 3.1. Product design
   - [3.1.1. Style Guidelines](./markdown/content/chapter-4/4-1-style-guidelines.md)
