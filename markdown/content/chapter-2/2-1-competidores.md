@@ -30,7 +30,7 @@ Llevar a cabo un análisis competitivo es clave para reconocer oportunidades y r
             <td> FarmLogs <img src="../../assets/chapter-2/FarmLogs.png"></td> 
         </tr>
         <tr>
-            <td>Plataforma web diseñada para pequeños y medianos ganaderos y veterinarios en Latinoamérica, enfocada en trazabilidad, gestión sanitaria, monitoreo IoT y educación.</td>
+            <td>Aplicación movil y web diseñada para pequeños y medianos ganaderos y veterinarios en Latinoamérica, enfocada en trazabilidad, gestión sanitaria, monitoreo IoT y educación.</td>
             <td>Aplicación móvil y web para gestión de hatos ganaderos, enfocada en registro sanitario y productividad.</td>
             <td>Plataforma multifuncional para gestión agrícola y ganadera, con módulos de cultivo, inventario y finanzas.</td>
             <td>Herramienta global para gestión agrícola, con funcionalidades básicas de ganadería.</td>      
@@ -60,7 +60,7 @@ Llevar a cabo un análisis competitivo es clave para reconocer oportunidades y r
         <tr>
             <td rowspan="3" class="sub">PERFIL DEL PRODUCTO</td>
             <td class="sub">Productos & Servicios</td>
-            <td>Plataforma web para gestión de hatos ganaderos, seguimiento sanitario, actividades, finanzas, dispositivos IoT y planes de suscripción.</td>
+            <td>Aplicación móvil y web para gestión de hatos ganaderos, seguimiento sanitario, actividades, finanzas, dispositivos IoT y planes de suscripción.</td>
             <td>Plataforma móvil y web para gestión de hatos ganaderos.</td>
             <td>Plataforma multifuncional para gestión agrícola y ganadera.</td>
             <td>Herramienta global para gestión agrícola y ganadera, con énfasis en mercados formales.</td>
