@@ -47,24 +47,7 @@ User Veterinario:
 
 ![User-Veterinario-Journey](../../assets/chapter-2/User-Veterinario-Journey.png)
 
-## 2.3.4. Empathy Mapping.
-
-En esta sección se presenta el proceso de elaboración de los Empathy Maps correspondientes a los User Personas identificados para el proyecto: el productor ganadero y la médica veterinaria. Para el desarrollo de estos mapas de empatía, el equipo analizó la información obtenida durante la etapa de investigación y needfinding, considerando las necesidades, comportamientos, preocupaciones y motivaciones de cada perfil dentro de su contexto laboral cotidiano.
-
-El proceso de elaboración inició colocando al User Persona en el centro del análisis, permitiendo identificar de manera estructurada qué piensa, siente, observa, escucha, dice y hace cada usuario en relación con la gestión sanitaria y administrativa del ganado. Asimismo, se identificaron los principales esfuerzos (Pains) y ganancias (Gains) presentes en sus actividades diarias, con el objetivo de comprender mejor sus frustraciones, expectativas y oportunidades de mejora dentro del entorno ganadero y veterinario.
-
-Los Empathy Maps permitieron visualizar de forma más profunda la experiencia actual de los usuarios, evidenciando problemáticas relacionadas con la organización de información, trazabilidad sanitaria, dependencia de registros físicos y dificultades en la comunicación y acceso a datos confiables.
-
-User Ganadero:
-
-![User-Ganaderos-Empathy](../../assets/chapter-2/User-Ganadero-Empathy.png)
-
-User Veterinario:
-
-![User-Mapping-Empathy](../../assets/chapter-2/User-Veterinario-Empathy.png)
-
-## 2.3.5. As-is Scenario Mapping.
-
+<!-- AS IS
 El As-is Scenario Mapping permite representar cómo los usuarios realizan actualmente sus actividades antes de utilizar AniTec. Este análisis se construye a partir de las entrevistas, los User Personas, el User Task Matrix, los User Journey Maps y los Empathy Maps. Su objetivo es identificar acciones, pensamientos, emociones y oportunidades de mejora dentro del flujo actual de trabajo de cada segmento.
 
 ### As-is Scenario Mapping: Ganadero
@@ -92,3 +75,62 @@ El As-is Scenario Mapping permite representar cómo los usuarios realizan actual
 | Evaluación del animal | Realiza diagnóstico o control con la información disponible en campo. | "Debo tomar una decisión con los datos que tengo." | Concentración y responsabilidad. | La falta de trazabilidad puede limitar la calidad del seguimiento. | Permitir consultar fichas de animales y eventos anteriores desde el dashboard veterinario. |
 | Registro de atención | Anota diagnóstico, tratamiento o recomendación en notas, Excel o mensajes al productor. | "Debo dejar constancia para la próxima visita." | Necesidad de orden. | Las notas pueden perderse o no estar disponibles para futuras consultas. | Registrar eventos sanitarios y actividades de seguimiento en la plataforma. |
 | Seguimiento posterior | Coordina próximas visitas o controles mediante mensajes y recordatorios personales. | "Tengo que recordar qué cliente necesita seguimiento." | Carga mental y preocupación. | No existe una vista centralizada de pacientes o controles pendientes. | Organizar clientes, pacientes, actividades y alertas sanitarias básicas. |
+-->
+
+## 2.3.4. Empathy Mapping.
+
+En esta sección se presenta el proceso de elaboración de los Empathy Maps correspondientes a los User Personas identificados para el proyecto: el productor ganadero y la médica veterinaria. Para el desarrollo de estos mapas de empatía, el equipo analizó la información obtenida durante la etapa de investigación y needfinding, considerando las necesidades, comportamientos, preocupaciones y motivaciones de cada perfil dentro de su contexto laboral cotidiano.
+
+El proceso de elaboración inició colocando al User Persona en el centro del análisis, permitiendo identificar de manera estructurada qué piensa, siente, observa, escucha, dice y hace cada usuario en relación con la gestión sanitaria y administrativa del ganado. Asimismo, se identificaron los principales esfuerzos (Pains) y ganancias (Gains) presentes en sus actividades diarias, con el objetivo de comprender mejor sus frustraciones, expectativas y oportunidades de mejora dentro del entorno ganadero y veterinario.
+
+Los Empathy Maps permitieron visualizar de forma más profunda la experiencia actual de los usuarios, evidenciando problemáticas relacionadas con la organización de información, trazabilidad sanitaria, dependencia de registros físicos y dificultades en la comunicación y acceso a datos confiables.
+
+User Ganadero:
+
+![User-Ganaderos-Empathy](../../assets/chapter-2/User-Ganadero-Empathy.png)
+
+User Veterinario:
+
+![User-Mapping-Empathy](../../assets/chapter-2/User-Veterinario-Empathy.png)
+
+## 2.3.5. Big Picture EventStorming.
+
+El presente Big Picture Event Storming se ha desarrollado de manera colaborativa utilizando la plataforma Miro, siguiendo la metodología de Philippe Bourgau para explorar el dominio del negocio de forma holística y establecer un entendimiento compartido. A través de un proceso iterativo en este entorno digital, que incluyó la generación de eventos de dominio, el ordenamiento cronológico y la identificación de puntos críticos dentro de los procesos, se ha logrado mapear la complejidad del sector ganadero en una narrativa visual coherente. Este artefacto no solo permitió identificar riesgos y oportunidades de mejora en la gestión de AniTec, sino que también sentó las bases para la comprensión del dominio y el diseño posterior de la arquitectura del sistema alineada con la realidad operativa de los ganaderos y veterinarios.
+
+**Paso 1:** Unstructured Exploration (Exploración no estructurada) consiste en una lluvia de ideas colaborativa donde los participantes identifican y registran domain events, que son sucesos relevantes ocurridos dentro del negocio. Estos eventos deben redactarse obligatoriamente en tiempo pasado (por ejemplo, "Livestock registered") y se colocan en notas adhesivas de color naranja sobre la superficie de modelado. En esta etapa inicial, se prioriza el descubrimiento de conceptos y procesos importantes del dominio sobre el orden o la jerarquía, permitiendo identificar eventos relacionados con la autenticación de usuarios, gestión de ganado, procesos sanitarios, operaciones financieras, generación de reportes y envío de notificaciones.
+
+![Event-Storming](../../assets/chapter-2/EventStormingPaso1.jpeg)
+
+**Paso 2:** Timelines, los participantes revisan los eventos de dominio generados y los organizan cronológicamente para reflejar la secuencia real de los procesos empresariales. La construcción inicia organizando el flujo principal del negocio y posteriormente incorporando relaciones, ramificaciones y dependencias entre eventos. Este paso permitió construir una narrativa visual coherente del comportamiento del sistema AniTec, facilitando la identificación de secuencias operativas, conexiones entre procesos y posibles inconsistencias dentro del dominio.
+
+![Event-Storming](../../assets/chapter-2/EventStormingPaso2.jpeg)
+
+**Paso 3:** Pain Points, los participantes utilizan la línea de tiempo recién organizada para identificar los puntos críticos, riesgos o ineficiencias presentes dentro de los procesos modelados. Estos problemas se representan mediante notas adhesivas rosadas colocadas cerca de los eventos relacionados, permitiendo visualizar dificultades operativas y oportunidades de mejora dentro del sistema. Entre los principales pain points identificados destacan posibles fallos de autenticación, registros duplicados de ganado, detección tardía de enfermedades, inconsistencias presupuestarias y fallos en la entrega de notificaciones. La identificación explícita de estas debilidades permitió comprender mejor los desafíos del dominio y considerar posibles automatizaciones o mejoras futuras en el diseño del sistema.
+
+![Event-Storming](../../assets/chapter-2/EventStormingPaso3.jpeg)
+
+Enlace para acceder al miro: https://tinyurl.com/EventSorming
+
+## 2.3.6. Ubiquitous Language
+
+Siguiendo los conceptos de **Ubiquitous Language** definidos por **Eric Evans (2003)** en su obra _Domain-Driven Design: Tackling Complexity in the Heart of Software_, se presenta el siguiente glosario. Este conjunto de términos constituye el lenguaje común del proyecto, eliminando ambigüedades entre el equipo de ingeniería y los expertos del dominio ganadero.
+
+| Term (English)              | Término (Español)        | Definition (Definición)                                                                                                                                  |
+| :-------------------------- | :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Livestock Owner**         | Ganadero                 | Usuario responsable de la administración operativa y financiera de la hacienda, encargado de registrar eventos diarios y tomar decisiones de producción. |
+| **Veterinarian**            | Veterinario              | Profesional especializado encargado de la salud animal, responsable de emitir diagnósticos, prescribir tratamientos y validar historiales clínicos.      |
+| **Herd**                    | Hato                     | Conjunto de animales agrupados dentro de una unidad productiva o finca para su control sanitario, productivo y administrativo.                          |
+| **Farm**                    | Finca                    | Unidad productiva donde el ganadero organiza animales, actividades, registros sanitarios y movimientos financieros.                                     |
+| **Animal**                  | Animal                   | Ejemplar individual registrado por el ganadero para mantener su trazabilidad sanitaria, productiva y económica.                                         |
+| **Health Event**            | Evento Sanitario         | Registro de una vacuna, enfermedad, diagnóstico, tratamiento, incidencia o seguimiento relacionado con la salud de un animal.                           |
+| **Veterinary Client**       | Cliente Veterinario      | Ganadero asignado a un veterinario para que este pueda revisar sus animales, consultar historiales y registrar atenciones sanitarias.                   |
+| **Veterinary History**      | Historial Veterinario    | Expediente clínico consolidado que permite al especialista revisar antecedentes médicos antes de realizar una intervención.                              |
+| **Treatment Protocol**      | Protocolo de Tratamiento | Conjunto de instrucciones médicas y fármacos asignados a un animal para tratar una afección diagnosticada por el veterinario.                            |
+| **Traceability**            | Trazabilidad             | Capacidad de reconstruir el historial completo de un animal, incluyendo origen, salud, peso, actividades y cambios relevantes.                          |
+| **IoT Device**              | Dispositivo IoT          | Equipo asociado a una finca o animal para apoyar el monitoreo de datos como peso, temperatura, humedad, ubicación o actividad.                         |
+| **Metric**                  | Métrica                  | Lectura generada por un dispositivo o registro del sistema que permite analizar el estado de un animal, finca o proceso ganadero.                       |
+| **Farm Activity**           | Actividad Ganadera       | Tarea productiva, sanitaria, financiera o veterinaria programada para organizar el trabajo dentro de la operación ganadera.                             |
+| **Financial Movement**      | Movimiento Financiero    | Ingreso o egreso registrado por el ganadero para controlar la rentabilidad de su operación.                                                             |
+| **Subscription Plan**       | Plan de Suscripción      | Opción de uso de la plataforma que define condiciones, beneficios y precio para el usuario.                                                              |
+| **Payment**                 | Pago                     | Registro económico asociado a la activación o renovación de un plan de suscripción dentro de AniTec.                                                    |
+| **Farm Management**         | Gestión de Hacienda      | Administración de los recursos, personal, animales, actividades y datos que ocurren dentro de la unidad productiva ganadera.                            |
