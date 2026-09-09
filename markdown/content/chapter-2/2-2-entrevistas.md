@@ -239,22 +239,22 @@ Su perfil evidencia una personalidad organizada, técnica y orientada al servici
 
 La entrevistada considera que una herramienta como AniTec sería útil si permite centralizar el historial clínico de cada animal, registrar tratamientos, programar seguimientos y mejorar la comunicación con los ganaderos. Sin embargo, remarcó que la plataforma debe ser rápida y fácil de usar, porque el trabajo veterinario de campo no permite perder tiempo en procesos largos. Esta entrevista aporta evidencia para el arquetipo de veterinaria joven que usa tecnología, pero necesita una solución enfocada en eficiencia clínica y coordinación con productores.
 
-#### Entrevista 5: Aldahir Arturo Santos Medina
+#### Entrevista 5: Jeferson Castro Pariona
 
 <div align="center">
 
 | Campo | Información |
 |-------|-------------|
 | Segmento | Veterinario |
-| Nombres y apellidos | Aldahir Arturo Santos Medina |
+| Nombres y apellidos | Jeferson Castro Pariona |
 | Edad | 27 años |
-| Distrito | Ventanilla, Lima |
+| Distrito | Ventanilla, Lima (Residencia) |
 | Ocupación | Médico veterinario |
 | Zona de trabajo | Selva central del Perú |
-| Tipo de atención | Atención clínica y sanitaria de ganado |
+| Tipo de atención | Atención clínica y sanitaria de ganado en campo |
 | Inicio de la entrevista | 00:00 |
 | Duración | 00:08:09 |
-| URL del video | https://tinyurl.com/entrevista5AldahirSantos |
+| URL del video | https://tinyurl.com/b3txtyh3 |
 
 </div>
 
@@ -264,11 +264,11 @@ La entrevistada considera que una herramienta como AniTec sería útil si permit
 
 **Resumen de la entrevista:**
 
-Aldahir Arturo Santos Medina comentó que una dificultad frecuente en la atención veterinaria ganadera es encontrar información incompleta o inexistente sobre los animales. Explicó que, cuando se incorporan nuevos animales sin historial médico previo, el veterinario debe tomar decisiones con datos limitados, lo que puede afectar la planificación de tratamientos, vacunaciones y seguimientos. También señaló que muchos registros se manejan en cuadernos, notas, Excel o conversaciones de WhatsApp, por lo que no siempre existe una fuente única y confiable.
+Jeferson Castro Pariona comentó que el reto más grande y frecuente en la atención veterinaria ganadera es la falta de trazabilidad y la pérdida de continuidad en el historial médico de los animales. Explicó que la información suele estar dispersa en cuadernos, notas físicas, hojas de cálculo o chats de WhatsApp, y que cuando se enfrentan emergencias o se incorporan nuevos animales, debe tomar decisiones clínicas con datos limitados. Esto afecta directamente la planificación sanitaria, la efectividad de los tratamientos y el seguimiento de las intervenciones.
 
-El entrevistado mostró una personalidad analítica, práctica y orientada a la solución de problemas. Valora contar con datos antes de intervenir y considera importante que el productor pueda compartir información de manera rápida. Sus canales de trabajo más frecuentes son WhatsApp, llamadas, hojas de cálculo y documentos enviados por celular. Utiliza smartphone y laptop, además de navegador web para consultar información técnica o coordinar actividades. Sus influencias provienen de la experiencia clínica, colegas veterinarios, productores de campo y casos donde la falta de trazabilidad sanitaria afectó el seguimiento de los animales.
+El entrevistado muestra un perfil analítico, práctico y orientado a la tecnología como herramienta de trabajo diario. Utiliza su smartphone para la comunicación y el registro rápido en campo, y su laptop para consultas técnicas más detalladas. Considera fundamental contar con datos concretos antes de intervenir y valora la rapidez, la facilidad de uso y la intuición en cualquier herramienta digital, especialmente considerando los retos de conectividad en el entorno rural.
 
-Según sus respuestas, AniTec podría aportar valor si permite acceder al historial sanitario del animal, registrar diagnósticos y tratamientos, programar próximas visitas y mantener comunicación clara con el ganadero. También resaltó que la herramienta debe ser intuitiva, rápida y adaptada al contexto de campo, donde puede haber conectividad limitada. La entrevista refuerza el arquetipo de veterinario de campo que ya usa herramientas digitales básicas, pero necesita una plataforma integrada para reducir errores, evitar pérdida de información y mejorar la continuidad del tratamiento.
+Según sus respuestas, una plataforma digital (como AniTec) le aportaría un valor significativo si logra centralizar la información sin ser un sistema pesado. Sus funcionalidades clave ideales incluyen: acceso inmediato al historial sanitario del animal, un módulo rápido para registrar diagnósticos y tratamientos, alertas de vacunación o reproducción para programar rutas de campo, y un canal claro de comunicación con el ganadero. También valoró la inclusión de contenido educativo rápido, como fichas técnicas o información sobre brotes en la región. En conclusión, está totalmente dispuesto a digitalizar su labor para reducir los errores derivados de la información dispersa, siempre y cuando la herramienta se integre de forma ágil a su flujo real de trabajo en el campo.
 
 ## 2.2.3. Análisis de entrevistas.
 
@@ -297,23 +297,23 @@ Desde el punto de vista subjetivo, los ganaderos entrevistados valoran la confia
 
 ### Análisis del segmento de Veterinarios
 
-Para el segmento de veterinarios se analizaron 2 entrevistas: Angela Mendoza y Aldahir Arturo Santos Medina. La muestra evidencia un perfil profesional joven, con experiencia en atención de campo, necesidad de información clínica ordenada y uso de herramientas digitales básicas para comunicarse con productores.
+Para el segmento de veterinarios se analizaron 2 entrevistas: Angela Mendoza y Jeferson Castro Pariona. La muestra evidencia un perfil profesional joven, con experiencia en atención de campo, necesidad de información clínica ordenada y uso de herramientas digitales básicas para comunicarse con productores.
 
 <div align="center">
 
 | Característica identificada | Resultado estadístico | Sustento en entrevistas | Relación con el arquetipo |
 |-----------------------------|----------------------|-------------------------|---------------------------|
-| Profesionales jóvenes | 2 de 2 entrevistados (100%) tienen entre 24 y 27 años. | Angela tiene 24 años; Aldahir tiene 27 años. | El arquetipo puede representarse como un veterinario joven, con mayor disposición a usar herramientas digitales. |
-| Trabajo en campo o zonas descentralizadas | 2 de 2 entrevistados (100%) trabajan o han trabajado en zonas fuera del entorno urbano principal. | Angela trabaja en la sierra sur; Aldahir tiene experiencia en la selva central. | La solución debe considerar rapidez, movilidad y uso en contextos con posible conectividad limitada. |
-| Problemas por registros incompletos o dispersos | 2 de 2 entrevistados (100%) mencionan información sanitaria desordenada o incompleta. | Angela menciona cuadernos, Excel, fotos y WhatsApp; Aldahir menciona cuadernos, notas, Excel y conversaciones de WhatsApp. | El arquetipo necesita acceso centralizado al historial clínico y sanitario de los animales. |
-| Uso de WhatsApp y herramientas digitales básicas | 2 de 2 entrevistados (100%) usan canales digitales simples para comunicarse o complementar su trabajo. | Angela usa WhatsApp, llamadas y archivos digitales; Aldahir usa WhatsApp, llamadas, hojas de cálculo y documentos enviados por celular. | AniTec debe integrarse al flujo real del veterinario y reducir la dependencia de información dispersa. |
-| Necesidad de historial clínico previo | 2 de 2 entrevistados (100%) señalan que conocer antecedentes mejora la atención. | Angela necesita revisar antecedentes antes de tratamientos; Aldahir indica que animales sin historial dificultan decisiones clínicas. | El arquetipo requiere fichas clínicas, historial sanitario y acceso rápido a tratamientos previos. |
-| Valoración de rapidez y facilidad de uso | 2 de 2 entrevistados (100%) indican que la herramienta debe ser rápida, intuitiva y adaptada al campo. | Angela remarca que no puede perder tiempo en procesos largos; Aldahir pide una herramienta intuitiva y rápida. | La interfaz veterinaria debe permitir registrar atenciones con pocos pasos y consultar datos al instante. |
-| Necesidad de mejorar comunicación con ganaderos | 2 de 2 entrevistados (100%) consideran importante coordinar mejor con productores. | Angela menciona mejorar comunicación con ganaderos; Aldahir resalta que el productor debe compartir información rápidamente. | El arquetipo necesita funciones de seguimiento, coordinación y comunicación clara con el productor. |
-| Actitud favorable hacia herramientas tecnológicas | 2 de 2 entrevistados (100%) muestran apertura a soluciones digitales para mejorar su trabajo. | Angela considera útil centralizar historial y seguimiento; Aldahir ve valor en registrar diagnósticos, tratamientos y próximas visitas. | El arquetipo es un usuario con mayor predisposición digital que el ganadero, pero exige eficiencia profesional. |
+| Profesionales jóvenes | 2 de 2 entrevistados (100%) tienen entre 24 y 27 años. | Angela tiene 24 años; Jeferson tiene 27 años. | El arquetipo puede representarse como un veterinario joven, con mayor disposición a usar herramientas digitales. |
+| Trabajo en campo o zonas descentralizadas | 2 de 2 entrevistados (100%) trabajan o han trabajado en zonas fuera del entorno urbano principal. | Angela trabaja en la sierra sur; Jeferson tiene experiencia en la selva central. | La solución debe considerar rapidez, movilidad y uso en contextos con posible conectividad limitada. |
+| Problemas por registros incompletos o dispersos | 2 de 2 entrevistados (100%) mencionan información sanitaria desordenada o incompleta. | Angela menciona cuadernos, Excel, fotos y WhatsApp; Jeferson menciona cuadernos, notas físicas, hojas de cálculo y chats de WhatsApp. | El arquetipo necesita acceso centralizado al historial clínico y sanitario de los animales. |
+| Uso de WhatsApp y herramientas digitales básicas | 2 de 2 entrevistados (100%) usan canales digitales simples para comunicarse o complementar su trabajo. | Angela usa WhatsApp, llamadas y archivos digitales; Jeferson usa smartphone en campo y laptop para consultas técnicas. | AniTec debe integrarse al flujo real del veterinario y reducir la dependencia de información dispersa. |
+| Necesidad de historial clínico previo | 2 de 2 entrevistados (100%) señalan que conocer antecedentes mejora la atención. | Angela necesita revisar antecedentes antes de tratamientos; Jeferson indica que la falta de trazabilidad obliga a decidir con datos limitados. | El arquetipo requiere fichas clínicas, historial sanitario y acceso rápido a tratamientos previos. |
+| Valoración de rapidez y facilidad de uso | 2 de 2 entrevistados (100%) indican que la herramienta debe ser rápida, intuitiva y adaptada al campo. | Angela remarca que no puede perder tiempo en procesos largos; Jeferson pide rapidez, facilidad de uso e integración ágil al trabajo rural. | La interfaz veterinaria debe permitir registrar atenciones con pocos pasos y consultar datos al instante. |
+| Necesidad de mejorar comunicación con ganaderos | 2 de 2 entrevistados (100%) consideran importante coordinar mejor con productores. | Angela menciona mejorar comunicación con ganaderos; Jeferson valora un canal claro de comunicación con el productor. | El arquetipo necesita funciones de seguimiento, coordinación y comunicación clara con el productor. |
+| Actitud favorable hacia herramientas tecnológicas | 2 de 2 entrevistados (100%) muestran apertura a soluciones digitales para mejorar su trabajo. | Angela considera útil centralizar historial y seguimiento; Jeferson está dispuesto a digitalizar su labor si la herramienta no es pesada y aporta alertas, registro rápido y contenido educativo. | El arquetipo es un usuario con mayor predisposición digital que el ganadero, pero exige eficiencia profesional. |
 
 </div>
 
 El análisis del segmento veterinario muestra que las principales necesidades están relacionadas con trazabilidad clínica, acceso rápido a información y coordinación con productores. El 100% de los entrevistados menciona problemas por información dispersa y el 100% considera importante contar con antecedentes del animal antes o durante la atención. Esto evidencia que el arquetipo veterinario debe estar construido alrededor de la toma de decisiones clínicas, el seguimiento sanitario y la necesidad de reducir incertidumbre durante el trabajo de campo.
 
-En cuanto a características subjetivas, ambos veterinarios se muestran más familiarizados con la tecnología que el segmento ganadero. Angela representa un perfil organizado, técnico y orientado al servicio, mientras que Aldahir muestra un perfil analítico y práctico. Ambos valoran la rapidez, la trazabilidad y la utilidad real. Por ello, el arquetipo de veterinario debe representar a un profesional joven, móvil, acostumbrado a usar herramientas digitales básicas, pero que necesita una plataforma más integrada para evitar pérdida de información y mejorar la continuidad de tratamientos.
+En cuanto a características subjetivas, ambos veterinarios se muestran más familiarizados con la tecnología que el segmento ganadero. Angela representa un perfil organizado, técnico y orientado al servicio, mientras que Jeferson muestra un perfil analítico, práctico y orientado a la tecnología. Ambos valoran la rapidez, la trazabilidad y la utilidad real. Por ello, el arquetipo de veterinario debe representar a un profesional joven, móvil, acostumbrado a usar herramientas digitales básicas, pero que necesita una plataforma más integrada para evitar pérdida de información y mejorar la continuidad de tratamientos.

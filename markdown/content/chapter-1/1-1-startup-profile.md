@@ -56,13 +56,13 @@ El ecosistema se complementará con la landing page existente, que comunicará l
 
    <tr>
     <td width="30%" align="center">
-      <img src="../../assets/chapter-1/Integrante-3.jpeg" width="180">
+      <img src="../../assets/chapter-1/Integrante-3.png" width="180">
     </td>
     <td width="70%">
-      <h3>Nombre</h3>
-      <h4>codigo</h4>
+      <h3>Sebastian Martin Beingolea Montalvo</h3>
+      <h4>U202217853</h4>
       <p>
-        descripcion
+        Mi nombre es Sebastian Martin Beingolea Montalvo, tengo 21 años y vivo en Lima. Actualmente estudio la carrera de Ingeniería de Software en la UPC, motivado por el interés en crear soluciones tecnológicas que aporten valor real a las personas y a los negocios. Me gusta el desarrollo de software, el trabajo en equipo y aprender nuevas herramientas que puedan aplicar en proyectos como AniTec. En mi tiempo libre disfruto explorar tecnologías, escuchar música y seguir mejorando mis habilidades de programación. Me comprometo a colaborar de forma constante con mis compañeros, aportar ideas y contribuir a un entregable de calidad. Mis habilidades son: responsabilidad, trabajo en equipo, capacidad de aprendizaje y orientación a resultados.
       </p>
     </td>
   </tr>
