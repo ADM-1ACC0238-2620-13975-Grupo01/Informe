@@ -69,13 +69,13 @@ El ecosistema se complementará con la landing page existente, que comunicará l
 
   <tr>
     <td width="30%" align="center">
-      <img src="../../assets/chapter-1/Integrante-3.jpeg" width="180">
+      <img src="../../assets/chapter-1/Integrante-4.png" width="180">
     </td>
     <td width="70%">
-      <h3>Nombre</h3>
-      <h4>codigo</h4>
+      <h3>Saul Ortega Muñoz</h3>
+      <h4>u20231c019</h4>
       <p>
-        descripcion
+        Soy estudiante de Ingeniería de Software con formación en programación y desarrollo web. Tengo conocimientos en algunos lenguajes de programacion. Me caracterizo por ser responsable, con capacidad de aprendizaje rápido y trabajo en equipo, aportando ideas prácticas para resolver problemas y mejorar proyectos tecnológicos.
       </p>
     </td>
   </tr>
