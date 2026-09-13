@@ -56,91 +56,136 @@ La propuesta comprenderá una landing page, una API REST propia, una aplicación
 
 El objetivo del proyecto es reducir la pérdida y fragmentación de información, facilitar el cumplimiento de actividades sanitarias y mejorar el acceso al historial del animal durante el trabajo de campo. La solución deberá mantener coherencia entre plataformas, proteger los datos, comunicar los estados de conexión y funcionar de manera comprensible para usuarios con distintos niveles de experiencia digital.
 
-## 1.2.2. Lean UX Process
+## 1.2.2. Lean UX Process.
 
-Las siguientes declaraciones representan supuestos que deberán comprobarse mediante entrevistas, prototipos, pruebas de usabilidad y evidencia de uso. Los porcentajes y tiempos indicados son criterios preliminares de validación y no resultados alcanzados.
+### 1.2.2.1. Lean UX Problem Statements.
 
-### 1.2.2.1. Lean UX Problem Statements
+**Problem Statement:**
 
-**Problem Statement**
+El estado actual de la gestión ganadera para pequeños y medianos productores se ha centrado principalmente en controles manuales, registros en cuadernos y herramientas digitales improvisadas para administrar la información sanitaria, reproductiva y económica del hato.
 
-Los pequeños y medianos ganaderos y los veterinarios de campo necesitan registrar y consultar información confiable de los animales mientras realizan sus actividades, porque los apuntes dispersos y una solución dependiente de una computadora o de conexión continua dificultan actualizar historiales, recordar tareas sanitarias y coordinar el seguimiento. AniTec abordará esta necesidad mediante aplicaciones móviles simples, accesibles y conectadas con su API, con soporte para almacenamiento local, notificaciones y capacidades del dispositivo.
+Lo que los productos y servicios existentes no abordan es la necesidad de contar con una aplicación para Android sencilla, accesible y adaptada al trabajo de campo, que permita centralizar la información del ganado y mantener el registro de las actividades principales incluso cuando la conexión a Internet sea inestable.
 
-El enfoque inicial estará en los flujos de registro y consulta de animales, historial sanitario, recordatorios y seguimiento veterinario. Consideraremos validado el problema si, durante un piloto de cuatro semanas, al menos el 70 % de los participantes utiliza semanalmente los flujos principales, al menos el 80 % completa las tareas esenciales sin ayuda y el tiempo promedio para encontrar un antecedente sanitario disminuye en un 30 % frente a su método actual.
+Nuestro producto, AniTec, abordará esta brecha mediante una aplicación móvil para Android que permitirá registrar, organizar y consultar la información del ganado desde el teléfono. La solución incluirá recordatorios sanitarios, historiales por animal, reportes y almacenamiento local de información esencial para reducir errores, evitar la pérdida de datos y facilitar la toma de decisiones.
 
-### 1.2.2.2. Lean UX Assumptions
+Nuestro enfoque inicial será pequeños y medianos ganaderos que actualmente dependen de registros manuales o sistemas poco organizados para gestionar su producción, junto con veterinarios que necesitan consultar información sanitaria y dar seguimiento a los animales de sus clientes desde un dispositivo Android.
 
-#### Business Assumptions
+Sabremos que hemos tenido éxito cuando observemos una reducción en el uso de registros manuales, un aumento en la frecuencia y precisión de los registros realizados desde la aplicación, una mejora en el cumplimiento de vacunaciones y tratamientos, y una consulta más rápida de los historiales sanitarios por parte de ganaderos y veterinarios.
 
-1. Creemos que existe una necesidad por una herramienta móvil que centralice la información del ganado y pueda utilizarse durante el trabajo de campo.
-2. Creemos que los primeros usuarios serán pequeños y medianos ganaderos y veterinarios que actualmente usan registros manuales o información digital dispersa.
-3. Creemos que podremos llegar a ellos mediante asociaciones ganaderas, redes de profesionales veterinarios, demostraciones de campo y la landing page.
-4. Creemos que un modelo de planes podrá sostener el servicio si las funciones pagadas ofrecen un beneficio comprobable y el proceso de pago inspira confianza.
-5. Creemos que los principales riesgos de adopción son la conectividad inestable, la poca experiencia digital, el esfuerzo inicial de registrar animales y la preocupación por la privacidad de los datos.
+### 1.2.2.2. Lean UX Assumptions.
 
-#### Business Outcome Assumptions
+### **Business Assumptions:**
 
-1. Esperamos aumentar la activación de usuarios que completan el registro de su primer animal.
-2. Esperamos lograr uso semanal recurrente de los flujos de animales, historial y recordatorios.
-3. Esperamos reducir el abandono causado por errores de conexión o formularios extensos.
-4. Esperamos que ganaderos y veterinarios encuentren suficiente valor para recomendar AniTec.
-5. Esperamos identificar, mediante la validación de planes y pagos, qué capacidades justifican una suscripción.
+1. **Creemos que nuestros usuarios necesitan** un método confiable y eficiente para registrar y supervisar desde el teléfono la salud, productividad y trazabilidad de su ganado.
+2. **Creemos que esta necesidad puede satisfacerse** mediante una aplicación para Android que permita registrar información clave, conservar datos esenciales en el dispositivo, generar alertas y consultar reportes útiles para la toma de decisiones.
+3. **Creemos que nuestros primeros usuarios serán** pequeños y medianos ganaderos que utilizan teléfonos Android, así como veterinarios y técnicos agropecuarios que asesoran directamente en el campo.
+4. **Creemos que lo más importante para los clientes es** contar con un control ordenado y disponible durante sus actividades, evitando pérdidas de información y mejorando la trazabilidad del ganado.
+5. **Creemos que los usuarios también recibirán** alertas sanitarias mediante notificaciones, reportes económicos, acceso al historial de cada animal y contenido educativo dentro de la aplicación.
+6. **Creemos que conseguiremos clientes mediante** alianzas con asociaciones ganaderas, programas de desarrollo rural, recomendaciones de veterinarios y campañas digitales dirigidas a regiones con actividad ganadera.
+7. **Creemos que los ingresos se generarán mediante** un modelo de suscripción con planes ajustados al tamaño del hato y licencias institucionales para asociaciones y entidades del sector agropecuario.
+8. **Creemos que nuestra competencia incluye** aplicaciones genéricas de gestión ganadera, hojas de cálculo y métodos tradicionales de registro manual.
+9. **Creemos que nuestra ventaja competitiva radica en** ofrecer una aplicación Android adaptada al contexto rural, fácil de usar y preparada para conservar el progreso cuando la conectividad sea limitada.
+10. **Creemos que un riesgo importante es** que algunos ganaderos no adopten fácilmente la aplicación por falta de experiencia digital, conectividad inestable o limitaciones de sus dispositivos.
+11. **Creemos que lo mitigaremos mediante** una interfaz intuitiva, tutoriales paso a paso, formularios breves, almacenamiento local y mensajes claros sobre el estado de sincronización.
 
-#### User Assumptions
+### **User Assumptions:**
 
-1. Los ganaderos llevan el teléfono durante parte de sus actividades y pueden usarlo para registrar un evento breve.
-2. Los ganaderos necesitan identificar con rapidez al animal y consultar su historial.
-3. Los veterinarios atienden a más de un cliente y requieren acceso autorizado a información actualizada.
-4. Ambos segmentos tienen distintos niveles de experiencia digital y necesitan lenguaje directo, navegación consistente y ayuda contextual.
-5. Parte de los usuarios trabaja con conectividad intermitente y necesita conservar el progreso hasta recuperar la conexión.
+- **Creemos que** los principales usuarios son pequeños y medianos ganaderos, veterinarios y técnicos agropecuarios que utilizan dispositivos Android durante sus actividades. En etapas posteriores, la aplicación también podría apoyar a asociaciones, cooperativas y entidades vinculadas con la sanidad y trazabilidad del sector.
 
-#### User Outcome and Benefit Assumptions
+- **Creemos que** AniTec ayuda a organizar la información del hato desde el teléfono, evitando la pérdida de datos importantes y la falta de seguimiento de vacunas, partos, tratamientos y movimientos. Para los veterinarios, facilita la consulta de clientes, pacientes e historiales sanitarios durante una atención.
 
-1. Los ganaderos reducirán el tiempo dedicado a buscar información de un animal.
-2. Los recordatorios les ayudarán a cumplir actividades sanitarias pendientes.
-3. El almacenamiento local evitará repetir registros cuando falle la conexión.
-4. Los resúmenes visuales les permitirán detectar pendientes y cambios relevantes.
-5. Los veterinarios podrán brindar continuidad a la atención al consultar antecedentes y registrar eventos autorizados.
+- **Creemos que** los usuarios valoran el registro individual de cada animal, las notificaciones sobre actividades pendientes, los reportes simples, el historial del hato y la posibilidad de conservar registros cuando la conexión sea inestable. También creemos que la facilidad de uso es esencial para su adopción.
 
-#### Feature Assumptions
+- **Creemos que** AniTec se integra en la rutina del ganadero porque puede utilizarse en el campo cada vez que se registra un animal, tratamiento, parto, vacunación o cambio productivo. Los veterinarios pueden utilizarla antes, durante y después de una visita para consultar antecedentes y registrar la atención.
 
-1. Un registro móvil centralizado de animales e historiales reducirá la dispersión de información.
-2. El almacenamiento local de datos esenciales y borradores permitirá continuar tareas con conectividad inestable.
-3. Las notificaciones programadas ayudarán a recordar vacunaciones, tratamientos y controles.
-4. La identificación asistida por cámara, acompañada de búsqueda manual, reducirá el tiempo para localizar un animal.
-5. Los resúmenes visuales facilitarán la interpretación del estado sanitario y productivo.
-6. Un espacio de seguimiento veterinario con permisos explícitos mejorará la coordinación con el ganadero.
-7. Un flujo de planes conectado con un servicio externo de pagos permitirá validar la disposición de pago sin almacenar información bancaria sensible en AniTec.
+- **Creemos que** AniTec debe ofrecer una experiencia Android intuitiva, legible y estable, pensada para usuarios con distintos niveles de experiencia tecnológica. También debe proteger los datos, comunicar los errores de conexión y permitir recuperar el trabajo pendiente.
 
-### 1.2.2.3. Lean UX Hypothesis Statements
+### Feature Assumptions:
 
-**Hypothesis Statement 01: registro móvil centralizado**
+**Feature Assumption 01**
 
-Creemos que lograremos que al menos el 70 % de los participantes registre o consulte información cada semana si los pequeños y medianos ganaderos pueden gestionar animales e historiales mediante flujos móviles breves. Lo comprobaremos durante un piloto de cuatro semanas mediante analítica de uso y entrevistas de seguimiento.
+**Creemos que** una funcionalidad de registro móvil centralizado permitirá a los pequeños y medianos ganaderos gestionar la información sanitaria, reproductiva y económica de sus animales desde un dispositivo Android.
 
-**Hypothesis Statement 02: continuidad con conectividad inestable**
+**Sabremos que esta funcionalidad es valiosa cuando** la mayoría de los usuarios registre y actualice periódicamente la información de sus animales mediante la aplicación.
 
-Creemos que reduciremos en al menos un 50 % las tareas abandonadas por problemas de red si los usuarios pueden guardar localmente datos esenciales o borradores y sincronizarlos después. Lo comprobaremos con pruebas en condiciones de conexión estable, lenta e interrumpida.
+**Feature Assumption 02**
 
-**Hypothesis Statement 03: recordatorios**
+**Creemos que** un sistema de notificaciones para vacunaciones, tratamientos y eventos reproductivos ayudará a los ganaderos a recordar actividades importantes y reducir los descuidos en el manejo del hato.
 
-Creemos que aumentaremos el cumplimiento de actividades sanitarias si los ganaderos reciben notificaciones claras y oportunas. Lo comprobaremos si al menos el 70 % de los recordatorios del piloto se marca como atendido o reprogramado y los participantes declaran que la alerta fue útil.
+**Sabremos que esta funcionalidad es valiosa cuando** los usuarios atiendan o reprogramen los recordatorios recibidos en sus dispositivos Android.
 
-**Hypothesis Statement 04: identificación asistida por cámara**
+**Feature Assumption 03**
 
-Creemos que reduciremos en un 30 % el tiempo necesario para encontrar la ficha de un animal si el usuario puede iniciar su identificación con la cámara y dispone de búsqueda manual cuando esta opción no funciona. Lo comprobaremos comparando tiempos y errores en pruebas de tareas.
+**Creemos que** un módulo de reportes visuales e historial de cada animal facilitará la interpretación de la información y permitirá tomar mejores decisiones productivas, reproductivas y económicas.
 
-**Hypothesis Statement 05: resúmenes visuales**
+**Sabremos que esta funcionalidad es valiosa cuando** los usuarios consulten los reportes y antecedentes antes de realizar acciones relacionadas con la gestión del ganado.
 
-Creemos que mejoraremos la comprensión del estado del hato si los ganaderos reciben indicadores simples y accionables. Lo comprobaremos si al menos el 80 % interpreta correctamente los indicadores principales en pruebas de usabilidad.
+**Feature Assumption 04**
 
-**Hypothesis Statement 06: seguimiento veterinario autorizado**
+**Creemos que** el almacenamiento local de información esencial y borradores permitirá que los usuarios continúen registrando actividades cuando la conexión a Internet sea inestable.
 
-Creemos que reduciremos el tiempo de consulta de antecedentes y mejoraremos la continuidad de la atención si los veterinarios acceden, con autorización, al historial de los animales de sus clientes. Lo comprobaremos si al menos el 80 % completa la consulta y el registro de una atención sin ayuda.
+**Sabremos que esta funcionalidad es valiosa cuando** los usuarios puedan recuperar y sincronizar sus registros sin repetir la información ingresada.
 
-**Hypothesis Statement 07: planes y pago externo**
+**Feature Assumption 05**
 
-Creemos que podremos validar un modelo de suscripción si los usuarios comprenden las diferencias entre planes y completan un flujo seguro con un proveedor externo. Lo comprobaremos mediante pruebas de comprensión y la tasa de finalización del flujo; el umbral comercial se definirá después de entrevistar a los segmentos y evaluar su disposición de pago.
+**Creemos que** un módulo para veterinarios con acceso autorizado a clientes, historiales y eventos sanitarios facilitará el seguimiento de los animales y mejorará la colaboración con los ganaderos.
+
+**Sabremos que esta funcionalidad es valiosa cuando** los veterinarios utilicen la aplicación Android para registrar y consultar la información sanitaria de los animales atendidos.
+
+### 1.2.2.3. Lean UX Hypothesis Statements.
+
+- **Hypothesis Statement 01:**
+
+  **Creemos que lograremos** una mayor adopción y un uso continuo de AniTec
+
+  **Si** los pequeños y medianos ganaderos
+
+  **Obtienen** una forma sencilla de registrar y consultar la información sanitaria, reproductiva y económica de sus animales desde el teléfono
+
+  **Con** una aplicación para Android que centralice y organice la información del hato.
+
+
+- **Hypothesis Statement 02:**
+
+  **Creemos que lograremos** mejorar la gestión sanitaria del hato y reducir actividades olvidadas
+
+  **Si** los pequeños y medianos ganaderos
+
+  **Obtienen** recordatorios oportunos sobre vacunaciones, tratamientos y eventos reproductivos
+
+  **Con** un sistema de alertas y notificaciones integrado en la aplicación Android.
+
+- **Hypothesis Statement 03:**
+
+  **Creemos que lograremos** una mejor toma de decisiones sobre el manejo del ganado
+
+  **Si** los pequeños y medianos ganaderos
+
+  **Obtienen** acceso desde el teléfono a reportes visuales y al historial de cada animal
+
+  **Con** un módulo móvil de reportes e historiales organizado y fácil de interpretar.
+
+
+- **Hypothesis Statement 04:**
+
+  **Creemos que lograremos** reducir la pérdida de información causada por problemas de conectividad
+
+  **Si** los pequeños y medianos ganaderos y veterinarios
+
+  **Obtienen** la posibilidad de conservar el progreso cuando no dispongan de una conexión estable
+
+  **Con** almacenamiento local y sincronización posterior dentro de la aplicación Android.
+
+
+- **Hypothesis Statement 05:**
+
+  **Creemos que lograremos** una mejor colaboración entre ganaderos y veterinarios y un seguimiento sanitario más eficiente
+
+  **Si** los veterinarios
+
+  **Obtienen** acceso autorizado a los clientes asignados, al historial de los animales y al registro de eventos sanitarios
+
+  **Con** un módulo para veterinarios integrado en la aplicación Android de AniTec.
 
 ### 1.2.2.4. Lean UX Canvas.
 
