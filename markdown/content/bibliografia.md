@@ -1,5 +1,9 @@
 # Bibliografía
 
+AgriWebb. (s. f.). _AgriWebb mobile app_. Recuperado el 13 de septiembre de 2026, de https://www.agriwebb.com/mobile-app/
+
+AgriWebb. (s. f.). _Pricing_. Recuperado el 13 de septiembre de 2026, de https://www.agriwebb.com/us/pricing/
+
 Bourgau, P. (2022, marzo 29). _Step by step guide to run your big picture event storming_. Philippe Bourgau's Blog. https://bit.ly/bpes-guide
 
 Evans, E. (2003). _Domain-Driven Design: Tackling Complexity in the Heart of Software_. Addison-Wesley Professional.
@@ -23,6 +27,12 @@ Instituto Nacional de Estadística e Informática. (2014). _Características soc
 Instituto Nacional de Estadística e Informática. (2025a). _Estadísticas de las tecnologías de información y comunicación en los hogares: Enero-febrero-marzo 2025_. https://www.inei.gob.pe/media/MenuRecursivo/boletines/informe-tecnico_tecnologiasdelainformacion_ene_feb_mar2025.pdf
 
 Instituto Nacional de Estadística e Informática. (2026). _Estadísticas de las tecnologías de información y comunicación en los hogares: Octubre-noviembre-diciembre 2025_. https://www.inei.gob.pe/media/MenuRecursivo/boletines/boletin-tic-oct_dic2025.pdf
+
+iLivestock. (s. f.). _Livestock management software for sheep and cattle farmers_. Recuperado el 13 de septiembre de 2026, de https://www.ilivestock.com/software
+
+iLivestock. (s. f.). _iLivestock Argentina: Innovación y tecnología agrícola_. Recuperado el 13 de septiembre de 2026, de https://www.ilivestock.com/es-ar/ar
+
+Livestock Manager. (s. f.). _Livestock Manager: Made by Pila_. Recuperado el 13 de septiembre de 2026, de https://app.livestockfarm.co/
 
 Microsoft. (2026). _ASP.NET Core documentation_. https://learn.microsoft.com/aspnet/core/
 
