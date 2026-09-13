@@ -1,1316 +1,2135 @@
 # 2.4. Requirements specification
-En esta sección se presenta la especificación de requisitos de AniTec, elaborada a partir del análisis de las entrevistas, el proceso de needfinding, los segmentos objetivo identificados y el alcance definido para la solución móvil. Los requisitos consideran las necesidades que serán atendidas mediante la aplicación móvil, el Landing Page y los servicios que conforman el RESTful API. La sección comprende el To-Be Scenario Mapping, los User Stories, el Impact Mapping, y el Product Backlog, donde los requisitos son priorizados y estimados para su desarrollo durante los diferentes Sprints.
 
+Esta sección especifica los requisitos de la solución móvil de AniTec a partir de las entrevistas, los User Personas, el Needfinding y los supuestos Lean UX. El alcance comprende la landing page estática, la API REST propia, una aplicación Android nativa desarrollada con Kotlin y Jetpack Compose, y una aplicación multiplataforma desarrollada con Flutter y Dart. Los requisitos también incluyen almacenamiento local, uso de la cámara, notificaciones, integración con Stripe como servicio externo y un feature de aprendizaje autónomo basado en Google ML Kit Barcode Scanning.
 
+La priorización utiliza MoSCoW: **Must Have** identifica capacidades necesarias para cumplir el alcance o completar los flujos core; **Should Have** corresponde a capacidades importantes que admiten una implementación posterior dentro del proyecto; **Could Have** representa capacidades complementarias cuya inclusión depende de la capacidad disponible. Todo elemento incluido en el Product Backlog deberá implementarse antes de la entrega final o retirarse formalmente del alcance.
+
+### To-Be Scenario Mapping
+
+El To-Be Scenario Mapping representa cómo realizarán sus tareas Jorge Luis Rivas, del segmento ganadero, y Valeria Mendoza, del segmento veterinario, cuando utilicen AniTec. Los escenarios incorporan el uso en campo, la conectividad intermitente, la identificación mediante cámara, los recordatorios y el acceso veterinario autorizado.
+
+#### To-Be Scenario Mapping: pequeño o mediano ganadero
+
+**User Persona:** Jorge Luis Rivas
+**Escenario:** Registro y seguimiento móvil de un animal durante el trabajo de campo.
+
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style="background-color: #70AD47;">FASES</th>
+    <th style="background-color: #70AD47;">Revisar actividades y seleccionar la finca</th>
+    <th style="background-color: #70AD47;">Identificar al animal</th>
+    <th style="background-color: #70AD47;">Registrar información en campo</th>
+    <th style="background-color: #70AD47;">Programar el seguimiento</th>
+    <th style="background-color: #70AD47;">Sincronizar y compartir el historial</th>
+  </tr>
+  <tr>
+    <th style="background-color: #FFE699;">DOING</th>
+    <td style="background-color: #DDEBF7;">Consulta sus actividades pendientes y los animales de la finca desde el teléfono.</td>
+    <td style="background-color: #DDEBF7;">Escanea el código QR del animal o lo busca manualmente.</td>
+    <td style="background-color: #DDEBF7;">Registra una incidencia, control o actualización; si no hay conexión, guarda el trabajo localmente.</td>
+    <td style="background-color: #DDEBF7;">Define la próxima actividad y activa el recordatorio correspondiente.</td>
+    <td style="background-color: #DDEBF7;">Revisa los cambios pendientes y permite que se sincronicen cuando vuelve la conexión.</td>
+  </tr>
+  <tr>
+    <th style="background-color: #FFE699;">THINKING</th>
+    <td style="background-color: #DDEBF7;">“Puedo saber qué debo atender antes de comenzar el recorrido”.</td>
+    <td style="background-color: #DDEBF7;">“Necesito encontrar la ficha correcta sin perder tiempo”.</td>
+    <td style="background-color: #DDEBF7;">“Quiero dejar el registro ahora para no olvidarlo después”.</td>
+    <td style="background-color: #DDEBF7;">“El teléfono debe ayudarme a recordar la siguiente acción”.</td>
+    <td style="background-color: #DDEBF7;">“Quiero confirmar que la información quedó guardada y disponible para el veterinario autorizado”.</td>
+  </tr>
+  <tr>
+    <th style="background-color: #FFE699;">FEELING</th>
+    <td style="background-color: #DDEBF7;">Orientado al tener una lista clara de pendientes.</td>
+    <td style="background-color: #DDEBF7;">Confiado cuando identifica al animal correcto.</td>
+    <td style="background-color: #DDEBF7;">Tranquilo al conservar el trabajo pese a la falta de conexión.</td>
+    <td style="background-color: #DDEBF7;">Aliviado al delegar el recordatorio en la aplicación.</td>
+    <td style="background-color: #DDEBF7;">Seguro cuando distingue los datos sincronizados de los pendientes.</td>
+  </tr>
+</table>
+
+#### To-Be Scenario Mapping: veterinario de campo
+
+**User Persona:** Valeria Mendoza
+**Escenario:** Consulta de antecedentes, atención y seguimiento de un paciente autorizado.
+
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style="background-color: #70AD47;">FASES</th>
+    <th style="background-color: #70AD47;">Seleccionar un cliente autorizado</th>
+    <th style="background-color: #70AD47;">Identificar al paciente</th>
+    <th style="background-color: #70AD47;">Consultar antecedentes</th>
+    <th style="background-color: #70AD47;">Registrar la atención</th>
+    <th style="background-color: #70AD47;">Programar y sincronizar el seguimiento</th>
+  </tr>
+  <tr>
+    <th style="background-color: #FFE699;">DOING</th>
+    <td style="background-color: #DDEBF7;">Consulta los ganaderos que mantienen una autorización vigente.</td>
+    <td style="background-color: #DDEBF7;">Escanea el código QR o busca al animal dentro de los pacientes del cliente.</td>
+    <td style="background-color: #DDEBF7;">Revisa el historial sanitario disponible y su última sincronización.</td>
+    <td style="background-color: #DDEBF7;">Registra diagnóstico, tratamiento y recomendaciones, incluso si la conexión se interrumpe.</td>
+    <td style="background-color: #DDEBF7;">Programa el próximo control y verifica la sincronización de la atención.</td>
+  </tr>
+  <tr>
+    <th style="background-color: #FFE699;">THINKING</th>
+    <td style="background-color: #DDEBF7;">“Debo consultar únicamente los clientes que me autorizaron”.</td>
+    <td style="background-color: #DDEBF7;">“Necesito confirmar que atenderé al paciente correcto”.</td>
+    <td style="background-color: #DDEBF7;">“Los antecedentes me ayudarán a sustentar la decisión clínica”.</td>
+    <td style="background-color: #DDEBF7;">“La atención debe quedar registrada con mi autoría”.</td>
+    <td style="background-color: #DDEBF7;">“El ganadero debe poder consultar las indicaciones y la próxima fecha”.</td>
+  </tr>
+  <tr>
+    <th style="background-color: #FFE699;">FEELING</th>
+    <td style="background-color: #DDEBF7;">Seguro al reconocer el alcance de su autorización.</td>
+    <td style="background-color: #DDEBF7;">Confiado al verificar la identidad del animal.</td>
+    <td style="background-color: #DDEBF7;">Preparado al disponer de antecedentes ordenados.</td>
+    <td style="background-color: #DDEBF7;">Responsable al dejar un registro trazable.</td>
+    <td style="background-color: #DDEBF7;">Satisfecho al mantener continuidad entre visitas.</td>
+  </tr>
+</table>
+
+> **Placeholder de captura:** Insertar aquí la captura de los To-Be Scenario Mapping elaborados en la herramienta seleccionada.
+
+> **Placeholder de enlace público:** Agregar aquí la URL pública de los To-Be Scenario Mapping.
 
 ## 2.4.1. User Stories
 
-En esta sección se presentan las Epics, User Stories y Technical Stories definidas para AniTec. Cada historia describe una necesidad funcional o técnica de la solución e incluye sus respectivos Acceptance Criteria siguiendo el formato Given-When-Then. A continuación, se detallan las historias identificadas y su relación con las Epics correspondientes.
+Las Epics y las historias siguientes describen resultados esperados para la landing page, las aplicaciones móviles y los servicios. Las User Stories evitan decisiones de interfaz en sus criterios de aceptación; las Technical Stories describen capacidades sin interacción directa y utilizan el rol Developer. Cada historia incluye escenarios comprobables en presente y tercera persona mediante Given-When-Then.
+
+### Epics
+
+<table>
+  <thead><tr><th>Epic ID</th><th>Title</th><th>Description</th></tr></thead>
+  <tbody>
+    <tr><td>EP-001</td><td>Landing Page</td><td>Comunica la propuesta de valor, los segmentos atendidos y los canales de acceso a las aplicaciones móviles de AniTec.</td></tr>
+    <tr><td>EP-002</td><td>Identity and Access Management</td><td>Gestiona el registro, la autenticación, la sesión y la autorización de ganaderos y veterinarios.</td></tr>
+    <tr><td>EP-003</td><td>Farm and Livestock Management</td><td>Permite organizar fincas y registrar, consultar, actualizar y archivar animales desde las aplicaciones móviles.</td></tr>
+    <tr><td>EP-004</td><td>Sanitary Management</td><td>Centraliza incidencias, diagnósticos, tratamientos, controles e historiales sanitarios de los animales.</td></tr>
+    <tr><td>EP-005</td><td>Veterinary Collaboration</td><td>Gestiona la relación autorizada entre ganaderos y veterinarios para el seguimiento de clientes y pacientes.</td></tr>
+    <tr><td>EP-006</td><td>Activities and Notifications</td><td>Organiza actividades ganaderas y sanitarias y genera recordatorios en los dispositivos móviles.</td></tr>
+    <tr><td>EP-007</td><td>Offline Storage and Synchronization</td><td>Mantiene información esencial y trabajo pendiente en el dispositivo y lo sincroniza cuando vuelve la conexión.</td></tr>
+    <tr><td>EP-008</td><td>Animal Identification and Autonomous Feature</td><td>Identifica animales mediante códigos QR y la cámara, incorporando una tecnología investigada de forma autónoma.</td></tr>
+    <tr><td>EP-009</td><td>Analytics and Reports</td><td>Presenta indicadores sanitarios y operativos relevantes para ganaderos y veterinarios.</td></tr>
+    <tr><td>EP-010</td><td>Financial and Subscription Management</td><td>Permite consultar finanzas, planes, pagos y el estado de la suscripción mediante un servicio externo.</td></tr>
+    <tr><td>EP-011</td><td>Accessibility, Internationalization and Resilience</td><td>Asegura una experiencia comprensible, accesible, internacionalizada y tolerante a errores.</td></tr>
+    <tr><td>EP-012</td><td>Mobile Platforms and Services</td><td>Agrupa la arquitectura y las integraciones técnicas de Android nativo, Flutter, API REST, almacenamiento y distribución.</td></tr>
+  </tbody>
+</table>
+
+### User Stories
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-001</td>
+    <td>Visitante</td>
+    <td>Must Have</td>
+    <td>EP-001</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Comprender la propuesta de valor de AniTec</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero conocer el problema que resuelve AniTec y sus beneficios para determinar si la solución se relaciona con mis necesidades.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Propuesta disponible</b><br><b>Given</b> el contenido público de AniTec está publicado<br><b>When</b> el visitante accede a la dirección de la landing page<br><b>Then</b> el sistema presenta la propuesta de valor y los beneficios principales para la gestión ganadera<br><br><b>Scenario 2: Contenido verificable</b><br><b>Given</b> la startup todavía no dispone de resultados comerciales validados<br><b>When</b> el visitante consulta cifras o testimonios<br><b>Then</b> el sistema diferencia las metas y testimonios reales de cualquier información todavía no validada</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-002</td>
+    <td>Visitante</td>
+    <td>Must Have</td>
+    <td>EP-001</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Conocer las soluciones para cada segmento</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero conocer cómo AniTec ayuda a ganaderos y veterinarios para identificar la aplicación móvil adecuada para mi perfil.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Información para ganaderos</b><br><b>Given</b> el visitante pertenece al segmento ganadero<br><b>When</b> el visitante consulta la información dirigida a su segmento<br><b>Then</b> el sistema explica las capacidades móviles destinadas a la gestión del hato<br><br><b>Scenario 2: Información para veterinarios</b><br><b>Given</b> el visitante pertenece al segmento veterinario<br><b>When</b> el visitante consulta la información dirigida a su segmento<br><b>Then</b> el sistema explica las capacidades de seguimiento de clientes y pacientes</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-003</td>
+    <td>Visitante</td>
+    <td>Should Have</td>
+    <td>EP-001</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Acceder a una landing page adaptable e internacionalizada</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como visitante, quiero consultar la landing page desde distintos dispositivos y en un idioma disponible para comprender la información y acceder a los canales de contacto o descarga.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Adaptación al dispositivo</b><br><b>Given</b> el visitante utiliza un teléfono, una tableta o una computadora<br><b>When</b> el visitante accede a la landing page<br><b>Then</b> el contenido conserva su legibilidad y permite completar las acciones principales<br><br><b>Scenario 2: Idioma disponible</b><br><b>Given</b> la landing page ofrece más de un idioma<br><b>When</b> el visitante selecciona un idioma<br><b>Then</b> el sistema muestra el contenido traducido y conserva la preferencia durante la navegación</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-004</td>
+    <td>Ganadero o veterinario</td>
+    <td>Must Have</td>
+    <td>EP-002</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Registrar una cuenta según el rol</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero o veterinario, quiero crear una cuenta con mi rol para acceder a las capacidades que corresponden a mi actividad.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Registro válido</b><br><b>Given</b> la persona proporciona datos válidos y selecciona un rol permitido<br><b>When</b> la persona solicita crear su cuenta<br><b>Then</b> el sistema registra la cuenta y asocia el rol seleccionado<br><br><b>Scenario 2: Datos duplicados o inválidos</b><br><b>Given</b> ya existe una cuenta con el mismo correo o los datos incumplen una regla<br><b>When</b> la persona solicita crear su cuenta<br><b>Then</b> el sistema rechaza el registro e informa la causa sin exponer información sensible</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-005</td>
+    <td>Usuario registrado</td>
+    <td>Must Have</td>
+    <td>EP-002</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Iniciar sesión</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario registrado, quiero autenticarme con mis credenciales para consultar de manera segura mi información en AniTec.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Credenciales válidas</b><br><b>Given</b> existe una cuenta activa con las credenciales proporcionadas<br><b>When</b> el usuario solicita iniciar sesión<br><b>Then</b> el sistema autentica al usuario y habilita las capacidades de su rol<br><br><b>Scenario 2: Credenciales inválidas</b><br><b>Given</b> las credenciales no corresponden a una cuenta activa<br><b>When</b> el usuario solicita iniciar sesión<br><b>Then</b> el sistema rechaza el acceso mediante un mensaje que no revela qué dato es incorrecto</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-006</td>
+    <td>Usuario autenticado</td>
+    <td>Must Have</td>
+    <td>EP-002</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Mantener y finalizar la sesión móvil</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero conservar mi sesión de manera segura y poder finalizarla para evitar accesos no autorizados a mis datos.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Sesión vigente</b><br><b>Given</b> el usuario tiene una sesión válida almacenada de forma segura<br><b>When</b> el usuario vuelve a abrir la aplicación<br><b>Then</b> el sistema recupera la sesión y valida su vigencia antes de entregar información protegida<br><br><b>Scenario 2: Cierre de sesión</b><br><b>Given</b> el usuario mantiene una sesión activa<br><b>When</b> el usuario solicita finalizarla<br><b>Then</b> el sistema elimina las credenciales locales y bloquea el acceso a la información protegida</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-007</td>
+    <td>Usuario autenticado</td>
+    <td>Must Have</td>
+    <td>EP-002</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Acceder únicamente a información autorizada</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero acceder solamente a los datos permitidos para mi rol y relaciones vigentes para proteger la información ganadera y clínica.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Acceso permitido</b><br><b>Given</b> el usuario posee el rol y la relación requeridos por una operación<br><b>When</b> el usuario solicita consultar o modificar información<br><b>Then</b> el sistema procesa la operación dentro del alcance autorizado<br><br><b>Scenario 2: Acceso denegado</b><br><b>Given</b> el usuario no posee el rol o la relación requeridos<br><b>When</b> el usuario solicita consultar o modificar información protegida<br><b>Then</b> el sistema rechaza la operación y registra el resultado de autorización</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-008</td>
+    <td>Ganadero</td>
+    <td>Must Have</td>
+    <td>EP-003</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar las fincas registradas</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero consultar mis fincas para organizar los animales según su unidad productiva.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Fincas existentes</b><br><b>Given</b> el ganadero tiene una o más fincas registradas<br><b>When</b> el ganadero consulta sus fincas<br><b>Then</b> el sistema devuelve únicamente las fincas que le pertenecen<br><br><b>Scenario 2: Sin fincas</b><br><b>Given</b> el ganadero todavía no registra fincas<br><b>When</b> el ganadero consulta sus fincas<br><b>Then</b> el sistema informa que no existen unidades productivas registradas</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-009</td>
+    <td>Ganadero</td>
+    <td>Must Have</td>
+    <td>EP-003</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Registrar y actualizar una finca</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero registrar y mantener los datos de una finca para asociar correctamente mis animales y actividades.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Registro válido</b><br><b>Given</b> el ganadero proporciona los datos obligatorios de una nueva finca<br><b>When</b> el ganadero solicita registrarla<br><b>Then</b> el sistema crea la finca y la deja disponible para asociar animales<br><br><b>Scenario 2: Actualización válida</b><br><b>Given</b> existe una finca perteneciente al ganadero<br><b>When</b> el ganadero modifica información permitida<br><b>Then</b> el sistema conserva los cambios y la relación con sus animales</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-010</td>
+    <td>Ganadero</td>
+    <td>Must Have</td>
+    <td>EP-003</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar y buscar animales</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero consultar y buscar los animales de mis fincas para localizar rápidamente el registro que necesito.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Consulta autorizada</b><br><b>Given</b> el ganadero tiene animales registrados<br><b>When</b> el ganadero consulta sus animales<br><b>Then</b> el sistema devuelve únicamente animales asociados a sus fincas<br><br><b>Scenario 2: Búsqueda</b><br><b>Given</b> existen animales que coinciden con un código, nombre, especie o raza<br><b>When</b> el ganadero realiza una búsqueda<br><b>Then</b> el sistema devuelve los animales coincidentes</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-011</td>
+    <td>Ganadero</td>
+    <td>Must Have</td>
+    <td>EP-003</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Registrar un animal</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero registrar un animal en una de mis fincas para iniciar su trazabilidad sanitaria y productiva.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Registro válido</b><br><b>Given</b> el ganadero tiene una finca y proporciona los datos obligatorios del animal<br><b>When</b> el ganadero solicita registrar el animal<br><b>Then</b> el sistema crea un identificador único y asocia el animal con la finca<br><br><b>Scenario 2: Código duplicado</b><br><b>Given</b> ya existe un animal del ganadero con el mismo código de identificación<br><b>When</b> el ganadero solicita registrar otro animal con ese código<br><b>Then</b> el sistema rechaza la operación e informa la duplicidad</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-012</td>
+    <td>Ganadero</td>
+    <td>Must Have</td>
+    <td>EP-003</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Actualizar o archivar un animal</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero actualizar o archivar un animal para mantener vigente el inventario sin perder su historial.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Actualización válida</b><br><b>Given</b> el animal pertenece al ganadero<br><b>When</b> el ganadero modifica datos permitidos<br><b>Then</b> el sistema conserva los cambios y mantiene el historial asociado<br><br><b>Scenario 2: Archivado</b><br><b>Given</b> el animal ya no forma parte del hato activo<br><b>When</b> el ganadero solicita archivarlo<br><b>Then</b> el sistema lo excluye del inventario activo y conserva su historial para consulta</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-013</td>
+    <td>Usuario autorizado</td>
+    <td>Must Have</td>
+    <td>EP-003</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar el detalle de un animal</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autorizado, quiero consultar la ficha de un animal para conocer sus datos e historial relevante antes de realizar una acción.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Detalle autorizado</b><br><b>Given</b> el usuario está autorizado para consultar el animal<br><b>When</b> el usuario solicita su detalle<br><b>Then</b> el sistema devuelve los datos generales y las referencias a su historial<br><br><b>Scenario 2: Animal no autorizado</b><br><b>Given</b> el usuario no tiene relación autorizada con el animal<br><b>When</b> el usuario solicita su detalle<br><b>Then</b> el sistema rechaza la consulta sin revelar información del animal</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-014</td>
+    <td>Usuario autorizado</td>
+    <td>Must Have</td>
+    <td>EP-004</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar eventos sanitarios</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autorizado, quiero consultar los eventos sanitarios de los animales a mi alcance para conocer su situación de salud.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Eventos existentes</b><br><b>Given</b> existen eventos sanitarios de animales autorizados<br><b>When</b> el usuario consulta los eventos<br><b>Then</b> el sistema devuelve la fecha, el tipo, el animal y el responsable de cada registro<br><br><b>Scenario 2: Sin eventos</b><br><b>Given</b> no existen eventos sanitarios dentro del alcance autorizado<br><b>When</b> el usuario realiza la consulta<br><b>Then</b> el sistema informa que no existen registros disponibles</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-015</td>
+    <td>Ganadero</td>
+    <td>Must Have</td>
+    <td>EP-004</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Registrar una incidencia sanitaria</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero registrar una incidencia observada en uno de mis animales para dejar evidencia y solicitar seguimiento oportuno.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Incidencia válida</b><br><b>Given</b> el animal pertenece al ganadero y los datos obligatorios están completos<br><b>When</b> el ganadero registra la incidencia<br><b>Then</b> el sistema incorpora el evento al historial del animal<br><br><b>Scenario 2: Animal ajeno</b><br><b>Given</b> el animal no pertenece al ganadero<br><b>When</b> el ganadero intenta registrar una incidencia<br><b>Then</b> el sistema rechaza la operación</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-016</td>
+    <td>Veterinario</td>
+    <td>Must Have</td>
+    <td>EP-004</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Registrar diagnóstico y tratamiento</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como veterinario, quiero registrar el diagnóstico, tratamiento y recomendaciones de un paciente autorizado para documentar la atención realizada.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Atención autorizada</b><br><b>Given</b> el paciente pertenece a un cliente que autorizó al veterinario<br><b>When</b> el veterinario registra una atención con datos válidos<br><b>Then</b> el sistema incorpora el registro al historial e identifica al profesional responsable<br><br><b>Scenario 2: Atención no autorizada</b><br><b>Given</b> el veterinario no tiene acceso vigente al paciente<br><b>When</b> el veterinario intenta registrar una atención<br><b>Then</b> el sistema rechaza la operación</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-017</td>
+    <td>Usuario autorizado</td>
+    <td>Must Have</td>
+    <td>EP-004</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar el historial sanitario de un animal</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autorizado, quiero consultar cronológicamente el historial sanitario de un animal para tomar decisiones con base en sus antecedentes.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Historial disponible</b><br><b>Given</b> el animal tiene eventos sanitarios y el usuario posee acceso<br><b>When</b> el usuario consulta el historial<br><b>Then</b> el sistema devuelve los eventos ordenados y con su responsable<br><br><b>Scenario 2: Conectividad interrumpida</b><br><b>Given</b> existe una copia local vigente del historial autorizado<br><b>When</b> el usuario consulta el historial sin conexión<br><b>Then</b> el sistema entrega la información disponible e indica cuándo fue actualizada</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-018</td>
+    <td>Autor de un registro sanitario</td>
+    <td>Should Have</td>
+    <td>EP-004</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Corregir un registro sanitario con trazabilidad</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como autor de un registro sanitario, quiero corregir información incorrecta dejando constancia del cambio para preservar la confiabilidad del historial.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Corrección permitida</b><br><b>Given</b> el usuario es autor del registro y proporciona el motivo<br><b>When</b> el usuario solicita corregir información permitida<br><b>Then</b> el sistema guarda la nueva versión e identifica la fecha, el autor y el motivo<br><br><b>Scenario 2: Eliminación no permitida</b><br><b>Given</b> el registro clínico ya forma parte del historial<br><b>When</b> el usuario intenta eliminarlo definitivamente<br><b>Then</b> el sistema conserva el registro y ofrece el mecanismo de corrección o anulación trazable</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-019</td>
+    <td>Veterinario</td>
+    <td>Should Have</td>
+    <td>EP-004</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Programar un control sanitario posterior</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como veterinario, quiero programar el próximo control de un paciente para dar continuidad al tratamiento indicado.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Control programado</b><br><b>Given</b> el veterinario registra una atención autorizada<br><b>When</b> el veterinario establece una fecha futura de control<br><b>Then</b> el sistema crea la actividad asociada al paciente y al cliente<br><br><b>Scenario 2: Fecha inválida</b><br><b>Given</b> la fecha propuesta no es posterior a la atención<br><b>When</b> el veterinario solicita programar el control<br><b>Then</b> el sistema rechaza la programación e informa la regla incumplida</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-020</td>
+    <td>Ganadero</td>
+    <td>Must Have</td>
+    <td>EP-005</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Recibir una solicitud de seguimiento veterinario</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero recibir solicitudes de veterinarios para decidir quién puede consultar y registrar información sanitaria de mis animales.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Solicitud válida</b><br><b>Given</b> un veterinario registrado solicita relacionarse con el ganadero<br><b>When</b> el sistema procesa la solicitud<br><b>Then</b> el ganadero recibe la solicitud con la identidad del profesional y su estado pendiente<br><br><b>Scenario 2: Solicitud duplicada</b><br><b>Given</b> ya existe una solicitud pendiente o una relación vigente<br><b>When</b> el mismo veterinario envía otra solicitud<br><b>Then</b> el sistema evita crear una relación duplicada</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-021</td>
+    <td>Ganadero</td>
+    <td>Must Have</td>
+    <td>EP-005</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Aceptar o rechazar acceso veterinario</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero aceptar o rechazar una solicitud veterinaria para controlar el acceso a la información de mis animales.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Solicitud aceptada</b><br><b>Given</b> existe una solicitud pendiente<br><b>When</b> el ganadero la acepta<br><b>Then</b> el sistema activa la relación y autoriza al veterinario dentro del alcance definido<br><br><b>Scenario 2: Solicitud rechazada</b><br><b>Given</b> existe una solicitud pendiente<br><b>When</b> el ganadero la rechaza<br><b>Then</b> el sistema cierra la solicitud sin conceder acceso</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-022</td>
+    <td>Ganadero</td>
+    <td>Must Have</td>
+    <td>EP-005</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Revocar el acceso de un veterinario</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero revocar una autorización veterinaria para impedir futuras consultas o registros sobre mis animales.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Revocación válida</b><br><b>Given</b> existe una relación veterinaria vigente<br><b>When</b> el ganadero revoca la autorización<br><b>Then</b> el sistema impide nuevas operaciones del veterinario y conserva la autoría de registros anteriores<br><br><b>Scenario 2: Relación inexistente</b><br><b>Given</b> no existe una relación vigente con el veterinario<br><b>When</b> el ganadero solicita revocarla<br><b>Then</b> el sistema informa que no existe acceso activo</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-023</td>
+    <td>Veterinario</td>
+    <td>Must Have</td>
+    <td>EP-005</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar clientes y pacientes autorizados</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como veterinario, quiero consultar mis clientes y sus pacientes autorizados para organizar las atenciones de campo.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Clientes autorizados</b><br><b>Given</b> el veterinario tiene relaciones vigentes<br><b>When</b> el veterinario consulta sus clientes<br><b>Then</b> el sistema devuelve únicamente los ganaderos y pacientes autorizados<br><br><b>Scenario 2: Sin clientes</b><br><b>Given</b> el veterinario no tiene relaciones vigentes<br><b>When</b> el veterinario consulta sus clientes<br><b>Then</b> el sistema informa que no existen clientes autorizados</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-024</td>
+    <td>Veterinario</td>
+    <td>Must Have</td>
+    <td>EP-005</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar antecedentes de un paciente autorizado</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como veterinario, quiero consultar los antecedentes de un paciente autorizado para sustentar el diagnóstico y seguimiento.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Acceso vigente</b><br><b>Given</b> el ganadero mantiene autorización vigente<br><b>When</b> el veterinario consulta los antecedentes del paciente<br><b>Then</b> el sistema devuelve la información sanitaria permitida<br><br><b>Scenario 2: Acceso revocado</b><br><b>Given</b> el ganadero revocó la autorización<br><b>When</b> el veterinario vuelve a solicitar los antecedentes<br><b>Then</b> el sistema rechaza la consulta</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-025</td>
+    <td>Usuario autenticado</td>
+    <td>Must Have</td>
+    <td>EP-006</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar actividades programadas</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero consultar mis actividades ganaderas o sanitarias para organizar el trabajo pendiente.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Actividades existentes</b><br><b>Given</b> el usuario tiene actividades dentro de un periodo<br><b>When</b> el usuario consulta su programación<br><b>Then</b> el sistema devuelve las actividades ordenadas por fecha y prioridad<br><br><b>Scenario 2: Actividades por rol</b><br><b>Given</b> existen actividades de distintos propietarios o profesionales<br><b>When</b> el usuario realiza la consulta<br><b>Then</b> el sistema devuelve solamente las actividades dentro de su alcance</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-026</td>
+    <td>Usuario autenticado</td>
+    <td>Must Have</td>
+    <td>EP-006</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Gestionar una actividad o recordatorio</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero crear, actualizar o cancelar una actividad para mantener vigente mi planificación.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Actividad válida</b><br><b>Given</b> el usuario proporciona una fecha y datos válidos<br><b>When</b> el usuario guarda una actividad<br><b>Then</b> el sistema registra la actividad y programa el recordatorio cuando corresponde<br><br><b>Scenario 2: Cancelación</b><br><b>Given</b> existe una actividad pendiente perteneciente al usuario<br><b>When</b> el usuario solicita cancelarla<br><b>Then</b> el sistema cambia su estado y evita recordatorios posteriores</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-027</td>
+    <td>Usuario autenticado</td>
+    <td>Must Have</td>
+    <td>EP-006</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Recibir una notificación de actividad</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero recibir notificaciones de actividades próximas para reducir olvidos de controles y tareas importantes.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Permiso concedido</b><br><b>Given</b> existe una actividad pendiente y el dispositivo permite notificaciones<br><b>When</b> llega el momento configurado<br><b>Then</b> el sistema entrega una notificación relacionada con la actividad<br><br><b>Scenario 2: Permiso denegado</b><br><b>Given</b> el dispositivo no permite notificaciones<br><b>When</b> se aproxima una actividad<br><b>Then</b> el sistema conserva la actividad para consulta y comunica que las notificaciones están deshabilitadas</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-028</td>
+    <td>Usuario autenticado</td>
+    <td>Should Have</td>
+    <td>EP-006</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Atender o reprogramar una actividad</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero marcar una actividad como atendida o reprogramarla para mantener actualizado su seguimiento.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Actividad atendida</b><br><b>Given</b> existe una actividad pendiente<br><b>When</b> el usuario registra que fue atendida<br><b>Then</b> el sistema actualiza su estado y conserva la fecha de atención<br><br><b>Scenario 2: Actividad reprogramada</b><br><b>Given</b> existe una actividad pendiente<br><b>When</b> el usuario establece una nueva fecha válida<br><b>Then</b> el sistema actualiza la programación y reemplaza el recordatorio anterior</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-029</td>
+    <td>Usuario autenticado</td>
+    <td>Must Have</td>
+    <td>EP-007</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar información esencial sin conexión</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero consultar información esencial previamente sincronizada cuando no tengo conexión para continuar mi trabajo en campo.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Datos locales disponibles</b><br><b>Given</b> el dispositivo conserva datos autorizados y no existe conexión<br><b>When</b> el usuario consulta fincas, animales, actividades o historiales disponibles<br><b>Then</b> el sistema entrega la copia local e informa su última sincronización<br><br><b>Scenario 2: Datos locales inexistentes</b><br><b>Given</b> no existe conexión ni una copia local de la información solicitada<br><b>When</b> el usuario realiza la consulta<br><b>Then</b> el sistema informa que los datos requieren una sincronización inicial</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-030</td>
+    <td>Usuario autenticado</td>
+    <td>Must Have</td>
+    <td>EP-007</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Guardar trabajo pendiente sin conexión</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero guardar localmente un registro pendiente cuando no tengo conexión para evitar perder la información ingresada.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Guardado local</b><br><b>Given</b> la conexión no está disponible y los datos cumplen las reglas locales<br><b>When</b> el usuario guarda un animal, incidencia, atención o actividad<br><b>Then</b> el sistema conserva la operación como pendiente de sincronización<br><br><b>Scenario 2: Datos inválidos</b><br><b>Given</b> los datos incumplen una regla que puede validarse localmente<br><b>When</b> el usuario intenta guardar la operación<br><b>Then</b> el sistema no la incorpora a la cola y explica la corrección necesaria</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-031</td>
+    <td>Usuario autenticado</td>
+    <td>Must Have</td>
+    <td>EP-007</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Sincronizar operaciones pendientes</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero sincronizar el trabajo pendiente al recuperar la conexión para mantener consistentes el dispositivo y el servidor.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Sincronización exitosa</b><br><b>Given</b> existen operaciones locales pendientes y la conexión vuelve a estar disponible<br><b>When</b> el sistema inicia la sincronización<br><b>Then</b> el servidor procesa cada operación una sola vez y el dispositivo actualiza su estado<br><br><b>Scenario 2: Sincronización parcial</b><br><b>Given</b> una operación es rechazada y otras son válidas<br><b>When</b> el sistema procesa la cola<br><b>Then</b> el sistema conserva como pendiente solo la operación rechazada e informa su causa</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-032</td>
+    <td>Usuario autenticado</td>
+    <td>Should Have</td>
+    <td>EP-007</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Resolver errores o conflictos de sincronización</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero conocer y resolver los conflictos de sincronización para evitar sobrescribir información válida.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Conflicto detectado</b><br><b>Given</b> el registro local y el remoto fueron modificados después de la última sincronización<br><b>When</b> el sistema intenta sincronizarlos<br><b>Then</b> el sistema conserva ambas referencias y solicita aplicar una regla de resolución válida<br><br><b>Scenario 2: Reintento seguro</b><br><b>Given</b> una operación falló por una causa temporal<br><b>When</b> el usuario o el sistema reintenta la sincronización<br><b>Then</b> el servidor evita duplicar la operación ya procesada</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-033</td>
+    <td>Usuario autorizado</td>
+    <td>Must Have</td>
+    <td>EP-008</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Identificar un animal mediante código QR</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autorizado, quiero escanear el código QR de un animal con la cámara para abrir rápidamente su ficha.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Código reconocido</b><br><b>Given</b> el dispositivo concede acceso a la cámara y el código pertenece a un animal autorizado<br><b>When</b> el usuario realiza el escaneo<br><b>Then</b> el sistema identifica al animal y recupera su información disponible<br><br><b>Scenario 2: Código no autorizado</b><br><b>Given</b> el código corresponde a un animal fuera del alcance del usuario<br><b>When</b> el usuario realiza el escaneo<br><b>Then</b> el sistema rechaza la consulta sin revelar datos del animal</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-034</td>
+    <td>Usuario autorizado</td>
+    <td>Must Have</td>
+    <td>EP-008</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Identificar un animal sin utilizar la cámara</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autorizado, quiero buscar manualmente un animal cuando la cámara o el código QR no estén disponibles para continuar la tarea.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Permiso de cámara denegado</b><br><b>Given</b> el dispositivo no concede acceso a la cámara<br><b>When</b> el usuario intenta iniciar la identificación<br><b>Then</b> el sistema mantiene disponible la búsqueda por código o nombre<br><br><b>Scenario 2: Código ilegible</b><br><b>Given</b> la cámara no reconoce un código válido<br><b>When</b> el usuario concluye el intento de escaneo<br><b>Then</b> el sistema informa el resultado y permite identificar el animal manualmente</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-035</td>
+    <td>Ganadero</td>
+    <td>Should Have</td>
+    <td>EP-009</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar indicadores del hato</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero consultar indicadores de mis animales, actividades y eventos sanitarios para priorizar decisiones de manejo.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Indicadores con datos</b><br><b>Given</b> el ganadero tiene información registrada<br><b>When</b> el ganadero consulta sus indicadores<br><b>Then</b> el sistema calcula resultados únicamente con datos de sus fincas y comunica el periodo considerado<br><br><b>Scenario 2: Indicadores sin datos suficientes</b><br><b>Given</b> no existen datos suficientes para calcular un indicador<br><b>When</b> el ganadero realiza la consulta<br><b>Then</b> el sistema informa la falta de información sin presentar resultados engañosos</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-036</td>
+    <td>Veterinario</td>
+    <td>Should Have</td>
+    <td>EP-009</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar indicadores sanitarios de clientes</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como veterinario, quiero consultar indicadores sanitarios de mis clientes autorizados para priorizar pacientes y controles pendientes.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Indicadores autorizados</b><br><b>Given</b> el veterinario tiene clientes vigentes con información sanitaria<br><b>When</b> el veterinario consulta los indicadores<br><b>Then</b> el sistema calcula resultados únicamente con los datos autorizados<br><br><b>Scenario 2: Autorización revocada</b><br><b>Given</b> un cliente deja de autorizar al veterinario<br><b>When</b> el veterinario actualiza la consulta<br><b>Then</b> el sistema excluye los datos de ese cliente</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-037</td>
+    <td>Ganadero</td>
+    <td>Could Have</td>
+    <td>EP-010</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Registrar y consultar movimientos financieros</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero registrar ingresos y egresos y consultar mi balance para conocer el resultado económico de mi operación.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Movimiento válido</b><br><b>Given</b> el ganadero proporciona tipo, monto, categoría y fecha válidos<br><b>When</b> el ganadero registra el movimiento<br><b>Then</b> el sistema incorpora el movimiento y actualiza el balance correspondiente<br><br><b>Scenario 2: Consulta por periodo</b><br><b>Given</b> existen movimientos del ganadero en distintos periodos<br><b>When</b> el ganadero consulta un periodo<br><b>Then</b> el sistema calcula ingresos, egresos y balance únicamente con sus movimientos</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-038</td>
+    <td>Usuario autenticado</td>
+    <td>Must Have</td>
+    <td>EP-010</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar planes de suscripción</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero comparar los planes vigentes para seleccionar una alternativa acorde con mi operación.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Planes disponibles</b><br><b>Given</b> existen planes activos definidos por AniTec<br><b>When</b> el usuario consulta las alternativas<br><b>Then</b> el sistema devuelve precio, moneda, periodicidad, límites y capacidades de cada plan<br><br><b>Scenario 2: Precio por validar</b><br><b>Given</b> la startup todavía no aprueba un precio comercial<br><b>When</b> el usuario consulta un entorno de validación<br><b>Then</b> el sistema identifica claramente la información como propuesta o prueba</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-039</td>
+    <td>Usuario autenticado</td>
+    <td>Must Have</td>
+    <td>EP-010</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Iniciar un pago mediante un proveedor externo</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero iniciar el pago de un plan mediante un proveedor externo para contratar una suscripción sin entregar datos bancarios directamente a AniTec.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Sesión de pago creada</b><br><b>Given</b> el usuario selecciona un plan activo<br><b>When</b> el usuario solicita continuar con el pago<br><b>Then</b> el sistema crea una sesión asociada al usuario y transfiere el proceso al proveedor externo<br><br><b>Scenario 2: Solicitud repetida</b><br><b>Given</b> ya existe una operación en proceso para la misma referencia<br><b>When</b> el usuario repite la solicitud<br><b>Then</b> el sistema evita registrar cobros duplicados</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-040</td>
+    <td>Usuario autenticado</td>
+    <td>Must Have</td>
+    <td>EP-010</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Consultar el resultado del pago y la suscripción</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario autenticado, quiero consultar el resultado de mis pagos y el estado de mi suscripción para conocer las capacidades disponibles en mi cuenta.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Pago confirmado</b><br><b>Given</b> el proveedor externo confirma una operación válida<br><b>When</b> el sistema procesa la confirmación<br><b>Then</b> el sistema activa o actualiza la suscripción una sola vez y conserva la referencia del pago<br><br><b>Scenario 2: Pago cancelado o fallido</b><br><b>Given</b> el proveedor externo no confirma la operación<br><b>When</b> el usuario vuelve a AniTec<br><b>Then</b> el sistema conserva la suscripción anterior e informa el estado sin registrar un pago exitoso</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-041</td>
+    <td>Usuario</td>
+    <td>Should Have</td>
+    <td>EP-011</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Cambiar el idioma de la aplicación</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario, quiero elegir un idioma disponible para comprender la información y realizar mis tareas con términos consistentes.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Cambio de idioma</b><br><b>Given</b> la aplicación dispone de las traducciones requeridas<br><b>When</b> el usuario selecciona otro idioma<br><b>Then</b> el sistema actualiza los textos y formatos localizables<br><br><b>Scenario 2: Preferencia conservada</b><br><b>Given</b> el usuario eligió un idioma<br><b>When</b> el usuario vuelve a abrir la aplicación<br><b>Then</b> el sistema aplica la preferencia almacenada</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-042</td>
+    <td>Usuario</td>
+    <td>Must Have</td>
+    <td>EP-011</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Utilizar la aplicación con necesidades de accesibilidad</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario con necesidades de accesibilidad, quiero percibir y comprender el contenido para completar las tareas principales de manera autónoma.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Escalado de texto</b><br><b>Given</b> el dispositivo utiliza un tamaño de fuente mayor<br><b>When</b> el usuario accede a una tarea principal<br><b>Then</b> el contenido mantiene su legibilidad y no oculta información necesaria<br><br><b>Scenario 2: Tecnología de asistencia</b><br><b>Given</b> el usuario utiliza un lector de pantalla<br><b>When</b> el usuario recorre la información y las acciones principales<br><b>Then</b> el sistema comunica nombres, estados y propósitos comprensibles</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>US-043</td>
+    <td>Usuario</td>
+    <td>Must Have</td>
+    <td>EP-011</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Comprender errores y estados de conectividad</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario, quiero recibir información clara ante errores o cambios de conectividad para decidir cómo continuar sin perder mi trabajo.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Error recuperable</b><br><b>Given</b> una operación falla por una causa temporal<br><b>When</b> el sistema recibe el error<br><b>Then</b> el sistema conserva el trabajo posible y comunica una acción de recuperación<br><br><b>Scenario 2: Cambio de conectividad</b><br><b>Given</b> el dispositivo pierde o recupera la conexión<br><b>When</b> el sistema detecta el cambio<br><b>Then</b> el sistema actualiza el estado de trabajo local y sincronización sin afirmar que una operación terminó antes de confirmarla</td>
+  </tr>
+</table>
+
+### Technical Stories
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-001</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-012</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Configurar la aplicación Android nativa</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero configurar el proyecto Android con Kotlin y Jetpack Compose para implementar una aplicación nativa mantenible y ejecutable en dispositivos físicos.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Proyecto reproducible</b><br><b>Given</b> el repositorio contiene la configuración documentada<br><b>When</b> el Developer compila el proyecto en un ambiente limpio<br><b>Then</b> el sistema genera una aplicación instalable sin depender de archivos locales no versionados<br><br><b>Scenario 2: Dispositivo físico</b><br><b>Given</b> existe una compilación de desarrollo válida<br><b>When</b> el Developer instala y ejecuta la aplicación en un dispositivo Android compatible<br><b>Then</b> las funciones base inician sin errores bloqueantes</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-002</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-012</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Configurar la aplicación multiplataforma con Flutter</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero configurar un proyecto Flutter con Dart para entregar una experiencia multiplataforma coherente con la aplicación Android nativa.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Proyecto reproducible</b><br><b>Given</b> el repositorio contiene las versiones y dependencias documentadas<br><b>When</b> el Developer ejecuta la compilación desde un ambiente limpio<br><b>Then</b> el sistema genera una aplicación para las plataformas objetivo definidas<br><br><b>Scenario 2: Consistencia funcional</b><br><b>Given</b> existe un flujo core implementado en Android nativo<br><b>When</b> el Developer implementa el mismo flujo en Flutter<br><b>Then</b> ambas aplicaciones aplican las mismas reglas de negocio y contrato de servicio</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-003</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-012</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Definir la arquitectura móvil por capas y bounded contexts</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero definir una arquitectura móvil alineada con Domain-Driven Design para separar presentación, aplicación, dominio e infraestructura.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Límites definidos</b><br><b>Given</b> se conocen los bounded contexts y dependencias permitidas<br><b>When</b> el equipo documenta la arquitectura móvil<br><b>Then</b> cada módulo identifica sus responsabilidades y evita dependencias contrarias a la dirección acordada<br><br><b>Scenario 2: Regla de dominio aislada</b><br><b>Given</b> existe una regla que no depende del sistema operativo<br><b>When</b> el Developer implementa y prueba la regla<br><b>Then</b> la regla se ejecuta sin requerir componentes de interfaz o infraestructura</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-004</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-012</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Integrar las aplicaciones con la API REST interna</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero implementar clientes HTTP autenticados en Android y Flutter para consumir de forma consistente la API REST de AniTec.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Respuesta exitosa</b><br><b>Given</b> la API devuelve una respuesta válida<br><b>When</b> la aplicación solicita un recurso<br><b>Then</b> el cliente transforma la respuesta al modelo correspondiente sin exponer el formato de transporte al dominio<br><br><b>Scenario 2: Respuesta de error</b><br><b>Given</b> la API devuelve un código de error o no responde<br><b>When</b> la aplicación procesa la solicitud<br><b>Then</b> el cliente clasifica el resultado para que la aplicación pueda informar o reintentar de forma segura</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-005</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-007</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Implementar persistencia local segura en Android</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero implementar persistencia local con Room para almacenar información esencial y operaciones pendientes en la aplicación Android.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Persistencia</b><br><b>Given</b> la aplicación recibe información autorizada<br><b>When</b> el repositorio local la almacena<br><b>Then</b> los datos permanecen disponibles después de reiniciar la aplicación<br><br><b>Scenario 2: Protección y limpieza</b><br><b>Given</b> el usuario finaliza la sesión o cambia de cuenta<br><b>When</b> la aplicación procesa el cambio<br><b>Then</b> los datos protegidos que no deben compartirse se eliminan o aíslan según la política definida</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-006</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-007</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Implementar persistencia local en Flutter</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero implementar una base local compatible con Flutter para ofrecer el mismo comportamiento offline en la aplicación multiplataforma.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Esquema equivalente</b><br><b>Given</b> Android y Flutter comparten las reglas de datos offline<br><b>When</b> el Developer configura el almacenamiento local de Flutter<br><b>Then</b> los registros esenciales y operaciones pendientes conservan los campos necesarios para sincronizarse<br><br><b>Scenario 2: Migración local</b><br><b>Given</b> existe una versión anterior del esquema en el dispositivo<br><b>When</b> la aplicación se actualiza<br><b>Then</b> la migración conserva los datos compatibles sin bloquear el inicio</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-007</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-007</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Implementar sincronización idempotente</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero implementar una cola de sincronización idempotente para enviar operaciones pendientes sin duplicarlas ni perderlas.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Operación identificada</b><br><b>Given</b> una operación local pendiente posee un identificador único<br><b>When</b> el cliente la envía más de una vez por un fallo temporal<br><b>Then</b> el servidor produce un único efecto y devuelve el resultado correspondiente<br><br><b>Scenario 2: Conflicto</b><br><b>Given</b> el servidor detecta una versión incompatible<br><b>When</b> el cliente intenta sincronizar<br><b>Then</b> el sistema conserva el conflicto y aplica la estrategia documentada antes de reemplazar información</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-008</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-002</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Proteger credenciales y datos de sesión</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero almacenar tokens mediante mecanismos seguros de cada plataforma para reducir la exposición de credenciales.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Almacenamiento seguro</b><br><b>Given</b> el servidor entrega un token válido<br><b>When</b> la aplicación conserva la sesión<br><b>Then</b> el token se almacena mediante el mecanismo seguro definido para la plataforma<br><br><b>Scenario 2: Token vencido</b><br><b>Given</b> el servidor rechaza un token por expiración<br><b>When</b> el cliente recibe la respuesta<br><b>Then</b> la aplicación invalida la sesión o ejecuta la renovación autorizada sin reutilizar credenciales inválidas</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-009</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-006</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Implementar notificaciones móviles</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero integrar notificaciones locales o push para entregar recordatorios sanitarios respetando los permisos del sistema operativo.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Programación</b><br><b>Given</b> existe una actividad válida y el permiso correspondiente<br><b>When</b> la aplicación programa el recordatorio<br><b>Then</b> el sistema operativo recibe una notificación con una referencia válida a la actividad<br><br><b>Scenario 2: Permiso ausente</b><br><b>Given</b> el permiso no fue concedido<br><b>When</b> la aplicación procesa una actividad con recordatorio<br><b>Then</b> la actividad permanece registrada y la aplicación informa que no puede entregar la notificación</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-010</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-008</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Integrar identificación QR mediante Google ML Kit</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero integrar Google ML Kit Barcode Scanning y una alternativa compatible en Flutter para identificar animales mediante códigos QR usando la cámara.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Código compatible</b><br><b>Given</b> la cámara recibe un código QR válido<br><b>When</b> la biblioteca procesa la imagen<br><b>Then</b> la aplicación obtiene el identificador sin almacenar imágenes innecesarias<br><br><b>Scenario 2: Lectura fallida</b><br><b>Given</b> la biblioteca no reconoce un código válido<br><b>When</b> finaliza el intento configurado<br><b>Then</b> la aplicación devuelve un resultado controlado y conserva la alternativa manual</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-011</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-010</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Integrar el checkout externo de Stripe</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero integrar el checkout de Stripe mediante el backend y enlaces seguros para procesar pagos de prueba desde las aplicaciones móviles.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Creación de checkout</b><br><b>Given</b> el cliente solicita pagar un plan activo<br><b>When</b> el backend valida la solicitud<br><b>Then</b> el servicio crea una sesión de Stripe y devuelve una URL permitida<br><br><b>Scenario 2: Confirmación idempotente</b><br><b>Given</b> Stripe informa el resultado mediante el mecanismo configurado<br><b>When</b> el backend procesa el evento<br><b>Then</b> el pago y la suscripción se actualizan una sola vez</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-012</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-011</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Aplicar internacionalización y accesibilidad móvil</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero centralizar recursos traducibles y aplicar prácticas de accesibilidad para mantener una experiencia coherente en Android y Flutter.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Recursos traducibles</b><br><b>Given</b> existen idiomas soportados<br><b>When</b> el Developer agrega o modifica contenido<br><b>Then</b> los textos visibles provienen de recursos localizables y no quedan cadenas funcionales sin traducir<br><br><b>Scenario 2: Verificación accesible</b><br><b>Given</b> existen flujos core implementados<br><b>When</b> el equipo ejecuta verificaciones con escalado de texto y lector de pantalla<br><b>Then</b> los problemas encontrados se documentan y los bloqueantes se corrigen</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-013</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-012</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Adaptar y documentar los servicios backend para móviles</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero adaptar los endpoints existentes y documentarlos con OpenAPI para soportar los flujos móviles y las reglas de autorización.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Contrato documentado</b><br><b>Given</b> un endpoint forma parte del alcance móvil<br><b>When</b> el Developer publica la documentación OpenAPI<br><b>Then</b> el contrato describe autenticación, parámetros, respuestas exitosas y errores<br><br><b>Scenario 2: Autorización</b><br><b>Given</b> una solicitud autenticada intenta acceder a un recurso ajeno<br><b>When</b> la API evalúa el rol y la relación<br><b>Then</b> la API rechaza la operación mediante el código HTTP correspondiente</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-014</td>
+    <td>Developer</td>
+    <td>Should Have</td>
+    <td>EP-012</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Automatizar pruebas de los flujos móviles críticos</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero automatizar pruebas unitarias y de integración para detectar regresiones en dominio, persistencia, sincronización y consumo de servicios.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Pruebas de dominio</b><br><b>Given</b> existen reglas críticas de autorización, estado o sincronización<br><b>When</b> el equipo ejecuta la suite<br><b>Then</b> las pruebas verifican resultados exitosos y alternativos de manera determinista<br><br><b>Scenario 2: Integración controlada</b><br><b>Given</b> existen repositorios locales y clientes de servicio<br><b>When</b> el equipo ejecuta pruebas con dobles o ambientes controlados<br><b>Then</b> la suite comprueba persistencia, mapeo y tratamiento de errores</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>TS-015</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-012</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Configurar compilación y distribución de versiones móviles</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero automatizar compilaciones firmadas y distribuir versiones mediante Firebase App Distribution para probarlas en dispositivos físicos.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Compilación versionada</b><br><b>Given</b> el repositorio alcanza un hito de entrega<br><b>When</b> el pipeline genera la versión<br><b>Then</b> el artefacto incluye un número de versión trazable y una configuración válida<br><br><b>Scenario 2: Distribución</b><br><b>Given</b> existe un artefacto aprobado para pruebas<br><b>When</b> el equipo publica la versión en Firebase App Distribution<br><b>Then</b> los evaluadores autorizados pueden instalarla y se registra la versión distribuida</td>
+  </tr>
+</table>
+
+### Spike Stories
+
+La siguiente Spike Story sustenta el feature de aprendizaje autónomo. Su resultado deberá documentar la investigación y determinar la viabilidad antes de cerrar la implementación definitiva.
+
+<table>
+  <tr>
+    <th>Story ID</th>
+    <th>User</th>
+    <th>Priority</th>
+    <th>Epic</th>
+  </tr>
+  <tr>
+    <td>SP-001</td>
+    <td>Developer</td>
+    <td>Must Have</td>
+    <td>EP-008</td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td colspan="3">Investigar identificación de animales con Google ML Kit</td>
+  </tr>
+  <tr>
+    <th colspan="4">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como Developer, quiero investigar y prototipar Google ML Kit Barcode Scanning en Android y una integración compatible en Flutter para determinar su viabilidad como feature de aprendizaje autónomo e identificación mediante cámara.</td>
+  </tr>
+  <tr>
+    <th colspan="4">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Investigación documentada</b><br><b>Given</b> el equipo definió el caso de identificación mediante QR<br><b>When</b> el Developer compara compatibilidad, permisos, operación offline, licencias, privacidad y esfuerzo en ambas plataformas<br><b>Then</b> el equipo documenta fuentes, alternativas, riesgos y criterios de selección<br><br><b>Scenario 2: Prototipo y conclusión</b><br><b>Given</b> existen códigos de prueba y al menos un dispositivo físico<br><b>When</b> el equipo prueba el prototipo bajo distintas condiciones de iluminación y códigos inválidos<br><b>Then</b> el equipo registra resultados, limita el tratamiento de imágenes y concluye si la tecnología es viable o qué alternativa debe utilizarse</td>
+  </tr>
+</table>
+
+### Matriz de coherencia con el alcance móvil y los requisitos del curso
+
+La siguiente matriz hace trazable cada condición tecnológica obligatoria con una decisión verificable y con los elementos del backlog que permiten implementarla. Ambas aplicaciones consumen el mismo dominio y la misma API REST, pero conservan implementaciones y pruebas propias para demostrar el desarrollo Android nativo y el desarrollo multiplataforma.
 
 <table>
   <thead>
     <tr>
-      <th>Epic</th>
-      <th>Titulo</th>
-      <th>Descripcion</th>
-      <th>Criterios de Aceptacion</th>
-      <th>Relacionado con</th>
+      <th>Aspecto requerido</th>
+      <th>Decisión para AniTec</th>
+      <th>Evidencia esperada</th>
+      <th>Historias relacionadas</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><b>EP-001</b></td>
-      <td>Gestion de acceso, sesion y roles</td>
-      <td>Esta epica agrupa las funcionalidades necesarias para que los usuarios ingresen a AniTec con una identidad determinada y accedan a una experiencia diferenciada segun su rol de ganadero o veterinario.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>EP-002</b></td>
-      <td>Dashboard del ganadero</td>
-      <td>Esta epica agrupa las funcionalidades del panel principal del ganadero, donde se resumen sus fincas, animales, alertas sanitarias, actividades y datos financieros.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>EP-003</b></td>
-      <td>Gestion de fincas del ganadero</td>
-      <td>Esta epica agrupa las funcionalidades para registrar, consultar, editar y eliminar las fincas o unidades productivas del ganadero.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>EP-004</b></td>
-      <td>Gestion de animales</td>
-      <td>Esta epica agrupa las funcionalidades para registrar y administrar animales de distintos tipos de ganado, como bovinos, ovinos, caprinos, porcinos, aves, patos, pollos, cuyes y otros.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>EP-005</b></td>
-      <td>Gestion sanitaria y clinica</td>
-      <td>Esta epica agrupa las funcionalidades para registrar enfermedades, incidencias, diagnosticos, tratamientos, recetas y seguimientos sanitarios de los animales.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>EP-006</b></td>
-      <td>Gestion profesional del veterinario</td>
-      <td>Esta epica agrupa las funcionalidades para que el veterinario administre su cartera de clientes ganaderos, consulte sus fincas, revise pacientes y mantenga seguimiento sanitario.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>EP-007</b></td>
-      <td>Calendario, actividades y recordatorios</td>
-      <td>Esta epica agrupa las funcionalidades para registrar y consultar actividades productivas, sanitarias, financieras, reproductivas y visitas veterinarias.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>EP-008</b></td>
-      <td>Gestion financiera del ganadero</td>
-      <td>Esta epica agrupa las funcionalidades financieras para que el ganadero registre ingresos, egresos y revise su balance.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>EP-009</b></td>
-      <td>Analiticas y estadisticas</td>
-      <td>Esta epica agrupa las funcionalidades para visualizar metricas y graficos estadisticos basados en animales, fincas, clientes y registros sanitarios visibles para cada rol.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>EP-010</b></td>
-      <td>Navegacion y experiencia compartida</td>
-      <td>Esta epica agrupa funcionalidades generales de navegacion, estructura visual, estados vacios y paginas compartidas por los usuarios.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>EP-011</b></td>
-      <td>Landing page publica de AniTec</td>
-      <td>Esta epica agrupa las historias de usuario de la landing page publica de AniTec. Estas historias estan al final porque corresponden a la experiencia informativa y comercial previa al uso de la aplicacion web.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>EP-012</b></td>
-      <td>Dispositivos IoT y metricas</td>
-      <td>Esta epica agrupa las funcionalidades para consultar dispositivos asociados a fincas o animales, asi como sus lecturas y metricas recientes.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>EP-013</b></td>
-      <td>Planes, suscripciones y pagos</td>
-      <td>Esta epica agrupa las funcionalidades para visualizar planes de suscripcion, consultar el plan activo, revisar pagos y realizar pagos simulados dentro de la plataforma.</td>
-      <td>No aplica</td>
-      <td>No aplica</td>
-    </tr>
-    <tr>
-      <td><b>US-001</b></td>
-      <td>Visualizar resumen operativo del ganadero</td>
-      <td>Como ganadero, quiero ver un resumen de mis animales, fincas, alertas y actividades para conocer rapidamente el estado de mi operacion.</td>
-      <td><b>Visualizacion de metricas del ganadero.</b><br>Given el ganadero tiene animales, fincas, actividades y registros sanitarios<br>When ingresa a su dashboard<br>Then el sistema muestra metricas calculadas con sus propios datos<br><br><b>Ganadero sin datos registrados.</b><br>Given el ganadero no tiene animales ni fincas registradas<br>When ingresa a su dashboard<br>Then el sistema muestra indicadores en cero o mensajes de estado vacio</td>
-      <td>EP-002</td>
-    </tr>
-    <tr>
-      <td><b>US-002</b></td>
-      <td>Filtrar resumen por finca</td>
-      <td>Como ganadero, quiero filtrar mi dashboard por finca para revisar el estado de una unidad productiva especifica.</td>
-      <td><b>Seleccion de una finca.</b><br>Given el ganadero tiene mas de una finca registrada<br>When selecciona una finca especifica<br>Then el sistema actualiza los indicadores y listas usando solo los animales de esa finca<br><br><b>Seleccion de todas las fincas.</b><br>Given el ganadero esta revisando una finca especifica<br>When selecciona la opcion de todas las fincas<br>Then el sistema vuelve a mostrar la informacion agregada de todas sus fincas</td>
-      <td>EP-002</td>
-    </tr>
-    <tr>
-      <td><b>US-003</b></td>
-      <td>Acceder a acciones rapidas del ganadero</td>
-      <td>Como ganadero, quiero acceder rapidamente al registro de animales, incidencias y actividades para reducir pasos en tareas frecuentes.</td>
-      <td><b>Registrar animal desde el dashboard.</b><br>Given el ganadero esta en su dashboard<br>When selecciona la accion de registrar animal<br>Then el sistema lo dirige al formulario de nuevo animal<br><br><b>Reportar incidencia desde el dashboard.</b><br>Given el ganadero detecta una enfermedad o problema sanitario<br>When selecciona la accion de reportar incidencia<br>Then el sistema lo dirige al formulario de evento sanitario<br><br><b>Programar visita desde el dashboard.</b><br>Given el ganadero necesita una visita o actividad futura<br>When selecciona la accion de programar visita<br>Then el sistema lo dirige al formulario de actividad</td>
-      <td>EP-002</td>
-    </tr>
-    <tr>
-      <td><b>US-004</b></td>
-      <td>Visualizar listado de fincas en cartas</td>
-      <td>Como ganadero, quiero ver mis fincas en cartas con informacion relevante para identificar facilmente cada unidad productiva.</td>
-      <td><b>Fincas existentes.</b><br>Given el ganadero tiene fincas registradas<br>When ingresa al apartado de fincas<br>Then el sistema muestra cada finca en una carta<br>And muestra nombre, ubicacion, tipo principal y cantidad de animales<br><br><b>Sin fincas registradas.</b><br>Given el ganadero no tiene fincas registradas<br>When ingresa al apartado de fincas<br>Then el sistema muestra un mensaje indicando que no hay fincas</td>
-      <td>EP-003</td>
-    </tr>
-    <tr>
-      <td><b>US-005</b></td>
-      <td>Registrar nueva finca</td>
-      <td>Como ganadero, quiero registrar una nueva finca para organizar mis animales por ubicacion o unidad productiva.</td>
-      <td><b>Registro con datos validos.</b><br>Given el ganadero se encuentra en el formulario de nueva finca<br>When ingresa nombre, ubicacion y tipo principal validos<br>Then el sistema registra la finca<br>And la muestra en el listado de fincas<br><br><b>Registro incompleto.</b><br>Given el ganadero deja campos requeridos vacios<br>When intenta guardar la finca<br>Then el sistema no completa el registro<br>And solicita completar la informacion requerida</td>
-      <td>EP-003</td>
-    </tr>
-    <tr>
-      <td><b>US-006</b></td>
-      <td>Editar informacion de una finca</td>
-      <td>Como ganadero, quiero editar los datos de una finca para mantener actualizada su informacion.</td>
-      <td><b>Edicion exitosa.</b><br>Given existe una finca registrada<br>When el ganadero modifica su nombre, ubicacion o tipo principal<br>Then el sistema guarda los cambios<br>And muestra la informacion actualizada<br><br><b>Finca inexistente.</b><br>Given la finca solicitada no existe<br>When el ganadero intenta editarla<br>Then el sistema redirige al listado de fincas</td>
-      <td>EP-003</td>
-    </tr>
-    <tr>
-      <td><b>US-007</b></td>
-      <td>Eliminar finca</td>
-      <td>Como ganadero, quiero eliminar una finca cuando ya no forma parte de mi operacion.</td>
-      <td><b>Eliminacion confirmada.</b><br>Given existe una finca registrada<br>When el ganadero confirma su eliminacion<br>Then el sistema elimina la finca del listado<br><br><b>Eliminacion cancelada.</b><br>Given el ganadero abre la confirmacion de eliminacion<br>When cancela la accion<br>Then el sistema conserva la finca sin cambios</td>
-      <td>EP-003</td>
-    </tr>
-    <tr>
-      <td><b>US-008</b></td>
-      <td>Visualizar animales en cartas</td>
-      <td>Como ganadero, quiero ver mis animales en cartas para revisar rapidamente la informacion principal de cada uno.</td>
-      <td><b>Animales existentes.</b><br>Given el ganadero tiene animales registrados<br>When ingresa al apartado de animales<br>Then el sistema muestra una carta por animal<br>And muestra codigo, nombre, especie, raza, sexo, peso, estado y finca<br><br><b>Sin animales registrados.</b><br>Given el ganadero no tiene animales registrados<br>When ingresa al apartado de animales<br>Then el sistema muestra un mensaje de lista vacia</td>
-      <td>EP-004</td>
-    </tr>
-    <tr>
-      <td><b>US-009</b></td>
-      <td>Buscar animales por texto</td>
-      <td>Como ganadero, quiero buscar animales por nombre, codigo, especie o raza para encontrarlos rapidamente cuando tenga muchos registros.</td>
-      <td><b>Busqueda con coincidencias.</b><br>Given existen animales registrados<br>When el ganadero escribe un termino de busqueda que coincide con uno o mas animales<br>Then el sistema muestra solo las cartas coincidentes<br><br><b>Busqueda sin coincidencias.</b><br>Given existen animales registrados<br>When el ganadero escribe un termino sin coincidencias<br>Then el sistema muestra un mensaje indicando que no se encontraron animales</td>
-      <td>EP-004</td>
-    </tr>
-    <tr>
-      <td><b>US-010</b></td>
-      <td>Registrar animal</td>
-      <td>Como ganadero, quiero registrar un animal indicando su especie y raza para mantener trazabilidad de mi ganado.</td>
-      <td><b>Registro con datos validos.</b><br>Given el ganadero tiene al menos una finca registrada<br>When ingresa codigo, nombre, especie, raza, sexo, fecha de nacimiento, peso, estado y finca<br>Then el sistema registra el animal<br>And lo muestra en el listado correspondiente<br><br><b>Registro sin finca.</b><br>Given el ganadero no selecciona una finca<br>When intenta guardar el animal<br>Then el sistema solicita asociar el animal a una finca</td>
-      <td>EP-004</td>
-    </tr>
-    <tr>
-      <td><b>US-011</b></td>
-      <td>Editar animal</td>
-      <td>Como ganadero, quiero editar los datos de un animal para actualizar su estado, peso o informacion general.</td>
-      <td><b>Edicion exitosa.</b><br>Given existe un animal registrado<br>When el ganadero modifica sus datos y guarda<br>Then el sistema actualiza el animal<br>And muestra la informacion actualizada en su carta<br><br><b>Animal inexistente.</b><br>Given el animal no existe<br>When el ganadero intenta abrir su formulario de edicion<br>Then el sistema redirige al listado de animales</td>
-      <td>EP-004</td>
-    </tr>
-    <tr>
-      <td><b>US-012</b></td>
-      <td>Eliminar animal</td>
-      <td>Como ganadero, quiero eliminar un animal cuando ya no pertenece a mi hato o registro productivo.</td>
-      <td><b>Eliminacion confirmada.</b><br>Given existe un animal registrado<br>When el ganadero confirma la eliminacion<br>Then el sistema elimina el animal del listado<br><br><b>Eliminacion cancelada.</b><br>Given el ganadero abre la confirmacion de eliminacion<br>When cancela la accion<br>Then el animal permanece registrado</td>
-      <td>EP-004</td>
-    </tr>
-    <tr>
-      <td><b>US-013</b></td>
-      <td>Consultar animales segun rol</td>
-      <td>Como usuario, quiero que el sistema muestre animales segun mi rol para proteger la informacion de cada ganadero.</td>
-      <td><b>Consulta como ganadero.</b><br>Given el usuario tiene rol de ganadero<br>When ingresa al apartado de animales<br>Then el sistema muestra solo los animales de sus fincas<br><br><b>Consulta como veterinario.</b><br>Given el usuario tiene rol de veterinario<br>When ingresa al apartado de animales o pacientes<br>Then el sistema muestra solo los animales de sus clientes asignados</td>
-      <td>EP-004</td>
-    </tr>
-    <tr>
-      <td><b>US-014</b></td>
-      <td>Visualizar registros sanitarios en cartas</td>
-      <td>Como usuario autorizado, quiero ver los registros sanitarios en cartas para revisar de forma clara la informacion clinica de los animales.</td>
-      <td><b>Registros existentes.</b><br>Given existen registros sanitarios asociados a animales visibles para el usuario<br>When ingresa a gestion sanitaria<br>Then el sistema muestra cada registro en una carta<br>And presenta animal, tipo, fecha, descripcion, veterinario y proxima fecha<br><br><b>Sin registros sanitarios.</b><br>Given no existen registros sanitarios visibles para el usuario<br>When ingresa a gestion sanitaria<br>Then el sistema muestra un mensaje de estado vacio</td>
-      <td>EP-005</td>
-    </tr>
-    <tr>
-      <td><b>US-015</b></td>
-      <td>Registrar incidencia sanitaria como ganadero</td>
-      <td>Como ganadero, quiero registrar enfermedades o incidencias basicas de mis animales para dejar constancia y facilitar el seguimiento veterinario.</td>
-      <td><b>Registro de incidencia valido.</b><br>Given el ganadero selecciona un animal propio<br>When ingresa tipo, fecha, descripcion y datos de seguimiento<br>Then el sistema registra el evento sanitario para ese animal<br><br><b>Animal no disponible.</b><br>Given el animal pertenece a otro ganadero<br>When el ganadero intenta registrarle una incidencia<br>Then el sistema no lo muestra como opcion disponible</td>
-      <td>EP-005</td>
-    </tr>
-    <tr>
-      <td><b>US-016</b></td>
-      <td>Registrar diagnostico y tratamiento como veterinario</td>
-      <td>Como veterinario, quiero registrar diagnostico, tratamiento, receta y seguimiento para documentar la atencion clinica de un animal.</td>
-      <td><b>Registro clinico completo.</b><br>Given el veterinario atiende a un animal de un cliente asignado<br>When ingresa diagnostico, tratamiento, receta, seguimiento y proxima fecha<br>Then el sistema guarda el registro sanitario<br>And lo asocia al animal correspondiente<br><br><b>Animal fuera de cartera.</b><br>Given un animal pertenece a un ganadero no asignado al veterinario<br>When el veterinario intenta registrar atencion sanitaria<br>Then el sistema no muestra ese animal como opcion</td>
-      <td>EP-005</td>
-    </tr>
-    <tr>
-      <td><b>US-017</b></td>
-      <td>Editar registro sanitario</td>
-      <td>Como usuario autorizado, quiero editar un registro sanitario para corregir o complementar informacion clinica.</td>
-      <td><b>Edicion exitosa.</b><br>Given existe un registro sanitario visible para el usuario<br>When el usuario actualiza los datos y guarda<br>Then el sistema muestra el registro actualizado<br><br><b>Registro inexistente.</b><br>Given el registro sanitario no existe<br>When el usuario intenta editarlo<br>Then el sistema redirige a la lista de gestion sanitaria</td>
-      <td>EP-005</td>
-    </tr>
-    <tr>
-      <td><b>US-018</b></td>
-      <td>Eliminar registro sanitario</td>
-      <td>Como usuario autorizado, quiero eliminar un registro sanitario incorrecto para mantener limpio el historial.</td>
-      <td><b>Eliminacion confirmada.</b><br>Given existe un registro sanitario<br>When el usuario confirma la eliminacion<br>Then el sistema elimina el registro del listado<br><br><b>Eliminacion cancelada.</b><br>Given el usuario abre la confirmacion de eliminacion<br>When cancela la accion<br>Then el registro permanece sin cambios</td>
-      <td>EP-005</td>
-    </tr>
-    <tr>
-      <td><b>US-019</b></td>
-      <td>Consultar historial clinico por animal</td>
-      <td>Como veterinario, quiero consultar el historial clinico de un animal para tomar mejores decisiones durante una atencion.</td>
-      <td><b>Animal con historial.</b><br>Given el animal tiene registros sanitarios previos<br>When el veterinario abre su historial clinico<br>Then el sistema muestra todos los registros asociados al animal<br><br><b>Animal sin historial.</b><br>Given el animal no tiene registros sanitarios previos<br>When el veterinario abre su historial clinico<br>Then el sistema muestra un estado vacio o sin registros</td>
-      <td>EP-005</td>
-    </tr>
-    <tr>
-      <td><b>US-020</b></td>
-      <td>Visualizar dashboard profesional del veterinario</td>
-      <td>Como veterinario, quiero ver un dashboard profesional para revisar clientes, pacientes activos, registros clinicos y seguimientos pendientes.</td>
-      <td><b>Veterinario con clientes asignados.</b><br>Given el veterinario tiene ganaderos asignados<br>When ingresa a su dashboard<br>Then el sistema muestra clientes activos, pacientes, registros clinicos y seguimientos<br><br><b>Veterinario sin clientes asignados.</b><br>Given el veterinario no tiene ganaderos asignados<br>When ingresa a su dashboard<br>Then el sistema muestra metricas en cero y permite agregar clientes</td>
-      <td>EP-006</td>
-    </tr>
-    <tr>
-      <td><b>US-021</b></td>
-      <td>Seleccionar cliente en el dashboard veterinario</td>
-      <td>Como veterinario, quiero seleccionar un cliente ganadero para revisar sus fincas y animales antes de realizar acciones clinicas.</td>
-      <td><b>Seleccion de cliente valido.</b><br>Given el veterinario tiene clientes asignados<br>When selecciona un cliente en el panel<br>Then el sistema muestra las fincas de ese cliente<br>And muestra la cantidad de animales por finca<br><br><b>Cliente sin fincas.</b><br>Given el cliente seleccionado no tiene fincas registradas<br>When el veterinario lo selecciona<br>Then el sistema muestra un mensaje indicando que no hay fincas</td>
-      <td>EP-006</td>
-    </tr>
-    <tr>
-      <td><b>US-022</b></td>
-      <td>Visualizar clientes asignados en cartas</td>
-      <td>Como veterinario, quiero ver mis clientes en cartas con informacion completa para entender rapidamente la situacion de cada ganadero.</td>
-      <td><b>Clientes existentes.</b><br>Given el veterinario tiene clientes asignados<br>When ingresa a clientes asignados<br>Then el sistema muestra cartas con nombre, fincas, ubicacion, animales, especies, registros sanitarios y alertas<br><br><b>Sin clientes.</b><br>Given el veterinario no tiene clientes asignados<br>When ingresa a clientes asignados<br>Then el sistema muestra un mensaje indicando que no tiene clientes</td>
-      <td>EP-006</td>
-    </tr>
-    <tr>
-      <td><b>US-023</b></td>
-      <td>Agregar cliente ganadero a la cartera del veterinario</td>
-      <td>Como veterinario, quiero buscar ganaderos registrados y enviar una peticion para agregarlos a mi cartera de clientes.</td>
-      <td><b>Busqueda de ganadero.</b><br>Given existen ganaderos registrados en la aplicacion<br>When el veterinario ingresa al panel de agregar cliente<br>Then el sistema muestra ganaderos en cartas con nombre, fincas y avatar circular<br><br><b>Envio de peticion.</b><br>Given el veterinario encuentra un ganadero disponible<br>When selecciona enviar peticion<br>Then el sistema registra la relacion veterinario-cliente en el backend<br>And lo muestra como cliente agregado<br><br><b>Busqueda sin resultados.</b><br>Given el veterinario escribe un nombre sin coincidencias<br>When el sistema filtra los ganaderos<br>Then muestra un mensaje indicando que no se encontraron ganaderos</td>
-      <td>EP-006</td>
-    </tr>
-    <tr>
-      <td><b>US-024</b></td>
-      <td>Eliminar cliente de la cartera del veterinario</td>
-      <td>Como veterinario, quiero eliminar un cliente de mi lista para dejar de visualizar sus datos ganaderos y sanitarios.</td>
-      <td><b>Eliminacion de relacion veterinario-cliente.</b><br>Given el veterinario tiene un cliente asignado<br>When selecciona eliminar cliente<br>Then el sistema elimina la relacion entre veterinario y ganadero<br>And el cliente deja de aparecer en su lista<br><br><b>Datos del ganadero se conservan.</b><br>Given el veterinario elimina un cliente de su cartera<br>When el sistema procesa la accion<br>Then las fincas, animales y registros del ganadero se conservan en la aplicacion</td>
-      <td>EP-006</td>
-    </tr>
-    <tr>
-      <td><b>US-025</b></td>
-      <td>Consultar pacientes por ganadero</td>
-      <td>Como veterinario, quiero seleccionar un cliente y ver sus animales para atenderlos de forma organizada.</td>
-      <td><b>Cliente con animales.</b><br>Given el veterinario selecciona un cliente con animales registrados<br>When ingresa al apartado de pacientes<br>Then el sistema muestra las cartas de animales de ese cliente<br><br><b>Filtrado por finca.</b><br>Given el cliente tiene mas de una finca<br>When el veterinario selecciona una finca especifica<br>Then el sistema muestra solo los animales de esa finca</td>
-      <td>EP-006</td>
-    </tr>
-    <tr>
-      <td><b>US-026</b></td>
-      <td>Acceder al historial de un paciente</td>
-      <td>Como veterinario, quiero abrir el historial clinico desde la carta del paciente para revisar sus atenciones anteriores.</td>
-      <td><b>Acceso desde pacientes.</b><br>Given el veterinario esta visualizando los animales de un cliente<br>When selecciona ver historial en una carta de animal<br>Then el sistema abre el historial clinico del animal seleccionado<br><br><b>Paciente sin registros.</b><br>Given el animal no tiene registros clinicos<br>When el veterinario abre su historial<br>Then el sistema muestra que aun no existen atenciones registradas</td>
-      <td>EP-006</td>
-    </tr>
-    <tr>
-      <td><b>US-027</b></td>
-      <td>Visualizar calendario de actividades</td>
-      <td>Como usuario, quiero ver mis actividades programadas para organizar tareas ganaderas y sanitarias.</td>
-      <td><b>Actividades existentes.</b><br>Given existen actividades visibles para el usuario<br>When ingresa al apartado de actividades<br>Then el sistema muestra una lista cronologica con fecha, titulo, tipo, estado y prioridad<br><br><b>Sin actividades.</b><br>Given no existen actividades visibles para el usuario<br>When ingresa al apartado de actividades<br>Then el sistema muestra un mensaje indicando que no hay actividades programadas</td>
-      <td>EP-007</td>
-    </tr>
-    <tr>
-      <td><b>US-028</b></td>
-      <td>Crear actividad o recordatorio</td>
-      <td>Como usuario, quiero crear actividades para programar controles, visitas, tareas productivas o recordatorios financieros.</td>
-      <td><b>Actividad valida.</b><br>Given el usuario ingresa titulo, tipo, fecha, prioridad y estado<br>When guarda la actividad<br>Then el sistema registra la actividad<br>And la muestra en el calendario<br><br><b>Actividad incompleta.</b><br>Given el usuario no ingresa titulo o fecha<br>When intenta guardar la actividad<br>Then el sistema solicita completar los datos requeridos</td>
-      <td>EP-007</td>
-    </tr>
-    <tr>
-      <td><b>US-029</b></td>
-      <td>Editar evento</td>
-      <td>Como usuario, quiero editar un evento para actualizar fecha, prioridad o estado.</td>
-      <td><b>Edicion exitosa.</b><br>Given existe un evento registrado<br>When el usuario modifica sus datos y guarda<br>Then el sistema actualiza el evento en el calendario<br><br><b>Evento inexistente.</b><br>Given el evento no existe<br>When el usuario intenta editarlo<br>Then el sistema redirige al calendario</td>
-      <td>EP-007</td>
-    </tr>
-    <tr>
-      <td><b>US-030</b></td>
-      <td>Eliminar actividad</td>
-      <td>Como usuario, quiero eliminar actividades que ya no son necesarias para mantener mi calendario ordenado.</td>
-      <td><b>Eliminacion confirmada.</b><br>Given existe una actividad registrada<br>When el usuario confirma la eliminacion<br>Then el sistema elimina la actividad<br><br><b>Eliminacion cancelada.</b><br>Given el usuario abre la confirmacion de eliminacion<br>When cancela la accion<br>Then la actividad permanece registrada</td>
-      <td>EP-007</td>
-    </tr>
-    <tr>
-      <td><b>US-031</b></td>
-      <td>Visualizar movimientos financieros</td>
-      <td>Como ganadero, quiero ver mis ingresos, egresos y balance para controlar la rentabilidad de mi operacion.</td>
-      <td><b>Movimientos existentes.</b><br>Given el ganadero tiene movimientos financieros registrados<br>When ingresa al apartado de finanzas<br>Then el sistema muestra ingresos, egresos, balance y detalle de movimientos<br><br><b>Sin movimientos.</b><br>Given el ganadero no tiene movimientos financieros<br>When ingresa al apartado de finanzas<br>Then el sistema muestra valores en cero o una lista vacia</td>
-      <td>EP-008</td>
-    </tr>
-    <tr>
-      <td><b>US-032</b></td>
-      <td>Registrar movimiento financiero</td>
-      <td>Como ganadero, quiero registrar ingresos y egresos para mantener actualizado mi balance mensual.</td>
-      <td><b>Registro de ingreso.</b><br>Given el ganadero vende productos o animales<br>When registra un movimiento de tipo ingreso con categoria, monto, fecha y descripcion<br>Then el sistema suma el monto a los ingresos<br><br><b>Registro de egreso.</b><br>Given el ganadero realiza un gasto operativo<br>When registra un movimiento de tipo egreso con categoria, monto, fecha y descripcion<br>Then el sistema suma el monto a los egresos</td>
-      <td>EP-008</td>
-    </tr>
-    <tr>
-      <td><b>US-033</b></td>
-      <td>Editar movimiento financiero</td>
-      <td>Como ganadero, quiero editar un movimiento financiero para corregir montos, categorias o fechas.</td>
-      <td><b>Edicion exitosa.</b><br>Given existe un movimiento financiero<br>When el ganadero modifica sus datos y guarda<br>Then el sistema actualiza el movimiento<br>And recalcula los totales financieros<br><br><b>Movimiento inexistente.</b><br>Given el movimiento no existe<br>When el ganadero intenta editarlo<br>Then el sistema redirige al listado financiero</td>
-      <td>EP-008</td>
-    </tr>
-    <tr>
-      <td><b>US-034</b></td>
-      <td>Eliminar movimiento financiero</td>
-      <td>Como ganadero, quiero eliminar un movimiento incorrecto para mantener mi balance limpio.</td>
-      <td><b>Eliminacion confirmada.</b><br>Given existe un movimiento financiero<br>When el ganadero confirma la eliminacion<br>Then el sistema elimina el movimiento<br>And recalcula ingresos, egresos y balance<br><br><b>Eliminacion cancelada.</b><br>Given el ganadero abre la confirmacion de eliminacion<br>When cancela la accion<br>Then el movimiento permanece registrado</td>
-      <td>EP-008</td>
-    </tr>
-    <tr>
-      <td><b>US-035</b></td>
-      <td>Visualizar analiticas del ganadero</td>
-      <td>Como ganadero, quiero ver analiticas basadas en mis propios animales, fincas y registros sanitarios para tomar decisiones sobre el estado sanitario y productivo de mi hato.</td>
-      <td><b>Analitica con datos propios.</b><br>Given el ganadero tiene animales, fincas y registros sanitarios registrados<br>When ingresa al apartado de analiticas<br>Then el sistema muestra metricas calculadas solo con sus datos<br><br><b>Analitica sin datos.</b><br>Given el ganadero no tiene informacion registrada<br>When ingresa al apartado de analiticas<br>Then el sistema muestra metricas en cero o graficos con estado sin datos</td>
-      <td>EP-009</td>
-    </tr>
-    <tr>
-      <td><b>US-036</b></td>
-      <td>Visualizar analiticas del veterinario</td>
-      <td>Como veterinario, quiero ver analiticas sanitarias de mis clientes asignados para priorizar pacientes, seguimientos y atenciones por hato.</td>
-      <td><b>Analitica con clientes asignados.</b><br>Given el veterinario tiene clientes asignados<br>When ingresa al apartado de analiticas<br>Then el sistema muestra metricas de clientes, pacientes monitoreados, registros sanitarios y seguimientos pendientes<br><br><b>Graficos sanitarios del veterinario.</b><br>Given existen registros sanitarios de animales bajo supervision del veterinario<br>When visualiza analiticas<br>Then el sistema muestra graficos de registros por tipo y atenciones por hato</td>
-      <td>EP-009</td>
-    </tr>
-    <tr>
-      <td><b>US-037</b></td>
-      <td>Visualizar estado sanitario del hato</td>
-      <td>Como ganadero, quiero ver un grafico del estado de mis animales para identificar cuantos estan saludables, en observacion o en tratamiento.</td>
-      <td><b>Grafico con animales registrados.</b><br>Given el ganadero tiene animales registrados con diferentes estados<br>When ingresa a analiticas<br>Then el sistema muestra un grafico de estado del hato con animales saludables, en observacion y en tratamiento<br><br><b>Grafico sin animales.</b><br>Given el ganadero no tiene animales registrados<br>When ingresa a analiticas<br>Then el sistema muestra el grafico sin datos o con valores en cero</td>
-      <td>EP-009</td>
-    </tr>
-    <tr>
-      <td><b>US-038</b></td>
-      <td>Visualizar registros sanitarios por tipo</td>
-      <td>Como usuario autorizado, quiero ver los registros sanitarios agrupados por tipo para entender que atenciones son mas frecuentes.</td>
-      <td><b>Registros sanitarios existentes.</b><br>Given existen registros sanitarios visibles para el usuario<br>When ingresa al apartado de analiticas<br>Then el sistema muestra un grafico con tipos como incidencia, vacuna, revision, tratamiento y diagnostico<br><br><b>Sin registros sanitarios.</b><br>Given no existen registros sanitarios visibles para el usuario<br>When visualiza el grafico<br>Then el sistema muestra valores en cero o una representacion sin datos</td>
-      <td>EP-009</td>
-    </tr>
-    <tr>
-      <td><b>US-039</b></td>
-      <td>Visualizar atenciones sanitarias por hato</td>
-      <td>Como veterinario, quiero ver las atenciones sanitarias por hato para identificar que clientes requieren mas seguimiento.</td>
-      <td><b>Atenciones agrupadas por hato.</b><br>Given el veterinario tiene clientes con hatos y registros sanitarios<br>When ingresa a analiticas<br>Then el sistema muestra un grafico con la cantidad de atenciones sanitarias por hato<br><br><b>Cliente sin atenciones.</b><br>Given un hato no tiene registros sanitarios asociados<br>When se generan las analiticas<br>Then el sistema muestra ese hato con valor cero o sin atenciones registradas</td>
-      <td>EP-009</td>
-    </tr>
-    <tr>
-      <td><b>US-040</b></td>
-      <td>Navegar mediante menu lateral segun rol</td>
-      <td>Como usuario autenticado, quiero ver un menu lateral adaptado a mi rol para acceder rapidamente a las secciones disponibles.</td>
-      <td><b>Menu del ganadero.</b><br>Given el usuario tiene rol de ganadero<br>When se muestra el layout principal<br>Then el menu incluye panel ganadero, fincas, animales, sanidad, actividades, finanzas y analiticas<br><br><b>Menu del veterinario.</b><br>Given el usuario tiene rol de veterinario<br>When se muestra el layout principal<br>Then el menu incluye panel veterinario, clientes, pacientes, sanidad, actividades y analiticas</td>
-      <td>EP-010</td>
-    </tr>
-    <tr>
-      <td><b>US-041</b></td>
-      <td>Visualizar pagina de inicio interna</td>
-      <td>Como usuario autenticado, quiero ver una pagina de inicio operativa para acceder a modulos principales y obtener un resumen general.</td>
-      <td><b>Inicio con datos disponibles.</b><br>Given el usuario tiene datos registrados<br>When ingresa a la pagina de inicio interna<br>Then el sistema muestra accesos y resumen operativo<br><br><b>Inicio sin datos.</b><br>Given el usuario aun no tiene datos registrados<br>When ingresa a la pagina de inicio interna<br>Then el sistema muestra accesos principales para comenzar</td>
-      <td>EP-010</td>
-    </tr>
-    <tr>
-      <td><b>US-042</b></td>
-      <td>Visualizar pagina acerca de AniTec</td>
-      <td>Como usuario, quiero consultar informacion acerca de AniTec para entender el proposito de la aplicacion.</td>
-      <td><b>Acceso a la pagina acerca de.</b><br>Given el usuario navega a la seccion acerca de<br>When la pagina carga<br>Then el sistema muestra una descripcion de AniTec y sus modulos principales</td>
-      <td>EP-010</td>
-    </tr>
-    <tr>
-      <td><b>US-043</b></td>
-      <td>Visualizar pagina no encontrada</td>
-      <td>Como usuario, quiero ver un mensaje claro cuando ingreso a una ruta no disponible para saber que no existe contenido asociado.</td>
-      <td><b>Ruta invalida.</b><br>Given el usuario ingresa una URL inexistente<br>When el sistema no encuentra una ruta asociada<br>Then muestra la pagina no encontrada<br>And permite volver a una ruta valida</td>
-      <td>EP-010</td>
-    </tr>
-    <tr>
-      <td><b>US-044</b></td>
-      <td>Visualizar pagina principal de la landing page</td>
-      <td>Como visitante, quiero ver la pagina principal de AniTec para comprender rapidamente que ofrece la plataforma.</td>
-      <td><b>Carga de pagina principal.</b><br>Given el visitante ingresa a la landing page principal<br>When la pagina carga<br>Then el sistema muestra el logo, navegacion, hero principal, propuesta de valor y llamados a la accion<br><br><b>Navegacion hacia secciones internas.</b><br>Given el visitante esta en la pagina principal<br>When selecciona una opcion del menu<br>Then el sistema lo dirige a la seccion o pagina correspondiente</td>
-      <td>EP-011</td>
-    </tr>
-    <tr>
-      <td><b>US-045</b></td>
-      <td>Conocer beneficios generales de AniTec</td>
-      <td>Como visitante, quiero revisar los beneficios generales de AniTec para evaluar si la plataforma resuelve mis necesidades de gestion ganadera.</td>
-      <td><b>Visualizacion de beneficios.</b><br>Given el visitante navega a la seccion de beneficios o caracteristicas<br>When la seccion se muestra<br>Then el sistema presenta beneficios relacionados con gestion ganadera, sanidad, productividad y trazabilidad<br><br><b>Revision desde dispositivo movil.</b><br>Given el visitante usa un dispositivo movil<br>When visualiza los beneficios<br>Then el contenido se adapta al tamano de pantalla sin perder legibilidad</td>
-      <td>EP-011</td>
-    </tr>
-    <tr>
-      <td><b>US-046</b></td>
-      <td>Visualizar pagina para ganaderos</td>
-      <td>Como ganadero visitante, quiero acceder a una pagina orientada a mi perfil para entender como AniTec mejora mi gestion diaria.</td>
-      <td><b>Carga de pagina para ganaderos.</b><br>Given el visitante selecciona la pagina para ganaderos<br>When la pagina carga<br>Then el sistema muestra informacion sobre gestion de animales, sanidad, productividad, finanzas y alertas<br><br><b>Revision de comparacion tradicional vs AniTec.</b><br>Given el visitante esta en la pagina para ganaderos<br>When llega a la seccion comparativa<br>Then el sistema muestra diferencias entre la gestion tradicional y la gestion con AniTec</td>
-      <td>EP-011</td>
-    </tr>
-    <tr>
-      <td><b>US-047</b></td>
-      <td>Visualizar pagina para veterinarios</td>
-      <td>Como veterinario visitante, quiero acceder a una pagina orientada a mi perfil para entender como AniTec apoya la gestion de clientes y pacientes.</td>
-      <td><b>Carga de pagina para veterinarios.</b><br>Given el visitante selecciona la pagina para veterinarios<br>When la pagina carga<br>Then el sistema muestra informacion sobre clientes, pacientes, historiales clinicos, visitas y analiticas sanitarias<br><br><b>Revision de flujo profesional.</b><br>Given el visitante esta en la pagina para veterinarios<br>When revisa las secciones de uso<br>Then el sistema explica como el veterinario puede organizar su cartera y atenciones</td>
-      <td>EP-011</td>
-    </tr>
-    <tr>
-      <td><b>US-048</b></td>
-      <td>Visualizar pagina nosotros</td>
-      <td>Como visitante, quiero conocer al equipo y la propuesta de AniTec para confiar en la solucion.</td>
-      <td><b>Carga de pagina nosotros.</b><br>Given el visitante selecciona la pagina nosotros<br>When la pagina carga<br>Then el sistema muestra informacion institucional, proposito y contexto del producto</td>
-      <td>EP-011</td>
-    </tr>
-    <tr>
-      <td><b>US-049</b></td>
-      <td>Cambiar idioma en la landing page</td>
-      <td>Como visitante, quiero cambiar el idioma de la landing page para leer la informacion en mi idioma preferido.</td>
-      <td><b>Cambio a espanol.</b><br>Given la landing page esta en ingles<br>When el visitante selecciona espanol<br>Then el sistema actualiza los textos disponibles a espanol<br><br><b>Cambio a ingles.</b><br>Given la landing page esta en espanol<br>When el visitante selecciona ingles<br>Then el sistema actualiza los textos disponibles a ingles</td>
-      <td>EP-011</td>
-    </tr>
-    <tr>
-      <td><b>US-050</b></td>
-      <td>Consultar testimonios de usuarios</td>
-      <td>Como visitante, quiero leer testimonios de ganaderos o veterinarios para conocer experiencias de uso de AniTec.</td>
-      <td><b>Testimonios visibles.</b><br>Given el visitante navega a una pagina con testimonios<br>When llega a la seccion de testimonios<br>Then el sistema muestra comentarios, nombres e imagenes de usuarios representativos</td>
-      <td>EP-011</td>
-    </tr>
-    <tr>
-      <td><b>US-051</b></td>
-      <td>Acceder a contacto o llamada a la accion</td>
-      <td>Como visitante interesado, quiero encontrar facilmente una llamada a la accion o datos de contacto para dar el siguiente paso con AniTec.</td>
-      <td><b>Acceso a contacto desde navegacion.</b><br>Given el visitante esta en la landing page<br>When selecciona la opcion de contacto<br>Then el sistema lo desplaza o redirige al bloque de contacto<br><br><b>Acceso desde CTA.</b><br>Given el visitante lee la propuesta de valor<br>When selecciona un boton de llamada a la accion<br>Then el sistema lo dirige a la seccion definida para iniciar contacto o conocer mas</td>
-      <td>EP-011</td>
-    </tr>
-    <tr>
-      <td><b>US-052</b></td>
-      <td>Visualizar landing page en dispositivos moviles</td>
-      <td>Como visitante movil, quiero navegar la landing page desde mi celular para conocer AniTec sin problemas de visualizacion.</td>
-      <td><b>Menu movil.</b><br>Given el visitante abre la landing page desde un dispositivo movil<br>When selecciona el boton de menu<br>Then el sistema muestra las opciones de navegacion adaptadas a pantalla pequena<br><br><b>Contenido responsive.</b><br>Given el visitante navega por la landing page desde movil<br>When revisa imagenes, textos y tarjetas<br>Then el contenido se adapta sin cortes, solapamientos ni perdida de legibilidad</td>
-      <td>EP-011</td>
-    </tr>
-    <tr>
-      <td><b>US-053</b></td>
-      <td>Iniciar sesion como usuario registrado</td>
-      <td>Como usuario registrado, quiero iniciar sesion con mis credenciales para acceder a las funcionalidades que corresponden a mi rol.</td>
-      <td><b>Inicio de sesion con credenciales validas.</b><br>Given el usuario se encuentra en la pantalla de inicio de sesion<br>And ingresa un usuario y contrasena validos<br>When selecciona la opcion de ingresar<br>Then el sistema autentica al usuario mediante el backend<br>And guarda el token JWT de la sesion<br>And redirige al dashboard correspondiente segun su rol<br><br><b>Inicio de sesion con credenciales invalidas.</b><br>Given el usuario se encuentra en la pantalla de inicio de sesion<br>And ingresa un usuario o contrasena incorrectos<br>When selecciona la opcion de ingresar<br>Then el sistema no permite el acceso<br>And muestra un mensaje de credenciales invalidas</td>
-      <td>EP-001</td>
-    </tr>
-    <tr>
-      <td><b>US-054</b></td>
-      <td>Redirigir al dashboard del rol correspondiente</td>
-      <td>Como usuario autenticado, quiero ser enviado al panel correcto para usar solo las funciones propias de mi perfil.</td>
-      <td><b>Acceso como ganadero.</b><br>Given el usuario autenticado tiene rol de ganadero<br>When el inicio de sesion se completa correctamente<br>Then el sistema lo redirige al dashboard ganadero<br><br><b>Acceso como veterinario.</b><br>Given el usuario autenticado tiene rol de veterinario<br>When el inicio de sesion se completa correctamente<br>Then el sistema lo redirige al dashboard veterinario</td>
-      <td>EP-001</td>
-    </tr>
-    <tr>
-      <td><b>US-055</b></td>
-      <td>Restringir rutas segun rol</td>
-      <td>Como usuario autenticado, quiero que el sistema me permita acceder solo a las secciones correspondientes a mi rol para evitar operaciones que no me pertenecen.</td>
-      <td><b>Ganadero intenta acceder a una ruta de veterinario.</b><br>Given el usuario autenticado tiene rol de ganadero<br>When intenta ingresar a una ruta exclusiva de veterinarios<br>Then el sistema bloquea el acceso<br>And lo redirige a su dashboard ganadero<br><br><b>Veterinario intenta acceder a una ruta exclusiva de finanzas ganaderas.</b><br>Given el usuario autenticado tiene rol de veterinario<br>When intenta acceder a una ruta exclusiva del ganadero<br>Then el sistema bloquea el acceso<br>And lo redirige a su dashboard veterinario</td>
-      <td>EP-001</td>
-    </tr>
-    <tr>
-      <td><b>US-056</b></td>
-      <td>Cerrar sesion</td>
-      <td>Como usuario autenticado, quiero cerrar sesion para proteger mi informacion cuando deje de usar la aplicacion.</td>
-      <td><b>Cierre de sesion exitoso.</b><br>Given el usuario tiene una sesion activa<br>When selecciona la opcion de salir<br>Then el sistema elimina la sesion activa<br>And redirige al usuario a la pantalla de inicio de sesion<br><br><b>Intento de acceso posterior al cierre de sesion.</b><br>Given el usuario cerro sesion<br>When intenta acceder a una ruta privada<br>Then el sistema solicita iniciar sesion nuevamente</td>
-      <td>EP-001</td>
-    </tr>
-    <tr>
-      <td><b>US-057</b></td>
-      <td>Cambiar idioma de la interfaz</td>
-      <td>Como usuario, quiero cambiar el idioma de la interfaz para utilizar la aplicacion en el idioma que prefiera.</td>
-      <td><b>Seleccion de idioma espanol.</b><br>Given el usuario visualiza la aplicacion en otro idioma<br>When selecciona la opcion ES<br>Then el sistema muestra los textos de la interfaz en espanol<br><br><b>Seleccion de idioma ingles.</b><br>Given el usuario visualiza la aplicacion en espanol<br>When selecciona la opcion EN<br>Then el sistema muestra los textos disponibles en ingles</td>
-      <td>EP-001</td>
-    </tr>
-    <tr>
-      <td><b>US-058</b></td>
-      <td>Visualizar dispositivos IoT registrados</td>
-      <td>Como usuario autenticado, quiero ver los dispositivos IoT registrados en la plataforma para monitorear los equipos asociados a fincas o animales.</td>
-      <td><b>Dispositivos disponibles.</b><br>Given existen dispositivos registrados en el backend<br>When el usuario ingresa al modulo IoT<br>Then el sistema muestra tarjetas con nombre, tipo, estado y asociacion del dispositivo<br><br><b>Sin dispositivos registrados.</b><br>Given no existen dispositivos registrados<br>When el usuario ingresa al modulo IoT<br>Then el sistema muestra un estado vacio indicando que no hay dispositivos disponibles</td>
-      <td>EP-012</td>
-    </tr>
-    <tr>
-      <td><b>US-059</b></td>
-      <td>Consultar metricas de un dispositivo IoT</td>
-      <td>Como usuario autenticado, quiero consultar las metricas recientes de un dispositivo para conocer lecturas como peso, temperatura, humedad o actividad.</td>
-      <td><b>Metricas disponibles.</b><br>Given un dispositivo tiene lecturas registradas<br>When el usuario revisa el detalle del dispositivo<br>Then el sistema muestra la ultima metrica y el historial de lecturas disponibles<br><br><b>Dispositivo sin metricas.</b><br>Given un dispositivo no tiene lecturas registradas<br>When el usuario revisa sus metricas<br>Then el sistema muestra un mensaje indicando que aun no existen lecturas</td>
-      <td>EP-012</td>
-    </tr>
-    <tr>
-      <td><b>US-060</b></td>
-      <td>Visualizar planes de suscripcion</td>
-      <td>Como usuario autenticado, quiero visualizar los planes de suscripcion disponibles para elegir el plan que mejor se adapte a mi operacion.</td>
-      <td><b>Planes disponibles.</b><br>Given existen planes activos en el backend<br>When el usuario ingresa al modulo de planes<br>Then el sistema muestra nombre, precio y caracteristicas de cada plan<br><br><b>Plan activo identificado.</b><br>Given el usuario tiene una suscripcion activa<br>When visualiza los planes<br>Then el sistema identifica visualmente el plan actualmente activo</td>
-      <td>EP-013</td>
-    </tr>
-    <tr>
-      <td><b>US-061</b></td>
-      <td>Consultar suscripcion activa</td>
-      <td>Como usuario autenticado, quiero consultar mi suscripcion activa para conocer el plan asociado a mi cuenta.</td>
-      <td><b>Suscripcion activa.</b><br>Given el usuario tiene una suscripcion vigente<br>When ingresa al modulo de planes<br>Then el sistema muestra la informacion de su suscripcion activa<br><br><b>Usuario sin suscripcion.</b><br>Given el usuario no tiene una suscripcion activa<br>When ingresa al modulo de planes<br>Then el sistema permite elegir un plan disponible</td>
-      <td>EP-013</td>
-    </tr>
-    <tr>
-      <td><b>US-062</b></td>
-      <td>Realizar pago simulado de suscripcion</td>
-      <td>Como usuario autenticado, quiero realizar un pago simulado de un plan para activar una suscripcion durante las pruebas del sistema.</td>
-      <td><b>Pago simulado exitoso.</b><br>Given el usuario selecciona un plan disponible<br>When confirma el pago simulado<br>Then el backend registra la suscripcion y el pago mock<br>And el frontend actualiza el plan activo del usuario<br><br><b>Error durante el pago.</b><br>Given ocurre un problema al procesar el pago simulado<br>When el usuario intenta confirmar el plan<br>Then el sistema muestra un mensaje de error y mantiene el estado anterior</td>
-      <td>EP-013</td>
-    </tr>
-    <tr>
-      <td><b>US-063</b></td>
-      <td>Consultar historial de pagos</td>
-      <td>Como usuario autenticado, quiero consultar mi historial de pagos para revisar los pagos realizados por mis suscripciones.</td>
-      <td><b>Pagos existentes.</b><br>Given el usuario tiene pagos registrados<br>When ingresa al modulo de planes y pagos<br>Then el sistema muestra el historial con monto, moneda, estado y fecha de pago<br><br><b>Sin pagos registrados.</b><br>Given el usuario no tiene pagos registrados<br>When ingresa al historial de pagos<br>Then el sistema muestra un mensaje indicando que aun no hay pagos</td>
-      <td>EP-013</td>
-    </tr>
-    <tr>
-      <td><b>US-064</b></td>
-      <td>Consumir dashboards desde el backend</td>
-      <td>Como usuario autenticado, quiero visualizar dashboards calculados desde el backend para revisar indicadores consistentes con la informacion persistida en la base de datos.</td>
-      <td><b>Dashboard de ganadero.</b><br>Given el usuario tiene rol de ganadero<br>When ingresa a su dashboard<br>Then el sistema consume el endpoint de analiticas del ganadero<br>And muestra indicadores basados en datos persistidos<br><br><b>Dashboard de veterinario.</b><br>Given el usuario tiene rol de veterinario<br>When ingresa a su dashboard<br>Then el sistema consume el endpoint de analiticas del veterinario<br>And muestra indicadores de clientes, pacientes y seguimientos</td>
-      <td>EP-002, EP-006, EP-009</td>
-    </tr>
-    <tr>
-      <td><b>TS-001</b></td>
-      <td>Configuracion inicial del frontend con Vue, Vite y PrimeVue</td>
-      <td>Como Developer frontend, quiero configurar la base del proyecto con Vue, Vite y PrimeVue para construir una aplicacion web modular, rapida y con componentes reutilizables.</td>
-      <td><b>Proyecto ejecutable.</b><br>Given el proyecto frontend esta configurado<br>When se ejecuta npm run dev<br>Then la aplicacion inicia correctamente en el navegador<br><br><b>Compilacion correcta.</b><br>Given el codigo fuente esta completo<br>When se ejecuta npm run build<br>Then Vite genera la version de produccion sin errores de compilacion</td>
-      <td>EP-010</td>
-    </tr>
-    <tr>
-      <td><b>TS-002</b></td>
-      <td>Configuracion de rutas protegidas por rol con Vue Router</td>
-      <td>Como Developer frontend, quiero configurar rutas publicas y privadas con validacion por rol para controlar el acceso de ganaderos y veterinarios.</td>
-      <td><b>Ruta privada sin sesion.</b><br>Given un usuario no autenticado intenta entrar a una ruta privada<br>When el router evalua la navegacion<br>Then el sistema lo redirige al inicio de sesion<br><br><b>Ruta restringida por rol.</b><br>Given un usuario autenticado intenta acceder a una ruta de otro rol<br>When el router valida los roles permitidos<br>Then el sistema lo redirige a su dashboard correspondiente</td>
-      <td>EP-001</td>
-    </tr>
-    <tr>
-      <td><b>TS-003</b></td>
-      <td>Manejo de estado global con Pinia</td>
-      <td>Como Developer frontend, quiero manejar los datos principales mediante stores de Pinia para compartir informacion entre vistas sin repetir logica.</td>
-      <td><b>Datos compartidos.</b><br>Given una vista carga animales, fincas, actividades o registros sanitarios<br>When otra vista necesita esos datos<br>Then puede obtenerlos desde el store correspondiente<br><br><b>Actualizacion del estado.</b><br>Given el usuario crea, edita o elimina un registro<br>When el store procesa la accion<br>Then la informacion visible se actualiza en la interfaz</td>
-      <td>EP-002, EP-003, EP-004, EP-005, EP-006, EP-007, EP-008, EP-009</td>
-    </tr>
-    <tr>
-      <td><b>TS-004</b></td>
-      <td>Consumo de datos mediante Axios, BaseApi y BaseEndpoint</td>
-      <td>Como Developer frontend, quiero centralizar el consumo de datos con Axios, BaseApi y BaseEndpoint para evitar repetir codigo de peticiones y consumir el backend de AniTec de forma consistente.</td>
-      <td><b>Consulta de datos.</b><br>Given un store solicita informacion de un modulo<br>When llama a su clase API correspondiente<br>Then el sistema usa BaseEndpoint para obtener los datos del endpoint configurado en el backend<br><br><b>Operacion sobre registros.</b><br>Given el usuario crea, actualiza o elimina un registro<br>When el store llama a la API<br>Then se ejecuta la peticion correspondiente usando la estructura comun de endpoints<br><br><b>Token de sesion.</b><br>Given existe un token JWT guardado en la sesion<br>When se realiza una peticion al backend<br>Then BaseApi agrega el token en el header Authorization</td>
-      <td>EP-003, EP-004, EP-005, EP-006, EP-007, EP-008, EP-009</td>
-    </tr>
-    <tr>
-      <td><b>TS-005</b></td>
-      <td>Configuracion inicial del backend con ASP.NET Core</td>
-      <td>Como Developer backend, quiero crear la solucion de AniTec con ASP.NET Core para implementar una API REST organizada y preparada para integrarse con el frontend.</td>
-      <td><b>Proyecto backend creado.</b><br>Given la solucion backend fue creada<br>When se revisa la estructura del proyecto<br>Then existe un proyecto ASP.NET Core con carpetas organizadas por bounded contexts<br><br><b>Backend ejecutable.</b><br>Given el backend esta configurado<br>When se ejecuta dotnet run<br>Then la API inicia correctamente en ambiente de desarrollo</td>
-      <td>EP-001, EP-003, EP-004, EP-005, EP-006, EP-007, EP-008, EP-009</td>
-    </tr>
-    <tr>
-      <td><b>TS-006</b></td>
-      <td>Persistencia con Entity Framework Core y MySQL</td>
-      <td>Como Developer backend, quiero configurar Entity Framework Core con MySQL para almacenar la informacion de AniTec en una base de datos relacional.</td>
-      <td><b>Conexion a MySQL.</b><br>Given la cadena de conexion esta configurada<br>When la API inicia<br>Then el backend se conecta a la base de datos MySQL<br><br><b>Migraciones aplicadas.</b><br>Given existen migraciones de Entity Framework Core<br>When se ejecuta la actualizacion de base de datos<br>Then las tablas necesarias se crean o actualizan correctamente</td>
-      <td>EP-003, EP-004, EP-005, EP-006, EP-007, EP-008, EP-009</td>
-    </tr>
-    <tr>
-      <td><b>TS-007</b></td>
-      <td>Autenticacion backend con JWT y BCrypt</td>
-      <td>Como Developer backend, quiero implementar autenticacion con JWT y BCrypt para validar credenciales y proteger el acceso de los usuarios registrados.</td>
-      <td><b>Inicio de sesion valido.</b><br>Given un usuario registrado ingresa credenciales correctas<br>When consume el endpoint de sign-in<br>Then el sistema responde con los datos del usuario y un token JWT<br><br><b>Contrasena protegida.</b><br>Given un usuario se registra en el sistema<br>When se almacena su contrasena<br>Then el backend la guarda usando hashing con BCrypt</td>
-      <td>EP-001</td>
-    </tr>
-    <tr>
-      <td><b>TS-008</b></td>
-      <td>Implementacion de bounded contexts de gestion ganadera</td>
-      <td>Como Developer backend, quiero implementar los bounded contexts principales de AniTec para exponer servicios REST de fincas, animales, sanidad, actividades y finanzas.</td>
-      <td><b>Endpoints CRUD disponibles.</b><br>Given los bounded contexts principales fueron implementados<br>When se consulta Swagger<br>Then existen endpoints para fincas, animales, eventos sanitarios, actividades y registros financieros<br><br><b>Operaciones persistentes.</b><br>Given el frontend o Swagger envia una operacion de creacion, edicion o eliminacion<br>When la API procesa la solicitud<br>Then el cambio se guarda correctamente en MySQL</td>
-      <td>EP-003, EP-004, EP-005, EP-007, EP-008</td>
-    </tr>
-    <tr>
-      <td><b>TS-009</b></td>
-      <td>Servicios backend para analiticas y clientes veterinarios</td>
-      <td>Como Developer backend, quiero implementar endpoints de analiticas y clientes veterinarios para que ganaderos y veterinarios consulten informacion calculada desde el servidor.</td>
-      <td><b>Dashboard de ganadero.</b><br>Given existen datos de fincas, animales, eventos y registros financieros<br>When se consulta el dashboard de un ganadero<br>Then la API devuelve metricas resumidas para su operacion<br><br><b>Clientes del veterinario.</b><br>Given un veterinario tiene ganaderos asignados<br>When consulta su cartera de clientes<br>Then la API devuelve los clientes y datos relacionados necesarios para el frontend</td>
-      <td>EP-006, EP-009</td>
-    </tr>
-    <tr>
-      <td><b>TS-010</b></td>
-      <td>Servicios backend para dispositivos, metricas y suscripciones</td>
-      <td>Como Developer backend, quiero implementar dispositivos, metricas y suscripciones para ampliar AniTec con informacion IoT y planes de uso de la plataforma.</td>
-      <td><b>Dispositivos y metricas.</b><br>Given existen dispositivos registrados<br>When se consultan sus metricas<br>Then la API devuelve las lecturas asociadas al dispositivo<br><br><b>Planes y suscripciones.</b><br>Given existen planes de suscripcion<br>When se consultan los endpoints de suscripciones<br>Then la API devuelve planes, suscripciones y pagos mock para pruebas</td>
-      <td>EP-012, EP-013</td>
-    </tr>
-    <tr>
-      <td><b>TS-011</b></td>
-      <td>Documentacion y pruebas de API con Swagger</td>
-      <td>Como Developer backend, quiero documentar y probar los endpoints con Swagger para validar manualmente el funcionamiento de la API antes de integrarla con el frontend.</td>
-      <td><b>Swagger disponible.</b><br>Given la API esta ejecutandose en ambiente de desarrollo<br>When se abre Swagger en el navegador<br>Then se muestran los controladores y endpoints disponibles<br><br><b>Pruebas manuales.</b><br>Given un endpoint fue implementado<br>When se prueba desde Swagger o una herramienta HTTP<br>Then el backend responde con el codigo HTTP y datos esperados</td>
-      <td>EP-001, EP-003, EP-004, EP-005, EP-006, EP-007, EP-008, EP-009</td>
-    </tr>
-    <tr>
-      <td><b>TS-012</b></td>
-      <td>Integracion frontend-backend con variables de entorno</td>
-      <td>Como Developer frontend, quiero configurar variables de entorno para conectar la aplicacion Vue con la API de AniTec en distintos ambientes.</td>
-      <td><b>Ambiente de desarrollo.</b><br>Given el frontend se ejecuta en modo desarrollo<br>When se leen las variables de entorno<br>Then la URL base apunta al backend local de AniTec<br><br><b>Cambio de ambiente.</b><br>Given se prepara un despliegue de produccion<br>When se configura la URL del backend productivo<br>Then el frontend consume la API real sin modificar el codigo fuente de los stores</td>
-      <td>EP-001, EP-003, EP-004, EP-005, EP-006, EP-007, EP-008, EP-009, EP-012, EP-013</td>
-    </tr>
-    <tr>
-      <td><b>TS-013</b></td>
-      <td>Stores frontend para IoT y suscripciones</td>
-      <td>Como Developer frontend, quiero crear stores y servicios para dispositivos, metricas, planes y pagos para integrar las nuevas pantallas con el backend.</td>
-      <td><b>Store de dispositivos.</b><br>Given existe el modulo IoT en el frontend<br>When se carga la vista de dispositivos<br>Then el store consume dispositivos y metricas desde el backend<br><br><b>Store de suscripciones.</b><br>Given existe el modulo de planes<br>When el usuario ingresa a la vista de suscripciones<br>Then el store consume planes, suscripcion activa, pagos y checkout mock desde el backend</td>
-      <td>EP-012, EP-013</td>
-    </tr>
-    <tr>
-      <td><b>TS-014</b></td>
-      <td>Mapeo de recursos de clientes veterinarios</td>
-      <td>Como Developer frontend, quiero mapear correctamente los recursos de clientes veterinarios para diferenciar el identificador de la relacion y el identificador del ganadero.</td>
-      <td><b>Cliente veterinario recibido.</b><br>Given el backend devuelve un cliente con id de relacion y rancherId<br>When el frontend transforma el recurso<br>Then usa rancherId como identificador del ganadero en vistas de clientes y pacientes<br><br><b>Acciones sobre cliente.</b><br>Given el veterinario elimina o consulta un cliente<br>When se envia una peticion al backend<br>Then se utiliza el identificador correcto del ganadero</td>
-      <td>EP-006</td>
-    </tr>
-    <tr>
-      <td><b>TS-015</b></td>
-      <td>Configuracion de endpoints para despliegue productivo</td>
-      <td>Como Developer frontend, quiero configurar el ambiente de produccion para que la aplicacion desplegada consuma el backend real y no el servicio mock utilizado durante prototipado.</td>
-      <td><b>URL productiva configurada.</b><br>Given existe una API backend desplegada<br>When se prepara el build de produccion del frontend<br>Then la variable VITE_ANITEC_API_URL apunta al backend real<br><br><b>Endpoints completos.</b><br>Given el frontend usa modulos de IoT y suscripciones<br>When se revisa la configuracion productiva<br>Then existen rutas para dispositivos, metricas, planes y pagos</td>
-      <td>EP-001, EP-012, EP-013</td>
-    </tr>
-    <tr>
-      <td><b>TS-016</b></td>
-      <td>Integracion backend con Stripe para suscripciones</td>
-      <td>Como Developer backend, quiero integrar Stripe en el bounded context de suscripciones para crear sesiones de pago y relacionarlas con los planes de AniTec.</td>
-      <td><b>Sesion de pago creada.</b><br>Given existe un plan de suscripcion activo<br>When el usuario solicita iniciar el pago<br>Then el backend crea una sesion de Stripe y devuelve la URL de checkout<br><br><b>Resultado registrado.</b><br>Given Stripe confirma el resultado del pago<br>When el backend procesa la respuesta correspondiente<br>Then la suscripcion o pago queda registrado para el usuario</td>
-      <td>EP-013</td>
-    </tr>
-    <tr>
-      <td><b>TS-017</b></td>
-      <td>Integracion frontend del flujo de pago con Stripe</td>
-      <td>Como Developer frontend, quiero conectar la vista de planes con el checkout de Stripe para que el usuario pueda iniciar el pago desde la aplicacion web.</td>
-      <td><b>Inicio de checkout.</b><br>Given el usuario autenticado selecciona un plan<br>When presiona el boton de pago<br>Then el frontend solicita la sesion de pago al backend<br><br><b>Redireccion a Stripe.</b><br>Given el backend devuelve una URL de checkout<br>When el frontend recibe la respuesta<br>Then redirige al usuario hacia la pasarela de pago de Stripe</td>
-      <td>EP-013</td>
-    </tr>
-    <tr>
-      <td><b>TS-018</b></td>
-      <td>Mejora del IAM backend para autenticacion y autorizacion por rol</td>
-      <td>Como Developer backend, quiero mejorar el IAM para validar credenciales, roles y datos de sesion de forma consistente en la API.</td>
-      <td><b>Token con rol.</b><br>Given un usuario inicia sesion correctamente<br>When el backend genera el JWT<br>Then el token incluye la informacion necesaria para identificar usuario y rol<br><br><b>Autorizacion por rol.</b><br>Given un endpoint requiere un rol especifico<br>When un usuario con otro rol intenta acceder<br>Then la API rechaza la solicitud con una respuesta de autorizacion</td>
-      <td>EP-001</td>
-    </tr>
-    <tr>
-      <td><b>TS-019</b></td>
-      <td>Proteccion de endpoints principales mediante JWT y roles</td>
-      <td>Como Developer backend, quiero proteger los endpoints principales con JWT y roles para evitar el acceso no autorizado a informacion de AniTec.</td>
-      <td><b>Endpoint protegido sin token.</b><br>Given una peticion no incluye token JWT<br>When intenta acceder a un endpoint protegido<br>Then la API responde con estado no autorizado<br><br><b>Endpoint protegido con token valido.</b><br>Given una peticion incluye un token valido y rol permitido<br>When consume un endpoint protegido<br>Then la API procesa la solicitud correctamente</td>
-      <td>EP-001, EP-003, EP-004, EP-005, EP-006, EP-007, EP-008, EP-009, EP-012, EP-013</td>
-    </tr>
-    <tr>
-      <td><b>TS-020</b></td>
-      <td>Adaptacion del IAM frontend para sesion, token y rutas protegidas</td>
-      <td>Como Developer frontend, quiero adaptar el IAM para guardar sesion, token y rol del usuario, protegiendo la navegacion segun el tipo de cuenta.</td>
-      <td><b>Sesion persistida.</b><br>Given un usuario inicia sesion correctamente<br>When el backend devuelve el token y rol<br>Then el frontend guarda la sesion necesaria para navegar<br><br><b>Ruta protegida.</b><br>Given un usuario no autenticado intenta ingresar a una vista privada<br>When el router valida el acceso<br>Then lo redirige al inicio de sesion</td>
-      <td>EP-001</td>
-    </tr>
-    <tr>
-      <td><b>TS-021</b></td>
-      <td>Consumo autenticado de endpoints desde stores y servicios frontend</td>
-      <td>Como Developer frontend, quiero enviar el token JWT en las peticiones Axios para consumir endpoints protegidos desde los stores de AniTec.</td>
-      <td><b>Token enviado.</b><br>Given existe un token de sesion guardado<br>When un store realiza una peticion al backend<br>Then la solicitud incluye el header Authorization<br><br><b>Error de autenticacion.</b><br>Given el token expiro o no es valido<br>When el backend rechaza la peticion<br>Then el frontend muestra un error o redirige al inicio de sesion segun corresponda</td>
-      <td>EP-003, EP-004, EP-005, EP-006, EP-007, EP-008, EP-009, EP-012, EP-013</td>
-    </tr>
-    <tr>
-      <td><b>TS-022</b></td>
-      <td>Documentacion y validacion del flujo de seguridad y suscripcion</td>
-      <td>Como Developer, quiero documentar y validar el flujo de IAM, endpoints protegidos y Stripe para evidenciar que el Sprint 4 cumple su objetivo.</td>
-      <td><b>Evidencia de seguridad.</b><br>Given los endpoints principales estan protegidos<br>When se documenta el Sprint<br>Then se incluyen evidencias de acceso con token y rechazo sin token<br><br><b>Evidencia de suscripcion.</b><br>Given el flujo de Stripe esta integrado<br>When se documenta el Sprint<br>Then se incluyen evidencias del checkout y resultado del proceso de pago</td>
-      <td>EP-001, EP-013</td>
-    </tr>
+    <tr><td>Aplicación Android nativa</td><td>Kotlin y Jetpack Compose, con arquitectura por capas y funcionalidades core de ganaderos y veterinarios.</td><td>Proyecto Android compilable, ejecución y pruebas en un dispositivo Android físico.</td><td>TS-001, TS-003, TS-004 y US-004 a US-043.</td></tr>
+    <tr><td>Aplicación multiplataforma</td><td>Flutter y Dart, con el mismo alcance funcional y contratos de servicio que la aplicación Android.</td><td>Proyecto Flutter compilable y comparación de los flujos core en las plataformas objetivo definidas por el equipo.</td><td>TS-002, TS-003, TS-004, TS-006 y US-004 a US-043.</td></tr>
+    <tr><td>Almacenamiento local</td><td>Room en Android y una base de datos local compatible en Flutter para caché, operaciones pendientes y estado de sincronización.</td><td>Consulta y registro de información esencial sin conexión, seguidos por una sincronización idempotente.</td><td>US-029 a US-032 y TS-005 a TS-007.</td></tr>
+    <tr><td>Recurso interno del dispositivo</td><td>Cámara del teléfono para leer el código QR que identifica al animal, con alternativa de búsqueda manual.</td><td>Prueba con permiso concedido, permiso denegado, código válido, código inválido y condiciones reales de iluminación.</td><td>US-033, US-034, TS-010 y SP-001.</td></tr>
+    <tr><td>Servicio REST interno</td><td>API REST propia de AniTec, documentada con OpenAPI y protegida mediante autenticación y autorización por rol y relación.</td><td>Backend público al 70 % en Sprint 1 y al 100 % desde Sprint 2, con documentación accesible.</td><td>US-004 a US-040, TS-004, TS-008 y TS-013.</td></tr>
+    <tr><td>Servicio externo</td><td>Stripe Checkout para iniciar pagos y confirmar el estado de la suscripción sin almacenar datos de tarjeta en AniTec.</td><td>Flujos de pago aprobado, rechazado o cancelado y validación del resultado desde el backend.</td><td>US-038 a US-040 y TS-011.</td></tr>
+    <tr><td>Feature de aprendizaje autónomo</td><td>Investigación, prototipo e integración de Google ML Kit Barcode Scanning para reconocer códigos QR en el dispositivo.</td><td>Informe del Spike, fuentes consultadas, alternativas, riesgos, prueba física y conclusión de viabilidad.</td><td>US-033, TS-010 y SP-001.</td></tr>
+    <tr><td>Notificaciones móviles</td><td>Recordatorios locales o remotos asociados con actividades ganaderas y sanitarias.</td><td>Recepción, atención y reprogramación de recordatorios con permisos habilitados o denegados.</td><td>US-025 a US-028 y TS-009.</td></tr>
+    <tr><td>Despliegue y validación física</td><td>Versiones firmadas y distribuidas mediante Firebase App Distribution o un servicio equivalente.</td><td>Instalación trazable en dispositivos físicos y registro de versión para la Release Review.</td><td>TS-014 y TS-015.</td></tr>
   </tbody>
 </table>
 
 ## 2.4.2. Impact Mapping
 
-El Impact Mapping permite relacionar los objetivos de negocio de AniTec con los segmentos objetivo, los cambios esperados en su comportamiento, los entregables necesarios y las User Stories que permiten construir dichos entregables. Para esta versión se consideran los User Personas definidos en el capítulo de Needfinding: Jorge Luis Rivas, representante del segmento ganadero, y Valeria Mendoza, representante del segmento veterinario.
-
-Los objetivos de negocio planteados son incrementar en 40% el registro digital de datos ganaderos y sanitarios en un periodo de 6 meses, reducir en 30% los olvidos de controles sanitarios en el mismo periodo e incrementar en 35% el uso de reportes y dashboards por parte de los usuarios. Para lograrlo, el mapa identifica impactos relacionados con el orden de la información del hato, la reducción de olvidos sanitarios, el control financiero, la consulta de pacientes veterinarios y la priorización de animales que requieren atención. Estos impactos se conectan con entregables como el módulo de fincas y animales, historial sanitario, actividades, finanzas, clientes veterinarios, reportes e IoT.
-
-![ImpactMapping](../../assets/chapter-3/impactMapping-corrected.svg)
-
-## To be Scenario Mapping
-
-## 2.4.3. Product Backlog
-El Product Backlog de AniTec organiza las User Stories y Technical Stories identificadas para el desarrollo de la landing page, la aplicación web y el backend RESTful API. El orden se define priorizando el valor para el negocio y la experiencia del usuario, por lo que las historias de la landing page se ubican al inicio para validar la propuesta de valor, seguidas por funcionalidades principales de acceso, navegación, gestión ganadera, gestión veterinaria, analíticas, IoT, suscripciones e integración técnica.
+El Impact Mapping conecta objetivos SMART del piloto con los User Personas, los cambios de comportamiento esperados, los entregables y las historias que los habilitan. Los objetivos se medirán con analítica de uso, registros de sincronización y pruebas moderadas antes de concluir el Sprint 3.
 
 <table>
   <thead>
     <tr>
-      <th># ORDEN</th>
-      <th>Epic / Story ID</th>
-      <th>Titulo</th>
-      <th>Descripcion</th>
-      <th>Story Points</th>
+      <th>Business Goal</th>
+      <th>Actor / User Persona</th>
+      <th>Impact</th>
+      <th>Deliverable</th>
+      <th>User Stories</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><b>1</b></td>
-      <td><b>US-044</b></td>
-      <td>Visualizar pagina principal de la landing page</td>
-      <td><b>Como</b> visitante, <b>quiero</b> ver la pagina principal de AniTec <b>para</b> comprender rapidamente que ofrece la plataforma.</td>
-      <td>5</td>
+      <td rowspan="2"><b>BG-01:</b> Lograr que al menos 8 de 10 ganaderos participantes registren tres animales y dos eventos desde una aplicación móvil durante un piloto de cuatro semanas, antes del cierre del Sprint 3.</td>
+      <td>Jorge Luis Rivas — Ganadero</td>
+      <td>Registra la información en el lugar donde ocurre y deja de postergarla por falta de una computadora.</td>
+      <td>Gestión móvil de fincas y animales.</td>
+      <td>Como ganadero, deseo registrar y consultar mis animales desde el teléfono para mantener su trazabilidad. US-008 a US-013.</td>
     </tr>
     <tr>
-      <td><b>2</b></td>
-      <td><b>US-045</b></td>
-      <td>Conocer beneficios generales de AniTec</td>
-      <td><b>Como</b> visitante, <b>quiero</b> revisar los beneficios generales de AniTec <b>para</b> evaluar si la plataforma resuelve mis necesidades de gestion ganadera.</td>
-      <td>3</td>
+      <td>Jorge Luis Rivas — Ganadero</td>
+      <td>Continúa trabajando durante interrupciones de red y confirma después la sincronización.</td>
+      <td>Persistencia local, cola de operaciones y estados de sincronización.</td>
+      <td>Como ganadero, deseo guardar y sincronizar registros sin repetirlos para trabajar con conectividad intermitente. US-029 a US-032.</td>
     </tr>
     <tr>
-      <td><b>3</b></td>
-      <td><b>US-046</b></td>
-      <td>Visualizar pagina para ganaderos</td>
-      <td><b>Como</b> ganadero visitante, <b>quiero</b> acceder a una pagina orientada a mi perfil <b>para</b> entender como AniTec mejora mi gestion diaria.</td>
-      <td>5</td>
+      <td rowspan="2"><b>BG-02:</b> Conseguir que al menos el 70 % de los recordatorios sanitarios creados durante el piloto se marquen como atendidos o reprogramados dentro de su plazo, antes del cierre del Sprint 3.</td>
+      <td>Jorge Luis Rivas — Ganadero</td>
+      <td>Registra incidencias y consulta actividades pendientes con mayor frecuencia.</td>
+      <td>Historial sanitario, calendario y notificaciones móviles.</td>
+      <td>Como ganadero, deseo registrar incidencias y recibir recordatorios para cumplir actividades sanitarias. US-014, US-015 y US-025 a US-028.</td>
     </tr>
     <tr>
-      <td><b>4</b></td>
-      <td><b>US-047</b></td>
-      <td>Visualizar pagina para veterinarios</td>
-      <td><b>Como</b> veterinario visitante, <b>quiero</b> acceder a una pagina orientada a mi perfil <b>para</b> entender como AniTec apoya la gestion de clientes y pacientes.</td>
-      <td>5</td>
+      <td>Valeria Mendoza — Veterinaria</td>
+      <td>Programa el control posterior como parte de la atención.</td>
+      <td>Registro clínico trazable y actividad de seguimiento.</td>
+      <td>Como veterinaria, deseo registrar tratamientos y próximos controles para mantener continuidad clínica. US-016 a US-019.</td>
     </tr>
     <tr>
-      <td><b>5</b></td>
-      <td><b>US-048</b></td>
-      <td>Visualizar pagina nosotros</td>
-      <td><b>Como</b> visitante, <b>quiero</b> conocer al equipo y la propuesta de AniTec <b>para</b> confiar en la solucion.</td>
-      <td>3</td>
+      <td rowspan="2"><b>BG-03:</b> Lograr que al menos 4 de 5 veterinarios participantes consulten antecedentes y registren una atención autorizada en menos de cinco minutos y sin ayuda, durante la validación previa al cierre del Sprint 3.</td>
+      <td>Valeria Mendoza — Veterinaria</td>
+      <td>Consulta únicamente clientes y pacientes autorizados antes de atenderlos.</td>
+      <td>Gestión de relaciones, clientes, pacientes e historiales.</td>
+      <td>Como veterinaria, deseo consultar clientes y pacientes autorizados para preparar y documentar la atención. US-023 y US-024.</td>
     </tr>
     <tr>
-      <td><b>6</b></td>
-      <td><b>US-049</b></td>
-      <td>Cambiar idioma en la landing page</td>
-      <td><b>Como</b> visitante, <b>quiero</b> cambiar el idioma de la landing page <b>para</b> leer la informacion en mi idioma preferido.</td>
-      <td>3</td>
+      <td>Jorge Luis Rivas — Ganadero</td>
+      <td>Controla quién puede consultar y registrar información sanitaria.</td>
+      <td>Solicitudes, aceptación y revocación de acceso.</td>
+      <td>Como ganadero, deseo conceder o revocar acceso veterinario para proteger los datos de mis animales. US-020 a US-022.</td>
     </tr>
     <tr>
-      <td><b>7</b></td>
-      <td><b>US-050</b></td>
-      <td>Consultar testimonios de usuarios</td>
-      <td><b>Como</b> visitante, <b>quiero</b> leer testimonios de ganaderos o veterinarios <b>para</b> conocer experiencias de uso de AniTec.</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td><b>8</b></td>
-      <td><b>US-051</b></td>
-      <td>Acceder a contacto o llamada a la accion</td>
-      <td><b>Como</b> visitante interesado, <b>quiero</b> encontrar facilmente una llamada a la accion o datos de contacto <b>para</b> dar el siguiente paso con AniTec.</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td><b>9</b></td>
-      <td><b>US-052</b></td>
-      <td>Visualizar landing page en dispositivos moviles</td>
-      <td><b>Como</b> visitante movil, <b>quiero</b> navegar la landing page desde mi celular <b>para</b> conocer AniTec sin problemas de visualizacion.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>10</b></td>
-      <td><b>US-053</b></td>
-      <td>Iniciar sesion como usuario registrado</td>
-      <td><b>Como</b> usuario registrado, <b>quiero</b> iniciar sesion con mis credenciales <b>para</b> acceder a las funcionalidades que corresponden a mi rol.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>11</b></td>
-      <td><b>US-054</b></td>
-      <td>Redirigir al dashboard del rol correspondiente</td>
-      <td><b>Como</b> usuario autenticado, <b>quiero</b> ser enviado al panel correcto <b>para</b> usar solo las funciones propias de mi perfil.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>12</b></td>
-      <td><b>US-055</b></td>
-      <td>Restringir rutas segun rol</td>
-      <td><b>Como</b> usuario autenticado, <b>quiero</b> que el sistema me permita acceder solo a las secciones correspondientes a mi rol <b>para</b> evitar operaciones que no me pertenecen.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>13</b></td>
-      <td><b>US-056</b></td>
-      <td>Cerrar sesion</td>
-      <td><b>Como</b> usuario autenticado, <b>quiero</b> cerrar sesion <b>para</b> proteger mi informacion cuando deje de usar la aplicacion.</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td><b>14</b></td>
-      <td><b>US-057</b></td>
-      <td>Cambiar idioma de la interfaz</td>
-      <td><b>Como</b> usuario, <b>quiero</b> cambiar el idioma de la interfaz <b>para</b> utilizar la aplicacion en el idioma que prefiera.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>15</b></td>
-      <td><b>US-040</b></td>
-      <td>Navegar mediante menu lateral segun rol</td>
-      <td><b>Como</b> usuario autenticado, <b>quiero</b> ver un menu lateral adaptado a mi rol <b>para</b> acceder rapidamente a las secciones disponibles.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>16</b></td>
-      <td><b>US-041</b></td>
-      <td>Visualizar pagina de inicio interna</td>
-      <td><b>Como</b> usuario autenticado, <b>quiero</b> ver una pagina de inicio operativa <b>para</b> acceder a modulos principales y obtener un resumen general.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>17</b></td>
-      <td><b>US-042</b></td>
-      <td>Visualizar pagina acerca de AniTec</td>
-      <td><b>Como</b> usuario, <b>quiero</b> consultar informacion acerca de AniTec <b>para</b> entender el proposito de la aplicacion.</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td><b>18</b></td>
-      <td><b>US-043</b></td>
-      <td>Visualizar pagina no encontrada</td>
-      <td><b>Como</b> usuario, <b>quiero</b> ver un mensaje claro cuando ingreso a una ruta no disponible <b>para</b> saber que no existe contenido asociado.</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td><b>19</b></td>
-      <td><b>US-004</b></td>
-      <td>Visualizar listado de fincas en cartas</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> ver mis fincas en cartas con informacion relevante <b>para</b> identificar facilmente cada unidad productiva.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>20</b></td>
-      <td><b>US-005</b></td>
-      <td>Registrar nueva finca</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> registrar una nueva finca <b>para</b> organizar mis animales por ubicacion o unidad productiva.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>21</b></td>
-      <td><b>US-006</b></td>
-      <td>Editar informacion de una finca</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> editar los datos de una finca <b>para</b> mantener actualizada su informacion.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>22</b></td>
-      <td><b>US-007</b></td>
-      <td>Eliminar finca</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> eliminar una finca cuando ya no forma parte de mi operacion.</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td><b>23</b></td>
-      <td><b>US-008</b></td>
-      <td>Visualizar animales en cartas</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> ver mis animales en cartas <b>para</b> revisar rapidamente la informacion principal de cada uno.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>24</b></td>
-      <td><b>US-009</b></td>
-      <td>Buscar animales por texto</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> buscar animales por nombre, codigo, especie o raza <b>para</b> encontrarlos rapidamente cuando tenga muchos registros.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>25</b></td>
-      <td><b>US-010</b></td>
-      <td>Registrar animal</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> registrar un animal indicando su especie y raza <b>para</b> mantener trazabilidad de mi ganado.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>26</b></td>
-      <td><b>US-011</b></td>
-      <td>Editar animal</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> editar los datos de un animal <b>para</b> actualizar su estado, peso o informacion general.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>27</b></td>
-      <td><b>US-012</b></td>
-      <td>Eliminar animal</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> eliminar un animal cuando ya no pertenece a mi hato o registro productivo.</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td><b>28</b></td>
-      <td><b>US-013</b></td>
-      <td>Consultar animales segun rol</td>
-      <td><b>Como</b> usuario, <b>quiero</b> que el sistema muestre animales segun mi rol <b>para</b> proteger la informacion de cada ganadero.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>29</b></td>
-      <td><b>US-014</b></td>
-      <td>Visualizar registros sanitarios en cartas</td>
-      <td><b>Como</b> usuario autorizado, <b>quiero</b> ver los registros sanitarios en cartas <b>para</b> revisar de forma clara la informacion clinica de los animales.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>30</b></td>
-      <td><b>US-015</b></td>
-      <td>Registrar incidencia sanitaria como ganadero</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> registrar enfermedades o incidencias basicas de mis animales <b>para</b> dejar constancia y facilitar el seguimiento veterinario.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>31</b></td>
-      <td><b>US-016</b></td>
-      <td>Registrar diagnostico y tratamiento como veterinario</td>
-      <td><b>Como</b> veterinario, <b>quiero</b> registrar diagnostico, tratamiento, receta y seguimiento <b>para</b> documentar la atencion clinica de un animal.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>32</b></td>
-      <td><b>US-017</b></td>
-      <td>Editar registro sanitario</td>
-      <td><b>Como</b> usuario autorizado, <b>quiero</b> editar un registro sanitario <b>para</b> corregir o complementar informacion clinica.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>33</b></td>
-      <td><b>US-018</b></td>
-      <td>Eliminar registro sanitario</td>
-      <td><b>Como</b> usuario autorizado, <b>quiero</b> eliminar un registro sanitario incorrecto <b>para</b> mantener limpio el historial.</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td><b>34</b></td>
-      <td><b>US-019</b></td>
-      <td>Consultar historial clinico por animal</td>
-      <td><b>Como</b> veterinario, <b>quiero</b> consultar el historial clinico de un animal <b>para</b> tomar mejores decisiones durante una atencion.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>35</b></td>
-      <td><b>US-001</b></td>
-      <td>Visualizar resumen operativo del ganadero</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> ver un resumen de mis animales, fincas, alertas y actividades <b>para</b> conocer rapidamente el estado de mi operacion.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>36</b></td>
-      <td><b>US-002</b></td>
-      <td>Filtrar resumen por finca</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> filtrar mi dashboard por finca <b>para</b> revisar el estado de una unidad productiva especifica.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>37</b></td>
-      <td><b>US-003</b></td>
-      <td>Acceder a acciones rapidas del ganadero</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> acceder rapidamente al registro de animales, incidencias y eventos <b>para</b> reducir pasos en tareas frecuentes.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>38</b></td>
-      <td><b>US-027</b></td>
-      <td>Visualizar calendario de eventos</td>
-      <td><b>Como</b> usuario, <b>quiero</b> ver mis eventos programados <b>para</b> organizar actividades ganaderas y sanitarias.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>39</b></td>
-      <td><b>US-028</b></td>
-      <td>Crear evento o recordatorio</td>
-      <td><b>Como</b> usuario, <b>quiero</b> crear eventos <b>para</b> programar controles, visitas, tareas productivas o recordatorios financieros.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>40</b></td>
-      <td><b>US-029</b></td>
-      <td>Editar evento</td>
-      <td><b>Como</b> usuario, <b>quiero</b> editar un evento <b>para</b> actualizar fecha, prioridad o estado.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>41</b></td>
-      <td><b>US-030</b></td>
-      <td>Eliminar evento</td>
-      <td><b>Como</b> usuario, <b>quiero</b> eliminar eventos que ya no son necesarios <b>para</b> mantener mi calendario ordenado.</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td><b>42</b></td>
-      <td><b>US-020</b></td>
-      <td>Visualizar dashboard profesional del veterinario</td>
-      <td><b>Como</b> veterinario, <b>quiero</b> ver un dashboard profesional <b>para</b> revisar clientes, pacientes activos, registros clinicos y seguimientos pendientes.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>43</b></td>
-      <td><b>US-021</b></td>
-      <td>Seleccionar cliente en el dashboard veterinario</td>
-      <td><b>Como</b> veterinario, <b>quiero</b> seleccionar un cliente ganadero <b>para</b> revisar sus fincas y animales antes de realizar acciones clinicas.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>44</b></td>
-      <td><b>US-022</b></td>
-      <td>Visualizar clientes asignados en cartas</td>
-      <td><b>Como</b> veterinario, <b>quiero</b> ver mis clientes en cartas con informacion completa <b>para</b> entender rapidamente la situacion de cada ganadero.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>45</b></td>
-      <td><b>US-023</b></td>
-      <td>Agregar cliente ganadero a la cartera del veterinario</td>
-      <td><b>Como</b> veterinario, <b>quiero</b> buscar ganaderos registrados y enviar una peticion <b>para</b> agregarlos a mi cartera de clientes.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>46</b></td>
-      <td><b>US-024</b></td>
-      <td>Eliminar cliente de la cartera del veterinario</td>
-      <td><b>Como</b> veterinario, <b>quiero</b> eliminar un cliente de mi lista <b>para</b> dejar de visualizar sus datos ganaderos y sanitarios.</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td><b>47</b></td>
-      <td><b>US-025</b></td>
-      <td>Consultar pacientes por ganadero</td>
-      <td><b>Como</b> veterinario, <b>quiero</b> seleccionar un cliente y ver sus animales <b>para</b> atenderlos de forma organizada.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>48</b></td>
-      <td><b>US-026</b></td>
-      <td>Acceder al historial de un paciente</td>
-      <td><b>Como</b> veterinario, <b>quiero</b> abrir el historial clinico desde la carta del paciente <b>para</b> revisar sus atenciones anteriores.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>49</b></td>
-      <td><b>US-031</b></td>
-      <td>Visualizar movimientos financieros</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> ver mis ingresos, egresos y balance <b>para</b> controlar la rentabilidad de mi operacion.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>50</b></td>
-      <td><b>US-032</b></td>
-      <td>Registrar movimiento financiero</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> registrar ingresos y egresos <b>para</b> mantener actualizado mi balance mensual.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>51</b></td>
-      <td><b>US-033</b></td>
-      <td>Editar movimiento financiero</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> editar un movimiento financiero <b>para</b> corregir montos, categorias o fechas.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>52</b></td>
-      <td><b>US-034</b></td>
-      <td>Eliminar movimiento financiero</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> eliminar un movimiento incorrecto <b>para</b> mantener mi balance limpio.</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <td><b>53</b></td>
-      <td><b>US-035</b></td>
-      <td>Visualizar reportes del ganadero</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> ver reportes basados en mis propios animales, fincas y registros sanitarios <b>para</b> tomar decisiones sobre el estado sanitario y productivo de mi hato.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>54</b></td>
-      <td><b>US-036</b></td>
-      <td>Visualizar reportes del veterinario</td>
-      <td><b>Como</b> veterinario, <b>quiero</b> ver reportes sanitarios de mis clientes asignados <b>para</b> priorizar pacientes, seguimientos y atenciones por hato.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>55</b></td>
-      <td><b>US-037</b></td>
-      <td>Visualizar estado sanitario del hato</td>
-      <td><b>Como</b> ganadero, <b>quiero</b> ver un grafico del estado de mis animales <b>para</b> identificar cuantos estan saludables, en observacion o en tratamiento.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>56</b></td>
-      <td><b>US-038</b></td>
-      <td>Visualizar registros sanitarios por tipo</td>
-      <td><b>Como</b> usuario autorizado, <b>quiero</b> ver los registros sanitarios agrupados por tipo <b>para</b> entender que atenciones son mas frecuentes.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>57</b></td>
-      <td><b>US-039</b></td>
-      <td>Visualizar atenciones sanitarias por hato</td>
-      <td><b>Como</b> veterinario, <b>quiero</b> ver las atenciones sanitarias por hato <b>para</b> identificar que clientes requieren mas seguimiento.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>58</b></td>
-      <td><b>US-058</b></td>
-      <td>Visualizar dispositivos IoT registrados</td>
-      <td><b>Como</b> usuario autenticado, <b>quiero</b> ver los dispositivos IoT registrados en la plataforma <b>para</b> monitorear los equipos asociados a fincas o animales.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>59</b></td>
-      <td><b>US-059</b></td>
-      <td>Consultar metricas de un dispositivo IoT</td>
-      <td><b>Como</b> usuario autenticado, <b>quiero</b> consultar las metricas recientes de un dispositivo <b>para</b> conocer lecturas como peso, temperatura, humedad o actividad.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>60</b></td>
-      <td><b>US-060</b></td>
-      <td>Visualizar planes de suscripcion</td>
-      <td><b>Como</b> usuario autenticado, <b>quiero</b> visualizar los planes de suscripcion disponibles <b>para</b> elegir el plan que mejor se adapte a mi operacion.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>61</b></td>
-      <td><b>US-061</b></td>
-      <td>Consultar suscripcion activa</td>
-      <td><b>Como</b> usuario autenticado, <b>quiero</b> consultar mi suscripcion activa <b>para</b> conocer el plan asociado a mi cuenta.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>62</b></td>
-      <td><b>US-062</b></td>
-      <td>Realizar pago simulado de suscripcion</td>
-      <td><b>Como</b> usuario autenticado, <b>quiero</b> realizar un pago simulado de un plan <b>para</b> activar una suscripcion durante las pruebas del sistema.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>63</b></td>
-      <td><b>US-063</b></td>
-      <td>Consultar historial de pagos</td>
-      <td><b>Como</b> usuario autenticado, <b>quiero</b> consultar mi historial de pagos <b>para</b> revisar los pagos realizados por mis suscripciones.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>64</b></td>
-      <td><b>US-064</b></td>
-      <td>Consumir dashboards desde el backend</td>
-      <td><b>Como</b> usuario autenticado, <b>quiero</b> visualizar dashboards calculados desde el backend <b>para</b> revisar indicadores consistentes con la informacion persistida en la base de datos.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>65</b></td>
-      <td><b>TS-005</b></td>
-      <td>Configuracion inicial del backend con ASP.NET Core</td>
-      <td><b>Como</b> Developer backend, <b>quiero</b> crear la solucion de AniTec con ASP.NET Core <b>para</b> implementar una API REST organizada y preparada para integrarse con el frontend.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>66</b></td>
-      <td><b>TS-006</b></td>
-      <td>Persistencia con Entity Framework Core y MySQL</td>
-      <td><b>Como</b> Developer backend, <b>quiero</b> configurar Entity Framework Core con MySQL <b>para</b> almacenar la informacion de AniTec en una base de datos relacional.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td><b>67</b></td>
-      <td><b>TS-007</b></td>
-      <td>Autenticacion backend con JWT y BCrypt</td>
-      <td><b>Como</b> Developer backend, <b>quiero</b> implementar autenticacion con JWT y BCrypt <b>para</b> validar credenciales y proteger el acceso de los usuarios registrados.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td><b>68</b></td>
-      <td><b>TS-008</b></td>
-      <td>Implementacion de bounded contexts de gestion ganadera</td>
-      <td><b>Como</b> Developer backend, <b>quiero</b> implementar los bounded contexts principales de AniTec <b>para</b> exponer servicios REST de fincas, animales, sanidad, actividades y finanzas.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td><b>69</b></td>
-      <td><b>TS-009</b></td>
-      <td>Servicios backend para analiticas y clientes veterinarios</td>
-      <td><b>Como</b> Developer backend, <b>quiero</b> implementar endpoints de analiticas y clientes veterinarios <b>para</b> que ganaderos y veterinarios consulten informacion calculada desde el servidor.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>70</b></td>
-      <td><b>TS-010</b></td>
-      <td>Servicios backend para dispositivos, metricas y suscripciones</td>
-      <td><b>Como</b> Developer backend, <b>quiero</b> implementar dispositivos, metricas y suscripciones <b>para</b> ampliar AniTec con informacion IoT y planes de uso de la plataforma.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>71</b></td>
-      <td><b>TS-011</b></td>
-      <td>Documentacion y pruebas de API con Swagger</td>
-      <td><b>Como</b> Developer backend, <b>quiero</b> documentar y probar los endpoints con Swagger <b>para</b> validar manualmente el funcionamiento de la API antes de integrarla con el frontend.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>72</b></td>
-      <td><b>TS-012</b></td>
-      <td>Integracion frontend-backend con variables de entorno</td>
-      <td><b>Como</b> Developer frontend, <b>quiero</b> configurar variables de entorno <b>para</b> conectar la aplicacion Vue con la API de AniTec en distintos ambientes.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>73</b></td>
-      <td><b>TS-013</b></td>
-      <td>Stores frontend para IoT y suscripciones</td>
-      <td><b>Como</b> Developer frontend, <b>quiero</b> crear stores y servicios para dispositivos, metricas, planes y pagos <b>para</b> integrar las nuevas pantallas con el backend.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>74</b></td>
-      <td><b>TS-014</b></td>
-      <td>Mapeo de recursos de clientes veterinarios</td>
-      <td><b>Como</b> Developer frontend, <b>quiero</b> mapear correctamente los recursos de clientes veterinarios <b>para</b> diferenciar el identificador de la relacion y el identificador del ganadero.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>75</b></td>
-      <td><b>TS-015</b></td>
-      <td>Configuracion de endpoints para despliegue productivo</td>
-      <td><b>Como</b> Developer frontend, <b>quiero</b> configurar el ambiente de produccion <b>para</b> que la aplicacion desplegada consuma el backend real y no el servicio mock utilizado durante prototipado.</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td><b>76</b></td>
-      <td><b>TS-016</b></td>
-      <td>Integracion backend con Stripe para suscripciones</td>
-      <td><b>Como</b> Developer backend, <b>quiero</b> integrar Stripe en el bounded context de suscripciones <b>para</b> crear sesiones de pago y relacionarlas con los planes de AniTec.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td><b>77</b></td>
-      <td><b>TS-017</b></td>
-      <td>Integracion frontend del flujo de pago con Stripe</td>
-      <td><b>Como</b> Developer frontend, <b>quiero</b> conectar la vista de planes con el checkout de Stripe <b>para</b> que el usuario pueda iniciar el pago desde la aplicacion web.</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <td><b>78</b></td>
-      <td><b>TS-018</b></td>
-      <td>Mejora del IAM backend para autenticacion y autorizacion por rol</td>
-      <td><b>Como</b> Developer backend, <b>quiero</b> mejorar el IAM <b>para</b> validar credenciales, roles y datos de sesion de forma consistente en la API.</td>
-      <td>12</td>
-    </tr>
-    <tr>
-      <td><b>79</b></td>
-      <td><b>TS-019</b></td>
-      <td>Proteccion de endpoints principales mediante JWT y roles</td>
-      <td><b>Como</b> Developer backend, <b>quiero</b> proteger los endpoints principales con JWT y roles <b>para</b> evitar el acceso no autorizado a informacion de AniTec.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td><b>80</b></td>
-      <td><b>TS-020</b></td>
-      <td>Adaptacion del IAM frontend para sesion, token y rutas protegidas</td>
-      <td><b>Como</b> Developer frontend, <b>quiero</b> adaptar el IAM para guardar sesion, token y rol del usuario <b>para</b> proteger la navegacion segun el tipo de cuenta.</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td><b>81</b></td>
-      <td><b>TS-021</b></td>
-      <td>Consumo autenticado de endpoints desde stores y servicios frontend</td>
-      <td><b>Como</b> Developer frontend, <b>quiero</b> enviar el token JWT en las peticiones Axios <b>para</b> consumir endpoints protegidos desde los stores de AniTec.</td>
-      <td>5</td>
-    </tr>
-    <tr>
-      <td><b>82</b></td>
-      <td><b>TS-022</b></td>
-      <td>Documentacion y validacion del flujo de seguridad y suscripcion</td>
-      <td><b>Como</b> Developer, <b>quiero</b> documentar y validar el flujo de IAM, endpoints protegidos y Stripe <b>para</b> evidenciar que el Sprint 4 cumple su objetivo.</td>
-      <td>3</td>
+      <td><b>BG-04:</b> Conseguir que al menos el 80 % de los participantes identifique correctamente un animal mediante QR o la alternativa manual en menos de 30 segundos, durante las pruebas del Sprint 2.</td>
+      <td>Jorge Luis Rivas y Valeria Mendoza</td>
+      <td>Localizan la ficha correcta con menos tiempo y mantienen una alternativa cuando la cámara falla.</td>
+      <td>Escaneo QR con Google ML Kit y búsqueda manual.</td>
+      <td>Como usuario autorizado, deseo identificar un animal mediante cámara o búsqueda para acceder rápidamente a su ficha. US-033 y US-034.</td>
     </tr>
   </tbody>
 </table>
+
+> **Placeholder de captura:** Insertar aquí la captura actualizada del Impact Mapping en la herramienta indicada.
+
+> **Placeholder de enlace público:** Agregar aquí la URL pública del Impact Mapping.
+
+## 2.4.3. Product Backlog
+
+El Product Backlog contiene todas las User Stories, Technical Stories y Spike Stories definidas en esta sección. El orden comienza con la landing page, como exige el statement, y continúa con incrementos verticales de valor móvil. Las historias técnicas se ubican cerca del resultado que habilitan y todas las estimaciones utilizan la escala 1, 2, 3, 5 u 8.
+
+La distribución considera los hitos del curso:
+
+- **Sprint 1 — TB1, semana 7:** landing page desplegada, backend al 70 %, bases de Android y Flutter y pantallas core de acceso y gestión de animales.
+- **Sprint 2 — AV2, semana 12:** backend al 100 % y principales funciones core de sanidad, colaboración veterinaria, notificaciones, trabajo offline e identificación mediante cámara.
+- **Sprint 3 — TB2, semana 15:** cierre de trazabilidad sanitaria y sincronización, reportes, pagos, accesibilidad, pruebas, distribución y aplicación completa según el backlog.
+
+<table>
+  <thead>
+    <tr>
+      <th># Orden</th>
+      <th>User Story Id</th>
+      <th>Título</th>
+      <th>Story Points (1 / 2 / 3 / 5 / 8)</th>
+      <th>Sprint</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>US-001</td><td>Comprender la propuesta de valor de AniTec</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>2</td><td>US-002</td><td>Conocer las soluciones para cada segmento</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>3</td><td>US-003</td><td>Acceder a una landing page adaptable e internacionalizada</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>4</td><td>TS-001</td><td>Configurar la aplicación Android nativa</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>5</td><td>TS-002</td><td>Configurar la aplicación multiplataforma con Flutter</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>6</td><td>TS-003</td><td>Definir la arquitectura móvil por capas y bounded contexts</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>7</td><td>TS-013</td><td>Adaptar y documentar los servicios backend para móviles</td><td>8</td><td>Sprint 1</td></tr>
+    <tr><td>8</td><td>US-004</td><td>Registrar una cuenta según el rol</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>9</td><td>US-005</td><td>Iniciar sesión</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>10</td><td>US-006</td><td>Mantener y finalizar la sesión móvil</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>11</td><td>US-007</td><td>Acceder únicamente a información autorizada</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>12</td><td>TS-008</td><td>Proteger credenciales y datos de sesión</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>13</td><td>US-008</td><td>Consultar las fincas registradas</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>14</td><td>US-009</td><td>Registrar y actualizar una finca</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>15</td><td>US-010</td><td>Consultar y buscar animales</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>16</td><td>US-011</td><td>Registrar un animal</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>17</td><td>US-012</td><td>Actualizar o archivar un animal</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>18</td><td>US-013</td><td>Consultar el detalle de un animal</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>19</td><td>TS-004</td><td>Integrar las aplicaciones con la API REST interna</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>20</td><td>TS-005</td><td>Implementar persistencia local segura en Android</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>21</td><td>TS-006</td><td>Implementar persistencia local en Flutter</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>22</td><td>SP-001</td><td>Investigar identificación de animales con Google ML Kit</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>23</td><td>US-014</td><td>Consultar eventos sanitarios</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>24</td><td>US-015</td><td>Registrar una incidencia sanitaria</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>25</td><td>US-016</td><td>Registrar diagnóstico y tratamiento</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>26</td><td>US-017</td><td>Consultar el historial sanitario de un animal</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>27</td><td>US-018</td><td>Corregir un registro sanitario con trazabilidad</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>28</td><td>US-019</td><td>Programar un control sanitario posterior</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>29</td><td>US-020</td><td>Recibir una solicitud de seguimiento veterinario</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>30</td><td>US-021</td><td>Aceptar o rechazar acceso veterinario</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>31</td><td>US-022</td><td>Revocar el acceso de un veterinario</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>32</td><td>US-023</td><td>Consultar clientes y pacientes autorizados</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>33</td><td>US-024</td><td>Consultar antecedentes de un paciente autorizado</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>34</td><td>US-025</td><td>Consultar actividades programadas</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>35</td><td>US-026</td><td>Gestionar una actividad o recordatorio</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>36</td><td>US-027</td><td>Recibir una notificación de actividad</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>37</td><td>US-028</td><td>Atender o reprogramar una actividad</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>38</td><td>TS-009</td><td>Implementar notificaciones móviles</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>39</td><td>US-029</td><td>Consultar información esencial sin conexión</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>40</td><td>US-030</td><td>Guardar trabajo pendiente sin conexión</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>41</td><td>US-031</td><td>Sincronizar operaciones pendientes</td><td>8</td><td>Sprint 2</td></tr>
+    <tr><td>42</td><td>US-032</td><td>Resolver errores o conflictos de sincronización</td><td>8</td><td>Sprint 3</td></tr>
+    <tr><td>43</td><td>TS-007</td><td>Implementar sincronización idempotente</td><td>8</td><td>Sprint 2</td></tr>
+    <tr><td>44</td><td>US-033</td><td>Identificar un animal mediante código QR</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>45</td><td>US-034</td><td>Identificar un animal sin utilizar la cámara</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>46</td><td>TS-010</td><td>Integrar identificación QR mediante Google ML Kit</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>47</td><td>US-035</td><td>Consultar indicadores del hato</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>48</td><td>US-036</td><td>Consultar indicadores sanitarios de clientes</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>49</td><td>US-037</td><td>Registrar y consultar movimientos financieros</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>50</td><td>US-038</td><td>Consultar planes de suscripción</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>51</td><td>US-039</td><td>Iniciar un pago mediante un proveedor externo</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>52</td><td>US-040</td><td>Consultar el resultado del pago y la suscripción</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>53</td><td>TS-011</td><td>Integrar el checkout externo de Stripe</td><td>8</td><td>Sprint 3</td></tr>
+    <tr><td>54</td><td>US-041</td><td>Cambiar el idioma de la aplicación</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>55</td><td>US-042</td><td>Utilizar la aplicación con necesidades de accesibilidad</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>56</td><td>US-043</td><td>Comprender errores y estados de conectividad</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>57</td><td>TS-012</td><td>Aplicar internacionalización y accesibilidad móvil</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>58</td><td>TS-014</td><td>Automatizar pruebas de los flujos móviles críticos</td><td>8</td><td>Sprint 3</td></tr>
+    <tr><td>59</td><td>TS-015</td><td>Configurar compilación y distribución de versiones móviles</td><td>5</td><td>Sprint 3</td></tr>
+  </tbody>
+</table>
+
+> **Placeholder de captura:** Insertar aquí la captura del Product Backlog actualizado en Jira, YouTrack o Trello.
+
+> **Placeholder de enlace público:** Agregar aquí la URL pública del Product Backlog.

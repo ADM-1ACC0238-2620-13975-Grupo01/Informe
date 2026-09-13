@@ -4,6 +4,10 @@ AgriWebb. (s. f.). _AgriWebb mobile app_. Recuperado el 13 de septiembre de 2026
 
 AgriWebb. (s. f.). _Pricing_. Recuperado el 13 de septiembre de 2026, de https://www.agriwebb.com/us/pricing/
 
+Android Developers. (s. f.). _Jetpack Compose_. Recuperado el 13 de septiembre de 2026, de https://developer.android.com/develop/ui/compose
+
+Android Developers. (s. f.). _Save data in a local database using Room_. Recuperado el 13 de septiembre de 2026, de https://developer.android.com/training/data-storage/room
+
 Bourgau, P. (2022, marzo 29). _Step by step guide to run your big picture event storming_. Philippe Bourgau's Blog. https://bit.ly/bpes-guide
 
 Evans, E. (2003). _Domain-Driven Design: Tackling Complexity in the Heart of Software_. Addison-Wesley Professional.
@@ -11,6 +15,12 @@ Evans, E. (2003). _Domain-Driven Design: Tackling Complexity in the Heart of Sof
 Food and Agriculture Organization of the United Nations. (2022). _Digital agriculture: Technologies transforming agriculture and food systems_. https://www.fao.org/digital-agriculture/en/
 
 Food and Agriculture Organization of the United Nations. (2023). _Livestock and the environment_. https://www.fao.org/livestock-environment/en/
+
+Firebase. (s. f.). _Firebase App Distribution_. Recuperado el 13 de septiembre de 2026, de https://firebase.google.com/docs/app-distribution
+
+Flutter. (s. f.). _Flutter documentation_. Recuperado el 13 de septiembre de 2026, de https://docs.flutter.dev/
+
+Google for Developers. (s. f.). _Scan barcodes with ML Kit on Android_. Recuperado el 13 de septiembre de 2026, de https://developers.google.com/ml-kit/vision/barcode-scanning/android
 
 Chandrasekaran, P. (2023, marzo 20). _Remote EventStorming in practice_. Domain-driven Design: A Practitioner's Guide. https://ddd-practitioners.com/2023/03/20/remote-eventstorming-workshop/
 
@@ -47,6 +57,8 @@ Pressman, R. S. (2010). _Ingeniería de software: Un enfoque práctico_ (7a ed.)
 Scrum.org. (2020). _The Scrum Guide_. https://scrumguides.org/scrum-guide.html
 
 Structurizr. (2026). _Structurizr documentation_. https://docs.structurizr.com/
+
+Stripe. (s. f.). _Use a prebuilt Stripe-hosted payment page_. Recuperado el 13 de septiembre de 2026, de https://docs.stripe.com/payments/checkout
 
 Vue.js. (2026). _Vue.js documentation_. https://vuejs.org/guide/
 
