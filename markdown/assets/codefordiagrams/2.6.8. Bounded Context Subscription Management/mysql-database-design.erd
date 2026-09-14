@@ -1,0 +1,36 @@
+erDiagram
+    USERS ||--o{ SUBSCRIPTIONS : owns
+    SUBSCRIPTION_PLANS ||--o{ SUBSCRIPTIONS : selects
+    SUBSCRIPTIONS ||--o{ PAYMENTS : receives
+    USERS {
+        int id PK
+    }
+    SUBSCRIPTION_PLANS {
+        int id PK
+        varchar name "required, max 80"
+        decimal price "precision 10,2"
+        varchar stripe_price_id "max 120"
+        int max_animals
+        boolean is_active
+    }
+    SUBSCRIPTIONS {
+        int id PK
+        int user_id FK
+        int plan_id FK
+        varchar stripe_customer_id "max 120"
+        varchar stripe_subscription_id "max 120"
+        varchar status "required, max 40"
+        date started_at
+        date ends_at "nullable"
+    }
+    PAYMENTS {
+        int id PK
+        int user_id FK
+        int subscription_id FK
+        decimal amount "precision 10,2"
+        varchar currency "required, max 10"
+        varchar provider "required, max 40"
+        varchar provider_payment_id "required, max 120; target unique"
+        varchar status "required, max 40"
+        datetime paid_at
+    }

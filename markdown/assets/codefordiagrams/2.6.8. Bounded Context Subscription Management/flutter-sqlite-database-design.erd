@@ -1,0 +1,31 @@
+%% Flutter SQLite local persistence for Subscription Management
+erDiagram
+    CACHED_SUBSCRIPTION_PLANS ||--o{ CACHED_SUBSCRIPTIONS : contains
+    CACHED_SUBSCRIPTION_PLANS {
+        int plan_id PK
+        text name
+        decimal price
+        text currency
+        int max_animals
+        boolean is_active
+        datetime updated_at
+    }
+    CACHED_SUBSCRIPTIONS {
+        int subscription_id PK
+        int user_id
+        int plan_id FK
+        text status
+        date started_at
+        date ends_at
+        datetime updated_at
+    }
+    PENDING_OPERATIONS {
+        text operation_id PK
+        text aggregate_type
+        text aggregate_id
+        text operation_type
+        text payload_json
+        datetime created_at
+        int retry_count
+        text status
+    }

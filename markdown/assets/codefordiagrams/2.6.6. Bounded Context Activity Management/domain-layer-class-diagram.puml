@@ -1,0 +1,64 @@
+@startuml
+title AniTec - Activity Management - Domain Layer
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor #F7FAFC
+  BorderColor #2A9D8F
+  ArrowColor #52616B
+}
+
+package "Activity Management" {
+class FarmActivity <<Aggregate Root>> {
+  -id: int
+  -ownerId: int?
+  -veterinarianId: int?
+  -animalId: int?
+  -title: string
+  -type: string
+  -schedule: ActivitySchedule
+  -priority: ActivityPriority
+  -status: ActivityStatus
+  +Reschedule(schedule: ActivitySchedule): void
+  +Complete(): void
+  +Cancel(): void
+}
+class ActivitySchedule <<Value Object - target>> {
+  -scheduledAt: DateTime
+  -reminderAt: DateTime?
+  +IsUpcoming(now: DateTime): bool
+}
+enum ActivityPriority {
+  Low
+  Medium
+  High
+}
+enum ActivityStatus {
+  Pending
+  InProgress
+  Completed
+  Cancelled
+}
+class ReminderPolicy <<Domain Service - target>> {
+  +ShouldNotify(activity: FarmActivity, now: DateTime): bool
+}
+interface IFarmActivityRepository {
+  +FindById(id: int): FarmActivity?
+  +FindUpcoming(userId: int): List~FarmActivity~
+  +Add(activity: FarmActivity): void
+  +Update(activity: FarmActivity): void
+}
+FarmActivity *-- ActivitySchedule
+FarmActivity --> ActivityPriority
+FarmActivity --> ActivityStatus
+ReminderPolicy ..> FarmActivity
+IFarmActivityRepository ..> FarmActivity
+}
+
+note bottom
+  Existing elements preserve the backend vocabulary.
+  Elements marked as target complete the mobile course design.
+end note
+@enduml

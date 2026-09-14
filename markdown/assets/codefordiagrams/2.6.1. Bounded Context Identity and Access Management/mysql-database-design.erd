@@ -1,0 +1,10 @@
+erDiagram
+    USERS {
+        int id PK
+        varchar username "required, max 80; target unique"
+        varchar password_hash "required"
+        varchar full_name "required, max 120"
+        varchar role "required, max 40"
+        datetime created_at "audit"
+        datetime updated_at "audit"
+    }

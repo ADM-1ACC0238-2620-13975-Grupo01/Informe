@@ -1,0 +1,24 @@
+%% Android Room local persistence for Activity Management
+erDiagram
+    CACHED_ACTIVITIES {
+        int activity_id PK
+        int owner_id
+        int veterinarian_id
+        int animal_id
+        text title
+        datetime scheduled_at
+        datetime reminder_at
+        text priority
+        text status
+        datetime updated_at
+    }
+    PENDING_OPERATIONS {
+        text operation_id PK
+        text aggregate_type
+        text aggregate_id
+        text operation_type
+        text payload_json
+        datetime created_at
+        int retry_count
+        text status
+    }

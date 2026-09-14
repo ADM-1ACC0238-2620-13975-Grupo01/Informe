@@ -416,3 +416,94 @@ El Context Mapping compara las relaciones estructurales entre los bounded contex
 - **Trazabilidad:** los mismos nueve contextos deberán utilizarse en el capítulo 2.6 y en los futuros diagramas C4.
 
 El mapa seleccionado será la base de 2.5.3 Software Architecture. En esa sección se representarán la landing page, Android, Flutter, almacenamiento local, API REST, MySQL, Stripe, ML Kit, notificaciones y Firebase App Distribution sin convertir los contenedores técnicos en bounded contexts adicionales.
+
+## 2.5.3. Software Architecture
+
+La arquitectura de AniTec se documenta con el modelo C4 para representar la solución con distintos niveles de detalle. Las tres vistas se construyen desde un único modelo en Structurizr DSL, de modo que los actores, dependencias, tecnologías y relaciones conserven el mismo significado. El archivo fuente se encuentra en [`anitec-software-architecture.dsl`](../../assets/codefordiagrams/anitec-software-architecture.dsl).
+
+La solución reutiliza la API REST y la persistencia desarrolladas en el proyecto anterior, pero reemplaza el frontend web como canal operativo por una aplicación Android nativa y una aplicación multiplataforma. La landing page mantiene una función informativa. Los nueve bounded contexts definidos en las secciones anteriores pertenecen al backend y no se modelan como contenedores independientes en este nivel; su estructura interna se desarrollará en el diseño táctico del punto 2.6.
+
+### 2.5.3.1. Software Architecture Context Level Diagrams
+
+El Context Level Diagram delimita a AniTec como un único sistema de software y muestra quién lo usa y de qué servicios externos depende. El **Rancher** administra su operación ganadera; el **Veterinarian** consulta pacientes autorizados y registra atenciones; el **Visitor** conoce la propuesta mediante la landing page; y el **Evaluator / Tester** instala las versiones móviles distribuidas para la validación del curso.
+
+Stripe procesa el checkout de las suscripciones, Firebase Cloud Messaging entrega notificaciones push, Google ML Kit reconoce códigos QR en el dispositivo y Firebase App Distribution distribuye compilaciones firmadas. Estos servicios permanecen fuera del límite de AniTec y se integran mediante contratos que evitan trasladar sus modelos al dominio.
+
+<table>
+  <thead>
+    <tr><th>Elemento externo</th><th>Relación con AniTec</th><th>Resultado esperado</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Visitor</td><td>Consulta la landing page.</td><td>Comprende la propuesta de valor y encuentra el canal de acceso al producto.</td></tr>
+    <tr><td>Rancher</td><td>Usa las aplicaciones móviles.</td><td>Gestiona fincas, animales, sanidad, actividades y finanzas.</td></tr>
+    <tr><td>Veterinarian</td><td>Usa las aplicaciones móviles con autorización del ganadero.</td><td>Consulta clientes y pacientes y mantiene la trazabilidad sanitaria permitida.</td></tr>
+    <tr><td>Evaluator / Tester</td><td>Recibe e instala builds mediante Firebase App Distribution.</td><td>Valida la aplicación en un dispositivo físico y una versión identificable.</td></tr>
+    <tr><td>Stripe</td><td>Recibe solicitudes de checkout y devuelve resultados de pago.</td><td>AniTec activa o conserva la suscripción según una confirmación válida.</td></tr>
+    <tr><td>Firebase Cloud Messaging</td><td>Recibe solicitudes de entrega de notificaciones.</td><td>El dispositivo presenta recordatorios definidos por Activity Management.</td></tr>
+    <tr><td>Google ML Kit</td><td>Procesa imágenes de la cámara localmente.</td><td>La aplicación obtiene el código que Livestock Management resuelve como un animal.</td></tr>
+    <tr><td>Firebase App Distribution</td><td>Publica builds firmadas para usuarios autorizados.</td><td>Las versiones de prueba y entrega se distribuyen con trazabilidad.</td></tr>
+  </tbody>
+</table>
+
+<div align="center">
+  <!-- Placeholder: exportar la vista AniTec-SystemContext del archivo DSL y copiar aquí el PNG. -->
+  <img src="../../assets/chapter-2/SoftwareArchitectureContextLevelDiagram.png" alt="Software Architecture Context Level Diagram de AniTec" width="900">
+  <p><i>Figura 2.5.28. Software Architecture Context Level Diagram de AniTec. Fuente: elaboración propia con Structurizr DSL.</i></p>
+</div>
+
+### 2.5.3.2. Software Architecture Container Level Diagrams
+
+El Container Level Diagram descompone AniTec en unidades ejecutables o de almacenamiento. La landing page comunica el producto; las dos aplicaciones móviles implementan la experiencia de los roles; cada cliente mantiene almacenamiento local para caché y operaciones pendientes; la API centraliza autenticación, autorización y reglas de negocio; y MySQL conserva la fuente de verdad compartida.
+
+Android y Flutter consumen los mismos contratos JSON sobre HTTPS y se autentican con JWT. La persistencia local mejora la continuidad ante conectividad limitada, pero las reglas de aceptación continúan bajo el bounded context propietario en la API. La cámara y ML Kit actúan como capacidades del dispositivo: decodifican un QR, mientras Livestock Management determina qué animal representa y si el usuario puede consultarlo.
+
+<table>
+  <thead>
+    <tr><th>Contenedor</th><th>Responsabilidad</th><th>Tecnología</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Landing Page</td><td>Presenta la propuesta de valor, segmentos, características y acceso a versiones autorizadas.</td><td>HTML, CSS y JavaScript.</td></tr>
+    <tr><td>Native Android Application</td><td>Implementa los flujos móviles nativos, utiliza cámara y notificaciones y sincroniza datos.</td><td>Kotlin y Jetpack Compose.</td></tr>
+    <tr><td>Android Local Database</td><td>Almacena caché, read models y operaciones pendientes de sincronización.</td><td>Room sobre SQLite.</td></tr>
+    <tr><td>Cross-Platform Mobile Application</td><td>Implementa el mismo alcance funcional mediante una base de código multiplataforma.</td><td>Flutter y Dart.</td></tr>
+    <tr><td>Flutter Local Database</td><td>Proporciona persistencia local equivalente para la aplicación multiplataforma.</td><td>SQLite mediante una biblioteca compatible con Flutter.</td></tr>
+    <tr><td>AniTec REST API</td><td>Expone casos de uso, aplica reglas de negocio y autorización y coordina integraciones externas.</td><td>C#, ASP.NET Core, Entity Framework Core, JWT y OpenAPI.</td></tr>
+    <tr><td>AniTec Database</td><td>Persiste la información transaccional y las proyecciones de los bounded contexts.</td><td>MySQL.</td></tr>
+  </tbody>
+</table>
+
+<div align="center">
+  <!-- Placeholder: exportar la vista AniTec-Containers del archivo DSL y copiar aquí el PNG. -->
+  <img src="../../assets/chapter-2/SoftwareArchitectureContainerLevelDiagram.png" alt="Software Architecture Container Level Diagram de AniTec" width="900">
+  <p><i>Figura 2.5.29. Software Architecture Container Level Diagram de AniTec. Fuente: elaboración propia con Structurizr DSL.</i></p>
+</div>
+
+### 2.5.3.3. Software Architecture Deployment Diagrams
+
+El Deployment Diagram representa la topología objetivo para las entregas del curso. La aplicación Android nativa se instala en un dispositivo Android físico y conserva su base Room dentro del mismo dispositivo. La aplicación Flutter se instala en el dispositivo físico correspondiente a la plataforma objetivo definida por el equipo y mantiene su propia base SQLite local. En ambos casos, la cámara y el reconocimiento QR se ejecutan dentro del dispositivo.
+
+La landing page se publica como contenido estático en GitHub Pages. La API ASP.NET Core se ejecuta como Web Service en Render y accede a MySQL administrado en Filess.io, destinos recuperados del despliegue funcional del proyecto anterior. Stripe, Firebase Cloud Messaging y Firebase App Distribution se mantienen como servicios externos. Esta topología deberá actualizarse si durante los sprints cambia algún proveedor, sin alterar las responsabilidades de los contenedores.
+
+<table>
+  <thead>
+    <tr><th>Nodo de despliegue</th><th>Artefacto o instancia</th><th>Comunicación principal</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Physical Android Device</td><td>Native Android Application, Room/SQLite, cámara y ML Kit.</td><td>HTTPS con la API; almacenamiento y reconocimiento local.</td></tr>
+    <tr><td>Cross-Platform Target Device</td><td>Flutter Application, SQLite, cámara y adaptador de reconocimiento QR.</td><td>HTTPS con la API; almacenamiento y reconocimiento local.</td></tr>
+    <tr><td>GitHub Pages</td><td>Landing Page.</td><td>HTTPS con visitantes y acceso al canal de distribución.</td></tr>
+    <tr><td>Render</td><td>AniTec REST API sobre el runtime de .NET.</td><td>JSON/HTTPS con clientes móviles; SQL con MySQL; HTTPS con servicios externos.</td></tr>
+    <tr><td>Filess.io</td><td>AniTec Database sobre MySQL.</td><td>Conexión restringida desde la API.</td></tr>
+    <tr><td>Firebase App Distribution</td><td>Builds móviles firmadas y versionadas.</td><td>Distribución a evaluadores autorizados.</td></tr>
+    <tr><td>Firebase Cloud Messaging</td><td>Servicio de entrega de notificaciones.</td><td>Solicitudes desde el backend y entrega al dispositivo.</td></tr>
+    <tr><td>Stripe Cloud</td><td>Checkout y confirmación de pago.</td><td>Stripe API sobre HTTPS.</td></tr>
+  </tbody>
+</table>
+
+<div align="center">
+  <!-- Placeholder: exportar la vista AniTec-Deployment del archivo DSL y copiar aquí el PNG. -->
+  <img src="../../assets/chapter-2/SoftwareArchitectureDeploymentDiagram.png" alt="Software Architecture Deployment Diagram de AniTec" width="900">
+  <p><i>Figura 2.5.30. Software Architecture Deployment Diagram de AniTec. Fuente: elaboración propia con Structurizr DSL.</i></p>
+</div>
+
+Las tres imágenes deben exportarse desde el mismo archivo DSL. Los nombres y rutas requeridos se detallan en [`codefordiagrams/README.md`](../../assets/codefordiagrams/README.md), de modo que al copiar los PNG exportados los placeholders del informe se resuelvan sin modificar nuevamente el contenido.

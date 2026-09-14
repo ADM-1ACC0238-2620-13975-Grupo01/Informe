@@ -1,0 +1,31 @@
+%% Flutter SQLite local persistence for Livestock Management
+erDiagram
+    CACHED_HERDS ||--o{ CACHED_ANIMALS : contains
+    CACHED_HERDS {
+        int herd_id PK
+        int farm_id
+        text name
+        text location
+        text main_type
+        datetime updated_at
+    }
+    CACHED_ANIMALS {
+        int animal_id PK
+        int herd_id FK
+        text tag UK
+        text qr_identifier UK
+        text name
+        text species
+        text status
+        datetime updated_at
+    }
+    PENDING_OPERATIONS {
+        text operation_id PK
+        text aggregate_type
+        text aggregate_id
+        text operation_type
+        text payload_json
+        datetime created_at
+        int retry_count
+        text status
+    }

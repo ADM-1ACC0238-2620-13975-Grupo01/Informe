@@ -1,0 +1,81 @@
+@startuml
+title AniTec - Subscription Management - Domain Layer
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor #F7FAFC
+  BorderColor #2A9D8F
+  ArrowColor #52616B
+}
+
+package "Subscription Management" {
+class SubscriptionPlan <<Entity>> {
+  -id: int
+  -name: string
+  -price: Money
+  -providerPriceId: string
+  -maxAnimals: int
+  -isActive: bool
+  +Deactivate(): void
+  +ChangePrice(price: Money): void
+}
+class Subscription <<Aggregate Root>> {
+  -id: int
+  -userId: int
+  -planId: int
+  -status: SubscriptionStatus
+  -startedAt: Date
+  -endsAt: Date?
+  +Activate(start: Date, end: Date?): void
+  +Cancel(end: Date): void
+  +IsActive(on: Date): bool
+}
+class Payment <<Entity>> {
+  -id: int
+  -subscriptionId: int
+  -userId: int
+  -amount: Money
+  -providerPaymentId: string
+  -status: PaymentStatus
+  -paidAt: DateTime
+  +Confirm(providerId: string, paidAt: DateTime): void
+  +Reject(): void
+}
+class Money <<Value Object - target>> {
+  -amount: decimal
+  -currency: string
+  +IsPositive(): bool
+}
+enum SubscriptionStatus {
+  Pending
+  Active
+  Cancelled
+  Expired
+}
+enum PaymentStatus {
+  Pending
+  Paid
+  Failed
+}
+interface ISubscriptionRepository {
+  +FindById(id: int): Subscription?
+  +FindActiveByUser(userId: int): Subscription?
+  +Add(subscription: Subscription): void
+  +Update(subscription: Subscription): void
+}
+SubscriptionPlan "1" <-- "0..*" Subscription
+Subscription "1" *-- "0..*" Payment
+Subscription --> SubscriptionStatus
+Payment --> PaymentStatus
+Payment *-- Money
+SubscriptionPlan *-- Money
+ISubscriptionRepository ..> Subscription
+}
+
+note bottom
+  Existing elements preserve the backend vocabulary.
+  Elements marked as target complete the mobile course design.
+end note
+@enduml

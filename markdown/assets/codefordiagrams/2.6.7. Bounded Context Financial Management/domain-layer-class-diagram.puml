@@ -1,0 +1,59 @@
+@startuml
+title AniTec - Financial Management - Domain Layer
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor #F7FAFC
+  BorderColor #2A9D8F
+  ArrowColor #52616B
+}
+
+package "Financial Management" {
+class FinancialRecord <<Aggregate Root>> {
+  -id: int
+  -ownerId: int
+  -type: FinancialRecordType
+  -category: FinancialCategory
+  -amount: Money
+  -date: Date
+  -description: string
+  +ChangeAmount(amount: Money): void
+  +ChangeCategory(category: FinancialCategory): void
+}
+class Money <<Value Object - target>> {
+  -amount: decimal
+  -currency: string
+  +Add(other: Money): Money
+  +IsPositive(): bool
+}
+enum FinancialRecordType {
+  Income
+  Expense
+}
+class FinancialCategory <<Value Object - target>> {
+  -name: string
+  +IsValid(): bool
+}
+class FinancialSummary <<Domain Service - target>> {
+  +Calculate(records: List~FinancialRecord~): Money
+}
+interface IFinancialRecordRepository {
+  +FindById(id: int): FinancialRecord?
+  +FindByOwner(ownerId: int): List~FinancialRecord~
+  +Add(record: FinancialRecord): void
+  +Update(record: FinancialRecord): void
+}
+FinancialRecord *-- Money
+FinancialRecord --> FinancialRecordType
+FinancialRecord *-- FinancialCategory
+FinancialSummary ..> FinancialRecord
+IFinancialRecordRepository ..> FinancialRecord
+}
+
+note bottom
+  Existing elements preserve the backend vocabulary.
+  Elements marked as target complete the mobile course design.
+end note
+@enduml

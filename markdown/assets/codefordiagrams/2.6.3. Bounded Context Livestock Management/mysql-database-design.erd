@@ -1,0 +1,36 @@
+erDiagram
+    USERS ||--o{ FARMS : owns
+    FARMS ||--o{ HERDS : contains
+    HERDS ||--o{ ANIMALS : contains
+    USERS {
+        int id PK
+    }
+    FARMS {
+        int id PK "target addition"
+        int owner_id FK
+        varchar name "required"
+        varchar location "required"
+    }
+    HERDS {
+        int id PK
+        int farm_id FK "target addition"
+        int owner_id FK
+        int veterinarian_id FK "nullable"
+        varchar name "required, max 80"
+        varchar location "legacy field"
+        varchar owner "legacy display field"
+        varchar main_type "required, max 40"
+    }
+    ANIMALS {
+        int id PK
+        int herd_id FK
+        varchar tag "required, max 30; target unique"
+        varchar qr_identifier "target addition; target unique"
+        varchar name "required, max 80"
+        varchar species "required, max 40"
+        varchar breed "required, max 60"
+        varchar gender "required, max 20"
+        date birth_date "nullable"
+        decimal weight "required"
+        varchar status "required, max 30"
+    }

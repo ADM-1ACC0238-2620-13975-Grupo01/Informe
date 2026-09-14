@@ -1,0 +1,60 @@
+@startuml
+title AniTec - Veterinary Collaboration - Domain Layer
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor #F7FAFC
+  BorderColor #2A9D8F
+  ArrowColor #52616B
+}
+
+package "Veterinary Collaboration" {
+class VeterinarianClient <<Aggregate Root>> {
+  -id: int
+  -veterinarianId: int
+  -rancherId: int
+  -status: CollaborationStatus
+  -requestedAt: DateTime
+  -acceptedAt: DateTime?
+  -revokedAt: DateTime?
+  -scope: AuthorizationScope
+  +Accept(at: DateTime): void
+  +Reject(): void
+  +Revoke(at: DateTime): void
+  +IsActive(): bool
+}
+enum CollaborationStatus {
+  Pending
+  Accepted
+  Rejected
+  Revoked
+}
+class AuthorizationScope <<Value Object - target>> {
+  -farmIds: Set~int~
+  -animalIds: Set~int~
+  -canWriteHealthRecords: bool
+  +AllowsAnimal(animalId: int): bool
+}
+class CollaborationPolicy <<Domain Service - target>> {
+  +CanAccept(rancherId: int, relation: VeterinarianClient): bool
+  +CanAccess(veterinarianId: int, animalId: int): bool
+}
+interface IVeterinarianClientRepository {
+  +Find(veterinarianId: int, rancherId: int): VeterinarianClient?
+  +FindByVeterinarian(id: int): List~VeterinarianClient~
+  +Add(relation: VeterinarianClient): void
+  +Update(relation: VeterinarianClient): void
+}
+VeterinarianClient --> CollaborationStatus
+VeterinarianClient *-- AuthorizationScope
+CollaborationPolicy ..> VeterinarianClient
+IVeterinarianClientRepository ..> VeterinarianClient
+}
+
+note bottom
+  Existing elements preserve the backend vocabulary.
+  Elements marked as target complete the mobile course design.
+end note
+@enduml

@@ -1,0 +1,62 @@
+@startuml
+title AniTec - Analytics and Reporting - Domain Layer
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor #F7FAFC
+  BorderColor #2A9D8F
+  ArrowColor #52616B
+}
+
+package "Analytics and Reporting" {
+class DashboardProjection <<Aggregate Root - target>> {
+  -id: int
+  -ownerId: int
+  -audience: string
+  -period: MetricPeriod
+  -generatedAt: DateTime
+  -metrics: List~ReportMetric~
+  +ReplaceMetrics(metrics: List~ReportMetric~): void
+  +IsStale(now: DateTime): bool
+}
+class ReportMetric <<Entity>> {
+  -id: int
+  -label: string
+  -slice: MetricSlice
+  -trend: string
+  -sourceContext: string
+  +Update(slice: MetricSlice, trend: string): void
+}
+class MetricSlice <<Value Object - target>> {
+  -label: string
+  -value: decimal
+  -unit: string
+  +IsComparableTo(other: MetricSlice): bool
+}
+class MetricPeriod <<Value Object - target>> {
+  -from: Date
+  -to: Date
+  +Contains(date: Date): bool
+}
+class ProjectionBuilder <<Domain Service - target>> {
+  +BuildRancher(ownerId: int, period: MetricPeriod): DashboardProjection
+  +BuildVeterinarian(id: int, period: MetricPeriod): DashboardProjection
+}
+interface IReportMetricRepository {
+  +FindProjection(ownerId: int, period: MetricPeriod): DashboardProjection?
+  +Save(projection: DashboardProjection): void
+}
+DashboardProjection "1" *-- "1..*" ReportMetric
+DashboardProjection *-- MetricPeriod
+ReportMetric *-- MetricSlice
+ProjectionBuilder ..> DashboardProjection
+IReportMetricRepository ..> DashboardProjection
+}
+
+note bottom
+  Existing elements preserve the backend vocabulary.
+  Elements marked as target complete the mobile course design.
+end note
+@enduml

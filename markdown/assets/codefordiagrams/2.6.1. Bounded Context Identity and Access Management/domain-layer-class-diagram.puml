@@ -1,0 +1,55 @@
+@startuml
+title AniTec - Identity and Access Management - Domain Layer
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor #F7FAFC
+  BorderColor #2A9D8F
+  ArrowColor #52616B
+}
+
+package "Identity and Access Management" {
+class User <<Aggregate Root>> {
+  -id: int
+  -username: string
+  -passwordHash: string
+  -fullName: string
+  -role: UserRole
+  +UpdateUsername(username: string): User
+  +UpdatePasswordHash(hash: string): User
+  +UpdateProfile(fullName: string, role: UserRole): User
+}
+enum UserRole {
+  Rancher
+  Veterinarian
+  Administrator
+}
+class AuthenticatedSession <<Entity - target>> {
+  -userId: int
+  -tokenReference: string
+  -expiresAt: DateTime
+  +IsExpired(now: DateTime): bool
+  +Revoke(): void
+}
+class CredentialPolicy <<Domain Service - target>> {
+  +ValidateUsername(username: string): bool
+  +ValidatePassword(password: string): bool
+}
+interface IUserRepository {
+  +FindById(id: int): User?
+  +FindByUsername(username: string): User?
+  +Add(user: User): void
+}
+User --> UserRole : has
+AuthenticatedSession --> User : belongs to
+CredentialPolicy ..> User : validates
+IUserRepository ..> User : persists
+}
+
+note bottom
+  Existing elements preserve the backend vocabulary.
+  Elements marked as target complete the mobile course design.
+end note
+@enduml

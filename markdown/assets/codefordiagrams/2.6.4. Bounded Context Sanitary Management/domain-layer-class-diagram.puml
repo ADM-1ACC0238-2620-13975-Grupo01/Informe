@@ -1,0 +1,67 @@
+@startuml
+title AniTec - Sanitary Management - Domain Layer
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor #F7FAFC
+  BorderColor #2A9D8F
+  ArrowColor #52616B
+}
+
+package "Sanitary Management" {
+class HealthEvent <<Aggregate Root>> {
+  -id: int
+  -animalId: int
+  -type: HealthEventType
+  -date: Date
+  -veterinarianId: int?
+  -description: string
+  -diagnosis: Diagnosis
+  -treatment: Treatment
+  -prescription: Prescription
+  -nextDueDate: Date?
+  +RescheduleFollowUp(date: Date): void
+  +UpdateClinicalData(diagnosis: Diagnosis, treatment: Treatment): void
+}
+class Diagnosis <<Value Object - target>> {
+  -description: string
+  +IsEmpty(): bool
+}
+class Treatment <<Value Object - target>> {
+  -instructions: string
+  +IsValid(): bool
+}
+class Prescription <<Value Object - target>> {
+  -details: string
+  +IsRequired(): bool
+}
+enum HealthEventType {
+  MedicalVisit
+  Vaccination
+  Treatment
+  SanitaryControl
+}
+class SanitaryAuthorizationPolicy <<Domain Service - target>> {
+  +CanRegister(actorId: int, animalId: int): bool
+}
+interface IHealthEventRepository {
+  +FindById(id: int): HealthEvent?
+  +FindByAnimal(animalId: int): List~HealthEvent~
+  +Add(event: HealthEvent): void
+  +Update(event: HealthEvent): void
+}
+HealthEvent *-- Diagnosis
+HealthEvent *-- Treatment
+HealthEvent *-- Prescription
+HealthEvent --> HealthEventType
+SanitaryAuthorizationPolicy ..> HealthEvent
+IHealthEventRepository ..> HealthEvent
+}
+
+note bottom
+  Existing elements preserve the backend vocabulary.
+  Elements marked as target complete the mobile course design.
+end note
+@enduml

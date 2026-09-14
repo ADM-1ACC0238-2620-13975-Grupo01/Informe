@@ -1,0 +1,19 @@
+erDiagram
+    ANIMALS ||--o{ HEALTH_EVENTS : has
+    ANIMALS {
+        int id PK
+    }
+    HEALTH_EVENTS {
+        int id PK
+        int animal_id FK
+        int veterinarian_id FK "target traceability, nullable"
+        varchar type "required, max 40"
+        date event_date "required"
+        varchar description "required, max 500"
+        varchar veterinarian "legacy display field"
+        varchar diagnosis
+        varchar treatment
+        varchar prescription
+        varchar follow_up
+        date next_due_date "nullable"
+    }

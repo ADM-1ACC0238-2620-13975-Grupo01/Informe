@@ -1,0 +1,22 @@
+%% Flutter SQLite local persistence for Sanitary Management
+erDiagram
+    CACHED_HEALTH_EVENTS {
+        int health_event_id PK
+        int animal_id
+        int veterinarian_id
+        text type
+        date event_date
+        text clinical_data_json
+        date next_due_date
+        datetime updated_at
+    }
+    PENDING_OPERATIONS {
+        text operation_id PK
+        text aggregate_type
+        text aggregate_id
+        text operation_type
+        text payload_json
+        datetime created_at
+        int retry_count
+        text status
+    }

@@ -285,28 +285,116 @@ CANVASES = {
     },
 }
 
+CANVAS_VISUALS = {
+    "iam": {"domain": "Generic", "business": "Enabler", "evolution": "Custom built", "actor": "Mobile User", "downstream": "Profiles / Subscriptions", "reads": ["Account Status", "Role Catalog"], "incoming": ["Access Requested"]},
+    "profiles": {"domain": "Supporting", "business": "Engagement", "evolution": "Custom built", "actor": "Authenticated User", "downstream": "Livestock / Collaboration", "reads": ["Current Profile", "Role Details"], "incoming": ["User Registered"]},
+    "livestock": {"domain": "Core", "business": "Revenue", "evolution": "Custom built", "actor": "Rancher / Authorized Veterinarian", "downstream": "Sanitary / Activities / Analytics", "reads": ["Farm List", "Animal List", "Animal Detail"], "incoming": ["Profile Created"]},
+    "sanitary": {"domain": "Core", "business": "Revenue / Retention", "evolution": "Custom built", "actor": "Rancher / Authorized Veterinarian", "downstream": "Activities / Analytics", "reads": ["Health History", "Authorized Patients", "Pending Follow-ups"], "incoming": ["Animal Registered", "Access Granted"]},
+    "collaboration": {"domain": "Core", "business": "Differentiation", "evolution": "Custom built", "actor": "Rancher / Veterinarian", "downstream": "Sanitary Management", "reads": ["Veterinarian Directory", "Access Requests", "Authorized Clients"], "incoming": ["Profile Updated", "Animal Registered"]},
+    "activities": {"domain": "Supporting", "business": "Engagement", "evolution": "Custom built", "actor": "Rancher / Veterinarian", "downstream": "Analytics / Notification Provider", "reads": ["Pending Activities", "Calendar", "Reminder Status"], "incoming": ["Follow-up Required"]},
+    "financial": {"domain": "Supporting", "business": "Engagement", "evolution": "Custom built", "actor": "Rancher", "downstream": "Analytics and Reporting", "reads": ["Financial Summary", "Movement List", "Category Catalog"], "incoming": ["Profile Created"]},
+    "subscriptions": {"domain": "Supporting", "business": "Revenue", "evolution": "Buy and integrate", "actor": "Authenticated User", "downstream": "IAM / Mobile Applications", "reads": ["Plan Catalog", "Subscription Status", "Payment Status"], "incoming": ["User Registered", "Stripe Result"]},
+    "analytics": {"domain": "Supporting", "business": "Engagement", "evolution": "Custom built", "actor": "Rancher / Veterinarian", "downstream": "Rancher / Veterinarian", "reads": ["Dashboard", "Date Range", "Authorized Scope"], "incoming": ["Livestock Updated", "Health Event Recorded", "Financial Movement Recorded"]},
+}
 
-def canvas_section(svg: Svg, x, y, w, h, heading, body, color, chars=48):
-    svg.rect(x, y, w, h, COLORS["white"], stroke=color, radius=4, sw=2)
-    svg.rect(x, y, w, 38, color, stroke=color, radius=4, sw=1)
-    svg.text(x + 14, y + 26, heading, size=16, weight="bold", fill=COLORS["white"])
-    svg.multiline(x + 14, y + 66, body, width=chars, size=15, line_height=20)
+
+def sticky(svg: Svg, x: int, y: int, w: int, h: int, value: str, fill: str, stroke: str, chars: int = 18, size: int = 12):
+    svg.rect(x, y, w, h, fill, stroke=stroke, radius=1, shadow=True, sw=1)
+    wrapped = lines(value, chars)
+    start_y = y + h / 2 - ((len(wrapped) - 1) * size * 0.62) + 4
+    for index, line in enumerate(wrapped):
+        svg.text(x + w / 2, start_y + index * int(size * 1.22), line, size=size, fill="#404040", anchor="middle")
+
+
+def bullet_text(svg: Svg, x: int, y: int, value: str, chars: int, size: int = 13):
+    items = [item.strip().rstrip(".") for item in value.replace(". ", "; ").split(";") if item.strip()]
+    cursor = y
+    for item in items:
+        wrapped = lines(item, chars)
+        for index, line in enumerate(wrapped):
+            prefix = "• " if index == 0 else "  "
+            svg.text(x, cursor, prefix + line, size=size, fill="#333333")
+            cursor += int(size * 1.28)
+        cursor += 5
 
 
 def draw_canvas(key: str, data: dict[str, str]):
-    svg = Svg(1500, 900, f"Bounded Context Canvas — {data['name']}")
-    title(svg, f"Bounded Context Canvas — {data['name']}", data["classification"])
-    canvas_section(svg, 50, 110, 440, 150, "PURPOSE", data["purpose"], COLORS["navy"], chars=45)
-    canvas_section(svg, 530, 110, 440, 150, "STRATEGIC CLASSIFICATION", data["classification"], COLORS["navy"], chars=45)
-    canvas_section(svg, 1010, 110, 440, 150, "DOMAIN ROLES", data["roles"], COLORS["navy"], chars=45)
-    canvas_section(svg, 50, 290, 430, 190, "INBOUND COMMUNICATION", data["inbound"], COLORS["blue"], chars=43)
-    canvas_section(svg, 535, 290, 430, 190, "UBIQUITOUS LANGUAGE", data["language"], COLORS["green"], chars=43)
-    canvas_section(svg, 1020, 290, 430, 190, "OUTBOUND COMMUNICATION", data["outbound"], COLORS["orange"], chars=43)
-    canvas_section(svg, 50, 510, 680, 150, "BUSINESS DECISIONS", data["rules"], COLORS["purple"], chars=75)
-    canvas_section(svg, 770, 510, 680, 150, "DEPENDENCIES", data["dependencies"], COLORS["purple"], chars=75)
-    canvas_section(svg, 50, 690, 430, 160, "ASSUMPTIONS", data["assumptions"], COLORS["gray_dark"], chars=43)
-    canvas_section(svg, 535, 690, 430, 160, "VERIFICATION METRICS", data["metrics"], COLORS["gray_dark"], chars=43)
-    canvas_section(svg, 1020, 690, 430, 160, "OPEN QUESTIONS", data["questions"], COLORS["gray_dark"], chars=43)
+    visual = CANVAS_VISUALS[key]
+    svg = Svg(1600, 1300, f"Bounded Context Canvas — {data['name']}")
+    svg.parts[-1] = '<rect width="1600" height="1300" fill="#C9C9C9"/>'
+    svg.rect(22, 22, 1556, 1238, COLORS["white"], stroke="#555555", radius=0, sw=2)
+
+    # Header: name and template version.
+    svg.line(22, 112, 1578, 112, stroke="#555555", sw=2, arrow=False)
+    svg.line(1060, 22, 1060, 112, stroke="#555555", sw=2, arrow=False)
+    svg.text(38, 77, "Name", size=27, weight="bold")
+    svg.text(145, 77, data["name"], size=27, fill="#666666")
+    svg.multiline(1078, 56, "Version based on:\nDDD Crew Bounded Context Canvas v5", width=40, size=15, fill="#404040")
+
+    # Purpose, strategic classification, and domain roles.
+    svg.line(22, 350, 1578, 350, stroke="#555555", sw=2, arrow=False)
+    svg.line(495, 112, 495, 350, stroke="#555555", sw=2, arrow=False)
+    svg.line(1060, 112, 1060, 350, stroke="#555555", sw=2, arrow=False)
+    svg.text(38, 152, "Purpose", size=26, weight="bold")
+    svg.multiline(50, 205, data["purpose"], width=48, size=16, fill="#6A6A6A", line_height=22)
+    svg.text(515, 152, "Strategic Classification", size=26, weight="bold")
+    for x, label, value in [(530, "Domain:", visual["domain"]), (700, "Business Model:", visual["business"]), (890, "Evolution:", visual["evolution"])]:
+        svg.text(x, 232, label, size=16, weight="bold", fill="#777777")
+        svg.multiline(x, 258, "- " + value, width=20, size=15, fill="#777777")
+    svg.text(1080, 152, "Domain Roles", size=26, weight="bold")
+    svg.text(1090, 232, "Role types:", size=16, weight="bold", fill="#777777")
+    svg.multiline(1090, 258, "- " + data["roles"], width=45, size=15, fill="#777777")
+
+    # Communication canvas.
+    svg.line(22, 925, 1578, 925, stroke="#555555", sw=2, arrow=False)
+    svg.text(35, 390, "Inbound Communication", size=25, weight="bold")
+    svg.text(1120, 390, "Outbound Communication", size=25, weight="bold")
+
+    commands = [item.strip() for item in data["inbound"].split(",")]
+    for index, value in enumerate(visual["reads"][:3]):
+        sticky(svg, 70, 455 + index * 105, 125, 82, value, "#B7E66B", "#9BBB59")
+    for index, value in enumerate(commands[:4]):
+        sticky(svg, 225, 425 + index * 105, 135, 82, value, "#A9C9F5", "#7EA6D8")
+    for index, value in enumerate(visual["incoming"][:3]):
+        sticky(svg, 400, 485 + index * 115, 125, 82, value, COLORS["orange_light"], COLORS["orange"])
+
+    outbound = [item.strip() for item in data["outbound"].split(",")]
+    for index, value in enumerate(outbound[:4]):
+        sticky(svg, 1290, 425 + index * 105, 135, 82, value, COLORS["orange_light"], COLORS["orange"])
+
+    # Center: ubiquitous language and business decisions.
+    svg.rect(565, 375, 470, 510, "#FCFCFC", stroke="#777777", radius=0, sw=2)
+    svg.text(800, 420, "Ubiquitous Language", size=25, weight="bold", anchor="middle")
+    svg.text(800, 445, "Context-specific terminology", size=13, fill="#777777", anchor="middle")
+    language = [item.strip() for item in data["language"].split(",")]
+    for index, value in enumerate(language[:6]):
+        col, row = index % 2, index // 2
+        sticky(svg, 605 + col * 205, 470 + row * 72, 185, 54, value, "#F2F2F2", "#999999", chars=23, size=11)
+    svg.text(800, 700, "Business Decisions", size=25, weight="bold", anchor="middle")
+    svg.text(800, 725, "Key business rules, policies, and decisions", size=13, fill="#777777", anchor="middle")
+    decisions = [item.strip() for item in data["rules"].split(";") if item.strip()]
+    for index, value in enumerate(decisions[:4]):
+        col, row = index % 2, index // 2
+        sticky(svg, 605 + col * 205, 750 + row * 72, 185, 58, value, "#C9B5F4", "#A58AD8", chars=24, size=10)
+
+    # Actor and downstream arrows.
+    svg.parts.append('<polygon points="70,840 350,840 350,812 510,865 350,918 350,890 70,890" fill="#F7F7F7" stroke="#BFBFBF" stroke-width="2"/>')
+    svg.text(270, 871, visual["actor"], size=14, fill="#777777", anchor="middle")
+    svg.parts.append('<polygon points="1090,840 1370,840 1370,812 1530,865 1370,918 1370,890 1090,890" fill="#F7F7F7" stroke="#BFBFBF" stroke-width="2"/>')
+    svg.text(1290, 871, visual["downstream"], size=14, fill="#777777", anchor="middle")
+
+    # Assumptions, metrics, and open questions.
+    svg.line(510, 925, 510, 1215, stroke="#555555", sw=2, arrow=False)
+    svg.line(1050, 925, 1050, 1215, stroke="#555555", sw=2, arrow=False)
+    svg.text(38, 968, "Assumptions", size=25, weight="bold")
+    svg.text(530, 968, "Verification Metrics", size=25, weight="bold")
+    svg.text(1070, 968, "Open Questions", size=25, weight="bold")
+    bullet_text(svg, 42, 1010, data["assumptions"], chars=58, size=13)
+    bullet_text(svg, 530, 1010, data["metrics"], chars=59, size=13)
+    bullet_text(svg, 1070, 1010, data["questions"], chars=58, size=13)
+
+    svg.line(22, 1215, 1578, 1215, stroke="#555555", sw=2, arrow=False)
+    svg.text(1560, 1244, "Template Bounded Context Canvas after DDD Crew Version 1", size=11, fill="#666666", anchor="end")
     svg.save(f"bounded-context-canvas-{key}.svg")
 
 

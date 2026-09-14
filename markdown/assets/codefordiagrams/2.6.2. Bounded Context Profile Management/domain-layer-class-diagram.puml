@@ -1,0 +1,57 @@
+@startuml
+title AniTec - Profile Management - Domain Layer
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor #F7FAFC
+  BorderColor #2A9D8F
+  ArrowColor #52616B
+}
+
+package "Profile Management" {
+class Profile <<Aggregate Root>> {
+  -id: int
+  -ownerId: int
+  -name: PersonName
+  -email: EmailAddress
+  -address: StreetAddress
+  +FullName(): string
+  +ChangeEmail(email: EmailAddress): void
+  +ChangeAddress(address: StreetAddress): void
+}
+class PersonName <<Value Object>> {
+  -firstName: string
+  -lastName: string
+  +FullName(): string
+}
+class EmailAddress <<Value Object>> {
+  -address: string
+  +IsValid(): bool
+}
+class StreetAddress <<Value Object>> {
+  -street: string
+  -number: string
+  -city: string
+  -postalCode: string
+  -country: string
+  +FullAddress(): string
+}
+interface IProfileRepository {
+  +FindById(id: int): Profile?
+  +FindByOwnerId(ownerId: int): Profile?
+  +Add(profile: Profile): void
+  +Update(profile: Profile): void
+}
+Profile *-- PersonName
+Profile *-- EmailAddress
+Profile *-- StreetAddress
+IProfileRepository ..> Profile : persists
+}
+
+note bottom
+  Existing elements preserve the backend vocabulary.
+  Elements marked as target complete the mobile course design.
+end note
+@enduml

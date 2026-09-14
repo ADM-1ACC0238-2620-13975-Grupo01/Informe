@@ -1,0 +1,17 @@
+erDiagram
+    USERS ||--o{ VETERINARIAN_CLIENTS : veterinarian
+    USERS ||--o{ VETERINARIAN_CLIENTS : rancher
+    VETERINARIAN_CLIENTS {
+        int id PK
+        int veterinarian_id FK
+        int rancher_id FK
+        varchar status "required, max 30"
+        datetime requested_at "required"
+        datetime accepted_at "nullable"
+        datetime revoked_at "target addition"
+        json authorization_scope "target addition"
+    }
+    USERS {
+        int id PK
+    }
+    %% Existing composite unique index: (veterinarian_id, rancher_id)

@@ -1,0 +1,78 @@
+@startuml
+title AniTec - Livestock Management - Domain Layer
+hide circle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+skinparam class {
+  BackgroundColor #F7FAFC
+  BorderColor #2A9D8F
+  ArrowColor #52616B
+}
+
+package "Livestock Management" {
+class Farm <<Aggregate Root - target>> {
+  -id: int
+  -ownerId: int
+  -name: string
+  -location: string
+  +RegisterHerd(herd: Herd): void
+  +BelongsTo(ownerId: int): bool
+}
+class Herd <<Entity>> {
+  -id: int
+  -farmId: int
+  -name: string
+  -mainType: string
+  -veterinarianId: int?
+  +AssignVeterinarian(id: int): void
+  +AddAnimal(animal: Animal): void
+}
+class Animal <<Entity>> {
+  -id: int
+  -herdId: int
+  -tag: AnimalTag
+  -qrIdentifier: QrIdentifier
+  -name: string
+  -species: string
+  -breed: string
+  -status: AnimalStatus
+  +UpdateWeight(weight: decimal): void
+  +ChangeStatus(status: AnimalStatus): void
+}
+class AnimalTag <<Value Object>> {
+  -value: string
+  +IsValid(): bool
+}
+class QrIdentifier <<Value Object - target>> {
+  -value: string
+  +AsPayload(): string
+}
+enum AnimalStatus {
+  Active
+  Sold
+  Deceased
+}
+interface IAnimalRepository {
+  +FindById(id: int): Animal?
+  +FindByQr(code: string): Animal?
+  +Add(animal: Animal): void
+}
+interface IHerdRepository {
+  +FindById(id: int): Herd?
+  +Add(herd: Herd): void
+}
+Farm "1" *-- "0..*" Herd
+Herd "1" *-- "0..*" Animal
+Animal *-- AnimalTag
+Animal *-- QrIdentifier
+Animal --> AnimalStatus
+IAnimalRepository ..> Animal
+IHerdRepository ..> Herd
+}
+
+note bottom
+  Existing elements preserve the backend vocabulary.
+  Elements marked as target complete the mobile course design.
+end note
+@enduml
