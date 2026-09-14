@@ -120,29 +120,29 @@ Variables demográficas a recolectar: Edad, género, distrito de residencia, edu
 | Campo | Información |
 |-------|-------------|
 | Segmento | Ganadero |
-| Nombres y apellidos | Vicente Huamán Alacutte |
-| Edad | 62 años |
-| Distrito | Canta, Lima |
-| Ocupación | Ganadero con más de 30 años de experiencia |
-| Tipo de ganado | Ganado vacuno |
-| Tamaño aproximado del ganado | 25 cabezas de ganado |
+| Nombres y apellidos | Caterina Rodriguez |
+| Edad | 33 años |
+| Distrito | San miguel, Lima |
+| Ocupación | Ganadera con más de 9 años de experiencia |
+| Tipo de ganado | Ganado porcino |
+| Tamaño aproximado del ganado | 16 cabezas de ganado |
 | Inicio de la entrevista | 00:00 |
-| Duración | 00:07:43 |
-| URL del video | https://tinyurl.com/entrevista1VicenteHuaman |
+| Duración | 00:07:54 |
+| URL del video | https://tinyurl.com/caterinarodri |
 
 </div>
 
 <div align="center">
-    <img src="../../assets/chapter-2/Entrevista 1.png" width="420">
+    <img src="../../assets/chapter-2/Entrevistacate.png" width="420">
 </div>
 
 **Resumen de la entrevista:**
 
-Vicente Huamán Alacutte es un ganadero adulto con amplia experiencia en la crianza de ganado vacuno. Durante la entrevista explicó que la mayor parte de su gestión todavía se realiza con métodos tradicionales, principalmente un cuaderno físico y algunos registros aislados en Excel. Esta forma de trabajo le permite mantener cierto control diario, pero también genera problemas cuando necesita recordar fechas de vacunación, tratamientos, alimentación o reproducción. El entrevistado señaló que la memoria y el orden del cuaderno no siempre son suficientes, sobre todo cuando se acumulan varias actividades al mismo tiempo.
+Caterina Rodríguez es una ganadera de 33 años con aproximadamente ocho años de experiencia en el manejo, principalmente, de ganado vacuno. Actualmente gestiona alrededor de 45 animales junto a un equipo de tres personas (dos familiares y un cuidador). Durante la entrevista, explicó que su gestión de datos se realiza de manera fragmentada: utiliza un cuaderno físico, un cuadro de Excel y su teléfono celular (tomando fotos y notas) para registrar información sobre salud, alimentación y reproducción. Esta forma de trabajo, a la que dedica entre 20 y 30 minutos diarios, le genera dificultades para mantener la información organizada. La entrevistada señaló que los datos suelen traspapelarse o perderse al estar en distintos formatos, o resultar incomprensibles por la mala caligrafía, lo que complica el seguimiento preciso de vacunas y tratamientos.
 
-En cuanto a su personalidad y forma de trabajo, se mostró como una persona práctica, cuidadosa y orientada a la experiencia de campo. Valora más la utilidad real de una herramienta que su apariencia visual. Sus principales influencias provienen de otros ganaderos, técnicos agropecuarios y compradores de ganado, ya que para él la confianza al vender animales depende mucho de poder demostrar que el ganado fue bien cuidado. Respecto a la tecnología, utiliza principalmente celular Android y WhatsApp para comunicarse, aunque no se considera un usuario avanzado. Usa el navegador del celular cuando necesita buscar información puntual, pero prefiere aplicaciones simples y con botones claros.
+En cuanto a su perfil tecnológico y forma de trabajo, Caterina se muestra como una persona consciente de la necesidad de optimizar su tiempo y mejorar la toma de decisiones en su ganadería. Valora tener a la mano información vital de cada animal, como edad, peso, historial de enfermedades y tratamientos. Respecto a la tecnología, confía en las herramientas digitales, aunque hasta ahora no ha utilizado ninguna aplicación especializada en el manejo ganadero. Su dispositivo principal es el celular, siendo WhatsApp la aplicación que más utiliza para registrar información y comunicarse, además de usar redes sociales como Facebook y TikTok. El uso de la computadora es mínimo y lo reserva casi exclusivamente para revisar Excel.
 
-La entrevista permitió identificar que Vicente estaría dispuesto a usar una plataforma como AniTec si esta facilita el registro de animales, el historial sanitario, las alertas de vacunación y la consulta rápida de información. También destacó que la herramienta debe ser sencilla, con lenguaje directo y adaptada al trabajo rural. Esta información sustenta el arquetipo de ganadero tradicional que necesita digitalizar su gestión sin sentirse obligado a aprender una herramienta compleja.
+La entrevista permitió identificar que Caterina está totalmente dispuesta a utilizar una aplicación móvil o web para el control de su ganado. Destacó que la herramienta ideal debe centralizar la información (usando códigos por animal), contar con un historial médico y reproductivo, y emitir alertas de vacunación y atención. Un punto crucial para ella es que la plataforma sea muy sencilla e intuitiva de usar, ya que sus familiares, que son personas mayores, también deberán interactuar con ella. Además, mostró interés en recibir contenido educativo sobre prevención de enfermedades, alimentación y cuidado de terneros. Esta información sustenta el arquetipo de una ganadera joven que reconoce las limitaciones de los métodos tradicionales y busca una digitalización práctica y accesible que unifique el trabajo de su equipo familiar.
 
 #### Entrevista 2: Rebeca Noemi Quiroz Roldan
 
