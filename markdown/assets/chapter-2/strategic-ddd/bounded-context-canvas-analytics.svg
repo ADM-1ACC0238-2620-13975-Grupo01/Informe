@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900">
+<title>Bounded Context Canvas — Analytics and Reporting</title>
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.18"/></filter>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#595959"/></marker>
+</defs>
+<rect width="1500" height="900" fill="#FAFAFA"/>
+<text x="50" y="48" font-family="Arial, sans-serif" font-size="30" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="start">Bounded Context Canvas — Analytics and Reporting</text>
+<text x="50" y="78" font-family="Arial, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">Supporting subdomain · Engagement</text>
+<rect x="50" y="110" width="440" height="150" rx="4" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<rect x="50" y="110" width="440" height="38" rx="4" fill="#17365D" stroke="#17365D" stroke-width="1"/>
+<text x="64" y="136" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">PURPOSE</text>
+<text x="64" y="176" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">Construir indicadores operativos, sanitarios</text>
+<text x="64" y="196" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">y financieros para cada rol.</text>
+<rect x="530" y="110" width="440" height="150" rx="4" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<rect x="530" y="110" width="440" height="38" rx="4" fill="#17365D" stroke="#17365D" stroke-width="1"/>
+<text x="544" y="136" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">STRATEGIC CLASSIFICATION</text>
+<text x="544" y="176" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">Supporting subdomain · Engagement</text>
+<rect x="1010" y="110" width="440" height="150" rx="4" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<rect x="1010" y="110" width="440" height="38" rx="4" fill="#17365D" stroke="#17365D" stroke-width="1"/>
+<text x="1024" y="136" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">DOMAIN ROLES</text>
+<text x="1024" y="176" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">Analysis and read-model context</text>
+<rect x="50" y="290" width="430" height="190" rx="4" fill="#FFFFFF" stroke="#5B9BD5" stroke-width="2"/>
+<rect x="50" y="290" width="430" height="38" rx="4" fill="#5B9BD5" stroke="#5B9BD5" stroke-width="1"/>
+<text x="64" y="316" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">INBOUND COMMUNICATION</text>
+<text x="64" y="356" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">GetRancherIndicators,</text>
+<text x="64" y="376" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">GetVeterinarianIndicators, RefreshReadModel</text>
+<rect x="535" y="290" width="430" height="190" rx="4" fill="#FFFFFF" stroke="#70AD47" stroke-width="2"/>
+<rect x="535" y="290" width="430" height="38" rx="4" fill="#70AD47" stroke="#70AD47" stroke-width="1"/>
+<text x="549" y="316" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">UBIQUITOUS LANGUAGE</text>
+<text x="549" y="356" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">Indicator, Dashboard, Health Summary,</text>
+<text x="549" y="376" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">Financial Summary, Time Range</text>
+<rect x="1020" y="290" width="430" height="190" rx="4" fill="#FFFFFF" stroke="#F4B183" stroke-width="2"/>
+<rect x="1020" y="290" width="430" height="38" rx="4" fill="#F4B183" stroke="#F4B183" stroke-width="1"/>
+<text x="1034" y="316" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">OUTBOUND COMMUNICATION</text>
+<text x="1034" y="356" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">IndicatorsGenerated,</text>
+<text x="1034" y="376" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">DashboardReadModelUpdated</text>
+<rect x="50" y="510" width="680" height="150" rx="4" fill="#FFFFFF" stroke="#A64D79" stroke-width="2"/>
+<rect x="50" y="510" width="680" height="38" rx="4" fill="#A64D79" stroke="#A64D79" stroke-width="1"/>
+<text x="64" y="536" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">BUSINESS DECISIONS</text>
+<text x="64" y="576" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">Solo datos autorizados; indicadores reproducibles; periodo explícito;</text>
+<text x="64" y="596" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">fuentes trazables.</text>
+<rect x="770" y="510" width="680" height="150" rx="4" fill="#FFFFFF" stroke="#A64D79" stroke-width="2"/>
+<rect x="770" y="510" width="680" height="38" rx="4" fill="#A64D79" stroke="#A64D79" stroke-width="1"/>
+<text x="784" y="536" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">DEPENDENCIES</text>
+<text x="784" y="576" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">Consume contratos publicados por Livestock, Sanitary, Activities y</text>
+<text x="784" y="596" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">Financial.</text>
+<rect x="50" y="690" width="430" height="160" rx="4" fill="#FFFFFF" stroke="#595959" stroke-width="2"/>
+<rect x="50" y="690" width="430" height="38" rx="4" fill="#595959" stroke="#595959" stroke-width="1"/>
+<text x="64" y="716" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">ASSUMPTIONS</text>
+<text x="64" y="756" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">Los contextos fuente mantienen</text>
+<text x="64" y="776" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">identificadores y fechas consistentes.</text>
+<rect x="535" y="690" width="430" height="160" rx="4" fill="#FFFFFF" stroke="#595959" stroke-width="2"/>
+<rect x="535" y="690" width="430" height="38" rx="4" fill="#595959" stroke="#595959" stroke-width="1"/>
+<text x="549" y="716" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">VERIFICATION METRICS</text>
+<text x="549" y="756" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">Tiempo de respuesta; consistencia con</text>
+<text x="549" y="776" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">fuentes; consultas por rol.</text>
+<rect x="1020" y="690" width="430" height="160" rx="4" fill="#FFFFFF" stroke="#595959" stroke-width="2"/>
+<rect x="1020" y="690" width="430" height="38" rx="4" fill="#595959" stroke="#595959" stroke-width="1"/>
+<text x="1034" y="716" font-family="Arial, sans-serif" font-size="16" font-weight="bold" font-style="normal" fill="#FFFFFF" text-anchor="start">OPEN QUESTIONS</text>
+<text x="1034" y="756" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">¿Se calcularán indicadores bajo demanda o</text>
+<text x="1034" y="776" font-family="Arial, sans-serif" font-size="15" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">mediante proyecciones asíncronas?</text>
+</svg>

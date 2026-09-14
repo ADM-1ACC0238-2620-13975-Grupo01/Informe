@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1430" viewBox="0 0 1800 1430">
+<title>Context Mapping de AniTec</title>
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.18"/></filter>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#595959"/></marker>
+</defs>
+<rect width="1800" height="1430" fill="#FAFAFA"/>
+<text x="50" y="48" font-family="Arial, sans-serif" font-size="30" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="start">Context Mapping — AniTec</text>
+<text x="50" y="78" font-family="Arial, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">Mapa seleccionado después de comparar alternativas de descomposición</text>
+<rect x="70" y="120" width="280" height="115" rx="12" fill="#E4DFEC" stroke="#A64D79" stroke-width="3" filter="url(#shadow)"/>
+<text x="210.0" y="160" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">IAM</text>
+<text x="210.0" y="211" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Generic</text>
+<rect x="380" y="120" width="280" height="115" rx="12" fill="#DDEBF7" stroke="#5B9BD5" stroke-width="3" filter="url(#shadow)"/>
+<text x="520.0" y="160" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Profile Management</text>
+<text x="520.0" y="211" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Supporting</text>
+<rect x="720" y="120" width="280" height="115" rx="12" fill="#DDEBF7" stroke="#5B9BD5" stroke-width="3" filter="url(#shadow)"/>
+<text x="860.0" y="160" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Subscription Management</text>
+<text x="860.0" y="211" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Supporting</text>
+<rect x="1120" y="120" width="260" height="115" rx="12" fill="#F4CCCC" stroke="#C00000" stroke-width="3" filter="url(#shadow)"/>
+<text x="1250.0" y="160" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Stripe</text>
+<text x="1250.0" y="211" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">External system</text>
+<rect x="220" y="390" width="280" height="115" rx="12" fill="#E2F0D9" stroke="#70AD47" stroke-width="3" filter="url(#shadow)"/>
+<text x="360.0" y="430" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Livestock Management</text>
+<text x="360.0" y="481" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Core</text>
+<rect x="620" y="390" width="280" height="115" rx="12" fill="#E2F0D9" stroke="#70AD47" stroke-width="3" filter="url(#shadow)"/>
+<text x="760.0" y="430" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Veterinary Collaboration</text>
+<text x="760.0" y="481" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Core</text>
+<rect x="1050" y="390" width="280" height="115" rx="12" fill="#E2F0D9" stroke="#70AD47" stroke-width="3" filter="url(#shadow)"/>
+<text x="1190.0" y="430" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Sanitary Management</text>
+<text x="1190.0" y="481" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Core</text>
+<rect x="90" y="720" width="280" height="115" rx="12" fill="#DDEBF7" stroke="#5B9BD5" stroke-width="3" filter="url(#shadow)"/>
+<text x="230.0" y="760" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Financial Management</text>
+<text x="230.0" y="811" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Supporting</text>
+<rect x="520" y="720" width="280" height="115" rx="12" fill="#DDEBF7" stroke="#5B9BD5" stroke-width="3" filter="url(#shadow)"/>
+<text x="660.0" y="760" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Activity Management</text>
+<text x="660.0" y="811" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Supporting</text>
+<rect x="1000" y="720" width="280" height="115" rx="12" fill="#DDEBF7" stroke="#5B9BD5" stroke-width="3" filter="url(#shadow)"/>
+<text x="1140.0" y="760" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Analytics and Reporting</text>
+<text x="1140.0" y="811" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Supporting</text>
+<rect x="1440" y="720" width="260" height="115" rx="12" fill="#F4CCCC" stroke="#C00000" stroke-width="3" filter="url(#shadow)"/>
+<text x="1570.0" y="760" font-family="Arial, sans-serif" font-size="18" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Notification Provider</text>
+<text x="1570.0" y="811" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">External/technical</text>
+<path d="M350,177.5 C365.0,177.5 365.0,177.5 380,177.5" fill="none" stroke="#595959" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="348.0" y="162.5" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="365.0" y="183.5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">1</text>
+<path d="M475.0,235 C395.0,235 395.0,390 315.0,390" fill="none" stroke="#595959" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="378.0" y="297.5" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="395.0" y="318.5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">2</text>
+<path d="M565.0,235 C685.0,235 685.0,390 805.0,390" fill="none" stroke="#595959" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="668.0" y="297.5" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="685.0" y="318.5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">3</text>
+<path d="M210.0,235 L210.0,300 L860.0,300 L860.0,235" fill="none" stroke="#595959" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="518.0" y="285" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="535.0" y="306" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">4</text>
+<path d="M1120,177.5 C1060.0,177.5 1060.0,177.5 1000,177.5" fill="none" stroke="#595959" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="1043.0" y="162.5" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="1060.0" y="183.5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">5</text>
+<path d="M500,423.5 C560.0,423.5 560.0,423.5 620,423.5" fill="none" stroke="#595959" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="543.0" y="408.5" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="560.0" y="429.5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">6</text>
+<path d="M360.0,505 L360.0,630 L1190.0,630 L1190.0,505" fill="none" stroke="#595959" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="758.0" y="615" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="775.0" y="636" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">7</text>
+<path d="M900,423.5 C975.0,423.5 975.0,423.5 1050,423.5" fill="none" stroke="#595959" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="958.0" y="408.5" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="975.0" y="429.5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">8</text>
+<path d="M305.0,505 C455.0,505 455.0,720 605.0,720" fill="none" stroke="#595959" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="438.0" y="597.5" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="455.0" y="618.5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">9</text>
+<path d="M1245.0,505 C980.0,505 980.0,720 715.0,720" fill="none" stroke="#595959" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="963.0" y="597.5" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="980.0" y="618.5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">10</text>
+<path d="M230.0,835 L230.0,930 L1140.0,930 L1140.0,835" fill="none" stroke="#595959" stroke-width="2.2" stroke-dasharray="8 5" marker-end="url(#arrow)"/>
+<rect x="668.0" y="915" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="685.0" y="936" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">11</text>
+<path d="M800,759.5 C900.0,759.5 900.0,759.5 1000,759.5" fill="none" stroke="#595959" stroke-width="2.2" stroke-dasharray="8 5" marker-end="url(#arrow)"/>
+<rect x="883.0" y="744.5" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="900.0" y="765.5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">12</text>
+<path d="M1225.0,505 C1200.0,505 1200.0,720 1175.0,720" fill="none" stroke="#595959" stroke-width="2.2" stroke-dasharray="8 5" marker-end="url(#arrow)"/>
+<rect x="1183.0" y="597.5" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="1200.0" y="618.5" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">13</text>
+<path d="M660.0,835 L660.0,955 L1570.0,955 L1570.0,835" fill="none" stroke="#595959" stroke-width="2.2" marker-end="url(#arrow)"/>
+<rect x="1098.0" y="940" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="1115.0" y="961" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">14</text>
+<path d="M360.0,505 L360.0,985 L1140.0,985 L1140.0,835" fill="none" stroke="#595959" stroke-width="2.2" stroke-dasharray="8 5" marker-end="url(#arrow)"/>
+<rect x="733.0" y="970" width="34" height="30" rx="15" fill="#FFFFFF" stroke="#17365D" stroke-width="2"/>
+<text x="750.0" y="991" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">15</text>
+<rect x="70" y="1040" width="1660" height="310" rx="8" fill="#FFFFFF" stroke="#BFBFBF" stroke-width="2"/>
+<text x="95" y="1072" font-family="Arial, sans-serif" font-size="15" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="start">RELACIONES Y PATRONES</text>
+<text x="95" y="1105" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">1. IAM → Profiles: Customer/Supplier + Published Language (UserId, Role).</text>
+<text x="95" y="1134" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">2. Profiles → Livestock: Open Host Service + Published Language.</text>
+<text x="95" y="1163" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">3. Profiles → Veterinary Collaboration: Open Host Service + Published Language.</text>
+<text x="95" y="1192" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">4. IAM → Subscriptions: Open Host Service (UserId y sesión).</text>
+<text x="95" y="1221" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">5. Stripe ↔ Subscriptions: Anti-Corruption Layer.</text>
+<text x="95" y="1250" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">6. Livestock → Veterinary Collaboration: Customer/Supplier + Published Language.</text>
+<text x="95" y="1279" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">7. Livestock → Sanitary: Customer/Supplier + Published Language (AnimalId).</text>
+<text x="95" y="1308" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">8. Veterinary Collaboration → Sanitary: Customer/Supplier (autorización).</text>
+<text x="905" y="1105" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">9. Livestock → Activities: Published Language.</text>
+<text x="905" y="1134" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">10. Sanitary → Activities: Published Language (FollowUpRequired).</text>
+<text x="905" y="1163" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">11. Financial → Analytics: Conformist read model.</text>
+<text x="905" y="1192" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">12. Activities → Analytics: Conformist read model.</text>
+<text x="905" y="1221" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">13. Sanitary → Analytics: Conformist read model.</text>
+<text x="905" y="1250" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">14. Activities ↔ Notification Provider: Anti-Corruption Layer.</text>
+<text x="905" y="1279" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">15. Livestock → Analytics: Conformist read model.</text>
+<text x="95" y="1392" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="start">Las capacidades offline, sincronización, QR y almacenamiento local pertenecen a la infraestructura móvil y no constituyen bounded contexts.</text>
+</svg>

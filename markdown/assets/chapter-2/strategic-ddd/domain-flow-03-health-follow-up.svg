@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" viewBox="0 0 1500 500">
+<title>Domain Story 3 — Incidencia y seguimiento sanitario</title>
+<defs>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.18"/></filter>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#595959"/></marker>
+</defs>
+<rect width="1500" height="500" fill="#FAFAFA"/>
+<text x="50" y="48" font-family="Arial, sans-serif" font-size="30" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="start">Domain Story 3 — Incidencia y seguimiento sanitario</text>
+<text x="50" y="78" font-family="Arial, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="#595959" text-anchor="start">El ganadero registra la incidencia, Sanitary Management incorpora el evento al historial y Activity Management programa el seguimiento y la notificación correspondiente.</text>
+<rect x="45" y="145" width="175" height="165" rx="12" fill="#FFF2CC" stroke="#FFD966" stroke-width="2" filter="url(#shadow)"/>
+<text x="132.5" y="174" font-family="Arial, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#FFD966" text-anchor="middle">ACTOR</text>
+<text x="132.5" y="207" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Ganadero</text>
+<text x="132.5" y="265" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Detecta una incidencia</text>
+<rect x="260" y="145" width="175" height="165" rx="12" fill="#DDEBF7" stroke="#5B9BD5" stroke-width="2" filter="url(#shadow)"/>
+<text x="347.5" y="174" font-family="Arial, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#5B9BD5" text-anchor="middle">COMMAND</text>
+<text x="347.5" y="207" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Registrar</text>
+<text x="347.5" y="228" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">incidencia</text>
+<text x="347.5" y="265" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Animal y observación</text>
+<path d="M220,226 L254,226" fill="none" stroke="#595959" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="240.0" y="122" font-family="Arial, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#595959" text-anchor="middle">solicita</text>
+<rect x="475" y="145" width="175" height="165" rx="12" fill="#E2F0D9" stroke="#70AD47" stroke-width="2" filter="url(#shadow)"/>
+<text x="562.5" y="174" font-family="Arial, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#70AD47" text-anchor="middle">CONTEXT</text>
+<text x="562.5" y="207" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Sanitary</text>
+<text x="562.5" y="228" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Management</text>
+<text x="562.5" y="265" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Valida animal y</text>
+<text x="562.5" y="282" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">autoría</text>
+<path d="M435,226 L469,226" fill="none" stroke="#595959" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="455.0" y="122" font-family="Arial, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#595959" text-anchor="middle">envía comando</text>
+<rect x="690" y="145" width="175" height="165" rx="12" fill="#FCE4D6" stroke="#F4B183" stroke-width="2" filter="url(#shadow)"/>
+<text x="777.5" y="174" font-family="Arial, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#F4B183" text-anchor="middle">EVENT</text>
+<text x="777.5" y="207" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Health event</text>
+<text x="777.5" y="228" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">recorded</text>
+<text x="777.5" y="265" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Historial actualizado</text>
+<path d="M650,226 L684,226" fill="none" stroke="#595959" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="670.0" y="122" font-family="Arial, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#595959" text-anchor="middle">publica</text>
+<rect x="905" y="145" width="175" height="165" rx="12" fill="#E2F0D9" stroke="#70AD47" stroke-width="2" filter="url(#shadow)"/>
+<text x="992.5" y="174" font-family="Arial, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#70AD47" text-anchor="middle">CONTEXT</text>
+<text x="992.5" y="207" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Activity</text>
+<text x="992.5" y="228" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Management</text>
+<text x="992.5" y="265" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Programa próximo</text>
+<text x="992.5" y="282" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">control</text>
+<path d="M865,226 L899,226" fill="none" stroke="#595959" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="885.0" y="122" font-family="Arial, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#595959" text-anchor="middle">consume evento</text>
+<rect x="1120" y="145" width="175" height="165" rx="12" fill="#FCE4D6" stroke="#F4B183" stroke-width="2" filter="url(#shadow)"/>
+<text x="1207.5" y="174" font-family="Arial, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#F4B183" text-anchor="middle">EVENT</text>
+<text x="1207.5" y="207" font-family="Arial, sans-serif" font-size="17" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="middle">Reminder scheduled</text>
+<text x="1207.5" y="265" font-family="Arial, sans-serif" font-size="14" font-weight="normal" font-style="normal" fill="#595959" text-anchor="middle">Notificación pendiente</text>
+<path d="M1080,226 L1114,226" fill="none" stroke="#595959" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="1100.0" y="122" font-family="Arial, sans-serif" font-size="13" font-weight="bold" font-style="normal" fill="#595959" text-anchor="middle">publica</text>
+<rect x="45" y="350" width="1410" height="95" rx="8" fill="#FFFFFF" stroke="#BFBFBF" stroke-width="2"/>
+<text x="65" y="380" font-family="Arial, sans-serif" font-size="14" font-weight="bold" font-style="normal" fill="#17365D" text-anchor="start">LECTURA DEL FLUJO</text>
+<text x="65" y="408" font-family="Arial, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">El ganadero registra la incidencia, Sanitary Management incorpora el evento al historial y Activity Management programa el seguimiento y la</text>
+<text x="65" y="428" font-family="Arial, sans-serif" font-size="16" font-weight="normal" font-style="normal" fill="#1F1F1F" text-anchor="start">notificación correspondiente.</text>
+</svg>
