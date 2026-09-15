@@ -446,8 +446,7 @@ Stripe procesa el checkout de las suscripciones, Firebase Cloud Messaging entreg
 </table>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista AniTec-SystemContext del archivo DSL y copiar aquí el PNG. -->
-  <img src="../../assets/chapter-2/SoftwareArchitectureContextLevelDiagram.png" alt="Software Architecture Context Level Diagram de AniTec" width="900">
+  <img src="../../assets/chapter-2/AniTec-SystemContext.svg" alt="Software Architecture Context Level Diagram de AniTec" width="900">
   <p><i>Figura 2.5.28. Software Architecture Context Level Diagram de AniTec. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
@@ -473,8 +472,7 @@ Android y Flutter consumen los mismos contratos JSON sobre HTTPS y se autentican
 </table>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista AniTec-Containers del archivo DSL y copiar aquí el PNG. -->
-  <img src="../../assets/chapter-2/SoftwareArchitectureContainerLevelDiagram.png" alt="Software Architecture Container Level Diagram de AniTec" width="900">
+  <img src="../../assets/chapter-2/AniTec-Containers.svg" alt="Software Architecture Container Level Diagram de AniTec" width="900">
   <p><i>Figura 2.5.29. Software Architecture Container Level Diagram de AniTec. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
@@ -501,8 +499,7 @@ La landing page se publica como contenido estático en GitHub Pages. La API ASP.
 </table>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista AniTec-Deployment del archivo DSL y copiar aquí el PNG. -->
-  <img src="../../assets/chapter-2/SoftwareArchitectureDeploymentDiagram.png" alt="Software Architecture Deployment Diagram de AniTec" width="900">
+  <img src="../../assets/chapter-2/AniTec-Deployment.svg" alt="Software Architecture Deployment Diagram de AniTec" width="900">
   <p><i>Figura 2.5.30. Software Architecture Deployment Diagram de AniTec. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 

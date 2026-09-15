@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from html import escape
 from pathlib import Path
+import re
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1090,34 +1091,170 @@ end note
 '''
 
 
-def local_erd(context: Context, product: str) -> str:
-    names = [name for name, _ in context.local_entities]
-    relations = []
-    if len(names) > 1:
-        for child in names[1:]:
-            relations.append(f"    {names[0]} ||--o{{ {child} : contains")
-    entity_blocks = []
-    for name, fields in context.local_entities:
-        field_lines = "\n".join(f"        {field_type} {field_name}" for field_type, field_name in fields)
-        entity_blocks.append(f"    {name} {{\n{field_lines}\n    }}")
-    outbox = f'''    PENDING_OPERATIONS {{
-        text operation_id PK
-        text aggregate_type
-        text aggregate_id
-        text operation_type
-        text payload_json
-        datetime created_at
-        int retry_count
-        text status
-    }}'''
-    return "\n".join([
-        f"%% {product} local persistence for {context.name}",
-        "erDiagram",
-        *relations,
-        *entity_blocks,
-        outbox,
+MYSQL_FK_TARGETS = {
+    "user_id": ("USERS", "id"),
+    "owner_id": ("USERS", "id"),
+    "veterinarian_id": ("USERS", "id"),
+    "rancher_id": ("USERS", "id"),
+    "farm_id": ("FARMS", "id"),
+    "herd_id": ("HERDS", "id"),
+    "animal_id": ("ANIMALS", "id"),
+    "plan_id": ("SUBSCRIPTION_PLANS", "id"),
+    "subscription_id": ("SUBSCRIPTIONS", "id"),
+    "projection_id": ("DASHBOARD_PROJECTIONS", "id"),
+}
+
+
+def sql_type(source_type: str, comment: str, dialect: str) -> str:
+    if dialect == "sqlite":
+        return {
+            "int": "INTEGER",
+            "decimal": "REAL",
+            "boolean": "INTEGER",
+            "date": "TEXT",
+            "datetime": "TEXT",
+            "json": "TEXT",
+            "varchar": "TEXT",
+            "string": "TEXT",
+            "text": "TEXT",
+        }.get(source_type.lower(), "TEXT")
+    max_match = re.search(r"max\s+(\d+)", comment, flags=re.IGNORECASE)
+    varchar_size = max_match.group(1) if max_match else "255"
+    return {
+        "int": "INT",
+        "decimal": "DECIMAL(10,2)",
+        "boolean": "BOOLEAN",
+        "date": "DATE",
+        "datetime": "DATETIME",
+        "json": "JSON",
+        "varchar": f"VARCHAR({varchar_size})",
+        "string": f"VARCHAR({varchar_size})",
+        "text": "TEXT",
+    }.get(source_type.lower(), "VARCHAR(255)")
+
+
+def parse_mermaid_entities(source: str) -> list[tuple[str, list[tuple[str, str, str, str]]]]:
+    entities: list[tuple[str, list[tuple[str, str, str, str]]]] = []
+    current_name: str | None = None
+    current_fields: list[tuple[str, str, str, str]] = []
+    for raw_line in source.splitlines():
+        line = raw_line.strip()
+        start_match = re.fullmatch(r"([A-Z][A-Z0-9_]*)\s*\{", line)
+        if start_match:
+            current_name = start_match.group(1)
+            current_fields = []
+            continue
+        if line == "}" and current_name:
+            entities.append((current_name, current_fields))
+            current_name = None
+            continue
+        if current_name and line and not line.startswith("%%"):
+            field_match = re.fullmatch(r'(\w+)\s+(\w+)(?:\s+([A-Z,]+))?(?:\s+"([^"]*)")?', line)
+            if not field_match:
+                raise ValueError(f"Unsupported Mermaid ER field: {line}")
+            current_fields.append((field_match.group(1), field_match.group(2), field_match.group(3) or "", field_match.group(4) or ""))
+    return entities
+
+
+def mysql_sql(context: Context) -> str:
+    entities = parse_mermaid_entities(context.server_erd)
+    table_names = {name for name, _ in entities}
+    statements = [
+        f"-- AniTec | 2.6.{context.number} {context.name}",
+        "-- MySQL 8 DDL prepared for manual ERD import.",
+        "-- Comments containing 'target' identify design additions not present in the inherited backend.",
+        "SET FOREIGN_KEY_CHECKS = 0;",
+        "",
+    ]
+    for table_name, fields in entities:
+        columns: list[str] = []
+        constraints: list[str] = []
+        for source_type, field_name, keys, comment in fields:
+            key_set = set(keys.split(",")) if keys else set()
+            parts = [f"  `{field_name}`", sql_type(source_type, comment, "mysql")]
+            if "PK" in key_set:
+                parts.extend(["NOT NULL", "AUTO_INCREMENT", "PRIMARY KEY"])
+            else:
+                parts.append("NULL" if "nullable" in comment.lower() else "NOT NULL")
+                if "UK" in key_set:
+                    parts.append("UNIQUE")
+            if comment:
+                safe_comment = comment.replace("'", "''")
+                parts.append(f"COMMENT '{safe_comment}'")
+            columns.append(" ".join(parts))
+            if "FK" in key_set and field_name in MYSQL_FK_TARGETS:
+                target_table, target_column = MYSQL_FK_TARGETS[field_name]
+                if target_table in table_names:
+                    constraints.append(
+                        f"  CONSTRAINT `fk_{table_name.lower()}_{field_name}` FOREIGN KEY (`{field_name}`) "
+                        f"REFERENCES `{target_table}` (`{target_column}`)"
+                    )
+        if context.number == 5 and table_name == "VETERINARIAN_CLIENTS":
+            constraints.append("  CONSTRAINT `uk_veterinarian_client` UNIQUE (`veterinarian_id`, `rancher_id`)")
+        definition = ",\n".join(columns + constraints)
+        statements.append(f"CREATE TABLE IF NOT EXISTS `{table_name}` (\n{definition}\n) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;")
+        statements.append("")
+    statements.append("SET FOREIGN_KEY_CHECKS = 1;")
+    statements.append("")
+    return "\n".join(statements)
+
+
+def sqlite_sql(context: Context, product: str) -> str:
+    entity_names = {name for name, _ in context.local_entities}
+    local_fk_targets = {
+        "herd_id": ("CACHED_HERDS", "herd_id"),
+        "plan_id": ("CACHED_SUBSCRIPTION_PLANS", "plan_id"),
+        "dashboard_id": ("CACHED_DASHBOARDS", "dashboard_id"),
+    }
+    statements = [
+        f"-- AniTec | 2.6.{context.number} {context.name}",
+        f"-- {product} SQLite DDL prepared for manual ERD import.",
+        "-- Dates and DateTimes use ISO-8601 TEXT values; booleans use INTEGER 0/1.",
+        "PRAGMA foreign_keys = ON;",
+        "",
+    ]
+    for table_name, fields in context.local_entities:
+        columns: list[str] = []
+        constraints: list[str] = []
+        for source_type, field_definition in fields:
+            tokens = field_definition.split()
+            field_name = tokens[0]
+            keys = set(tokens[1:])
+            parts = [f"  `{field_name}`", sql_type(source_type, "", "sqlite")]
+            if "PK" in keys:
+                parts.append("PRIMARY KEY")
+            else:
+                parts.append("NOT NULL")
+            if "UK" in keys:
+                parts.append("UNIQUE")
+            columns.append(" ".join(parts))
+            if "FK" in keys and field_name in local_fk_targets:
+                target_table, target_column = local_fk_targets[field_name]
+                if target_table in entity_names:
+                    constraints.append(
+                        f"  CONSTRAINT `fk_{table_name.lower()}_{field_name}` FOREIGN KEY (`{field_name}`) "
+                        f"REFERENCES `{target_table}` (`{target_column}`) ON DELETE CASCADE"
+                    )
+        definition = ",\n".join(columns + constraints)
+        statements.append(f"CREATE TABLE IF NOT EXISTS `{table_name}` (\n{definition}\n);")
+        statements.append("")
+    statements.extend([
+        "CREATE TABLE IF NOT EXISTS `PENDING_OPERATIONS` (",
+        "  `operation_id` TEXT PRIMARY KEY,",
+        "  `aggregate_type` TEXT NOT NULL,",
+        "  `aggregate_id` TEXT NOT NULL,",
+        "  `operation_type` TEXT NOT NULL,",
+        "  `payload_json` TEXT NOT NULL,",
+        "  `created_at` TEXT NOT NULL,",
+        "  `retry_count` INTEGER NOT NULL DEFAULT 0,",
+        "  `status` TEXT NOT NULL",
+        ");",
+        "",
+        "CREATE INDEX IF NOT EXISTS `ix_pending_operations_status_created_at`",
+        "  ON `PENDING_OPERATIONS` (`status`, `created_at`);",
         "",
     ])
+    return "\n".join(statements)
 
 
 def placeholder(path: str, alt: str, caption: str, note: str) -> str:
@@ -1180,7 +1317,7 @@ def markdown_for(context: Context) -> str:
         "",
         f"## {prefix}.6. Bounded Context Software Architecture Code Level Diagrams",
         "",
-        "Los diagramas de código detallan el modelo del dominio y los objetos de persistencia. El UML diferencia los elementos existentes de las incorporaciones objetivo, mientras los ERD señalan mediante comentarios o descripciones las columnas propuestas.",
+        "Los diagramas de código detallan el modelo del dominio y los objetos de persistencia. El UML diferencia los elementos existentes de las incorporaciones objetivo, mientras los esquemas SQL señalan mediante comentarios las columnas propuestas. Los archivos ERD quedan disponibles para completar la importación manual.",
         "",
         f"### {prefix}.6.1. Bounded Context Domain Layer Class Diagrams",
         "",
@@ -1192,11 +1329,11 @@ def markdown_for(context: Context) -> str:
         "",
         "MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente caché, metadatos de sincronización y operaciones pendientes; no sustituyen las reglas ni la fuente de verdad del backend. En IAM, las credenciales y tokens permanecen fuera de las tablas locales y se almacenan mediante mecanismos seguros del sistema operativo.",
         "",
-        placeholder(f"{database_asset}/mysql-database-design.png", f"MySQL Database Diagram de {context.name}", f"{figure(5)} MySQL Database Design de {context.name}. Fuente: elaboración propia con Mermaid ER.", "imagen generada desde mysql-database-design.erd."),
+        placeholder(f"{database_asset}/mysql-database-design.png", f"MySQL Database Diagram de {context.name}", f"{figure(5)} MySQL Database Design de {context.name}. Fuente: elaboración propia a partir del esquema SQL.", "importar mysql-database-design.sql en la herramienta ERD y exportar con este nombre."),
         "",
-        placeholder(f"{database_asset}/android-room-database-design.png", f"Room Database Diagram de {context.name}", f"{figure(6)} Android Room Database Design de {context.name}. Fuente: elaboración propia con Mermaid ER.", "imagen generada desde android-room-database-design.erd."),
+        placeholder(f"{database_asset}/android-room-database-design.png", f"Room Database Diagram de {context.name}", f"{figure(6)} Android Room Database Design de {context.name}. Fuente: elaboración propia a partir del esquema SQL.", "importar android-room-database-design.sql en la herramienta ERD y exportar con este nombre."),
         "",
-        placeholder(f"{database_asset}/flutter-sqlite-database-design.png", f"Flutter SQLite Database Diagram de {context.name}", f"{figure(7)} Flutter SQLite Database Design de {context.name}. Fuente: elaboración propia con Mermaid ER.", "imagen generada desde flutter-sqlite-database-design.erd."),
+        placeholder(f"{database_asset}/flutter-sqlite-database-design.png", f"Flutter SQLite Database Diagram de {context.name}", f"{figure(7)} Flutter SQLite Database Design de {context.name}. Fuente: elaboración propia a partir del esquema SQL.", "importar flutter-sqlite-database-design.sql en la herramienta ERD y exportar con este nombre."),
         "",
     ]
     return "\n".join(sections)
@@ -1207,9 +1344,12 @@ def write_context(context: Context) -> None:
     folder.mkdir(parents=True, exist_ok=True)
     (folder / "component-level.dsl").write_text(dsl_for(context), encoding="utf-8")
     (folder / "domain-layer-class-diagram.puml").write_text(puml_for(context), encoding="utf-8")
-    (folder / "mysql-database-design.erd").write_text(context.server_erd.strip() + "\n", encoding="utf-8")
-    (folder / "android-room-database-design.erd").write_text(local_erd(context, "Android Room"), encoding="utf-8")
-    (folder / "flutter-sqlite-database-design.erd").write_text(local_erd(context, "Flutter SQLite"), encoding="utf-8")
+    (folder / "mysql-database-design.sql").write_text(mysql_sql(context), encoding="utf-8")
+    (folder / "android-room-database-design.sql").write_text(sqlite_sql(context, "Android Room"), encoding="utf-8")
+    (folder / "flutter-sqlite-database-design.sql").write_text(sqlite_sql(context, "Flutter"), encoding="utf-8")
+    (folder / "mysql-database-design.erd").write_text("", encoding="utf-8")
+    (folder / "android-room-database-design.erd").write_text("", encoding="utf-8")
+    (folder / "flutter-sqlite-database-design.erd").write_text("", encoding="utf-8")
     filename = f"2-6-{context.number}-Bounded-Context-{context.name.replace(' ', '-')}.md"
     (CONTENT / filename).write_text(markdown_for(context), encoding="utf-8")
 
@@ -1278,14 +1418,14 @@ def update_diagram_readme() -> None:
     if marker in current:
         current = current[: current.index(marker)]
     rows = "\n".join(
-        f"| 2.6.{c.number} {c.name} | `{c.folder}/component-level.dsl` | `{c.folder}/domain-layer-class-diagram.puml` | Tres archivos `.erd` |"
+        f"| 2.6.{c.number} {c.name} | `{c.folder}/component-level.dsl` | `{c.folder}/domain-layer-class-diagram.puml` | Tres pares `.sql` + `.erd` |"
         for c in CONTEXTS
     )
     addition = f'''
 
 ## Diagramas tácticos de bounded contexts
 
-Cada carpeta contiene un workspace C4 con tres vistas, un UML del dominio y los modelos de persistencia de MySQL, Android Room y Flutter SQLite.
+Cada carpeta contiene un workspace C4 con tres vistas, un UML del dominio y tres esquemas SQL para MySQL, Android Room y Flutter SQLite. Junto a cada SQL se incluye un archivo `.erd` vacío para guardar o vincular el resultado de la herramienta elegida.
 
 | Bounded Context | C4 Components | Domain UML | Database Designs |
 |---|---|---|---|
@@ -1295,7 +1435,9 @@ Cada carpeta contiene un workspace C4 con tres vistas, un UML del dominio y los 
 
 - Los `.dsl` se validan y exportan con Structurizr; cada archivo declara vistas para API, Android y Flutter.
 - Los `.puml` se renderizan con PlantUML.
-- Los `.erd` contienen sintaxis Mermaid `erDiagram`; cada PNG renderizado se guarda junto a su archivo fuente.
+- Los `.sql` se importan manualmente en MySQL Workbench, DBeaver, DataGrip u otra herramienta de diagramación compatible.
+- Los `.erd` se entregan vacíos porque su formato interno depende de la herramienta que se utilice para importar el SQL.
+- Al exportar un PNG, debe conservarse el mismo nombre base del SQL y guardarse en la misma carpeta para resolver el placeholder del informe.
 - Los nombres exactos de los PNG esperados aparecen en los placeholders de cada Markdown de 2.6.
 '''
     path.write_text(current.rstrip() + addition, encoding="utf-8")
@@ -1307,7 +1449,7 @@ def main() -> None:
     write_main_markdown()
     update_report_readme()
     update_diagram_readme()
-    print(f"Generated {len(CONTEXTS)} contexts, {len(CONTEXTS) * 5} diagram sources and 9 report chapters.")
+    print(f"Generated {len(CONTEXTS)} contexts, {len(CONTEXTS) * 8} diagram files and 9 report chapters.")
 
 
 if __name__ == "__main__":

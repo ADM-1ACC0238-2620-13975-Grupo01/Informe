@@ -105,15 +105,14 @@ El archivo [`component-level.dsl`](<../../assets/codefordiagrams/2.6.5. Bounded 
 
 ## 2.6.5.6. Bounded Context Software Architecture Code Level Diagrams
 
-Los diagramas de código detallan el modelo del dominio y los objetos de persistencia. El UML diferencia los elementos existentes de las incorporaciones objetivo, mientras los ERD señalan mediante comentarios o descripciones las columnas propuestas.
+Los diagramas de código detallan el modelo del dominio y los objetos de persistencia. El UML diferencia los elementos existentes de las incorporaciones objetivo, mientras los esquemas SQL señalan mediante comentarios las columnas propuestas. Los archivos ERD quedan disponibles para completar la importación manual.
 
 ### 2.6.5.6.1. Bounded Context Domain Layer Class Diagrams
 
 El Class Diagram incluye agregados, entidades, value objects, enumeraciones, servicios de dominio e interfaces de repositorio con atributos, operaciones, visibilidad y multiplicidades.
 
 <div align="center">
-  <!-- Placeholder: renderizar domain-layer-class-diagram.puml. -->
-  <img src="../../assets/chapter-2/tactical-ddd/veterinary-collaboration/veterinary-collaboration-domain-class-diagram.png" alt="Class Diagram de Veterinary Collaboration" width="900">
+  <img src="../../assets/codefordiagrams/2-6-5-Bounded-Context-Veterinary-Collaboration/2-6-5-domain-layer-class-diagram.svg" alt="Class Diagram de Veterinary Collaboration" width="900">
   <p><i>Figura 2.6.5.4. Domain Layer Class Diagram de Veterinary Collaboration. Fuente: elaboración propia con PlantUML.</i></p>
 </div>
 
@@ -122,19 +121,13 @@ El Class Diagram incluye agregados, entidades, value objects, enumeraciones, ser
 MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente caché, metadatos de sincronización y operaciones pendientes; no sustituyen las reglas ni la fuente de verdad del backend. En IAM, las credenciales y tokens permanecen fuera de las tablas locales y se almacenan mediante mecanismos seguros del sistema operativo.
 
 <div align="center">
-  <!-- Placeholder: imagen generada desde mysql-database-design.erd. -->
-  <img src="../../assets/codefordiagrams/2.6.5. Bounded Context Veterinary Collaboration/mysql-database-design.png" alt="MySQL Database Diagram de Veterinary Collaboration" width="900">
-  <p><i>Figura 2.6.5.5. MySQL Database Design de Veterinary Collaboration. Fuente: elaboración propia con Mermaid ER.</i></p>
+  <img src="../../assets/codefordiagrams/2-6-5-Bounded-Context-Veterinary-Collaboration/2-6-5-mysql-database-design.png" alt="MySQL Database Diagram de Veterinary Collaboration" width="900">
+  <p><i>Figura 2.6.5.5. MySQL Database Design de Veterinary Collaboration. Fuente: elaboración propia a partir del esquema SQL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: imagen generada desde android-room-database-design.erd. -->
-  <img src="../../assets/codefordiagrams/2.6.5. Bounded Context Veterinary Collaboration/android-room-database-design.png" alt="Room Database Diagram de Veterinary Collaboration" width="900">
-  <p><i>Figura 2.6.5.6. Android Room Database Design de Veterinary Collaboration. Fuente: elaboración propia con Mermaid ER.</i></p>
+  <img src="../../assets/codefordiagrams/2-6-5-Bounded-Context-Veterinary-Collaboration/2-6-5-android-room-database-design.png" alt="Room Database Diagram de Veterinary Collaboration" width="900">
+  <p><i>Figura 2.6.5.6. Android Room Database Design de Veterinary Collaboration. Fuente: elaboración propia a partir del esquema SQL.</i></p>
 </div>
 
-<div align="center">
-  <!-- Placeholder: imagen generada desde flutter-sqlite-database-design.erd. -->
-  <img src="../../assets/codefordiagrams/2.6.5. Bounded Context Veterinary Collaboration/flutter-sqlite-database-design.png" alt="Flutter SQLite Database Diagram de Veterinary Collaboration" width="900">
-  <p><i>Figura 2.6.5.7. Flutter SQLite Database Design de Veterinary Collaboration. Fuente: elaboración propia con Mermaid ER.</i></p>
-</div>
+

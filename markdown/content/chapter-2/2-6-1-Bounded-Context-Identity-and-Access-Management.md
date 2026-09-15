@@ -91,34 +91,30 @@ La Infrastructure Layer conecta el dominio con BCrypt, JWT y almacenamiento segu
 El archivo [`component-level.dsl`](<../../assets/codefordiagrams/2.6.1. Bounded Context Identity and Access Management/component-level.dsl>) contiene las vistas `BC1-ApiComponents`, `BC1-AndroidComponents` y `BC1-FlutterComponents`. Las tres parten del mismo modelo C4 y muestran la separación entre presentación, aplicación, dominio y adaptadores.
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC1-ApiComponents. -->
   <img src="../../assets/chapter-2/tactical-ddd/identity-and-access-management/identity-and-access-management-api-components.png" alt="Componentes API de Identity and Access Management" width="900">
   <p><i>Figura 2.6.1.1. Componentes de la API para Identity and Access Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC1-AndroidComponents. -->
   <img src="../../assets/chapter-2/tactical-ddd/identity-and-access-management/identity-and-access-management-android-components.png" alt="Componentes Android de Identity and Access Management" width="900">
   <p><i>Figura 2.6.1.2. Componentes Android para Identity and Access Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC1-FlutterComponents. -->
   <img src="../../assets/chapter-2/tactical-ddd/identity-and-access-management/identity-and-access-management-flutter-components.png" alt="Componentes Flutter de Identity and Access Management" width="900">
   <p><i>Figura 2.6.1.3. Componentes Flutter para Identity and Access Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 ## 2.6.1.6. Bounded Context Software Architecture Code Level Diagrams
 
-Los diagramas de código detallan el modelo del dominio y los objetos de persistencia. El UML diferencia los elementos existentes de las incorporaciones objetivo, mientras los ERD señalan mediante comentarios o descripciones las columnas propuestas.
+Los diagramas de código detallan el modelo del dominio y los objetos de persistencia. El UML diferencia los elementos existentes de las incorporaciones objetivo, mientras los esquemas SQL señalan mediante comentarios las columnas propuestas. Los archivos ERD quedan disponibles para completar la importación manual.
 
 ### 2.6.1.6.1. Bounded Context Domain Layer Class Diagrams
 
 El Class Diagram incluye agregados, entidades, value objects, enumeraciones, servicios de dominio e interfaces de repositorio con atributos, operaciones, visibilidad y multiplicidades.
 
 <div align="center">
-  <!-- Placeholder: renderizar domain-layer-class-diagram.puml. -->
-  <img src="../../assets/chapter-2/tactical-ddd/identity-and-access-management/identity-and-access-management-domain-class-diagram.png" alt="Class Diagram de Identity and Access Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-1-Bounded-Context-Identity-and-Access-Management/2-6-1-domain-layer-class-diagram.svg" alt="Class Diagram de Identity and Access Management" width="900">
   <p><i>Figura 2.6.1.4. Domain Layer Class Diagram de Identity and Access Management. Fuente: elaboración propia con PlantUML.</i></p>
 </div>
 
@@ -127,19 +123,12 @@ El Class Diagram incluye agregados, entidades, value objects, enumeraciones, ser
 MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente caché, metadatos de sincronización y operaciones pendientes; no sustituyen las reglas ni la fuente de verdad del backend. En IAM, las credenciales y tokens permanecen fuera de las tablas locales y se almacenan mediante mecanismos seguros del sistema operativo.
 
 <div align="center">
-  <!-- Placeholder: imagen generada desde mysql-database-design.erd. -->
-  <img src="../../assets/codefordiagrams/2.6.1. Bounded Context Identity and Access Management/mysql-database-design.png" alt="MySQL Database Diagram de Identity and Access Management" width="900">
-  <p><i>Figura 2.6.1.5. MySQL Database Design de Identity and Access Management. Fuente: elaboración propia con Mermaid ER.</i></p>
+  <img src="../../assets/codefordiagrams/2-6-1-Bounded-Context-Identity-and-Access-Management/2-6-1-mysql-database-design.png" alt="MySQL Database Diagram de Identity and Access Management" width="900">
+  <p><i>Figura 2.6.1.5. MySQL Database Design de Identity and Access Management. Fuente: elaboración propia a partir del esquema SQL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: imagen generada desde android-room-database-design.erd. -->
-  <img src="../../assets/codefordiagrams/2.6.1. Bounded Context Identity and Access Management/android-room-database-design.png" alt="Room Database Diagram de Identity and Access Management" width="900">
-  <p><i>Figura 2.6.1.6. Android Room Database Design de Identity and Access Management. Fuente: elaboración propia con Mermaid ER.</i></p>
+  <img src="../../assets/codefordiagrams/2-6-1-Bounded-Context-Identity-and-Access-Management/2-6-1-android-room-database-design.png" alt="Room Database Diagram de Identity and Access Management" width="900">
+  <p><i>Figura 2.6.1.6. Android Room Database Design de Identity and Access Management. Fuente: elaboración propia a partir del esquema SQL.</i></p>
 </div>
 
-<div align="center">
-  <!-- Placeholder: imagen generada desde flutter-sqlite-database-design.erd. -->
-  <img src="../../assets/codefordiagrams/2.6.1. Bounded Context Identity and Access Management/flutter-sqlite-database-design.png" alt="Flutter SQLite Database Diagram de Identity and Access Management" width="900">
-  <p><i>Figura 2.6.1.7. Flutter SQLite Database Design de Identity and Access Management. Fuente: elaboración propia con Mermaid ER.</i></p>
-</div>
