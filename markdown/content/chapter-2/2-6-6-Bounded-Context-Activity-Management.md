@@ -1,8 +1,12 @@
+<a id="toc-2-6-6-bounded-context-activity-management"></a>
+
 # 2.6.6. Bounded Context: Activity Management
 
 Planificar actividades ganaderas y sanitarias, controlar su estado y decidir cuándo corresponde generar un recordatorio.
 
 La base implementada se encuentra en el módulo `Activities` de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+
+<a id="toc-2-6-6-1-domain-layer"></a>
 
 ## 2.6.6.1. Domain Layer
 
@@ -22,6 +26,8 @@ Esta capa representa el núcleo de Activity Management. Los elementos existentes
   </tbody>
 </table>
 
+<a id="toc-2-6-6-2-interface-layer"></a>
+
 ## 2.6.6.2. Interface Layer
 
 La Interface Layer traduce acciones de usuarios y contratos externos. En el backend utiliza controllers, resources y assemblers; en los clientes móviles utiliza pantallas y controladores de estado específicos de cada plataforma.
@@ -40,6 +46,8 @@ La Interface Layer traduce acciones de usuarios y contratos externos. En el back
     <tr><td>FarmActivityController</td><td>State Controller objetivo</td><td>Flutter / Dart</td><td>Coordinar el estado de presentación.</td><td>Invocar casos de uso y publicar estados de carga, éxito y error.</td></tr>
   </tbody>
 </table>
+
+<a id="toc-2-6-6-3-application-layer"></a>
 
 ## 2.6.6.3. Application Layer
 
@@ -63,6 +71,8 @@ La Application Layer orquesta comandos, consultas y sincronización. Los casos d
   </tbody>
 </table>
 
+<a id="toc-2-6-6-4-infrastructure-layer"></a>
+
 ## 2.6.6.4. Infrastructure Layer
 
 La Infrastructure Layer conecta el dominio con Livestock, Sanitary y Firebase Cloud Messaging. Los adapters implementan interfaces definidas hacia el interior y traducen errores técnicos a resultados comprendidos por los casos de uso.
@@ -81,6 +91,8 @@ La Infrastructure Layer conecta el dominio con Livestock, Sanitary y Firebase Cl
     <tr><td>Livestock, Sanitary y Firebase Cloud Messaging</td><td>Integración/ACL</td><td>Infraestructura compartida</td><td>Conectar el contexto con capacidades externas.</td><td>Traducir contratos técnicos sin contaminar el modelo del dominio.</td></tr>
   </tbody>
 </table>
+
+<a id="toc-2-6-6-5-bounded-context-software-architecture-component-level-diagrams"></a>
 
 ## 2.6.6.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -101,9 +113,13 @@ El archivo [`component-level.dsl`](<../../assets/codefordiagrams/2.6.6. Bounded 
   <p><i>Figura 2.6.6.3. Componentes Flutter para Activity Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
+<a id="toc-2-6-6-6-bounded-context-software-architecture-code-level-diagrams"></a>
+
 ## 2.6.6.6. Bounded Context Software Architecture Code Level Diagrams
 
 Los diagramas de código detallan el modelo del dominio y los objetos de persistencia. El UML diferencia los elementos existentes de las incorporaciones objetivo, mientras los esquemas SQL señalan mediante comentarios las columnas propuestas. Los archivos ERD quedan disponibles para completar la importación manual.
+
+<a id="toc-2-6-6-6-1-bounded-context-domain-layer-class-diagrams"></a>
 
 ### 2.6.6.6.1. Bounded Context Domain Layer Class Diagrams
 
@@ -113,6 +129,8 @@ El Class Diagram incluye agregados, entidades, value objects, enumeraciones, ser
   <img src="../../assets/codefordiagrams/2-6-6-Bounded-Context-Activity-Management/2-6-6-domain-layer-class-diagram.svg" alt="Class Diagram de Activity Management" width="900">
   <p><i>Figura 2.6.6.4. Domain Layer Class Diagram de Activity Management. Fuente: elaboración propia con PlantUML.</i></p>
 </div>
+
+<a id="toc-2-6-6-6-2-bounded-context-database-design-diagram"></a>
 
 ### 2.6.6.6.2. Bounded Context Database Design Diagram
 
