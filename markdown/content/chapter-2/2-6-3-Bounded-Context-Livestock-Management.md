@@ -95,20 +95,17 @@ La Infrastructure Layer conecta el dominio con Profiles, cámara, Google ML Kit,
 El archivo [`component-level.dsl`](<../../assets/codefordiagrams/2.6.3. Bounded Context Livestock Management/component-level.dsl>) contiene las vistas `BC3-ApiComponents`, `BC3-AndroidComponents` y `BC3-FlutterComponents`. Las tres parten del mismo modelo C4 y muestran la separación entre presentación, aplicación, dominio y adaptadores.
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC3-ApiComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/livestock-management/livestock-management-api-components.png" alt="Componentes API de Livestock Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-3-Bounded-Context-Livestock-Management/2-6-3-BC3-ApiComponents.svg" alt="Componentes API de Livestock Management" width="900">
   <p><i>Figura 2.6.3.1. Componentes de la API para Livestock Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC3-AndroidComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/livestock-management/livestock-management-android-components.png" alt="Componentes Android de Livestock Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-3-Bounded-Context-Livestock-Management/2-6-3-BC3-AndroidComponents.svg" alt="Componentes Android de Livestock Management" width="900">
   <p><i>Figura 2.6.3.2. Componentes Android para Livestock Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC3-FlutterComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/livestock-management/livestock-management-flutter-components.png" alt="Componentes Flutter de Livestock Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-3-Bounded-Context-Livestock-Management/2-6-3-BC3-FlutterComponents.svg" alt="Componentes Flutter de Livestock Management" width="900">
   <p><i>Figura 2.6.3.3. Componentes Flutter para Livestock Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 

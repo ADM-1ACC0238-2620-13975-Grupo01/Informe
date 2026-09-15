@@ -87,20 +87,17 @@ La Infrastructure Layer conecta el dominio con Profiles, MySQL y almacenamiento 
 El archivo [`component-level.dsl`](<../../assets/codefordiagrams/2.6.7. Bounded Context Financial Management/component-level.dsl>) contiene las vistas `BC7-ApiComponents`, `BC7-AndroidComponents` y `BC7-FlutterComponents`. Las tres parten del mismo modelo C4 y muestran la separación entre presentación, aplicación, dominio y adaptadores.
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC7-ApiComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/financial-management/financial-management-api-components.png" alt="Componentes API de Financial Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-7-Bounded-Context-Financial-Management/2-6-7-BC7-ApiComponents.svg" alt="Componentes API de Financial Management" width="900">
   <p><i>Figura 2.6.7.1. Componentes de la API para Financial Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC7-AndroidComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/financial-management/financial-management-android-components.png" alt="Componentes Android de Financial Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-7-Bounded-Context-Financial-Management/2-6-7-BC7-AndroidComponents.svg" alt="Componentes Android de Financial Management" width="900">
   <p><i>Figura 2.6.7.2. Componentes Android para Financial Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC7-FlutterComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/financial-management/financial-management-flutter-components.png" alt="Componentes Flutter de Financial Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-7-Bounded-Context-Financial-Management/2-6-7-BC7-FlutterComponents.svg" alt="Componentes Flutter de Financial Management" width="900">
   <p><i>Figura 2.6.7.3. Componentes Flutter para Financial Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 

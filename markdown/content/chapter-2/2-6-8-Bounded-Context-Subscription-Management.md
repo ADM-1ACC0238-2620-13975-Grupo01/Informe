@@ -96,20 +96,17 @@ La Infrastructure Layer conecta el dominio con IAM y Stripe mediante Anti-Corrup
 El archivo [`component-level.dsl`](<../../assets/codefordiagrams/2.6.8. Bounded Context Subscription Management/component-level.dsl>) contiene las vistas `BC8-ApiComponents`, `BC8-AndroidComponents` y `BC8-FlutterComponents`. Las tres parten del mismo modelo C4 y muestran la separación entre presentación, aplicación, dominio y adaptadores.
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC8-ApiComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/subscription-management/subscription-management-api-components.png" alt="Componentes API de Subscription Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-8-Bounded-Context-Subscription-Management/2-6-8-BC8-ApiComponents.svg" alt="Componentes API de Subscription Management" width="900">
   <p><i>Figura 2.6.8.1. Componentes de la API para Subscription Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC8-AndroidComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/subscription-management/subscription-management-android-components.png" alt="Componentes Android de Subscription Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-8-Bounded-Context-Subscription-Management/2-6-8-BC8-AndroidComponents.svg" alt="Componentes Android de Subscription Management" width="900">
   <p><i>Figura 2.6.8.2. Componentes Android para Subscription Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC8-FlutterComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/subscription-management/subscription-management-flutter-components.png" alt="Componentes Flutter de Subscription Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-8-Bounded-Context-Subscription-Management/2-6-8-BC8-FlutterComponents.svg" alt="Componentes Flutter de Subscription Management" width="900">
   <p><i>Figura 2.6.8.3. Componentes Flutter para Subscription Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 

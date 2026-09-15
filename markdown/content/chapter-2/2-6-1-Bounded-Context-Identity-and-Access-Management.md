@@ -91,17 +91,17 @@ La Infrastructure Layer conecta el dominio con BCrypt, JWT y almacenamiento segu
 El archivo [`component-level.dsl`](<../../assets/codefordiagrams/2.6.1. Bounded Context Identity and Access Management/component-level.dsl>) contiene las vistas `BC1-ApiComponents`, `BC1-AndroidComponents` y `BC1-FlutterComponents`. Las tres parten del mismo modelo C4 y muestran la separación entre presentación, aplicación, dominio y adaptadores.
 
 <div align="center">
-  <img src="../../assets/chapter-2/tactical-ddd/identity-and-access-management/identity-and-access-management-api-components.png" alt="Componentes API de Identity and Access Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-1-Bounded-Context-Identity-and-Access-Management/2-6-1-BC1-ApiComponents.svg" alt="Componentes API de Identity and Access Management" width="900">
   <p><i>Figura 2.6.1.1. Componentes de la API para Identity and Access Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-2/tactical-ddd/identity-and-access-management/identity-and-access-management-android-components.png" alt="Componentes Android de Identity and Access Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-1-Bounded-Context-Identity-and-Access-Management/2-6-1-BC1-AndroidComponents.svg" alt="Componentes Android de Identity and Access Management" width="900">
   <p><i>Figura 2.6.1.2. Componentes Android para Identity and Access Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-2/tactical-ddd/identity-and-access-management/identity-and-access-management-flutter-components.png" alt="Componentes Flutter de Identity and Access Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-1-Bounded-Context-Identity-and-Access-Management/2-6-1-BC1-FlutterComponents.svg" alt="Componentes Flutter de Identity and Access Management" width="900">
   <p><i>Figura 2.6.1.3. Componentes Flutter para Identity and Access Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 

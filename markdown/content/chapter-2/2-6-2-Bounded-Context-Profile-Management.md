@@ -88,17 +88,17 @@ La Infrastructure Layer conecta el dominio con IAM Context Facade y almacenamien
 El archivo [`component-level.dsl`](<../../assets/codefordiagrams/2.6.2. Bounded Context Profile Management/component-level.dsl>) contiene las vistas `BC2-ApiComponents`, `BC2-AndroidComponents` y `BC2-FlutterComponents`. Las tres parten del mismo modelo C4 y muestran la separación entre presentación, aplicación, dominio y adaptadores.
 
 <div align="center">
-  <img src="../../assets/chapter-2/tactical-ddd/profile-management/profile-management-api-components.png" alt="Componentes API de Profile Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-2-Bounded-Context-Profile-Management/2-6-2-BC2-ApiComponents.svg" alt="Componentes API de Profile Management" width="900">
   <p><i>Figura 2.6.2.1. Componentes de la API para Profile Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-2/tactical-ddd/profile-management/profile-management-android-components.png" alt="Componentes Android de Profile Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-2-Bounded-Context-Profile-Management/2-6-2-BC2-AndroidComponents.svg" alt="Componentes Android de Profile Management" width="900">
   <p><i>Figura 2.6.2.2. Componentes Android para Profile Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-2/tactical-ddd/profile-management/profile-management-flutter-components.png" alt="Componentes Flutter de Profile Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-2-Bounded-Context-Profile-Management/2-6-2-BC2-FlutterComponents.svg" alt="Componentes Flutter de Profile Management" width="900">
   <p><i>Figura 2.6.2.3. Componentes Flutter para Profile Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 

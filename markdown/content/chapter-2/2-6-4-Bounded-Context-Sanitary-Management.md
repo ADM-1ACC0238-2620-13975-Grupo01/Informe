@@ -89,20 +89,17 @@ La Infrastructure Layer conecta el dominio con Livestock, Veterinary Collaborati
 El archivo [`component-level.dsl`](<../../assets/codefordiagrams/2.6.4. Bounded Context Sanitary Management/component-level.dsl>) contiene las vistas `BC4-ApiComponents`, `BC4-AndroidComponents` y `BC4-FlutterComponents`. Las tres parten del mismo modelo C4 y muestran la separación entre presentación, aplicación, dominio y adaptadores.
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC4-ApiComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/sanitary-management/sanitary-management-api-components.png" alt="Componentes API de Sanitary Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-4-Bounded-Context-Sanitary-Management/2-6-4-BC4-ApiComponents.svg" alt="Componentes API de Sanitary Management" width="900">
   <p><i>Figura 2.6.4.1. Componentes de la API para Sanitary Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC4-AndroidComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/sanitary-management/sanitary-management-android-components.png" alt="Componentes Android de Sanitary Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-4-Bounded-Context-Sanitary-Management/2-6-4-BC4-AndroidComponents.svg" alt="Componentes Android de Sanitary Management" width="900">
   <p><i>Figura 2.6.4.2. Componentes Android para Sanitary Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC4-FlutterComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/sanitary-management/sanitary-management-flutter-components.png" alt="Componentes Flutter de Sanitary Management" width="900">
+  <img src="../../assets/codefordiagrams/2-6-4-Bounded-Context-Sanitary-Management/2-6-4-BC4-FlutterComponents.svg" alt="Componentes Flutter de Sanitary Management" width="900">
   <p><i>Figura 2.6.4.3. Componentes Flutter para Sanitary Management. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 

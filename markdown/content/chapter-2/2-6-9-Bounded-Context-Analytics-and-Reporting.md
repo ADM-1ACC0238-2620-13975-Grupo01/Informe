@@ -90,20 +90,17 @@ La Infrastructure Layer conecta el dominio con Livestock, Sanitary, Activities y
 El archivo [`component-level.dsl`](<../../assets/codefordiagrams/2.6.9. Bounded Context Analytics and Reporting/component-level.dsl>) contiene las vistas `BC9-ApiComponents`, `BC9-AndroidComponents` y `BC9-FlutterComponents`. Las tres parten del mismo modelo C4 y muestran la separación entre presentación, aplicación, dominio y adaptadores.
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC9-ApiComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/analytics-and-reporting/analytics-and-reporting-api-components.png" alt="Componentes API de Analytics and Reporting" width="900">
+  <img src="../../assets/codefordiagrams/2-6-9-Bounded-Context-Analytics-and-Reporting/2-6-9-BC9-ApiComponents.svg" alt="Componentes API de Analytics and Reporting" width="900">
   <p><i>Figura 2.6.9.1. Componentes de la API para Analytics and Reporting. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC9-AndroidComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/analytics-and-reporting/analytics-and-reporting-android-components.png" alt="Componentes Android de Analytics and Reporting" width="900">
+  <img src="../../assets/codefordiagrams/2-6-9-Bounded-Context-Analytics-and-Reporting/2-6-9-BC9-AndroidComponents.svg" alt="Componentes Android de Analytics and Reporting" width="900">
   <p><i>Figura 2.6.9.2. Componentes Android para Analytics and Reporting. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC9-FlutterComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/analytics-and-reporting/analytics-and-reporting-flutter-components.png" alt="Componentes Flutter de Analytics and Reporting" width="900">
+  <img src="../../assets/codefordiagrams/2-6-9-Bounded-Context-Analytics-and-Reporting/2-6-9-BC9-FlutterComponents.svg" alt="Componentes Flutter de Analytics and Reporting" width="900">
   <p><i>Figura 2.6.9.3. Componentes Flutter para Analytics and Reporting. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 

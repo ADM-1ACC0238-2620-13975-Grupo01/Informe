@@ -86,20 +86,17 @@ La Infrastructure Layer conecta el dominio con IAM, Profiles y Livestock. Los ad
 El archivo [`component-level.dsl`](<../../assets/codefordiagrams/2.6.5. Bounded Context Veterinary Collaboration/component-level.dsl>) contiene las vistas `BC5-ApiComponents`, `BC5-AndroidComponents` y `BC5-FlutterComponents`. Las tres parten del mismo modelo C4 y muestran la separación entre presentación, aplicación, dominio y adaptadores.
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC5-ApiComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/veterinary-collaboration/veterinary-collaboration-api-components.png" alt="Componentes API de Veterinary Collaboration" width="900">
+  <img src="../../assets/codefordiagrams/2-6-5-Bounded-Context-Veterinary-Collaboration/2-6-5-BC5-ApiComponents.svg" alt="Componentes API de Veterinary Collaboration" width="900">
   <p><i>Figura 2.6.5.1. Componentes de la API para Veterinary Collaboration. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC5-AndroidComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/veterinary-collaboration/veterinary-collaboration-android-components.png" alt="Componentes Android de Veterinary Collaboration" width="900">
+  <img src="../../assets/codefordiagrams/2-6-5-Bounded-Context-Veterinary-Collaboration/2-6-5-BC5-AndroidComponents.svg" alt="Componentes Android de Veterinary Collaboration" width="900">
   <p><i>Figura 2.6.5.2. Componentes Android para Veterinary Collaboration. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
 <div align="center">
-  <!-- Placeholder: exportar la vista BC5-FlutterComponents. -->
-  <img src="../../assets/chapter-2/tactical-ddd/veterinary-collaboration/veterinary-collaboration-flutter-components.png" alt="Componentes Flutter de Veterinary Collaboration" width="900">
+  <img src="../../assets/codefordiagrams/2-6-5-Bounded-Context-Veterinary-Collaboration/2-6-5-BC5-FlutterComponents.svg" alt="Componentes Flutter de Veterinary Collaboration" width="900">
   <p><i>Figura 2.6.5.3. Componentes Flutter para Veterinary Collaboration. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
