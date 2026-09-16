@@ -69,6 +69,12 @@ Animal *-- QrIdentifier
 Animal --> AnimalStatus
 IAnimalRepository ..> Animal
 IHerdRepository ..> Herd
+class AnimalOwnershipPolicy <<Domain Service - target>> {
+  +CanManage(actorId: int, animalId: int): bool
+}
+AnimalOwnershipPolicy ..> Farm
+AnimalOwnershipPolicy ..> Herd
+AnimalOwnershipPolicy ..> Animal
 }
 
 note bottom

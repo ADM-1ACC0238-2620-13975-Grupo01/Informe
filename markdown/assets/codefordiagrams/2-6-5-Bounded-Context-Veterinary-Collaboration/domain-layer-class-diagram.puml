@@ -51,6 +51,24 @@ VeterinarianClient --> CollaborationStatus
 VeterinarianClient *-- AuthorizationScope
 CollaborationPolicy ..> VeterinarianClient
 IVeterinarianClientRepository ..> VeterinarianClient
+class CollaborationRequest <<Entity - target>> {
+  -veterinarianId: int
+  -rancherId: int
+  -requestedAt: DateTime
+  +Accept(at: DateTime): void
+  +Reject(): void
+}
+class AccessGrant <<Entity - target>> {
+  -relationId: int
+  -scope: AuthorizationScope
+  -grantedAt: DateTime
+  -revokedAt: DateTime?
+  +Allows(animalId: int): bool
+  +Revoke(at: DateTime): void
+}
+VeterinarianClient "1" o-- "0..1" CollaborationRequest
+VeterinarianClient "1" o-- "0..1" AccessGrant
+AccessGrant *-- AuthorizationScope
 }
 
 note bottom

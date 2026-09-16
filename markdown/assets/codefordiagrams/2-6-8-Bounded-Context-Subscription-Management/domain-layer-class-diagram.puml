@@ -72,6 +72,25 @@ Payment --> PaymentStatus
 Payment *-- Money
 SubscriptionPlan *-- Money
 ISubscriptionRepository ..> Subscription
+interface ISubscriptionPlanRepository {
+  +FindById(id: int): SubscriptionPlan?
+  +List(): List~SubscriptionPlan~
+  +Add(plan: SubscriptionPlan): void
+  +Update(plan: SubscriptionPlan): void
+}
+interface IPaymentRepository {
+  +FindByUserId(userId: int): List~Payment~
+  +FindByProviderPaymentId(providerId: string): Payment?
+  +Add(payment: Payment): void
+}
+interface PaymentGateway <<Domain Port - target>> {
+  +CreateCheckout(subscription: Subscription, plan: SubscriptionPlan): string
+  +ConfirmPayment(reference: string): PaymentStatus
+}
+ISubscriptionPlanRepository ..> SubscriptionPlan
+IPaymentRepository ..> Payment
+PaymentGateway ..> Subscription
+PaymentGateway ..> Payment
 }
 
 note bottom

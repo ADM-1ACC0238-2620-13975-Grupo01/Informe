@@ -58,6 +58,25 @@ HealthEvent *-- Prescription
 HealthEvent --> HealthEventType
 SanitaryAuthorizationPolicy ..> HealthEvent
 IHealthEventRepository ..> HealthEvent
+class MedicalVisit <<Entity - target>> {
+  -id: int
+  -healthEventId: int
+  -veterinarianId: int
+  -scheduledAt: DateTime
+  -status: string
+  +Reschedule(date: DateTime): void
+  +Complete(): void
+}
+class SanitaryAlert <<Entity - target>> {
+  -id: int
+  -animalId: int
+  -dueDate: Date
+  -severity: string
+  +IsDue(on: Date): bool
+  +Dismiss(): void
+}
+HealthEvent "1" o-- "0..1" MedicalVisit
+HealthEvent "1" o-- "0..*" SanitaryAlert
 }
 
 note bottom

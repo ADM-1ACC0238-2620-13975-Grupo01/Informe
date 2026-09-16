@@ -46,6 +46,18 @@ User --> UserRole : has
 AuthenticatedSession --> User : belongs to
 CredentialPolicy ..> User : validates
 IUserRepository ..> User : persists
+enum IamError {
+  None
+  UserNotFound
+  UsernameAlreadyTaken
+  InvalidCredentials
+  InvalidRole
+  OperationCancelled
+  DatabaseError
+  InternalServerError
+  ExternalServiceError
+}
+CredentialPolicy ..> IamError : reports
 }
 
 note bottom

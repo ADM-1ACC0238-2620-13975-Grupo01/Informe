@@ -13,7 +13,7 @@ skinparam class {
 package "Profile Management" {
 class Profile <<Aggregate Root>> {
   -id: int
-  -ownerId: int
+  -ownerId: ProfileOwnerId
   -name: PersonName
   -email: EmailAddress
   -address: StreetAddress
@@ -48,6 +48,17 @@ Profile *-- PersonName
 Profile *-- EmailAddress
 Profile *-- StreetAddress
 IProfileRepository ..> Profile : persists
+class ProfileOwnerId <<Value Object - target>> {
+  -value: int
+  +IsValid(): bool
+}
+class ProfileUpdated <<Domain Event - target>> {
+  -profileId: int
+  -ownerId: int
+  -occurredAt: DateTime
+}
+Profile *-- ProfileOwnerId
+Profile ..> ProfileUpdated : emits
 }
 
 note bottom
