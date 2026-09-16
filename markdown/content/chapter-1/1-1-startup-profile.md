@@ -82,13 +82,13 @@ El ecosistema se complementará con la landing page existente, que comunicará l
 
   <tr>
     <td width="30%" align="center">
-      <img src="../../assets/chapter-1/Integrante-3.jpeg" width="180">
+      <img src="../../assets/chapter-1/giuseppe.png" width="180">
     </td>
     <td width="70%">
-      <h3>Nombre</h3>
-      <h4>codigo</h4>
+      <h3>Giuseppe Villanueva Rodriguez</h3>
+      <h4>u20221c554</h4>
       <p>
-        descripcion
+        Soy estudiante de Ingeniería de Software con habilidades en programacion. Poseo conocimientos en algunos lenguajes de programacion. Me caracterizo por ser empotico y siempre atento cuando se trata de trabajo en equipo.
       </p>
     </td>
   </tr>
