@@ -16,8 +16,8 @@ Para el desarrollo del informe perteneciente a la entrega AV1, se dividió la im
 |  | Desarrollo del Capítulo I, una parte del Capítulo II, así como la parte final del Capítulo V del documento en formato markdown.                                                            |
 |     | Desarrollo del Capítulo III, desarrollo parcial de capítulo II, así como colaboración en el capítulo V del documento en formato markdown.                                                  |
 |      | Desarrollo parcial del Capítulo IV, así como colaboración en el capítulo V del documento en formato markdown                                                                               |
-| Josep Melgarejo  | Desarrollo parcial del Capítulo II, así como colaboración en el capítulo I del documento en formato markdown                                                                               |
-| Luciana Sanchez  | Desarrollo parcial del Capítulo II: Diseño del landing page y web application, y actualización del keynote.   |
+| Josep Melgarejo  | Desarrollo parcial del Capítulo II y I, así como colaboración en el Keynote                                                                              |
+| Luciana Sanchez  | Desarrollo parcial del Capítulo II y I: Diseño del landing page y  keynote.   |
 
 </div>
 
