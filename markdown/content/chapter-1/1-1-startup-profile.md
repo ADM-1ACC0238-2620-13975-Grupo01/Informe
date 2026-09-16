@@ -82,7 +82,7 @@ El ecosistema se complementará con la landing page existente, que comunicará l
 
   <tr>
     <td width="30%" align="center">
-      <img src="../../assets/chapter-1/giuseppe.png" width="180">
+      <img src="../../assets/chapter-1/Integrante-5.png" width="180">
     </td>
     <td width="70%">
       <h3>Giuseppe Villanueva Rodriguez</h3>
