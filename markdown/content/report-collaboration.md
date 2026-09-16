@@ -1,9 +1,9 @@
 # Project Report Collaboration Insights
 
-- URL del repositorio para el reporte del proyecto: https://github.com/upc-1asi0730-2610-12206-titan-team-4/anitec-report
-- URL del repositorio para la Landing Page: https://github.com/upc-1asi0730-2610-12206-titan-team-4/anitec-landing-page
-- URL del repositorio para el desarrollo del frontend web applications (VueJS): https://github.com/upc-1asi0730-2610-12206-titan-team-4/anitec-frontend
-- URL del repositorio para el desarrollo del backend web applications (.NET Web API): https://github.com/upc-1asi0730-2610-12206-titan-team-4/anitec-backend.git
+- URL del repositorio para el reporte del proyecto: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe.git
+- URL del repositorio para la Landing Page: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page.git
+- URL del repositorio para el desarrollo del frontend web applications: 
+- URL del repositorio para el desarrollo del backend web applications: 
 
 **AV1**
 
@@ -16,8 +16,8 @@ Para el desarrollo del informe perteneciente a la entrega AV1, se dividió la im
 |  | Desarrollo del Capítulo I, una parte del Capítulo II, así como la parte final del Capítulo V del documento en formato markdown.                                                            |
 |     | Desarrollo del Capítulo III, desarrollo parcial de capítulo II, así como colaboración en el capítulo V del documento en formato markdown.                                                  |
 |      | Desarrollo parcial del Capítulo IV, así como colaboración en el capítulo V del documento en formato markdown                                                                               |
-| Josep Melgarejo  | Desarrollo parcial del Capítulo IV, así como colaboración en el capítulo V del documento en formato markdown                                                                               |
-| Luciana Sanchez  | Desarrollo parcial del Capítulo IV: Diseño del landing page y web application, y actualización del keynote. Además, colaboró en el desarrollo capítulo V del documento en formato markdown |
+| Josep Melgarejo  | Desarrollo parcial del Capítulo II y I, así como colaboración en el Keynote                                                                              |
+| Luciana Sanchez  | Desarrollo parcial del Capítulo II y I: Diseño del landing page y  keynote.   |
 
 </div>
 
@@ -33,9 +33,9 @@ Github también presenta un timeline de las ramas principales y los procesos de 
 Los integrantes son:
 
 - Josep Melgarejo (Melga1502)
-- Jorge Ayala (jorgeayaladev)
-- Huamán Bruno (BrunoHG10)
-- Abigail Raymundo (AbigailRV)
+- 
+- 
+- 
 - Luciana Sánchez (Luccsss)
 
 Se explican las ramas más prominentes:
