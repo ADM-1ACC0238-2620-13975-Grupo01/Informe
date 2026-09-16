@@ -1,101 +1,80 @@
 # Anexos
 
-<div style="page-break-before: always;"></div>
-
-## Anexo A. Videos de exposiciones
-
-- Exposición Avance 1: https://tinyurl.com/ExposicionAvance1
-- Exposición TB1: https://tinyurl.com/ExposicionTB1
-- Exposición AV2: https://tinyurl.com/ExposicionAvance2
-- Exposición TB2: https://tinyurl.com/ExpoTB2
+Los siguientes anexos reúnen los enlaces disponibles hasta el AV1. Se incluyen únicamente evidencias utilizadas en los capítulos I y II, repositorios vigentes del curso y despliegues del producto web tomado como base. Los recursos correspondientes a validación de la aplicación móvil y a los siguientes sprints se incorporarán cuando sean elaborados.
 
 <div style="page-break-before: always;"></div>
 
-## Anexo B. Videos de entrevistas
+## Anexo A. Videos de entrevistas
 
-- Entrevista 1 - Vicente Huaman, ganadero: https://tinyurl.com/entrevista1VicenteHuaman
-- Entrevista 2 - Rebeca Quiroz, ganadera: https://tinyurl.com/entrevista2RebecaQuiroz
-- Entrevista 3 - Porfirio Salazar, ganadero: https://tinyurl.com/entrevista3PorfirioSalazar
-- Entrevista 4 - Angela Mendoza, veterinaria: https://tinyurl.com/entrevista4AngelaMendoza
-- Entrevista 5 - Jeferson Castro Pariona, veterinario: https://tinyurl.com/b3txtyh3
+### Segmento de ganaderos
 
-<div style="page-break-before: always;"></div>
+- [Entrevista 1 - Caterina Rodriguez](https://tinyurl.com/caterinarodri)
+- [Entrevista 2 - Rebeca Noemi Quiroz Roldan](https://tinyurl.com/entrevista2RebecaQuiroz)
+- [Entrevista 3 - Ursula Trigozo Salcedo](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQDw1Fks32sxQroa9TMJpBhPAffdaO--WIZy3fKexREgNhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=H1KzAW)
 
-## Anexo C. Videos de entrevistas de validación
+### Segmento de veterinarios
 
-- Entrevista 1 - Rodrigo Alfaro: https://tinyurl.com/ValidacionRodrigoAlfaro
-- Entrevista 2 - Kaori Portocarrero:  https://tinyurl.com/EntrevistaValidacion2
-- Entrevista 3 - Vicente: https://tinyurl.com/ValidacionAppWebVicente
-- Entrevista 4 - Ariana Fernandez: https://tinyurl.com/muxwt3cd
-- Entrevista 5 - Hugo Jorge: https://tinyurl.com/EntrevistaValidacionHugo
+- [Entrevista 4 - Angela Mendoza](https://tinyurl.com/entrevista4AngelaMendoza)
+- [Entrevista 5 - Jeferson Castro Pariona](https://tinyurl.com/b3txtyh3)
 
 <div style="page-break-before: always;"></div>
 
-## Anexo D. Materiales de ideación y diseño
+## Anexo B. Materiales de investigación y diseño
 
-- Lean UX Canvas del proyecto AniTec: https://tinyurl.com/LeanUxCanvasMural
-- Big Picture EventStorming y Design-Level EventStorming: https://tinyurl.com/EventSorming
-- Wireframe de la landing page: https://tinyurl.com/WireframeLandinAnitec
-- Mock-up de la landing page: https://tinyurl.com/mockupLandinAnitec
-- Wireframes de la aplicación web: https://tinyurl.com/WireframAppAnitec
-- Wireflows de la aplicación web: https://tinyurl.com/WireflowsAppAnitec
-- Mock-ups de la aplicación web: https://tinyurl.com/MockUpAnitec
-- Prototipo de la aplicación web: https://tinyurl.com/PrototipoAnitec
-- Diagrama de clases del sistema: https://tinyurl.com/DiagramaClasesAnitec
+- [Lean UX Canvas de AniTec](https://tinyurl.com/LeanUxCanvasMural)
+- [Big Picture EventStorming y artefactos de Strategic-Level DDD](https://tinyurl.com/EventSorming)
+
+Los enlaces públicos del Impact Mapping y del Product Backlog todavía no han sido incorporados al informe. Se añadirán cuando los tableros utilizados por el equipo estén disponibles públicamente.
 
 <div style="page-break-before: always;"></div>
 
-## Anexo E. Repositorios y despliegues
+## Anexo C. Repositorios del curso
 
-- Repositorio del informe del proyecto: https://github.com/upc-1asi0730-2610-12206-titan-team-4/anitec-report
-- Repositorio de la landing page: https://github.com/upc-1asi0730-2610-12206-titan-team-4/anitec-landing-page
-- Repositorio del frontend web: https://github.com/upc-1asi0730-2610-12206-titan-team-4/anitec-frontend
-- Repositorio del backend web: https://github.com/upc-1asi0730-2610-12206-titan-team-4/anitec-backend
-- Repositorio de datos de prueba: https://github.com/upc-1asi0730-2610-12206-titan-team-4/anitec-jsonserver
-- Despliegue de la landing page: https://upc-1asi0730-2610-12206-titan-team-4.github.io/anitec-landing-page/
-- Despliegue del frontend web: https://upc-1asi0730-2610-12206-titan-team-4.github.io/anitec-frontend/iam/sign-in
-- Despliegue del backend web: https://anitec-backend.onrender.com/swagger/index.html
-- API mock del frontend: https://my-json-server.typicode.com/upc-1asi0730-2610-12206-titan-team-4/anitec-jsonserver
-- Tablero del Sprint Backlog 1: https://tinyurl.com/TrelloSprint1Anitec
-- Tablero del Sprint Backlog 2: https://tinyurl.com/TrelloSprint2Anitec
-- Tablero del Sprint Backlog 3: https://tinyurl.com/TrelloSprint3Anitec
-- Tablero del Sprint Backlog 4: https://tinyurl.com/TrelloSprint4Anitec
+- [Repositorio del informe](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe)
+- [Repositorio de la landing page](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page)
+- [Repositorio del frontend web tomado como base](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend)
+- [Repositorio del backend tomado como base](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend)
+
+Los repositorios de Android y Flutter se incorporarán cuando se creen los proyectos móviles correspondientes.
 
 <div style="page-break-before: always;"></div>
 
-## Anexo F. Herramientas utilizadas
+## Anexo D. Despliegues del producto web tomado como base
 
-- Trello, para gestión del backlog y tareas del proyecto: https://trello.com
-- Gherkin, para criterios de aceptación en formato Given-When-Then: https://cucumber.io/docs/gherkin/
-- Miro, para dinámicas de EventStorming: https://miro.com/
-- Figma, para wireframes, mock-ups y prototipos: https://www.figma.com
-- Canva, para recursos visuales del producto: https://www.canva.com
-- UXPressia, para User Personas y Customer Journey Maps: https://uxpressia.com
-- Lucidchart, para diagramas del sistema: https://www.lucidchart.com/ / https://lucidchart.com
-- GitHub, para control de versiones y colaboración: https://github.com
-- Visual Studio Code, para edición de código y archivos Markdown: https://code.visualstudio.com/
-- WebStorm, para desarrollo del frontend: https://www.jetbrains.com/webstorm/
-- Rider, para desarrollo del backend ASP.NET Core: https://www.jetbrains.com/rider/
-- GitHub Pages, para despliegue de la landing page y frontend web: https://pages.github.com
-- Render, para despliegue del backend web: https://render.com/
-- My JSON Server, para datos de prueba: https://my-json-server.typicode.com/
-- Structurizr, para diagramas C4: https://structurizr.com
-- Vertabelo, para diagramas de base de datos: https://vertabelo.com
+Estos enlaces corresponden al trabajo anterior que sirve como punto de partida. No constituyen todavía el despliegue de las aplicaciones móviles del curso actual.
+
+- [Landing page de AniTec](https://upc-1asi0730-2610-12206-titan-team-4.github.io/anitec-landing-page/)
+- [Aplicación web de AniTec](https://anitec-frontend.onrender.com/)
+- [Documentación Swagger del backend](https://anitec-backend.onrender.com/swagger/index.html)
 
 <div style="page-break-before: always;"></div>
 
-## Anexo G. Referencias bibliográficas con enlace
+## Anexo E. Herramientas y documentación utilizadas hasta el AV1
 
-- Guía para ejecutar Big Picture Event Storming: https://bit.ly/bpes-guide
-- Guía práctica de EventStorming remoto: https://ddd-practitioners.com/2023/03/20/remote-eventstorming-workshop/
-- Material sobre historias de usuario: https://www.scrummanager.com/files/scrum_manager_historias_usuario.pdf
-- Libro de ingeniería de software usado como referencia: https://www.javier8a.com/itc/bd1/ld-Ingenieria.de.software.enfoque.practico.7ed.Pressman.PDF
+### Investigación, requisitos y modelado
+
+- [Miro](https://miro.com/), para Lean UX y EventStorming.
+- [UXPressia](https://uxpressia.com/), para User Personas, Empathy Maps y User Journey Maps.
+- [Gherkin](https://cucumber.io/docs/gherkin/), para expresar criterios de aceptación mediante Given, When y Then.
+- [GitHub](https://github.com/), para control de versiones y colaboración.
+
+### Arquitectura y diagramas
+
+- [Structurizr](https://structurizr.com/), para los diagramas C4.
+- [PlantUML](https://plantuml.com/), para los diagramas de clases del dominio.
+- [Mermaid](https://mermaid.js.org/), como referencia para diagramas y modelos visuales.
+
+### Tecnologías consideradas para la solución móvil
+
+- [Jetpack Compose](https://developer.android.com/develop/ui/compose), para la interfaz de la aplicación Android nativa.
+- [Room](https://developer.android.com/training/data-storage/room), para la persistencia local en Android.
+- [Flutter](https://docs.flutter.dev/), para la aplicación multiplataforma.
+- [Google ML Kit Barcode Scanning](https://developers.google.com/ml-kit/vision/barcode-scanning/android), para la investigación de identificación mediante códigos QR.
+- [Firebase App Distribution](https://firebase.google.com/docs/app-distribution), para la distribución de versiones móviles durante la validación.
+- [Stripe Checkout](https://docs.stripe.com/payments/checkout), para el flujo externo de pagos y suscripciones.
 
 <div style="page-break-before: always;"></div>
 
-## Anexo H. Videos de cierre
+## Anexo F. Videos de exposición y validación
 
-- Video About The Team: https://www.youtube.com/watch?v=Ai-0rShYlvI 
-- Video About The Team Microsoft Stream:https://tinyurl.com/aboutTheTeamAnitec
-- Video About The Product: https://www.youtube.com/watch?v=U_xCv93ybkI 
-- Video About The Product Microsoft Stream: https://tinyurl.com/VideoAboutTheProductAnitec
+Hasta el AV1 no se han incorporado enlaces públicos para el video de exposición, las entrevistas de validación de la aplicación móvil, el video About the Product ni el video About the Team. Estos recursos se añadirán en los hitos que correspondan según el statement del curso.

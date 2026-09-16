@@ -59,34 +59,20 @@ El video About The Team presenta la participación de los integrantes del equipo
 | Elemento | Información |
 | -------- | ----------- |
 | Título | Video About The Team - AniTec |
-| Duración | 8:02 minutos |
+| Duración | |
 | Público objetivo | Docente del curso, visitantes del landing page e interesados en conocer el proceso de trabajo del equipo |
-| URL publicado en Microsoft Stream | https://tinyurl.com/aboutTheTeamAnitec |
-| URL publicado en YouTube | https://www.youtube.com/watch?v=Ai-0rShYlvI |
+| URL publicado en Microsoft Stream |  |
+| URL publicado en YouTube |  |
 | Uso en landing page | El video de YouTube se utiliza como evidencia pública del proceso de trabajo del equipo. |
 
 **URL del video publicado en Microsoft Stream:**
 
-https://tinyurl.com/aboutTheTeamAnitec
 
 **URL del video publicado en YouTube:**
 
-https://www.youtube.com/watch?v=Ai-0rShYlvI
 
 <div align="center">
-    <img src="../assets/chapter-5/screenshot-video-about-the-team.png" width="700">
+    <img src="../assets/chapter-5/" width="700">
     <p><i><b>Fuente</b>: Elaboración propia.</i></p>
 </div>
 
-**Pauta de secuencias del video:**
-
-| Sección | Timing de inicio | Contenido |
-| ------- | ---------------- | --------- |
-| Introducción del equipo y presentación de AniTec | 00:00:00 | Presentación general de Titan Team 4, propósito del producto y contexto del trabajo final. |
-| Organización del trabajo y roles del equipo | 00:01:00 | Explicación de la distribución de responsabilidades, planificación de sprints y colaboración en repositorios. |
-| Desarrollo de landing page y aplicación web | 00:02:30 | Resumen del trabajo realizado en diseño, frontend, navegación por roles y validaciones visuales. |
-| Desarrollo del backend y servicios | 00:04:30 | Explicación de la implementación del backend, base de datos, endpoints, Swagger y despliegue. |
-| Testimonios de integrantes y Student Outcome | 00:06:30 | Participación de los integrantes comentando aprendizajes, trabajo colaborativo, liderazgo y competencias desarrolladas. |
-| Cierre del proceso de trabajo | 00:07:20 | Resumen de logros, dificultades superadas y valor del proyecto AniTec. |
-
-El contenido del video complementa la sección Student Outcome porque muestra la participación de los integrantes, la coordinación del equipo y las competencias desarrolladas durante la construcción de la landing page, la aplicación web, el backend y la documentación del proyecto.
