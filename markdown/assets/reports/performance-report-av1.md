@@ -28,7 +28,7 @@
     </tr>
     <tr>
         <td><b>1</b></td>
-        <td>Ayala Fernandez, Jorge Brayan</td>
+        <td>Sebastian Martin Beingolea Montalvo</td>
         <td>Redactar el capítulo I. Introducción</td>
         <td>X</td>
         <td></td>
@@ -38,8 +38,8 @@
     </tr>
     <tr>
         <td><b>2</b></td>
-        <td>Huaman Gallardo, Bruno Aldair</td>
-        <td>Redactar el capítulo II. Requirements Elicitation & Analysis</td>
+        <td>Saul Ortega Muñoz</td>
+        <td>Redactar el capitulo 2.1 hasta 2.4</td>
         <td>X</td>
         <td></td>
         <td></td>
@@ -49,7 +49,7 @@
     <tr>
         <td><b>3</b></td>
         <td>Melgarejo Quiroz, Josep Eliu</td>
-        <td>Redactar el capítulo III. Requirements Specification</td>
+        <td>Redactar el caputlo 2.6.1 hasta el 2.6.9</td>
         <td>X</td>
         <td></td>
         <td></td>
@@ -58,18 +58,18 @@
     </tr>
     <tr>
         <td><b>4</b></td>
-        <td>Raymundo Villarroel, Nadhim Abigail</td>
-        <td>Redactar el capítulo IV. Product Design</td>
+        <td>Giuseppe Villanueva Rodriguez</td>
+        <td>Hacer su entrevista</td>
+        <td></td>
+        <td></td>
         <td>X</td>
         <td></td>
-        <td></td>
-        <td></td>
-        <td>20</td>
+        <td>13</td>
     </tr>
     <tr>
         <td><b>5</b></td>
         <td>Sanchez Silva, Luciana Celeste</td>
-        <td>Redactar el capítulo V. Product Implementation, Validation & Deployment</td>
+        <td>Redactar el capitulo 2.5 - 2.6</td>
         <td>X</td>
         <td></td>
         <td></td>
