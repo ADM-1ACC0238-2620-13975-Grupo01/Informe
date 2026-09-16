@@ -1,73 +1,60 @@
 # Project Report Collaboration Insights
 
-- URL del repositorio para el reporte del proyecto: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe.git
-- URL del repositorio para la Landing Page: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page.git
-- URL del repositorio para el desarrollo del frontend web applications: 
-- URL del repositorio para el desarrollo del backend web applications: 
+## Repositorios del proyecto
 
-**AV1**
+- [Informe](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe)
+- [Landing page](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page)
+- [Frontend web heredado](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend)
+- [Backend](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend)
 
-Para el desarrollo del informe perteneciente a la entrega AV1, se dividió la implementación de secciones de la siguiente forma para cada integrante del equipo:
+## AV1. Distribución del trabajo
+
+Durante AV1, el equipo adaptó el informe y el diseño de AniTec al alcance de una aplicación móvil. Las contribuciones documentadas para los cinco integrantes actuales son las siguientes:
+
+| Integrante | Contribución en AV1 |
+| :--- | :--- |
+| Sebastian Martin Beingolea Montalvo | Redactó el capítulo I: Introducción. |
+| Saul Ortega Muñoz | Redactó las secciones 2.1 a 2.4 del capítulo II. |
+| Josep Eliu Melgarejo Quiroz | Redactó las secciones 2.6.1 a 2.6.9 del capítulo II. |
+| Giuseppe Villanueva Rodriguez | Realizó una entrevista. |
+| Luciana Celeste Sanchez Silva | Redactó las secciones 2.5 a 2.6 del capítulo II. |
+
+## GitHub Collaboration Insights
+
+El repositorio del informe conserva el historial de los cambios documentales del equipo. Las siguientes capturas muestran el grafo general y los commits asociados a cada integrante durante el avance.
+
+### Grafo general de commits
+
+![Grafo de commits del informe en AV1](../assets/chapter-1/Comitsgrahp.png)
+
+### Commits por integrante
+
+**Luciana Celeste Sanchez Silva**
 
 <div align="center">
-
-| Integrante       | Tareas Asignadas                                                                                                                                                                           |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-|  | Desarrollo del Capítulo I, una parte del Capítulo II, así como la parte final del Capítulo V del documento en formato markdown.                                                            |
-|     | Desarrollo del Capítulo III, desarrollo parcial de capítulo II, así como colaboración en el capítulo V del documento en formato markdown.                                                  |
-|      | Desarrollo parcial del Capítulo IV, así como colaboración en el capítulo V del documento en formato markdown                                                                               |
-| Josep Melgarejo  | Desarrollo parcial del Capítulo II y I, así como colaboración en el Keynote                                                                              |
-| Luciana Sanchez  | Desarrollo parcial del Capítulo II y I: Diseño del landing page y  keynote.   |
-
+  <img src="../assets/chapter-1/luccsss%27s%20Commits.png" alt="Commits de Luciana Sánchez" width="650">
 </div>
 
-El trabajo se desarrolló mediante commits continuos en el repositorio de la organización, asegurando trazabilidad y colaboración activa del equipo.
+**Josep Eliu Melgarejo Quiroz**
 
----
+<div align="center">
+  <img src="../assets/chapter-1/Melga1502%27s%20Commits.png" alt="Commits de Josep Melgarejo" width="650">
+</div>
 
+**Sebastian Martin Beingolea Montalvo**
 
-**Github Collaboration Insights**
+<div align="center">
+  <img src="../assets/chapter-1/smbmontalvo%27s%20Commits.png" alt="Commits de Sebastian Beingolea" width="650">
+</div>
 
-Github también presenta un timeline de las ramas principales y los procesos de merge a los que se han sometido. Todas las ramas se crearon tomando en cuenta el diseño de GitFlow para una buena organización cuando se usa un software de control de versiones.
+**Saul Ortega Muñoz**
 
-Los integrantes son:
+<div align="center">
+  <img src="../assets/chapter-1/Ss1lent10%27s%20Commits.png" alt="Commits de Saul Ortega" width="650">
+</div>
 
-- Josep Melgarejo (Melga1502)
-- 
-- 
-- 
-- Luciana Sánchez (Luccsss)
+**Giuseppe Villanueva Rodriguez**
 
-Se explican las ramas más prominentes:
-
-- **main**: Es representada por el color blanco. Se trata de la rama principal del proyecto y se actualiza para cada entregable.
-- **develop**: Es representada por el color morado. Se trata de la rama principal para el proceso del desarrollo del proyecto.
-- **feature/**: cambios específicos del documento o de endpoints implementados.
-- **hotfix/**: correcciones puntuales realizadas sobre errores críticos encontrados durante la integración o despliegue.
-
-![Branch_Graph](../assets/chapter-1/branchGraph2.png)
-
-Los siguientes gráficos representan analíticos de commits en el repositorio del informe. En los gráficos se incluye la cantidad de lineas de texto añadidas por cada integrante del equipo.
-
-**AV1**
-
-**Grafo de commits AV1**
-
-![Pull_Graphs](../assets/chapter-1/GraficosCap1.jpeg)
-
-**Commits durante AV1**
-
-![Commit_Graph](../assets/chapter-1/CommitOvertime.png)
-
-**Commits por integrante durante AV1**
-
-![Commit_Graph_Individual1](../assets/chapter-1/Comit1.png)
-
-![Commit_Graph_Individual2](../assets/chapter-1/Comit2.png)
-
-![Commit_Graph_Individual3](../assets/chapter-1/Comit3.png)
-
-![Commit_Graph_Individual4](../assets/chapter-1/Comit4.png)
-
-![Commit_Graph_Individual5](../assets/chapter-1/Comit5.png)
-
+<div align="center">
+  <img src="../assets/chapter-1/Giuseppe152004%27s%20Commits.png" alt="Commits de Giuseppe Villanueva" width="650">
+</div>
