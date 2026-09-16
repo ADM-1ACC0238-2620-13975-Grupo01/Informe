@@ -16,8 +16,8 @@ Para el desarrollo del informe perteneciente a la entrega AV1, se dividió la im
 |  | Desarrollo del Capítulo I, una parte del Capítulo II, así como la parte final del Capítulo V del documento en formato markdown.                                                            |
 |     | Desarrollo del Capítulo III, desarrollo parcial de capítulo II, así como colaboración en el capítulo V del documento en formato markdown.                                                  |
 |      | Desarrollo parcial del Capítulo IV, así como colaboración en el capítulo V del documento en formato markdown                                                                               |
-| Josep Melgarejo  | Desarrollo parcial del Capítulo IV, así como colaboración en el capítulo V del documento en formato markdown                                                                               |
-| Luciana Sanchez  | Desarrollo parcial del Capítulo IV: Diseño del landing page y web application, y actualización del keynote. Además, colaboró en el desarrollo capítulo V del documento en formato markdown |
+| Josep Melgarejo  | Desarrollo parcial del Capítulo II, así como colaboración en el capítulo I del documento en formato markdown                                                                               |
+| Luciana Sanchez  | Desarrollo parcial del Capítulo II: Diseño del landing page y web application, y actualización del keynote.   |
 
 </div>
 
@@ -33,9 +33,9 @@ Github también presenta un timeline de las ramas principales y los procesos de 
 Los integrantes son:
 
 - Josep Melgarejo (Melga1502)
-- Jorge Ayala (jorgeayaladev)
-- Huamán Bruno (BrunoHG10)
-- Abigail Raymundo (AbigailRV)
+- 
+- 
+- 
 - Luciana Sánchez (Luccsss)
 
 Se explican las ramas más prominentes:
