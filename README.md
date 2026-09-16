@@ -12,7 +12,7 @@
 <h3 align="center"><strong>13975</strong></h3>
 <h3 align="center"><strong>Informe del Trabajo Final</strong></h3>
 <h4 align="center">Docente</h4>
-<h3 align="center"><strong>Mayta Guillermo, Jorge Luis</strong></h3>
+<h3 align="center"><strong>Quevedo Velasco, David Gerardo</strong></h3>
 <h4 align="center">Equipo</h4>
 <h3 align="center"><strong>ADM</strong></h3>
 <h4 align="center">Proyecto</h4>
