@@ -175,36 +175,39 @@ En sus respuestas se observa una personalidad responsable y preventiva. Rebeca v
 
 Respecto a tecnología, utiliza smartphone y navegación básica desde el celular. No manifestó rechazo hacia las aplicaciones, pero sí dejó claro que no desea una herramienta complicada. Esta entrevista ayuda a justificar funciones como recordatorios, alertas sanitarias, registro simple de enfermedades y acceso rápido a datos importantes. Sus respuestas aportan evidencia para construir un arquetipo de ganadera que tiene disposición a digitalizarse siempre que la plataforma sea segura, clara y útil para resolver problemas reales del manejo diario.
 
-#### Entrevista 3: Porfirio Salazar Rodriguez
+#### Entrevista 3: Ursula Trigozo Salcedo
 
 <div align="center">
 
-| Campo | Información |
-|-------|-------------|
-| Segmento | Ganadero |
-| Nombres y apellidos | Porfirio Salazar Rodriguez |
-| Edad | 65 años |
-| Distrito | Comas, Lima |
-| Ocupación | Ganadero artesanal |
-| Tipo de ganado | Ganado vacuno |
-| Tamaño aproximado del ganado | Hato pequeño gestionado con apoyo de 2 a 3 personas |
-| Inicio de la entrevista | 00:00 |
-| Duración | 00:13:55 |
-| URL del video | https://tinyurl.com/entrevista3PorfirioSalazar |
+| Campo | Información                                                                                                                                                                                                                                                                                                             |
+|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Segmento | Ganadero                                                                                                                                                                                                                                                                                                                |
+| Nombres y apellidos | Ursula trigozo Salcedo                                                                                                                                                                                                                                                                                                  |
+| Edad | 64 años                                                                                                                                                                                                                                                                                                                 |
+| Distrito | Lurin, Lima                                                                                                                                                                                                                                                                                                             |
+| Ocupación | Ganadero artesanal                                                                                                                                                                                                                                                                                                      |
+| Tipo de ganado | Ganado vacuno                                                                                                                                                                                                                                                                                                           |
+| Tamaño aproximado del ganado | Hato pequeño familiar                                                                                                                                                                                                                                                                                                   |
+| Inicio de la entrevista | 00:00                                                                                                                                                                                                                                                                                                                   |
+| Duración | 00:10:31                                                                                                                                                                                                                                                                                                                |
+| URL del video | https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQDw1Fks32sxQroa9TMJpBhPAffdaO--WIZy3fKexREgNhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=H1KzAW |
 
 </div>
 
 <div align="center">
-    <img src="../../assets/chapter-1/entrevistaGan3.png" width="420">
+    <img src="../../assets/chapter-2/entrevista3ganadero.png" width="420">
 </div>
 
 **Resumen de la entrevista:**
 
-Porfirio Salazar Rodriguez describió su experiencia dentro de la ganadería artesanal, una actividad que realiza con apoyo de dos o tres personas. Durante la entrevista explicó que no trabaja con una empresa ganadera grande, pero sí tiene el objetivo de formalizar y hacer crecer su actividad para generar mayores ingresos. Sus respuestas muestran que percibe la tecnología como una oportunidad para mejorar la productividad, aunque también señaló que el costo económico puede ser una barrera importante para adoptar una solución digital.
+Úrsula Trigozo Salcedo, de 64 años, cuenta con 25 años de experiencia en la ganadería y actualmente maneja aproximadamente 35 cabezas de ganado vacuno junto con tres familiares. Su gestión se basa principalmente en cuadernos, papel y celular, donde registra vacunas, tratamientos, reproducción, partos y observaciones.
 
-El entrevistado se mostró como una persona emprendedora y prudente. Tiene interés en mejorar, pero evalúa cuidadosamente si una herramienta realmente justifica la inversión. Sus influencias principales provienen de la experiencia familiar, el aprendizaje práctico, otros productores y las oportunidades comerciales que observa en el mercado. En cuanto a marcas o herramientas, no mencionó preferencia por una marca específica de software; sin embargo, sí mostró familiaridad con el uso de celular y comunicación por WhatsApp. Su interacción digital se concentra en el teléfono móvil y en búsquedas simples desde el navegador cuando necesita información relacionada con su actividad.
+Su principal dificultad es mantener la información ordenada y disponible, ya que en ocasiones pierde tiempo buscando registros o estos se deterioran. Considera importante contar con un historial digital por animal y recibir alertas de vacunas, controles veterinarios y reproducción.
 
-La entrevista permitió reconocer que Porfirio necesita una solución que no solo registre información, sino que también le ayude a visualizar el valor económico de ordenar su ganadería. Para este perfil, AniTec debe comunicar beneficios concretos como reducción de pérdida de datos, mejor control del ganado, apoyo a la formalización y posibilidad de tomar mejores decisiones. Sus respuestas sustentan el arquetipo de ganadero artesanal con aspiración de crecimiento, sensible al costo, pero dispuesto a adoptar tecnología si percibe un retorno claro.
+Úrsula está familiarizada con aplicaciones como WhatsApp, Facebook y YouTube, por lo que estaría dispuesta a utilizar AniTec si es simple, rápida, segura y funciona desde el celular. También valora el contenido educativo sobre alimentación, enfermedades y manejo del ganado.
+
+En este perfil, AniTec debe enfocarse en centralizar la información, ahorrar tiempo, evitar la pérdida de datos y facilitar el seguimiento individual de cada animal. Sus respuestas representan el arquetipo de una ganadera experimentada y abierta a la tecnología, siempre que sea sencilla y útil para su trabajo diario.
+
 
 ### Entrevistas al segmento de veterinarios
 
