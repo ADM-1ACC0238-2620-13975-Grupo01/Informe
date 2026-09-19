@@ -13,6 +13,19 @@ Para todos los contextos se aplican las siguientes convenciones:
 - MySQL es la fuente autoritativa; Room y SQLite mantienen caché y un outbox idempotente.
 - Las reglas de negocio permanecen en la API y el dominio; Android y Flutter reutilizan los mismos contratos y lenguaje ubicuo.
 
+La documentación de cada capa se divide en dos niveles. La **responsabilidad estable** explica qué aporta la capa al bounded context y puede conservarse durante el proyecto mientras no cambie su propósito. El **detalle técnico evolutivo** registra las clases, atributos, métodos y relaciones conocidos en cada entrega y debe contrastarse con el código al cierre de cada sprint.
+
+Los estados utilizados en los diccionarios se interpretan de la siguiente manera:
+
+| Estado | Interpretación | Acción durante el proyecto |
+|---|---|---|
+| **Implementado** | El elemento existe en el código revisado del producto indicado. | Mantener su documentación alineada con el nombre, los miembros y las relaciones reales. |
+| **En desarrollo** | El elemento forma parte del sprint vigente, pero su implementación aún puede cambiar. | Actualizarlo cuando se cierre y valide el caso de uso. |
+| **Diseño objetivo** | El elemento pertenece a la arquitectura propuesta y todavía no está implementado. | Confirmarlo, modificarlo o retirarlo según las decisiones del equipo. |
+| **Modificado** | La implementación se apartó del diseño presentado en una entrega anterior. | Explicar la decisión y reemplazar la definición anterior por la vigente. |
+
+Al finalizar cada sprint, el equipo revisará únicamente el detalle que haya cambiado. Una clase que pase de diseño objetivo a código operativo deberá cambiar a **Implementado** y reflejar sus atributos, métodos y dependencias reales.
+
 <table>
   <thead>
     <tr><th>Sección</th><th>Bounded Context</th><th>Módulo heredado</th><th>Propósito</th></tr>
