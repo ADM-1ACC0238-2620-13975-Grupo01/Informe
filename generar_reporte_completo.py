@@ -11,13 +11,11 @@ from urllib.parse import quote, unquote
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "markdown" / "content"
-<<<<<<< HEAD
 OUTPUT = (
     Path(os.environ["ANITEC_REPORT_OUTPUT"]).resolve()
     if os.environ.get("ANITEC_REPORT_OUTPUT")
     else ROOT / "upc-pre-202620-1acc0238-13975-ADM-report.md"
 )
-=======
 SECTIONS = [
     (None, ["registro-versiones.md", "report-collaboration.md", "student-outcome.md"]),
     ("Capítulo I: Presentación", [
