@@ -11,7 +11,11 @@ from urllib.parse import quote, unquote
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "markdown" / "content"
-OUTPUT = Path(os.environ["ANITEC_REPORT_OUTPUT"]).resolve() if os.environ.get("ANITEC_REPORT_OUTPUT") else ROOT / "ReporteCompleto.md"
+OUTPUT = (
+    Path(os.environ["ANITEC_REPORT_OUTPUT"]).resolve()
+    if os.environ.get("ANITEC_REPORT_OUTPUT")
+    else ROOT / "upc-pre-202620-1acc0238-13975-ADM-report.md"
+)
 
 SECTIONS = [
     (None, ["registro-versiones.md", "report-collaboration.md", "student-outcome.md"]),
@@ -71,6 +75,24 @@ while toc_lines and (not toc_lines[-1].strip() or toc_lines[-1].strip() == "</di
     toc_lines.pop()
 
 toc_pairs = re.findall(r"\[([^]]+)\]\(#([^)]+)\)", "\n".join(toc_lines))
+allowed_unnumbered = {
+    "Registro de Versiones del Informe",
+    "Project Report Collaboration Insights",
+    "Student Outcome",
+    "Conclusiones",
+    "Bibliografía",
+    "Anexos",
+}
+unexpected_toc_entries = [label for label, _ in toc_pairs if not numeric_key(label) and label not in allowed_unnumbered]
+numbered_entries = [numeric_key(label) for label, _ in toc_pairs if numeric_key(label)]
+duplicate_numbers = sorted({number for number in numbered_entries if numbered_entries.count(number) > 1})
+if unexpected_toc_entries or duplicate_numbers:
+    details = []
+    if unexpected_toc_entries:
+        details.append("entradas sin numeración: " + ", ".join(unexpected_toc_entries))
+    if duplicate_numbers:
+        details.append("numeraciones duplicadas: " + ", ".join(duplicate_numbers))
+    raise ValueError("El índice de caratula.md no es el índice curado: " + "; ".join(details))
 number_to_id = {numeric_key(label): anchor for label, anchor in toc_pairs if numeric_key(label)}
 title_to_id = {normalise(label): anchor for label, anchor in toc_pairs if not numeric_key(label)}
 all_sources = [(CONTENT / name).resolve() for _, names in SECTIONS for name in names]
@@ -88,7 +110,10 @@ def first_anchor(path: Path) -> str:
     title = heading.group(1)
     anchor = number_to_id.get(numeric_key(title)) or title_to_id.get(normalise(title))
     if not anchor:
-        raise ValueError(f"Encabezado sin entrada de índice: {title} ({path})")
+        explicit_anchor = re.search(r'<a\s+(?:id|name)="([^"]+)"', contents, flags=re.IGNORECASE)
+        if explicit_anchor:
+            return explicit_anchor.group(1)
+        anchor = "toc-" + re.sub(r"[^a-z0-9]+", "-", unicodedata.normalize("NFKD", title.casefold()).encode("ascii", "ignore").decode()).strip("-")
     return anchor
 
 
@@ -172,11 +197,19 @@ def table_font_size(match: re.Match[str]) -> str:
     return f"<table{attributes}>"
 
 
-parts = [cover.strip(), '<div style="page-break-before: always;"></div>', '<h1 align="center">Índice general</h1>', "\n".join(toc_lines).strip()]
+parts = [
+    cover.strip(),
+    '<div style="font-size: 20px; line-height: 1.8;">',
+    '<div style="page-break-before: always;"></div>',
+    '<h1 align="center">Índice general</h1>',
+    "\n".join(toc_lines).strip(),
+]
 parts.append('<div style="page-break-before: always;"></div>')
 for chapter, names in SECTIONS:
     if chapter:
-        parts.extend(['<div style="page-break-before: always;"></div>', f"# {chapter}"])
+        chapter_anchor = title_to_id.get(normalise(chapter))
+        chapter_heading = f'<a id="{chapter_anchor}"></a>\n\n# {chapter}' if chapter_anchor else f"# {chapter}"
+        parts.extend(['<div style="page-break-before: always;"></div>', chapter_heading])
     for name in names:
         source = (CONTENT / name).resolve()
         contents = source.read_text(encoding="utf-8-sig")
@@ -193,6 +226,8 @@ for chapter, names in SECTIONS:
         if re.fullmatch(r"chapter-2/2-6-[1-9]-Bounded-Context-.*\.md", name):
             contents = re.sub(r"<table\b([^>]*)>", table_font_size, contents, flags=re.IGNORECASE)
         parts.append(contents)
+
+parts.append("</div>")
 
 report = "\n\n".join(parts).rstrip() + "\n"
 # En la versión destinada a PDF, nombres y firmas se leen como texto normal.

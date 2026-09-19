@@ -67,13 +67,13 @@
 
 <h1 align="center">Índice general</h1>
 
-### [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
+- [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 
-### [Project Report Collaboration Insights](#project-report-collaboration-insights)
+- [Project Report Collaboration Insights](#project-report-collaboration-insights)
 
-### [Student Outcome](#toc-student-outcome)
+- [Student Outcome](#toc-student-outcome)
 
-## Capítulo I: Presentación
+<h2>Capítulo I: Presentación</h2>
 
 - [1.1. Startup Profile](#toc-1-1-startup-profile)
   - [1.1.1. Descripción de la Startup](#toc-1-1-1-descripcion-de-la-startup)
@@ -87,7 +87,7 @@
     - [1.2.2.4. Lean UX Canvas](#toc-1-2-2-4-lean-ux-canvas)
 - [1.3. Segmentos objetivo](#toc-1-3-segmentos-objetivo)
 
-## Capítulo II: Requirements Development and Software Solution Design
+<h2>Capítulo II: Requirements Development and Software Solution Design</h2>
 
 - [2.1. Competidores](#toc-2-1-competidores)
   - [2.1.1. Análisis competitivo](#toc-2-1-1-analisis-competitivo)
@@ -200,7 +200,7 @@
       - [2.6.9.6.1. Bounded Context Domain Layer Class Diagrams](#toc-2-6-9-6-1-bounded-context-domain-layer-class-diagrams)
       - [2.6.9.6.2. Bounded Context Database Design Diagram](#toc-2-6-9-6-2-bounded-context-database-design-diagram)
 
-## Capítulo III: Solution UI/UX Design
+<h2>Capítulo III: Solution UI/UX Design</h2>
 
 - [3.1. Product design](#toc-3-1-product-design)
   - [3.1.1. Style Guidelines](#toc-3-1-1-style-guidelines)
@@ -221,7 +221,7 @@
     - [3.1.4.4. Mobile Applications User Flow Diagrams](#toc-3-1-4-4-mobile-applications-user-flow-diagrams)
     - [3.1.4.5. Mobile Applications Prototyping](#toc-3-1-4-5-mobile-applications-prototyping)
 
-## Capítulo IV: Product Implementation & Validation
+<h2>Capítulo IV: Product Implementation & Validation</h2>
 
 - [4. Product Implementation & Validation](#toc-4-product-implementation-validation)
   - [4.1. Software Configuration Management](#toc-4-1-software-configuration-management)
@@ -245,11 +245,11 @@
     - [4.3.2. Registro de Entrevistas](#toc-4-3-2-registro-de-entrevistas)
     - [4.3.3. Evaluaciones según heurísticas](#toc-4-3-3-evaluaciones-segun-heuristicas)
 
-### [Conclusiones](#toc-conclusiones)
+- [Conclusiones](#toc-conclusiones)
 
-### [Bibliografía](#toc-bibliografia)
+- [Bibliografía](#toc-bibliografia)
 
-### [Anexos](#toc-anexos)
+- [Anexos](#toc-anexos)
 
 <div style="page-break-before: always;"></div>
 
@@ -349,8 +349,6 @@ En el siguiente cuadro se describen las acciones realizadas y los enunciados de 
 
 
 <div style="page-break-before: always;"></div>
-
-<a id="toc-capitulo-i-presentacion"></a>
 
 # Capítulo I: Presentación
 
@@ -708,8 +706,6 @@ Las asociaciones ganaderas, cooperativas, técnicos agropecuarios y entidades p�
 
 
 <div style="page-break-before: always;"></div>
-
-<a id="toc-capitulo-ii-requirements-development-and-software-solution-design"></a>
 
 # Capítulo II: Requirements Development and Software Solution Design
 
@@ -5863,5 +5859,6 @@ Estos enlaces corresponden al trabajo anterior que sirve como punto de partida. 
 ## Anexo F. Videos de exposición y validación
 
 Hasta el AV1 no se han incorporado enlaces públicos para el video de exposición, las entrevistas de validación de la aplicación móvil, el video About the Product ni el video About the Team. Estos recursos se añadirán en los hitos que correspondan según el statement del curso.
+
 
 </div>

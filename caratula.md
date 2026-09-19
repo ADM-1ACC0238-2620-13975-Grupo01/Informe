@@ -5,8 +5,8 @@
   <img src="./markdown/assets/upc_logo.png" alt="UPC Logo" width="80">
 </div>
 <br/>
-<h2 align="center"><strong>Universidad Peruana de Ciencias Aplicadas</strong></h2>
-<h2 align="center"><strong>Carrera de Ingeniería de Software</strong></h2>
+<h2 align="center">Universidad Peruana de Ciencias Aplicadas</h2>
+<h2 align="center">Carrera de Ingeniería de Software</h2>
 
 <h2 align="center"><strong>1ACC0238</strong></h2>
 <h2 align="center"><strong>Aplicaciones para Dispositivos Móviles </strong></h2>
@@ -24,33 +24,33 @@
 
 
 <div align="center">
-  <table align="center">
+  <table align="center" border="0" cellspacing="0" style="border: none !important; border-collapse: collapse;">
     <thead>
       <tr>
-        <th align="center" >Código</th>
-        <th align="center" >Nombre</th>
+        <th align="center" style="border: none !important;">Código</th>
+        <th align="left" style="border: none !important; text-align: left;">Apellidos y Nombres</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td align="center" >U202217853</td>
-        <td align="center" >Beingolea Montalvo, Sebastian Martin </td>
+        <td align="center" style="border: none !important;">U202217853</td>
+        <td align="left" style="border: none !important; text-align: left;">Beingolea Montalvo, Sebastian Martin </td>
       </tr>
       <tr>
-        <td align="center" >U202315165</td>
-        <td align="center" >Melgarejo Quiroz, Josep Eliu</td>
+        <td align="center" style="border: none !important;">U202315165</td>
+        <td align="left" style="border: none !important; text-align: left;">Melgarejo Quiroz, Josep Eliu</td>
       </tr>
       <tr>
-        <td align="center" >U20231C019</td>
-        <td align="center" >Ortega Muñoz, Saul </td>
+        <td align="center" style="border: none !important;">U20231C019</td>
+        <td align="left" style="border: none !important; text-align: left;">Ortega Muñoz, Saul </td>
       </tr>
       <tr>
-        <td align="center" >U202215979</td>
-        <td align="center" >Sanchez Silva, Luciana Celeste</td>
+        <td align="center" style="border: none !important;">U202215979</td>
+        <td align="left" style="border: none !important; text-align: left;">Sanchez Silva, Luciana Celeste</td>
       </tr>
       <tr>
-        <td align="center" >U20221C554</td>
-        <td align="center" > Villanueva Rodriguez, Giuseppe Adrian</td>
+        <td align="center" style="border: none !important;">U20221C554</td>
+        <td align="left" style="border: none !important; text-align: left;"> Villanueva Rodriguez, Giuseppe Adrian</td>
       </tr>
     </tbody>
   </table>
@@ -70,13 +70,13 @@
 
 </div>
 
-### [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
+- [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
 
-### [Project Report Collaboration Insights](#project-report-collaboration-insights)
+- [Project Report Collaboration Insights](#project-report-collaboration-insights)
 
-### [Student Outcome](#toc-student-outcome)
+- [Student Outcome](#toc-student-outcome)
 
-## Capítulo I: Presentación
+<h2>Capítulo I: Presentación</h2>
 
 - [1.1. Startup Profile](#toc-1-1-startup-profile)
   - [1.1.1. Descripción de la Startup](#toc-1-1-1-descripcion-de-la-startup)
@@ -90,7 +90,7 @@
     - [1.2.2.4. Lean UX Canvas](#toc-1-2-2-4-lean-ux-canvas)
 - [1.3. Segmentos objetivo](#toc-1-3-segmentos-objetivo)
 
-## Capítulo II: Requirements Development and Software Solution Design
+<h2>Capítulo II: Requirements Development and Software Solution Design</h2>
 
 - [2.1. Competidores](#toc-2-1-competidores)
   - [2.1.1. Análisis competitivo](#toc-2-1-1-analisis-competitivo)
@@ -203,7 +203,7 @@
       - [2.6.9.6.1. Bounded Context Domain Layer Class Diagrams](#toc-2-6-9-6-1-bounded-context-domain-layer-class-diagrams)
       - [2.6.9.6.2. Bounded Context Database Design Diagram](#toc-2-6-9-6-2-bounded-context-database-design-diagram)
 
-## Capítulo III: Solution UI/UX Design
+<h2>Capítulo III: Solution UI/UX Design</h2>
 
 - [3.1. Product design](#toc-3-1-product-design)
   - [3.1.1. Style Guidelines](#toc-3-1-1-style-guidelines)
@@ -224,7 +224,7 @@
     - [3.1.4.4. Mobile Applications User Flow Diagrams](#toc-3-1-4-4-mobile-applications-user-flow-diagrams)
     - [3.1.4.5. Mobile Applications Prototyping](#toc-3-1-4-5-mobile-applications-prototyping)
 
-## Capítulo IV: Product Implementation & Validation
+<h2>Capítulo IV: Product Implementation & Validation</h2>
 
 - [4. Product Implementation & Validation](#toc-4-product-implementation-validation)
   - [4.1. Software Configuration Management](#toc-4-1-software-configuration-management)
@@ -248,12 +248,10 @@
     - [4.3.2. Registro de Entrevistas](#toc-4-3-2-registro-de-entrevistas)
     - [4.3.3. Evaluaciones según heurísticas](#toc-4-3-3-evaluaciones-segun-heuristicas)
 
-### [Conclusiones](#toc-conclusiones)
+- [Conclusiones](#toc-conclusiones)
 
-### [Glosario](#toc-glosario)
+- [Bibliografía](#toc-bibliografia)
 
-### [Bibliografía](#toc-bibliografia)
-
-### [Anexos](#toc-anexos)
+- [Anexos](#toc-anexos)
 
 <div style="page-break-before: always;"></div>
