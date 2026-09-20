@@ -86,7 +86,7 @@ Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicacion
 
 - [Informe](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe)
 - [Landing page](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page)
-- [Frontend web heredado](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend)
+- [Frontend web](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend)
 - [Backend](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend)
 
 ## AV1. Distribución del trabajo
@@ -114,25 +114,25 @@ El repositorio del informe conserva el historial de los cambios documentales del
 **Luciana Celeste Sanchez Silva**
 
 <div align="center">
-  <img src="markdown/assets/chapter-1/luccsss%27s%20Commits.png" alt="Commits de Luciana Sánchez" width="650">
+  <img src="markdown/assets/chapter-1/luccsssCommits.png" alt="Commits de Luciana Sánchez" width="650">
 </div>
 
 **Josep Eliu Melgarejo Quiroz**
 
 <div align="center">
-  <img src="markdown/assets/chapter-1/Melga1502%27s%20Commits.png" alt="Commits de Josep Melgarejo" width="650">
+  <img src="markdown/assets/chapter-1/Melga1502Commits.png" alt="Commits de Josep Melgarejo" width="650">
 </div>
 
 **Sebastian Martin Beingolea Montalvo**
 
 <div align="center">
-  <img src="markdown/assets/chapter-1/smbmontalvo%27s%20Commits.png" alt="Commits de Sebastian Beingolea" width="650">
+  <img src="markdown/assets/chapter-1/smbmontalvoCommits.png" alt="Commits de Sebastian Beingolea" width="650">
 </div>
 
 **Saul Ortega Muñoz**
 
 <div align="center">
-  <img src="markdown/assets/chapter-1/Ss1lent10%27s%20Commits.png" alt="Commits de Saul Ortega" width="650">
+  <img src="markdown/assets/chapter-1/Ss1lent10Commits.png" alt="Commits de Saul Ortega" width="650">
 </div>
 
 **Giuseppe Villanueva Rodriguez**

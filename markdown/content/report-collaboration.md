@@ -32,25 +32,25 @@ El repositorio del informe conserva el historial de los cambios documentales del
 **Luciana Celeste Sanchez Silva**
 
 <div align="center">
-  <img src="../assets/chapter-1/luccsss%27s%20Commits.png" alt="Commits de Luciana Sánchez" width="650">
+  <img src="../assets/chapter-1/luccsssCommits.png" alt="Commits de Luciana Sánchez" width="650">
 </div>
 
 **Josep Eliu Melgarejo Quiroz**
 
 <div align="center">
-  <img src="../assets/chapter-1/Melga1502%27s%20Commits.png" alt="Commits de Josep Melgarejo" width="650">
+  <img src="../assets/chapter-1/Melga1502Commits.png" alt="Commits de Josep Melgarejo" width="650">
 </div>
 
 **Sebastian Martin Beingolea Montalvo**
 
 <div align="center">
-  <img src="../assets/chapter-1/smbmontalvo%27s%20Commits.png" alt="Commits de Sebastian Beingolea" width="650">
+  <img src="../assets/chapter-1/smbmontalvoCommits.png" alt="Commits de Sebastian Beingolea" width="650">
 </div>
 
 **Saul Ortega Muñoz**
 
 <div align="center">
-  <img src="../assets/chapter-1/Ss1lent10%27s%20Commits.png" alt="Commits de Saul Ortega" width="650">
+  <img src="../assets/chapter-1/Ss1lent10Commits.png" alt="Commits de Saul Ortega" width="650">
 </div>
 
 **Giuseppe Villanueva Rodriguez**
