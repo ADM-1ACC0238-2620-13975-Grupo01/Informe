@@ -4,7 +4,7 @@
 
 Administrar planes, vigencia de suscripciones y pagos confirmados sin introducir conceptos propios de Stripe en el dominio.
 
-La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-8-1-domain-layer"></a>
 
@@ -16,7 +16,7 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Definir condiciones y límites de un plan comercial. |
 | **Relaciones** | SubscriptionPlan compone Money |
 
@@ -42,7 +42,7 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Controlar vigencia y estado de la suscripción de un usuario. |
 | **Relaciones** | Subscription compone Payment; Subscription se relaciona con SubscriptionStatus; ISubscriptionRepository depende de Subscription |
 
@@ -69,7 +69,7 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Registrar el resultado de un pago. |
 | **Relaciones** | Subscription compone Payment; Payment se relaciona con PaymentStatus; Payment compone Money |
 
@@ -96,7 +96,7 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar un importe junto con su moneda. |
 | **Relaciones** | Payment compone Money; SubscriptionPlan compone Money |
 
@@ -117,7 +117,7 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Definir los valores válidos de SubscriptionStatus. |
 | **Relaciones** | Subscription se relaciona con SubscriptionStatus |
 
@@ -139,7 +139,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de Subscription. |
 | **Relaciones** | ISubscriptionRepository depende de Subscription |
 
@@ -162,7 +162,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **No implementado** |
 | **Propósito** | Abstraer el proveedor externo de cobros. |
 | **Relaciones** | Es implementado por StripePaymentGateway en Infrastructure Layer. |
 
@@ -188,7 +188,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Subscription Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -227,7 +227,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **No implementado** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -252,7 +252,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -283,7 +283,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -312,7 +312,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -336,7 +336,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -358,7 +358,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -386,7 +386,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa ISubscriptionPlanRepository / ISubscriptionRepository / IPaymentRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -411,7 +411,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Room — **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **No implementado** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -436,7 +436,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -461,7 +461,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa PaymentGateway y traduce Stripe al lenguaje del dominio. |
 

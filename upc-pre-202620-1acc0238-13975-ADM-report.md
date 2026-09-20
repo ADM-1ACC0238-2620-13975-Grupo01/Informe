@@ -4036,7 +4036,7 @@ Las tres imágenes deben exportarse desde el mismo archivo DSL. Los nombres y ru
 
 # 2.6. Tactical-Level Domain-Driven Design
 
-Esta sección describe cómo los nueve bounded contexts identificados en el diseño estratégico se materializan en clases, capas, componentes y estructuras de persistencia. La propuesta utiliza un enfoque híbrido trazable: conserva nombres y responsabilidades del backend heredado y presenta como diseño objetivo los elementos requeridos para Android, Flutter y la evolución del dominio.
+Esta sección describe cómo los nueve bounded contexts identificados en el diseño estratégico se materializan en clases, capas, componentes y estructuras de persistencia. La propuesta utiliza un enfoque híbrido trazable: conserva nombres y responsabilidades del backend heredado y marca como no implementados los elementos requeridos para Android, Flutter y la evolución del dominio que todavía no existen en el código.
 
 Para todos los contextos se aplican las siguientes convenciones:
 
@@ -4046,19 +4046,6 @@ Para todos los contextos se aplican las siguientes convenciones:
 - La **Infrastructure Layer** implementa persistencia, red, seguridad, sincronización e integraciones externas.
 - MySQL es la fuente autoritativa; Room y SQLite mantienen caché y un outbox idempotente.
 - Las reglas de negocio permanecen en la API y el dominio; Android y Flutter reutilizan los mismos contratos y lenguaje ubicuo.
-
-La documentación de cada capa se divide en dos niveles. La **responsabilidad estable** explica qué aporta la capa al bounded context y puede conservarse durante el proyecto mientras no cambie su propósito. El **detalle técnico evolutivo** registra las clases, atributos, métodos y relaciones conocidos en cada entrega y debe contrastarse con el código al cierre de cada sprint.
-
-Los estados utilizados en los diccionarios se interpretan de la siguiente manera:
-
-| Estado | Interpretación | Acción durante el proyecto |
-|---|---|---|
-| **Implementado** | El elemento existe en el código revisado del producto indicado. | Mantener su documentación alineada con el nombre, los miembros y las relaciones reales. |
-| **En desarrollo** | El elemento forma parte del sprint vigente, pero su implementación aún puede cambiar. | Actualizarlo cuando se cierre y valide el caso de uso. |
-| **Diseño objetivo** | El elemento pertenece a la arquitectura propuesta y todavía no está implementado. | Confirmarlo, modificarlo o retirarlo según las decisiones del equipo. |
-| **Modificado** | La implementación se apartó del diseño presentado en una entrega anterior. | Explicar la decisión y reemplazar la definición anterior por la vigente. |
-
-Al finalizar cada sprint, el equipo revisará únicamente el detalle que haya cambiado. Una clase que pase de diseño objetivo a código operativo deberá cambiar a **Implementado** y reflejar sus atributos, métodos y dependencias reales.
 
 Para mantener el informe legible, las fichas individuales se reservan para aggregates, entidades, servicios, handlers, controladores y adaptadores que explican decisiones relevantes de arquitectura. Los DTO, resources, mappers, comandos simples, configuraciones y adaptadores repetitivos se omiten del diccionario detallado y permanecen representados en el código o en los diagramas correspondientes cuando resulta necesario.
 
@@ -4086,7 +4073,7 @@ Para mantener el informe legible, las fichas individuales se reservan para aggre
 
 Administrar identidades, credenciales, roles y sesiones para que cada operación de AniTec se ejecute con una identidad autenticada y autorizada.
 
-La base implementada se encuentra en el módulo Iam de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+La base implementada se encuentra en el módulo Iam de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-1-1-domain-layer"></a>
 
@@ -4098,7 +4085,7 @@ La base implementada se encuentra en el módulo Iam de la API ASP.NET Core. El d
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Mantener identidad, credenciales protegidas y rol del usuario. |
 | **Relaciones** | User se relaciona con UserRole : has; AuthenticatedSession se relaciona con User : belongs to; CredentialPolicy depende de User : validates; IUserRepository depende de User : persists |
 
@@ -4124,7 +4111,7 @@ La base implementada se encuentra en el módulo Iam de la API ASP.NET Core. El d
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Definir los valores válidos de UserRole. |
 | **Relaciones** | User se relaciona con UserRole : has |
 
@@ -4144,7 +4131,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Controlar vigencia y revocación de una sesión autenticada. |
 | **Relaciones** | AuthenticatedSession se relaciona con User : belongs to |
 
@@ -4167,7 +4154,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Validar reglas de nombre de usuario y contraseña. |
 | **Relaciones** | CredentialPolicy depende de User : validates |
 
@@ -4186,7 +4173,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de User. |
 | **Relaciones** | IUserRepository depende de User : persists |
 
@@ -4213,7 +4200,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Identity and Access Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -4243,7 +4230,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **No implementado** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -4268,7 +4255,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -4298,7 +4285,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Orquestar registro de cuentas, autenticación, consulta de identidad y control de sesión sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -4329,7 +4316,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -4352,7 +4339,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -4375,7 +4362,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -4403,7 +4390,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IUserRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -4426,7 +4413,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Room — **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **No implementado** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -4451,7 +4438,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -4497,7 +4484,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa el puerto local de sesión sobre Keystore/EncryptedSharedPreferences o Secure Storage. |
 
@@ -4576,7 +4563,7 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 Mantener la información personal y de contacto asociada con una identidad sin mezclarla con credenciales o reglas de autenticación.
 
-La base implementada se encuentra en el módulo Profiles de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+La base implementada se encuentra en el módulo Profiles de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-2-1-domain-layer"></a>
 
@@ -4588,7 +4575,7 @@ La base implementada se encuentra en el módulo Profiles de la API ASP.NET Core.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Mantener la información personal y de contacto de un propietario. |
 | **Relaciones** | Profile compone PersonName; Profile compone EmailAddress; Profile compone StreetAddress; IProfileRepository depende de Profile : persists |
 
@@ -4614,7 +4601,7 @@ La base implementada se encuentra en el módulo Profiles de la API ASP.NET Core.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Representar un nombre personal válido. |
 | **Relaciones** | Profile compone PersonName |
 
@@ -4635,7 +4622,7 @@ La base implementada se encuentra en el módulo Profiles de la API ASP.NET Core.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Representar y validar un correo electrónico. |
 | **Relaciones** | Profile compone EmailAddress |
 
@@ -4655,7 +4642,7 @@ La base implementada se encuentra en el módulo Profiles de la API ASP.NET Core.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Representar una dirección postal completa. |
 | **Relaciones** | Profile compone StreetAddress |
 
@@ -4679,7 +4666,7 @@ La base implementada se encuentra en el módulo Profiles de la API ASP.NET Core.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de Profile. |
 | **Relaciones** | IProfileRepository depende de Profile : persists |
 
@@ -4708,7 +4695,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Profile Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -4736,7 +4723,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **No implementado** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -4761,7 +4748,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -4791,7 +4778,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Orquestar creación, actualización y consulta de perfiles sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -4818,7 +4805,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -4841,7 +4828,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -4864,7 +4851,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -4892,7 +4879,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IProfileRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -4914,7 +4901,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Room — **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **No implementado** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -4939,7 +4926,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -4963,7 +4950,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa el puerto de verificación del propietario y consume IAM Context Facade. |
 
@@ -5041,7 +5028,7 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 Gestionar fincas, hatos, animales e identificadores QR como fuente de referencia para los demás procesos ganaderos.
 
-La base implementada se encuentra en el módulo Livestock de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+La base implementada se encuentra en el módulo Livestock de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-3-1-domain-layer"></a>
 
@@ -5053,7 +5040,7 @@ La base implementada se encuentra en el módulo Livestock de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Agrupar los hatos de un propietario. |
 | **Relaciones** | Farm compone Herd |
 
@@ -5077,7 +5064,7 @@ La base implementada se encuentra en el módulo Livestock de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Administrar un conjunto de animales dentro de una finca. |
 | **Relaciones** | Farm compone Herd; Herd compone Animal; IHerdRepository depende de Herd |
 
@@ -5102,7 +5089,7 @@ La base implementada se encuentra en el módulo Livestock de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Mantener identificación y estado productivo de un animal. |
 | **Relaciones** | Herd compone Animal; Animal compone AnimalTag; Animal compone QrIdentifier; Animal se relaciona con AnimalStatus; IAnimalRepository depende de Animal |
 
@@ -5131,7 +5118,7 @@ La base implementada se encuentra en el módulo Livestock de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar la carga QR que identifica un animal. |
 | **Relaciones** | Animal compone QrIdentifier |
 
@@ -5151,7 +5138,7 @@ La base implementada se encuentra en el módulo Livestock de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend y modelos equivalentes Android/Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend y modelos equivalentes Android/Flutter — **Implementado** |
 | **Propósito** | Definir los valores válidos de AnimalStatus. |
 | **Relaciones** | Animal se relaciona con AnimalStatus |
 
@@ -5171,7 +5158,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de Animal. |
 | **Relaciones** | IAnimalRepository depende de Animal |
 
@@ -5199,7 +5186,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Livestock Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -5224,7 +5211,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Livestock Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -5254,7 +5241,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **No implementado** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -5279,7 +5266,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -5311,7 +5298,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Orquestar gestión de fincas, hatos, animales e identificación QR sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -5340,7 +5327,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -5364,7 +5351,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -5386,7 +5373,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -5414,7 +5401,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IHerdRepository / IAnimalRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -5440,7 +5427,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Room — **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **No implementado** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -5465,7 +5452,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -5490,7 +5477,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / ML Kit — **Diseño objetivo** |
+| **Producto y estado** | Android / ML Kit — **No implementado** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa el puerto de lectura QR mediante la cámara y Google ML Kit. |
 
@@ -5568,7 +5555,7 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 Conservar la historia sanitaria del animal y controlar el registro de diagnósticos, tratamientos, prescripciones y seguimientos autorizados.
 
-La base implementada se encuentra en el módulo Sanitary de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+La base implementada se encuentra en el módulo Sanitary de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-4-1-domain-layer"></a>
 
@@ -5580,7 +5567,7 @@ La base implementada se encuentra en el módulo Sanitary de la API ASP.NET Core.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Mantener un acontecimiento clínico dentro de la historia sanitaria. |
 | **Relaciones** | HealthEvent compone Diagnosis; HealthEvent compone Treatment; HealthEvent compone Prescription; HealthEvent se relaciona con HealthEventType; SanitaryAuthorizationPolicy depende de HealthEvent; IHealthEventRepository depende de HealthEvent |
 
@@ -5610,7 +5597,7 @@ La base implementada se encuentra en el módulo Sanitary de la API ASP.NET Core.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar el diagnóstico clínico. |
 | **Relaciones** | HealthEvent compone Diagnosis |
 
@@ -5630,7 +5617,7 @@ La base implementada se encuentra en el módulo Sanitary de la API ASP.NET Core.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar instrucciones de tratamiento. |
 | **Relaciones** | HealthEvent compone Treatment |
 
@@ -5650,7 +5637,7 @@ La base implementada se encuentra en el módulo Sanitary de la API ASP.NET Core.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar la prescripción asociada a un evento sanitario. |
 | **Relaciones** | HealthEvent compone Prescription |
 
@@ -5671,7 +5658,7 @@ La base implementada se encuentra en el módulo Sanitary de la API ASP.NET Core.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Decidir si un actor puede registrar información sanitaria. |
 | **Relaciones** | SanitaryAuthorizationPolicy depende de HealthEvent |
 
@@ -5689,7 +5676,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de HealthEvent. |
 | **Relaciones** | IHealthEventRepository depende de HealthEvent |
 
@@ -5718,7 +5705,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Sanitary Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -5746,7 +5733,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **No implementado** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -5771,7 +5758,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -5801,7 +5788,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Orquestar registro y seguimiento de eventos sanitarios, diagnósticos y tratamientos sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -5829,7 +5816,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -5852,7 +5839,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -5875,7 +5862,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -5903,7 +5890,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IHealthEventRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -5928,7 +5915,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Room — **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **No implementado** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -5953,7 +5940,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -5979,7 +5966,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa el puerto de sincronización sanitaria sobre Room o SQLite. |
 
@@ -6058,7 +6045,7 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 Administrar solicitudes y autorizaciones entre ganaderos y veterinarios, delimitando clientes, pacientes y alcance de acceso.
 
-La base implementada se encuentra en el módulo Clients de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+La base implementada se encuentra en el módulo Clients de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-5-1-domain-layer"></a>
 
@@ -6070,7 +6057,7 @@ La base implementada se encuentra en el módulo Clients de la API ASP.NET Core. 
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Controlar la relación y autorización entre veterinario y ganadero. |
 | **Relaciones** | VeterinarianClient se relaciona con CollaborationStatus; VeterinarianClient compone AuthorizationScope; CollaborationPolicy depende de VeterinarianClient; IVeterinarianClientRepository depende de VeterinarianClient |
 
@@ -6100,7 +6087,7 @@ La base implementada se encuentra en el módulo Clients de la API ASP.NET Core. 
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Definir los valores válidos de CollaborationStatus. |
 | **Relaciones** | VeterinarianClient se relaciona con CollaborationStatus |
 
@@ -6121,7 +6108,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Delimitar fincas, animales y operaciones autorizadas. |
 | **Relaciones** | VeterinarianClient compone AuthorizationScope |
 
@@ -6143,7 +6130,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend y modelos equivalentes Android/Flutter — **Diseño objetivo** |
+| **Producto y estado** | Backend y modelos equivalentes Android/Flutter — **No implementado** |
 | **Propósito** | Evaluar aceptación y acceso dentro de una colaboración. |
 | **Relaciones** | CollaborationPolicy depende de VeterinarianClient |
 
@@ -6162,7 +6149,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de VeterinarianClient. |
 | **Relaciones** | IVeterinarianClientRepository depende de VeterinarianClient |
 
@@ -6191,7 +6178,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Veterinary Collaboration. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -6221,7 +6208,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **No implementado** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -6246,7 +6233,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -6276,7 +6263,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Orquestar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -6302,7 +6289,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -6325,7 +6312,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -6348,7 +6335,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -6376,7 +6363,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IVeterinarianClientRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -6400,7 +6387,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Room — **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **No implementado** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -6425,7 +6412,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -6450,7 +6437,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa el puerto de directorio y consume Profile Management. |
 
@@ -6529,7 +6516,7 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 Planificar actividades ganaderas y sanitarias, controlar su estado y decidir cuándo corresponde generar un recordatorio.
 
-La base implementada se encuentra en el módulo Activities de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+La base implementada se encuentra en el módulo Activities de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-6-1-domain-layer"></a>
 
@@ -6541,7 +6528,7 @@ La base implementada se encuentra en el módulo Activities de la API ASP.NET Cor
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Controlar el ciclo de vida de una actividad programada. |
 | **Relaciones** | FarmActivity compone ActivitySchedule; FarmActivity se relaciona con ActivityPriority; FarmActivity se relaciona con ActivityStatus; ReminderPolicy depende de FarmActivity; IFarmActivityRepository depende de FarmActivity |
 
@@ -6571,7 +6558,7 @@ La base implementada se encuentra en el módulo Activities de la API ASP.NET Cor
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar fecha programada y recordatorio. |
 | **Relaciones** | FarmActivity compone ActivitySchedule |
 
@@ -6593,7 +6580,7 @@ La base implementada se encuentra en el módulo Activities de la API ASP.NET Cor
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Definir los valores válidos de ActivityStatus. |
 | **Relaciones** | FarmActivity se relaciona con ActivityStatus |
 
@@ -6614,7 +6601,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Decidir cuándo debe emitirse una notificación. |
 | **Relaciones** | ReminderPolicy depende de FarmActivity |
 
@@ -6632,7 +6619,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de FarmActivity. |
 | **Relaciones** | IFarmActivityRepository depende de FarmActivity |
 
@@ -6659,7 +6646,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Activity Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -6687,7 +6674,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **No implementado** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -6712,7 +6699,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -6742,7 +6729,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Orquestar programación, reprogramación, finalización y recordatorio de actividades sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -6770,7 +6757,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -6793,7 +6780,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -6816,7 +6803,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -6844,7 +6831,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IFarmActivityRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -6869,7 +6856,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Room — **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **No implementado** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -6894,7 +6881,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -6920,7 +6907,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend y Android — **Diseño objetivo** |
+| **Producto y estado** | Backend y Android — **No implementado** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa el puerto de notificaciones mediante FCM y notificaciones locales. |
 
@@ -6998,7 +6985,7 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 Registrar ingresos y egresos operativos y producir resúmenes económicos básicos para apoyar decisiones del ganadero.
 
-La base implementada se encuentra en el módulo Financial de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+La base implementada se encuentra en el módulo Financial de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-7-1-domain-layer"></a>
 
@@ -7010,7 +6997,7 @@ La base implementada se encuentra en el módulo Financial de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Mantener un ingreso o egreso del ganadero. |
 | **Relaciones** | FinancialRecord compone Money; FinancialRecord se relaciona con FinancialRecordType; FinancialRecord compone FinancialCategory; FinancialSummary depende de FinancialRecord; IFinancialRecordRepository depende de FinancialRecord |
 
@@ -7037,7 +7024,7 @@ La base implementada se encuentra en el módulo Financial de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar un importe junto con su moneda. |
 | **Relaciones** | FinancialRecord compone Money |
 
@@ -7060,7 +7047,7 @@ La base implementada se encuentra en el módulo Financial de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Clasificar un movimiento financiero. |
 | **Relaciones** | FinancialRecord compone FinancialCategory |
 
@@ -7080,7 +7067,7 @@ La base implementada se encuentra en el módulo Financial de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Calcular totales y balance para un conjunto de movimientos. |
 | **Relaciones** | FinancialSummary depende de FinancialRecord |
 
@@ -7098,7 +7085,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de FinancialRecord. |
 | **Relaciones** | IFinancialRecordRepository depende de FinancialRecord |
 
@@ -7125,7 +7112,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Financial Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -7153,7 +7140,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **No implementado** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -7178,7 +7165,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -7208,7 +7195,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Orquestar registro de ingresos y egresos, actualización y cálculo de resúmenes sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -7236,7 +7223,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -7259,7 +7246,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -7282,7 +7269,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -7310,7 +7297,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IFinancialRecordRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -7335,7 +7322,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Room — **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **No implementado** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -7360,7 +7347,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -7385,7 +7372,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa el puerto de sincronización financiera sobre Room o SQLite. |
 
@@ -7464,7 +7451,7 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 Administrar planes, vigencia de suscripciones y pagos confirmados sin introducir conceptos propios de Stripe en el dominio.
 
-La base implementada se encuentra en el módulo Subscriptions de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+La base implementada se encuentra en el módulo Subscriptions de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-8-1-domain-layer"></a>
 
@@ -7476,7 +7463,7 @@ La base implementada se encuentra en el módulo Subscriptions de la API ASP.NET 
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Definir condiciones y límites de un plan comercial. |
 | **Relaciones** | SubscriptionPlan compone Money |
 
@@ -7502,7 +7489,7 @@ La base implementada se encuentra en el módulo Subscriptions de la API ASP.NET 
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Controlar vigencia y estado de la suscripción de un usuario. |
 | **Relaciones** | Subscription compone Payment; Subscription se relaciona con SubscriptionStatus; ISubscriptionRepository depende de Subscription |
 
@@ -7529,7 +7516,7 @@ La base implementada se encuentra en el módulo Subscriptions de la API ASP.NET 
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Registrar el resultado de un pago. |
 | **Relaciones** | Subscription compone Payment; Payment se relaciona con PaymentStatus; Payment compone Money |
 
@@ -7556,7 +7543,7 @@ La base implementada se encuentra en el módulo Subscriptions de la API ASP.NET 
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar un importe junto con su moneda. |
 | **Relaciones** | Payment compone Money; SubscriptionPlan compone Money |
 
@@ -7577,7 +7564,7 @@ La base implementada se encuentra en el módulo Subscriptions de la API ASP.NET 
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Definir los valores válidos de SubscriptionStatus. |
 | **Relaciones** | Subscription se relaciona con SubscriptionStatus |
 
@@ -7599,7 +7586,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de Subscription. |
 | **Relaciones** | ISubscriptionRepository depende de Subscription |
 
@@ -7622,7 +7609,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **No implementado** |
 | **Propósito** | Abstraer el proveedor externo de cobros. |
 | **Relaciones** | Es implementado por StripePaymentGateway en Infrastructure Layer. |
 
@@ -7648,7 +7635,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Subscription Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -7687,7 +7674,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **No implementado** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -7712,7 +7699,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -7743,7 +7730,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -7772,7 +7759,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -7796,7 +7783,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -7818,7 +7805,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -7846,7 +7833,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa ISubscriptionPlanRepository / ISubscriptionRepository / IPaymentRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -7871,7 +7858,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Room — **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **No implementado** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -7896,7 +7883,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -7921,7 +7908,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa PaymentGateway y traduce Stripe al lenguaje del dominio. |
 
@@ -8001,7 +7988,7 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 Construir proyecciones y métricas de consulta para los dashboards sin adquirir propiedad sobre los registros de los contextos fuente.
 
-La base implementada se encuentra en el módulo Analytics de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+La base implementada se encuentra en el módulo Analytics de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-9-1-domain-layer"></a>
 
@@ -8013,7 +8000,7 @@ La base implementada se encuentra en el módulo Analytics de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Agrupar métricas calculadas para una audiencia y periodo. |
 | **Relaciones** | DashboardProjection compone ReportMetric; DashboardProjection compone MetricPeriod; ProjectionBuilder depende de DashboardProjection; IReportMetricRepository depende de DashboardProjection |
 
@@ -8039,7 +8026,7 @@ La base implementada se encuentra en el módulo Analytics de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Representar una métrica individual del dashboard. |
 | **Relaciones** | DashboardProjection compone ReportMetric; ReportMetric compone MetricSlice |
 
@@ -8063,7 +8050,7 @@ La base implementada se encuentra en el módulo Analytics de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar un valor, unidad y etiqueta de una métrica. |
 | **Relaciones** | ReportMetric compone MetricSlice |
 
@@ -8086,7 +8073,7 @@ La base implementada se encuentra en el módulo Analytics de la API ASP.NET Core
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Construir proyecciones a partir de los contextos fuente. |
 | **Relaciones** | ProjectionBuilder depende de DashboardProjection |
 
@@ -8105,7 +8092,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de ReportMetric. |
 | **Relaciones** | IReportMetricRepository depende de DashboardProjection |
 
@@ -8130,7 +8117,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Analytics and Reporting. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -8165,7 +8152,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **No implementado** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -8190,7 +8177,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -8221,7 +8208,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Orquestar construcción y consulta de dashboards, métricas y proyecciones sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -8246,7 +8233,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -8270,7 +8257,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Resolver una consulta de aplicación y construir el modelo de lectura requerido. |
 | **Relaciones** | Consume una Query y consulta repositories o proyecciones. |
 
@@ -8291,7 +8278,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -8319,7 +8306,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IReportMetricRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -8344,7 +8331,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Room — **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **No implementado** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -8369,7 +8356,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -8393,7 +8380,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa una fuente de proyección desde Livestock Management. |
 

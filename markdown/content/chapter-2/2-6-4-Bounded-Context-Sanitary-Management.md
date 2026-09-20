@@ -4,7 +4,7 @@
 
 Conservar la historia sanitaria del animal y controlar el registro de diagnósticos, tratamientos, prescripciones y seguimientos autorizados.
 
-La base implementada se encuentra en el módulo `Sanitary` de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+La base implementada se encuentra en el módulo `Sanitary` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-4-1-domain-layer"></a>
 
@@ -16,7 +16,7 @@ La base implementada se encuentra en el módulo `Sanitary` de la API ASP.NET Cor
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Mantener un acontecimiento clínico dentro de la historia sanitaria. |
 | **Relaciones** | HealthEvent compone Diagnosis; HealthEvent compone Treatment; HealthEvent compone Prescription; HealthEvent se relaciona con HealthEventType; SanitaryAuthorizationPolicy depende de HealthEvent; IHealthEventRepository depende de HealthEvent |
 
@@ -46,7 +46,7 @@ La base implementada se encuentra en el módulo `Sanitary` de la API ASP.NET Cor
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar el diagnóstico clínico. |
 | **Relaciones** | HealthEvent compone Diagnosis |
 
@@ -66,7 +66,7 @@ La base implementada se encuentra en el módulo `Sanitary` de la API ASP.NET Cor
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar instrucciones de tratamiento. |
 | **Relaciones** | HealthEvent compone Treatment |
 
@@ -86,7 +86,7 @@ La base implementada se encuentra en el módulo `Sanitary` de la API ASP.NET Cor
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar la prescripción asociada a un evento sanitario. |
 | **Relaciones** | HealthEvent compone Prescription |
 
@@ -107,7 +107,7 @@ La base implementada se encuentra en el módulo `Sanitary` de la API ASP.NET Cor
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Decidir si un actor puede registrar información sanitaria. |
 | **Relaciones** | SanitaryAuthorizationPolicy depende de HealthEvent |
 
@@ -125,7 +125,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de HealthEvent. |
 | **Relaciones** | IHealthEventRepository depende de HealthEvent |
 
@@ -154,7 +154,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Sanitary Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -182,7 +182,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **No implementado** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -207,7 +207,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -237,7 +237,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Orquestar registro y seguimiento de eventos sanitarios, diagnósticos y tratamientos sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -265,7 +265,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -288,7 +288,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -311,7 +311,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -339,7 +339,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IHealthEventRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -364,7 +364,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Room — **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **No implementado** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -389,7 +389,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -415,7 +415,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa el puerto de sincronización sanitaria sobre Room o SQLite. |
 

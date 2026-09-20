@@ -4,7 +4,7 @@
 
 Registrar ingresos y egresos operativos y producir resúmenes económicos básicos para apoyar decisiones del ganadero.
 
-La base implementada se encuentra en el módulo `Financial` de la API ASP.NET Core. El diseño móvil de Android y Flutter se presenta como **diseño objetivo** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
+La base implementada se encuentra en el módulo `Financial` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-7-1-domain-layer"></a>
 
@@ -16,7 +16,7 @@ La base implementada se encuentra en el módulo `Financial` de la API ASP.NET Co
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Mantener un ingreso o egreso del ganadero. |
 | **Relaciones** | FinancialRecord compone Money; FinancialRecord se relaciona con FinancialRecordType; FinancialRecord compone FinancialCategory; FinancialSummary depende de FinancialRecord; IFinancialRecordRepository depende de FinancialRecord |
 
@@ -43,7 +43,7 @@ La base implementada se encuentra en el módulo `Financial` de la API ASP.NET Co
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Representar un importe junto con su moneda. |
 | **Relaciones** | FinancialRecord compone Money |
 
@@ -66,7 +66,7 @@ La base implementada se encuentra en el módulo `Financial` de la API ASP.NET Co
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Clasificar un movimiento financiero. |
 | **Relaciones** | FinancialRecord compone FinancialCategory |
 
@@ -86,7 +86,7 @@ La base implementada se encuentra en el módulo `Financial` de la API ASP.NET Co
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Calcular totales y balance para un conjunto de movimientos. |
 | **Relaciones** | FinancialSummary depende de FinancialRecord |
 
@@ -104,7 +104,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de FinancialRecord. |
 | **Relaciones** | IFinancialRecordRepository depende de FinancialRecord |
 
@@ -131,7 +131,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Publicar por HTTP las capacidades de Financial Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -159,7 +159,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **No implementado** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -184,7 +184,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -214,7 +214,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado** |
 | **Propósito** | Orquestar registro de ingresos y egresos, actualización y cálculo de resúmenes sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -242,7 +242,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -265,7 +265,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -288,7 +288,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **No implementado** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -316,7 +316,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IFinancialRecordRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -341,7 +341,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android / Room — **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **No implementado** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -366,7 +366,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **No implementado** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -391,7 +391,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **No implementado** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa el puerto de sincronización financiera sobre Room o SQLite. |
 
