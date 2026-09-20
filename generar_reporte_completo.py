@@ -17,7 +17,7 @@ OUTPUT = (
     else ROOT / "upc-pre-202620-1acc0238-13975-ADM-report.md"
 )
 SECTIONS = [
-    (None, ["registro-versiones.md", "report-collaboration.md", "student-outcome.md"]),
+    (None, ["registro-versiones.md", "report-collaboration.md", "student-outcome.md", "objetivos-smart.md"]),
     ("Capítulo I: Presentación", [
         "chapter-1/1-1-startup-profile.md",
         "chapter-1/1-2-solution-profile.md",
@@ -78,6 +78,7 @@ allowed_unnumbered = {
     "Registro de Versiones del Informe",
     "Project Report Collaboration Insights",
     "Student Outcome",
+    "Objetivos SMART",
     "Conclusiones",
     "Bibliografía",
     "Anexos",

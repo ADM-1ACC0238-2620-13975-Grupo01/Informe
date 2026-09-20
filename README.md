@@ -79,6 +79,8 @@
 
 ### [Student Outcome](./markdown/content/student-outcome.md)
 
+### [Objetivos SMART](./markdown/content/objetivos-smart.md)
+
 ## Capítulo I: Presentación
 
 - [1.1. Startup Profile](./markdown/content/chapter-1/1-1-startup-profile.md)

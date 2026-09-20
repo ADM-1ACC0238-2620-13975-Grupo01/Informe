@@ -76,6 +76,8 @@
 
 - [Student Outcome](#toc-student-outcome)
 
+- [Objetivos SMART](#toc-objetivos-smart)
+
 <h2>Capítulo I: Presentación</h2>
 
 - [1.1. Startup Profile](#toc-1-1-startup-profile)
