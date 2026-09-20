@@ -88,10 +88,6 @@ El To-Be Scenario Mapping representa cómo realizarán sus tareas Jorge Luis Riv
   </tr>
 </table>
 
-> **Placeholder de captura:** Insertar aquí la captura de los To-Be Scenario Mapping elaborados en la herramienta seleccionada.
-
-> **Placeholder de enlace público:** Agregar aquí la URL pública de los To-Be Scenario Mapping.
-
 ## 2.4.1. User Stories
 
 Las Epics y las historias siguientes describen resultados esperados para la landing page, las aplicaciones móviles y los servicios. Las User Stories evitan decisiones de interfaz en sus criterios de aceptación; las Technical Stories describen capacidades sin interacción directa y utilizan el rol Developer. Cada historia incluye escenarios comprobables en presente y tercera persona mediante Given-When-Then.
@@ -2043,10 +2039,6 @@ El Impact Mapping conecta objetivos SMART del piloto con los User Personas, los 
   </tbody>
 </table>
 
-> **Placeholder de captura:** Insertar aquí la captura actualizada del Impact Mapping en la herramienta indicada.
-
-> **Placeholder de enlace público:** Agregar aquí la URL pública del Impact Mapping.
-
 ## 2.4.3. Product Backlog
 
 El Product Backlog contiene todas las User Stories, Technical Stories y Spike Stories definidas en esta sección. El orden comienza con la landing page, como exige el statement, y continúa con incrementos verticales de valor móvil. Las historias técnicas se ubican cerca del resultado que habilitan y todas las estimaciones utilizan la escala 1, 2, 3, 5 u 8.
@@ -2129,7 +2121,3 @@ La distribución considera los hitos del curso:
     <tr><td>59</td><td>TS-015</td><td>Configurar compilación y distribución de versiones móviles</td><td>5</td><td>Sprint 3</td></tr>
   </tbody>
 </table>
-
-> **Placeholder de captura:** Insertar aquí la captura del Product Backlog actualizado en Jira, YouTrack o Trello.
-
-> **Placeholder de enlace público:** Agregar aquí la URL pública del Product Backlog.
