@@ -12,21 +12,152 @@ La base implementada se encuentra en el módulo `Financial` de la API ASP.NET Co
 
 **Responsabilidad estable.** Esta capa documenta el modelo que representa el núcleo de **Financial Management**. Las reglas autoritativas se ejecutan en la API; Android y Flutter mantienen modelos equivalentes para presentación, validación inmediata y trabajo offline. La columna de estado distingue el código heredado de la arquitectura objetivo.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>FinancialRecord</code></td><td>Aggregate Root</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado en el backend</strong></td><td>Mantener un ingreso o egreso del ganadero.</td><td><code>id: int</code><br><code>ownerId: int</code><br><code>type: FinancialRecordType</code><br><code>category: FinancialCategory</code><br><code>amount: Money</code><br><code>date: Date</code><br><code>description: string</code></td><td><code>ChangeAmount(amount: Money): void</code><br><code>ChangeCategory(category: FinancialCategory): void</code></td><td>FinancialRecord compone Money; FinancialRecord se relaciona con FinancialRecordType; FinancialRecord compone FinancialCategory; FinancialSummary depende de FinancialRecord; IFinancialRecordRepository depende de FinancialRecord</td></tr>
-    <tr><td><code>Money</code></td><td>Value Object</td><td>Backend, Android y Flutter (modelo canónico)<br><strong>Diseño objetivo</strong></td><td>Representar un importe junto con su moneda.</td><td><code>amount: decimal</code><br><code>currency: string</code></td><td><code>Add(other: Money): Money</code><br><code>IsPositive(): bool</code></td><td>FinancialRecord compone Money</td></tr>
-    <tr><td><code>FinancialRecordType</code></td><td>Enumeration</td><td>Backend, Android y Flutter (modelo canónico)<br><strong>Diseño objetivo</strong></td><td>Definir los valores válidos de FinancialRecordType.</td><td><code>Income</code><br><code>Expense</code></td><td>—</td><td>FinancialRecord se relaciona con FinancialRecordType</td></tr>
-    <tr><td><code>FinancialCategory</code></td><td>Value Object</td><td>Backend, Android y Flutter (modelo canónico)<br><strong>Diseño objetivo</strong></td><td>Clasificar un movimiento financiero.</td><td><code>name: string</code></td><td><code>IsValid(): bool</code></td><td>FinancialRecord compone FinancialCategory</td></tr>
-    <tr><td><code>FinancialSummary</code></td><td>Domain Service</td><td>Backend, Android y Flutter (modelo canónico)<br><strong>Diseño objetivo</strong></td><td>Calcular totales y balance para un conjunto de movimientos.</td><td>—</td><td><code>Calculate(records: List~FinancialRecord~): Money</code></td><td>FinancialSummary depende de FinancialRecord</td></tr>
-    <tr><td><code>IFinancialRecordRepository</code></td><td>Repository Interface</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado en el backend</strong></td><td>Abstraer la persistencia de FinancialRecord.</td><td>—</td><td><code>FindById(id: int): FinancialRecord?</code><br><code>FindByOwner(ownerId: int): List~FinancialRecord~</code><br><code>Add(record: FinancialRecord): void</code><br><code>Update(record: FinancialRecord): void</code></td><td>IFinancialRecordRepository depende de FinancialRecord</td></tr>
-  </tbody>
-</table>
+### Aggregate Root: FinancialRecord
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Mantener un ingreso o egreso del ganadero. |
+| **Relaciones** | FinancialRecord compone Money; FinancialRecord se relaciona con FinancialRecordType; FinancialRecord compone FinancialCategory; FinancialSummary depende de FinancialRecord; IFinancialRecordRepository depende de FinancialRecord |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `id` | `int` |
+| `ownerId` | `int` |
+| `type` | `FinancialRecordType` |
+| `category` | `FinancialCategory` |
+| `amount` | `Money` |
+| `date` | `Date` |
+| `description` | `string` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `ChangeAmount(amount: Money)` | `void` |
+| `ChangeCategory(category: FinancialCategory)` | `void` |
+
+---
+
+### Value Object: Money
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend, Android y Flutter (modelo canónico) |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Representar un importe junto con su moneda. |
+| **Relaciones** | FinancialRecord compone Money |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `amount` | `decimal` |
+| `currency` | `string` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Add(other: Money)` | `Money` |
+| `IsPositive()` | `bool` |
+
+---
+
+### Enumeration: FinancialRecordType
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend, Android y Flutter (modelo canónico) |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Definir los valores válidos de FinancialRecordType. |
+| **Relaciones** | FinancialRecord se relaciona con FinancialRecordType |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Income` | `No especificado` |
+| `Expense` | `No especificado` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Value Object: FinancialCategory
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend, Android y Flutter (modelo canónico) |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Clasificar un movimiento financiero. |
+| **Relaciones** | FinancialRecord compone FinancialCategory |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `name` | `string` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `IsValid()` | `bool` |
+
+---
+
+### Domain Service: FinancialSummary
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend, Android y Flutter (modelo canónico) |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Calcular totales y balance para un conjunto de movimientos. |
+| **Relaciones** | FinancialSummary depende de FinancialRecord |
+
+**Atributos o dependencias**
+
+No aplica.
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Calculate(records: List~FinancialRecord~)` | `Money` |
+
+---
+
+### Repository Interface: IFinancialRecordRepository
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Abstraer la persistencia de FinancialRecord. |
+| **Relaciones** | IFinancialRecordRepository depende de FinancialRecord |
+
+**Atributos o dependencias**
+
+No aplica.
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `FindById(id: int)` | `FinancialRecord?` |
+| `FindByOwner(ownerId: int)` | `List~FinancialRecord~` |
+| `Add(record: FinancialRecord)` | `void` |
+| `Update(record: FinancialRecord)` | `void` |
+
+---
 
 <a id="toc-2-6-7-2-interface-layer"></a>
 
@@ -34,22 +165,202 @@ La base implementada se encuentra en el módulo `Financial` de la API ASP.NET Co
 
 **Responsabilidad estable.** Esta capa recibe las acciones relacionadas con **registro de ingresos y egresos, actualización y cálculo de resúmenes** y las traduce a casos de uso. Los controllers y resources corresponden a la API; las pantallas y controladores de estado representan la presentación objetivo en Android y Flutter. Ninguna de estas clases implementa reglas de negocio.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>FinancialRecordsController</code></td><td>REST Controller</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Publicar por HTTP las capacidades de Financial Management.</td><td><code>IFinancialRecordCommandService commandService</code><br><code>IFinancialRecordQueryService queryService</code></td><td><code>GetAll(CancellationToken cancellationToken)</code><br><code>GetById(int id, CancellationToken cancellationToken)</code><br><code>Create(CreateFinancialRecordResource resource, CancellationToken cancellationToken)</code><br><code>Update(int id, CreateFinancialRecordResource resource, CancellationToken cancellationToken)</code><br><code>Delete(int id, CancellationToken cancellationToken)</code></td><td>Recibe resources, invoca servicios de aplicación y devuelve resources HTTP.</td></tr>
-    <tr><td><code>CreateFinancialRecordResource</code></td><td>Resource/Assembler</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Definir un contrato estable de entrada o salida para la API REST.</td><td><code>int OwnerId</code><br><code>string Type</code><br><code>string Category</code><br><code>decimal Amount</code><br><code>DateOnly Date</code><br><code>string Description</code></td><td><code>Create(...)</code><br><code>Deconstruct(...)</code></td><td>Es construido o traducido por assemblers y consumido por el controller y los clientes móviles.</td></tr>
-    <tr><td><code>FinancialRecordResource</code></td><td>Resource/Assembler</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Definir un contrato estable de entrada o salida para la API REST.</td><td><code>int Id</code><br><code>int OwnerId</code><br><code>string Type</code><br><code>string Category</code><br><code>decimal Amount</code><br><code>DateOnly Date</code><br><code>string Description</code></td><td><code>Create(...)</code><br><code>Deconstruct(...)</code></td><td>Es construido o traducido por assemblers y consumido por el controller y los clientes móviles.</td></tr>
-    <tr><td><code>FinancialRecordScreen</code></td><td>Composable</td><td>Android / Jetpack Compose<br><strong>Diseño objetivo</strong></td><td>Presentar registro de ingresos y egresos, actualización y cálculo de resúmenes en Android.</td><td><code>uiState</code><br><code>onAction</code><br><code>navigation</code></td><td><code>Render()</code><br><code>Submit()</code><br><code>Retry()</code></td><td>Observa FinancialRecordViewModel y emite acciones de interfaz.</td></tr>
-    <tr><td><code>FinancialRecordViewModel</code></td><td>Presentation Model</td><td>Android / Kotlin<br><strong>Diseño objetivo</strong></td><td>Mantener el estado observable y traducir acciones de Android a casos de uso.</td><td><code>state</code><br><code>observeUseCase</code><br><code>syncUseCase</code></td><td><code>Load()</code><br><code>Submit(action)</code><br><code>RetrySync()</code></td><td>Invoca casos de uso de Application Layer y publica un UI State inmutable.</td></tr>
-    <tr><td><code>FinancialRecordPage</code></td><td>Widget</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Presentar registro de ingresos y egresos, actualización y cálculo de resúmenes en Flutter.</td><td><code>state</code><br><code>onAction</code><br><code>router</code></td><td><code>build(context)</code><br><code>submit()</code><br><code>retry()</code></td><td>Observa FinancialRecordController y emite intenciones del usuario.</td></tr>
-    <tr><td><code>FinancialRecordController</code></td><td>State Controller</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Mantener el estado de presentación de Flutter y coordinar casos de uso.</td><td><code>state</code><br><code>observeUseCase</code><br><code>syncUseCase</code></td><td><code>load()</code><br><code>submit(action)</code><br><code>retrySync()</code></td><td>Invoca Application Layer y publica estados de carga, éxito y error.</td></tr>
-  </tbody>
-</table>
+### REST Controller: FinancialRecordsController
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Publicar por HTTP las capacidades de Financial Management. |
+| **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `commandService` | `IFinancialRecordCommandService` |
+| `queryService` | `IFinancialRecordQueryService` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `GetAll(CancellationToken cancellationToken)` | `No especificado` |
+| `GetById(int id, CancellationToken cancellationToken)` | `No especificado` |
+| `Create(CreateFinancialRecordResource resource, CancellationToken cancellationToken)` | `No especificado` |
+| `Update(int id, CreateFinancialRecordResource resource, CancellationToken cancellationToken)` | `No especificado` |
+| `Delete(int id, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Resource/Assembler: CreateFinancialRecordResource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
+| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `OwnerId` | `int` |
+| `Type` | `string` |
+| `Category` | `string` |
+| `Amount` | `decimal` |
+| `Date` | `DateOnly` |
+| `Description` | `string` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Create(...)` | `No especificado` |
+| `Deconstruct(...)` | `No especificado` |
+
+---
+
+### Resource/Assembler: FinancialRecordResource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
+| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+| `OwnerId` | `int` |
+| `Type` | `string` |
+| `Category` | `string` |
+| `Amount` | `decimal` |
+| `Date` | `DateOnly` |
+| `Description` | `string` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Create(...)` | `No especificado` |
+| `Deconstruct(...)` | `No especificado` |
+
+---
+
+### Composable: FinancialRecordScreen
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Jetpack Compose |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Presentar registro de ingresos y egresos, actualización y cálculo de resúmenes en Android. |
+| **Relaciones** | Observa FinancialRecordViewModel y emite acciones de interfaz. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `uiState` | `No especificado` |
+| `onAction` | `No especificado` |
+| `navigation` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Render()` | `No especificado` |
+| `Submit()` | `No especificado` |
+| `Retry()` | `No especificado` |
+
+---
+
+### Presentation Model: FinancialRecordViewModel
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Kotlin |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
+| **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `state` | `No especificado` |
+| `observeUseCase` | `No especificado` |
+| `syncUseCase` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Load()` | `No especificado` |
+| `Submit(action)` | `No especificado` |
+| `RetrySync()` | `No especificado` |
+
+---
+
+### Widget: FinancialRecordPage
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Presentar registro de ingresos y egresos, actualización y cálculo de resúmenes en Flutter. |
+| **Relaciones** | Observa FinancialRecordController y emite intenciones del usuario. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `state` | `No especificado` |
+| `onAction` | `No especificado` |
+| `router` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `build(context)` | `No especificado` |
+| `submit()` | `No especificado` |
+| `retry()` | `No especificado` |
+
+---
+
+### State Controller: FinancialRecordController
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
+| **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `state` | `No especificado` |
+| `observeUseCase` | `No especificado` |
+| `syncUseCase` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `load()` | `No especificado` |
+| `submit(action)` | `No especificado` |
+| `retrySync()` | `No especificado` |
+
+---
 
 <a id="toc-2-6-7-3-application-layer"></a>
 
@@ -57,26 +368,277 @@ La base implementada se encuentra en el módulo `Financial` de la API ASP.NET Co
 
 **Responsabilidad estable.** Esta capa coordina las capacidades de **registro de ingresos y egresos, actualización y cálculo de resúmenes**. Los commands y queries expresan intenciones; los handlers cargan aggregates, aplican reglas, persisten cambios y reaccionan a eventos. Los casos de uso móviles coordinan lectura local, actualización remota y sincronización idempotente.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>FinancialRecordCommandService</code></td><td>Application Service</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Orquestar registro de ingresos y egresos, actualización y cálculo de resúmenes sin contener reglas del dominio.</td><td><code>IFinancialRecordRepository repository</code><br><code>IUnitOfWork unitOfWork</code></td><td><code>Handle(CreateFinancialRecordCommand command, CancellationToken cancellationToken)</code><br><code>Handle(UpdateFinancialRecordCommand command, CancellationToken cancellationToken)</code><br><code>Handle(DeleteFinancialRecordCommand command, CancellationToken cancellationToken)</code></td><td>Invoca agregados y repositories; confirma la transacción mediante Unit of Work.</td></tr>
-    <tr><td><code>FinancialRecordQueryService</code></td><td>Application Service</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Orquestar registro de ingresos y egresos, actualización y cálculo de resúmenes sin contener reglas del dominio.</td><td><code>IFinancialRecordRepository repository</code></td><td><code>Handle(GetFinancialRecordByIdQuery query, CancellationToken cancellationToken)</code><br><code>Handle(GetAllFinancialRecordsQuery query, CancellationToken cancellationToken)</code></td><td>Invoca agregados y repositories; confirma la transacción mediante Unit of Work.</td></tr>
-    <tr><td><code>CreateFinancialRecordCommand</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>int OwnerId</code><br><code>string Type</code><br><code>string Category</code><br><code>decimal Amount</code><br><code>DateOnly Date</code><br><code>string Description</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>UpdateFinancialRecordCommand</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>int Id</code><br><code>int OwnerId</code><br><code>string Type</code><br><code>string Category</code><br><code>decimal Amount</code><br><code>DateOnly Date</code><br><code>string Description</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>DeleteFinancialRecordCommand</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>int Id</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>GetFinancialRecordByIdQuery</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>int Id</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>ObserveFinancialRecordUseCase</code></td><td>Use Case</td><td>Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Entregar primero datos locales y actualizar la consulta cuando exista conectividad.</td><td><code>localRepository</code><br><code>remoteRepository</code><br><code>connectivityMonitor</code></td><td><code>Execute(criteria): Stream&lt;Result&gt;</code></td><td>Es invocado por ViewModel/Controller y coordina repositorios móviles.</td></tr>
-    <tr><td><code>SyncFinancialRecordUseCase</code></td><td>Use Case</td><td>Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Procesar operaciones móviles pendientes de manera idempotente.</td><td><code>outboxRepository</code><br><code>remoteRepository</code><br><code>conflictResolver</code></td><td><code>Execute(): SyncResult</code></td><td>Lee el outbox local, consume la API y actualiza el estado de sincronización.</td></tr>
-    <tr><td><code>CreateFinancialRecordCommandHandler</code></td><td>Command Handler</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción.</td><td><code>repository</code><br><code>unitOfWork</code><br><code>domainPolicy</code></td><td><code>Handle(command): Result</code></td><td>Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event.</td></tr>
-    <tr><td><code>UpdateFinancialRecordCommandHandler</code></td><td>Command Handler</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción.</td><td><code>repository</code><br><code>unitOfWork</code><br><code>domainPolicy</code></td><td><code>Handle(command): Result</code></td><td>Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event.</td></tr>
-    <tr><td><code>FinancialRecordRegisteredEventHandler</code></td><td>Event Handler</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Reaccionar al evento confirmado y actualizar proyecciones o integraciones.</td><td><code>projectionRepository</code><br><code>notificationPort</code><br><code>unitOfWork</code></td><td><code>Handle(domainEvent): Task</code></td><td>Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado.</td></tr>
-  </tbody>
-</table>
+### Application Service: FinancialRecordCommandService
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Orquestar registro de ingresos y egresos, actualización y cálculo de resúmenes sin contener reglas del dominio. |
+| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `IFinancialRecordRepository` |
+| `unitOfWork` | `IUnitOfWork` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(CreateFinancialRecordCommand command, CancellationToken cancellationToken)` | `No especificado` |
+| `Handle(UpdateFinancialRecordCommand command, CancellationToken cancellationToken)` | `No especificado` |
+| `Handle(DeleteFinancialRecordCommand command, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Application Service: FinancialRecordQueryService
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Orquestar registro de ingresos y egresos, actualización y cálculo de resúmenes sin contener reglas del dominio. |
+| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `IFinancialRecordRepository` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(GetFinancialRecordByIdQuery query, CancellationToken cancellationToken)` | `No especificado` |
+| `Handle(GetAllFinancialRecordsQuery query, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Command/Query: CreateFinancialRecordCommand
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `OwnerId` | `int` |
+| `Type` | `string` |
+| `Category` | `string` |
+| `Amount` | `decimal` |
+| `Date` | `DateOnly` |
+| `Description` | `string` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Command/Query: UpdateFinancialRecordCommand
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+| `OwnerId` | `int` |
+| `Type` | `string` |
+| `Category` | `string` |
+| `Amount` | `decimal` |
+| `Date` | `DateOnly` |
+| `Description` | `string` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Command/Query: DeleteFinancialRecordCommand
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Command/Query: GetFinancialRecordByIdQuery
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Use Case: ObserveFinancialRecordUseCase
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
+| **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `localRepository` | `No especificado` |
+| `remoteRepository` | `No especificado` |
+| `connectivityMonitor` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Execute(criteria)` | `Stream<Result>` |
+
+---
+
+### Use Case: SyncFinancialRecordUseCase
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
+| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `outboxRepository` | `No especificado` |
+| `remoteRepository` | `No especificado` |
+| `conflictResolver` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Execute()` | `SyncResult` |
+
+---
+
+### Command Handler: CreateFinancialRecordCommandHandler
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
+| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `No especificado` |
+| `unitOfWork` | `No especificado` |
+| `domainPolicy` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(command)` | `Result` |
+
+---
+
+### Command Handler: UpdateFinancialRecordCommandHandler
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
+| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `No especificado` |
+| `unitOfWork` | `No especificado` |
+| `domainPolicy` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(command)` | `Result` |
+
+---
+
+### Event Handler: FinancialRecordRegisteredEventHandler
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
+| **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `projectionRepository` | `No especificado` |
+| `notificationPort` | `No especificado` |
+| `unitOfWork` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(domainEvent)` | `Task` |
+
+---
 
 <a id="toc-2-6-7-4-infrastructure-layer"></a>
 
@@ -84,23 +646,214 @@ La base implementada se encuentra en el módulo `Financial` de la API ASP.NET Co
 
 **Responsabilidad estable.** Esta capa implementa los puertos definidos hacia el interior de **Financial Management** y concentra acceso a base de datos, red, almacenamiento local e integraciones externas. Las clases de infraestructura traducen errores y contratos técnicos antes de devolver resultados a Application Layer.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>FinancialRecordRepository</code></td><td>Repository Adapter</td><td>Backend / Entity Framework Core<br><strong>Implementado en el backend</strong></td><td>Implementar el puerto de persistencia definido por Domain Layer.</td><td><code>AppDbContext context</code></td><td><code>FindById(id)</code><br><code>Add(entity)</code><br><code>Update(entity)</code><br><code>Delete(entity)</code></td><td>Implementa IFinancialRecordRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate.</td></tr>
-    <tr><td><code>ModelBuilderExtensions</code></td><td>Persistence Configuration</td><td>Backend / Entity Framework Core<br><strong>Implementado en el backend</strong></td><td>Mapear entidades y value objects del contexto al modelo relacional.</td><td><code>EntityTypeBuilder configuration</code></td><td><code>ApplyConfiguration(modelBuilder)</code></td><td>Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core.</td></tr>
-    <tr><td><code>FinancialRecordApiDataSource</code></td><td>Remote Adapter</td><td>Android / Kotlin<br><strong>Diseño objetivo</strong></td><td>Implementar el acceso remoto del cliente móvil a la API.</td><td><code>httpClient</code><br><code>tokenProvider</code><br><code>serializer</code></td><td><code>Get(criteria)</code><br><code>Create(dto)</code><br><code>Update(dto)</code><br><code>Delete(id)</code></td><td>Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación.</td></tr>
-    <tr><td><code>FinancialRecordDao</code></td><td>Room Adapter</td><td>Android / Room<br><strong>Diseño objetivo</strong></td><td>Implementar persistencia local y observación reactiva en Android.</td><td><code>roomDatabase</code><br><code>entityMapper</code></td><td><code>Observe(criteria)</code><br><code>Upsert(entity)</code><br><code>Delete(id)</code><br><code>Pending()</code></td><td>Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox.</td></tr>
-    <tr><td><code>FinancialRecordRemoteDataSource</code></td><td>Remote Adapter</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Implementar el acceso remoto del cliente móvil a la API.</td><td><code>httpClient</code><br><code>tokenProvider</code><br><code>serializer</code></td><td><code>Get(criteria)</code><br><code>Create(dto)</code><br><code>Update(dto)</code><br><code>Delete(id)</code></td><td>Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación.</td></tr>
-    <tr><td><code>FinancialRecordLocalDataSource</code></td><td>SQLite Adapter</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Implementar persistencia local equivalente en Flutter.</td><td><code>sqliteDatabase</code><br><code>entityMapper</code></td><td><code>watch(criteria)</code><br><code>upsert(entity)</code><br><code>delete(id)</code><br><code>pending()</code></td><td>Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox.</td></tr>
-    <tr><td><code>ProfilesFinancialOwnerAdapter</code></td><td>Context Adapter</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Aislar una dependencia externa detrás de un puerto explícito.</td><td><code>profilesFacade</code></td><td><code>ValidateOwner(ownerId): bool</code></td><td>Implementa el puerto de propietarios y consume Profile Management.</td></tr>
-    <tr><td><code>FinancialOutboxStore</code></td><td>Offline Adapter</td><td>Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Aislar una dependencia externa detrás de un puerto explícito.</td><td><code>database, serializer</code></td><td><code>Enqueue(record)</code><br><code>Pending()</code><br><code>MarkSynced(id)</code></td><td>Implementa el puerto de sincronización financiera sobre Room o SQLite.</td></tr>
-  </tbody>
-</table>
+### Repository Adapter: FinancialRecordRepository
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend / Entity Framework Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
+| **Relaciones** | Implementa IFinancialRecordRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `context` | `AppDbContext` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `FindById(id)` | `No especificado` |
+| `Add(entity)` | `No especificado` |
+| `Update(entity)` | `No especificado` |
+| `Delete(entity)` | `No especificado` |
+
+---
+
+### Persistence Configuration: ModelBuilderExtensions
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend / Entity Framework Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
+| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `configuration` | `EntityTypeBuilder` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `ApplyConfiguration(modelBuilder)` | `No especificado` |
+
+---
+
+### Remote Adapter: FinancialRecordApiDataSource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Kotlin |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
+| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `httpClient` | `No especificado` |
+| `tokenProvider` | `No especificado` |
+| `serializer` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Get(criteria)` | `No especificado` |
+| `Create(dto)` | `No especificado` |
+| `Update(dto)` | `No especificado` |
+| `Delete(id)` | `No especificado` |
+
+---
+
+### Room Adapter: FinancialRecordDao
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Room |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar persistencia local y observación reactiva en Android. |
+| **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `roomDatabase` | `No especificado` |
+| `entityMapper` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Observe(criteria)` | `No especificado` |
+| `Upsert(entity)` | `No especificado` |
+| `Delete(id)` | `No especificado` |
+| `Pending()` | `No especificado` |
+
+---
+
+### Remote Adapter: FinancialRecordRemoteDataSource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
+| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `httpClient` | `No especificado` |
+| `tokenProvider` | `No especificado` |
+| `serializer` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Get(criteria)` | `No especificado` |
+| `Create(dto)` | `No especificado` |
+| `Update(dto)` | `No especificado` |
+| `Delete(id)` | `No especificado` |
+
+---
+
+### SQLite Adapter: FinancialRecordLocalDataSource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar persistencia local equivalente en Flutter. |
+| **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `sqliteDatabase` | `No especificado` |
+| `entityMapper` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `watch(criteria)` | `No especificado` |
+| `upsert(entity)` | `No especificado` |
+| `delete(id)` | `No especificado` |
+| `pending()` | `No especificado` |
+
+---
+
+### Context Adapter: ProfilesFinancialOwnerAdapter
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
+| **Relaciones** | Implementa el puerto de propietarios y consume Profile Management. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `profilesFacade` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `ValidateOwner(ownerId)` | `bool` |
+
+---
+
+### Offline Adapter: FinancialOutboxStore
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
+| **Relaciones** | Implementa el puerto de sincronización financiera sobre Room o SQLite. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `serializer` | `database,` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Enqueue(record)` | `No especificado` |
+| `Pending()` | `No especificado` |
+| `MarkSynced(id)` | `No especificado` |
+
+---
 
 <a id="toc-2-6-7-5-bounded-context-software-architecture-component-level-diagrams"></a>
 

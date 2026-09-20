@@ -12,25 +12,260 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 
 **Responsabilidad estable.** Esta capa documenta el modelo que representa el núcleo de **Subscription Management**. Las reglas autoritativas se ejecutan en la API; Android y Flutter mantienen modelos equivalentes para presentación, validación inmediata y trabajo offline. La columna de estado distingue el código heredado de la arquitectura objetivo.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>SubscriptionPlan</code></td><td>Entity</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado en el backend</strong></td><td>Definir condiciones y límites de un plan comercial.</td><td><code>id: int</code><br><code>name: string</code><br><code>price: Money</code><br><code>providerPriceId: string</code><br><code>maxAnimals: int</code><br><code>isActive: bool</code></td><td><code>Deactivate(): void</code><br><code>ChangePrice(price: Money): void</code></td><td>SubscriptionPlan compone Money</td></tr>
-    <tr><td><code>Subscription</code></td><td>Aggregate Root</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado en el backend</strong></td><td>Controlar vigencia y estado de la suscripción de un usuario.</td><td><code>id: int</code><br><code>userId: int</code><br><code>planId: int</code><br><code>status: SubscriptionStatus</code><br><code>startedAt: Date</code><br><code>endsAt: Date?</code></td><td><code>Activate(start: Date, end: Date?): void</code><br><code>Cancel(end: Date): void</code><br><code>IsActive(on: Date): bool</code></td><td>Subscription compone Payment; Subscription se relaciona con SubscriptionStatus; ISubscriptionRepository depende de Subscription</td></tr>
-    <tr><td><code>Payment</code></td><td>Entity</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado en el backend</strong></td><td>Registrar el resultado de un pago.</td><td><code>id: int</code><br><code>subscriptionId: int</code><br><code>userId: int</code><br><code>amount: Money</code><br><code>providerPaymentId: string</code><br><code>status: PaymentStatus</code><br><code>paidAt: DateTime</code></td><td><code>Confirm(providerId: string, paidAt: DateTime): void</code><br><code>Reject(): void</code></td><td>Subscription compone Payment; Payment se relaciona con PaymentStatus; Payment compone Money</td></tr>
-    <tr><td><code>Money</code></td><td>Value Object</td><td>Backend, Android y Flutter (modelo canónico)<br><strong>Diseño objetivo</strong></td><td>Representar un importe junto con su moneda.</td><td><code>amount: decimal</code><br><code>currency: string</code></td><td><code>IsPositive(): bool</code></td><td>Payment compone Money; SubscriptionPlan compone Money</td></tr>
-    <tr><td><code>SubscriptionStatus</code></td><td>Enumeration</td><td>Backend, Android y Flutter (modelo canónico)<br><strong>Diseño objetivo</strong></td><td>Definir los valores válidos de SubscriptionStatus.</td><td><code>Pending</code><br><code>Active</code><br><code>Cancelled</code><br><code>Expired</code></td><td>—</td><td>Subscription se relaciona con SubscriptionStatus</td></tr>
-    <tr><td><code>PaymentStatus</code></td><td>Enumeration</td><td>Backend, Android y Flutter (modelo canónico)<br><strong>Diseño objetivo</strong></td><td>Definir los valores válidos de PaymentStatus.</td><td><code>Pending</code><br><code>Paid</code><br><code>Failed</code></td><td>—</td><td>Payment se relaciona con PaymentStatus</td></tr>
-    <tr><td><code>ISubscriptionRepository</code></td><td>Repository Interface</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado en el backend</strong></td><td>Abstraer la persistencia de Subscription.</td><td>—</td><td><code>FindById(id: int): Subscription?</code><br><code>FindActiveByUser(userId: int): Subscription?</code><br><code>Add(subscription: Subscription): void</code><br><code>Update(subscription: Subscription): void</code></td><td>ISubscriptionRepository depende de Subscription</td></tr>
-    <tr><td><code>ISubscriptionPlanRepository</code></td><td>Repository Interface</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado en el backend</strong></td><td>Abstraer la persistencia de planes de suscripción.</td><td>—</td><td><code>FindByIdAsync(id)</code><br><code>ListAsync()</code><br><code>AddAsync(plan)</code><br><code>Update(plan)</code></td><td>Persiste SubscriptionPlan y es implementado por SubscriptionPlanRepository.</td></tr>
-    <tr><td><code>IPaymentRepository</code></td><td>Repository Interface</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado en el backend</strong></td><td>Abstraer la persistencia y consulta de pagos.</td><td>—</td><td><code>FindByUserIdAsync(userId)</code><br><code>FindByProviderPaymentIdAsync(providerPaymentId)</code><br><code>AddAsync(payment)</code></td><td>Persiste Payment y es implementado por PaymentRepository.</td></tr>
-    <tr><td><code>PaymentGateway</code></td><td>Domain Port</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Abstraer el proveedor externo de cobros.</td><td>—</td><td><code>CreateCheckout(subscription, plan)</code><br><code>ConfirmPayment(reference)</code></td><td>Es implementado por StripePaymentGateway en Infrastructure Layer.</td></tr>
-  </tbody>
-</table>
+### Entity: SubscriptionPlan
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir condiciones y límites de un plan comercial. |
+| **Relaciones** | SubscriptionPlan compone Money |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `id` | `int` |
+| `name` | `string` |
+| `price` | `Money` |
+| `providerPriceId` | `string` |
+| `maxAnimals` | `int` |
+| `isActive` | `bool` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Deactivate()` | `void` |
+| `ChangePrice(price: Money)` | `void` |
+
+---
+
+### Aggregate Root: Subscription
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Controlar vigencia y estado de la suscripción de un usuario. |
+| **Relaciones** | Subscription compone Payment; Subscription se relaciona con SubscriptionStatus; ISubscriptionRepository depende de Subscription |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `id` | `int` |
+| `userId` | `int` |
+| `planId` | `int` |
+| `status` | `SubscriptionStatus` |
+| `startedAt` | `Date` |
+| `endsAt` | `Date?` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Activate(start: Date, end: Date?)` | `void` |
+| `Cancel(end: Date)` | `void` |
+| `IsActive(on: Date)` | `bool` |
+
+---
+
+### Entity: Payment
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Registrar el resultado de un pago. |
+| **Relaciones** | Subscription compone Payment; Payment se relaciona con PaymentStatus; Payment compone Money |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `id` | `int` |
+| `subscriptionId` | `int` |
+| `userId` | `int` |
+| `amount` | `Money` |
+| `providerPaymentId` | `string` |
+| `status` | `PaymentStatus` |
+| `paidAt` | `DateTime` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Confirm(providerId: string, paidAt: DateTime)` | `void` |
+| `Reject()` | `void` |
+
+---
+
+### Value Object: Money
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend, Android y Flutter (modelo canónico) |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Representar un importe junto con su moneda. |
+| **Relaciones** | Payment compone Money; SubscriptionPlan compone Money |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `amount` | `decimal` |
+| `currency` | `string` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `IsPositive()` | `bool` |
+
+---
+
+### Enumeration: SubscriptionStatus
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend, Android y Flutter (modelo canónico) |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Definir los valores válidos de SubscriptionStatus. |
+| **Relaciones** | Subscription se relaciona con SubscriptionStatus |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Pending` | `No especificado` |
+| `Active` | `No especificado` |
+| `Cancelled` | `No especificado` |
+| `Expired` | `No especificado` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Enumeration: PaymentStatus
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend, Android y Flutter (modelo canónico) |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Definir los valores válidos de PaymentStatus. |
+| **Relaciones** | Payment se relaciona con PaymentStatus |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Pending` | `No especificado` |
+| `Paid` | `No especificado` |
+| `Failed` | `No especificado` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Repository Interface: ISubscriptionRepository
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Abstraer la persistencia de Subscription. |
+| **Relaciones** | ISubscriptionRepository depende de Subscription |
+
+**Atributos o dependencias**
+
+No aplica.
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `FindById(id: int)` | `Subscription?` |
+| `FindActiveByUser(userId: int)` | `Subscription?` |
+| `Add(subscription: Subscription)` | `void` |
+| `Update(subscription: Subscription)` | `void` |
+
+---
+
+### Repository Interface: ISubscriptionPlanRepository
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Abstraer la persistencia de planes de suscripción. |
+| **Relaciones** | Persiste SubscriptionPlan y es implementado por SubscriptionPlanRepository. |
+
+**Atributos o dependencias**
+
+No aplica.
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `FindByIdAsync(id)` | `No especificado` |
+| `ListAsync()` | `No especificado` |
+| `AddAsync(plan)` | `No especificado` |
+| `Update(plan)` | `No especificado` |
+
+---
+
+### Repository Interface: IPaymentRepository
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Abstraer la persistencia y consulta de pagos. |
+| **Relaciones** | Persiste Payment y es implementado por PaymentRepository. |
+
+**Atributos o dependencias**
+
+No aplica.
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `FindByUserIdAsync(userId)` | `No especificado` |
+| `FindByProviderPaymentIdAsync(providerPaymentId)` | `No especificado` |
+| `AddAsync(payment)` | `No especificado` |
+
+---
+
+### Domain Port: PaymentGateway
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Abstraer el proveedor externo de cobros. |
+| **Relaciones** | Es implementado por StripePaymentGateway en Infrastructure Layer. |
+
+**Atributos o dependencias**
+
+No aplica.
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `CreateCheckout(subscription, plan)` | `No especificado` |
+| `ConfirmPayment(reference)` | `No especificado` |
+
+---
 
 <a id="toc-2-6-8-2-interface-layer"></a>
 
@@ -38,25 +273,296 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 
 **Responsabilidad estable.** Esta capa recibe las acciones relacionadas con **consulta de planes, contratación, pago y actualización de suscripciones** y las traduce a casos de uso. Los controllers y resources corresponden a la API; las pantallas y controladores de estado representan la presentación objetivo en Android y Flutter. Ninguna de estas clases implementa reglas de negocio.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>SubscriptionPlansController</code></td><td>REST Controller</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Publicar por HTTP las capacidades de Subscription Management.</td><td><code>ISubscriptionPlanCommandService commandService</code><br><code>ISubscriptionPlanQueryService queryService</code></td><td><code>GetAll(CancellationToken cancellationToken)</code><br><code>GetById(int id, CancellationToken cancellationToken)</code><br><code>Create(CreateSubscriptionPlanResource resource, CancellationToken cancellationToken)</code><br><code>Update(int id, CreateSubscriptionPlanResource resource, CancellationToken cancellationToken)</code><br><code>Delete(int id, CancellationToken cancellationToken)</code></td><td>Recibe resources, invoca servicios de aplicación y devuelve resources HTTP.</td></tr>
-    <tr><td><code>SubscriptionsController</code></td><td>REST Controller</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Publicar por HTTP las capacidades de Subscription Management.</td><td><code>ISubscriptionCommandService commandService</code><br><code>ISubscriptionQueryService queryService</code><br><code>ISubscriptionPlanQueryService planQueryService</code><br><code>IPaymentCommandService paymentCommandService</code><br><code>IPaymentQueryService paymentQueryService</code><br><code>IConfiguration configuration</code></td><td><code>GetAll(CancellationToken cancellationToken)</code><br><code>GetById(int id, CancellationToken cancellationToken)</code><br><code>Create(CreateSubscriptionResource resource, CancellationToken cancellationToken)</code><br><code>GetActiveByUser(int userId, CancellationToken cancellationToken)</code><br><code>GetPaymentsByUser(int userId, CancellationToken cancellationToken)</code><br><code>MockCheckout(MockCheckoutResource resource, CancellationToken cancellationToken)</code><br><code>CreateStripeCheckout(StripeCheckoutResource resource, CancellationToken cancellationToken)</code><br><code>ConfirmStripeCheckout(string sessionId, CancellationToken cancellationToken)</code><br><code>Update(int id, CreateSubscriptionResource resource, CancellationToken cancellationToken)</code><br><code>Delete(int id, CancellationToken cancellationToken)</code></td><td>Recibe resources, invoca servicios de aplicación y devuelve resources HTTP.</td></tr>
-    <tr><td><code>SubscriptionPlanResource</code></td><td>Resource/Assembler</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Definir un contrato estable de entrada o salida para la API REST.</td><td><code>int Id</code><br><code>string Name</code><br><code>decimal Price</code><br><code>string StripePriceId</code><br><code>int MaxAnimals</code><br><code>bool IsActive</code></td><td><code>Create(...)</code><br><code>Deconstruct(...)</code></td><td>Es construido o traducido por assemblers y consumido por el controller y los clientes móviles.</td></tr>
-    <tr><td><code>SubscriptionResource</code></td><td>Resource/Assembler</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Definir un contrato estable de entrada o salida para la API REST.</td><td><code>int Id</code><br><code>int UserId</code><br><code>int PlanId</code><br><code>string StripeCustomerId</code><br><code>string StripeSubscriptionId</code><br><code>string Status</code><br><code>DateOnly StartedAt</code><br><code>DateOnly? EndsAt</code></td><td><code>Create(...)</code><br><code>Deconstruct(...)</code></td><td>Es construido o traducido por assemblers y consumido por el controller y los clientes móviles.</td></tr>
-    <tr><td><code>PaymentResource</code></td><td>Resource/Assembler</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Definir un contrato estable de entrada o salida para la API REST.</td><td><code>int Id</code><br><code>int UserId</code><br><code>int SubscriptionId</code><br><code>decimal Amount</code><br><code>string Currency</code><br><code>string Provider</code><br><code>string ProviderPaymentId</code><br><code>string Status</code><br><code>DateTime PaidAt</code></td><td><code>Create(...)</code><br><code>Deconstruct(...)</code></td><td>Es construido o traducido por assemblers y consumido por el controller y los clientes móviles.</td></tr>
-    <tr><td><code>StripeCheckoutResource</code></td><td>Resource/Assembler</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Definir un contrato estable de entrada o salida para la API REST.</td><td><code>int PlanId</code></td><td><code>Create(...)</code><br><code>Deconstruct(...)</code></td><td>Es construido o traducido por assemblers y consumido por el controller y los clientes móviles.</td></tr>
-    <tr><td><code>SubscriptionScreen</code></td><td>Composable</td><td>Android / Jetpack Compose<br><strong>Diseño objetivo</strong></td><td>Presentar consulta de planes, contratación, pago y actualización de suscripciones en Android.</td><td><code>uiState</code><br><code>onAction</code><br><code>navigation</code></td><td><code>Render()</code><br><code>Submit()</code><br><code>Retry()</code></td><td>Observa SubscriptionViewModel y emite acciones de interfaz.</td></tr>
-    <tr><td><code>SubscriptionViewModel</code></td><td>Presentation Model</td><td>Android / Kotlin<br><strong>Diseño objetivo</strong></td><td>Mantener el estado observable y traducir acciones de Android a casos de uso.</td><td><code>state</code><br><code>observeUseCase</code><br><code>syncUseCase</code></td><td><code>Load()</code><br><code>Submit(action)</code><br><code>RetrySync()</code></td><td>Invoca casos de uso de Application Layer y publica un UI State inmutable.</td></tr>
-    <tr><td><code>SubscriptionPage</code></td><td>Widget</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Presentar consulta de planes, contratación, pago y actualización de suscripciones en Flutter.</td><td><code>state</code><br><code>onAction</code><br><code>router</code></td><td><code>build(context)</code><br><code>submit()</code><br><code>retry()</code></td><td>Observa SubscriptionController y emite intenciones del usuario.</td></tr>
-    <tr><td><code>SubscriptionController</code></td><td>State Controller</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Mantener el estado de presentación de Flutter y coordinar casos de uso.</td><td><code>state</code><br><code>observeUseCase</code><br><code>syncUseCase</code></td><td><code>load()</code><br><code>submit(action)</code><br><code>retrySync()</code></td><td>Invoca Application Layer y publica estados de carga, éxito y error.</td></tr>
-  </tbody>
-</table>
+### REST Controller: SubscriptionPlansController
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Publicar por HTTP las capacidades de Subscription Management. |
+| **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `commandService` | `ISubscriptionPlanCommandService` |
+| `queryService` | `ISubscriptionPlanQueryService` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `GetAll(CancellationToken cancellationToken)` | `No especificado` |
+| `GetById(int id, CancellationToken cancellationToken)` | `No especificado` |
+| `Create(CreateSubscriptionPlanResource resource, CancellationToken cancellationToken)` | `No especificado` |
+| `Update(int id, CreateSubscriptionPlanResource resource, CancellationToken cancellationToken)` | `No especificado` |
+| `Delete(int id, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### REST Controller: SubscriptionsController
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Publicar por HTTP las capacidades de Subscription Management. |
+| **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `commandService` | `ISubscriptionCommandService` |
+| `queryService` | `ISubscriptionQueryService` |
+| `planQueryService` | `ISubscriptionPlanQueryService` |
+| `paymentCommandService` | `IPaymentCommandService` |
+| `paymentQueryService` | `IPaymentQueryService` |
+| `configuration` | `IConfiguration` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `GetAll(CancellationToken cancellationToken)` | `No especificado` |
+| `GetById(int id, CancellationToken cancellationToken)` | `No especificado` |
+| `Create(CreateSubscriptionResource resource, CancellationToken cancellationToken)` | `No especificado` |
+| `GetActiveByUser(int userId, CancellationToken cancellationToken)` | `No especificado` |
+| `GetPaymentsByUser(int userId, CancellationToken cancellationToken)` | `No especificado` |
+| `MockCheckout(MockCheckoutResource resource, CancellationToken cancellationToken)` | `No especificado` |
+| `CreateStripeCheckout(StripeCheckoutResource resource, CancellationToken cancellationToken)` | `No especificado` |
+| `ConfirmStripeCheckout(string sessionId, CancellationToken cancellationToken)` | `No especificado` |
+| `Update(int id, CreateSubscriptionResource resource, CancellationToken cancellationToken)` | `No especificado` |
+| `Delete(int id, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Resource/Assembler: SubscriptionPlanResource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
+| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+| `Name` | `string` |
+| `Price` | `decimal` |
+| `StripePriceId` | `string` |
+| `MaxAnimals` | `int` |
+| `IsActive` | `bool` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Create(...)` | `No especificado` |
+| `Deconstruct(...)` | `No especificado` |
+
+---
+
+### Resource/Assembler: SubscriptionResource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
+| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+| `UserId` | `int` |
+| `PlanId` | `int` |
+| `StripeCustomerId` | `string` |
+| `StripeSubscriptionId` | `string` |
+| `Status` | `string` |
+| `StartedAt` | `DateOnly` |
+| `EndsAt` | `DateOnly?` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Create(...)` | `No especificado` |
+| `Deconstruct(...)` | `No especificado` |
+
+---
+
+### Resource/Assembler: PaymentResource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
+| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+| `UserId` | `int` |
+| `SubscriptionId` | `int` |
+| `Amount` | `decimal` |
+| `Currency` | `string` |
+| `Provider` | `string` |
+| `ProviderPaymentId` | `string` |
+| `Status` | `string` |
+| `PaidAt` | `DateTime` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Create(...)` | `No especificado` |
+| `Deconstruct(...)` | `No especificado` |
+
+---
+
+### Resource/Assembler: StripeCheckoutResource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
+| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `PlanId` | `int` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Create(...)` | `No especificado` |
+| `Deconstruct(...)` | `No especificado` |
+
+---
+
+### Composable: SubscriptionScreen
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Jetpack Compose |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Presentar consulta de planes, contratación, pago y actualización de suscripciones en Android. |
+| **Relaciones** | Observa SubscriptionViewModel y emite acciones de interfaz. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `uiState` | `No especificado` |
+| `onAction` | `No especificado` |
+| `navigation` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Render()` | `No especificado` |
+| `Submit()` | `No especificado` |
+| `Retry()` | `No especificado` |
+
+---
+
+### Presentation Model: SubscriptionViewModel
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Kotlin |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
+| **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `state` | `No especificado` |
+| `observeUseCase` | `No especificado` |
+| `syncUseCase` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Load()` | `No especificado` |
+| `Submit(action)` | `No especificado` |
+| `RetrySync()` | `No especificado` |
+
+---
+
+### Widget: SubscriptionPage
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Presentar consulta de planes, contratación, pago y actualización de suscripciones en Flutter. |
+| **Relaciones** | Observa SubscriptionController y emite intenciones del usuario. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `state` | `No especificado` |
+| `onAction` | `No especificado` |
+| `router` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `build(context)` | `No especificado` |
+| `submit()` | `No especificado` |
+| `retry()` | `No especificado` |
+
+---
+
+### State Controller: SubscriptionController
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
+| **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `state` | `No especificado` |
+| `observeUseCase` | `No especificado` |
+| `syncUseCase` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `load()` | `No especificado` |
+| `submit(action)` | `No especificado` |
+| `retrySync()` | `No especificado` |
+
+---
 
 <a id="toc-2-6-8-3-application-layer"></a>
 
@@ -64,28 +570,329 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 
 **Responsabilidad estable.** Esta capa coordina las capacidades de **consulta de planes, contratación, pago y actualización de suscripciones**. Los commands y queries expresan intenciones; los handlers cargan aggregates, aplican reglas, persisten cambios y reaccionan a eventos. Los casos de uso móviles coordinan lectura local, actualización remota y sincronización idempotente.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>SubscriptionPlanCommandService</code></td><td>Application Service</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio.</td><td><code>ISubscriptionPlanRepository repository</code><br><code>IUnitOfWork unitOfWork</code></td><td><code>Handle(CreateSubscriptionPlanCommand command, CancellationToken cancellationToken)</code><br><code>Handle(UpdateSubscriptionPlanCommand command, CancellationToken cancellationToken)</code><br><code>Handle(DeleteSubscriptionPlanCommand command, CancellationToken cancellationToken)</code></td><td>Invoca agregados y repositories; confirma la transacción mediante Unit of Work.</td></tr>
-    <tr><td><code>SubscriptionCommandService</code></td><td>Application Service</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio.</td><td><code>ISubscriptionRepository repository</code><br><code>IUnitOfWork unitOfWork</code></td><td><code>Handle(CreateSubscriptionCommand command, CancellationToken cancellationToken)</code><br><code>Handle(UpdateSubscriptionCommand command, CancellationToken cancellationToken)</code><br><code>Handle(DeleteSubscriptionCommand command, CancellationToken cancellationToken)</code></td><td>Invoca agregados y repositories; confirma la transacción mediante Unit of Work.</td></tr>
-    <tr><td><code>PaymentCommandService</code></td><td>Application Service</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio.</td><td><code>IPaymentRepository repository</code><br><code>IUnitOfWork unitOfWork</code></td><td><code>Handle(CreatePaymentCommand command, CancellationToken cancellationToken)</code></td><td>Invoca agregados y repositories; confirma la transacción mediante Unit of Work.</td></tr>
-    <tr><td><code>SubscriptionQueryService</code></td><td>Application Service</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio.</td><td><code>ISubscriptionRepository repository</code></td><td><code>Handle(GetSubscriptionByIdQuery query, CancellationToken cancellationToken)</code><br><code>Handle(GetAllSubscriptionsQuery query, CancellationToken cancellationToken)</code></td><td>Invoca agregados y repositories; confirma la transacción mediante Unit of Work.</td></tr>
-    <tr><td><code>CreateSubscriptionCommand</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>int UserId</code><br><code>int PlanId</code><br><code>string StripeCustomerId</code><br><code>string StripeSubscriptionId</code><br><code>string Status</code><br><code>DateOnly StartedAt</code><br><code>DateOnly? EndsAt</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>CreatePaymentCommand</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>int UserId</code><br><code>int SubscriptionId</code><br><code>decimal Amount</code><br><code>string Currency</code><br><code>string Provider</code><br><code>string ProviderPaymentId</code><br><code>string Status</code><br><code>DateTime PaidAt</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>GetSubscriptionByIdQuery</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>int Id</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>GetAllSubscriptionPlansQuery</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>filters: optional</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>ObserveSubscriptionUseCase</code></td><td>Use Case</td><td>Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Entregar primero datos locales y actualizar la consulta cuando exista conectividad.</td><td><code>localRepository</code><br><code>remoteRepository</code><br><code>connectivityMonitor</code></td><td><code>Execute(criteria): Stream&lt;Result&gt;</code></td><td>Es invocado por ViewModel/Controller y coordina repositorios móviles.</td></tr>
-    <tr><td><code>SyncSubscriptionUseCase</code></td><td>Use Case</td><td>Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Procesar operaciones móviles pendientes de manera idempotente.</td><td><code>outboxRepository</code><br><code>remoteRepository</code><br><code>conflictResolver</code></td><td><code>Execute(): SyncResult</code></td><td>Lee el outbox local, consume la API y actualiza el estado de sincronización.</td></tr>
-    <tr><td><code>CreateSubscriptionCommandHandler</code></td><td>Command Handler</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción.</td><td><code>repository</code><br><code>unitOfWork</code><br><code>domainPolicy</code></td><td><code>Handle(command): Result</code></td><td>Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event.</td></tr>
-    <tr><td><code>CreatePaymentCommandHandler</code></td><td>Command Handler</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción.</td><td><code>repository</code><br><code>unitOfWork</code><br><code>domainPolicy</code></td><td><code>Handle(command): Result</code></td><td>Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event.</td></tr>
-    <tr><td><code>PaymentConfirmedEventHandler</code></td><td>Event Handler</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Reaccionar al evento confirmado y actualizar proyecciones o integraciones.</td><td><code>projectionRepository</code><br><code>notificationPort</code><br><code>unitOfWork</code></td><td><code>Handle(domainEvent): Task</code></td><td>Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado.</td></tr>
-  </tbody>
-</table>
+### Application Service: SubscriptionPlanCommandService
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio. |
+| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `ISubscriptionPlanRepository` |
+| `unitOfWork` | `IUnitOfWork` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(CreateSubscriptionPlanCommand command, CancellationToken cancellationToken)` | `No especificado` |
+| `Handle(UpdateSubscriptionPlanCommand command, CancellationToken cancellationToken)` | `No especificado` |
+| `Handle(DeleteSubscriptionPlanCommand command, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Application Service: SubscriptionCommandService
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio. |
+| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `ISubscriptionRepository` |
+| `unitOfWork` | `IUnitOfWork` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(CreateSubscriptionCommand command, CancellationToken cancellationToken)` | `No especificado` |
+| `Handle(UpdateSubscriptionCommand command, CancellationToken cancellationToken)` | `No especificado` |
+| `Handle(DeleteSubscriptionCommand command, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Application Service: PaymentCommandService
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio. |
+| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `IPaymentRepository` |
+| `unitOfWork` | `IUnitOfWork` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(CreatePaymentCommand command, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Application Service: SubscriptionQueryService
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio. |
+| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `ISubscriptionRepository` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(GetSubscriptionByIdQuery query, CancellationToken cancellationToken)` | `No especificado` |
+| `Handle(GetAllSubscriptionsQuery query, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Command/Query: CreateSubscriptionCommand
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `UserId` | `int` |
+| `PlanId` | `int` |
+| `StripeCustomerId` | `string` |
+| `StripeSubscriptionId` | `string` |
+| `Status` | `string` |
+| `StartedAt` | `DateOnly` |
+| `EndsAt` | `DateOnly?` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Command/Query: CreatePaymentCommand
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `UserId` | `int` |
+| `SubscriptionId` | `int` |
+| `Amount` | `decimal` |
+| `Currency` | `string` |
+| `Provider` | `string` |
+| `ProviderPaymentId` | `string` |
+| `Status` | `string` |
+| `PaidAt` | `DateTime` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Command/Query: GetSubscriptionByIdQuery
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Command/Query: GetAllSubscriptionPlansQuery
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `filters` | `optional` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Use Case: ObserveSubscriptionUseCase
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
+| **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `localRepository` | `No especificado` |
+| `remoteRepository` | `No especificado` |
+| `connectivityMonitor` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Execute(criteria)` | `Stream<Result>` |
+
+---
+
+### Use Case: SyncSubscriptionUseCase
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
+| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `outboxRepository` | `No especificado` |
+| `remoteRepository` | `No especificado` |
+| `conflictResolver` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Execute()` | `SyncResult` |
+
+---
+
+### Command Handler: CreateSubscriptionCommandHandler
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
+| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `No especificado` |
+| `unitOfWork` | `No especificado` |
+| `domainPolicy` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(command)` | `Result` |
+
+---
+
+### Command Handler: CreatePaymentCommandHandler
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
+| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `No especificado` |
+| `unitOfWork` | `No especificado` |
+| `domainPolicy` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(command)` | `Result` |
+
+---
+
+### Event Handler: PaymentConfirmedEventHandler
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
+| **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `projectionRepository` | `No especificado` |
+| `notificationPort` | `No especificado` |
+| `unitOfWork` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(domainEvent)` | `Task` |
+
+---
 
 <a id="toc-2-6-8-4-infrastructure-layer"></a>
 
@@ -93,24 +900,240 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 
 **Responsabilidad estable.** Esta capa implementa los puertos definidos hacia el interior de **Subscription Management** y concentra acceso a base de datos, red, almacenamiento local e integraciones externas. Las clases de infraestructura traducen errores y contratos técnicos antes de devolver resultados a Application Layer.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>SubscriptionPlanRepository / SubscriptionRepository / PaymentRepository</code></td><td>Repository Adapter</td><td>Backend / Entity Framework Core<br><strong>Implementado en el backend</strong></td><td>Implementar el puerto de persistencia definido por Domain Layer.</td><td><code>SubscriptionPlanRepository: AppDbContext context</code><br><code>SubscriptionRepository: AppDbContext context</code><br><code>PaymentRepository: AppDbContext context</code></td><td><code>PaymentRepository.FindByUserIdAsync(int userId, CancellationToken cancellationToken)</code><br><code>PaymentRepository.FindByProviderPaymentIdAsync(string providerPaymentId, CancellationToken cancellationToken)</code></td><td>Implementa ISubscriptionPlanRepository / ISubscriptionRepository / IPaymentRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate.</td></tr>
-    <tr><td><code>ModelBuilderExtensions</code></td><td>Persistence Configuration</td><td>Backend / Entity Framework Core<br><strong>Implementado en el backend</strong></td><td>Mapear entidades y value objects del contexto al modelo relacional.</td><td><code>EntityTypeBuilder configuration</code></td><td><code>ApplyConfiguration(modelBuilder)</code></td><td>Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core.</td></tr>
-    <tr><td><code>SubscriptionApiDataSource</code></td><td>Remote Adapter</td><td>Android / Kotlin<br><strong>Diseño objetivo</strong></td><td>Implementar el acceso remoto del cliente móvil a la API.</td><td><code>httpClient</code><br><code>tokenProvider</code><br><code>serializer</code></td><td><code>Get(criteria)</code><br><code>Create(dto)</code><br><code>Update(dto)</code><br><code>Delete(id)</code></td><td>Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación.</td></tr>
-    <tr><td><code>SubscriptionDao</code></td><td>Room Adapter</td><td>Android / Room<br><strong>Diseño objetivo</strong></td><td>Implementar persistencia local y observación reactiva en Android.</td><td><code>roomDatabase</code><br><code>entityMapper</code></td><td><code>Observe(criteria)</code><br><code>Upsert(entity)</code><br><code>Delete(id)</code><br><code>Pending()</code></td><td>Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox.</td></tr>
-    <tr><td><code>SubscriptionRemoteDataSource</code></td><td>Remote Adapter</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Implementar el acceso remoto del cliente móvil a la API.</td><td><code>httpClient</code><br><code>tokenProvider</code><br><code>serializer</code></td><td><code>Get(criteria)</code><br><code>Create(dto)</code><br><code>Update(dto)</code><br><code>Delete(id)</code></td><td>Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación.</td></tr>
-    <tr><td><code>SubscriptionLocalDataSource</code></td><td>SQLite Adapter</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Implementar persistencia local equivalente en Flutter.</td><td><code>sqliteDatabase</code><br><code>entityMapper</code></td><td><code>watch(criteria)</code><br><code>upsert(entity)</code><br><code>delete(id)</code><br><code>pending()</code></td><td>Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox.</td></tr>
-    <tr><td><code>IamSubscriberAdapter</code></td><td>Context Adapter</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Aislar una dependencia externa detrás de un puerto explícito.</td><td><code>iamFacade</code></td><td><code>Exists(userId): bool</code><br><code>GetEmail(userId): string</code></td><td>Implementa el puerto de suscriptor y consume IAM.</td></tr>
-    <tr><td><code>StripePaymentGateway</code></td><td>Anti-Corruption Layer</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Aislar una dependencia externa detrás de un puerto explícito.</td><td><code>stripeClient, webhookSecret</code></td><td><code>CreateCheckout(command)</code><br><code>ConfirmWebhook(payload)</code><br><code>Refund(paymentId)</code></td><td>Implementa PaymentGateway y traduce Stripe al lenguaje del dominio.</td></tr>
-    <tr><td><code>SubscriptionCacheStore</code></td><td>Local Cache Adapter</td><td>Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Aislar una dependencia externa detrás de un puerto explícito.</td><td><code>subscriptionDao</code></td><td><code>ReadActive(userId)</code><br><code>Save(subscription)</code><br><code>Invalidate()</code></td><td>Implementa el puerto local de consulta mediante Room o SQLite.</td></tr>
-  </tbody>
-</table>
+### Repository Adapter: SubscriptionPlanRepository / SubscriptionRepository / PaymentRepository
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend / Entity Framework Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
+| **Relaciones** | Implementa ISubscriptionPlanRepository / ISubscriptionRepository / IPaymentRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `SubscriptionPlanRepository` | `AppDbContext context` |
+| `SubscriptionRepository` | `AppDbContext context` |
+| `PaymentRepository` | `AppDbContext context` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `PaymentRepository.FindByUserIdAsync(int userId, CancellationToken cancellationToken)` | `No especificado` |
+| `PaymentRepository.FindByProviderPaymentIdAsync(string providerPaymentId, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Persistence Configuration: ModelBuilderExtensions
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend / Entity Framework Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
+| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `configuration` | `EntityTypeBuilder` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `ApplyConfiguration(modelBuilder)` | `No especificado` |
+
+---
+
+### Remote Adapter: SubscriptionApiDataSource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Kotlin |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
+| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `httpClient` | `No especificado` |
+| `tokenProvider` | `No especificado` |
+| `serializer` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Get(criteria)` | `No especificado` |
+| `Create(dto)` | `No especificado` |
+| `Update(dto)` | `No especificado` |
+| `Delete(id)` | `No especificado` |
+
+---
+
+### Room Adapter: SubscriptionDao
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Room |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar persistencia local y observación reactiva en Android. |
+| **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `roomDatabase` | `No especificado` |
+| `entityMapper` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Observe(criteria)` | `No especificado` |
+| `Upsert(entity)` | `No especificado` |
+| `Delete(id)` | `No especificado` |
+| `Pending()` | `No especificado` |
+
+---
+
+### Remote Adapter: SubscriptionRemoteDataSource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
+| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `httpClient` | `No especificado` |
+| `tokenProvider` | `No especificado` |
+| `serializer` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Get(criteria)` | `No especificado` |
+| `Create(dto)` | `No especificado` |
+| `Update(dto)` | `No especificado` |
+| `Delete(id)` | `No especificado` |
+
+---
+
+### SQLite Adapter: SubscriptionLocalDataSource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar persistencia local equivalente en Flutter. |
+| **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `sqliteDatabase` | `No especificado` |
+| `entityMapper` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `watch(criteria)` | `No especificado` |
+| `upsert(entity)` | `No especificado` |
+| `delete(id)` | `No especificado` |
+| `pending()` | `No especificado` |
+
+---
+
+### Context Adapter: IamSubscriberAdapter
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
+| **Relaciones** | Implementa el puerto de suscriptor y consume IAM. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `iamFacade` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Exists(userId)` | `bool` |
+| `GetEmail(userId)` | `string` |
+
+---
+
+### Anti-Corruption Layer: StripePaymentGateway
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
+| **Relaciones** | Implementa PaymentGateway y traduce Stripe al lenguaje del dominio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `webhookSecret` | `stripeClient,` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `CreateCheckout(command)` | `No especificado` |
+| `ConfirmWebhook(payload)` | `No especificado` |
+| `Refund(paymentId)` | `No especificado` |
+
+---
+
+### Local Cache Adapter: SubscriptionCacheStore
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
+| **Relaciones** | Implementa el puerto local de consulta mediante Room o SQLite. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `subscriptionDao` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `ReadActive(userId)` | `No especificado` |
+| `Save(subscription)` | `No especificado` |
+| `Invalidate()` | `No especificado` |
+
+---
 
 <a id="toc-2-6-8-5-bounded-context-software-architecture-component-level-diagrams"></a>
 

@@ -12,21 +12,159 @@ La base implementada se encuentra en el módulo `Iam` de la API ASP.NET Core. El
 
 **Responsabilidad estable.** Esta capa documenta el modelo que representa el núcleo de **Identity and Access Management**. Las reglas autoritativas se ejecutan en la API; Android y Flutter mantienen modelos equivalentes para presentación, validación inmediata y trabajo offline. La columna de estado distingue el código heredado de la arquitectura objetivo.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>User</code></td><td>Aggregate Root</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado en el backend</strong></td><td>Mantener identidad, credenciales protegidas y rol del usuario.</td><td><code>id: int</code><br><code>username: string</code><br><code>passwordHash: string</code><br><code>fullName: string</code><br><code>role: UserRole</code></td><td><code>UpdateUsername(username: string): User</code><br><code>UpdatePasswordHash(hash: string): User</code><br><code>UpdateProfile(fullName: string, role: UserRole): User</code></td><td>User se relaciona con UserRole : has; AuthenticatedSession se relaciona con User : belongs to; CredentialPolicy depende de User : validates; IUserRepository depende de User : persists</td></tr>
-    <tr><td><code>UserRole</code></td><td>Enumeration</td><td>Backend, Android y Flutter (modelo canónico)<br><strong>Diseño objetivo</strong></td><td>Definir los valores válidos de UserRole.</td><td><code>Rancher</code><br><code>Veterinarian</code><br><code>Administrator</code></td><td>—</td><td>User se relaciona con UserRole : has</td></tr>
-    <tr><td><code>AuthenticatedSession</code></td><td>Entity</td><td>Backend, Android y Flutter (modelo canónico)<br><strong>Diseño objetivo</strong></td><td>Controlar vigencia y revocación de una sesión autenticada.</td><td><code>userId: int</code><br><code>tokenReference: string</code><br><code>expiresAt: DateTime</code></td><td><code>IsExpired(now: DateTime): bool</code><br><code>Revoke(): void</code></td><td>AuthenticatedSession se relaciona con User : belongs to</td></tr>
-    <tr><td><code>CredentialPolicy</code></td><td>Domain Service</td><td>Backend, Android y Flutter (modelo canónico)<br><strong>Diseño objetivo</strong></td><td>Validar reglas de nombre de usuario y contraseña.</td><td>—</td><td><code>ValidateUsername(username: string): bool</code><br><code>ValidatePassword(password: string): bool</code></td><td>CredentialPolicy depende de User : validates</td></tr>
-    <tr><td><code>IUserRepository</code></td><td>Repository Interface</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado en el backend</strong></td><td>Abstraer la persistencia de User.</td><td>—</td><td><code>FindById(id: int): User?</code><br><code>FindByUsername(username: string): User?</code><br><code>Add(user: User): void</code></td><td>IUserRepository depende de User : persists</td></tr>
-    <tr><td><code>IamError</code></td><td>Enumeration</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado</strong></td><td>Código controlado para errores de autenticación y autorización.</td><td><code>None</code><br><code>UserNotFound</code><br><code>UsernameAlreadyTaken</code><br><code>InvalidCredentials</code><br><code>InvalidRole</code><br><code>OperationCancelled</code><br><code>DatabaseError</code><br><code>InternalServerError</code><br><code>ExternalServiceError</code></td><td>—</td><td>Es traducido a respuestas HTTP por Interface Layer.</td></tr>
-  </tbody>
-</table>
+### Aggregate Root: User
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Mantener identidad, credenciales protegidas y rol del usuario. |
+| **Relaciones** | User se relaciona con UserRole : has; AuthenticatedSession se relaciona con User : belongs to; CredentialPolicy depende de User : validates; IUserRepository depende de User : persists |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `id` | `int` |
+| `username` | `string` |
+| `passwordHash` | `string` |
+| `fullName` | `string` |
+| `role` | `UserRole` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `UpdateUsername(username: string)` | `User` |
+| `UpdatePasswordHash(hash: string)` | `User` |
+| `UpdateProfile(fullName: string, role: UserRole)` | `User` |
+
+---
+
+### Enumeration: UserRole
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend, Android y Flutter (modelo canónico) |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Definir los valores válidos de UserRole. |
+| **Relaciones** | User se relaciona con UserRole : has |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Rancher` | `No especificado` |
+| `Veterinarian` | `No especificado` |
+| `Administrator` | `No especificado` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Entity: AuthenticatedSession
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend, Android y Flutter (modelo canónico) |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Controlar vigencia y revocación de una sesión autenticada. |
+| **Relaciones** | AuthenticatedSession se relaciona con User : belongs to |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `userId` | `int` |
+| `tokenReference` | `string` |
+| `expiresAt` | `DateTime` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `IsExpired(now: DateTime)` | `bool` |
+| `Revoke()` | `void` |
+
+---
+
+### Domain Service: CredentialPolicy
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend, Android y Flutter (modelo canónico) |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Validar reglas de nombre de usuario y contraseña. |
+| **Relaciones** | CredentialPolicy depende de User : validates |
+
+**Atributos o dependencias**
+
+No aplica.
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `ValidateUsername(username: string)` | `bool` |
+| `ValidatePassword(password: string)` | `bool` |
+
+---
+
+### Repository Interface: IUserRepository
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Abstraer la persistencia de User. |
+| **Relaciones** | IUserRepository depende de User : persists |
+
+**Atributos o dependencias**
+
+No aplica.
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `FindById(id: int)` | `User?` |
+| `FindByUsername(username: string)` | `User?` |
+| `Add(user: User)` | `void` |
+
+---
+
+### Enumeration: IamError
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado** |
+| **Propósito** | Código controlado para errores de autenticación y autorización. |
+| **Relaciones** | Es traducido a respuestas HTTP por Interface Layer. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `None` | `No especificado` |
+| `UserNotFound` | `No especificado` |
+| `UsernameAlreadyTaken` | `No especificado` |
+| `InvalidCredentials` | `No especificado` |
+| `InvalidRole` | `No especificado` |
+| `OperationCancelled` | `No especificado` |
+| `DatabaseError` | `No especificado` |
+| `InternalServerError` | `No especificado` |
+| `ExternalServiceError` | `No especificado` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
 
 <a id="toc-2-6-1-2-interface-layer"></a>
 
@@ -34,25 +172,275 @@ La base implementada se encuentra en el módulo `Iam` de la API ASP.NET Core. El
 
 **Responsabilidad estable.** Esta capa recibe las acciones relacionadas con **registro de cuentas, autenticación, consulta de identidad y control de sesión** y las traduce a casos de uso. Los controllers y resources corresponden a la API; las pantallas y controladores de estado representan la presentación objetivo en Android y Flutter. Ninguna de estas clases implementa reglas de negocio.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>AuthenticationController</code></td><td>REST Controller</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Publicar por HTTP las capacidades de Identity and Access Management.</td><td><code>IUserCommandService userCommandService</code><br><code>IStringLocalizer&lt;ErrorMessages&gt; errorLocalizer</code><br><code>IStringLocalizer&lt;IamMessages&gt; iamLocalizer</code><br><code>ProblemDetailsFactory problemDetailsFactory</code></td><td><code>SignIn(SignInResource signInResource, CancellationToken cancellationToken)</code><br><code>SignUp(SignUpResource signUpResource, CancellationToken cancellationToken)</code></td><td>Recibe resources, invoca servicios de aplicación y devuelve resources HTTP.</td></tr>
-    <tr><td><code>UsersController</code></td><td>REST Controller</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Publicar por HTTP las capacidades de Identity and Access Management.</td><td><code>IUserQueryService userQueryService</code><br><code>IStringLocalizer&lt;ErrorMessages&gt; errorLocalizer</code><br><code>ProblemDetailsFactory problemDetailsFactory</code></td><td><code>GetUserById(int id, CancellationToken cancellationToken)</code><br><code>GetAllUsers(CancellationToken cancellationToken)</code></td><td>Recibe resources, invoca servicios de aplicación y devuelve resources HTTP.</td></tr>
-    <tr><td><code>SignInResource</code></td><td>Resource/Assembler</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Definir un contrato estable de entrada o salida para la API REST.</td><td><code>string Username</code><br><code>string Password</code></td><td><code>Create(...)</code><br><code>Deconstruct(...)</code></td><td>Es construido o traducido por assemblers y consumido por el controller y los clientes móviles.</td></tr>
-    <tr><td><code>SignUpResource</code></td><td>Resource/Assembler</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Definir un contrato estable de entrada o salida para la API REST.</td><td><code>string Username</code><br><code>string Password</code><br><code>string FullName = ""</code><br><code>string Role = "Rancher"</code></td><td><code>Create(...)</code><br><code>Deconstruct(...)</code></td><td>Es construido o traducido por assemblers y consumido por el controller y los clientes móviles.</td></tr>
-    <tr><td><code>AuthenticatedUserResource</code></td><td>Resource/Assembler</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Definir un contrato estable de entrada o salida para la API REST.</td><td><code>int Id</code><br><code>string Username</code><br><code>string FullName</code><br><code>string Role</code><br><code>string Token</code></td><td><code>Create(...)</code><br><code>Deconstruct(...)</code></td><td>Es construido o traducido por assemblers y consumido por el controller y los clientes móviles.</td></tr>
-    <tr><td><code>UserResource</code></td><td>Resource/Assembler</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Definir un contrato estable de entrada o salida para la API REST.</td><td><code>int Id</code><br><code>string Username</code><br><code>string FullName</code><br><code>string Role</code></td><td><code>Create(...)</code><br><code>Deconstruct(...)</code></td><td>Es construido o traducido por assemblers y consumido por el controller y los clientes móviles.</td></tr>
-    <tr><td><code>UserScreen</code></td><td>Composable</td><td>Android / Jetpack Compose<br><strong>Diseño objetivo</strong></td><td>Presentar registro de cuentas, autenticación, consulta de identidad y control de sesión en Android.</td><td><code>uiState</code><br><code>onAction</code><br><code>navigation</code></td><td><code>Render()</code><br><code>Submit()</code><br><code>Retry()</code></td><td>Observa UserViewModel y emite acciones de interfaz.</td></tr>
-    <tr><td><code>UserViewModel</code></td><td>Presentation Model</td><td>Android / Kotlin<br><strong>Diseño objetivo</strong></td><td>Mantener el estado observable y traducir acciones de Android a casos de uso.</td><td><code>state</code><br><code>observeUseCase</code><br><code>syncUseCase</code></td><td><code>Load()</code><br><code>Submit(action)</code><br><code>RetrySync()</code></td><td>Invoca casos de uso de Application Layer y publica un UI State inmutable.</td></tr>
-    <tr><td><code>UserPage</code></td><td>Widget</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Presentar registro de cuentas, autenticación, consulta de identidad y control de sesión en Flutter.</td><td><code>state</code><br><code>onAction</code><br><code>router</code></td><td><code>build(context)</code><br><code>submit()</code><br><code>retry()</code></td><td>Observa UserController y emite intenciones del usuario.</td></tr>
-    <tr><td><code>UserController</code></td><td>State Controller</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Mantener el estado de presentación de Flutter y coordinar casos de uso.</td><td><code>state</code><br><code>observeUseCase</code><br><code>syncUseCase</code></td><td><code>load()</code><br><code>submit(action)</code><br><code>retrySync()</code></td><td>Invoca Application Layer y publica estados de carga, éxito y error.</td></tr>
-  </tbody>
-</table>
+### REST Controller: AuthenticationController
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Publicar por HTTP las capacidades de Identity and Access Management. |
+| **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `userCommandService` | `IUserCommandService` |
+| `errorLocalizer` | `IStringLocalizer<ErrorMessages>` |
+| `iamLocalizer` | `IStringLocalizer<IamMessages>` |
+| `problemDetailsFactory` | `ProblemDetailsFactory` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `SignIn(SignInResource signInResource, CancellationToken cancellationToken)` | `No especificado` |
+| `SignUp(SignUpResource signUpResource, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### REST Controller: UsersController
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Publicar por HTTP las capacidades de Identity and Access Management. |
+| **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `userQueryService` | `IUserQueryService` |
+| `errorLocalizer` | `IStringLocalizer<ErrorMessages>` |
+| `problemDetailsFactory` | `ProblemDetailsFactory` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `GetUserById(int id, CancellationToken cancellationToken)` | `No especificado` |
+| `GetAllUsers(CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Resource/Assembler: SignInResource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
+| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Username` | `string` |
+| `Password` | `string` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Create(...)` | `No especificado` |
+| `Deconstruct(...)` | `No especificado` |
+
+---
+
+### Resource/Assembler: SignUpResource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
+| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Username` | `string` |
+| `Password` | `string` |
+| `string FullName = ""` | `No especificado` |
+| `string Role = "Rancher"` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Create(...)` | `No especificado` |
+| `Deconstruct(...)` | `No especificado` |
+
+---
+
+### Resource/Assembler: AuthenticatedUserResource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
+| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+| `Username` | `string` |
+| `FullName` | `string` |
+| `Role` | `string` |
+| `Token` | `string` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Create(...)` | `No especificado` |
+| `Deconstruct(...)` | `No especificado` |
+
+---
+
+### Resource/Assembler: UserResource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
+| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+| `Username` | `string` |
+| `FullName` | `string` |
+| `Role` | `string` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Create(...)` | `No especificado` |
+| `Deconstruct(...)` | `No especificado` |
+
+---
+
+### Composable: UserScreen
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Jetpack Compose |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Presentar registro de cuentas, autenticación, consulta de identidad y control de sesión en Android. |
+| **Relaciones** | Observa UserViewModel y emite acciones de interfaz. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `uiState` | `No especificado` |
+| `onAction` | `No especificado` |
+| `navigation` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Render()` | `No especificado` |
+| `Submit()` | `No especificado` |
+| `Retry()` | `No especificado` |
+
+---
+
+### Presentation Model: UserViewModel
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Kotlin |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
+| **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `state` | `No especificado` |
+| `observeUseCase` | `No especificado` |
+| `syncUseCase` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Load()` | `No especificado` |
+| `Submit(action)` | `No especificado` |
+| `RetrySync()` | `No especificado` |
+
+---
+
+### Widget: UserPage
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Presentar registro de cuentas, autenticación, consulta de identidad y control de sesión en Flutter. |
+| **Relaciones** | Observa UserController y emite intenciones del usuario. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `state` | `No especificado` |
+| `onAction` | `No especificado` |
+| `router` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `build(context)` | `No especificado` |
+| `submit()` | `No especificado` |
+| `retry()` | `No especificado` |
+
+---
+
+### State Controller: UserController
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
+| **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `state` | `No especificado` |
+| `observeUseCase` | `No especificado` |
+| `syncUseCase` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `load()` | `No especificado` |
+| `submit(action)` | `No especificado` |
+| `retrySync()` | `No especificado` |
+
+---
 
 <a id="toc-2-6-1-3-application-layer"></a>
 
@@ -60,27 +448,299 @@ La base implementada se encuentra en el módulo `Iam` de la API ASP.NET Core. El
 
 **Responsabilidad estable.** Esta capa coordina las capacidades de **registro de cuentas, autenticación, consulta de identidad y control de sesión**. Los commands y queries expresan intenciones; los handlers cargan aggregates, aplican reglas, persisten cambios y reaccionan a eventos. Los casos de uso móviles coordinan lectura local, actualización remota y sincronización idempotente.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>UserCommandService</code></td><td>Application Service</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Orquestar registro de cuentas, autenticación, consulta de identidad y control de sesión sin contener reglas del dominio.</td><td><code>IUserRepository userRepository</code><br><code>ITokenService tokenService</code><br><code>IHashingService hashingService</code><br><code>IUnitOfWork unitOfWork</code><br><code>IStringLocalizer&lt;ErrorMessages&gt; localizer</code></td><td><code>Handle(SignInCommand command, CancellationToken cancellationToken)</code><br><code>Handle(SignUpCommand command, CancellationToken cancellationToken)</code></td><td>Invoca agregados y repositories; confirma la transacción mediante Unit of Work.</td></tr>
-    <tr><td><code>UserQueryService</code></td><td>Application Service</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Orquestar registro de cuentas, autenticación, consulta de identidad y control de sesión sin contener reglas del dominio.</td><td><code>IUserRepository userRepository</code></td><td><code>Handle(GetUserByIdQuery query, CancellationToken cancellationToken)</code><br><code>Handle(GetAllUsersQuery query, CancellationToken cancellationToken)</code><br><code>Handle(GetUserByUsernameQuery query, CancellationToken cancellationToken)</code></td><td>Invoca agregados y repositories; confirma la transacción mediante Unit of Work.</td></tr>
-    <tr><td><code>IamContextFacade</code></td><td>Application Service</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Orquestar registro de cuentas, autenticación, consulta de identidad y control de sesión sin contener reglas del dominio.</td><td><code>IUserCommandService userCommandService</code><br><code>IUserQueryService userQueryService</code></td><td><code>CreateUser(string username, string password, CancellationToken cancellationToken)</code><br><code>FetchUserIdByUsername(string username, CancellationToken cancellationToken)</code><br><code>FetchUsernameByUserId(int userId, CancellationToken cancellationToken)</code></td><td>Invoca agregados y repositories; confirma la transacción mediante Unit of Work.</td></tr>
-    <tr><td><code>SignInCommand</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>string Username</code><br><code>string Password</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>SignUpCommand</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>string Username</code><br><code>string Password</code><br><code>string FullName</code><br><code>string Role</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>GetUserByIdQuery</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>int Id</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>GetUserByUsernameQuery</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>string Username</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>ObserveUserUseCase</code></td><td>Use Case</td><td>Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Entregar primero datos locales y actualizar la consulta cuando exista conectividad.</td><td><code>localRepository</code><br><code>remoteRepository</code><br><code>connectivityMonitor</code></td><td><code>Execute(criteria): Stream&lt;Result&gt;</code></td><td>Es invocado por ViewModel/Controller y coordina repositorios móviles.</td></tr>
-    <tr><td><code>SyncUserUseCase</code></td><td>Use Case</td><td>Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Procesar operaciones móviles pendientes de manera idempotente.</td><td><code>outboxRepository</code><br><code>remoteRepository</code><br><code>conflictResolver</code></td><td><code>Execute(): SyncResult</code></td><td>Lee el outbox local, consume la API y actualiza el estado de sincronización.</td></tr>
-    <tr><td><code>SignUpCommandHandler</code></td><td>Command Handler</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción.</td><td><code>repository</code><br><code>unitOfWork</code><br><code>domainPolicy</code></td><td><code>Handle(command): Result</code></td><td>Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event.</td></tr>
-    <tr><td><code>SignInCommandHandler</code></td><td>Command Handler</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción.</td><td><code>repository</code><br><code>unitOfWork</code><br><code>domainPolicy</code></td><td><code>Handle(command): Result</code></td><td>Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event.</td></tr>
-    <tr><td><code>UserAuthenticatedEventHandler</code></td><td>Event Handler</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Reaccionar al evento confirmado y actualizar proyecciones o integraciones.</td><td><code>projectionRepository</code><br><code>notificationPort</code><br><code>unitOfWork</code></td><td><code>Handle(domainEvent): Task</code></td><td>Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado.</td></tr>
-  </tbody>
-</table>
+### Application Service: UserCommandService
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Orquestar registro de cuentas, autenticación, consulta de identidad y control de sesión sin contener reglas del dominio. |
+| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `userRepository` | `IUserRepository` |
+| `tokenService` | `ITokenService` |
+| `hashingService` | `IHashingService` |
+| `unitOfWork` | `IUnitOfWork` |
+| `localizer` | `IStringLocalizer<ErrorMessages>` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(SignInCommand command, CancellationToken cancellationToken)` | `No especificado` |
+| `Handle(SignUpCommand command, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Application Service: UserQueryService
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Orquestar registro de cuentas, autenticación, consulta de identidad y control de sesión sin contener reglas del dominio. |
+| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `userRepository` | `IUserRepository` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(GetUserByIdQuery query, CancellationToken cancellationToken)` | `No especificado` |
+| `Handle(GetAllUsersQuery query, CancellationToken cancellationToken)` | `No especificado` |
+| `Handle(GetUserByUsernameQuery query, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Application Service: IamContextFacade
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Orquestar registro de cuentas, autenticación, consulta de identidad y control de sesión sin contener reglas del dominio. |
+| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `userCommandService` | `IUserCommandService` |
+| `userQueryService` | `IUserQueryService` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `CreateUser(string username, string password, CancellationToken cancellationToken)` | `No especificado` |
+| `FetchUserIdByUsername(string username, CancellationToken cancellationToken)` | `No especificado` |
+| `FetchUsernameByUserId(int userId, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Command/Query: SignInCommand
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Username` | `string` |
+| `Password` | `string` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Command/Query: SignUpCommand
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Username` | `string` |
+| `Password` | `string` |
+| `FullName` | `string` |
+| `Role` | `string` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Command/Query: GetUserByIdQuery
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Command/Query: GetUserByUsernameQuery
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Username` | `string` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Use Case: ObserveUserUseCase
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
+| **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `localRepository` | `No especificado` |
+| `remoteRepository` | `No especificado` |
+| `connectivityMonitor` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Execute(criteria)` | `Stream<Result>` |
+
+---
+
+### Use Case: SyncUserUseCase
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
+| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `outboxRepository` | `No especificado` |
+| `remoteRepository` | `No especificado` |
+| `conflictResolver` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Execute()` | `SyncResult` |
+
+---
+
+### Command Handler: SignUpCommandHandler
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
+| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `No especificado` |
+| `unitOfWork` | `No especificado` |
+| `domainPolicy` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(command)` | `Result` |
+
+---
+
+### Command Handler: SignInCommandHandler
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
+| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `No especificado` |
+| `unitOfWork` | `No especificado` |
+| `domainPolicy` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(command)` | `Result` |
+
+---
+
+### Event Handler: UserAuthenticatedEventHandler
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
+| **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `projectionRepository` | `No especificado` |
+| `notificationPort` | `No especificado` |
+| `unitOfWork` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(domainEvent)` | `Task` |
+
+---
 
 <a id="toc-2-6-1-4-infrastructure-layer"></a>
 
@@ -88,24 +748,237 @@ La base implementada se encuentra en el módulo `Iam` de la API ASP.NET Core. El
 
 **Responsabilidad estable.** Esta capa implementa los puertos definidos hacia el interior de **Identity and Access Management** y concentra acceso a base de datos, red, almacenamiento local e integraciones externas. Las clases de infraestructura traducen errores y contratos técnicos antes de devolver resultados a Application Layer.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>UserRepository</code></td><td>Repository Adapter</td><td>Backend / Entity Framework Core<br><strong>Implementado en el backend</strong></td><td>Implementar el puerto de persistencia definido por Domain Layer.</td><td><code>AppDbContext context</code></td><td><code>FindByUsernameAsync(string username, CancellationToken cancellationToken)</code><br><code>ExistsByUsernameAsync(string username, CancellationToken cancellationToken)</code></td><td>Implementa IUserRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate.</td></tr>
-    <tr><td><code>ModelBuilderExtensions</code></td><td>Persistence Configuration</td><td>Backend / Entity Framework Core<br><strong>Implementado en el backend</strong></td><td>Mapear entidades y value objects del contexto al modelo relacional.</td><td><code>EntityTypeBuilder configuration</code></td><td><code>ApplyConfiguration(modelBuilder)</code></td><td>Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core.</td></tr>
-    <tr><td><code>UserApiDataSource</code></td><td>Remote Adapter</td><td>Android / Kotlin<br><strong>Diseño objetivo</strong></td><td>Implementar el acceso remoto del cliente móvil a la API.</td><td><code>httpClient</code><br><code>tokenProvider</code><br><code>serializer</code></td><td><code>Get(criteria)</code><br><code>Create(dto)</code><br><code>Update(dto)</code><br><code>Delete(id)</code></td><td>Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación.</td></tr>
-    <tr><td><code>UserDao</code></td><td>Room Adapter</td><td>Android / Room<br><strong>Diseño objetivo</strong></td><td>Implementar persistencia local y observación reactiva en Android.</td><td><code>roomDatabase</code><br><code>entityMapper</code></td><td><code>Observe(criteria)</code><br><code>Upsert(entity)</code><br><code>Delete(id)</code><br><code>Pending()</code></td><td>Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox.</td></tr>
-    <tr><td><code>UserRemoteDataSource</code></td><td>Remote Adapter</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Implementar el acceso remoto del cliente móvil a la API.</td><td><code>httpClient</code><br><code>tokenProvider</code><br><code>serializer</code></td><td><code>Get(criteria)</code><br><code>Create(dto)</code><br><code>Update(dto)</code><br><code>Delete(id)</code></td><td>Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación.</td></tr>
-    <tr><td><code>UserLocalDataSource</code></td><td>SQLite Adapter</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Implementar persistencia local equivalente en Flutter.</td><td><code>sqliteDatabase</code><br><code>entityMapper</code></td><td><code>watch(criteria)</code><br><code>upsert(entity)</code><br><code>delete(id)</code><br><code>pending()</code></td><td>Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox.</td></tr>
-    <tr><td><code>HashingService</code></td><td>Security Adapter</td><td>Backend ASP.NET Core<br><strong>Implementado</strong></td><td>Aislar una dependencia externa detrás de un puerto explícito.</td><td><code>password, passwordHash</code></td><td><code>HashPassword(password): string</code><br><code>VerifyPassword(password, passwordHash): bool</code></td><td>Implementa el puerto de hashing y utiliza BCrypt.</td></tr>
-    <tr><td><code>TokenService</code></td><td>Token Adapter</td><td>Backend ASP.NET Core<br><strong>Implementado</strong></td><td>Aislar una dependencia externa detrás de un puerto explícito.</td><td><code>issuer, audience, signingKey, expiration</code></td><td><code>GenerateToken(user): string</code><br><code>ValidateToken(token): Task&lt;int?&gt;</code></td><td>Implementa el puerto de tokens y utiliza JWT.</td></tr>
-    <tr><td><code>SecureSessionStore</code></td><td>Secure Storage Adapter</td><td>Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Aislar una dependencia externa detrás de un puerto explícito.</td><td><code>tokenReference, expiresAt</code></td><td><code>Save(session)</code><br><code>Read()</code><br><code>Clear()</code></td><td>Implementa el puerto local de sesión sobre Keystore/EncryptedSharedPreferences o Secure Storage.</td></tr>
-  </tbody>
-</table>
+### Repository Adapter: UserRepository
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend / Entity Framework Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
+| **Relaciones** | Implementa IUserRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `context` | `AppDbContext` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `FindByUsernameAsync(string username, CancellationToken cancellationToken)` | `No especificado` |
+| `ExistsByUsernameAsync(string username, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Persistence Configuration: ModelBuilderExtensions
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend / Entity Framework Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
+| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `configuration` | `EntityTypeBuilder` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `ApplyConfiguration(modelBuilder)` | `No especificado` |
+
+---
+
+### Remote Adapter: UserApiDataSource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Kotlin |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
+| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `httpClient` | `No especificado` |
+| `tokenProvider` | `No especificado` |
+| `serializer` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Get(criteria)` | `No especificado` |
+| `Create(dto)` | `No especificado` |
+| `Update(dto)` | `No especificado` |
+| `Delete(id)` | `No especificado` |
+
+---
+
+### Room Adapter: UserDao
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Room |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar persistencia local y observación reactiva en Android. |
+| **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `roomDatabase` | `No especificado` |
+| `entityMapper` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Observe(criteria)` | `No especificado` |
+| `Upsert(entity)` | `No especificado` |
+| `Delete(id)` | `No especificado` |
+| `Pending()` | `No especificado` |
+
+---
+
+### Remote Adapter: UserRemoteDataSource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
+| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `httpClient` | `No especificado` |
+| `tokenProvider` | `No especificado` |
+| `serializer` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Get(criteria)` | `No especificado` |
+| `Create(dto)` | `No especificado` |
+| `Update(dto)` | `No especificado` |
+| `Delete(id)` | `No especificado` |
+
+---
+
+### SQLite Adapter: UserLocalDataSource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar persistencia local equivalente en Flutter. |
+| **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `sqliteDatabase` | `No especificado` |
+| `entityMapper` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `watch(criteria)` | `No especificado` |
+| `upsert(entity)` | `No especificado` |
+| `delete(id)` | `No especificado` |
+| `pending()` | `No especificado` |
+
+---
+
+### Security Adapter: HashingService
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado** |
+| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
+| **Relaciones** | Implementa el puerto de hashing y utiliza BCrypt. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `passwordHash` | `password,` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `HashPassword(password)` | `string` |
+| `VerifyPassword(password, passwordHash)` | `bool` |
+
+---
+
+### Token Adapter: TokenService
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado** |
+| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
+| **Relaciones** | Implementa el puerto de tokens y utiliza JWT. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `expiration` | `issuer, audience, signingKey,` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `GenerateToken(user)` | `string` |
+| `ValidateToken(token)` | `Task<int?>` |
+
+---
+
+### Secure Storage Adapter: SecureSessionStore
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
+| **Relaciones** | Implementa el puerto local de sesión sobre Keystore/EncryptedSharedPreferences o Secure Storage. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `expiresAt` | `tokenReference,` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Save(session)` | `No especificado` |
+| `Read()` | `No especificado` |
+| `Clear()` | `No especificado` |
+
+---
 
 <a id="toc-2-6-1-5-bounded-context-software-architecture-component-level-diagrams"></a>
 

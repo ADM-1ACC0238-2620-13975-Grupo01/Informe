@@ -12,22 +12,188 @@ La base implementada se encuentra en el módulo `Clients` de la API ASP.NET Core
 
 **Responsabilidad estable.** Esta capa documenta el modelo que representa el núcleo de **Veterinary Collaboration**. Las reglas autoritativas se ejecutan en la API; Android y Flutter mantienen modelos equivalentes para presentación, validación inmediata y trabajo offline. La columna de estado distingue el código heredado de la arquitectura objetivo.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>VeterinarianClient</code></td><td>Aggregate Root</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado en el backend</strong></td><td>Controlar la relación y autorización entre veterinario y ganadero.</td><td><code>id: int</code><br><code>veterinarianId: int</code><br><code>rancherId: int</code><br><code>status: CollaborationStatus</code><br><code>requestedAt: DateTime</code><br><code>acceptedAt: DateTime?</code><br><code>revokedAt: DateTime?</code><br><code>scope: AuthorizationScope</code></td><td><code>Accept(at: DateTime): void</code><br><code>Reject(): void</code><br><code>Revoke(at: DateTime): void</code><br><code>IsActive(): bool</code></td><td>VeterinarianClient se relaciona con CollaborationStatus; VeterinarianClient compone AuthorizationScope; CollaborationPolicy depende de VeterinarianClient; IVeterinarianClientRepository depende de VeterinarianClient</td></tr>
-    <tr><td><code>CollaborationStatus</code></td><td>Enumeration</td><td>Backend, Android y Flutter (modelo canónico)<br><strong>Diseño objetivo</strong></td><td>Definir los valores válidos de CollaborationStatus.</td><td><code>Pending</code><br><code>Accepted</code><br><code>Rejected</code><br><code>Revoked</code></td><td>—</td><td>VeterinarianClient se relaciona con CollaborationStatus</td></tr>
-    <tr><td><code>AuthorizationScope</code></td><td>Value Object</td><td>Backend, Android y Flutter (modelo canónico)<br><strong>Diseño objetivo</strong></td><td>Delimitar fincas, animales y operaciones autorizadas.</td><td><code>farmIds: Set~int~</code><br><code>animalIds: Set~int~</code><br><code>canWriteHealthRecords: bool</code></td><td><code>AllowsAnimal(animalId: int): bool</code></td><td>VeterinarianClient compone AuthorizationScope</td></tr>
-    <tr><td><code>CollaborationPolicy</code></td><td>Domain Service</td><td>Backend y modelos equivalentes Android/Flutter<br><strong>Diseño objetivo</strong></td><td>Evaluar aceptación y acceso dentro de una colaboración.</td><td>—</td><td><code>CanAccept(rancherId: int, relation: VeterinarianClient): bool</code><br><code>CanAccess(veterinarianId: int, animalId: int): bool</code></td><td>CollaborationPolicy depende de VeterinarianClient</td></tr>
-    <tr><td><code>IVeterinarianClientRepository</code></td><td>Repository Interface</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Implementado en el backend</strong></td><td>Abstraer la persistencia de VeterinarianClient.</td><td>—</td><td><code>Find(veterinarianId: int, rancherId: int): VeterinarianClient?</code><br><code>FindByVeterinarian(id: int): List~VeterinarianClient~</code><br><code>Add(relation: VeterinarianClient): void</code><br><code>Update(relation: VeterinarianClient): void</code></td><td>IVeterinarianClientRepository depende de VeterinarianClient</td></tr>
-    <tr><td><code>CollaborationRequest</code></td><td>Entity</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Representar la solicitud inicial entre veterinario y ganadero.</td><td><code>veterinarianId: int</code><br><code>rancherId: int</code><br><code>requestedAt: DateTime</code></td><td><code>Accept(at)</code><br><code>Reject()</code></td><td>Da origen o cambia el estado de VeterinarianClient.</td></tr>
-    <tr><td><code>AccessGrant</code></td><td>Entity</td><td>Backend; modelo equivalente en Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Materializar el permiso concedido al veterinario.</td><td><code>relationId: int</code><br><code>scope: AuthorizationScope</code><br><code>grantedAt: DateTime</code><br><code>revokedAt: DateTime?</code></td><td><code>Allows(animalId): bool</code><br><code>Revoke(at)</code></td><td>Depende de VeterinarianClient y contiene AuthorizationScope.</td></tr>
-  </tbody>
-</table>
+### Aggregate Root: VeterinarianClient
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Controlar la relación y autorización entre veterinario y ganadero. |
+| **Relaciones** | VeterinarianClient se relaciona con CollaborationStatus; VeterinarianClient compone AuthorizationScope; CollaborationPolicy depende de VeterinarianClient; IVeterinarianClientRepository depende de VeterinarianClient |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `id` | `int` |
+| `veterinarianId` | `int` |
+| `rancherId` | `int` |
+| `status` | `CollaborationStatus` |
+| `requestedAt` | `DateTime` |
+| `acceptedAt` | `DateTime?` |
+| `revokedAt` | `DateTime?` |
+| `scope` | `AuthorizationScope` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Accept(at: DateTime)` | `void` |
+| `Reject()` | `void` |
+| `Revoke(at: DateTime)` | `void` |
+| `IsActive()` | `bool` |
+
+---
+
+### Enumeration: CollaborationStatus
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend, Android y Flutter (modelo canónico) |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Definir los valores válidos de CollaborationStatus. |
+| **Relaciones** | VeterinarianClient se relaciona con CollaborationStatus |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Pending` | `No especificado` |
+| `Accepted` | `No especificado` |
+| `Rejected` | `No especificado` |
+| `Revoked` | `No especificado` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Value Object: AuthorizationScope
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend, Android y Flutter (modelo canónico) |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Delimitar fincas, animales y operaciones autorizadas. |
+| **Relaciones** | VeterinarianClient compone AuthorizationScope |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `farmIds` | `Set~int~` |
+| `animalIds` | `Set~int~` |
+| `canWriteHealthRecords` | `bool` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `AllowsAnimal(animalId: int)` | `bool` |
+
+---
+
+### Domain Service: CollaborationPolicy
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend y modelos equivalentes Android/Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Evaluar aceptación y acceso dentro de una colaboración. |
+| **Relaciones** | CollaborationPolicy depende de VeterinarianClient |
+
+**Atributos o dependencias**
+
+No aplica.
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `CanAccept(rancherId: int, relation: VeterinarianClient)` | `bool` |
+| `CanAccess(veterinarianId: int, animalId: int)` | `bool` |
+
+---
+
+### Repository Interface: IVeterinarianClientRepository
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Abstraer la persistencia de VeterinarianClient. |
+| **Relaciones** | IVeterinarianClientRepository depende de VeterinarianClient |
+
+**Atributos o dependencias**
+
+No aplica.
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Find(veterinarianId: int, rancherId: int)` | `VeterinarianClient?` |
+| `FindByVeterinarian(id: int)` | `List~VeterinarianClient~` |
+| `Add(relation: VeterinarianClient)` | `void` |
+| `Update(relation: VeterinarianClient)` | `void` |
+
+---
+
+### Entity: CollaborationRequest
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Representar la solicitud inicial entre veterinario y ganadero. |
+| **Relaciones** | Da origen o cambia el estado de VeterinarianClient. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `veterinarianId` | `int` |
+| `rancherId` | `int` |
+| `requestedAt` | `DateTime` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Accept(at)` | `No especificado` |
+| `Reject()` | `No especificado` |
+
+---
+
+### Entity: AccessGrant
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend; modelo equivalente en Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Materializar el permiso concedido al veterinario. |
+| **Relaciones** | Depende de VeterinarianClient y contiene AuthorizationScope. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `relationId` | `int` |
+| `scope` | `AuthorizationScope` |
+| `grantedAt` | `DateTime` |
+| `revokedAt` | `DateTime?` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Allows(animalId)` | `bool` |
+| `Revoke(at)` | `No especificado` |
+
+---
 
 <a id="toc-2-6-5-2-interface-layer"></a>
 
@@ -35,22 +201,205 @@ La base implementada se encuentra en el módulo `Clients` de la API ASP.NET Core
 
 **Responsabilidad estable.** Esta capa recibe las acciones relacionadas con **solicitud, aceptación, revocación y consulta de colaboraciones veterinarias** y las traduce a casos de uso. Los controllers y resources corresponden a la API; las pantallas y controladores de estado representan la presentación objetivo en Android y Flutter. Ninguna de estas clases implementa reglas de negocio.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>VeterinarianClientsController</code></td><td>REST Controller</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Publicar por HTTP las capacidades de Veterinary Collaboration.</td><td><code>IVeterinarianClientCommandService commandService</code><br><code>IVeterinarianClientQueryService queryService</code><br><code>IUserQueryService userQueryService</code><br><code>IHerdQueryService herdQueryService</code><br><code>IAnimalQueryService animalQueryService</code></td><td><code>GetClients(int veterinarianId, CancellationToken cancellationToken)</code><br><code>GetAvailableRanchers(int veterinarianId, CancellationToken cancellationToken)</code><br><code>AddClient(int veterinarianId, int rancherId, CancellationToken cancellationToken)</code><br><code>RemoveClient(int veterinarianId, int rancherId, CancellationToken cancellationToken)</code></td><td>Recibe resources, invoca servicios de aplicación y devuelve resources HTTP.</td></tr>
-    <tr><td><code>AvailableRancherResource</code></td><td>Resource/Assembler</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Definir un contrato estable de entrada o salida para la API REST.</td><td><code>int Id</code><br><code>string Username</code><br><code>string FullName</code><br><code>int Herds</code><br><code>int Animals</code></td><td><code>Create(...)</code><br><code>Deconstruct(...)</code></td><td>Es construido o traducido por assemblers y consumido por el controller y los clientes móviles.</td></tr>
-    <tr><td><code>VeterinarianClientResource</code></td><td>Resource/Assembler</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Definir un contrato estable de entrada o salida para la API REST.</td><td><code>int Id</code><br><code>int VeterinarianId</code><br><code>int RancherId</code><br><code>string RancherName</code><br><code>string Status</code><br><code>int Herds</code><br><code>int Animals</code><br><code>DateTime RequestedAt</code><br><code>DateTime? AcceptedAt</code></td><td><code>Create(...)</code><br><code>Deconstruct(...)</code></td><td>Es construido o traducido por assemblers y consumido por el controller y los clientes móviles.</td></tr>
-    <tr><td><code>VeterinarianClientScreen</code></td><td>Composable</td><td>Android / Jetpack Compose<br><strong>Diseño objetivo</strong></td><td>Presentar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias en Android.</td><td><code>uiState</code><br><code>onAction</code><br><code>navigation</code></td><td><code>Render()</code><br><code>Submit()</code><br><code>Retry()</code></td><td>Observa VeterinarianClientViewModel y emite acciones de interfaz.</td></tr>
-    <tr><td><code>VeterinarianClientViewModel</code></td><td>Presentation Model</td><td>Android / Kotlin<br><strong>Diseño objetivo</strong></td><td>Mantener el estado observable y traducir acciones de Android a casos de uso.</td><td><code>state</code><br><code>observeUseCase</code><br><code>syncUseCase</code></td><td><code>Load()</code><br><code>Submit(action)</code><br><code>RetrySync()</code></td><td>Invoca casos de uso de Application Layer y publica un UI State inmutable.</td></tr>
-    <tr><td><code>VeterinarianClientPage</code></td><td>Widget</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Presentar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias en Flutter.</td><td><code>state</code><br><code>onAction</code><br><code>router</code></td><td><code>build(context)</code><br><code>submit()</code><br><code>retry()</code></td><td>Observa VeterinarianClientController y emite intenciones del usuario.</td></tr>
-    <tr><td><code>VeterinarianClientController</code></td><td>State Controller</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Mantener el estado de presentación de Flutter y coordinar casos de uso.</td><td><code>state</code><br><code>observeUseCase</code><br><code>syncUseCase</code></td><td><code>load()</code><br><code>submit(action)</code><br><code>retrySync()</code></td><td>Invoca Application Layer y publica estados de carga, éxito y error.</td></tr>
-  </tbody>
-</table>
+### REST Controller: VeterinarianClientsController
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Publicar por HTTP las capacidades de Veterinary Collaboration. |
+| **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `commandService` | `IVeterinarianClientCommandService` |
+| `queryService` | `IVeterinarianClientQueryService` |
+| `userQueryService` | `IUserQueryService` |
+| `herdQueryService` | `IHerdQueryService` |
+| `animalQueryService` | `IAnimalQueryService` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `GetClients(int veterinarianId, CancellationToken cancellationToken)` | `No especificado` |
+| `GetAvailableRanchers(int veterinarianId, CancellationToken cancellationToken)` | `No especificado` |
+| `AddClient(int veterinarianId, int rancherId, CancellationToken cancellationToken)` | `No especificado` |
+| `RemoveClient(int veterinarianId, int rancherId, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Resource/Assembler: AvailableRancherResource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
+| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+| `Username` | `string` |
+| `FullName` | `string` |
+| `Herds` | `int` |
+| `Animals` | `int` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Create(...)` | `No especificado` |
+| `Deconstruct(...)` | `No especificado` |
+
+---
+
+### Resource/Assembler: VeterinarianClientResource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
+| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `Id` | `int` |
+| `VeterinarianId` | `int` |
+| `RancherId` | `int` |
+| `RancherName` | `string` |
+| `Status` | `string` |
+| `Herds` | `int` |
+| `Animals` | `int` |
+| `RequestedAt` | `DateTime` |
+| `AcceptedAt` | `DateTime?` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Create(...)` | `No especificado` |
+| `Deconstruct(...)` | `No especificado` |
+
+---
+
+### Composable: VeterinarianClientScreen
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Jetpack Compose |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Presentar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias en Android. |
+| **Relaciones** | Observa VeterinarianClientViewModel y emite acciones de interfaz. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `uiState` | `No especificado` |
+| `onAction` | `No especificado` |
+| `navigation` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Render()` | `No especificado` |
+| `Submit()` | `No especificado` |
+| `Retry()` | `No especificado` |
+
+---
+
+### Presentation Model: VeterinarianClientViewModel
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Kotlin |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
+| **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `state` | `No especificado` |
+| `observeUseCase` | `No especificado` |
+| `syncUseCase` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Load()` | `No especificado` |
+| `Submit(action)` | `No especificado` |
+| `RetrySync()` | `No especificado` |
+
+---
+
+### Widget: VeterinarianClientPage
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Presentar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias en Flutter. |
+| **Relaciones** | Observa VeterinarianClientController y emite intenciones del usuario. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `state` | `No especificado` |
+| `onAction` | `No especificado` |
+| `router` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `build(context)` | `No especificado` |
+| `submit()` | `No especificado` |
+| `retry()` | `No especificado` |
+
+---
+
+### State Controller: VeterinarianClientController
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
+| **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `state` | `No especificado` |
+| `observeUseCase` | `No especificado` |
+| `syncUseCase` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `load()` | `No especificado` |
+| `submit(action)` | `No especificado` |
+| `retrySync()` | `No especificado` |
+
+---
 
 <a id="toc-2-6-5-3-application-layer"></a>
 
@@ -58,25 +407,246 @@ La base implementada se encuentra en el módulo `Clients` de la API ASP.NET Core
 
 **Responsabilidad estable.** Esta capa coordina las capacidades de **solicitud, aceptación, revocación y consulta de colaboraciones veterinarias**. Los commands y queries expresan intenciones; los handlers cargan aggregates, aplican reglas, persisten cambios y reaccionan a eventos. Los casos de uso móviles coordinan lectura local, actualización remota y sincronización idempotente.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>VeterinarianClientCommandService</code></td><td>Application Service</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Orquestar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias sin contener reglas del dominio.</td><td><code>IVeterinarianClientRepository repository</code><br><code>IUnitOfWork unitOfWork</code></td><td><code>Handle(CreateVeterinarianClientCommand command, CancellationToken cancellationToken)</code><br><code>Handle(DeleteVeterinarianClientCommand command, CancellationToken cancellationToken)</code></td><td>Invoca agregados y repositories; confirma la transacción mediante Unit of Work.</td></tr>
-    <tr><td><code>VeterinarianClientQueryService</code></td><td>Application Service</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Orquestar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias sin contener reglas del dominio.</td><td><code>IVeterinarianClientRepository repository</code></td><td><code>Handle(GetVeterinarianClientsByVeterinarianIdQuery query, CancellationToken cancellationToken)</code></td><td>Invoca agregados y repositories; confirma la transacción mediante Unit of Work.</td></tr>
-    <tr><td><code>CreateVeterinarianClientCommand</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>int VeterinarianId</code><br><code>int RancherId</code><br><code>string Status = "Accepted"</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>DeleteVeterinarianClientCommand</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>int VeterinarianId</code><br><code>int RancherId</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>GetVeterinarianClientsByVeterinarianIdQuery</code></td><td>Command/Query</td><td>Backend ASP.NET Core<br><strong>Implementado en el backend</strong></td><td>Transportar una intención o consulta tipada hacia su handler.</td><td><code>int VeterinarianId</code></td><td>—</td><td>Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio.</td></tr>
-    <tr><td><code>ObserveVeterinarianClientUseCase</code></td><td>Use Case</td><td>Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Entregar primero datos locales y actualizar la consulta cuando exista conectividad.</td><td><code>localRepository</code><br><code>remoteRepository</code><br><code>connectivityMonitor</code></td><td><code>Execute(criteria): Stream&lt;Result&gt;</code></td><td>Es invocado por ViewModel/Controller y coordina repositorios móviles.</td></tr>
-    <tr><td><code>SyncVeterinarianClientUseCase</code></td><td>Use Case</td><td>Android y Flutter<br><strong>Diseño objetivo</strong></td><td>Procesar operaciones móviles pendientes de manera idempotente.</td><td><code>outboxRepository</code><br><code>remoteRepository</code><br><code>conflictResolver</code></td><td><code>Execute(): SyncResult</code></td><td>Lee el outbox local, consume la API y actualiza el estado de sincronización.</td></tr>
-    <tr><td><code>RequestCollaborationCommandHandler</code></td><td>Command Handler</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción.</td><td><code>repository</code><br><code>unitOfWork</code><br><code>domainPolicy</code></td><td><code>Handle(command): Result</code></td><td>Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event.</td></tr>
-    <tr><td><code>AcceptCollaborationCommandHandler</code></td><td>Command Handler</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción.</td><td><code>repository</code><br><code>unitOfWork</code><br><code>domainPolicy</code></td><td><code>Handle(command): Result</code></td><td>Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event.</td></tr>
-    <tr><td><code>CollaborationAcceptedEventHandler</code></td><td>Event Handler</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Reaccionar al evento confirmado y actualizar proyecciones o integraciones.</td><td><code>projectionRepository</code><br><code>notificationPort</code><br><code>unitOfWork</code></td><td><code>Handle(domainEvent): Task</code></td><td>Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado.</td></tr>
-  </tbody>
-</table>
+### Application Service: VeterinarianClientCommandService
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Orquestar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias sin contener reglas del dominio. |
+| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `IVeterinarianClientRepository` |
+| `unitOfWork` | `IUnitOfWork` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(CreateVeterinarianClientCommand command, CancellationToken cancellationToken)` | `No especificado` |
+| `Handle(DeleteVeterinarianClientCommand command, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Application Service: VeterinarianClientQueryService
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Orquestar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias sin contener reglas del dominio. |
+| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `IVeterinarianClientRepository` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(GetVeterinarianClientsByVeterinarianIdQuery query, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Command/Query: CreateVeterinarianClientCommand
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `VeterinarianId` | `int` |
+| `RancherId` | `int` |
+| `string Status = "Accepted"` | `No especificado` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Command/Query: DeleteVeterinarianClientCommand
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `VeterinarianId` | `int` |
+| `RancherId` | `int` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Command/Query: GetVeterinarianClientsByVeterinarianIdQuery
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
+| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `VeterinarianId` | `int` |
+
+**Métodos u operaciones**
+
+No aplica.
+
+---
+
+### Use Case: ObserveVeterinarianClientUseCase
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
+| **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `localRepository` | `No especificado` |
+| `remoteRepository` | `No especificado` |
+| `connectivityMonitor` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Execute(criteria)` | `Stream<Result>` |
+
+---
+
+### Use Case: SyncVeterinarianClientUseCase
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android y Flutter |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
+| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `outboxRepository` | `No especificado` |
+| `remoteRepository` | `No especificado` |
+| `conflictResolver` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Execute()` | `SyncResult` |
+
+---
+
+### Command Handler: RequestCollaborationCommandHandler
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
+| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `No especificado` |
+| `unitOfWork` | `No especificado` |
+| `domainPolicy` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(command)` | `Result` |
+
+---
+
+### Command Handler: AcceptCollaborationCommandHandler
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
+| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `repository` | `No especificado` |
+| `unitOfWork` | `No especificado` |
+| `domainPolicy` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(command)` | `Result` |
+
+---
+
+### Event Handler: CollaborationAcceptedEventHandler
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
+| **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `projectionRepository` | `No especificado` |
+| `notificationPort` | `No especificado` |
+| `unitOfWork` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Handle(domainEvent)` | `Task` |
+
+---
 
 <a id="toc-2-6-5-4-infrastructure-layer"></a>
 
@@ -84,24 +654,237 @@ La base implementada se encuentra en el módulo `Clients` de la API ASP.NET Core
 
 **Responsabilidad estable.** Esta capa implementa los puertos definidos hacia el interior de **Veterinary Collaboration** y concentra acceso a base de datos, red, almacenamiento local e integraciones externas. Las clases de infraestructura traducen errores y contratos técnicos antes de devolver resultados a Application Layer.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. La columna **Producto y estado** distingue los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
+**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-<table>
-  <thead>
-    <tr><th>Clase</th><th>Categoría</th><th>Producto y estado</th><th>Propósito</th><th>Atributos</th><th>Métodos u operaciones</th><th>Relaciones</th></tr>
-  </thead>
-  <tbody>
-    <tr><td><code>VeterinarianClientRepository</code></td><td>Repository Adapter</td><td>Backend / Entity Framework Core<br><strong>Implementado en el backend</strong></td><td>Implementar el puerto de persistencia definido por Domain Layer.</td><td><code>AppDbContext context</code></td><td><code>FindByVeterinarianIdAsync(int veterinarianId, CancellationToken cancellationToken)</code><br><code>FindByVeterinarianIdAndRancherIdAsync(int veterinarianId, int rancherId, CancellationToken cancellationToken)</code><br><code>ExistsByVeterinarianIdAndRancherIdAsync(int veterinarianId, int rancherId, CancellationToken cancellationToken)</code></td><td>Implementa IVeterinarianClientRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate.</td></tr>
-    <tr><td><code>ModelBuilderExtensions</code></td><td>Persistence Configuration</td><td>Backend / Entity Framework Core<br><strong>Implementado en el backend</strong></td><td>Mapear entidades y value objects del contexto al modelo relacional.</td><td><code>EntityTypeBuilder configuration</code></td><td><code>ApplyConfiguration(modelBuilder)</code></td><td>Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core.</td></tr>
-    <tr><td><code>VeterinarianClientApiDataSource</code></td><td>Remote Adapter</td><td>Android / Kotlin<br><strong>Diseño objetivo</strong></td><td>Implementar el acceso remoto del cliente móvil a la API.</td><td><code>httpClient</code><br><code>tokenProvider</code><br><code>serializer</code></td><td><code>Get(criteria)</code><br><code>Create(dto)</code><br><code>Update(dto)</code><br><code>Delete(id)</code></td><td>Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación.</td></tr>
-    <tr><td><code>VeterinarianClientDao</code></td><td>Room Adapter</td><td>Android / Room<br><strong>Diseño objetivo</strong></td><td>Implementar persistencia local y observación reactiva en Android.</td><td><code>roomDatabase</code><br><code>entityMapper</code></td><td><code>Observe(criteria)</code><br><code>Upsert(entity)</code><br><code>Delete(id)</code><br><code>Pending()</code></td><td>Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox.</td></tr>
-    <tr><td><code>VeterinarianClientRemoteDataSource</code></td><td>Remote Adapter</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Implementar el acceso remoto del cliente móvil a la API.</td><td><code>httpClient</code><br><code>tokenProvider</code><br><code>serializer</code></td><td><code>Get(criteria)</code><br><code>Create(dto)</code><br><code>Update(dto)</code><br><code>Delete(id)</code></td><td>Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación.</td></tr>
-    <tr><td><code>VeterinarianClientLocalDataSource</code></td><td>SQLite Adapter</td><td>Flutter / Dart<br><strong>Diseño objetivo</strong></td><td>Implementar persistencia local equivalente en Flutter.</td><td><code>sqliteDatabase</code><br><code>entityMapper</code></td><td><code>watch(criteria)</code><br><code>upsert(entity)</code><br><code>delete(id)</code><br><code>pending()</code></td><td>Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox.</td></tr>
-    <tr><td><code>IamIdentityAdapter</code></td><td>Context Adapter</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Aislar una dependencia externa detrás de un puerto explícito.</td><td><code>iamFacade</code></td><td><code>GetRole(userId)</code><br><code>Exists(userId): bool</code></td><td>Implementa el puerto de identidad y consume IAM.</td></tr>
-    <tr><td><code>ProfilesDirectoryAdapter</code></td><td>Context Adapter</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Aislar una dependencia externa detrás de un puerto explícito.</td><td><code>profilesFacade</code></td><td><code>GetDisplayName(userId)</code><br><code>FindRanchers()</code></td><td>Implementa el puerto de directorio y consume Profile Management.</td></tr>
-    <tr><td><code>LivestockPatientAdapter</code></td><td>Context Adapter</td><td>Backend ASP.NET Core<br><strong>Diseño objetivo</strong></td><td>Aislar una dependencia externa detrás de un puerto explícito.</td><td><code>livestockFacade</code></td><td><code>GetAnimals(rancherId)</code><br><code>ValidateScope(scope)</code></td><td>Implementa el puerto de pacientes y consume Livestock Management.</td></tr>
-  </tbody>
-</table>
+### Repository Adapter: VeterinarianClientRepository
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend / Entity Framework Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
+| **Relaciones** | Implementa IVeterinarianClientRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `context` | `AppDbContext` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `FindByVeterinarianIdAsync(int veterinarianId, CancellationToken cancellationToken)` | `No especificado` |
+| `FindByVeterinarianIdAndRancherIdAsync(int veterinarianId, int rancherId, CancellationToken cancellationToken)` | `No especificado` |
+| `ExistsByVeterinarianIdAndRancherIdAsync(int veterinarianId, int rancherId, CancellationToken cancellationToken)` | `No especificado` |
+
+---
+
+### Persistence Configuration: ModelBuilderExtensions
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend / Entity Framework Core |
+| **Estado** | **Implementado en el backend** |
+| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
+| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `configuration` | `EntityTypeBuilder` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `ApplyConfiguration(modelBuilder)` | `No especificado` |
+
+---
+
+### Remote Adapter: VeterinarianClientApiDataSource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Kotlin |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
+| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `httpClient` | `No especificado` |
+| `tokenProvider` | `No especificado` |
+| `serializer` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Get(criteria)` | `No especificado` |
+| `Create(dto)` | `No especificado` |
+| `Update(dto)` | `No especificado` |
+| `Delete(id)` | `No especificado` |
+
+---
+
+### Room Adapter: VeterinarianClientDao
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Android / Room |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar persistencia local y observación reactiva en Android. |
+| **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `roomDatabase` | `No especificado` |
+| `entityMapper` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Observe(criteria)` | `No especificado` |
+| `Upsert(entity)` | `No especificado` |
+| `Delete(id)` | `No especificado` |
+| `Pending()` | `No especificado` |
+
+---
+
+### Remote Adapter: VeterinarianClientRemoteDataSource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
+| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `httpClient` | `No especificado` |
+| `tokenProvider` | `No especificado` |
+| `serializer` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `Get(criteria)` | `No especificado` |
+| `Create(dto)` | `No especificado` |
+| `Update(dto)` | `No especificado` |
+| `Delete(id)` | `No especificado` |
+
+---
+
+### SQLite Adapter: VeterinarianClientLocalDataSource
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Flutter / Dart |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Implementar persistencia local equivalente en Flutter. |
+| **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `sqliteDatabase` | `No especificado` |
+| `entityMapper` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `watch(criteria)` | `No especificado` |
+| `upsert(entity)` | `No especificado` |
+| `delete(id)` | `No especificado` |
+| `pending()` | `No especificado` |
+
+---
+
+### Context Adapter: IamIdentityAdapter
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
+| **Relaciones** | Implementa el puerto de identidad y consume IAM. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `iamFacade` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `GetRole(userId)` | `No especificado` |
+| `Exists(userId)` | `bool` |
+
+---
+
+### Context Adapter: ProfilesDirectoryAdapter
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
+| **Relaciones** | Implementa el puerto de directorio y consume Profile Management. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `profilesFacade` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `GetDisplayName(userId)` | `No especificado` |
+| `FindRanchers()` | `No especificado` |
+
+---
+
+### Context Adapter: LivestockPatientAdapter
+
+| Campo | Detalle |
+|---|---|
+| **Producto** | Backend ASP.NET Core |
+| **Estado** | **Diseño objetivo** |
+| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
+| **Relaciones** | Implementa el puerto de pacientes y consume Livestock Management. |
+
+**Atributos o dependencias**
+
+| Nombre | Tipo |
+|---|---|
+| `livestockFacade` | `No especificado` |
+
+**Métodos u operaciones**
+
+| Firma | Retorno |
+|---|---|
+| `GetAnimals(rancherId)` | `No especificado` |
+| `ValidateScope(scope)` | `No especificado` |
+
+---
 
 <a id="toc-2-6-5-5-bounded-context-software-architecture-component-level-diagrams"></a>
 
