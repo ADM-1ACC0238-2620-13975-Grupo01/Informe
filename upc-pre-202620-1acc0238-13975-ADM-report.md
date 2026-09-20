@@ -4060,6 +4060,8 @@ Los estados utilizados en los diccionarios se interpretan de la siguiente manera
 
 Al finalizar cada sprint, el equipo revisará únicamente el detalle que haya cambiado. Una clase que pase de diseño objetivo a código operativo deberá cambiar a **Implementado** y reflejar sus atributos, métodos y dependencias reales.
 
+Para mantener el informe legible, las fichas individuales se reservan para aggregates, entidades, servicios, handlers, controladores y adaptadores que explican decisiones relevantes de arquitectura. Los DTO, resources, mappers, comandos simples, configuraciones y adaptadores repetitivos se omiten del diccionario detallado y permanecen representados en el código o en los diagramas correspondientes cuando resulta necesario.
+
 <table>
   <thead>
     <tr><th>Sección</th><th>Bounded Context</th><th>Módulo heredado</th><th>Propósito</th></tr>
@@ -4217,34 +4219,6 @@ No aplica.
 
 ---
 
-### Enumeration: IamError
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado** |
-| **Propósito** | Código controlado para errores de autenticación y autorización. |
-| **Relaciones** | Es traducido a respuestas HTTP por Interface Layer. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| None | No especificado |
-| UserNotFound | No especificado |
-| UsernameAlreadyTaken | No especificado |
-| InvalidCredentials | No especificado |
-| InvalidRole | No especificado |
-| OperationCancelled | No especificado |
-| DatabaseError | No especificado |
-| InternalServerError | No especificado |
-| ExternalServiceError | No especificado |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 <a id="toc-2-6-1-2-interface-layer"></a>
 
@@ -4281,165 +4255,11 @@ No aplica.
 
 ---
 
-### REST Controller: UsersController
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Publicar por HTTP las capacidades de Identity and Access Management. |
-| **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| userQueryService | IUserQueryService |
-| errorLocalizer | IStringLocalizer<ErrorMessages> |
-| problemDetailsFactory | ProblemDetailsFactory |
 
-**Métodos u operaciones**
 
-| Firma | Retorno |
-|---|---|
-| GetUserById(int id, CancellationToken cancellationToken) | No especificado |
-| GetAllUsers(CancellationToken cancellationToken) | No especificado |
-
----
-
-### Resource/Assembler: SignInResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Username | string |
-| Password | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: SignUpResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Username | string |
-| Password | string |
-| string FullName = "" | No especificado |
-| string Role = "Rancher" | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: AuthenticatedUserResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| Username | string |
-| FullName | string |
-| Role | string |
-| Token | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: UserResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| Username | string |
-| FullName | string |
-| Role | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Composable: UserScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar registro de cuentas, autenticación, consulta de identidad y control de sesión en Android. |
-| **Relaciones** | Observa UserViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| uiState | No especificado |
-| onAction | No especificado |
-| navigation | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Render() | No especificado |
-| Submit() | No especificado |
-| Retry() | No especificado |
-
----
 
 ### Presentation Model: UserViewModel
 
@@ -4468,32 +4288,6 @@ No aplica.
 
 ---
 
-### Widget: UserPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar registro de cuentas, autenticación, consulta de identidad y control de sesión en Flutter. |
-| **Relaciones** | Observa UserController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| state | No especificado |
-| onAction | No especificado |
-| router | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| build(context) | No especificado |
-| submit() | No especificado |
-| retry() | No especificado |
-
----
 
 ### State Controller: UserController
 
@@ -4558,144 +4352,11 @@ No aplica.
 
 ---
 
-### Application Service: UserQueryService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar registro de cuentas, autenticación, consulta de identidad y control de sesión sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| userRepository | IUserRepository |
 
-**Métodos u operaciones**
 
-| Firma | Retorno |
-|---|---|
-| Handle(GetUserByIdQuery query, CancellationToken cancellationToken) | No especificado |
-| Handle(GetAllUsersQuery query, CancellationToken cancellationToken) | No especificado |
-| Handle(GetUserByUsernameQuery query, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Application Service: IamContextFacade
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar registro de cuentas, autenticación, consulta de identidad y control de sesión sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| userCommandService | IUserCommandService |
-| userQueryService | IUserQueryService |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| CreateUser(string username, string password, CancellationToken cancellationToken) | No especificado |
-| FetchUserIdByUsername(string username, CancellationToken cancellationToken) | No especificado |
-| FetchUsernameByUserId(int userId, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Command/Query: SignInCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Username | string |
-| Password | string |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: SignUpCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Username | string |
-| Password | string |
-| FullName | string |
-| Role | string |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetUserByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetUserByUsernameQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Username | string |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveUserUseCase
 
@@ -4722,30 +4383,6 @@ No aplica.
 
 ---
 
-### Use Case: SyncUserUseCase
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| outboxRepository | No especificado |
-| remoteRepository | No especificado |
-| conflictResolver | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Execute() | SyncResult |
-
----
 
 ### Command Handler: SignUpCommandHandler
 
@@ -4772,30 +4409,6 @@ No aplica.
 
 ---
 
-### Command Handler: SignInCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | No especificado |
-| unitOfWork | No especificado |
-| domainPolicy | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(command) | Result |
-
----
 
 ### Event Handler: UserAuthenticatedEventHandler
 
@@ -4854,56 +4467,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| configuration | EntityTypeBuilder |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ApplyConfiguration(modelBuilder) | No especificado |
-
----
-
-### Remote Adapter: UserApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### Room Adapter: UserDao
 
@@ -4932,33 +4496,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: UserRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### SQLite Adapter: UserLocalDataSource
 
@@ -4987,29 +4524,6 @@ No aplica.
 
 ---
 
-### Security Adapter: HashingService
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de hashing y utiliza BCrypt. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| passwordHash | password, |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| HashPassword(password) | string |
-| VerifyPassword(password, passwordHash) | bool |
-
----
 
 ### Token Adapter: TokenService
 
@@ -5258,51 +4772,7 @@ No aplica.
 
 ---
 
-### Value Object: ProfileOwnerId
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Representar y validar la identidad propietaria del perfil. |
-| **Relaciones** | Referencia una identidad de IAM sin incorporar su modelo. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| value | int |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| IsValid() | bool |
-
----
-
-### Domain Event: ProfileUpdated
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Comunicar un cambio confirmado del perfil. |
-| **Relaciones** | Es emitido por Profile y atendido por ProfileUpdatedEventHandler. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| profileId | int |
-| ownerId | int |
-| occurredAt | DateTime |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 <a id="toc-2-6-2-2-interface-layer"></a>
 
@@ -5340,90 +4810,8 @@ No aplica.
 
 ---
 
-### Resource/Assembler: CreateProfileResource
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
 
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| FirstName | string |
-| LastName | string |
-| Email | string |
-| Street | string |
-| Number | string |
-| City | string |
-| PostalCode | string |
-| Country | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: ProfileResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| FullName | string |
-| Email | string |
-| StreetAddress | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Composable: ProfileScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar creación, actualización y consulta de perfiles en Android. |
-| **Relaciones** | Observa ProfileViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| uiState | No especificado |
-| onAction | No especificado |
-| navigation | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Render() | No especificado |
-| Submit() | No especificado |
-| Retry() | No especificado |
-
----
 
 ### Presentation Model: ProfileViewModel
 
@@ -5452,32 +4840,6 @@ No aplica.
 
 ---
 
-### Widget: ProfilePage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar creación, actualización y consulta de perfiles en Flutter. |
-| **Relaciones** | Observa ProfileController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| state | No especificado |
-| onAction | No especificado |
-| router | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| build(context) | No especificado |
-| submit() | No especificado |
-| retry() | No especificado |
-
----
 
 ### State Controller: ProfileController
 
@@ -5539,125 +4901,10 @@ No aplica.
 
 ---
 
-### Application Service: ProfileQueryService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar creación, actualización y consulta de perfiles sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| profileRepository | IProfileRepository |
 
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(GetAllProfilesQuery query, CancellationToken cancellationToken) | No especificado |
-| Handle(GetProfileByEmailQuery query, CancellationToken cancellationToken) | No especificado |
-| Handle(GetProfileByIdQuery query, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Application Service: ProfilesContextFacade
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar creación, actualización y consulta de perfiles sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| profileCommandService | IProfileCommandService |
-| profileQueryService | IProfileQueryService |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| CreateProfile(string firstName, string lastName, string email, string street, string number, string city, string postalCode, string country, CancellationToken cancellationToken) | No especificado |
-| FetchProfileIdByEmail(string email, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Command/Query: CreateProfileCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| FirstName | string |
-| LastName | string |
-| Email | string |
-| Street | string |
-| Number | string |
-| City | string |
-| PostalCode | string |
-| Country | string |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetProfileByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| ProfileId | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetProfileByEmailQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Email | EmailAddress |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveProfileUseCase
 
@@ -5684,30 +4931,6 @@ No aplica.
 
 ---
 
-### Use Case: SyncProfileUseCase
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| outboxRepository | No especificado |
-| remoteRepository | No especificado |
-| conflictResolver | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Execute() | SyncResult |
-
----
 
 ### Command Handler: CreateProfileCommandHandler
 
@@ -5734,30 +4957,6 @@ No aplica.
 
 ---
 
-### Command Handler: UpdateProfileCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | No especificado |
-| unitOfWork | No especificado |
-| domainPolicy | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(command) | Result |
-
----
 
 ### Event Handler: ProfileUpdatedEventHandler
 
@@ -5815,56 +5014,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| configuration | EntityTypeBuilder |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ApplyConfiguration(modelBuilder) | No especificado |
-
----
-
-### Remote Adapter: ProfileApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### Room Adapter: ProfileDao
 
@@ -5893,33 +5043,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: ProfileRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### SQLite Adapter: ProfileLocalDataSource
 
@@ -5971,30 +5094,6 @@ No aplica.
 
 ---
 
-### Local Cache Adapter: ProfileCacheStore
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de caché mediante Room o SQLite. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| clock | profileDao, |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Read(ownerId) | No especificado |
-| Save(profile) | No especificado |
-| Invalidate(ownerId) | No especificado |
-
----
 
 <a id="toc-2-6-2-5-bounded-context-software-architecture-component-level-diagrams"></a>
 
@@ -6153,28 +5252,6 @@ La base implementada se encuentra en el módulo Livestock de la API ASP.NET Core
 
 ---
 
-### Value Object: AnimalTag
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Representar el identificador visible del animal. |
-| **Relaciones** | Animal compone AnimalTag |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| value | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| IsValid() | bool |
-
----
 
 ### Value Object: QrIdentifier
 
@@ -6245,48 +5322,7 @@ No aplica.
 
 ---
 
-### Repository Interface: IHerdRepository
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Abstraer la persistencia de Herd. |
-| **Relaciones** | IHerdRepository depende de Herd |
-
-**Atributos o dependencias**
-
-No aplica.
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| FindById(id: int) | Herd? |
-| Add(herd: Herd) | void |
-
----
-
-### Domain Service: AnimalOwnershipPolicy
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Decidir si un actor puede administrar un animal. |
-| **Relaciones** | Consulta Farm, Herd y Animal sin asumir persistencia. |
-
-**Atributos o dependencias**
-
-No aplica.
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| CanManage(actorId: int, animalId: int) | bool |
-
----
 
 <a id="toc-2-6-3-2-interface-layer"></a>
 
@@ -6352,156 +5388,10 @@ No aplica.
 
 ---
 
-### Resource/Assembler: HerdResource
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| Name | string |
-| Location | string |
-| Owner | string |
-| OwnerId | int |
-| VeterinarianId | int? |
-| MainType | string |
 
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: AnimalResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| Tag | string |
-| Name | string |
-| Species | string |
-| Breed | string |
-| Gender | string |
-| BirthDate | DateOnly? |
-| Weight | decimal |
-| Status | string |
-| HerdId | int |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: CreateHerdResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Name | string |
-| Location | string |
-| Owner | string |
-| OwnerId | int |
-| VeterinarianId | int? |
-| MainType | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: CreateAnimalResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Tag | string |
-| Name | string |
-| Species | string |
-| Breed | string |
-| Gender | string |
-| BirthDate | DateOnly? |
-| Weight | decimal |
-| Status | string |
-| HerdId | int |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Composable: FarmHerdYAnimalScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar gestión de fincas, hatos, animales e identificación QR en Android. |
-| **Relaciones** | Observa FarmHerdYAnimalViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| uiState | No especificado |
-| onAction | No especificado |
-| navigation | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Render() | No especificado |
-| Submit() | No especificado |
-| Retry() | No especificado |
-
----
 
 ### Presentation Model: FarmHerdYAnimalViewModel
 
@@ -6530,32 +5420,6 @@ No aplica.
 
 ---
 
-### Widget: FarmHerdYAnimalPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar gestión de fincas, hatos, animales e identificación QR en Flutter. |
-| **Relaciones** | Observa FarmHerdYAnimalController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| state | No especificado |
-| onAction | No especificado |
-| router | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| build(context) | No especificado |
-| submit() | No especificado |
-| retry() | No especificado |
-
----
 
 ### State Controller: FarmHerdYAnimalController
 
@@ -6592,55 +5456,7 @@ No aplica.
 
 **Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-### Application Service: HerdCommandService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar gestión de fincas, hatos, animales e identificación QR sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | IHerdRepository |
-| unitOfWork | IUnitOfWork |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(CreateHerdCommand command, CancellationToken cancellationToken) | No especificado |
-| Handle(UpdateHerdCommand command, CancellationToken cancellationToken) | No especificado |
-| Handle(DeleteHerdCommand command, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Application Service: HerdQueryService
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar gestión de fincas, hatos, animales e identificación QR sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | IHerdRepository |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(GetHerdByIdQuery query, CancellationToken cancellationToken) | No especificado |
-| Handle(GetAllHerdsQuery query, CancellationToken cancellationToken) | No especificado |
-
----
 
 ### Application Service: AnimalCommandService
 
@@ -6668,162 +5484,11 @@ No aplica.
 
 ---
 
-### Application Service: AnimalQueryService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar gestión de fincas, hatos, animales e identificación QR sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| repository | IAnimalRepository |
 
-**Métodos u operaciones**
 
-| Firma | Retorno |
-|---|---|
-| Handle(GetAnimalByIdQuery query, CancellationToken cancellationToken) | No especificado |
-| Handle(GetAllAnimalsQuery query, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Command/Query: CreateHerdCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Name | string |
-| Location | string |
-| Owner | string |
-| OwnerId | int |
-| VeterinarianId | int? |
-| MainType | string |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: UpdateHerdCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| Name | string |
-| Location | string |
-| Owner | string |
-| OwnerId | int |
-| VeterinarianId | int? |
-| MainType | string |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: CreateAnimalCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Tag | string |
-| Name | string |
-| Species | string |
-| Breed | string |
-| Gender | string |
-| BirthDate | DateOnly? |
-| Weight | decimal |
-| Status | string |
-| HerdId | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: UpdateAnimalCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| Tag | string |
-| Name | string |
-| Species | string |
-| Breed | string |
-| Gender | string |
-| BirthDate | DateOnly? |
-| Weight | decimal |
-| Status | string |
-| HerdId | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetAnimalByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveFarmHerdYAnimalUseCase
 
@@ -6850,55 +5515,7 @@ No aplica.
 
 ---
 
-### Use Case: SyncFarmHerdYAnimalUseCase
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| outboxRepository | No especificado |
-| remoteRepository | No especificado |
-| conflictResolver | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Execute() | SyncResult |
-
----
-
-### Command Handler: CreateHerdCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | No especificado |
-| unitOfWork | No especificado |
-| domainPolicy | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(command) | Result |
-
----
 
 ### Command Handler: CreateAnimalCommandHandler
 
@@ -6985,56 +5602,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| configuration | EntityTypeBuilder |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ApplyConfiguration(modelBuilder) | No especificado |
-
----
-
-### Remote Adapter: FarmHerdYAnimalApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### Room Adapter: FarmHerdYAnimalDao
 
@@ -7063,33 +5631,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: FarmHerdYAnimalRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### SQLite Adapter: FarmHerdYAnimalLocalDataSource
 
@@ -7118,28 +5659,6 @@ No aplica.
 
 ---
 
-### Context Adapter: ProfilesOwnerAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de propietarios y consume Profile Management. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| profilesFacade | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ValidateOwner(ownerId) | bool |
-
----
 
 ### Device Adapter: MlKitQrScanner
 
@@ -7164,30 +5683,6 @@ No aplica.
 
 ---
 
-### Offline Adapter: LivestockOutboxStore
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de sincronización local sobre Room o SQLite. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| serializer | database, |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Enqueue(operation) | No especificado |
-| Pending() | No especificado |
-| MarkSynced(id) | No especificado |
-
----
 
 <a id="toc-2-6-3-5-bounded-context-software-architecture-component-level-diagrams"></a>
 
@@ -7362,29 +5857,6 @@ La base implementada se encuentra en el módulo Sanitary de la API ASP.NET Core.
 
 ---
 
-### Enumeration: HealthEventType
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend y modelos equivalentes Android/Flutter |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir los valores válidos de HealthEventType. |
-| **Relaciones** | HealthEvent se relaciona con HealthEventType |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| MedicalVisit | No especificado |
-| Vaccination | No especificado |
-| Treatment | No especificado |
-| SanitaryControl | No especificado |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Domain Service: SanitaryAuthorizationPolicy
 
@@ -7431,60 +5903,7 @@ No aplica.
 
 ---
 
-### Entity: MedicalVisit
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Representar una visita veterinaria asociada con el historial sanitario. |
-| **Relaciones** | Pertenece a HealthEvent y referencia al veterinario autorizado. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| id | int |
-| healthEventId | int |
-| veterinarianId | int |
-| scheduledAt | DateTime |
-| status | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Reschedule(date) | No especificado |
-| Complete() | No especificado |
-
----
-
-### Entity: SanitaryAlert
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Representar una alerta por vacunación, tratamiento o seguimiento pendiente. |
-| **Relaciones** | Se origina desde HealthEvent y puede generar una actividad. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| id | int |
-| animalId | int |
-| dueDate | Date |
-| severity | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| IsDue(on: Date) | bool |
-| Dismiss() | No especificado |
-
----
 
 <a id="toc-2-6-4-2-interface-layer"></a>
 
@@ -7522,99 +5941,8 @@ No aplica.
 
 ---
 
-### Resource/Assembler: CreateHealthEventResource
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
 
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| AnimalId | int |
-| Type | string |
-| Date | DateOnly |
-| Description | string |
-| Veterinarian | string |
-| Diagnosis | string |
-| Treatment | string |
-| Prescription | string |
-| FollowUp | string |
-| NextDueDate | DateOnly? |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: HealthEventResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| AnimalId | int |
-| Type | string |
-| Date | DateOnly |
-| Description | string |
-| Veterinarian | string |
-| Diagnosis | string |
-| Treatment | string |
-| Prescription | string |
-| FollowUp | string |
-| NextDueDate | DateOnly? |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Composable: HealthEventScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar registro y seguimiento de eventos sanitarios, diagnósticos y tratamientos en Android. |
-| **Relaciones** | Observa HealthEventViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| uiState | No especificado |
-| onAction | No especificado |
-| navigation | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Render() | No especificado |
-| Submit() | No especificado |
-| Retry() | No especificado |
-
----
 
 ### Presentation Model: HealthEventViewModel
 
@@ -7643,32 +5971,6 @@ No aplica.
 
 ---
 
-### Widget: HealthEventPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar registro y seguimiento de eventos sanitarios, diagnósticos y tratamientos en Flutter. |
-| **Relaciones** | Observa HealthEventController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| state | No especificado |
-| onAction | No especificado |
-| router | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| build(context) | No especificado |
-| submit() | No especificado |
-| retry() | No especificado |
-
----
 
 ### State Controller: HealthEventController
 
@@ -7731,132 +6033,10 @@ No aplica.
 
 ---
 
-### Application Service: HealthEventQueryService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar registro y seguimiento de eventos sanitarios, diagnósticos y tratamientos sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| repository | IHealthEventRepository |
 
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(GetHealthEventByIdQuery query, CancellationToken cancellationToken) | No especificado |
-| Handle(GetAllHealthEventsQuery query, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Command/Query: CreateHealthEventCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| AnimalId | int |
-| Type | string |
-| Date | DateOnly |
-| Description | string |
-| Veterinarian | string |
-| Diagnosis | string |
-| Treatment | string |
-| Prescription | string |
-| FollowUp | string |
-| NextDueDate | DateOnly? |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: UpdateHealthEventCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| AnimalId | int |
-| Type | string |
-| Date | DateOnly |
-| Description | string |
-| Veterinarian | string |
-| Diagnosis | string |
-| Treatment | string |
-| Prescription | string |
-| FollowUp | string |
-| NextDueDate | DateOnly? |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: DeleteHealthEventCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetHealthEventByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveHealthEventUseCase
 
@@ -7883,30 +6063,6 @@ No aplica.
 
 ---
 
-### Use Case: SyncHealthEventUseCase
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| outboxRepository | No especificado |
-| remoteRepository | No especificado |
-| conflictResolver | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Execute() | SyncResult |
-
----
 
 ### Command Handler: CreateHealthEventCommandHandler
 
@@ -7933,30 +6089,6 @@ No aplica.
 
 ---
 
-### Command Handler: UpdateHealthEventCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | No especificado |
-| unitOfWork | No especificado |
-| domainPolicy | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(command) | Result |
-
----
 
 ### Event Handler: HealthEventRegisteredEventHandler
 
@@ -8017,56 +6149,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| configuration | EntityTypeBuilder |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ApplyConfiguration(modelBuilder) | No especificado |
-
----
-
-### Remote Adapter: HealthEventApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### Room Adapter: HealthEventDao
 
@@ -8095,33 +6178,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: HealthEventRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### SQLite Adapter: HealthEventLocalDataSource
 
@@ -8150,52 +6206,7 @@ No aplica.
 
 ---
 
-### Context Adapter: LivestockAnimalAdapter
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de consulta de animales y consume Livestock Management. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| livestockFacade | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| GetAnimal(animalId) | No especificado |
-| Exists(animalId) | bool |
-
----
-
-### Context Adapter: VeterinaryAuthorizationAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de autorización y consume Veterinary Collaboration. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| collaborationFacade | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| CanWrite(veterinarianId, animalId) | bool |
-
----
 
 ### Offline Adapter: SanitaryOutboxStore
 
@@ -8421,58 +6432,7 @@ No aplica.
 
 ---
 
-### Entity: CollaborationRequest
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Representar la solicitud inicial entre veterinario y ganadero. |
-| **Relaciones** | Da origen o cambia el estado de VeterinarianClient. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| veterinarianId | int |
-| rancherId | int |
-| requestedAt | DateTime |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Accept(at) | No especificado |
-| Reject() | No especificado |
-
----
-
-### Entity: AccessGrant
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Materializar el permiso concedido al veterinario. |
-| **Relaciones** | Depende de VeterinarianClient y contiene AuthorizationScope. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| relationId | int |
-| scope | AuthorizationScope |
-| grantedAt | DateTime |
-| revokedAt | DateTime? |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Allows(animalId) | bool |
-| Revoke(at) | No especificado |
-
----
 
 <a id="toc-2-6-5-2-interface-layer"></a>
 
@@ -8512,92 +6472,8 @@ No aplica.
 
 ---
 
-### Resource/Assembler: AvailableRancherResource
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
 
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| Username | string |
-| FullName | string |
-| Herds | int |
-| Animals | int |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: VeterinarianClientResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| VeterinarianId | int |
-| RancherId | int |
-| RancherName | string |
-| Status | string |
-| Herds | int |
-| Animals | int |
-| RequestedAt | DateTime |
-| AcceptedAt | DateTime? |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Composable: VeterinarianClientScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias en Android. |
-| **Relaciones** | Observa VeterinarianClientViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| uiState | No especificado |
-| onAction | No especificado |
-| navigation | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Render() | No especificado |
-| Submit() | No especificado |
-| Retry() | No especificado |
-
----
 
 ### Presentation Model: VeterinarianClientViewModel
 
@@ -8626,32 +6502,6 @@ No aplica.
 
 ---
 
-### Widget: VeterinarianClientPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias en Flutter. |
-| **Relaciones** | Observa VeterinarianClientController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| state | No especificado |
-| onAction | No especificado |
-| router | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| build(context) | No especificado |
-| submit() | No especificado |
-| retry() | No especificado |
-
----
 
 ### State Controller: VeterinarianClientController
 
@@ -8713,94 +6563,9 @@ No aplica.
 
 ---
 
-### Application Service: VeterinarianClientQueryService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| repository | IVeterinarianClientRepository |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(GetVeterinarianClientsByVeterinarianIdQuery query, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Command/Query: CreateVeterinarianClientCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| VeterinarianId | int |
-| RancherId | int |
-| string Status = "Accepted" | No especificado |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: DeleteVeterinarianClientCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| VeterinarianId | int |
-| RancherId | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetVeterinarianClientsByVeterinarianIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| VeterinarianId | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveVeterinarianClientUseCase
 
@@ -8827,30 +6592,6 @@ No aplica.
 
 ---
 
-### Use Case: SyncVeterinarianClientUseCase
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| outboxRepository | No especificado |
-| remoteRepository | No especificado |
-| conflictResolver | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Execute() | SyncResult |
-
----
 
 ### Command Handler: RequestCollaborationCommandHandler
 
@@ -8877,30 +6618,6 @@ No aplica.
 
 ---
 
-### Command Handler: AcceptCollaborationCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | No especificado |
-| unitOfWork | No especificado |
-| domainPolicy | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(command) | Result |
-
----
 
 ### Event Handler: CollaborationAcceptedEventHandler
 
@@ -8960,56 +6677,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| configuration | EntityTypeBuilder |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ApplyConfiguration(modelBuilder) | No especificado |
-
----
-
-### Remote Adapter: VeterinarianClientApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### Room Adapter: VeterinarianClientDao
 
@@ -9038,33 +6706,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: VeterinarianClientRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### SQLite Adapter: VeterinarianClientLocalDataSource
 
@@ -9093,29 +6734,6 @@ No aplica.
 
 ---
 
-### Context Adapter: IamIdentityAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de identidad y consume IAM. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| iamFacade | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| GetRole(userId) | No especificado |
-| Exists(userId) | bool |
-
----
 
 ### Context Adapter: ProfilesDirectoryAdapter
 
@@ -9141,29 +6759,6 @@ No aplica.
 
 ---
 
-### Context Adapter: LivestockPatientAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de pacientes y consume Livestock Management. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| livestockFacade | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| GetAnimals(rancherId) | No especificado |
-| ValidateScope(scope) | No especificado |
-
----
 
 <a id="toc-2-6-5-5-bounded-context-software-architecture-component-level-diagrams"></a>
 
@@ -9293,28 +6888,6 @@ La base implementada se encuentra en el módulo Activities de la API ASP.NET Cor
 
 ---
 
-### Enumeration: ActivityPriority
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Definir los valores válidos de ActivityPriority. |
-| **Relaciones** | FarmActivity se relaciona con ActivityPriority |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Low | No especificado |
-| Medium | No especificado |
-| High | No especificado |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Enumeration: ActivityStatus
 
@@ -9421,93 +6994,8 @@ No aplica.
 
 ---
 
-### Resource/Assembler: CreateFarmActivityResource
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
 
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| OwnerId | int? |
-| VeterinarianId | int? |
-| Title | string |
-| Type | string |
-| Date | DateOnly |
-| Priority | string |
-| Status | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: FarmActivityResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| OwnerId | int? |
-| VeterinarianId | int? |
-| Title | string |
-| Type | string |
-| Date | DateOnly |
-| Priority | string |
-| Status | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Composable: FarmActivityScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar programación, reprogramación, finalización y recordatorio de actividades en Android. |
-| **Relaciones** | Observa FarmActivityViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| uiState | No especificado |
-| onAction | No especificado |
-| navigation | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Render() | No especificado |
-| Submit() | No especificado |
-| Retry() | No especificado |
-
----
 
 ### Presentation Model: FarmActivityViewModel
 
@@ -9536,32 +7024,6 @@ No aplica.
 
 ---
 
-### Widget: FarmActivityPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar programación, reprogramación, finalización y recordatorio de actividades en Flutter. |
-| **Relaciones** | Observa FarmActivityController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| state | No especificado |
-| onAction | No especificado |
-| router | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| build(context) | No especificado |
-| submit() | No especificado |
-| retry() | No especificado |
-
----
 
 ### State Controller: FarmActivityController
 
@@ -9624,126 +7086,10 @@ No aplica.
 
 ---
 
-### Application Service: FarmActivityQueryService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar programación, reprogramación, finalización y recordatorio de actividades sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| repository | IFarmActivityRepository |
 
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(GetFarmActivityByIdQuery query, CancellationToken cancellationToken) | No especificado |
-| Handle(GetAllFarmActivitiesQuery query, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Command/Query: CreateFarmActivityCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| OwnerId | int? |
-| VeterinarianId | int? |
-| Title | string |
-| Type | string |
-| Date | DateOnly |
-| Priority | string |
-| Status | string |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: UpdateFarmActivityCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| OwnerId | int? |
-| VeterinarianId | int? |
-| Title | string |
-| Type | string |
-| Date | DateOnly |
-| Priority | string |
-| Status | string |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: DeleteFarmActivityCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetFarmActivityByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveFarmActivityUseCase
 
@@ -9770,30 +7116,6 @@ No aplica.
 
 ---
 
-### Use Case: SyncFarmActivityUseCase
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| outboxRepository | No especificado |
-| remoteRepository | No especificado |
-| conflictResolver | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Execute() | SyncResult |
-
----
 
 ### Command Handler: CreateFarmActivityCommandHandler
 
@@ -9820,30 +7142,6 @@ No aplica.
 
 ---
 
-### Command Handler: CompleteFarmActivityCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | No especificado |
-| unitOfWork | No especificado |
-| domainPolicy | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(command) | Result |
-
----
 
 ### Event Handler: ActivityScheduledEventHandler
 
@@ -9904,56 +7202,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| configuration | EntityTypeBuilder |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ApplyConfiguration(modelBuilder) | No especificado |
-
----
-
-### Remote Adapter: FarmActivityApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### Room Adapter: FarmActivityDao
 
@@ -9982,33 +7231,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: FarmActivityRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### SQLite Adapter: FarmActivityLocalDataSource
 
@@ -10037,51 +7259,7 @@ No aplica.
 
 ---
 
-### Context Adapter: LivestockReferenceAdapter
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de referencia de animales. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| livestockFacade | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ExistsAnimal(animalId) | bool |
-
----
-
-### Context Adapter: SanitaryReferenceAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de seguimiento sanitario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| sanitaryFacade | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| GetFollowUpDate(eventId) | Date? |
-
----
 
 ### Messaging Adapter: FirebaseReminderPublisher
 
@@ -10233,27 +7411,6 @@ La base implementada se encuentra en el módulo Financial de la API ASP.NET Core
 
 ---
 
-### Enumeration: FinancialRecordType
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Definir los valores válidos de FinancialRecordType. |
-| **Relaciones** | FinancialRecord se relaciona con FinancialRecordType |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Income | No especificado |
-| Expense | No especificado |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Value Object: FinancialCategory
 
@@ -10359,91 +7516,8 @@ No aplica.
 
 ---
 
-### Resource/Assembler: CreateFinancialRecordResource
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
 
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| OwnerId | int |
-| Type | string |
-| Category | string |
-| Amount | decimal |
-| Date | DateOnly |
-| Description | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: FinancialRecordResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| OwnerId | int |
-| Type | string |
-| Category | string |
-| Amount | decimal |
-| Date | DateOnly |
-| Description | string |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Composable: FinancialRecordScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar registro de ingresos y egresos, actualización y cálculo de resúmenes en Android. |
-| **Relaciones** | Observa FinancialRecordViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| uiState | No especificado |
-| onAction | No especificado |
-| navigation | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Render() | No especificado |
-| Submit() | No especificado |
-| Retry() | No especificado |
-
----
 
 ### Presentation Model: FinancialRecordViewModel
 
@@ -10472,32 +7546,6 @@ No aplica.
 
 ---
 
-### Widget: FinancialRecordPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar registro de ingresos y egresos, actualización y cálculo de resúmenes en Flutter. |
-| **Relaciones** | Observa FinancialRecordController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| state | No especificado |
-| onAction | No especificado |
-| router | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| build(context) | No especificado |
-| submit() | No especificado |
-| retry() | No especificado |
-
----
 
 ### State Controller: FinancialRecordController
 
@@ -10560,124 +7608,10 @@ No aplica.
 
 ---
 
-### Application Service: FinancialRecordQueryService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar registro de ingresos y egresos, actualización y cálculo de resúmenes sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| repository | IFinancialRecordRepository |
 
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(GetFinancialRecordByIdQuery query, CancellationToken cancellationToken) | No especificado |
-| Handle(GetAllFinancialRecordsQuery query, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Command/Query: CreateFinancialRecordCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| OwnerId | int |
-| Type | string |
-| Category | string |
-| Amount | decimal |
-| Date | DateOnly |
-| Description | string |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: UpdateFinancialRecordCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| OwnerId | int |
-| Type | string |
-| Category | string |
-| Amount | decimal |
-| Date | DateOnly |
-| Description | string |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: DeleteFinancialRecordCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetFinancialRecordByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveFinancialRecordUseCase
 
@@ -10704,30 +7638,6 @@ No aplica.
 
 ---
 
-### Use Case: SyncFinancialRecordUseCase
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| outboxRepository | No especificado |
-| remoteRepository | No especificado |
-| conflictResolver | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Execute() | SyncResult |
-
----
 
 ### Command Handler: CreateFinancialRecordCommandHandler
 
@@ -10754,30 +7664,6 @@ No aplica.
 
 ---
 
-### Command Handler: UpdateFinancialRecordCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | No especificado |
-| unitOfWork | No especificado |
-| domainPolicy | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(command) | Result |
-
----
 
 ### Event Handler: FinancialRecordRegisteredEventHandler
 
@@ -10838,56 +7724,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| configuration | EntityTypeBuilder |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ApplyConfiguration(modelBuilder) | No especificado |
-
----
-
-### Remote Adapter: FinancialRecordApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### Room Adapter: FinancialRecordDao
 
@@ -10916,33 +7753,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: FinancialRecordRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### SQLite Adapter: FinancialRecordLocalDataSource
 
@@ -10971,28 +7781,6 @@ No aplica.
 
 ---
 
-### Context Adapter: ProfilesFinancialOwnerAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de propietarios y consume Profile Management. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| profilesFacade | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ValidateOwner(ownerId) | bool |
-
----
 
 ### Offline Adapter: FinancialOutboxStore
 
@@ -11227,28 +8015,6 @@ No aplica.
 
 ---
 
-### Enumeration: PaymentStatus
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Definir los valores válidos de PaymentStatus. |
-| **Relaciones** | Payment se relaciona con PaymentStatus |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Pending | No especificado |
-| Paid | No especificado |
-| Failed | No especificado |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Repository Interface: ISubscriptionRepository
 
@@ -11274,52 +8040,7 @@ No aplica.
 
 ---
 
-### Repository Interface: ISubscriptionPlanRepository
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Abstraer la persistencia de planes de suscripción. |
-| **Relaciones** | Persiste SubscriptionPlan y es implementado por SubscriptionPlanRepository. |
-
-**Atributos o dependencias**
-
-No aplica.
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| FindByIdAsync(id) | No especificado |
-| ListAsync() | No especificado |
-| AddAsync(plan) | No especificado |
-| Update(plan) | No especificado |
-
----
-
-### Repository Interface: IPaymentRepository
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Abstraer la persistencia y consulta de pagos. |
-| **Relaciones** | Persiste Payment y es implementado por PaymentRepository. |
-
-**Atributos o dependencias**
-
-No aplica.
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| FindByUserIdAsync(userId) | No especificado |
-| FindByProviderPaymentIdAsync(providerPaymentId) | No especificado |
-| AddAsync(payment) | No especificado |
-
----
 
 ### Domain Port: PaymentGateway
 
@@ -11351,33 +8072,6 @@ No aplica.
 
 **Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-### REST Controller: SubscriptionPlansController
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Publicar por HTTP las capacidades de Subscription Management. |
-| **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| commandService | ISubscriptionPlanCommandService |
-| queryService | ISubscriptionPlanQueryService |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| GetAll(CancellationToken cancellationToken) | No especificado |
-| GetById(int id, CancellationToken cancellationToken) | No especificado |
-| Create(CreateSubscriptionPlanResource resource, CancellationToken cancellationToken) | No especificado |
-| Update(int id, CreateSubscriptionPlanResource resource, CancellationToken cancellationToken) | No especificado |
-| Delete(int id, CancellationToken cancellationToken) | No especificado |
-
----
 
 ### REST Controller: SubscriptionsController
 
@@ -11416,148 +8110,10 @@ No aplica.
 
 ---
 
-### Resource/Assembler: SubscriptionPlanResource
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| Name | string |
-| Price | decimal |
-| StripePriceId | string |
-| MaxAnimals | int |
-| IsActive | bool |
 
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: SubscriptionResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| UserId | int |
-| PlanId | int |
-| StripeCustomerId | string |
-| StripeSubscriptionId | string |
-| Status | string |
-| StartedAt | DateOnly |
-| EndsAt | DateOnly? |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: PaymentResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| UserId | int |
-| SubscriptionId | int |
-| Amount | decimal |
-| Currency | string |
-| Provider | string |
-| ProviderPaymentId | string |
-| Status | string |
-| PaidAt | DateTime |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: StripeCheckoutResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| PlanId | int |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Composable: SubscriptionScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar consulta de planes, contratación, pago y actualización de suscripciones en Android. |
-| **Relaciones** | Observa SubscriptionViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| uiState | No especificado |
-| onAction | No especificado |
-| navigation | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Render() | No especificado |
-| Submit() | No especificado |
-| Retry() | No especificado |
-
----
 
 ### Presentation Model: SubscriptionViewModel
 
@@ -11586,32 +8142,6 @@ No aplica.
 
 ---
 
-### Widget: SubscriptionPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar consulta de planes, contratación, pago y actualización de suscripciones en Flutter. |
-| **Relaciones** | Observa SubscriptionController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| state | No especificado |
-| onAction | No especificado |
-| router | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| build(context) | No especificado |
-| submit() | No especificado |
-| retry() | No especificado |
-
----
 
 ### State Controller: SubscriptionController
 
@@ -11648,31 +8178,6 @@ No aplica.
 
 **Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-### Application Service: SubscriptionPlanCommandService
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | ISubscriptionPlanRepository |
-| unitOfWork | IUnitOfWork |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(CreateSubscriptionPlanCommand command, CancellationToken cancellationToken) | No especificado |
-| Handle(UpdateSubscriptionPlanCommand command, CancellationToken cancellationToken) | No especificado |
-| Handle(DeleteSubscriptionPlanCommand command, CancellationToken cancellationToken) | No especificado |
-
----
 
 ### Application Service: SubscriptionCommandService
 
@@ -11700,150 +8205,11 @@ No aplica.
 
 ---
 
-### Application Service: PaymentCommandService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| repository | IPaymentRepository |
-| unitOfWork | IUnitOfWork |
 
-**Métodos u operaciones**
 
-| Firma | Retorno |
-|---|---|
-| Handle(CreatePaymentCommand command, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Application Service: SubscriptionQueryService
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | ISubscriptionRepository |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(GetSubscriptionByIdQuery query, CancellationToken cancellationToken) | No especificado |
-| Handle(GetAllSubscriptionsQuery query, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Command/Query: CreateSubscriptionCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| UserId | int |
-| PlanId | int |
-| StripeCustomerId | string |
-| StripeSubscriptionId | string |
-| Status | string |
-| StartedAt | DateOnly |
-| EndsAt | DateOnly? |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: CreatePaymentCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| UserId | int |
-| SubscriptionId | int |
-| Amount | decimal |
-| Currency | string |
-| Provider | string |
-| ProviderPaymentId | string |
-| Status | string |
-| PaidAt | DateTime |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetSubscriptionByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetAllSubscriptionPlansQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| filters | optional |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveSubscriptionUseCase
 
@@ -11870,55 +8236,7 @@ No aplica.
 
 ---
 
-### Use Case: SyncSubscriptionUseCase
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| outboxRepository | No especificado |
-| remoteRepository | No especificado |
-| conflictResolver | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Execute() | SyncResult |
-
----
-
-### Command Handler: CreateSubscriptionCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | No especificado |
-| unitOfWork | No especificado |
-| domainPolicy | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(command) | Result |
-
----
 
 ### Command Handler: CreatePaymentCommandHandler
 
@@ -12004,56 +8322,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| configuration | EntityTypeBuilder |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ApplyConfiguration(modelBuilder) | No especificado |
-
----
-
-### Remote Adapter: SubscriptionApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### Room Adapter: SubscriptionDao
 
@@ -12082,33 +8351,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: SubscriptionRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### SQLite Adapter: SubscriptionLocalDataSource
 
@@ -12137,29 +8379,6 @@ No aplica.
 
 ---
 
-### Context Adapter: IamSubscriberAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de suscriptor y consume IAM. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| iamFacade | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Exists(userId) | bool |
-| GetEmail(userId) | string |
-
----
 
 ### Anti-Corruption Layer: StripePaymentGateway
 
@@ -12186,30 +8405,6 @@ No aplica.
 
 ---
 
-### Local Cache Adapter: SubscriptionCacheStore
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto local de consulta mediante Room o SQLite. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| subscriptionDao | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ReadActive(userId) | No especificado |
-| Save(subscription) | No especificado |
-| Invalidate() | No especificado |
-
----
 
 <a id="toc-2-6-8-5-bounded-context-software-architecture-component-level-diagrams"></a>
 
@@ -12363,29 +8558,6 @@ La base implementada se encuentra en el módulo Analytics de la API ASP.NET Core
 
 ---
 
-### Value Object: MetricPeriod
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Representar el intervalo consultado. |
-| **Relaciones** | DashboardProjection compone MetricPeriod |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| from | Date |
-| to | Date |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Contains(date: Date) | bool |
-
----
 
 ### Domain Service: ProjectionBuilder
 
@@ -12471,173 +8643,11 @@ No aplica.
 
 ---
 
-### REST Controller: ReportMetricsController
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Publicar por HTTP las capacidades de Analytics and Reporting. |
-| **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| commandService | IReportMetricCommandService |
-| queryService | IReportMetricQueryService |
 
-**Métodos u operaciones**
 
-| Firma | Retorno |
-|---|---|
-| GetAll(CancellationToken cancellationToken) | No especificado |
-| GetById(int id, CancellationToken cancellationToken) | No especificado |
-| Create(CreateReportMetricResource resource, CancellationToken cancellationToken) | No especificado |
-| Update(int id, CreateReportMetricResource resource, CancellationToken cancellationToken) | No especificado |
-| Delete(int id, CancellationToken cancellationToken) | No especificado |
-
----
-
-### Resource/Assembler: RancherDashboardResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Herds | int |
-| Animals | int |
-| HealthyAnimals | int |
-| HealthEvents | int |
-| UpcomingActivities | int |
-| Devices | int |
-| Income | decimal |
-| Expenses | decimal |
-| Balance | decimal |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: VeterinarianDashboardResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Clients | int |
-| Herds | int |
-| Patients | int |
-| HealthEvents | int |
-| UpcomingVisits | int |
-| ActiveTreatments | int |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: FinancialSummaryResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Income | decimal |
-| Expenses | decimal |
-| Balance | decimal |
-| ByCategory | IEnumerable<MetricSliceResource> |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Resource/Assembler: HealthSummaryResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| TotalEvents | int |
-| ByType | IEnumerable<MetricSliceResource> |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Create(...) | No especificado |
-| Deconstruct(...) | No especificado |
-
----
-
-### Composable: DashboardProjectionScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar construcción y consulta de dashboards, métricas y proyecciones en Android. |
-| **Relaciones** | Observa DashboardProjectionViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| uiState | No especificado |
-| onAction | No especificado |
-| navigation | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Render() | No especificado |
-| Submit() | No especificado |
-| Retry() | No especificado |
-
----
 
 ### Presentation Model: DashboardProjectionViewModel
 
@@ -12666,32 +8676,6 @@ No aplica.
 
 ---
 
-### Widget: DashboardProjectionPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar construcción y consulta de dashboards, métricas y proyecciones en Flutter. |
-| **Relaciones** | Observa DashboardProjectionController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| state | No especificado |
-| onAction | No especificado |
-| router | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| build(context) | No especificado |
-| submit() | No especificado |
-| retry() | No especificado |
-
----
 
 ### State Controller: DashboardProjectionController
 
@@ -12728,31 +8712,6 @@ No aplica.
 
 **Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-### Application Service: ReportMetricCommandService
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar construcción y consulta de dashboards, métricas y proyecciones sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | IReportMetricRepository |
-| unitOfWork | IUnitOfWork |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(CreateReportMetricCommand command, CancellationToken cancellationToken) | No especificado |
-| Handle(UpdateReportMetricCommand command, CancellationToken cancellationToken) | No especificado |
-| Handle(DeleteReportMetricCommand command, CancellationToken cancellationToken) | No especificado |
-
----
 
 ### Application Service: ReportMetricQueryService
 
@@ -12778,94 +8737,9 @@ No aplica.
 
 ---
 
-### Command/Query: CreateReportMetricCommand
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| Label | string |
-| Value | string |
-| Trend | string |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: UpdateReportMetricCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-| Label | string |
-| Value | string |
-| Trend | string |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetAllReportMetricsQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| filters | optional |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetReportMetricByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| Id | int |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveDashboardProjectionUseCase
 
@@ -12892,55 +8766,7 @@ No aplica.
 
 ---
 
-### Use Case: SyncDashboardProjectionUseCase
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| outboxRepository | No especificado |
-| remoteRepository | No especificado |
-| conflictResolver | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Execute() | SyncResult |
-
----
-
-### Command Handler: CreateReportMetricCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| repository | No especificado |
-| unitOfWork | No especificado |
-| domainPolicy | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Handle(command) | Result |
-
----
 
 ### Query Handler: BuildDashboardQueryHandler
 
@@ -13025,56 +8851,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| configuration | EntityTypeBuilder |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ApplyConfiguration(modelBuilder) | No especificado |
-
----
-
-### Remote Adapter: DashboardProjectionApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### Room Adapter: DashboardProjectionDao
 
@@ -13103,33 +8880,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: DashboardProjectionRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| httpClient | No especificado |
-| tokenProvider | No especificado |
-| serializer | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| Get(criteria) | No especificado |
-| Create(dto) | No especificado |
-| Update(dto) | No especificado |
-| Delete(id) | No especificado |
-
----
 
 ### SQLite Adapter: DashboardProjectionLocalDataSource
 
@@ -13181,74 +8931,8 @@ No aplica.
 
 ---
 
-### Projection Source Adapter: SanitaryMetricsAdapter
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa una fuente de proyección desde Sanitary Management. |
 
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| sanitaryQueries | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ReadHealthMetrics(ownerId, period) | No especificado |
-
----
-
-### Projection Source Adapter: ActivityMetricsAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa una fuente de proyección desde Activity Management. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| activityQueries | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ReadActivityMetrics(ownerId, period) | No especificado |
-
----
-
-### Projection Source Adapter: FinancialMetricsAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa una fuente de proyección desde Financial Management. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| financialQueries | No especificado |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| ReadFinancialMetrics(ownerId, period) | No especificado |
-
----
 
 <a id="toc-2-6-9-5-bounded-context-software-architecture-component-level-diagrams"></a>
 

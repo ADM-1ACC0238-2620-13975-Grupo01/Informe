@@ -137,34 +137,6 @@ No aplica.
 
 ---
 
-### Enumeration: IamError
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado** |
-| **Propósito** | Código controlado para errores de autenticación y autorización. |
-| **Relaciones** | Es traducido a respuestas HTTP por Interface Layer. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `None` | `No especificado` |
-| `UserNotFound` | `No especificado` |
-| `UsernameAlreadyTaken` | `No especificado` |
-| `InvalidCredentials` | `No especificado` |
-| `InvalidRole` | `No especificado` |
-| `OperationCancelled` | `No especificado` |
-| `DatabaseError` | `No especificado` |
-| `InternalServerError` | `No especificado` |
-| `ExternalServiceError` | `No especificado` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 <a id="toc-2-6-1-2-interface-layer"></a>
 
@@ -201,165 +173,11 @@ No aplica.
 
 ---
 
-### REST Controller: UsersController
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Publicar por HTTP las capacidades de Identity and Access Management. |
-| **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| `userQueryService` | `IUserQueryService` |
-| `errorLocalizer` | `IStringLocalizer<ErrorMessages>` |
-| `problemDetailsFactory` | `ProblemDetailsFactory` |
 
-**Métodos u operaciones**
 
-| Firma | Retorno |
-|---|---|
-| `GetUserById(int id, CancellationToken cancellationToken)` | `No especificado` |
-| `GetAllUsers(CancellationToken cancellationToken)` | `No especificado` |
-
----
-
-### Resource/Assembler: SignInResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Username` | `string` |
-| `Password` | `string` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Resource/Assembler: SignUpResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Username` | `string` |
-| `Password` | `string` |
-| `string FullName = ""` | `No especificado` |
-| `string Role = "Rancher"` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Resource/Assembler: AuthenticatedUserResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-| `Username` | `string` |
-| `FullName` | `string` |
-| `Role` | `string` |
-| `Token` | `string` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Resource/Assembler: UserResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-| `Username` | `string` |
-| `FullName` | `string` |
-| `Role` | `string` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Composable: UserScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar registro de cuentas, autenticación, consulta de identidad y control de sesión en Android. |
-| **Relaciones** | Observa UserViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `uiState` | `No especificado` |
-| `onAction` | `No especificado` |
-| `navigation` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Render()` | `No especificado` |
-| `Submit()` | `No especificado` |
-| `Retry()` | `No especificado` |
-
----
 
 ### Presentation Model: UserViewModel
 
@@ -388,32 +206,6 @@ No aplica.
 
 ---
 
-### Widget: UserPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar registro de cuentas, autenticación, consulta de identidad y control de sesión en Flutter. |
-| **Relaciones** | Observa UserController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `state` | `No especificado` |
-| `onAction` | `No especificado` |
-| `router` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `build(context)` | `No especificado` |
-| `submit()` | `No especificado` |
-| `retry()` | `No especificado` |
-
----
 
 ### State Controller: UserController
 
@@ -478,144 +270,11 @@ No aplica.
 
 ---
 
-### Application Service: UserQueryService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar registro de cuentas, autenticación, consulta de identidad y control de sesión sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| `userRepository` | `IUserRepository` |
 
-**Métodos u operaciones**
 
-| Firma | Retorno |
-|---|---|
-| `Handle(GetUserByIdQuery query, CancellationToken cancellationToken)` | `No especificado` |
-| `Handle(GetAllUsersQuery query, CancellationToken cancellationToken)` | `No especificado` |
-| `Handle(GetUserByUsernameQuery query, CancellationToken cancellationToken)` | `No especificado` |
-
----
-
-### Application Service: IamContextFacade
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar registro de cuentas, autenticación, consulta de identidad y control de sesión sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `userCommandService` | `IUserCommandService` |
-| `userQueryService` | `IUserQueryService` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `CreateUser(string username, string password, CancellationToken cancellationToken)` | `No especificado` |
-| `FetchUserIdByUsername(string username, CancellationToken cancellationToken)` | `No especificado` |
-| `FetchUsernameByUserId(int userId, CancellationToken cancellationToken)` | `No especificado` |
-
----
-
-### Command/Query: SignInCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Username` | `string` |
-| `Password` | `string` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: SignUpCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Username` | `string` |
-| `Password` | `string` |
-| `FullName` | `string` |
-| `Role` | `string` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetUserByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetUserByUsernameQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Username` | `string` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveUserUseCase
 
@@ -642,30 +301,6 @@ No aplica.
 
 ---
 
-### Use Case: SyncUserUseCase
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `outboxRepository` | `No especificado` |
-| `remoteRepository` | `No especificado` |
-| `conflictResolver` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Execute()` | `SyncResult` |
-
----
 
 ### Command Handler: SignUpCommandHandler
 
@@ -692,30 +327,6 @@ No aplica.
 
 ---
 
-### Command Handler: SignInCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `repository` | `No especificado` |
-| `unitOfWork` | `No especificado` |
-| `domainPolicy` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Handle(command)` | `Result` |
-
----
 
 ### Event Handler: UserAuthenticatedEventHandler
 
@@ -774,56 +385,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `configuration` | `EntityTypeBuilder` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `ApplyConfiguration(modelBuilder)` | `No especificado` |
-
----
-
-### Remote Adapter: UserApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `httpClient` | `No especificado` |
-| `tokenProvider` | `No especificado` |
-| `serializer` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Get(criteria)` | `No especificado` |
-| `Create(dto)` | `No especificado` |
-| `Update(dto)` | `No especificado` |
-| `Delete(id)` | `No especificado` |
-
----
 
 ### Room Adapter: UserDao
 
@@ -852,33 +414,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: UserRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `httpClient` | `No especificado` |
-| `tokenProvider` | `No especificado` |
-| `serializer` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Get(criteria)` | `No especificado` |
-| `Create(dto)` | `No especificado` |
-| `Update(dto)` | `No especificado` |
-| `Delete(id)` | `No especificado` |
-
----
 
 ### SQLite Adapter: UserLocalDataSource
 
@@ -907,29 +442,6 @@ No aplica.
 
 ---
 
-### Security Adapter: HashingService
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de hashing y utiliza BCrypt. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `passwordHash` | `password,` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `HashPassword(password)` | `string` |
-| `VerifyPassword(password, passwordHash)` | `bool` |
-
----
 
 ### Token Adapter: TokenService
 

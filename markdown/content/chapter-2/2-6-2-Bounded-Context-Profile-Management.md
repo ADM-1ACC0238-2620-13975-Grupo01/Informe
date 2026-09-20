@@ -141,51 +141,7 @@ No aplica.
 
 ---
 
-### Value Object: ProfileOwnerId
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Representar y validar la identidad propietaria del perfil. |
-| **Relaciones** | Referencia una identidad de IAM sin incorporar su modelo. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `value` | `int` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `IsValid()` | `bool` |
-
----
-
-### Domain Event: ProfileUpdated
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Comunicar un cambio confirmado del perfil. |
-| **Relaciones** | Es emitido por Profile y atendido por ProfileUpdatedEventHandler. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `profileId` | `int` |
-| `ownerId` | `int` |
-| `occurredAt` | `DateTime` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 <a id="toc-2-6-2-2-interface-layer"></a>
 
@@ -223,90 +179,8 @@ No aplica.
 
 ---
 
-### Resource/Assembler: CreateProfileResource
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
 
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `FirstName` | `string` |
-| `LastName` | `string` |
-| `Email` | `string` |
-| `Street` | `string` |
-| `Number` | `string` |
-| `City` | `string` |
-| `PostalCode` | `string` |
-| `Country` | `string` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Resource/Assembler: ProfileResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-| `FullName` | `string` |
-| `Email` | `string` |
-| `StreetAddress` | `string` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Composable: ProfileScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar creación, actualización y consulta de perfiles en Android. |
-| **Relaciones** | Observa ProfileViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `uiState` | `No especificado` |
-| `onAction` | `No especificado` |
-| `navigation` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Render()` | `No especificado` |
-| `Submit()` | `No especificado` |
-| `Retry()` | `No especificado` |
-
----
 
 ### Presentation Model: ProfileViewModel
 
@@ -335,32 +209,6 @@ No aplica.
 
 ---
 
-### Widget: ProfilePage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar creación, actualización y consulta de perfiles en Flutter. |
-| **Relaciones** | Observa ProfileController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `state` | `No especificado` |
-| `onAction` | `No especificado` |
-| `router` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `build(context)` | `No especificado` |
-| `submit()` | `No especificado` |
-| `retry()` | `No especificado` |
-
----
 
 ### State Controller: ProfileController
 
@@ -422,125 +270,10 @@ No aplica.
 
 ---
 
-### Application Service: ProfileQueryService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar creación, actualización y consulta de perfiles sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| `profileRepository` | `IProfileRepository` |
 
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Handle(GetAllProfilesQuery query, CancellationToken cancellationToken)` | `No especificado` |
-| `Handle(GetProfileByEmailQuery query, CancellationToken cancellationToken)` | `No especificado` |
-| `Handle(GetProfileByIdQuery query, CancellationToken cancellationToken)` | `No especificado` |
-
----
-
-### Application Service: ProfilesContextFacade
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar creación, actualización y consulta de perfiles sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `profileCommandService` | `IProfileCommandService` |
-| `profileQueryService` | `IProfileQueryService` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `CreateProfile(string firstName, string lastName, string email, string street, string number, string city, string postalCode, string country, CancellationToken cancellationToken)` | `No especificado` |
-| `FetchProfileIdByEmail(string email, CancellationToken cancellationToken)` | `No especificado` |
-
----
-
-### Command/Query: CreateProfileCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `FirstName` | `string` |
-| `LastName` | `string` |
-| `Email` | `string` |
-| `Street` | `string` |
-| `Number` | `string` |
-| `City` | `string` |
-| `PostalCode` | `string` |
-| `Country` | `string` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetProfileByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `ProfileId` | `int` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetProfileByEmailQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Email` | `EmailAddress` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveProfileUseCase
 
@@ -567,30 +300,6 @@ No aplica.
 
 ---
 
-### Use Case: SyncProfileUseCase
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `outboxRepository` | `No especificado` |
-| `remoteRepository` | `No especificado` |
-| `conflictResolver` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Execute()` | `SyncResult` |
-
----
 
 ### Command Handler: CreateProfileCommandHandler
 
@@ -617,30 +326,6 @@ No aplica.
 
 ---
 
-### Command Handler: UpdateProfileCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `repository` | `No especificado` |
-| `unitOfWork` | `No especificado` |
-| `domainPolicy` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Handle(command)` | `Result` |
-
----
 
 ### Event Handler: ProfileUpdatedEventHandler
 
@@ -698,56 +383,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `configuration` | `EntityTypeBuilder` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `ApplyConfiguration(modelBuilder)` | `No especificado` |
-
----
-
-### Remote Adapter: ProfileApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `httpClient` | `No especificado` |
-| `tokenProvider` | `No especificado` |
-| `serializer` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Get(criteria)` | `No especificado` |
-| `Create(dto)` | `No especificado` |
-| `Update(dto)` | `No especificado` |
-| `Delete(id)` | `No especificado` |
-
----
 
 ### Room Adapter: ProfileDao
 
@@ -776,33 +412,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: ProfileRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `httpClient` | `No especificado` |
-| `tokenProvider` | `No especificado` |
-| `serializer` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Get(criteria)` | `No especificado` |
-| `Create(dto)` | `No especificado` |
-| `Update(dto)` | `No especificado` |
-| `Delete(id)` | `No especificado` |
-
----
 
 ### SQLite Adapter: ProfileLocalDataSource
 
@@ -854,30 +463,6 @@ No aplica.
 
 ---
 
-### Local Cache Adapter: ProfileCacheStore
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de caché mediante Room o SQLite. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `clock` | `profileDao,` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Read(ownerId)` | `No especificado` |
-| `Save(profile)` | `No especificado` |
-| `Invalidate(ownerId)` | `No especificado` |
-
----
 
 <a id="toc-2-6-2-5-bounded-context-software-architecture-component-level-diagrams"></a>
 

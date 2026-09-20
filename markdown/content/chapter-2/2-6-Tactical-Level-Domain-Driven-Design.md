@@ -26,6 +26,8 @@ Los estados utilizados en los diccionarios se interpretan de la siguiente manera
 
 Al finalizar cada sprint, el equipo revisará únicamente el detalle que haya cambiado. Una clase que pase de diseño objetivo a código operativo deberá cambiar a **Implementado** y reflejar sus atributos, métodos y dependencias reales.
 
+Para mantener el informe legible, las fichas individuales se reservan para aggregates, entidades, servicios, handlers, controladores y adaptadores que explican decisiones relevantes de arquitectura. Los DTO, resources, mappers, comandos simples, configuraciones y adaptadores repetitivos se omiten del diccionario detallado y permanecen representados en el código o en los diagramas correspondientes cuando resulta necesario.
+
 <table>
   <thead>
     <tr><th>Sección</th><th>Bounded Context</th><th>Módulo heredado</th><th>Propósito</th></tr>

@@ -100,28 +100,6 @@ La base implementada se encuentra en el módulo `Livestock` de la API ASP.NET Co
 
 ---
 
-### Value Object: AnimalTag
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Representar el identificador visible del animal. |
-| **Relaciones** | Animal compone AnimalTag |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `value` | `string` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `IsValid()` | `bool` |
-
----
 
 ### Value Object: QrIdentifier
 
@@ -192,48 +170,7 @@ No aplica.
 
 ---
 
-### Repository Interface: IHerdRepository
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Abstraer la persistencia de Herd. |
-| **Relaciones** | IHerdRepository depende de Herd |
-
-**Atributos o dependencias**
-
-No aplica.
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `FindById(id: int)` | `Herd?` |
-| `Add(herd: Herd)` | `void` |
-
----
-
-### Domain Service: AnimalOwnershipPolicy
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Decidir si un actor puede administrar un animal. |
-| **Relaciones** | Consulta Farm, Herd y Animal sin asumir persistencia. |
-
-**Atributos o dependencias**
-
-No aplica.
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `CanManage(actorId: int, animalId: int)` | `bool` |
-
----
 
 <a id="toc-2-6-3-2-interface-layer"></a>
 
@@ -299,156 +236,10 @@ No aplica.
 
 ---
 
-### Resource/Assembler: HerdResource
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-| `Name` | `string` |
-| `Location` | `string` |
-| `Owner` | `string` |
-| `OwnerId` | `int` |
-| `VeterinarianId` | `int?` |
-| `MainType` | `string` |
 
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Resource/Assembler: AnimalResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-| `Tag` | `string` |
-| `Name` | `string` |
-| `Species` | `string` |
-| `Breed` | `string` |
-| `Gender` | `string` |
-| `BirthDate` | `DateOnly?` |
-| `Weight` | `decimal` |
-| `Status` | `string` |
-| `HerdId` | `int` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Resource/Assembler: CreateHerdResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Name` | `string` |
-| `Location` | `string` |
-| `Owner` | `string` |
-| `OwnerId` | `int` |
-| `VeterinarianId` | `int?` |
-| `MainType` | `string` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Resource/Assembler: CreateAnimalResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Tag` | `string` |
-| `Name` | `string` |
-| `Species` | `string` |
-| `Breed` | `string` |
-| `Gender` | `string` |
-| `BirthDate` | `DateOnly?` |
-| `Weight` | `decimal` |
-| `Status` | `string` |
-| `HerdId` | `int` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Composable: FarmHerdYAnimalScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar gestión de fincas, hatos, animales e identificación QR en Android. |
-| **Relaciones** | Observa FarmHerdYAnimalViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `uiState` | `No especificado` |
-| `onAction` | `No especificado` |
-| `navigation` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Render()` | `No especificado` |
-| `Submit()` | `No especificado` |
-| `Retry()` | `No especificado` |
-
----
 
 ### Presentation Model: FarmHerdYAnimalViewModel
 
@@ -477,32 +268,6 @@ No aplica.
 
 ---
 
-### Widget: FarmHerdYAnimalPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar gestión de fincas, hatos, animales e identificación QR en Flutter. |
-| **Relaciones** | Observa FarmHerdYAnimalController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `state` | `No especificado` |
-| `onAction` | `No especificado` |
-| `router` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `build(context)` | `No especificado` |
-| `submit()` | `No especificado` |
-| `retry()` | `No especificado` |
-
----
 
 ### State Controller: FarmHerdYAnimalController
 
@@ -539,55 +304,7 @@ No aplica.
 
 **Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-### Application Service: HerdCommandService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar gestión de fincas, hatos, animales e identificación QR sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `repository` | `IHerdRepository` |
-| `unitOfWork` | `IUnitOfWork` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Handle(CreateHerdCommand command, CancellationToken cancellationToken)` | `No especificado` |
-| `Handle(UpdateHerdCommand command, CancellationToken cancellationToken)` | `No especificado` |
-| `Handle(DeleteHerdCommand command, CancellationToken cancellationToken)` | `No especificado` |
-
----
-
-### Application Service: HerdQueryService
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar gestión de fincas, hatos, animales e identificación QR sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `repository` | `IHerdRepository` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Handle(GetHerdByIdQuery query, CancellationToken cancellationToken)` | `No especificado` |
-| `Handle(GetAllHerdsQuery query, CancellationToken cancellationToken)` | `No especificado` |
-
----
 
 ### Application Service: AnimalCommandService
 
@@ -615,162 +332,11 @@ No aplica.
 
 ---
 
-### Application Service: AnimalQueryService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar gestión de fincas, hatos, animales e identificación QR sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| `repository` | `IAnimalRepository` |
 
-**Métodos u operaciones**
 
-| Firma | Retorno |
-|---|---|
-| `Handle(GetAnimalByIdQuery query, CancellationToken cancellationToken)` | `No especificado` |
-| `Handle(GetAllAnimalsQuery query, CancellationToken cancellationToken)` | `No especificado` |
-
----
-
-### Command/Query: CreateHerdCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Name` | `string` |
-| `Location` | `string` |
-| `Owner` | `string` |
-| `OwnerId` | `int` |
-| `VeterinarianId` | `int?` |
-| `MainType` | `string` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: UpdateHerdCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-| `Name` | `string` |
-| `Location` | `string` |
-| `Owner` | `string` |
-| `OwnerId` | `int` |
-| `VeterinarianId` | `int?` |
-| `MainType` | `string` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: CreateAnimalCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Tag` | `string` |
-| `Name` | `string` |
-| `Species` | `string` |
-| `Breed` | `string` |
-| `Gender` | `string` |
-| `BirthDate` | `DateOnly?` |
-| `Weight` | `decimal` |
-| `Status` | `string` |
-| `HerdId` | `int` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: UpdateAnimalCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-| `Tag` | `string` |
-| `Name` | `string` |
-| `Species` | `string` |
-| `Breed` | `string` |
-| `Gender` | `string` |
-| `BirthDate` | `DateOnly?` |
-| `Weight` | `decimal` |
-| `Status` | `string` |
-| `HerdId` | `int` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetAnimalByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveFarmHerdYAnimalUseCase
 
@@ -797,55 +363,7 @@ No aplica.
 
 ---
 
-### Use Case: SyncFarmHerdYAnimalUseCase
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `outboxRepository` | `No especificado` |
-| `remoteRepository` | `No especificado` |
-| `conflictResolver` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Execute()` | `SyncResult` |
-
----
-
-### Command Handler: CreateHerdCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `repository` | `No especificado` |
-| `unitOfWork` | `No especificado` |
-| `domainPolicy` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Handle(command)` | `Result` |
-
----
 
 ### Command Handler: CreateAnimalCommandHandler
 
@@ -932,56 +450,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `configuration` | `EntityTypeBuilder` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `ApplyConfiguration(modelBuilder)` | `No especificado` |
-
----
-
-### Remote Adapter: FarmHerdYAnimalApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `httpClient` | `No especificado` |
-| `tokenProvider` | `No especificado` |
-| `serializer` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Get(criteria)` | `No especificado` |
-| `Create(dto)` | `No especificado` |
-| `Update(dto)` | `No especificado` |
-| `Delete(id)` | `No especificado` |
-
----
 
 ### Room Adapter: FarmHerdYAnimalDao
 
@@ -1010,33 +479,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: FarmHerdYAnimalRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `httpClient` | `No especificado` |
-| `tokenProvider` | `No especificado` |
-| `serializer` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Get(criteria)` | `No especificado` |
-| `Create(dto)` | `No especificado` |
-| `Update(dto)` | `No especificado` |
-| `Delete(id)` | `No especificado` |
-
----
 
 ### SQLite Adapter: FarmHerdYAnimalLocalDataSource
 
@@ -1065,28 +507,6 @@ No aplica.
 
 ---
 
-### Context Adapter: ProfilesOwnerAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de propietarios y consume Profile Management. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `profilesFacade` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `ValidateOwner(ownerId)` | `bool` |
-
----
 
 ### Device Adapter: MlKitQrScanner
 
@@ -1111,30 +531,6 @@ No aplica.
 
 ---
 
-### Offline Adapter: LivestockOutboxStore
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de sincronización local sobre Room o SQLite. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `serializer` | `database,` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Enqueue(operation)` | `No especificado` |
-| `Pending()` | `No especificado` |
-| `MarkSynced(id)` | `No especificado` |
-
----
 
 <a id="toc-2-6-3-5-bounded-context-software-architecture-component-level-diagrams"></a>
 

@@ -95,29 +95,6 @@ La base implementada se encuentra en el módulo `Analytics` de la API ASP.NET Co
 
 ---
 
-### Value Object: MetricPeriod
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Representar el intervalo consultado. |
-| **Relaciones** | DashboardProjection compone MetricPeriod |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `from` | `Date` |
-| `to` | `Date` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Contains(date: Date)` | `bool` |
-
----
 
 ### Domain Service: ProjectionBuilder
 
@@ -203,173 +180,11 @@ No aplica.
 
 ---
 
-### REST Controller: ReportMetricsController
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Publicar por HTTP las capacidades de Analytics and Reporting. |
-| **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| `commandService` | `IReportMetricCommandService` |
-| `queryService` | `IReportMetricQueryService` |
 
-**Métodos u operaciones**
 
-| Firma | Retorno |
-|---|---|
-| `GetAll(CancellationToken cancellationToken)` | `No especificado` |
-| `GetById(int id, CancellationToken cancellationToken)` | `No especificado` |
-| `Create(CreateReportMetricResource resource, CancellationToken cancellationToken)` | `No especificado` |
-| `Update(int id, CreateReportMetricResource resource, CancellationToken cancellationToken)` | `No especificado` |
-| `Delete(int id, CancellationToken cancellationToken)` | `No especificado` |
-
----
-
-### Resource/Assembler: RancherDashboardResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Herds` | `int` |
-| `Animals` | `int` |
-| `HealthyAnimals` | `int` |
-| `HealthEvents` | `int` |
-| `UpcomingActivities` | `int` |
-| `Devices` | `int` |
-| `Income` | `decimal` |
-| `Expenses` | `decimal` |
-| `Balance` | `decimal` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Resource/Assembler: VeterinarianDashboardResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Clients` | `int` |
-| `Herds` | `int` |
-| `Patients` | `int` |
-| `HealthEvents` | `int` |
-| `UpcomingVisits` | `int` |
-| `ActiveTreatments` | `int` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Resource/Assembler: FinancialSummaryResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Income` | `decimal` |
-| `Expenses` | `decimal` |
-| `Balance` | `decimal` |
-| `ByCategory` | `IEnumerable<MetricSliceResource>` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Resource/Assembler: HealthSummaryResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `TotalEvents` | `int` |
-| `ByType` | `IEnumerable<MetricSliceResource>` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Composable: DashboardProjectionScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar construcción y consulta de dashboards, métricas y proyecciones en Android. |
-| **Relaciones** | Observa DashboardProjectionViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `uiState` | `No especificado` |
-| `onAction` | `No especificado` |
-| `navigation` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Render()` | `No especificado` |
-| `Submit()` | `No especificado` |
-| `Retry()` | `No especificado` |
-
----
 
 ### Presentation Model: DashboardProjectionViewModel
 
@@ -398,32 +213,6 @@ No aplica.
 
 ---
 
-### Widget: DashboardProjectionPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar construcción y consulta de dashboards, métricas y proyecciones en Flutter. |
-| **Relaciones** | Observa DashboardProjectionController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `state` | `No especificado` |
-| `onAction` | `No especificado` |
-| `router` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `build(context)` | `No especificado` |
-| `submit()` | `No especificado` |
-| `retry()` | `No especificado` |
-
----
 
 ### State Controller: DashboardProjectionController
 
@@ -460,31 +249,6 @@ No aplica.
 
 **Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
 
-### Application Service: ReportMetricCommandService
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar construcción y consulta de dashboards, métricas y proyecciones sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `repository` | `IReportMetricRepository` |
-| `unitOfWork` | `IUnitOfWork` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Handle(CreateReportMetricCommand command, CancellationToken cancellationToken)` | `No especificado` |
-| `Handle(UpdateReportMetricCommand command, CancellationToken cancellationToken)` | `No especificado` |
-| `Handle(DeleteReportMetricCommand command, CancellationToken cancellationToken)` | `No especificado` |
-
----
 
 ### Application Service: ReportMetricQueryService
 
@@ -510,94 +274,9 @@ No aplica.
 
 ---
 
-### Command/Query: CreateReportMetricCommand
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| `Label` | `string` |
-| `Value` | `string` |
-| `Trend` | `string` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: UpdateReportMetricCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-| `Label` | `string` |
-| `Value` | `string` |
-| `Trend` | `string` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetAllReportMetricsQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `filters` | `optional` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetReportMetricByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveDashboardProjectionUseCase
 
@@ -624,55 +303,7 @@ No aplica.
 
 ---
 
-### Use Case: SyncDashboardProjectionUseCase
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `outboxRepository` | `No especificado` |
-| `remoteRepository` | `No especificado` |
-| `conflictResolver` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Execute()` | `SyncResult` |
-
----
-
-### Command Handler: CreateReportMetricCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `repository` | `No especificado` |
-| `unitOfWork` | `No especificado` |
-| `domainPolicy` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Handle(command)` | `Result` |
-
----
 
 ### Query Handler: BuildDashboardQueryHandler
 
@@ -757,56 +388,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `configuration` | `EntityTypeBuilder` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `ApplyConfiguration(modelBuilder)` | `No especificado` |
-
----
-
-### Remote Adapter: DashboardProjectionApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `httpClient` | `No especificado` |
-| `tokenProvider` | `No especificado` |
-| `serializer` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Get(criteria)` | `No especificado` |
-| `Create(dto)` | `No especificado` |
-| `Update(dto)` | `No especificado` |
-| `Delete(id)` | `No especificado` |
-
----
 
 ### Room Adapter: DashboardProjectionDao
 
@@ -835,33 +417,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: DashboardProjectionRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `httpClient` | `No especificado` |
-| `tokenProvider` | `No especificado` |
-| `serializer` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Get(criteria)` | `No especificado` |
-| `Create(dto)` | `No especificado` |
-| `Update(dto)` | `No especificado` |
-| `Delete(id)` | `No especificado` |
-
----
 
 ### SQLite Adapter: DashboardProjectionLocalDataSource
 
@@ -913,74 +468,8 @@ No aplica.
 
 ---
 
-### Projection Source Adapter: SanitaryMetricsAdapter
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa una fuente de proyección desde Sanitary Management. |
 
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `sanitaryQueries` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `ReadHealthMetrics(ownerId, period)` | `No especificado` |
-
----
-
-### Projection Source Adapter: ActivityMetricsAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa una fuente de proyección desde Activity Management. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `activityQueries` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `ReadActivityMetrics(ownerId, period)` | `No especificado` |
-
----
-
-### Projection Source Adapter: FinancialMetricsAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa una fuente de proyección desde Financial Management. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `financialQueries` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `ReadFinancialMetrics(ownerId, period)` | `No especificado` |
-
----
 
 <a id="toc-2-6-9-5-bounded-context-software-architecture-component-level-diagrams"></a>
 

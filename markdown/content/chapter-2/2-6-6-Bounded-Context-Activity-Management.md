@@ -71,28 +71,6 @@ La base implementada se encuentra en el módulo `Activities` de la API ASP.NET C
 
 ---
 
-### Enumeration: ActivityPriority
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Definir los valores válidos de ActivityPriority. |
-| **Relaciones** | FarmActivity se relaciona con ActivityPriority |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Low` | `No especificado` |
-| `Medium` | `No especificado` |
-| `High` | `No especificado` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Enumeration: ActivityStatus
 
@@ -199,93 +177,8 @@ No aplica.
 
 ---
 
-### Resource/Assembler: CreateFarmActivityResource
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
 
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `OwnerId` | `int?` |
-| `VeterinarianId` | `int?` |
-| `Title` | `string` |
-| `Type` | `string` |
-| `Date` | `DateOnly` |
-| `Priority` | `string` |
-| `Status` | `string` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Resource/Assembler: FarmActivityResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-| `OwnerId` | `int?` |
-| `VeterinarianId` | `int?` |
-| `Title` | `string` |
-| `Type` | `string` |
-| `Date` | `DateOnly` |
-| `Priority` | `string` |
-| `Status` | `string` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Composable: FarmActivityScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar programación, reprogramación, finalización y recordatorio de actividades en Android. |
-| **Relaciones** | Observa FarmActivityViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `uiState` | `No especificado` |
-| `onAction` | `No especificado` |
-| `navigation` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Render()` | `No especificado` |
-| `Submit()` | `No especificado` |
-| `Retry()` | `No especificado` |
-
----
 
 ### Presentation Model: FarmActivityViewModel
 
@@ -314,32 +207,6 @@ No aplica.
 
 ---
 
-### Widget: FarmActivityPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar programación, reprogramación, finalización y recordatorio de actividades en Flutter. |
-| **Relaciones** | Observa FarmActivityController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `state` | `No especificado` |
-| `onAction` | `No especificado` |
-| `router` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `build(context)` | `No especificado` |
-| `submit()` | `No especificado` |
-| `retry()` | `No especificado` |
-
----
 
 ### State Controller: FarmActivityController
 
@@ -402,126 +269,10 @@ No aplica.
 
 ---
 
-### Application Service: FarmActivityQueryService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar programación, reprogramación, finalización y recordatorio de actividades sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| `repository` | `IFarmActivityRepository` |
 
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Handle(GetFarmActivityByIdQuery query, CancellationToken cancellationToken)` | `No especificado` |
-| `Handle(GetAllFarmActivitiesQuery query, CancellationToken cancellationToken)` | `No especificado` |
-
----
-
-### Command/Query: CreateFarmActivityCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `OwnerId` | `int?` |
-| `VeterinarianId` | `int?` |
-| `Title` | `string` |
-| `Type` | `string` |
-| `Date` | `DateOnly` |
-| `Priority` | `string` |
-| `Status` | `string` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: UpdateFarmActivityCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-| `OwnerId` | `int?` |
-| `VeterinarianId` | `int?` |
-| `Title` | `string` |
-| `Type` | `string` |
-| `Date` | `DateOnly` |
-| `Priority` | `string` |
-| `Status` | `string` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: DeleteFarmActivityCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetFarmActivityByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveFarmActivityUseCase
 
@@ -548,30 +299,6 @@ No aplica.
 
 ---
 
-### Use Case: SyncFarmActivityUseCase
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `outboxRepository` | `No especificado` |
-| `remoteRepository` | `No especificado` |
-| `conflictResolver` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Execute()` | `SyncResult` |
-
----
 
 ### Command Handler: CreateFarmActivityCommandHandler
 
@@ -598,30 +325,6 @@ No aplica.
 
 ---
 
-### Command Handler: CompleteFarmActivityCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `repository` | `No especificado` |
-| `unitOfWork` | `No especificado` |
-| `domainPolicy` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Handle(command)` | `Result` |
-
----
 
 ### Event Handler: ActivityScheduledEventHandler
 
@@ -682,56 +385,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `configuration` | `EntityTypeBuilder` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `ApplyConfiguration(modelBuilder)` | `No especificado` |
-
----
-
-### Remote Adapter: FarmActivityApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `httpClient` | `No especificado` |
-| `tokenProvider` | `No especificado` |
-| `serializer` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Get(criteria)` | `No especificado` |
-| `Create(dto)` | `No especificado` |
-| `Update(dto)` | `No especificado` |
-| `Delete(id)` | `No especificado` |
-
----
 
 ### Room Adapter: FarmActivityDao
 
@@ -760,33 +414,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: FarmActivityRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `httpClient` | `No especificado` |
-| `tokenProvider` | `No especificado` |
-| `serializer` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Get(criteria)` | `No especificado` |
-| `Create(dto)` | `No especificado` |
-| `Update(dto)` | `No especificado` |
-| `Delete(id)` | `No especificado` |
-
----
 
 ### SQLite Adapter: FarmActivityLocalDataSource
 
@@ -815,51 +442,7 @@ No aplica.
 
 ---
 
-### Context Adapter: LivestockReferenceAdapter
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de referencia de animales. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `livestockFacade` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `ExistsAnimal(animalId)` | `bool` |
-
----
-
-### Context Adapter: SanitaryReferenceAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de seguimiento sanitario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `sanitaryFacade` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `GetFollowUpDate(eventId)` | `Date?` |
-
----
 
 ### Messaging Adapter: FirebaseReminderPublisher
 

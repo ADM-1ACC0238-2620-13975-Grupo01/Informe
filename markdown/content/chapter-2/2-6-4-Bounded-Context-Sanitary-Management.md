@@ -116,29 +116,6 @@ La base implementada se encuentra en el módulo `Sanitary` de la API ASP.NET Cor
 
 ---
 
-### Enumeration: HealthEventType
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend y modelos equivalentes Android/Flutter |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir los valores válidos de HealthEventType. |
-| **Relaciones** | HealthEvent se relaciona con HealthEventType |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `MedicalVisit` | `No especificado` |
-| `Vaccination` | `No especificado` |
-| `Treatment` | `No especificado` |
-| `SanitaryControl` | `No especificado` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Domain Service: SanitaryAuthorizationPolicy
 
@@ -185,60 +162,7 @@ No aplica.
 
 ---
 
-### Entity: MedicalVisit
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Representar una visita veterinaria asociada con el historial sanitario. |
-| **Relaciones** | Pertenece a HealthEvent y referencia al veterinario autorizado. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `id` | `int` |
-| `healthEventId` | `int` |
-| `veterinarianId` | `int` |
-| `scheduledAt` | `DateTime` |
-| `status` | `string` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Reschedule(date)` | `No especificado` |
-| `Complete()` | `No especificado` |
-
----
-
-### Entity: SanitaryAlert
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Representar una alerta por vacunación, tratamiento o seguimiento pendiente. |
-| **Relaciones** | Se origina desde HealthEvent y puede generar una actividad. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `id` | `int` |
-| `animalId` | `int` |
-| `dueDate` | `Date` |
-| `severity` | `string` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `IsDue(on: Date)` | `bool` |
-| `Dismiss()` | `No especificado` |
-
----
 
 <a id="toc-2-6-4-2-interface-layer"></a>
 
@@ -276,99 +200,8 @@ No aplica.
 
 ---
 
-### Resource/Assembler: CreateHealthEventResource
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
 
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `AnimalId` | `int` |
-| `Type` | `string` |
-| `Date` | `DateOnly` |
-| `Description` | `string` |
-| `Veterinarian` | `string` |
-| `Diagnosis` | `string` |
-| `Treatment` | `string` |
-| `Prescription` | `string` |
-| `FollowUp` | `string` |
-| `NextDueDate` | `DateOnly?` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Resource/Assembler: HealthEventResource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Definir un contrato estable de entrada o salida para la API REST. |
-| **Relaciones** | Es construido o traducido por assemblers y consumido por el controller y los clientes móviles. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-| `AnimalId` | `int` |
-| `Type` | `string` |
-| `Date` | `DateOnly` |
-| `Description` | `string` |
-| `Veterinarian` | `string` |
-| `Diagnosis` | `string` |
-| `Treatment` | `string` |
-| `Prescription` | `string` |
-| `FollowUp` | `string` |
-| `NextDueDate` | `DateOnly?` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Create(...)` | `No especificado` |
-| `Deconstruct(...)` | `No especificado` |
-
----
-
-### Composable: HealthEventScreen
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Jetpack Compose |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar registro y seguimiento de eventos sanitarios, diagnósticos y tratamientos en Android. |
-| **Relaciones** | Observa HealthEventViewModel y emite acciones de interfaz. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `uiState` | `No especificado` |
-| `onAction` | `No especificado` |
-| `navigation` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Render()` | `No especificado` |
-| `Submit()` | `No especificado` |
-| `Retry()` | `No especificado` |
-
----
 
 ### Presentation Model: HealthEventViewModel
 
@@ -397,32 +230,6 @@ No aplica.
 
 ---
 
-### Widget: HealthEventPage
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Presentar registro y seguimiento de eventos sanitarios, diagnósticos y tratamientos en Flutter. |
-| **Relaciones** | Observa HealthEventController y emite intenciones del usuario. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `state` | `No especificado` |
-| `onAction` | `No especificado` |
-| `router` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `build(context)` | `No especificado` |
-| `submit()` | `No especificado` |
-| `retry()` | `No especificado` |
-
----
 
 ### State Controller: HealthEventController
 
@@ -485,132 +292,10 @@ No aplica.
 
 ---
 
-### Application Service: HealthEventQueryService
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Orquestar registro y seguimiento de eventos sanitarios, diagnósticos y tratamientos sin contener reglas del dominio. |
-| **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
-**Atributos o dependencias**
 
-| Nombre | Tipo |
-|---|---|
-| `repository` | `IHealthEventRepository` |
 
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Handle(GetHealthEventByIdQuery query, CancellationToken cancellationToken)` | `No especificado` |
-| `Handle(GetAllHealthEventsQuery query, CancellationToken cancellationToken)` | `No especificado` |
-
----
-
-### Command/Query: CreateHealthEventCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `AnimalId` | `int` |
-| `Type` | `string` |
-| `Date` | `DateOnly` |
-| `Description` | `string` |
-| `Veterinarian` | `string` |
-| `Diagnosis` | `string` |
-| `Treatment` | `string` |
-| `Prescription` | `string` |
-| `FollowUp` | `string` |
-| `NextDueDate` | `DateOnly?` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: UpdateHealthEventCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-| `AnimalId` | `int` |
-| `Type` | `string` |
-| `Date` | `DateOnly` |
-| `Description` | `string` |
-| `Veterinarian` | `string` |
-| `Diagnosis` | `string` |
-| `Treatment` | `string` |
-| `Prescription` | `string` |
-| `FollowUp` | `string` |
-| `NextDueDate` | `DateOnly?` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: DeleteHealthEventCommand
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
-
-### Command/Query: GetHealthEventByIdQuery
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Transportar una intención o consulta tipada hacia su handler. |
-| **Relaciones** | Es recibida por un handler o servicio de aplicación y no contiene lógica de negocio. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `Id` | `int` |
-
-**Métodos u operaciones**
-
-No aplica.
-
----
 
 ### Use Case: ObserveHealthEventUseCase
 
@@ -637,30 +322,6 @@ No aplica.
 
 ---
 
-### Use Case: SyncHealthEventUseCase
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Procesar operaciones móviles pendientes de manera idempotente. |
-| **Relaciones** | Lee el outbox local, consume la API y actualiza el estado de sincronización. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `outboxRepository` | `No especificado` |
-| `remoteRepository` | `No especificado` |
-| `conflictResolver` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Execute()` | `SyncResult` |
-
----
 
 ### Command Handler: CreateHealthEventCommandHandler
 
@@ -687,30 +348,6 @@ No aplica.
 
 ---
 
-### Command Handler: UpdateHealthEventCommandHandler
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
-| **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `repository` | `No especificado` |
-| `unitOfWork` | `No especificado` |
-| `domainPolicy` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Handle(command)` | `Result` |
-
----
 
 ### Event Handler: HealthEventRegisteredEventHandler
 
@@ -771,56 +408,7 @@ No aplica.
 
 ---
 
-### Persistence Configuration: ModelBuilderExtensions
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
-| **Propósito** | Mapear entidades y value objects del contexto al modelo relacional. |
-| **Relaciones** | Configura tablas, claves, relaciones, restricciones y conversiones de Entity Framework Core. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `configuration` | `EntityTypeBuilder` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `ApplyConfiguration(modelBuilder)` | `No especificado` |
-
----
-
-### Remote Adapter: HealthEventApiDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `httpClient` | `No especificado` |
-| `tokenProvider` | `No especificado` |
-| `serializer` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Get(criteria)` | `No especificado` |
-| `Create(dto)` | `No especificado` |
-| `Update(dto)` | `No especificado` |
-| `Delete(id)` | `No especificado` |
-
----
 
 ### Room Adapter: HealthEventDao
 
@@ -849,33 +437,6 @@ No aplica.
 
 ---
 
-### Remote Adapter: HealthEventRemoteDataSource
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Implementar el acceso remoto del cliente móvil a la API. |
-| **Relaciones** | Consume controllers REST por HTTPS/JSON y traduce errores HTTP al modelo de aplicación. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `httpClient` | `No especificado` |
-| `tokenProvider` | `No especificado` |
-| `serializer` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `Get(criteria)` | `No especificado` |
-| `Create(dto)` | `No especificado` |
-| `Update(dto)` | `No especificado` |
-| `Delete(id)` | `No especificado` |
-
----
 
 ### SQLite Adapter: HealthEventLocalDataSource
 
@@ -904,52 +465,7 @@ No aplica.
 
 ---
 
-### Context Adapter: LivestockAnimalAdapter
 
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de consulta de animales y consume Livestock Management. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `livestockFacade` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `GetAnimal(animalId)` | `No especificado` |
-| `Exists(animalId)` | `bool` |
-
----
-
-### Context Adapter: VeterinaryAuthorizationAdapter
-
-| Campo | Detalle |
-|---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
-| **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
-| **Relaciones** | Implementa el puerto de autorización y consume Veterinary Collaboration. |
-
-**Atributos o dependencias**
-
-| Nombre | Tipo |
-|---|---|
-| `collaborationFacade` | `No especificado` |
-
-**Métodos u operaciones**
-
-| Firma | Retorno |
-|---|---|
-| `CanWrite(veterinarianId, animalId)` | `bool` |
-
----
 
 ### Offline Adapter: SanitaryOutboxStore
 
