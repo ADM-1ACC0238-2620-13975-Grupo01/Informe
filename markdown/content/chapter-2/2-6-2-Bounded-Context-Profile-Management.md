@@ -12,14 +12,11 @@ La base implementada se encuentra en el módulo `Profiles` de la API ASP.NET Cor
 
 **Responsabilidad estable.** Esta capa documenta el modelo que representa el núcleo de **Profile Management**. Las reglas autoritativas se ejecutan en la API; Android y Flutter mantienen modelos equivalentes para presentación, validación inmediata y trabajo offline. La columna de estado distingue el código heredado de la arquitectura objetivo.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### Aggregate Root: Profile
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Mantener la información personal y de contacto de un propietario. |
 | **Relaciones** | Profile compone PersonName; Profile compone EmailAddress; Profile compone StreetAddress; IProfileRepository depende de Profile : persists |
 
@@ -41,14 +38,11 @@ La base implementada se encuentra en el módulo `Profiles` de la API ASP.NET Cor
 | `ChangeEmail(email: EmailAddress)` | `void` |
 | `ChangeAddress(address: StreetAddress)` | `void` |
 
----
-
 ### Value Object: PersonName
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Representar un nombre personal válido. |
 | **Relaciones** | Profile compone PersonName |
 
@@ -65,14 +59,11 @@ La base implementada se encuentra en el módulo `Profiles` de la API ASP.NET Cor
 |---|---|
 | `FullName()` | `string` |
 
----
-
 ### Value Object: EmailAddress
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Representar y validar un correo electrónico. |
 | **Relaciones** | Profile compone EmailAddress |
 
@@ -88,14 +79,11 @@ La base implementada se encuentra en el módulo `Profiles` de la API ASP.NET Cor
 |---|---|
 | `IsValid()` | `bool` |
 
----
-
 ### Value Object: StreetAddress
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Representar una dirección postal completa. |
 | **Relaciones** | Profile compone StreetAddress |
 
@@ -115,14 +103,11 @@ La base implementada se encuentra en el módulo `Profiles` de la API ASP.NET Cor
 |---|---|
 | `FullAddress()` | `string` |
 
----
-
 ### Repository Interface: IProfileRepository
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Abstraer la persistencia de Profile. |
 | **Relaciones** | IProfileRepository depende de Profile : persists |
 
@@ -139,8 +124,6 @@ No aplica.
 | `Add(profile: Profile)` | `void` |
 | `Update(profile: Profile)` | `void` |
 
----
-
 
 
 <a id="toc-2-6-2-2-interface-layer"></a>
@@ -149,14 +132,11 @@ No aplica.
 
 **Responsabilidad estable.** Esta capa recibe las acciones relacionadas con **creación, actualización y consulta de perfiles** y las traduce a casos de uso. Los controllers y resources corresponden a la API; las pantallas y controladores de estado representan la presentación objetivo en Android y Flutter. Ninguna de estas clases implementa reglas de negocio.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### REST Controller: ProfilesController
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
 | **Propósito** | Publicar por HTTP las capacidades de Profile Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -177,8 +157,6 @@ No aplica.
 | `CreateProfile(CreateProfileResource resource, CancellationToken cancellationToken)` | `No especificado` |
 | `GetAllProfiles(CancellationToken cancellationToken)` | `No especificado` |
 
----
-
 
 
 
@@ -186,8 +164,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -207,15 +184,12 @@ No aplica.
 | `Submit(action)` | `No especificado` |
 | `RetrySync()` | `No especificado` |
 
----
-
 
 ### State Controller: ProfileController
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -235,22 +209,17 @@ No aplica.
 | `submit(action)` | `No especificado` |
 | `retrySync()` | `No especificado` |
 
----
-
 <a id="toc-2-6-2-3-application-layer"></a>
 
 ## 2.6.2.3. Application Layer
 
 **Responsabilidad estable.** Esta capa coordina las capacidades de **creación, actualización y consulta de perfiles**. Los commands y queries expresan intenciones; los handlers cargan aggregates, aplican reglas, persisten cambios y reaccionan a eventos. Los casos de uso móviles coordinan lectura local, actualización remota y sincronización idempotente.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### Application Service: ProfileCommandService
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
 | **Propósito** | Orquestar creación, actualización y consulta de perfiles sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -268,8 +237,6 @@ No aplica.
 |---|---|
 | `Handle(CreateProfileCommand command, CancellationToken cancellationToken)` | `No especificado` |
 
----
-
 
 
 
@@ -279,8 +246,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -298,15 +264,12 @@ No aplica.
 |---|---|
 | `Execute(criteria)` | `Stream<Result>` |
 
----
-
 
 ### Command Handler: CreateProfileCommandHandler
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -324,15 +287,12 @@ No aplica.
 |---|---|
 | `Handle(command)` | `Result` |
 
----
-
 
 ### Event Handler: ProfileUpdatedEventHandler
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -350,22 +310,17 @@ No aplica.
 |---|---|
 | `Handle(domainEvent)` | `Task` |
 
----
-
 <a id="toc-2-6-2-4-infrastructure-layer"></a>
 
 ## 2.6.2.4. Infrastructure Layer
 
 **Responsabilidad estable.** Esta capa implementa los puertos definidos hacia el interior de **Profile Management** y concentra acceso a base de datos, red, almacenamiento local e integraciones externas. Las clases de infraestructura traducen errores y contratos técnicos antes de devolver resultados a Application Layer.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### Repository Adapter: ProfileRepository
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IProfileRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -381,16 +336,13 @@ No aplica.
 |---|---|
 | `FindProfileByEmailAsync(EmailAddress email, CancellationToken cancellationToken)` | `No especificado` |
 
----
-
 
 
 ### Room Adapter: ProfileDao
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Android / Room |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **Diseño objetivo** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -410,15 +362,12 @@ No aplica.
 | `Delete(id)` | `No especificado` |
 | `Pending()` | `No especificado` |
 
----
-
 
 ### SQLite Adapter: ProfileLocalDataSource
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -438,14 +387,11 @@ No aplica.
 | `delete(id)` | `No especificado` |
 | `pending()` | `No especificado` |
 
----
-
 ### Context Adapter: IamProfileOwnerAdapter
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa el puerto de verificación del propietario y consume IAM Context Facade. |
 
@@ -460,8 +406,6 @@ No aplica.
 | Firma | Retorno |
 |---|---|
 | `Exists(ownerId)` | `bool` |
-
----
 
 
 <a id="toc-2-6-2-5-bounded-context-software-architecture-component-level-diagrams"></a>

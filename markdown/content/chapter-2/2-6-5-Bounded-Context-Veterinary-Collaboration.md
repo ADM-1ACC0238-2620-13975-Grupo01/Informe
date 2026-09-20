@@ -12,14 +12,11 @@ La base implementada se encuentra en el módulo `Clients` de la API ASP.NET Core
 
 **Responsabilidad estable.** Esta capa documenta el modelo que representa el núcleo de **Veterinary Collaboration**. Las reglas autoritativas se ejecutan en la API; Android y Flutter mantienen modelos equivalentes para presentación, validación inmediata y trabajo offline. La columna de estado distingue el código heredado de la arquitectura objetivo.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### Aggregate Root: VeterinarianClient
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Controlar la relación y autorización entre veterinario y ganadero. |
 | **Relaciones** | VeterinarianClient se relaciona con CollaborationStatus; VeterinarianClient compone AuthorizationScope; CollaborationPolicy depende de VeterinarianClient; IVeterinarianClientRepository depende de VeterinarianClient |
 
@@ -45,14 +42,11 @@ La base implementada se encuentra en el módulo `Clients` de la API ASP.NET Core
 | `Revoke(at: DateTime)` | `void` |
 | `IsActive()` | `bool` |
 
----
-
 ### Enumeration: CollaborationStatus
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
 | **Propósito** | Definir los valores válidos de CollaborationStatus. |
 | **Relaciones** | VeterinarianClient se relaciona con CollaborationStatus |
 
@@ -69,14 +63,11 @@ La base implementada se encuentra en el módulo `Clients` de la API ASP.NET Core
 
 No aplica.
 
----
-
 ### Value Object: AuthorizationScope
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
 | **Propósito** | Delimitar fincas, animales y operaciones autorizadas. |
 | **Relaciones** | VeterinarianClient compone AuthorizationScope |
 
@@ -94,14 +85,11 @@ No aplica.
 |---|---|
 | `AllowsAnimal(animalId: int)` | `bool` |
 
----
-
 ### Domain Service: CollaborationPolicy
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend y modelos equivalentes Android/Flutter |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend y modelos equivalentes Android/Flutter — **Diseño objetivo** |
 | **Propósito** | Evaluar aceptación y acceso dentro de una colaboración. |
 | **Relaciones** | CollaborationPolicy depende de VeterinarianClient |
 
@@ -116,14 +104,11 @@ No aplica.
 | `CanAccept(rancherId: int, relation: VeterinarianClient)` | `bool` |
 | `CanAccess(veterinarianId: int, animalId: int)` | `bool` |
 
----
-
 ### Repository Interface: IVeterinarianClientRepository
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Abstraer la persistencia de VeterinarianClient. |
 | **Relaciones** | IVeterinarianClientRepository depende de VeterinarianClient |
 
@@ -140,8 +125,6 @@ No aplica.
 | `Add(relation: VeterinarianClient)` | `void` |
 | `Update(relation: VeterinarianClient)` | `void` |
 
----
-
 
 
 <a id="toc-2-6-5-2-interface-layer"></a>
@@ -150,14 +133,11 @@ No aplica.
 
 **Responsabilidad estable.** Esta capa recibe las acciones relacionadas con **solicitud, aceptación, revocación y consulta de colaboraciones veterinarias** y las traduce a casos de uso. Los controllers y resources corresponden a la API; las pantallas y controladores de estado representan la presentación objetivo en Android y Flutter. Ninguna de estas clases implementa reglas de negocio.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### REST Controller: VeterinarianClientsController
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
 | **Propósito** | Publicar por HTTP las capacidades de Veterinary Collaboration. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -180,8 +160,6 @@ No aplica.
 | `AddClient(int veterinarianId, int rancherId, CancellationToken cancellationToken)` | `No especificado` |
 | `RemoveClient(int veterinarianId, int rancherId, CancellationToken cancellationToken)` | `No especificado` |
 
----
-
 
 
 
@@ -189,8 +167,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -210,15 +187,12 @@ No aplica.
 | `Submit(action)` | `No especificado` |
 | `RetrySync()` | `No especificado` |
 
----
-
 
 ### State Controller: VeterinarianClientController
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -238,22 +212,17 @@ No aplica.
 | `submit(action)` | `No especificado` |
 | `retrySync()` | `No especificado` |
 
----
-
 <a id="toc-2-6-5-3-application-layer"></a>
 
 ## 2.6.5.3. Application Layer
 
 **Responsabilidad estable.** Esta capa coordina las capacidades de **solicitud, aceptación, revocación y consulta de colaboraciones veterinarias**. Los commands y queries expresan intenciones; los handlers cargan aggregates, aplican reglas, persisten cambios y reaccionan a eventos. Los casos de uso móviles coordinan lectura local, actualización remota y sincronización idempotente.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### Application Service: VeterinarianClientCommandService
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
 | **Propósito** | Orquestar solicitud, aceptación, revocación y consulta de colaboraciones veterinarias sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -271,8 +240,6 @@ No aplica.
 | `Handle(CreateVeterinarianClientCommand command, CancellationToken cancellationToken)` | `No especificado` |
 | `Handle(DeleteVeterinarianClientCommand command, CancellationToken cancellationToken)` | `No especificado` |
 
----
-
 
 
 
@@ -281,8 +248,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -300,15 +266,12 @@ No aplica.
 |---|---|
 | `Execute(criteria)` | `Stream<Result>` |
 
----
-
 
 ### Command Handler: RequestCollaborationCommandHandler
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -326,15 +289,12 @@ No aplica.
 |---|---|
 | `Handle(command)` | `Result` |
 
----
-
 
 ### Event Handler: CollaborationAcceptedEventHandler
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -352,22 +312,17 @@ No aplica.
 |---|---|
 | `Handle(domainEvent)` | `Task` |
 
----
-
 <a id="toc-2-6-5-4-infrastructure-layer"></a>
 
 ## 2.6.5.4. Infrastructure Layer
 
 **Responsabilidad estable.** Esta capa implementa los puertos definidos hacia el interior de **Veterinary Collaboration** y concentra acceso a base de datos, red, almacenamiento local e integraciones externas. Las clases de infraestructura traducen errores y contratos técnicos antes de devolver resultados a Application Layer.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### Repository Adapter: VeterinarianClientRepository
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IVeterinarianClientRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -385,16 +340,13 @@ No aplica.
 | `FindByVeterinarianIdAndRancherIdAsync(int veterinarianId, int rancherId, CancellationToken cancellationToken)` | `No especificado` |
 | `ExistsByVeterinarianIdAndRancherIdAsync(int veterinarianId, int rancherId, CancellationToken cancellationToken)` | `No especificado` |
 
----
-
 
 
 ### Room Adapter: VeterinarianClientDao
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Android / Room |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **Diseño objetivo** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -414,15 +366,12 @@ No aplica.
 | `Delete(id)` | `No especificado` |
 | `Pending()` | `No especificado` |
 
----
-
 
 ### SQLite Adapter: VeterinarianClientLocalDataSource
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -442,15 +391,12 @@ No aplica.
 | `delete(id)` | `No especificado` |
 | `pending()` | `No especificado` |
 
----
-
 
 ### Context Adapter: ProfilesDirectoryAdapter
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa el puerto de directorio y consume Profile Management. |
 
@@ -466,8 +412,6 @@ No aplica.
 |---|---|
 | `GetDisplayName(userId)` | `No especificado` |
 | `FindRanchers()` | `No especificado` |
-
----
 
 
 <a id="toc-2-6-5-5-bounded-context-software-architecture-component-level-diagrams"></a>

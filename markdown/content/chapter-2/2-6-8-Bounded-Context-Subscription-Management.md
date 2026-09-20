@@ -12,14 +12,11 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 
 **Responsabilidad estable.** Esta capa documenta el modelo que representa el núcleo de **Subscription Management**. Las reglas autoritativas se ejecutan en la API; Android y Flutter mantienen modelos equivalentes para presentación, validación inmediata y trabajo offline. La columna de estado distingue el código heredado de la arquitectura objetivo.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### Entity: SubscriptionPlan
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Definir condiciones y límites de un plan comercial. |
 | **Relaciones** | SubscriptionPlan compone Money |
 
@@ -41,14 +38,11 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 | `Deactivate()` | `void` |
 | `ChangePrice(price: Money)` | `void` |
 
----
-
 ### Aggregate Root: Subscription
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Controlar vigencia y estado de la suscripción de un usuario. |
 | **Relaciones** | Subscription compone Payment; Subscription se relaciona con SubscriptionStatus; ISubscriptionRepository depende de Subscription |
 
@@ -71,14 +65,11 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 | `Cancel(end: Date)` | `void` |
 | `IsActive(on: Date)` | `bool` |
 
----
-
 ### Entity: Payment
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Registrar el resultado de un pago. |
 | **Relaciones** | Subscription compone Payment; Payment se relaciona con PaymentStatus; Payment compone Money |
 
@@ -101,14 +92,11 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 | `Confirm(providerId: string, paidAt: DateTime)` | `void` |
 | `Reject()` | `void` |
 
----
-
 ### Value Object: Money
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
 | **Propósito** | Representar un importe junto con su moneda. |
 | **Relaciones** | Payment compone Money; SubscriptionPlan compone Money |
 
@@ -125,14 +113,11 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 |---|---|
 | `IsPositive()` | `bool` |
 
----
-
 ### Enumeration: SubscriptionStatus
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
 | **Propósito** | Definir los valores válidos de SubscriptionStatus. |
 | **Relaciones** | Subscription se relaciona con SubscriptionStatus |
 
@@ -149,15 +134,12 @@ La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NE
 
 No aplica.
 
----
-
 
 ### Repository Interface: ISubscriptionRepository
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Abstraer la persistencia de Subscription. |
 | **Relaciones** | ISubscriptionRepository depende de Subscription |
 
@@ -174,16 +156,13 @@ No aplica.
 | `Add(subscription: Subscription)` | `void` |
 | `Update(subscription: Subscription)` | `void` |
 
----
-
 
 
 ### Domain Port: PaymentGateway
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Diseño objetivo** |
 | **Propósito** | Abstraer el proveedor externo de cobros. |
 | **Relaciones** | Es implementado por StripePaymentGateway en Infrastructure Layer. |
 
@@ -198,23 +177,18 @@ No aplica.
 | `CreateCheckout(subscription, plan)` | `No especificado` |
 | `ConfirmPayment(reference)` | `No especificado` |
 
----
-
 <a id="toc-2-6-8-2-interface-layer"></a>
 
 ## 2.6.8.2. Interface Layer
 
 **Responsabilidad estable.** Esta capa recibe las acciones relacionadas con **consulta de planes, contratación, pago y actualización de suscripciones** y las traduce a casos de uso. Los controllers y resources corresponden a la API; las pantallas y controladores de estado representan la presentación objetivo en Android y Flutter. Ninguna de estas clases implementa reglas de negocio.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 
 ### REST Controller: SubscriptionsController
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
 | **Propósito** | Publicar por HTTP las capacidades de Subscription Management. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -244,8 +218,6 @@ No aplica.
 | `Update(int id, CreateSubscriptionResource resource, CancellationToken cancellationToken)` | `No especificado` |
 | `Delete(int id, CancellationToken cancellationToken)` | `No especificado` |
 
----
-
 
 
 
@@ -255,8 +227,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -276,15 +247,12 @@ No aplica.
 | `Submit(action)` | `No especificado` |
 | `RetrySync()` | `No especificado` |
 
----
-
 
 ### State Controller: SubscriptionController
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -304,23 +272,18 @@ No aplica.
 | `submit(action)` | `No especificado` |
 | `retrySync()` | `No especificado` |
 
----
-
 <a id="toc-2-6-8-3-application-layer"></a>
 
 ## 2.6.8.3. Application Layer
 
 **Responsabilidad estable.** Esta capa coordina las capacidades de **consulta de planes, contratación, pago y actualización de suscripciones**. Los commands y queries expresan intenciones; los handlers cargan aggregates, aplican reglas, persisten cambios y reaccionan a eventos. Los casos de uso móviles coordinan lectura local, actualización remota y sincronización idempotente.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 
 ### Application Service: SubscriptionCommandService
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
 | **Propósito** | Orquestar consulta de planes, contratación, pago y actualización de suscripciones sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -339,8 +302,6 @@ No aplica.
 | `Handle(UpdateSubscriptionCommand command, CancellationToken cancellationToken)` | `No especificado` |
 | `Handle(DeleteSubscriptionCommand command, CancellationToken cancellationToken)` | `No especificado` |
 
----
-
 
 
 
@@ -351,8 +312,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -370,16 +330,13 @@ No aplica.
 |---|---|
 | `Execute(criteria)` | `Stream<Result>` |
 
----
-
 
 
 ### Command Handler: CreatePaymentCommandHandler
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
 | **Propósito** | Ejecutar una intención concreta, aplicar reglas del agregado y confirmar la transacción. |
 | **Relaciones** | Consume un Command, carga el aggregate mediante su repository y puede publicar un Domain Event. |
 
@@ -397,14 +354,11 @@ No aplica.
 |---|---|
 | `Handle(command)` | `Result` |
 
----
-
 ### Event Handler: PaymentConfirmedEventHandler
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -422,22 +376,17 @@ No aplica.
 |---|---|
 | `Handle(domainEvent)` | `Task` |
 
----
-
 <a id="toc-2-6-8-4-infrastructure-layer"></a>
 
 ## 2.6.8.4. Infrastructure Layer
 
 **Responsabilidad estable.** Esta capa implementa los puertos definidos hacia el interior de **Subscription Management** y concentra acceso a base de datos, red, almacenamiento local e integraciones externas. Las clases de infraestructura traducen errores y contratos técnicos antes de devolver resultados a Application Layer.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### Repository Adapter: SubscriptionPlanRepository / SubscriptionRepository / PaymentRepository
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa ISubscriptionPlanRepository / ISubscriptionRepository / IPaymentRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -456,16 +405,13 @@ No aplica.
 | `PaymentRepository.FindByUserIdAsync(int userId, CancellationToken cancellationToken)` | `No especificado` |
 | `PaymentRepository.FindByProviderPaymentIdAsync(string providerPaymentId, CancellationToken cancellationToken)` | `No especificado` |
 
----
-
 
 
 ### Room Adapter: SubscriptionDao
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Android / Room |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **Diseño objetivo** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -485,15 +431,12 @@ No aplica.
 | `Delete(id)` | `No especificado` |
 | `Pending()` | `No especificado` |
 
----
-
 
 ### SQLite Adapter: SubscriptionLocalDataSource
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -513,15 +456,12 @@ No aplica.
 | `delete(id)` | `No especificado` |
 | `pending()` | `No especificado` |
 
----
-
 
 ### Anti-Corruption Layer: StripePaymentGateway
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa PaymentGateway y traduce Stripe al lenguaje del dominio. |
 
@@ -538,8 +478,6 @@ No aplica.
 | `CreateCheckout(command)` | `No especificado` |
 | `ConfirmWebhook(payload)` | `No especificado` |
 | `Refund(paymentId)` | `No especificado` |
-
----
 
 
 <a id="toc-2-6-8-5-bounded-context-software-architecture-component-level-diagrams"></a>

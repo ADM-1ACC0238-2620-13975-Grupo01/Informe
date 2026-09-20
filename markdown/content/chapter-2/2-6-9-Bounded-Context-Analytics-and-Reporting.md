@@ -12,14 +12,11 @@ La base implementada se encuentra en el módulo `Analytics` de la API ASP.NET Co
 
 **Responsabilidad estable.** Esta capa documenta el modelo que representa el núcleo de **Analytics and Reporting**. Las reglas autoritativas se ejecutan en la API; Android y Flutter mantienen modelos equivalentes para presentación, validación inmediata y trabajo offline. La columna de estado distingue el código heredado de la arquitectura objetivo.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### Aggregate Root: DashboardProjection
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
 | **Propósito** | Agrupar métricas calculadas para una audiencia y periodo. |
 | **Relaciones** | DashboardProjection compone ReportMetric; DashboardProjection compone MetricPeriod; ProjectionBuilder depende de DashboardProjection; IReportMetricRepository depende de DashboardProjection |
 
@@ -41,14 +38,11 @@ La base implementada se encuentra en el módulo `Analytics` de la API ASP.NET Co
 | `ReplaceMetrics(metrics: List~ReportMetric~)` | `void` |
 | `IsStale(now: DateTime)` | `bool` |
 
----
-
 ### Entity: ReportMetric
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Representar una métrica individual del dashboard. |
 | **Relaciones** | DashboardProjection compone ReportMetric; ReportMetric compone MetricSlice |
 
@@ -68,14 +62,11 @@ La base implementada se encuentra en el módulo `Analytics` de la API ASP.NET Co
 |---|---|
 | `Update(slice: MetricSlice, trend: string)` | `void` |
 
----
-
 ### Value Object: MetricSlice
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
 | **Propósito** | Representar un valor, unidad y etiqueta de una métrica. |
 | **Relaciones** | ReportMetric compone MetricSlice |
 
@@ -93,15 +84,12 @@ La base implementada se encuentra en el módulo `Analytics` de la API ASP.NET Co
 |---|---|
 | `IsComparableTo(other: MetricSlice)` | `bool` |
 
----
-
 
 ### Domain Service: ProjectionBuilder
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend, Android y Flutter (modelo canónico) |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **Diseño objetivo** |
 | **Propósito** | Construir proyecciones a partir de los contextos fuente. |
 | **Relaciones** | ProjectionBuilder depende de DashboardProjection |
 
@@ -116,14 +104,11 @@ No aplica.
 | `BuildRancher(ownerId: int, period: MetricPeriod)` | `DashboardProjection` |
 | `BuildVeterinarian(id: int, period: MetricPeriod)` | `DashboardProjection` |
 
----
-
 ### Repository Interface: IReportMetricRepository
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend; modelo equivalente en Android y Flutter |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado en el backend** |
 | **Propósito** | Abstraer la persistencia de ReportMetric. |
 | **Relaciones** | IReportMetricRepository depende de DashboardProjection |
 
@@ -138,22 +123,17 @@ No aplica.
 | `FindProjection(ownerId: int, period: MetricPeriod)` | `DashboardProjection?` |
 | `Save(projection: DashboardProjection)` | `void` |
 
----
-
 <a id="toc-2-6-9-2-interface-layer"></a>
 
 ## 2.6.9.2. Interface Layer
 
 **Responsabilidad estable.** Esta capa recibe las acciones relacionadas con **construcción y consulta de dashboards, métricas y proyecciones** y las traduce a casos de uso. Los controllers y resources corresponden a la API; las pantallas y controladores de estado representan la presentación objetivo en Android y Flutter. Ninguna de estas clases implementa reglas de negocio.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### REST Controller: DashboardAnalyticsController
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
 | **Propósito** | Publicar por HTTP las capacidades de Analytics and Reporting. |
 | **Relaciones** | Recibe resources, invoca servicios de aplicación y devuelve resources HTTP. |
 
@@ -178,8 +158,6 @@ No aplica.
 | `GetRancherHealthSummary(int rancherId, CancellationToken cancellationToken)` | `No especificado` |
 | `GetRancherFinancialSummary(int rancherId, CancellationToken cancellationToken)` | `No especificado` |
 
----
-
 
 
 
@@ -190,8 +168,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Android / Kotlin |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Android / Kotlin — **Diseño objetivo** |
 | **Propósito** | Mantener el estado observable y traducir acciones de Android a casos de uso. |
 | **Relaciones** | Invoca casos de uso de Application Layer y publica un UI State inmutable. |
 
@@ -211,15 +188,12 @@ No aplica.
 | `Submit(action)` | `No especificado` |
 | `RetrySync()` | `No especificado` |
 
----
-
 
 ### State Controller: DashboardProjectionController
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
 | **Propósito** | Mantener el estado de presentación de Flutter y coordinar casos de uso. |
 | **Relaciones** | Invoca Application Layer y publica estados de carga, éxito y error. |
 
@@ -239,23 +213,18 @@ No aplica.
 | `submit(action)` | `No especificado` |
 | `retrySync()` | `No especificado` |
 
----
-
 <a id="toc-2-6-9-3-application-layer"></a>
 
 ## 2.6.9.3. Application Layer
 
 **Responsabilidad estable.** Esta capa coordina las capacidades de **construcción y consulta de dashboards, métricas y proyecciones**. Los commands y queries expresan intenciones; los handlers cargan aggregates, aplican reglas, persisten cambios y reaccionan a eventos. Los casos de uso móviles coordinan lectura local, actualización remota y sincronización idempotente.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 
 ### Application Service: ReportMetricQueryService
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend ASP.NET Core — **Implementado en el backend** |
 | **Propósito** | Orquestar construcción y consulta de dashboards, métricas y proyecciones sin contener reglas del dominio. |
 | **Relaciones** | Invoca agregados y repositories; confirma la transacción mediante Unit of Work. |
 
@@ -272,8 +241,6 @@ No aplica.
 | `Handle(GetReportMetricByIdQuery query, CancellationToken cancellationToken)` | `No especificado` |
 | `Handle(GetAllReportMetricsQuery query, CancellationToken cancellationToken)` | `No especificado` |
 
----
-
 
 
 
@@ -282,8 +249,7 @@ No aplica.
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Android y Flutter |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Android y Flutter — **Diseño objetivo** |
 | **Propósito** | Entregar primero datos locales y actualizar la consulta cuando exista conectividad. |
 | **Relaciones** | Es invocado por ViewModel/Controller y coordina repositorios móviles. |
 
@@ -301,16 +267,13 @@ No aplica.
 |---|---|
 | `Execute(criteria)` | `Stream<Result>` |
 
----
-
 
 
 ### Query Handler: BuildDashboardQueryHandler
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
 | **Propósito** | Resolver una consulta de aplicación y construir el modelo de lectura requerido. |
 | **Relaciones** | Consume una Query y consulta repositories o proyecciones. |
 
@@ -327,14 +290,11 @@ No aplica.
 |---|---|
 | `Handle(query)` | `Result` |
 
----
-
 ### Event Handler: SourceRecordChangedEventHandler
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
 | **Propósito** | Reaccionar al evento confirmado y actualizar proyecciones o integraciones. |
 | **Relaciones** | Consume un Domain Event y utiliza puertos de infraestructura sin modificar directamente el agregado. |
 
@@ -352,22 +312,17 @@ No aplica.
 |---|---|
 | `Handle(domainEvent)` | `Task` |
 
----
-
 <a id="toc-2-6-9-4-infrastructure-layer"></a>
 
 ## 2.6.9.4. Infrastructure Layer
 
 **Responsabilidad estable.** Esta capa implementa los puertos definidos hacia el interior de **Analytics and Reporting** y concentra acceso a base de datos, red, almacenamiento local e integraciones externas. Las clases de infraestructura traducen errores y contratos técnicos antes de devolver resultados a Application Layer.
 
-**Detalle técnico evolutivo.** El siguiente diccionario identifica las clases, sus responsabilidades, atributos, métodos y relaciones. Los campos **Producto** y **Estado** distinguen los elementos comprobados en el código de aquellos que aún pertenecen al diseño objetivo.
-
 ### Repository Adapter: ReportMetricRepository
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend / Entity Framework Core |
-| **Estado** | **Implementado en el backend** |
+| **Producto y estado** | Backend / Entity Framework Core — **Implementado en el backend** |
 | **Propósito** | Implementar el puerto de persistencia definido por Domain Layer. |
 | **Relaciones** | Implementa IReportMetricRepository; utiliza AppDbContext/MySQL y reconstruye el aggregate. |
 
@@ -386,16 +341,13 @@ No aplica.
 | `Update(entity)` | `No especificado` |
 | `Delete(entity)` | `No especificado` |
 
----
-
 
 
 ### Room Adapter: DashboardProjectionDao
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Android / Room |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Android / Room — **Diseño objetivo** |
 | **Propósito** | Implementar persistencia local y observación reactiva en Android. |
 | **Relaciones** | Implementa el puerto local mediante Room y participa en la estrategia de caché/outbox. |
 
@@ -415,15 +367,12 @@ No aplica.
 | `Delete(id)` | `No especificado` |
 | `Pending()` | `No especificado` |
 
----
-
 
 ### SQLite Adapter: DashboardProjectionLocalDataSource
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Flutter / Dart |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Flutter / Dart — **Diseño objetivo** |
 | **Propósito** | Implementar persistencia local equivalente en Flutter. |
 | **Relaciones** | Implementa el puerto local mediante SQLite y participa en la estrategia de caché/outbox. |
 
@@ -443,14 +392,11 @@ No aplica.
 | `delete(id)` | `No especificado` |
 | `pending()` | `No especificado` |
 
----
-
 ### Projection Source Adapter: LivestockMetricsAdapter
 
 | Campo | Detalle |
 |---|---|
-| **Producto** | Backend ASP.NET Core |
-| **Estado** | **Diseño objetivo** |
+| **Producto y estado** | Backend ASP.NET Core — **Diseño objetivo** |
 | **Propósito** | Aislar una dependencia externa detrás de un puerto explícito. |
 | **Relaciones** | Implementa una fuente de proyección desde Livestock Management. |
 
@@ -465,8 +411,6 @@ No aplica.
 | Firma | Retorno |
 |---|---|
 | `ReadLivestockMetrics(ownerId, period)` | `No especificado` |
-
----
 
 
 
