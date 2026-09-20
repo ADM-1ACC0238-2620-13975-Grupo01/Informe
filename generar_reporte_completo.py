@@ -16,8 +16,9 @@ OUTPUT = (
     if os.environ.get("ANITEC_REPORT_OUTPUT")
     else ROOT / "upc-pre-202620-1acc0238-13975-ADM-report.md"
 )
+PRE_TOC_CONTENT = ["registro-versiones.md", "report-collaboration.md"]
 SECTIONS = [
-    (None, ["registro-versiones.md", "report-collaboration.md", "student-outcome.md", "objetivos-smart.md"]),
+    (None, ["student-outcome.md", "objetivos-smart.md"]),
     ("Capítulo I: Presentación", [
         "chapter-1/1-1-startup-profile.md",
         "chapter-1/1-2-solution-profile.md",
@@ -65,7 +66,7 @@ def normalise(label: str) -> str:
 
 caratula = (ROOT / "caratula.md").read_text(encoding="utf-8-sig")
 cover, toc_source = caratula.split('<div style="font-size: 18px; line-height: 1.65;">', 1)
-toc_source = toc_source.split("## Índice general", 1)[1]
+toc_source = toc_source.split("## Contenido", 1)[1]
 toc_source = toc_source.split('<div style="page-break-before: always;">', 1)[0]
 toc_lines = [line for line in toc_source.splitlines() if "[Glosario]" not in line]
 while toc_lines and (not toc_lines[0].strip() or toc_lines[0].strip() == "</div>"):
@@ -75,8 +76,6 @@ while toc_lines and (not toc_lines[-1].strip() or toc_lines[-1].strip() == "</di
 
 toc_pairs = re.findall(r"\[([^]]+)\]\(#([^)]+)\)", "\n".join(toc_lines))
 allowed_unnumbered = {
-    "Registro de Versiones del Informe",
-    "Project Report Collaboration Insights",
     "Student Outcome",
     "Objetivos SMART",
     "Conclusiones",
@@ -95,7 +94,10 @@ if unexpected_toc_entries or duplicate_numbers:
     raise ValueError("El índice de caratula.md no es el índice curado: " + "; ".join(details))
 number_to_id = {numeric_key(label): anchor for label, anchor in toc_pairs if numeric_key(label)}
 title_to_id = {normalise(label): anchor for label, anchor in toc_pairs if not numeric_key(label)}
-all_sources = [(CONTENT / name).resolve() for _, names in SECTIONS for name in names]
+all_sources = [
+    *((CONTENT / name).resolve() for name in PRE_TOC_CONTENT),
+    *((CONTENT / name).resolve() for _, names in SECTIONS for name in names),
+]
 source_set = set(all_sources)
 unlisted_sources = set(CONTENT.rglob("*.md")) - source_set
 if unlisted_sources:
@@ -197,35 +199,41 @@ def table_font_size(match: re.Match[str]) -> str:
     return f"<table{attributes}>"
 
 
-parts = [
-    cover.strip(),
-    '<div style="font-size: 20px; line-height: 1.8;">',
+def render_source(name: str) -> str:
+    source = (CONTENT / name).resolve()
+    contents = source.read_text(encoding="utf-8-sig")
+    if name == "conclusiones.md":
+        # El origen deja una carpeta como src de una captura futura; no es una imagen exportable.
+        contents = re.sub(
+            r'<div align="center">\s*<img src="\.\./assets/chapter-5/"[^>]*>\s*<p>.*?</p>\s*</div>',
+            '<!-- Captura del video About The Team pendiente de incorporación. -->',
+            contents,
+            flags=re.DOTALL,
+        )
+    contents = rewrite_refs(contents, source)
+    contents = add_toc_anchors(contents)
+    if re.fullmatch(r"chapter-2/2-6-[1-9]-Bounded-Context-.*\.md", name):
+        contents = re.sub(r"<table\b([^>]*)>", table_font_size, contents, flags=re.IGNORECASE)
+    return contents
+
+
+parts = [cover.strip(), '<div style="font-size: 20px; line-height: 1.8;">']
+for name in PRE_TOC_CONTENT:
+    parts.extend(['<div style="page-break-before: always;"></div>', render_source(name)])
+
+parts.extend([
     '<div style="page-break-before: always;"></div>',
-    '<h1 align="center">Índice general</h1>',
+    '<h1 align="center">Contenido</h1>',
     "\n".join(toc_lines).strip(),
-]
-parts.append('<div style="page-break-before: always;"></div>')
+    '<div style="page-break-before: always;"></div>',
+])
 for chapter, names in SECTIONS:
     if chapter:
         chapter_anchor = title_to_id.get(normalise(chapter))
         chapter_heading = f'<a id="{chapter_anchor}"></a>\n\n# {chapter}' if chapter_anchor else f"# {chapter}"
         parts.extend(['<div style="page-break-before: always;"></div>', chapter_heading])
     for name in names:
-        source = (CONTENT / name).resolve()
-        contents = source.read_text(encoding="utf-8-sig")
-        if name == "conclusiones.md":
-            # El origen deja una carpeta como src de una captura futura; no es una imagen exportable.
-            contents = re.sub(
-                r'<div align="center">\s*<img src="\.\./assets/chapter-5/"[^>]*>\s*<p>.*?</p>\s*</div>',
-                '<!-- Captura del video About The Team pendiente de incorporación. -->',
-                contents,
-                flags=re.DOTALL,
-            )
-        contents = rewrite_refs(contents, source)
-        contents = add_toc_anchors(contents)
-        if re.fullmatch(r"chapter-2/2-6-[1-9]-Bounded-Context-.*\.md", name):
-            contents = re.sub(r"<table\b([^>]*)>", table_font_size, contents, flags=re.IGNORECASE)
-        parts.append(contents)
+        parts.append(render_source(name))
 
 parts.append("</div>")
 

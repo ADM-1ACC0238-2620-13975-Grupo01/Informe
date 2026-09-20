@@ -4,7 +4,7 @@
 
 - [Informe](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe)
 - [Landing page](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page)
-- [Frontend web heredado](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend)
+- [Frontend web](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend)
 - [Backend](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend)
 
 ## AV1. Distribución del trabajo

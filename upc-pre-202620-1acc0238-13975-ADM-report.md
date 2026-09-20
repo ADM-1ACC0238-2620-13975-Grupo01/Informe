@@ -65,11 +65,86 @@
 
 <div style="page-break-before: always;"></div>
 
-<h1 align="center">Índice general</h1>
+# Registro de versiones del informe
 
-- [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
+Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicaciones para Dispositivos Móviles. La fecha indica la actualización de este registro.
 
-- [Project Report Collaboration Insights](#project-report-collaboration-insights)
+| Versión | Fecha | Autor | Descripción de modificación |
+| :---: | :---: | :--- | :--- |
+| 1.0 | 16/09/2026 | Sebastian Martin Beingolea Montalvo | Redacción del capítulo I: Introducción. |
+| 1.1 | 16/09/2026 | Saul Ortega Muñoz | Redacción de las secciones 2.1 a 2.4 del capítulo II. |
+| 1.2 | 16/09/2026 | Josep Eliu Melgarejo Quiroz | Redacción de las secciones 2.6.1 a 2.6.9 del capítulo II. |
+| 1.3 | 16/09/2026 | Giuseppe Villanueva Rodriguez | Realizó una entrevista. |
+| 1.4 | 16/09/2026 | Luciana Celeste Sanchez Silva | Redacción de las secciones 2.5 a 2.6 del capítulo II. |
+
+
+<div style="page-break-before: always;"></div>
+
+# Project Report Collaboration Insights
+
+## Repositorios del proyecto
+
+- [Informe](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe)
+- [Landing page](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page)
+- [Frontend web heredado](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend)
+- [Backend](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend)
+
+## AV1. Distribución del trabajo
+
+Durante AV1, el equipo adaptó el informe y el diseño de AniTec al alcance de una aplicación móvil. Las contribuciones documentadas para los cinco integrantes actuales son las siguientes:
+
+| Integrante | Contribución en AV1 |
+| :--- | :--- |
+| Sebastian Martin Beingolea Montalvo | Redactó el capítulo I: Introducción. |
+| Saul Ortega Muñoz | Redactó las secciones 2.1 a 2.4 del capítulo II. |
+| Josep Eliu Melgarejo Quiroz | Redactó las secciones 2.6.1 a 2.6.9 del capítulo II. |
+| Giuseppe Villanueva Rodriguez | Realizó una entrevista. |
+| Luciana Celeste Sanchez Silva | Redactó las secciones 2.5 a 2.6 del capítulo II. |
+
+## GitHub Collaboration Insights
+
+El repositorio del informe conserva el historial de los cambios documentales del equipo. Las siguientes capturas muestran el grafo general y los commits asociados a cada integrante durante el avance.
+
+### Grafo general de commits
+
+![Grafo de commits del informe en AV1](markdown/assets/chapter-1/Comitsgrahp.png)
+
+### Commits por integrante
+
+**Luciana Celeste Sanchez Silva**
+
+<div align="center">
+  <img src="markdown/assets/chapter-1/luccsss%27s%20Commits.png" alt="Commits de Luciana Sánchez" width="650">
+</div>
+
+**Josep Eliu Melgarejo Quiroz**
+
+<div align="center">
+  <img src="markdown/assets/chapter-1/Melga1502%27s%20Commits.png" alt="Commits de Josep Melgarejo" width="650">
+</div>
+
+**Sebastian Martin Beingolea Montalvo**
+
+<div align="center">
+  <img src="markdown/assets/chapter-1/smbmontalvo%27s%20Commits.png" alt="Commits de Sebastian Beingolea" width="650">
+</div>
+
+**Saul Ortega Muñoz**
+
+<div align="center">
+  <img src="markdown/assets/chapter-1/Ss1lent10%27s%20Commits.png" alt="Commits de Saul Ortega" width="650">
+</div>
+
+**Giuseppe Villanueva Rodriguez**
+
+<div align="center">
+  <img src="markdown/assets/chapter-1/Giuseppe152004%27s%20Commits.png" alt="Commits de Giuseppe Villanueva" width="650">
+</div>
+
+
+<div style="page-break-before: always;"></div>
+
+<h1 align="center">Contenido</h1>
 
 - [Student Outcome](#toc-student-outcome)
 
@@ -255,85 +330,6 @@
 
 <div style="page-break-before: always;"></div>
 
-<a id="registro-de-versiones-del-informe"></a>
-
-# Registro de versiones del informe
-
-Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicaciones para Dispositivos Móviles. La fecha indica la actualización de este registro.
-
-| Versión | Fecha | Autor | Descripción de modificación |
-| :---: | :---: | :--- | :--- |
-| 1.0 | 16/09/2026 | Sebastian Martin Beingolea Montalvo | Redacción del capítulo I: Introducción. |
-| 1.1 | 16/09/2026 | Saul Ortega Muñoz | Redacción de las secciones 2.1 a 2.4 del capítulo II. |
-| 1.2 | 16/09/2026 | Josep Eliu Melgarejo Quiroz | Redacción de las secciones 2.6.1 a 2.6.9 del capítulo II. |
-| 1.3 | 16/09/2026 | Giuseppe Villanueva Rodriguez | Realizó una entrevista. |
-| 1.4 | 16/09/2026 | Luciana Celeste Sanchez Silva | Redacción de las secciones 2.5 a 2.6 del capítulo II. |
-
-
-<a id="project-report-collaboration-insights"></a>
-
-# Project Report Collaboration Insights
-
-## Repositorios del proyecto
-
-- [Informe](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe)
-- [Landing page](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page)
-- [Frontend web heredado](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend)
-- [Backend](https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend)
-
-## AV1. Distribución del trabajo
-
-Durante AV1, el equipo adaptó el informe y el diseño de AniTec al alcance de una aplicación móvil. Las contribuciones documentadas para los cinco integrantes actuales son las siguientes:
-
-| Integrante | Contribución en AV1 |
-| :--- | :--- |
-| Sebastian Martin Beingolea Montalvo | Redactó el capítulo I: Introducción. |
-| Saul Ortega Muñoz | Redactó las secciones 2.1 a 2.4 del capítulo II. |
-| Josep Eliu Melgarejo Quiroz | Redactó las secciones 2.6.1 a 2.6.9 del capítulo II. |
-| Giuseppe Villanueva Rodriguez | Realizó una entrevista. |
-| Luciana Celeste Sanchez Silva | Redactó las secciones 2.5 a 2.6 del capítulo II. |
-
-## GitHub Collaboration Insights
-
-El repositorio del informe conserva el historial de los cambios documentales del equipo. Las siguientes capturas muestran el grafo general y los commits asociados a cada integrante durante el avance.
-
-### Grafo general de commits
-
-![Grafo de commits del informe en AV1](markdown/assets/chapter-1/Comitsgrahp.png)
-
-### Commits por integrante
-
-**Luciana Celeste Sanchez Silva**
-
-<div align="center">
-  <img src="markdown/assets/chapter-1/luccsss%27s%20Commits.png" alt="Commits de Luciana Sánchez" width="650">
-</div>
-
-**Josep Eliu Melgarejo Quiroz**
-
-<div align="center">
-  <img src="markdown/assets/chapter-1/Melga1502%27s%20Commits.png" alt="Commits de Josep Melgarejo" width="650">
-</div>
-
-**Sebastian Martin Beingolea Montalvo**
-
-<div align="center">
-  <img src="markdown/assets/chapter-1/smbmontalvo%27s%20Commits.png" alt="Commits de Sebastian Beingolea" width="650">
-</div>
-
-**Saul Ortega Muñoz**
-
-<div align="center">
-  <img src="markdown/assets/chapter-1/Ss1lent10%27s%20Commits.png" alt="Commits de Saul Ortega" width="650">
-</div>
-
-**Giuseppe Villanueva Rodriguez**
-
-<div align="center">
-  <img src="markdown/assets/chapter-1/Giuseppe152004%27s%20Commits.png" alt="Commits de Giuseppe Villanueva" width="650">
-</div>
-
-
 <a id="toc-student-outcome"></a>
 
 # Student Outcome
@@ -354,17 +350,14 @@ En el siguiente cuadro se describen las acciones realizadas y los enunciados de 
 
 # Objetivos SMART
 
-Cada integrante presenta primero su plan profesional general y, a continuación, dos objetivos SMART. En cada objetivo se explica de forma directa cómo se cumplen los criterios de ser específico, medible, alcanzable, relevante y limitado en el tiempo. Los planes consideran oportunidades en empresas peruanas, consultoras, emprendimientos y equipos remotos de Latinoamérica.
+Cada integrante presenta su plan profesional general incluyendo dos objetivos SMART.
 
 ## Sebastian Martin Beingolea Montalvo
 
-### Plan profesional
-
 Durante su primer año después de graduarse, Sebastian priorizará conseguir experiencia comprobable como desarrollador backend y fortalecer su portafolio. En el segundo año profundizará en arquitectura de software y servicios en la nube mediante formación compatible con su jornada laboral y un proyecto aplicado. Revisará su avance cada tres meses para ajustar el ritmo sin descuidar su bienestar o sus responsabilidades personales.
 
-### Objetivo SMART 1. Consolidar experiencia profesional en backend
+**Objetivo SMART 1. Consolidar experiencia profesional en backend**
 
-Durante los doce meses posteriores a su graduación, Sebastian buscará obtener un puesto de desarrollador backend junior con C# y ASP.NET Core y completar al menos seis meses de experiencia verificable.
 
 | Criterio SMART | Aplicación concreta |
 |---|---|
@@ -374,9 +367,7 @@ Durante los doce meses posteriores a su graduación, Sebastian buscará obtener 
 | **Relevante** | La experiencia laboral le permitirá aplicar buenas prácticas y construir una base para asumir responsabilidades técnicas mayores. |
 | **Temporal** | Conseguirá la posición dentro de los 12 meses posteriores a su graduación y completará 6 meses de experiencia. |
 
-### Objetivo SMART 2. Fortalecer su perfil en arquitectura de software
-
-En los veinticuatro meses posteriores a su graduación, Sebastian completará una especialización práctica en arquitectura de software, Domain-Driven Design y servicios en la nube.
+**Objetivo SMART 2. Fortalecer su perfil en arquitectura de software**
 
 | Criterio SMART | Aplicación concreta |
 |---|---|
@@ -388,13 +379,9 @@ En los veinticuatro meses posteriores a su graduación, Sebastian completará un
 
 ## Josep Eliu Melgarejo Quiroz
 
-### Plan profesional
-
 Durante su primer año después de graduarse, Josep construirá evidencias de su capacidad para desarrollar aplicaciones completas y utilizarlas en procesos de selección. Luego fortalecerá sus habilidades de coordinación técnica mediante una experiencia pequeña y controlada, sin asumir responsabilidades superiores a su experiencia. Mantendrá entregas quincenales y revisiones trimestrales para sostener el avance junto con sus obligaciones laborales.
 
-### Objetivo SMART 1. Mejorar su empleabilidad como desarrollador de aplicaciones
-
-Durante los doce meses posteriores a su graduación, Josep publicará dos aplicaciones funcionales que demuestren su capacidad de desarrollar soluciones móviles e integrarlas con servicios web.
+**Objetivo SMART 1. Mejorar su empleabilidad como desarrollador de aplicaciones**
 
 | Criterio SMART | Aplicación concreta |
 |---|---|
@@ -404,9 +391,7 @@ Durante los doce meses posteriores a su graduación, Josep publicará dos aplica
 | **Relevante** | Los proyectos aportarán evidencia concreta para postular a posiciones junior de desarrollo de software. |
 | **Temporal** | Ambas aplicaciones estarán terminadas dentro de los 12 meses posteriores a su graduación. |
 
-### Objetivo SMART 2. Desarrollar capacidad de coordinación técnica
-
-En los dieciocho meses posteriores a su graduación, Josep reforzará su comunicación y coordinación mediante formación y la conducción de una iniciativa tecnológica pequeña.
+**Objetivo SMART 2. Desarrollar capacidad de coordinación técnica**
 
 | Criterio SMART | Aplicación concreta |
 |---|---|
@@ -418,13 +403,9 @@ En los dieciocho meses posteriores a su graduación, Josep reforzará su comunic
 
 ## Saul Ortega Muñoz
 
-### Plan profesional
-
 Durante el primer año después de graduarse, Saul buscará incorporarse al desarrollo móvil con un portafolio que incluya Android nativo y Flutter. En los seis meses siguientes reforzará la calidad de sus aplicaciones mediante pruebas, revisión de código y seguridad básica. Probará sus soluciones en dispositivos de gama media y con conectividad limitada para aproximarse a condiciones frecuentes de los usuarios peruanos.
 
-### Objetivo SMART 1. Ingresar profesionalmente al desarrollo móvil
-
-Durante los doce meses posteriores a su graduación, Saul buscará obtener una posición junior, práctica o proyecto remunerado relacionado con Android o Flutter.
+**Objetivo SMART 1. Ingresar profesionalmente al desarrollo móvil**
 
 | Criterio SMART | Aplicación concreta |
 |---|---|
@@ -434,9 +415,7 @@ Durante los doce meses posteriores a su graduación, Saul buscará obtener una p
 | **Relevante** | La experiencia le permitirá convertir los conocimientos del curso en competencias profesionales comprobables. |
 | **Temporal** | Obtendrá la oportunidad dentro de los 12 meses posteriores a su graduación y completará 6 meses de experiencia o un proyecto remunerado. |
 
-### Objetivo SMART 2. Especializarse en calidad de aplicaciones móviles
-
-En los dieciocho meses posteriores a su graduación, Saul aplicará pruebas automatizadas y controles básicos de calidad a uno de sus proyectos móviles.
+**Objetivo SMART 2. Especializarse en calidad de aplicaciones móviles**
 
 | Criterio SMART | Aplicación concreta |
 |---|---|
@@ -448,13 +427,9 @@ En los dieciocho meses posteriores a su graduación, Saul aplicará pruebas auto
 
 ## Luciana Celeste Sanchez Silva
 
-### Plan profesional
-
 Durante su primer año después de graduarse, Luciana desarrollará productos pequeños y validará sus decisiones con usuarios reales para fortalecer su portafolio. Paralelamente, buscará una posición junior relacionada con desarrollo móvil, análisis funcional o producto digital. Evaluará cada trimestre si la ruta seleccionada continúa siendo compatible con sus intereses, oportunidades laborales y bienestar personal.
 
-### Objetivo SMART 1. Crear productos digitales centrados en usuarios
-
-Durante los doce meses posteriores a su graduación, Luciana participará en dos productos digitales y documentará cómo la retroalimentación de usuarios mejoró cada solución.
+**Objetivo SMART 1. Crear productos digitales centrados en usuarios**
 
 | Criterio SMART | Aplicación concreta |
 |---|---|
@@ -464,9 +439,7 @@ Durante los doce meses posteriores a su graduación, Luciana participará en dos
 | **Relevante** | Los casos demostrarán su capacidad de combinar desarrollo de software, análisis y experiencia de usuario. |
 | **Temporal** | Terminará los 2 productos y sus casos de estudio dentro de los 12 meses posteriores a su graduación. |
 
-### Objetivo SMART 2. Consolidar experiencia en desarrollo móvil o producto digital
-
-En los quince meses posteriores a su graduación, Luciana buscará obtener una posición junior en desarrollo móvil, análisis funcional o producto digital.
+**Objetivo SMART 2. Consolidar experiencia en desarrollo móvil o producto digital**
 
 | Criterio SMART | Aplicación concreta |
 |---|---|
@@ -478,13 +451,9 @@ En los quince meses posteriores a su graduación, Luciana buscará obtener una p
 
 ## Giuseppe Adrian Villanueva Rodriguez
 
-### Plan profesional
-
 Durante el primer año después de graduarse, Giuseppe buscará experiencia en aseguramiento de calidad y automatización mediante formación práctica y proyectos demostrables. En el segundo año ampliará su perfil hacia integración y entrega continua para comprender el ciclo completo desde las pruebas hasta el despliegue. Ajustará las herramientas estudiadas según las tecnologías solicitadas en oportunidades laborales reales del mercado peruano.
 
-### Objetivo SMART 1. Obtener experiencia en aseguramiento de calidad y automatización
-
-Durante los doce meses posteriores a su graduación, Giuseppe buscará una posición junior o proyecto remunerado relacionado con desarrollo, control de calidad o automatización de pruebas.
+**Objetivo SMART 1. Obtener experiencia en aseguramiento de calidad y automatización**
 
 | Criterio SMART | Aplicación concreta |
 |---|---|
@@ -494,9 +463,7 @@ Durante los doce meses posteriores a su graduación, Giuseppe buscará una posic
 | **Relevante** | La experiencia fortalecerá su capacidad para prevenir defectos y contribuir a entregas de software confiables. |
 | **Temporal** | Obtendrá la oportunidad dentro de los 12 meses posteriores a su graduación y completará 6 meses de experiencia o un proyecto remunerado. |
 
-### Objetivo SMART 2. Ampliar su perfil hacia integración y entrega continua
-
-En los veinticuatro meses posteriores a su graduación, Giuseppe implementará procesos automatizados de integración y entrega continua en dos proyectos.
+**Objetivo SMART 2. Ampliar su perfil hacia integración y entrega continua**
 
 | Criterio SMART | Aplicación concreta |
 |---|---|

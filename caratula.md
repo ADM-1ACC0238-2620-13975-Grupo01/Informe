@@ -62,17 +62,13 @@
 </div>
 <div style="font-size: 18px; line-height: 1.65;">
 
-<div style="page-break-before: always;"></div
+<div style="page-break-before: always;"></div>
 
 <div align="center">
 
-## Índice general
+## Contenido
 
 </div>
-
-- [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
-
-- [Project Report Collaboration Insights](#project-report-collaboration-insights)
 
 - [Student Outcome](#toc-student-outcome)
 

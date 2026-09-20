@@ -69,7 +69,7 @@
 
 <div align="center">
 
-# Índice general
+# Contenido
 
 </div>
 
