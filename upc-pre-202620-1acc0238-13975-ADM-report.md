@@ -90,7 +90,7 @@ Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicacion
 - Frontend web : https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend
 - Backend : https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend
 
-## AV1. Distribución del trabajo
+## **AV1. Distribución del trabajo**
 
 Durante AV1, el equipo adaptó el informe y el diseño de AniTec al alcance de una aplicación móvil. Las contribuciones documentadas para los cinco integrantes actuales son las siguientes:
 
@@ -106,40 +106,40 @@ Durante AV1, el equipo adaptó el informe y el diseño de AniTec al alcance de u
 
 El repositorio del informe conserva el historial de los cambios documentales del equipo. Las siguientes capturas muestran el grafo general y los commits asociados a cada integrante durante el avance.
 
-### **Grafo general de commits**
+### *Grafo general de commits*
 
 ![Grafo de commits del informe en AV1](markdown/assets/chapter-1/Comitsgrahp.png)
 
-### **Commits por integrante**
+### *Commits por integrante*
 
-**Luciana Celeste Sanchez Silva**
+*Luciana Celeste Sanchez Silva*
 
 <div align="center">
   <img src="markdown/assets/chapter-1/luccsssCommits.png" alt="Commits de Luciana Sánchez" width="650">
 </div>
 
-**Josep Eliu Melgarejo Quiroz**
+*Josep Eliu Melgarejo Quiroz*
 
 <div align="center">
   <img src="markdown/assets/chapter-1/Melga1502Commits.png" alt="Commits de Josep Melgarejo" width="650">
 </div>
 
-**Sebastian Martin Beingolea Montalvo**
+*Sebastian Martin Beingolea Montalvo*
 
 <div align="center">
   <img src="markdown/assets/chapter-1/smbmontalvoCommits.png" alt="Commits de Sebastian Beingolea" width="650">
 </div>
 
-**Saul Ortega Muñoz**
+*Saul Ortega Muñoz*
 
 <div align="center">
   <img src="markdown/assets/chapter-1/Ss1lent10Commits.png" alt="Commits de Saul Ortega" width="650">
 </div>
 
-**Giuseppe Villanueva Rodriguez**
+*Giuseppe Villanueva Rodriguez*
 
 <div align="center">
-  <img src="markdown/assets/chapter-1/Giuseppe152004%27s%20Commits.png" alt="Commits de Giuseppe Villanueva" width="650">
+  <img src="markdown/assets/chapter-1/Giuseppe152004Commits.png" alt="Commits de Giuseppe Villanueva" width="650">
 </div>
 
 
