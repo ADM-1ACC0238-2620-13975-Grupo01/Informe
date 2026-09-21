@@ -8,6 +8,8 @@ _¿Cuál es la situación problemática?_
 
 Los pequeños y medianos ganaderos suelen distribuir la información de sus animales entre cuadernos, hojas sueltas, archivos y mensajes. Esto dificulta mantener historiales completos, encontrar datos durante una atención, recordar actividades sanitarias y compartir información confiable con el veterinario. La aplicación web tomada como base centraliza parte de esos datos, pero no cubre por sí sola la necesidad de registrar y consultar información mientras el usuario se desplaza por el campo.
 
+La literatura reciente respalda esta necesidad. Las soluciones digitales aplicadas a la ganadería pueden mejorar el monitoreo de la salud, la productividad y el uso de recursos, aunque su adopción todavía depende de factores como el costo, la infraestructura y la integración tecnológica (Papadopoulos et al., 2025). Asimismo, los sistemas de monitoreo en tiempo real y apoyo a decisiones permiten transformar los datos del hato en alertas y acciones oportunas para una gestión más resiliente (Nsabiyeze et al., 2025).
+
 **Cuándo (When)**
 
 _¿Cuándo ocurre el problema?_
@@ -46,7 +48,7 @@ Se diseñarán flujos breves, formularios con validación, estados claros de sin
 
 _¿Cuál es la magnitud del contexto?_
 
-El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y señaló que el 79,6 % tenía unidades de menos de cinco hectáreas (INEI, 2014). Además, durante el primer trimestre de 2025 solo el 20,5 % de los hogares rurales disponía de Internet en el hogar (INEI, 2025a). Estas cifras no cuantifican por sí solas el mercado de AniTec, pero muestran la escala de la pequeña producción agropecuaria y la necesidad de diseñar para un entorno de conectividad restringida.
+El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y señaló que el 79,6 % tenía unidades de menos de cinco hectáreas (INEI, 2014). Además, durante el primer trimestre de 2025 solo el 20,5 % de los hogares rurales disponía de Internet en el hogar (INEI, 2025). Estas cifras no cuantifican por sí solas el mercado de AniTec, pero muestran la escala de la pequeña producción agropecuaria y la necesidad de diseñar para un entorno de conectividad restringida.
 
 ### Descripción consolidada de los antecedentes y la problemática
 

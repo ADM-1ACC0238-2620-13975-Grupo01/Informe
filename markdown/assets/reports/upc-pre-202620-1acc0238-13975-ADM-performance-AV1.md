@@ -64,7 +64,7 @@
         <td></td>
         <td>X</td>
         <td></td>
-        <td>13</td>
+        <td>20</td>
     </tr>
     <tr>
         <td><b>5</b></td>

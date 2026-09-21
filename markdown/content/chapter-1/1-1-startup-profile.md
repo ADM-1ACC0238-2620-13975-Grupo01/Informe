@@ -36,7 +36,7 @@ El ecosistema se complementará con la landing page existente, que comunicará l
       <h3>Luciana Celeste Sanchez Silva</h3>
       <h4>U202215979</h4>
       <p>
-        Mi nombre es Luciana Celeste Sanchez Silva, tengo 20 años y vivo en Lima. En la actualidad, me encuentro estudiando el 6to ciclo de la carrera de ingeniería de software en la UPC debido a que desde una edad temprana tuve una fascinación relacionada con el uso de la tecnología y la programación. En mi tiempo libre trato de crecer y expandir mi conocimiento en todas las áreas posibles. De igual forma, me gusta nadar, escuchar música y tocar la guitarra. Me comprometo a colaborar en todo momento con la elaboración de esta startup, y llegar a un trabajo sobresaliente. Mis habilidades son: responsabilidad, resolución de problemas, y disciplina.
+        Mi nombre es Luciana Celeste Sanchez Silva, tengo 21 años y vivo en Lima. En la actualidad, me encuentro estudiando el octavo ciclo de la carrera de ingeniería de software en la UPC debido a que desde una edad temprana tuve una fascinación relacionada con el uso de la tecnología y la programación. En mi tiempo libre trato de crecer y expandir mi conocimiento en todas las áreas posibles. De igual forma, me gusta nadar, escuchar música y tocar la guitarra. Me comprometo a colaborar en todo momento con la elaboración de esta startup y llegar a un trabajo sobresaliente. Mis habilidades son: responsabilidad, resolución de problemas y disciplina.
       </p>
     </td>
   </tr>
@@ -49,7 +49,7 @@ El ecosistema se complementará con la landing page existente, que comunicará l
       <h3>Josep Eliu Melgarejo Quiroz</h3>
       <h4>u202315165</h4>
       <p>
-        Mi nombre es Josep Eliu Melgarejo Quiroz, tengo 21 años y mi lugar de nacimiento es Huaral pero vivo actualmente en Lima - San miguel, me encuentro cursando el 5to ciclo de la carrera de ingenieria de software en la UPC debido a que siempre me fascino el tema tecnologico, y como era un apasionado por lo juegos que luego me conllevaron a conocer el mundo de la programacion decidi estudiar mi carrera. Me comprometo a siempre apoyar y motivar a mis compañeros en hacer el mejor trabajo posible y dar el 100% de capacidad en este trabajo
+        Mi nombre es Josep Eliu Melgarejo Quiroz, tengo 21 años y nací en Huaral, aunque actualmente vivo en San Miguel, Lima. Me encuentro cursando el 5.º ciclo de la carrera de Ingeniería de Software en la UPC. Siempre me fascinó el ámbito tecnológico y, como era un apasionado por los juegos, fui conociendo poco a poco el mundo de la programación, lo que me llevó a decidir estudiar esta carrera. Me comprometo a apoyar y motivar siempre a mis compañeros para realizar el mejor trabajo posible y dar el 100 % de mi capacidad en este proyecto.
       </p>
     </td>
   </tr>
@@ -75,7 +75,7 @@ El ecosistema se complementará con la landing page existente, que comunicará l
       <h3>Saul Ortega Muñoz</h3>
       <h4>u20231c019</h4>
       <p>
-        Soy estudiante de Ingeniería de Software con formación en programación y desarrollo web. Tengo conocimientos en algunos lenguajes de programacion. Me caracterizo por ser responsable, con capacidad de aprendizaje rápido y trabajo en equipo, aportando ideas prácticas para resolver problemas y mejorar proyectos tecnológicos.
+        Soy estudiante de Ingeniería de Software con formación en programación y desarrollo web. Tengo conocimientos en algunos lenguajes de programación. Me caracterizo por ser responsable, con capacidad de aprendizaje rápido y trabajo en equipo, aportando ideas prácticas para resolver problemas y mejorar proyectos tecnológicos.
       </p>
     </td>
   </tr>
@@ -88,7 +88,7 @@ El ecosistema se complementará con la landing page existente, que comunicará l
       <h3>Giuseppe Villanueva Rodriguez</h3>
       <h4>u20221c554</h4>
       <p>
-        Soy estudiante de Ingeniería de Software con habilidades en programacion. Poseo conocimientos en algunos lenguajes de programacion. Me caracterizo por ser empotico y siempre atento cuando se trata de trabajo en equipo.
+        Soy estudiante de Ingeniería de Software con habilidades en programación. Poseo conocimientos en algunos lenguajes de programación. Me caracterizo por ser empático y siempre atento cuando se trata de trabajo en equipo.
       </p>
     </td>
   </tr>

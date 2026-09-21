@@ -71,7 +71,7 @@ Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicacion
 
 | Versión | Fecha | Autor | Descripción de modificación |
 | :---: | :---: | :--- | :--- |
-| 1.0 | 15/09/2026 | Josep Eliu Melgarejo Quiroz | Creación del documento de colaboración en Github |
+| 1.0 | 15/09/2026 | Josep Eliu Melgarejo Quiroz | Creación del documento de colaboración en GitHub |
 | 1.1 | 16/09/2026 | Sebastian Martin Beingolea Montalvo | Redacción del capítulo I: Introducción. |
 | 1.2 | 16/09/2026 | Saul Ortega Muñoz | Redacción de las secciones 2.1 a 2.4 del capítulo II. |
 | 1.3 | 16/09/2026 | Josep Eliu Melgarejo Quiroz | Redacción de las secciones 2.6.1 a 2.6.9 del capítulo II. |
@@ -85,10 +85,10 @@ Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicacion
 
 ## Repositorios del proyecto
 
-- Informe : https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe
-- Landing page : https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page
-- Frontend web : https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend
-- Backend : https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend
+- Informe: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe
+- Landing page: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page
+- Frontend web: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend
+- Backend: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend
 
 ## **AV1. Distribución del trabajo**
 
@@ -523,7 +523,7 @@ El ecosistema se complementará con la landing page existente, que comunicará l
       <h3>Luciana Celeste Sanchez Silva</h3>
       <h4>U202215979</h4>
       <p>
-        Mi nombre es Luciana Celeste Sanchez Silva, tengo 20 años y vivo en Lima. En la actualidad, me encuentro estudiando el 6to ciclo de la carrera de ingeniería de software en la UPC debido a que desde una edad temprana tuve una fascinación relacionada con el uso de la tecnología y la programación. En mi tiempo libre trato de crecer y expandir mi conocimiento en todas las áreas posibles. De igual forma, me gusta nadar, escuchar música y tocar la guitarra. Me comprometo a colaborar en todo momento con la elaboración de esta startup, y llegar a un trabajo sobresaliente. Mis habilidades son: responsabilidad, resolución de problemas, y disciplina.
+        Mi nombre es Luciana Celeste Sanchez Silva, tengo 21 años y vivo en Lima. En la actualidad, me encuentro estudiando el octavo ciclo de la carrera de ingeniería de software en la UPC debido a que desde una edad temprana tuve una fascinación relacionada con el uso de la tecnología y la programación. En mi tiempo libre trato de crecer y expandir mi conocimiento en todas las áreas posibles. De igual forma, me gusta nadar, escuchar música y tocar la guitarra. Me comprometo a colaborar en todo momento con la elaboración de esta startup y llegar a un trabajo sobresaliente. Mis habilidades son: responsabilidad, resolución de problemas y disciplina.
       </p>
     </td>
   </tr>
@@ -536,7 +536,7 @@ El ecosistema se complementará con la landing page existente, que comunicará l
       <h3>Josep Eliu Melgarejo Quiroz</h3>
       <h4>u202315165</h4>
       <p>
-        Mi nombre es Josep Eliu Melgarejo Quiroz, tengo 21 años y mi lugar de nacimiento es Huaral pero vivo actualmente en Lima - San miguel, me encuentro cursando el 5to ciclo de la carrera de ingenieria de software en la UPC debido a que siempre me fascino el tema tecnologico, y como era un apasionado por lo juegos que luego me conllevaron a conocer el mundo de la programacion decidi estudiar mi carrera. Me comprometo a siempre apoyar y motivar a mis compañeros en hacer el mejor trabajo posible y dar el 100% de capacidad en este trabajo
+        Mi nombre es Josep Eliu Melgarejo Quiroz, tengo 21 años y nací en Huaral, aunque actualmente vivo en San Miguel, Lima. Me encuentro cursando el 5.º ciclo de la carrera de Ingeniería de Software en la UPC. Siempre me fascinó el ámbito tecnológico y, como era un apasionado por los juegos, fui conociendo poco a poco el mundo de la programación, lo que me llevó a decidir estudiar esta carrera. Me comprometo a apoyar y motivar siempre a mis compañeros para realizar el mejor trabajo posible y dar el 100 % de mi capacidad en este proyecto.
       </p>
     </td>
   </tr>
@@ -562,7 +562,7 @@ El ecosistema se complementará con la landing page existente, que comunicará l
       <h3>Saul Ortega Muñoz</h3>
       <h4>u20231c019</h4>
       <p>
-        Soy estudiante de Ingeniería de Software con formación en programación y desarrollo web. Tengo conocimientos en algunos lenguajes de programacion. Me caracterizo por ser responsable, con capacidad de aprendizaje rápido y trabajo en equipo, aportando ideas prácticas para resolver problemas y mejorar proyectos tecnológicos.
+        Soy estudiante de Ingeniería de Software con formación en programación y desarrollo web. Tengo conocimientos en algunos lenguajes de programación. Me caracterizo por ser responsable, con capacidad de aprendizaje rápido y trabajo en equipo, aportando ideas prácticas para resolver problemas y mejorar proyectos tecnológicos.
       </p>
     </td>
   </tr>
@@ -575,7 +575,7 @@ El ecosistema se complementará con la landing page existente, que comunicará l
       <h3>Giuseppe Villanueva Rodriguez</h3>
       <h4>u20221c554</h4>
       <p>
-        Soy estudiante de Ingeniería de Software con habilidades en programacion. Poseo conocimientos en algunos lenguajes de programacion. Me caracterizo por ser empotico y siempre atento cuando se trata de trabajo en equipo.
+        Soy estudiante de Ingeniería de Software con habilidades en programación. Poseo conocimientos en algunos lenguajes de programación. Me caracterizo por ser empático y siempre atento cuando se trata de trabajo en equipo.
       </p>
     </td>
   </tr>
@@ -595,6 +595,8 @@ El ecosistema se complementará con la landing page existente, que comunicará l
 _¿Cuál es la situación problemática?_
 
 Los pequeños y medianos ganaderos suelen distribuir la información de sus animales entre cuadernos, hojas sueltas, archivos y mensajes. Esto dificulta mantener historiales completos, encontrar datos durante una atención, recordar actividades sanitarias y compartir información confiable con el veterinario. La aplicación web tomada como base centraliza parte de esos datos, pero no cubre por sí sola la necesidad de registrar y consultar información mientras el usuario se desplaza por el campo.
+
+La literatura reciente respalda esta necesidad. Las soluciones digitales aplicadas a la ganadería pueden mejorar el monitoreo de la salud, la productividad y el uso de recursos, aunque su adopción todavía depende de factores como el costo, la infraestructura y la integración tecnológica (Papadopoulos et al., 2025). Asimismo, los sistemas de monitoreo en tiempo real y apoyo a decisiones permiten transformar los datos del hato en alertas y acciones oportunas para una gestión más resiliente (Nsabiyeze et al., 2025).
 
 **Cuándo (When)**
 
@@ -634,7 +636,7 @@ Se diseñarán flujos breves, formularios con validación, estados claros de sin
 
 _¿Cuál es la magnitud del contexto?_
 
-El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y señaló que el 79,6 % tenía unidades de menos de cinco hectáreas (INEI, 2014). Además, durante el primer trimestre de 2025 solo el 20,5 % de los hogares rurales disponía de Internet en el hogar (INEI, 2025a). Estas cifras no cuantifican por sí solas el mercado de AniTec, pero muestran la escala de la pequeña producción agropecuaria y la necesidad de diseñar para un entorno de conectividad restringida.
+El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y señaló que el 79,6 % tenía unidades de menos de cinco hectáreas (INEI, 2014). Además, durante el primer trimestre de 2025 solo el 20,5 % de los hogares rurales disponía de Internet en el hogar (INEI, 2025). Estas cifras no cuantifican por sí solas el mercado de AniTec, pero muestran la escala de la pequeña producción agropecuaria y la necesidad de diseñar para un entorno de conectividad restringida.
 
 ### Descripción consolidada de los antecedentes y la problemática
 
@@ -799,7 +801,7 @@ Enlace para acceder al Lean UX Canvas en Mural:  https://tinyurl.com/LeanUxCanva
 
 AniTec prioriza dos segmentos que participan directamente en el registro y uso de la información ganadera: pequeños y medianos ganaderos y veterinarios de campo. Esta delimitación permite diseñar los flujos móviles alrededor de tareas concretas y evita considerar como usuarios principales a organizaciones que solo cumplen un rol de apoyo o influencia.
 
-El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y encontró que el 79,6 % tenía unidades de menos de cinco hectáreas (INEI, 2014). Aunque estas cifras incluyen distintas actividades agropecuarias y no representan por sí solas el mercado de AniTec, evidencian la relevancia de la pequeña producción. El diseño también debe considerar la brecha de conectividad: en el primer trimestre de 2025, el 20,5 % de los hogares rurales disponía de Internet en el hogar (INEI, 2025a). A la vez, el teléfono móvil es el principal medio de acceso: en el cuarto trimestre de 2025, el 89,2 % de las personas usuarias de Internet se conectó mediante un celular y, en el área rural, la proporción fue de 88,4 % (INEI, 2026). Estas condiciones respaldan una experiencia centrada en el teléfono, con persistencia local y tolerancia a conexiones intermitentes.
+El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y encontró que el 79,6 % tenía unidades de menos de cinco hectáreas (INEI, 2014). Aunque estas cifras incluyen distintas actividades agropecuarias y no representan por sí solas el mercado de AniTec, evidencian la relevancia de la pequeña producción. El diseño también debe considerar la brecha de conectividad: en el primer trimestre de 2025, el 20,5 % de los hogares rurales disponía de Internet en el hogar (INEI, 2025). A la vez, el teléfono móvil es el principal medio de acceso: en el cuarto trimestre de 2025, el 89,2 % de las personas usuarias de Internet se conectó mediante un celular y, en el área rural, la proporción fue de 88,4 % (INEI, 2026). Estas condiciones respaldan una experiencia centrada en el teléfono, con persistencia local y tolerancia a conexiones intermitentes.
 
 ## Pequeños y medianos ganaderos
 
@@ -2939,6 +2941,8 @@ Las Epics y las historias siguientes describen resultados esperados para la land
 </table>
 
 ### Technical Stories
+
+La estrategia técnica de AniTec considera Android nativo y Flutter porque la selección de un enfoque multiplataforma debe evaluar su adopción, mantenibilidad y consistencia entre plataformas (Jošt & Taneski, 2025). Además, las historias técnicas incorporan pruebas unitarias, de interfaz e integración en distintas configuraciones, debido a que la evidencia reciente identifica una adopción y cobertura todavía limitadas de las pruebas automatizadas en proyectos Android reales (Mahmud et al., 2025).
 
 <table>
   <tr>
@@ -8807,21 +8811,21 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 ### Conclusiones
 
-El proyecto AniTec permitio validar la necesidad de una solucion digital orientada a ganaderos y veterinarios, debido a que ambos segmentos requieren mayor orden, trazabilidad y disponibilidad de informacion sobre animales, fincas, actividades, sanidad y gastos. Las entrevistas y validaciones realizadas confirmaron que el problema identificado es real y que una plataforma web puede aportar valor si mantiene una experiencia simple, clara y cercana al contexto ganadero.
+El proyecto AniTec permitió validar la necesidad de una solución digital orientada a ganaderos y veterinarios, debido a que ambos segmentos requieren mayor orden, trazabilidad y disponibilidad de información sobre animales, fincas, actividades, sanidad y gastos. Las entrevistas y validaciones realizadas confirmaron que el problema identificado es real y que una plataforma web puede aportar valor si mantiene una experiencia simple, clara y cercana al contexto ganadero.
 
-El diseño del sistema basado en Domain-Driven Design permitio organizar AniTec mediante bounded contexts como IAM, Profiles, Livestock, Sanitary, Financial, Activities, Analytics, Clients, Devices, Metrics y Subscriptions. Esta separacion favorece la mantenibilidad del sistema, facilita la asignacion de responsabilidades dentro del equipo y permite que cada modulo evolucione sin afectar innecesariamente al resto de la aplicacion.
+El diseño del sistema basado en Domain-Driven Design permitió organizar AniTec mediante bounded contexts como IAM, Profiles, Livestock, Sanitary, Financial, Activities, Analytics, Clients, Devices, Metrics y Subscriptions. Esta separación favorece la mantenibilidad del sistema, facilita la asignación de responsabilidades dentro del equipo y permite que cada módulo evolucione sin afectar innecesariamente al resto de la aplicación.
 
-Durante el Sprint 1 se logro establecer la presencia digital del producto mediante una landing page funcional desplegada en GitHub Pages. Este avance permitio comunicar la propuesta de valor de AniTec, presentar los beneficios principales para ganaderos y veterinarios, y generar una primera base de validacion frente a usuarios potenciales.
+Durante el Sprint 1 se logró establecer la presencia digital del producto mediante una landing page funcional desplegada en GitHub Pages. Este avance permitió comunicar la propuesta de valor de AniTec, presentar los beneficios principales para ganaderos y veterinarios, y generar una primera base de validación frente a usuarios potenciales.
 
-Durante el Sprint 2 se implemento la aplicacion web frontend con Vue, organizada por bounded contexts y conectada inicialmente a datos de prueba mediante my-json-server. Este sprint permitio construir las principales vistas funcionales de la plataforma, validar flujos de navegacion y preparar la estructura necesaria para reemplazar progresivamente los datos mock por servicios reales.
+Durante el Sprint 2 se implementó la aplicación web frontend con Vue, organizada por bounded contexts y conectada inicialmente a datos de prueba mediante my-json-server. Este sprint permitió construir las principales vistas funcionales de la plataforma, validar flujos de navegación y preparar la estructura necesaria para reemplazar progresivamente los datos mock por servicios reales.
 
-Durante el Sprint 3 se desarrollo el backend real de AniTec con ASP.NET Core, Entity Framework Core y MySQL. La API implementa autenticacion con JWT, gestion de usuarios, perfiles, hatos, animales, eventos sanitarios, actividades, registros financieros, clientes veterinarios, analiticas, planes, suscripciones y pagos mock. Con ello, el proyecto dejo de depender solamente de datos simulados y paso a contar con una base de servicios persistentes.
+Durante el Sprint 3 se desarrolló el backend real de AniTec con ASP.NET Core, Entity Framework Core y MySQL. La API implementa autenticación con JWT, gestión de usuarios, perfiles, hatos, animales, eventos sanitarios, actividades, registros financieros, clientes veterinarios, analíticas, planes, suscripciones y pagos mock. Con ello, el proyecto dejó de depender solamente de datos simulados y pasó a contar con una base de servicios persistentes.
 
-La documentacion de servicios mediante Swagger/OpenAPI permitio verificar los endpoints implementados y facilitar las pruebas manuales del backend. Asimismo, las migraciones de Entity Framework Core permitieron mantener alineada la estructura de la base de datos con las entidades del dominio, reduciendo errores en la configuracion y mejorando la trazabilidad tecnica del sistema.
+La documentación de servicios mediante Swagger/OpenAPI permitió verificar los endpoints implementados y facilitar las pruebas manuales del backend. Asimismo, las migraciones de Entity Framework Core permitieron mantener alineada la estructura de la base de datos con las entidades del dominio, reduciendo errores en la configuración y mejorando la trazabilidad técnica del sistema.
 
-El despliegue del backend en Render representa un avance importante para el proyecto, ya que la API queda disponible desde internet y puede ser consumida por el frontend desplegado. Esto permite validar AniTec en un entorno mas cercano a produccion, comprobar la disponibilidad publica del servicio y preparar futuras pruebas de integracion entre frontend, backend y base de datos.
+El despliegue del backend en Render representa un avance importante para el proyecto, ya que la API queda disponible desde internet y puede ser consumida por el frontend desplegado. Esto permite validar AniTec en un entorno más cercano a producción, comprobar la disponibilidad pública del servicio y preparar futuras pruebas de integración entre frontend, backend y base de datos.
 
-En relacion con el Student Outcome, el equipo evidencio trabajo colaborativo y liderazgo conjunto durante los tres avances. Cada integrante asumio responsabilidades claras por modulo o artefacto, participo en la planificacion de tareas, colaboro en la integracion del sistema y aporto a la documentacion del producto. Esto permitio cumplir los objetivos de cada sprint de forma progresiva y mantener coherencia entre la propuesta, el diseño, el frontend, el backend y el despliegue.
+En relación con el Student Outcome, el equipo evidenció trabajo colaborativo y liderazgo conjunto durante los tres avances. Cada integrante asumió responsabilidades claras por módulo o artefacto, participó en la planificación de tareas, colaboró en la integración del sistema y aportó a la documentación del producto. Esto permitió cumplir los objetivos de cada sprint de forma progresiva y mantener coherencia entre la propuesta, el diseño, el frontend, el backend y el despliegue.
 
 **Contraste con Lean UX y validaciones:**
 
@@ -8839,17 +8843,17 @@ Los criterios de éxito quedan planteados como metas para una siguiente etapa de
 
 ### Recomendaciones
 
-**Corto plazo:** Se recomienda continuar con la integracion completa entre el frontend desplegado en GitHub Pages y el backend desplegado en Render, asegurando que las variables de entorno del frontend apunten a la API real y que los flujos principales funcionen sin depender de my-json-server.
+**Corto plazo:** Se recomienda continuar con la integración completa entre el frontend desplegado en GitHub Pages y el backend desplegado en Render, asegurando que las variables de entorno del frontend apunten a la API real y que los flujos principales funcionen sin depender de my-json-server.
 
-**Corto plazo:** Se recomienda fortalecer la autenticacion y autorizacion del sistema, definiendo permisos por rol para ganaderos, veterinarios y administradores. Esto permitiria proteger los endpoints sensibles y asegurar que cada usuario solo acceda a la informacion correspondiente a su perfil.
+**Corto plazo:** Se recomienda fortalecer la autenticación y autorización del sistema, definiendo permisos por rol para ganaderos, veterinarios y administradores. Esto permitiría proteger los endpoints sensibles y asegurar que cada usuario solo acceda a la información correspondiente a su perfil.
 
-**Mediano plazo:** Se recomienda continuar la validacion con ganaderos y veterinarios usando la aplicacion desplegada, no solo prototipos. Esto permitira identificar problemas reales de uso, comprension del lenguaje, dificultad en formularios, utilidad de dashboards y necesidades adicionales en los modulos de sanidad, actividades y finanzas.
+**Mediano plazo:** Se recomienda continuar la validación con ganaderos y veterinarios usando la aplicación desplegada, no solo prototipos. Esto permitirá identificar problemas reales de uso, comprensión del lenguaje, dificultad en formularios, utilidad de dashboards y necesidades adicionales en los módulos de sanidad, actividades y finanzas.
 
-**Mediano plazo:** Se recomienda mejorar la experiencia de usuario del frontend en una siguiente iteracion, priorizando claridad en dashboards, simplificacion de formularios y mejor organizacion del flujo veterinario por clientes asignados.
+**Mediano plazo:** Se recomienda mejorar la experiencia de usuario del frontend en una siguiente iteración, priorizando claridad en dashboards, simplificación de formularios y mejor organización del flujo veterinario por clientes asignados.
 
-**Mediano plazo:** Se recomienda completar y fortalecer las pruebas del backend, incluyendo pruebas de endpoints, validacion de reglas de negocio, manejo de errores y pruebas de integracion con la base de datos. Esto ayudara a asegurar mayor estabilidad antes de seguir ampliando funcionalidades.
+**Mediano plazo:** Se recomienda completar y fortalecer las pruebas del backend, incluyendo pruebas de endpoints, validación de reglas de negocio, manejo de errores y pruebas de integración con la base de datos. Esto ayudará a asegurar mayor estabilidad antes de seguir ampliando funcionalidades.
 
-**Futuro roadmap:** Se recomienda mantener actualizada la documentacion tecnica, incluyendo endpoints, migraciones, evidencias de despliegue, diagramas C4 y decisiones de arquitectura. A medida que AniTec crezca, esta documentacion sera clave para sostener la colaboracion del equipo y facilitar futuras mejoras del producto.
+**Futuro roadmap:** Se recomienda mantener actualizada la documentación técnica, incluyendo endpoints, migraciones, evidencias de despliegue, diagramas C4 y decisiones de arquitectura. A medida que AniTec crezca, esta documentación será clave para sostener la colaboración del equipo y facilitar futuras mejoras del producto.
 
 ---
 
@@ -8877,74 +8881,86 @@ El video About The Team presenta la participación de los integrantes del equipo
 <!-- Captura del video About The Team pendiente de incorporación. -->
 
 
+<div style="page-break-before: always;"></div>
+
 <a id="toc-bibliografia"></a>
 
 # Bibliografía
 
-AgriWebb. (s. f.). _AgriWebb mobile app_. Recuperado el 13 de septiembre de 2026, de https://www.agriwebb.com/mobile-app/
+<p style="margin-left:36px; text-indent:-36px;">AgriWebb. (s. f.-a). <em>AgriWebb mobile app</em>. Recuperado el 13 de septiembre de 2026, de https://www.agriwebb.com/mobile-app/</p>
 
-AgriWebb. (s. f.). _Pricing_. Recuperado el 13 de septiembre de 2026, de https://www.agriwebb.com/us/pricing/
+<p style="margin-left:36px; text-indent:-36px;">AgriWebb. (s. f.-b). <em>Pricing</em>. Recuperado el 13 de septiembre de 2026, de https://www.agriwebb.com/us/pricing/</p>
 
-Android Developers. (s. f.). _Jetpack Compose_. Recuperado el 13 de septiembre de 2026, de https://developer.android.com/develop/ui/compose
+<p style="margin-left:36px; text-indent:-36px;">Android Developers. (s. f.-a). <em>Jetpack Compose</em>. Recuperado el 13 de septiembre de 2026, de https://developer.android.com/develop/ui/compose</p>
 
-Android Developers. (s. f.). _Save data in a local database using Room_. Recuperado el 13 de septiembre de 2026, de https://developer.android.com/training/data-storage/room
+<p style="margin-left:36px; text-indent:-36px;">Android Developers. (s. f.-b). <em>Save data in a local database using Room</em>. Recuperado el 13 de septiembre de 2026, de https://developer.android.com/training/data-storage/room</p>
 
-Bourgau, P. (2022, marzo 29). _Step by step guide to run your big picture event storming_. Philippe Bourgau's Blog. https://bit.ly/bpes-guide
+<p style="margin-left:36px; text-indent:-36px;">Bourgau, P. (2022, 29 de marzo). <em>Step-by-step guide to run your big picture event storming</em>. Philippe Bourgau's Blog. https://bit.ly/bpes-guide</p>
 
-Evans, E. (2003). _Domain-Driven Design: Tackling Complexity in the Heart of Software_. Addison-Wesley Professional.
+<p style="margin-left:36px; text-indent:-36px;">Chandrasekaran, P. (2023, 20 de marzo). <em>Remote EventStorming in practice</em>. Domain-Driven Design: A Practitioner's Guide. https://ddd-practitioners.com/2023/03/20/remote-eventstorming-workshop/</p>
 
-Food and Agriculture Organization of the United Nations. (2022). _Digital agriculture: Technologies transforming agriculture and food systems_. https://www.fao.org/digital-agriculture/en/
+<p style="margin-left:36px; text-indent:-36px;">Cohn, M. (2006). <em>User stories applied: For agile software development</em>. Addison-Wesley Professional.</p>
 
-Food and Agriculture Organization of the United Nations. (2023). _Livestock and the environment_. https://www.fao.org/livestock-environment/en/
+<p style="margin-left:36px; text-indent:-36px;">DDD by Examples. (s. f.-a). <em>Big picture EventStorming</em>. GitHub. Recuperado el 13 de septiembre de 2026, de https://github.com/ddd-by-examples/library/blob/master/docs/big-picture.md</p>
 
-Firebase. (s. f.). _Firebase App Distribution_. Recuperado el 13 de septiembre de 2026, de https://firebase.google.com/docs/app-distribution
+<p style="margin-left:36px; text-indent:-36px;">DDD by Examples. (s. f.-b). <em>Design-level EventStorming</em>. GitHub. Recuperado el 13 de septiembre de 2026, de https://github.com/ddd-by-examples/library/blob/master/docs/design-level.md</p>
 
-Flutter. (s. f.). _Flutter documentation_. Recuperado el 13 de septiembre de 2026, de https://docs.flutter.dev/
+<p style="margin-left:36px; text-indent:-36px;">Evans, E. (2003). <em>Domain-driven design: Tackling complexity in the heart of software</em>. Addison-Wesley Professional.</p>
 
-Google for Developers. (s. f.). _Scan barcodes with ML Kit on Android_. Recuperado el 13 de septiembre de 2026, de https://developers.google.com/ml-kit/vision/barcode-scanning/android
+<p style="margin-left:36px; text-indent:-36px;">Firebase. (s. f.). <em>Firebase App Distribution</em>. Recuperado el 13 de septiembre de 2026, de https://firebase.google.com/docs/app-distribution</p>
 
-Chandrasekaran, P. (2023, marzo 20). _Remote EventStorming in practice_. Domain-driven Design: A Practitioner's Guide. https://ddd-practitioners.com/2023/03/20/remote-eventstorming-workshop/
+<p style="margin-left:36px; text-indent:-36px;">Flutter. (s. f.). <em>Flutter documentation</em>. Recuperado el 13 de septiembre de 2026, de https://docs.flutter.dev/</p>
 
-Cohn, M. (2006). _User stories applied: For agile software development_. Addison-Wesley Professional.
+<p style="margin-left:36px; text-indent:-36px;">Food and Agriculture Organization of the United Nations. (2022). <em>Digital agriculture: Technologies transforming agriculture and food systems</em>. https://www.fao.org/digital-agriculture/en/</p>
 
-Ddd-By-Examples. (s. f.). library/docs/big-picture.md at master. GitHub. https://github.com/ddd-by-examples/library/blob/master/docs/big-picture.md
+<p style="margin-left:36px; text-indent:-36px;">Food and Agriculture Organization of the United Nations. (2023). <em>Livestock and the environment</em>. https://www.fao.org/livestock-environment/en/</p>
 
-Ddd-By-Examples. (s. f.-b). library/docs/design-level.md at master. GitHub. https://github.com/ddd-by-examples/library/blob/master/docs/design-level.md
+<p style="margin-left:36px; text-indent:-36px;">Google for Developers. (s. f.). <em>Scan barcodes with ML Kit on Android</em>. Recuperado el 13 de septiembre de 2026, de https://developers.google.com/ml-kit/vision/barcode-scanning/android</p>
 
-Gothelf, J., & Seiden, J. (2021). _Lean UX: Designing great products with agile teams_ (3rd ed.). O'Reilly Media.
+<p style="margin-left:36px; text-indent:-36px;">Gothelf, J., &amp; Seiden, J. (2021). <em>Lean UX: Designing great products with agile teams</em> (3.ª ed.). O'Reilly Media.</p>
 
-Instituto Nacional de Estadística e Informática. (2014). _Características socioeconómicas del productor agropecuario en el Perú: IV Censo Nacional Agropecuario 2012_. https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1177/libro.pdf
+<p style="margin-left:36px; text-indent:-36px;">iLivestock. (s. f.-a). <em>iLivestock Argentina: Innovación y tecnología agrícola</em>. Recuperado el 13 de septiembre de 2026, de https://www.ilivestock.com/es-ar/ar</p>
 
-Instituto Nacional de Estadística e Informática. (2025a). _Estadísticas de las tecnologías de información y comunicación en los hogares: Enero-febrero-marzo 2025_. https://www.inei.gob.pe/media/MenuRecursivo/boletines/informe-tecnico_tecnologiasdelainformacion_ene_feb_mar2025.pdf
+<p style="margin-left:36px; text-indent:-36px;">iLivestock. (s. f.-b). <em>Livestock management software for sheep and cattle farmers</em>. Recuperado el 13 de septiembre de 2026, de https://www.ilivestock.com/software</p>
 
-Instituto Nacional de Estadística e Informática. (2026). _Estadísticas de las tecnologías de información y comunicación en los hogares: Octubre-noviembre-diciembre 2025_. https://www.inei.gob.pe/media/MenuRecursivo/boletines/boletin-tic-oct_dic2025.pdf
+<p style="margin-left:36px; text-indent:-36px;">Instituto Nacional de Estadística e Informática. (2014). <em>Características socioeconómicas del productor agropecuario en el Perú: IV Censo Nacional Agropecuario 2012</em>. https://www.inei.gob.pe/media/MenuRecursivo/publicaciones_digitales/Est/Lib1177/libro.pdf</p>
 
-iLivestock. (s. f.). _Livestock management software for sheep and cattle farmers_. Recuperado el 13 de septiembre de 2026, de https://www.ilivestock.com/software
+<p style="margin-left:36px; text-indent:-36px;">Instituto Nacional de Estadística e Informática. (2025). <em>Estadísticas de las tecnologías de información y comunicación en los hogares: Enero-febrero-marzo 2025</em>. https://www.inei.gob.pe/media/MenuRecursivo/boletines/informe-tecnico_tecnologiasdelainformacion_ene_feb_mar2025.pdf</p>
 
-iLivestock. (s. f.). _iLivestock Argentina: Innovación y tecnología agrícola_. Recuperado el 13 de septiembre de 2026, de https://www.ilivestock.com/es-ar/ar
+<p style="margin-left:36px; text-indent:-36px;">Instituto Nacional de Estadística e Informática. (2026). <em>Estadísticas de las tecnologías de información y comunicación en los hogares: Octubre-noviembre-diciembre 2025</em>. https://www.inei.gob.pe/media/MenuRecursivo/boletines/boletin-tic-oct_dic2025.pdf</p>
 
-Livestock Manager. (s. f.). _Livestock Manager: Made by Pila_. Recuperado el 13 de septiembre de 2026, de https://app.livestockfarm.co/
+<p style="margin-left:36px; text-indent:-36px;">Jošt, G., &amp; Taneski, V. (2025). State-of-the-art cross-platform mobile application development frameworks: A comparative study of market and developer trends. <em>Informatics, 12</em>(2), 45. https://doi.org/10.3390/informatics12020045</p>
 
-Microsoft. (2026). _ASP.NET Core documentation_. https://learn.microsoft.com/aspnet/core/
+<p style="margin-left:36px; text-indent:-36px;">Livestock Manager. (s. f.). <em>Livestock Manager: Made by Pila</em>. Recuperado el 13 de septiembre de 2026, de https://app.livestockfarm.co/</p>
 
-Microsoft. (2026). _Entity Framework Core documentation_. https://learn.microsoft.com/ef/core/
+<p style="margin-left:36px; text-indent:-36px;">Mahmud, T., Che, M., Ngu, A., &amp; Yang, G. (2025). Why Android app testing falls short: Empirical insights from open-source projects and a practitioner survey. <em>Empirical Software Engineering, 30</em>, artículo 163. https://doi.org/10.1007/s10664-025-10726-x</p>
 
-MySQL. (2026). _MySQL 8.0 reference manual_. https://dev.mysql.com/doc/refman/8.0/en/
+<p style="margin-left:36px; text-indent:-36px;">Microsoft. (2026a). <em>ASP.NET Core documentation</em>. https://learn.microsoft.com/aspnet/core/</p>
 
-OpenAPI Initiative. (2026). _OpenAPI specification_. https://spec.openapis.org/oas/latest.html
+<p style="margin-left:36px; text-indent:-36px;">Microsoft. (2026b). <em>Entity Framework Core documentation</em>. https://learn.microsoft.com/ef/core/</p>
 
-Pressman, R. S. (2010). _Ingeniería de software: Un enfoque práctico_ (7a ed.). McGraw-Hill.
+<p style="margin-left:36px; text-indent:-36px;">MySQL. (2026). <em>MySQL 8.0 reference manual</em>. https://dev.mysql.com/doc/refman/8.0/en/</p>
 
-Scrum.org. (2020). _The Scrum Guide_. https://scrumguides.org/scrum-guide.html
+<p style="margin-left:36px; text-indent:-36px;">Nsabiyeze, A., Zhang, M., Li, J., Zhao, Q., &amp; Zhang, X. (2025). Precision livestock farming for climate-resilient livestock management: A review of real-time monitoring and decision support systems. <em>Journal of Cleaner Production, 524</em>, 146454. https://doi.org/10.1016/j.jclepro.2025.146454</p>
 
-Structurizr. (2026). _Structurizr documentation_. https://docs.structurizr.com/
+<p style="margin-left:36px; text-indent:-36px;">OpenAPI Initiative. (2026). <em>OpenAPI specification</em>. https://spec.openapis.org/oas/latest.html</p>
 
-Stripe. (s. f.). _Use a prebuilt Stripe-hosted payment page_. Recuperado el 13 de septiembre de 2026, de https://docs.stripe.com/payments/checkout
+<p style="margin-left:36px; text-indent:-36px;">Papadopoulos, G., Papantonatou, M.-Z., Uyar, H., Kriezi, O., Mavrommatis, A., Psiroukis, V., Kasimati, A., Tsiplakou, E., &amp; Fountas, S. (2025). Economic and environmental benefits of digital agricultural technological solutions in livestock farming: A review. <em>Smart Agricultural Technology, 10</em>, 100783. https://doi.org/10.1016/j.atech.2025.100783</p>
 
-Vue.js. (2026). _Vue.js documentation_. https://vuejs.org/guide/
+<p style="margin-left:36px; text-indent:-36px;">Pressman, R. S. (2010). <em>Ingeniería de software: Un enfoque práctico</em> (7.ª ed.). McGraw-Hill.</p>
 
-Weerakoon, S. (2020, 1 noviembre). How to Write a User Story for an API Product. Medium. https://sameera17w.medium.com/how-to-write-a-user-story-for-an-api-product-7af6abd4ad2e
+<p style="margin-left:36px; text-indent:-36px;">Schwaber, K., &amp; Sutherland, J. (2020). <em>The Scrum Guide</em>. Scrum Guides. https://scrumguides.org/scrum-guide.html</p>
 
+<p style="margin-left:36px; text-indent:-36px;">Stripe. (s. f.). <em>Use a prebuilt Stripe-hosted payment page</em>. Recuperado el 13 de septiembre de 2026, de https://docs.stripe.com/payments/checkout</p>
+
+<p style="margin-left:36px; text-indent:-36px;">Structurizr. (2026). <em>Structurizr documentation</em>. https://docs.structurizr.com/</p>
+
+<p style="margin-left:36px; text-indent:-36px;">Vue.js. (2026). <em>Vue.js documentation</em>. https://vuejs.org/guide/</p>
+
+<p style="margin-left:36px; text-indent:-36px;">Weerakoon, S. (2020, 1 de noviembre). <em>How to write a user story for an API product</em>. Medium. https://sameera17w.medium.com/how-to-write-a-user-story-for-an-api-product-7af6abd4ad2e</p>
+
+
+<div style="page-break-before: always;"></div>
 
 <a id="toc-anexos"></a>
 

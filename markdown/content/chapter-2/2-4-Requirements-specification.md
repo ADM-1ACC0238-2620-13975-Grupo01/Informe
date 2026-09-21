@@ -1448,6 +1448,8 @@ Las Epics y las historias siguientes describen resultados esperados para la land
 
 ### Technical Stories
 
+La estrategia técnica de AniTec considera Android nativo y Flutter porque la selección de un enfoque multiplataforma debe evaluar su adopción, mantenibilidad y consistencia entre plataformas (Jošt & Taneski, 2025). Además, las historias técnicas incorporan pruebas unitarias, de interfaz e integración en distintas configuraciones, debido a que la evidencia reciente identifica una adopción y cobertura todavía limitadas de las pruebas automatizadas en proyectos Android reales (Mahmud et al., 2025).
+
 <table>
   <tr>
     <th>Story ID</th>
