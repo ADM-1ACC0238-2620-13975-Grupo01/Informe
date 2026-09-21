@@ -59,10 +59,10 @@
     <tr>
         <td><b>4</b></td>
         <td>Giuseppe Villanueva Rodriguez</td>
-        <td>Hacer su entrevista</td>
-        <td></td>
-        <td></td>
+        <td>Hacer su entrevista y canva</td>
         <td>X</td>
+        <td></td>
+        <td></td>
         <td></td>
         <td>20</td>
     </tr>
