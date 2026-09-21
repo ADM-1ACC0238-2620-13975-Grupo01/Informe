@@ -6,7 +6,7 @@
     </tr>
     <tr>
         <td colspan="2"><b>Nombre de la Startup</b></td>
-        <td>Titan</td>
+        <td>ADM</td>
         <td colspan="2"><b>Nombre del Producto</b></td>
         <td colspan="3">AniTec</td>
     </tr>

@@ -34,8 +34,8 @@ Los enlaces públicos del Impact Mapping y del Product Backlog todavía no han s
 
 - **Repositorio del informe:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe>
 - **Repositorio de la landing page:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page>
-- **Repositorio del frontend web tomado como base:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend>
-- **Repositorio del backend tomado como base:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend>
+- **Repositorio del frontend web:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend>
+- **Repositorio del backend:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend>
 
 Los repositorios de Android y Flutter se incorporarán cuando se creen los proyectos móviles correspondientes.
 

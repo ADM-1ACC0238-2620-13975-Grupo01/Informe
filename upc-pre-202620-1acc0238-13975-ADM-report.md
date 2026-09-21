@@ -347,6 +347,8 @@ En el siguiente cuadro se describen las acciones realizadas y los enunciados de 
 | Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software. | **AV1:**<br><br>**Luciana Celeste Sanchez Silva:** Identificó que los supuestos sobre facilidad de uso, adopción y colaboración entre ganaderos y veterinarios deben contrastarse continuamente mediante entrevistas y validaciones. Por ello, consideró la investigación con usuarios como una fuente permanente de aprendizaje para mejorar la propuesta móvil.<br><br>**Josep Eliu Melgarejo Quiroz:** Reconoció la necesidad de revisar continuamente el statement, el Product Backlog y los criterios de evaluación para detectar brechas entre el trabajo heredado y las exigencias del nuevo curso. Utilizó la comparación sistemática y la mejora iterativa del informe como estrategia de aprendizaje.<br><br>**Sebastian Martin Beingolea Montalvo:** Comprendió que la delimitación del dominio puede evolucionar conforme aparecen nuevos eventos, reglas y dependencias. Adoptó la revisión de recursos anteriores, la discusión del lenguaje ubicuo y la contrastación entre diagramas como estrategias para refinar el diseño.<br><br>**Saul Ortega Muñoz:** Reconoció que las herramientas y convenciones de arquitectura requieren práctica y actualización constante. Consultó ejemplos, documentación y resultados exportados para comprobar que los diagramas representaran correctamente las relaciones entre usuarios, aplicaciones y servicios.<br><br>**Giuseppe Villanueva Rodriguez:** Identificó que las capacidades móviles plantean riesgos que deben investigarse antes de implementarse, especialmente en conectividad, permisos, almacenamiento local y uso de recursos del dispositivo. Consideró las Spike Stories, los prototipos y las pruebas en dispositivos físicos como estrategias necesarias para adquirir evidencia y ajustar decisiones. | **AV1:**<br><br>El equipo reconoció que el desarrollo de AniTec requiere aprendizaje continuo porque combina un producto web heredado con nuevas plataformas, herramientas y restricciones móviles. La revisión de documentación, el análisis de trabajos anteriores, la investigación individual, la discusión en equipo y la validación progresiva permitieron corregir supuestos y fundamentar decisiones. Estas prácticas fortalecen la capacidad del grupo para incorporar nuevos conocimientos durante los siguientes hitos y responder a cambios técnicos o de usuario sin perder coherencia en la solución. |
 
 
+<div style="page-break-before: always;"></div>
+
 <a id="toc-objetivos-smart"></a>
 
 # Objetivos SMART
@@ -582,6 +584,8 @@ El ecosistema se complementará con la landing page existente, que comunicará l
 </table>
 
 
+<div style="page-break-before: always;"></div>
+
 <a id="toc-1-2-solution-profile"></a>
 
 # 1.2. Solution Profile
@@ -794,6 +798,8 @@ El Lean UX Canvas es una herramienta utilizada en el marco del diseño centrado 
 ![Lean UX Canvas](markdown/assets/chapter-1/lean_ux_canvas.png)
 Enlace para acceder al Lean UX Canvas en Mural:  https://tinyurl.com/LeanUxCanvasMural
 
+
+<div style="page-break-before: always;"></div>
 
 <a id="toc-1-3-segmentos-objetivo"></a>
 
@@ -1015,6 +1021,8 @@ Las siguientes estrategias son preliminares y se derivan de los hallazgos del La
 
 Las campañas de referidos, alianzas con asociaciones, participación en ferias y acercamiento a veterinarios podrán utilizarse como tácticas de adquisición cuando exista una versión Android demostrable. Cada actividad deberá registrar participantes, usuarios activados y continuidad de uso; la asistencia a una actividad, por sí sola, no demostrará adopción del producto.
 
+
+<div style="page-break-before: always;"></div>
 
 <a id="toc-2-2-entrevistas"></a>
 
@@ -1349,6 +1357,8 @@ El análisis del segmento veterinario muestra que las principales necesidades es
 En cuanto a características subjetivas, ambos veterinarios se muestran más familiarizados con la tecnología que el segmento ganadero. Angela representa un perfil organizado, técnico y orientado al servicio, mientras que Jeferson muestra un perfil analítico, práctico y orientado a la tecnología. Ambos valoran la rapidez, la trazabilidad y la utilidad real. Por ello, el arquetipo de veterinario debe representar a un profesional joven, móvil, acostumbrado a usar herramientas digitales básicas, pero que necesita una plataforma más integrada para evitar pérdida de información y mejorar la continuidad de tratamientos.
 
 
+<div style="page-break-before: always;"></div>
+
 <a id="toc-2-3-needfinding"></a>
 
 # 2.3. Needfinding.
@@ -1363,11 +1373,15 @@ A continuación, se presentan los User Personas diseñados para representar a lo
 
 ### User Persona: Ganaderos
 
-![User-Persona Ganadero](markdown/assets/chapter-2/user_persona_ganadero.png)
+<div align="center">
+  <img src="markdown/assets/chapter-2/user_persona_ganadero.png" alt="User Persona Ganadero" width="450">
+</div>
 
 ### User Persona: Veterinarios
 
-![User-Persona Veterinario](markdown/assets/chapter-2/user_persona_veterinario.png)
+<div align="center">
+  <img src="markdown/assets/chapter-2/user_persona_veterinario.png" alt="User Persona Veterinario" width="450">
+</div>
 
 <a id="toc-2-3-2-user-task-matrix"></a>
 
@@ -1487,6 +1501,8 @@ Siguiendo los conceptos de **Ubiquitous Language** definidos por **Eric Evans (2
 | **Accessibility**           | Accesibilidad            | Conjunto de prácticas de diseño móvil que facilitan el uso de la aplicación a personas con distintos niveles de experiencia digital o limitaciones.     |
 | **Internationalization**    | Internacionalización     | Capacidad de la aplicación móvil para adaptar idioma, formatos y textos a diferentes contextos regionales sin cambiar la lógica del producto.           |
 
+
+<div style="page-break-before: always;"></div>
 
 <a id="toc-2-4-requirements-specification"></a>
 
@@ -3684,6 +3700,8 @@ La distribución considera los hitos del curso:
 </table>
 
 
+<div style="page-break-before: always;"></div>
+
 <a id="toc-2-5-strategic-level-domain-driven-design"></a>
 
 # 2.5. Strategic-Level Domain-Driven Design
@@ -4212,6 +4230,8 @@ La landing page se publica como contenido estático en GitHub Pages. La API ASP.
 Las tres imágenes deben exportarse desde el mismo archivo DSL. Los nombres y rutas requeridos se detallan en [codefordiagrams/README.md](markdown/assets/codefordiagrams/README.md), de modo que al copiar los PNG exportados los placeholders del informe se resuelvan sin modificar nuevamente el contenido.
 
 
+<div style="page-break-before: always;"></div>
+
 <a id="toc-2-6-tactical-level-domain-driven-design"></a>
 
 # 2.6. Tactical-Level Domain-Driven Design
@@ -4246,6 +4266,8 @@ Para mantener el informe legible, las fichas individuales se reservan para aggre
   </tbody>
 </table>
 
+
+<div style="page-break-before: always;"></div>
 
 <a id="toc-2-6-1-bounded-context-identity-and-access-management"></a>
 
@@ -4737,6 +4759,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 </div>
 
 
+<div style="page-break-before: always;"></div>
+
 <a id="toc-2-6-2-bounded-context-profile-management"></a>
 
 # 2.6.2. Bounded Context: Profile Management
@@ -5201,6 +5225,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
   <p><i>Figura 2.6.2.6. Android Room Database Design de Profile Management. Fuente: elaboración propia a partir del esquema SQL.</i></p>
 </div>
 
+
+<div style="page-break-before: always;"></div>
 
 <a id="toc-2-6-3-bounded-context-livestock-management"></a>
 
@@ -5729,6 +5755,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 </div>
 
 
+<div style="page-break-before: always;"></div>
+
 <a id="toc-2-6-4-bounded-context-sanitary-management"></a>
 
 # 2.6.4. Bounded Context: Sanitary Management
@@ -6219,6 +6247,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 </div>
 
 
+<div style="page-break-before: always;"></div>
+
 <a id="toc-2-6-5-bounded-context-veterinary-collaboration"></a>
 
 # 2.6.5. Bounded Context: Veterinary Collaboration
@@ -6690,6 +6720,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 </div>
 
 
+<div style="page-break-before: always;"></div>
+
 <a id="toc-2-6-6-bounded-context-activity-management"></a>
 
 # 2.6.6. Bounded Context: Activity Management
@@ -7159,6 +7191,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 </div>
 
 
+<div style="page-break-before: always;"></div>
+
 <a id="toc-2-6-7-bounded-context-financial-management"></a>
 
 # 2.6.7. Bounded Context: Financial Management
@@ -7624,6 +7658,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
   <p><i>Figura 2.6.7.6. Android Room Database Design de Financial Management. Fuente: elaboración propia a partir del esquema SQL.</i></p>
 </div>
 
+
+<div style="page-break-before: always;"></div>
 
 <a id="toc-2-6-8-bounded-context-subscription-management"></a>
 
@@ -8161,6 +8197,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
   <p><i>Figura 2.6.8.6. Android Room Database Design de Subscription Management. Fuente: elaboración propia a partir del esquema SQL.</i></p>
 </div>
 
+
+<div style="page-break-before: always;"></div>
 
 <a id="toc-2-6-9-bounded-context-analytics-and-reporting"></a>
 
@@ -8741,6 +8779,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 ## 4.1.4. Software Deployment Configuration
 
 
+<div style="page-break-before: always;"></div>
+
 <a id="toc-4-2-landing-page-mobile-application-implementation"></a>
 
 # 4.2. Landing Page & Mobile Application Implementation
@@ -8785,6 +8825,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 ### 4.2.1.9. Team Collaboration Insights during Sprint
 
+
+<div style="page-break-before: always;"></div>
 
 <a id="toc-4-3-validation-interviews"></a>
 
@@ -9000,8 +9042,8 @@ Los enlaces públicos del Impact Mapping y del Product Backlog todavía no han s
 
 - **Repositorio del informe:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe>
 - **Repositorio de la landing page:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page>
-- **Repositorio del frontend web tomado como base:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend>
-- **Repositorio del backend tomado como base:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend>
+- **Repositorio del frontend web:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend>
+- **Repositorio del backend:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend>
 
 Los repositorios de Android y Flutter se incorporarán cuando se creen los proyectos móviles correspondientes.
 

@@ -217,6 +217,27 @@ def render_source(name: str) -> str:
     return contents
 
 
+def needs_section_page_break(name: str) -> bool:
+    """Inicia en página nueva las secciones x.2+ y cada bounded context 2.6.x."""
+    source = (CONTENT / name).resolve()
+    contents = source.read_text(encoding="utf-8-sig")
+    heading = re.search(r"^#{1,6}\s+(.+?)\s*$", contents, flags=re.MULTILINE)
+    if not heading:
+        return False
+    section_number = numeric_key(heading.group(1))
+    if not section_number:
+        return False
+    components = section_number.split(".")
+    if len(components) == 2:
+        return int(components[1]) >= 2
+    return (
+        len(components) == 3
+        and components[0] == "2"
+        and components[1] == "6"
+        and 1 <= int(components[2]) <= 9
+    )
+
+
 parts = [cover.strip(), '<div style="font-size: 20px; line-height: 1.8;">']
 for name in PRE_TOC_CONTENT:
     parts.extend(['<div style="page-break-before: always;"></div>', render_source(name)])
@@ -233,6 +254,8 @@ for chapter, names in SECTIONS:
         chapter_heading = f'<a id="{chapter_anchor}"></a>\n\n# {chapter}' if chapter_anchor else f"# {chapter}"
         parts.extend(['<div style="page-break-before: always;"></div>', chapter_heading])
     for name in names:
+        if needs_section_page_break(name):
+            parts.append('<div style="page-break-before: always;"></div>')
         parts.append(render_source(name))
 
 parts.append("</div>")

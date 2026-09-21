@@ -1,3 +1,5 @@
+<div style="page-break-before: always;"></div>
+
 # Objetivos SMART
 
 Cada integrante presenta su plan profesional general incluyendo dos objetivos SMART.

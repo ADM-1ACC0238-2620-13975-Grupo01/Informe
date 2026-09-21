@@ -8,11 +8,15 @@ A continuación, se presentan los User Personas diseñados para representar a lo
 
 ### User Persona: Ganaderos
 
-![User-Persona Ganadero](../../assets/chapter-2/user_persona_ganadero.png)
+<div align="center">
+  <img src="../../assets/chapter-2/user_persona_ganadero.png" alt="User Persona Ganadero" width="450">
+</div>
 
 ### User Persona: Veterinarios
 
-![User-Persona Veterinario](../../assets/chapter-2/user_persona_veterinario.png)
+<div align="center">
+  <img src="../../assets/chapter-2/user_persona_veterinario.png" alt="User Persona Veterinario" width="450">
+</div>
 
 ## 2.3.2. User Task Matrix.
 
