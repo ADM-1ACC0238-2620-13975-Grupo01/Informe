@@ -106,9 +106,10 @@ Esta sección registrará únicamente commits que contribuyan al alcance comprom
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
 |---|---|---|---|---|---|
-| Repositorio pendiente | Rama pendiente | SHA pendiente | Mensaje pendiente | Propósito y relación con la tarea pendientes | YYYY-MM-DD |
+| anitec-backend | main | `125d53e` | chore: add initial commit with all project files | Incorpora la solución `Anitec.Platform` con bounded contexts (Iam, Profiles, Livestock, Sanitary, Financial, Activities, Analytics, Devices, Metrics, Subscriptions, Clients, Shared), controllers REST, EF Core + MySQL, JWT/BCrypt, Swagger y `Dockerfile`. | 2026-09-04 |
+| anitec-backend | main | `9831844` | chore: big update to add corrals and animal corral relationship | Extiende Livestock con corrales (`CorralsController`), relación animal–corral, operaciones bulk de animales y validaciones de resources. | 2026-09-30 |
 
-> **Pendiente de completar:** agregar commits de Landing Page, backend, Android, Flutter e informe según el alcance real.
+> **Pendiente de completar:** agregar commits de Landing Page, Android, Flutter e informe según el alcance real. Las filas anteriores corresponden solo al backend.
 
 <a id="toc-4-2-1-5-testing-suite-evidence-for-sprint-review"></a>
 
@@ -118,13 +119,14 @@ La evidencia incluirá pruebas automatizadas relacionadas con las historias del 
 
 | Test ID | Product | Type | Class / Feature | Behavior | Related Story | Result |
 |---|---|---|---|---|---|---|
-| TEST-001 | Producto pendiente | Tipo de prueba pendiente | Ruta o clase pendiente | Comportamiento pendiente | US/TS pendiente | Pendiente |
+| TEST-BE-001 | Web Services | Exploratoria / contrato | Swagger UI (`/swagger`) | Validar disponibilidad de OpenAPI y endpoints Animals / Authentication en el entorno publicado | Autenticación y registro esencial de animales / sanidad | Completado — Figura 4.2.1.6.1 |
+| TEST-BE-002 | Web Services | Automatizada (xUnit) | **Pendiente:** no hay proyecto de pruebas en el repositorio | **Pendiente:** incorporar suite xUnit | — | No aplicable aún |
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
 |---|---|---|---|---|---|
-| Repositorio pendiente | Rama pendiente | SHA pendiente | Mensaje de prueba pendiente | Pruebas incorporadas pendientes | YYYY-MM-DD |
+| anitec-backend | — | — | — | **Pendiente:** no existen commits de pruebas automatizadas; el repositorio no incluye proyecto `*Tests` / xUnit. | — |
 
-> **Pendiente de completar:** incluir resultados, capturas o reportes y enlaces a los archivos de pruebas.
+> **Pendiente de completar (backend):** cuando exista proyecto xUnit, ejecutar `dotnet test`, adjuntar captura del resultado en `markdown/assets/chapter-4/backend/` y registrar el commit. Las filas de Landing / Android / Flutter las completa cada responsable.
 
 <a id="toc-4-2-1-6-execution-evidence-for-sprint-review"></a>
 
@@ -137,7 +139,15 @@ La evidencia de ejecución mostrará el resultado integrado del Sprint 1 mediant
 | Landing Page | Página principal y responsive | Navegador de escritorio y móvil | Pendiente de captura | Pendiente |
 | Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Pendiente de captura | Pendiente |
 | Flutter | Autenticación y funciones core comprometidas | Dispositivo o emulador objetivo | Pendiente de captura | Pendiente |
+| Web Services | Swagger UI: documentación OpenAPI de la API publicada | Navegador contra <https://anitec-backend.onrender.com/swagger/index.html> | Figura 4.2.1.6.1 (`swagger-ui.png`) | Completado |
 | Integración | Consumo de API y manejo de errores | Aplicaciones contra backend vigente | Pendiente de captura | Pendiente |
+
+<div align="center">
+  <img src="../../assets/chapter-4/backend/swagger-ui.png" width="800">
+  <p><i>Figura 4.2.1.6.1. Swagger UI de AniTec Platform en Render, con endpoints de Animals y Authentication. Fuente: elaboración propia.</i></p>
+</div>
+
+La captura demuestra que la documentación interactiva carga desde el entorno publicado y expone los contratos REST usados por el Sprint 1.
 
 - **Execution video:** **Pendiente de completar:** URL del video.
 - **Timing:** **Pendiente:** inicio y duración de cada demostración.
@@ -146,16 +156,33 @@ La evidencia de ejecución mostrará el resultado integrado del Sprint 1 mediant
 
 ### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
-Se documentarán los endpoints utilizados por las historias comprometidas y su disponibilidad mediante OpenAPI.
+Se documentarán los endpoints utilizados por las historias comprometidas y su disponibilidad mediante OpenAPI. La documentación interactiva se genera con Swashbuckle (`Program.cs`: `AddSwaggerGen`, `UseSwagger`, `UseSwaggerUI`) e incluye esquema Bearer JWT.
 
 | Related Story | HTTP | Endpoint | Parameters / Body | Success Response | Error Responses | Documentation URL |
 |---|---|---|---|---|---|---|
-| US/TS pendiente | Verbo HTTP pendiente | Ruta pendiente | Parámetros o resource pendientes | Código y resource pendientes | Códigos y condiciones pendientes | URL Swagger pendiente |
+| Autenticación — registro | POST | `/api/v1/authentication/sign-up` | Body `SignUpResource`: `username`, `password`, `fullName`, `role` (`Rancher` \| `Veterinarian`) | `200` — `{ "message": "..." }` | `400` — usuario no creado / datos inválidos | <https://anitec-backend.onrender.com/swagger/index.html> |
+| Autenticación — inicio de sesión | POST | `/api/v1/authentication/sign-in` | Body `SignInResource`: `username`, `password` | `200` — `AuthenticatedUserResource` (`id`, `username`, `fullName`, `role`, `token`) | `400` — credenciales inválidas | Idem |
+| Animales — listar | GET | `/api/v1/animals` | Header `Authorization: Bearer <JWT>` (roles Rancher, Veterinarian) | `200` — lista de `AnimalResource` | `401` sin token; `403` rol no autorizado | Idem |
+| Animales — obtener por id | GET | `/api/v1/animals/{id}` | Path `id`; Bearer JWT | `200` — `AnimalResource` | `404` no encontrado; `401`/`403` | Idem |
+| Animales — crear | POST | `/api/v1/animals` | Bearer JWT (Rancher); Body `CreateAnimalResource`: `tag`, `name`, `species`, `breed`, `gender`, `birthDate`, `weight`, `status`, `herdId`, `corralId`, `source`, `ageRange`, `imageUrl` | `201` — `AnimalResource` | `400` validación; `401`/`403` | Idem |
+| Animales — actualizar | PUT | `/api/v1/animals/{id}` | Path `id`; Body `CreateAnimalResource`; Bearer (Rancher) | `200` — `AnimalResource` | `400`; `404`; `401`/`403` | Idem |
+| Animales — eliminar | DELETE | `/api/v1/animals/{id}` | Path `id`; Bearer (Rancher) | `204` | `404`; `401`/`403` | Idem |
+| Sanidad — listar eventos | GET | `/api/v1/health-events` | Bearer JWT (Rancher, Veterinarian) | `200` — lista de `HealthEventResource` | `401`/`403` | Idem |
+| Sanidad — crear evento | POST | `/api/v1/health-events` | Body `CreateHealthEventResource`: `animalId`, `type`, `date`, `description`, `veterinarian`, `diagnosis`, `treatment`, `prescription`, `followUp`, `nextDueDate` | `201` — `HealthEventResource` | `401`/`403`; errores de dominio | Idem |
+| Rebaños — listar (soporte) | GET | `/api/v1/herds` | Bearer JWT | `200` — lista de herds | `401`/`403` | Idem |
+| Corrales — listar (soporte) | GET | `/api/v1/corrals` | Bearer JWT | `200` — lista de corrals | `401`/`403` | Idem |
 
 - **Web Services repository:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend>
-- **Swagger:** **Pendiente de confirmar:** URL pública vigente.
-- **Documentation commits:** **Pendiente de completar:** identificadores de commits.
-- **Interaction screenshots:** **Pendiente de completar:** llamadas con datos de muestra y respuestas.
+- **Swagger:** <https://anitec-backend.onrender.com/swagger/index.html>
+- **Documentation commits:** `125d53e` (configuración inicial Swagger/OpenAPI y controllers); `9831844` (documentación/endpoints de corrals y ampliación de animals).
+- **Interaction screenshots:** Swagger UI publicado (Figura 4.2.1.7.1). **Pendiente:** capturas adicionales de `sign-in` exitoso, llamada con Bearer token y respuesta `401`/`400`.
+
+<div align="center">
+  <img src="../../assets/chapter-4/backend/swagger-ui.png" width="800">
+  <p><i>Figura 4.2.1.7.1. Evidencia de documentación de servicios: Swagger UI con Authorize y catálogo de endpoints Animals / Authentication. Fuente: elaboración propia.</i></p>
+</div>
+
+La figura respalda que OpenAPI está disponible públicamente y que los endpoints del Sprint 1 pueden ejercitarse desde Swagger.
 
 <a id="toc-4-2-1-8-software-deployment-evidence-for-sprint-review"></a>
 
@@ -166,11 +193,28 @@ La evidencia explicará la configuración realizada durante el sprint y demostra
 | Product | Platform | Configuration performed | Version / Commit | Public URL or Release | Status |
 |---|---|---|---|---|---|
 | Landing Page | GitHub Pages | Workflow o rama pendientes | Commit pendiente | URL pendiente | Pendiente |
-| Web Services | Render | Build, variables y base de datos pendientes | Commit pendiente | URL y Swagger pendientes | Pendiente |
+| Web Services | Render | Docker; variables `ASPNETCORE_ENVIRONMENT`, `ConnectionStrings__DefaultConnection`, `TokenSettings__Secret`, `StripeSettings__*`; MySQL externo | Deploy Live verificado en Events (Figuras 4.2.1.8.1–4.2.1.8.2) | <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live |
 | Android | Firebase App Distribution | Firma, aplicación y testers pendientes | Versión y commit pendientes | Release pendiente | Pendiente |
 | Flutter | Firebase App Distribution | Plataforma, aplicación y testers pendientes | Versión y commit pendientes | Release pendiente | Pendiente |
 
-> **Pendiente de completar:** insertar capturas y explicar los pasos efectivamente ejecutados durante el Sprint 1.
+**Pasos ejecutados (Web Services):**
+
+1. Publicar el Web Service `anitec-backend` en Render con runtime Docker.
+2. Configurar secretos de conexión MySQL, JWT y Stripe en Environment (valores no expuestos en el informe).
+3. Verificar estado **Live** en Events y disponibilidad de la URL primaria.
+4. Comprobar que Swagger UI responde en `/swagger/index.html`.
+
+<div align="center">
+  <img src="../../assets/chapter-4/backend/render-backend-live.png" width="800">
+  <p><i>Figura 4.2.1.8.1. Evidencia de despliegue: anitec-backend en estado Live en Render. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/chapter-4/backend/render-backend-environment.png" width="800">
+  <p><i>Figura 4.2.1.8.2. Evidencia de configuración de despliegue: variables de entorno del backend con valores ocultos. Fuente: elaboración propia.</i></p>
+</div>
+
+Las capturas demuestran la publicación del servicio y la administración de secretos fuera del código fuente. Landing, Android y Flutter quedan a cargo de sus responsables.
 
 <a id="toc-4-2-1-9-team-collaboration-insights-during-sprint"></a>
 
