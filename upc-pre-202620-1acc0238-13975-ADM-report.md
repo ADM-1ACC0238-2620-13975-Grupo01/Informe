@@ -308,10 +308,10 @@ El repositorio del informe conserva el historial de los cambios documentales del
     - [4.1.3. Source Code Style Guide & Conventions](#toc-4-1-3-source-code-style-guide-conventions)
     - [4.1.4. Software Deployment Configuration](#toc-4-1-4-software-deployment-configuration)
   - [4.2. Landing Page & Mobile Application Implementation](#toc-4-2-landing-page-mobile-application-implementation)
-    - [4.2.1. Sprint n](#toc-4-2-1-sprint-n)
-      - [4.2.1.1. Sprint Planning n](#toc-4-2-1-1-sprint-planning-n)
+    - [4.2.1. Sprint 1](#toc-4-2-1-sprint-1)
+      - [4.2.1.1. Sprint Planning 1](#toc-4-2-1-1-sprint-planning-1)
       - [4.2.1.2. Aspect Leaders and Collaborators](#toc-4-2-1-2-aspect-leaders-and-collaborators)
-      - [4.2.1.3. Sprint Backlog n](#toc-4-2-1-3-sprint-backlog-n)
+      - [4.2.1.3. Sprint Backlog 1](#toc-4-2-1-3-sprint-backlog-1)
       - [4.2.1.4. Development Evidence for Sprint Review](#toc-4-2-1-4-development-evidence-for-sprint-review)
       - [4.2.1.5. Testing Suite Evidence for Sprint Review](#toc-4-2-1-5-testing-suite-evidence-for-sprint-review)
       - [4.2.1.6. Execution Evidence for Sprint Review](#toc-4-2-1-6-execution-evidence-for-sprint-review)
@@ -8680,73 +8680,319 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 # 3.1. Product design
 
+El diseño de AniTec traduce las necesidades de ganaderos y veterinarios en una experiencia coherente entre la Landing Page, la aplicación Android nativa y la aplicación multiplataforma. Se priorizan la consulta rápida en campo, el registro con pocos pasos, la legibilidad en exteriores y la continuidad ante una conexión inestable. Los artefactos mantienen trazabilidad con los User Personas, User Stories y bounded contexts del capítulo II.
+
 <a id="toc-3-1-1-style-guidelines"></a>
 
 ## 3.1.1. Style Guidelines
+
+Estas pautas establecen un lenguaje visual común para que las interfaces sean consistentes, reconocibles y accesibles en la Landing Page, Jetpack Compose y Flutter.
 
 <a id="toc-3-1-1-1-general-style-guidelines"></a>
 
 ### 3.1.1.1. General Style Guidelines
 
+**Identidad visual.** AniTec combina referencias al entorno ganadero con una presentación digital moderna. Los logotipos deben conservar sus proporciones, un área libre alrededor y suficiente contraste. No deben deformarse, rotarse ni recolorearse arbitrariamente.
+
+<div align="center">
+  <img src="markdown/assets/chapter-3/style-guidelines/logo-startup.png" alt="Logo de la startup Titan" width="220">
+  <p><i>Figura 3.1.1.1. Logo de la startup Titan. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-3/style-guidelines/logo-producto.png" alt="Logo del producto AniTec" width="220">
+  <p><i>Figura 3.1.1.2. Logo de AniTec. Fuente: elaboración propia.</i></p>
+</div>
+
+**Paleta de colores.** Los verdes representan salud, campo y crecimiento; los marrones conectan la interfaz con la actividad ganadera; y los tonos claros producen superficies legibles. Ningún estado dependerá únicamente del color: las alertas, confirmaciones y errores también usarán texto o iconografía.
+
+<table>
+  <thead><tr><th>Color</th><th>Código</th><th>Uso principal</th></tr></thead>
+  <tbody>
+    <tr><td>Verde principal</td><td>#79B267</td><td>Acciones principales, selección activa y marca.</td></tr>
+    <tr><td>Marrón oscuro</td><td>#925930</td><td>Contraste de identidad y elementos ganaderos.</td></tr>
+    <tr><td>Marrón medio</td><td>#A3794F</td><td>Acentos, ilustraciones y acciones secundarias.</td></tr>
+    <tr><td>Verde suave</td><td>#A3C4A8</td><td>Estados secundarios y fondos de apoyo.</td></tr>
+    <tr><td>Beige</td><td>#D1BFA5</td><td>Tarjetas, superficies y separadores.</td></tr>
+    <tr><td>Crema</td><td>#F5F0E6</td><td>Fondo claro principal y descanso visual.</td></tr>
+  </tbody>
+</table>
+
+<div align="center">
+  <img src="markdown/assets/chapter-3/style-guidelines/79B267.png" alt="Color 79B267" width="105">
+  <img src="markdown/assets/chapter-3/style-guidelines/925930.png" alt="Color 925930" width="105">
+  <img src="markdown/assets/chapter-3/style-guidelines/A3794F.png" alt="Color A3794F" width="105">
+  <img src="markdown/assets/chapter-3/style-guidelines/A3C4A8.png" alt="Color A3C4A8" width="105">
+  <img src="markdown/assets/chapter-3/style-guidelines/D1BFA5.png" alt="Color D1BFA5" width="105">
+  <img src="markdown/assets/chapter-3/style-guidelines/F5F0E6.png" alt="Color F5F0E6" width="105">
+  <p><i>Figura 3.1.1.3. Paleta cromática de AniTec. Fuente: elaboración propia.</i></p>
+</div>
+
+**Tipografía.** AniTec utiliza Poppins por su lectura clara. Los encabezados emplean SemiBold o Bold y el cuerpo Regular o Medium. En móviles se respetará el escalado configurado por el usuario y se evitarán bloques extensos en mayúsculas.
+
+| Uso | Peso recomendado | Tamaño móvil de referencia |
+|---|---|---|
+| Título principal | Bold | 28–32 sp |
+| Título de pantalla | SemiBold | 22–24 sp |
+| Subtítulo | SemiBold | 18–20 sp |
+| Cuerpo | Regular | 16 sp |
+| Etiqueta o ayuda | Medium / Regular | 14 sp |
+| Texto auxiliar | Regular | 12 sp como mínimo |
+
+<div align="center">
+  <img src="markdown/assets/chapter-3/style-guidelines/poppins.png" alt="Muestra de Poppins" width="650">
+  <p><i>Figura 3.1.1.4. Tipografía Poppins. Fuente: elaboración propia.</i></p>
+</div>
+
+**Espaciado, formas e iconografía.** Se usará una cuadrícula base de 8 unidades. Las tarjetas podrán utilizar radios de 8 a 16 dp y los controles táctiles mantendrán un área mínima de 48 × 48 dp. Los iconos tendrán etiquetas o descripciones accesibles cuando su significado no sea evidente.
+
+<div align="center">
+  <img src="markdown/assets/chapter-3/style-guidelines/icons.png" alt="Iconografía de AniTec" width="650">
+  <p><i>Figura 3.1.1.5. Referencia de iconografía. Fuente: elaboración propia.</i></p>
+</div>
+
+**Tono de comunicación.** La comunicación será clara, respetuosa, serena y orientada a la acción. Usará términos conocidos por ganaderos y veterinarios, instrucciones breves y mensajes que indiquen cómo recuperarse de un problema.
+
+| Situación | Redacción recomendada |
+|---|---|
+| Acción | “Registrar animal” |
+| Confirmación | “El animal se registró correctamente.” |
+| Error recuperable | “No pudimos guardar los cambios. Revisa tu conexión e inténtalo nuevamente.” |
+| Sin resultados | “No se encontraron animales con esos filtros.” |
+| Permiso | “AniTec necesita acceso a la cámara para leer el código del animal.” |
+
+**Accesibilidad e internacionalización**
+
+- Mantener contraste suficiente y no depender solo del color.
+- Permitir el aumento de texto sin pérdida de contenido.
+- Incluir descripciones accesibles en imágenes y controles.
+- Centralizar textos para English (en_US) y Latin American Spanish (es_419), con inglés como idioma predeterminado.
+- Formatear fechas, números y monedas según la región.
+- Ofrecer una alternativa manual cuando la cámara no esté disponible.
+- Usar etiquetas semánticas, foco visible y atributos ARIA en la Landing Page.
+
+**Criterios por producto.** La Landing Page tendrá jerarquía vertical, navegación superior y diseño responsive. Android aplicará los patrones de Material Design con Jetpack Compose. Flutter utilizará componentes equivalentes y conservará la misma identidad y orden de tareas. Ambas aplicaciones contemplarán carga, contenido, ausencia de datos, error, confirmación y operación sin conexión cuando corresponda.
+
 <a id="toc-3-1-2-information-architecture"></a>
 
 ## 3.1.2. Information Architecture
+
+La arquitectura de información organiza la Landing Page y las aplicaciones para que visitantes, ganaderos y veterinarios encuentren con rapidez las funciones relacionadas con sus objetivos. La propuesta reduce carga cognitiva mediante etiquetas breves, agrupación por tareas y navegación diferenciada por rol.
 
 <a id="toc-3-1-2-1-organization-systems"></a>
 
 ### 3.1.2.1. Organization Systems
 
+| Sistema | Aplicación en AniTec |
+|---|---|
+| Jerárquico | Los dashboards priorizan alertas, indicadores y acciones frecuentes. |
+| Secuencial | Registro de cuenta, finca, animal y evento sanitario se resuelve en pasos ordenados. |
+| Cronológico | Actividades, historial sanitario, pagos y operaciones pendientes se ordenan por fecha. |
+| Por tópicos | Animales, fincas, sanidad, actividades, finanzas, colaboración, analíticas y suscripciones. |
+| Por audiencia | La Landing Page y la navegación diferencian a ganaderos y veterinarios. |
+| Matricial | Los reportes cruzan indicadores por finca, animal, categoría, estado o periodo. |
+
+La Landing Page sigue un recorrido de descubrimiento: propuesta de valor, problema, beneficios, funciones por segmento, planes y llamada a la acción. En las aplicaciones, la autenticación conduce a un dashboard ajustado al rol.
+
 <a id="toc-3-1-2-2-labelling-systems"></a>
 
 ### 3.1.2.2. Labelling Systems
+
+Las etiquetas representan conceptos del dominio y evitan términos técnicos internos.
+
+| Producto o rol | Etiqueta | Significado |
+|---|---|---|
+| Landing Page | Inicio | Propuesta principal de AniTec. |
+| Landing Page | Beneficios | Valor ofrecido por el producto. |
+| Landing Page | Ganaderos | Capacidades de gestión del hato. |
+| Landing Page | Veterinarios | Capacidades de seguimiento clínico. |
+| Landing Page | Planes | Alternativas de suscripción. |
+| Ganadero | Inicio | Alertas, animales, actividades e indicadores. |
+| Ganadero | Fincas | Unidades productivas. |
+| Ganadero | Animales | Búsqueda, registro y consulta de animales. |
+| Ganadero | Sanidad | Incidencias, visitas, tratamientos e historial. |
+| Ganadero | Actividades | Tareas y recordatorios. |
+| Ganadero | Finanzas | Ingresos, egresos y resúmenes. |
+| Veterinario | Clientes | Ganaderos que autorizaron colaboración. |
+| Veterinario | Pacientes | Animales autorizados por cada cliente. |
+| Veterinario | Seguimiento | Información clínica autorizada. |
+| Compartido | Reportes | Métricas y tendencias del rol. |
+| Compartido | Plan | Suscripción y condiciones vigentes. |
+
+Las acciones principales serán “Registrar”, “Guardar”, “Actualizar”, “Archivar”, “Buscar”, “Filtrar”, “Reintentar” y “Cancelar”. “Eliminar” se reservará para operaciones destructivas y requerirá confirmación.
 
 <a id="toc-3-1-2-3-seo-tags-and-meta-tags"></a>
 
 ### 3.1.2.3. SEO Tags and Meta Tags
 
+**Landing Page**
+
+| Elemento | Valor propuesto |
+|---|---|
+| Title | AniTec – Gestión y trazabilidad inteligente para la ganadería |
+| Description | AniTec ayuda a ganaderos y veterinarios a organizar animales, sanidad, actividades y decisiones de campo desde experiencias móviles conectadas. |
+| Keywords | AniTec, gestión ganadera, trazabilidad animal, salud animal, veterinarios, aplicación ganadera, ganado, Perú |
+| Author | AniTec |
+| Open Graph title | AniTec – Información ganadera donde la necesitas |
+| Open Graph description | Gestiona animales, registros sanitarios y actividades desde una experiencia diseñada para el trabajo de campo. |
+
+**ASO de las aplicaciones móviles**
+
+| Elemento | Android nativo | Aplicación Flutter |
+|---|---|---|
+| App title | AniTec Ganadería | AniTec Ganadería |
+| Subtitle | Gestión del ganado en campo | Gestión ganadera multiplataforma |
+| Keywords | ganado, animales, sanidad, trazabilidad, veterinario | ganado, animales, sanidad, trazabilidad, veterinario |
+| Short description | Registra animales, controla su salud y organiza actividades desde el teléfono. | Consulta y gestiona la información esencial de AniTec desde dispositivos compatibles. |
+| Full description | Aplicación para ganaderos y veterinarios que necesitan información organizada, alertas y trazabilidad en campo. | Experiencia multiplataforma para acceder a los flujos de AniTec mediante la misma API y reglas del producto. |
+
+Los textos definitivos se ajustarán a las restricciones de longitud de cada tienda antes de la distribución.
+
 <a id="toc-3-1-2-4-searching-systems"></a>
 
 ### 3.1.2.4. Searching Systems
+
+| Datos | Búsqueda | Filtros | Presentación |
+|---|---|---|---|
+| Animales | Nombre o identificador | Finca, especie, raza y estado | Tarjetas con identificación, finca y estado. |
+| Fincas | Nombre o ubicación | Estado y actividad | Lista con cantidad de animales. |
+| Historial sanitario | Animal, diagnóstico o tratamiento | Tipo, fecha y profesional | Línea de tiempo cronológica. |
+| Clientes | Nombre del ganadero | Autorización y estado | Lista con acceso disponible o pendiente. |
+| Pacientes | Nombre o identificador | Cliente, especie y condición | Tarjetas con acceso al historial. |
+| Actividades | Título o animal | Fecha, prioridad y estado | Lista por urgencia y fecha. |
+| Finanzas | Concepto o categoría | Tipo, categoría y periodo | Resumen y lista de movimientos. |
+
+Los resultados permitirán limpiar criterios y mostrarán un estado vacío cuando no existan coincidencias. Las búsquedas esenciales podrán consultar la caché local sin conexión.
 
 <a id="toc-3-1-2-5-navigation-systems"></a>
 
 ### 3.1.2.5. Navigation Systems
 
+La Landing Page navega hacia Inicio, Beneficios, Ganaderos, Veterinarios, Planes y Contacto. En pantallas pequeñas usará un menú condensado sin ocultar las llamadas a la acción.
+
+| Rol | Destinos principales | Rutas secundarias |
+|---|---|---|
+| Ganadero | Inicio, Animales, Actividades, Reportes y Más | Fincas, sanidad, finanzas, plan, perfil y configuración. |
+| Veterinario | Inicio, Clientes, Pacientes, Actividades y Más | Seguimiento, reportes, plan, perfil y configuración. |
+
+El retorno conservará filtros y datos no enviados. Las notificaciones y enlaces profundos comprobarán autenticación y autorización antes de abrir un recurso; si no está disponible, mostrarán una explicación y una ruta segura hacia el inicio.
+
 <a id="toc-3-1-3-landing-page-ui-design"></a>
 
 ## 3.1.3. Landing Page UI Design
+
+La Landing Page comunica el problema, los beneficios para cada segmento y las opciones para conocer las aplicaciones. Aplica la identidad visual, la organización jerárquica y una estructura responsive.
+
+**Enlace de diseño:** **Pendiente de confirmar:** URL vigente del archivo Figma de la Landing Page.
 
 <a id="toc-3-1-3-1-landing-page-wireframe"></a>
 
 ### 3.1.3.1. Landing Page Wireframe
 
+El wireframe de escritorio define la distribución del encabezado, propuesta de valor, beneficios, secciones por segmento, planes, testimonios y pie de página antes de aplicar el acabado visual.
+
+<div align="center">
+  <img src="markdown/assets/chapter-3/landing-page/landing-page-wireframe-desktop.png" alt="Wireframe de escritorio de la Landing Page" width="500">
+  <p><i>Figura 3.1.3.1. Wireframe de escritorio de la Landing Page. Fuente: elaboración propia.</i></p>
+</div>
+
+> **Pendiente de completar:** insertar la captura del wireframe para navegador móvil.<br>
+> **Enlace pendiente:** URL del frame correspondiente en Figma.
+
 <a id="toc-3-1-3-2-landing-page-mock-up"></a>
 
 ### 3.1.3.2. Landing Page Mock-up
+
+El mock-up de escritorio incorpora la paleta, Poppins, imágenes, iconografía y llamadas a la acción para transmitir confianza y relación con el entorno agropecuario.
+
+<div align="center">
+  <img src="markdown/assets/chapter-3/landing-page/landing-page-mockup-desktop.png" alt="Mock-up de escritorio de la Landing Page" width="500">
+  <p><i>Figura 3.1.3.2. Mock-up de escritorio de la Landing Page. Fuente: elaboración propia.</i></p>
+</div>
+
+> **Pendiente de completar:** insertar la captura del mock-up para navegador móvil.<br>
+> **Enlace pendiente:** URL del frame correspondiente en Figma.
 
 <a id="toc-3-1-4-mobile-applications-ux-ui-design"></a>
 
 ## 3.1.4. Mobile Applications UX/UI Design
 
+La propuesta comprende Android nativo con Kotlin y Jetpack Compose y una aplicación multiplataforma con Flutter y Dart. Ambas comparten objetivos, contratos, identidad y reglas de negocio, pero respetan los patrones de su plataforma. Los primeros flujos cubren autenticación, dashboard, registro y mantenimiento de animales, consulta del historial y registro sanitario.
+
 <a id="toc-3-1-4-1-mobile-applications-wireframes"></a>
 
 ### 3.1.4.1. Mobile Applications Wireframes
+
+Los wireframes mostrarán estructura, jerarquía, navegación y estados sin acabado visual definitivo.
+
+| Aplicación | Rol | Pantalla | Objetivo | User Story | Estado |
+|---|---|---|---|---|---|
+| Android | Ganadero / Veterinario | Pendiente: nombre de pantalla | Pendiente: tarea | Pendiente: US-xxx | Pendiente |
+| Flutter | Ganadero / Veterinario | Pendiente: nombre de pantalla | Pendiente: tarea | Pendiente: US-xxx | Pendiente |
+
+> **Pendiente de completar:** insertar wireframes de Android y Flutter para autenticación, dashboard, fincas, animales e historial sanitario.<br>
+> **Enlaces pendientes:** frames de Figma correspondientes.
 
 <a id="toc-3-1-4-2-mobile-applications-wireflow-diagrams"></a>
 
 ### 3.1.4.2. Mobile Applications Wireflow Diagrams
 
+Cada wireflow mostrará cómo cambia la interfaz después de una acción.
+
+| User goal | Actor | Punto inicial | Pasos principales | Alternativas | Resultado |
+|---|---|---|---|---|---|
+| Registrarse e iniciar sesión | Ganadero / Veterinario | Bienvenida | Seleccionar rol, ingresar datos y autenticar | Cuenta existente, datos inválidos, error de red | Dashboard del rol |
+| Consultar dashboard | Ambos roles | Sesión autenticada | Cargar resumen y abrir módulo | Sin datos, sin conexión o acceso no autorizado | Recurso seleccionado |
+| Registrar animal | Ganadero | Lista de animales | Completar datos y guardar | Datos incompletos, duplicado u operación offline | Animal registrado o pendiente |
+| Consultar o actualizar animal | Ganadero | Lista o búsqueda | Abrir detalle, revisar y editar | Sin autorización, archivado o error | Información actualizada |
+| Consultar historial sanitario | Usuario autorizado | Detalle del animal | Abrir sanidad, filtrar y revisar | Historial vacío o permiso insuficiente | Evento consultado |
+| Registrar evento sanitario | Usuario autorizado | Historial | Seleccionar tipo, completar y guardar | Validación, falta de permiso o sin conexión | Evento registrado o pendiente |
+
+> **Pendiente de completar:** insertar un wireflow por cada user goal y por cada aplicación.
+
 <a id="toc-3-1-4-3-mobile-applications-mock-ups"></a>
 
 ### 3.1.4.3. Mobile Applications Mock-ups
+
+Los mock-ups aplicarán el Design System a los wireframes aprobados y mostrarán contenido representativo, controles táctiles y estados.
+
+| Aplicación | Pantallas mínimas | Decisiones a evidenciar |
+|---|---|---|
+| Android | Bienvenida, registro, login, dashboard, lista, detalle y formulario de animal, historial | Material Design, Compose, navegación, contraste y estados. |
+| Flutter | Las mismas pantallas y alcance funcional | Componentes Flutter, adaptación a plataforma y estados equivalentes. |
+
+> **Pendiente de completar:** insertar mock-ups de Android y Flutter.<br>
+> **Enlaces pendientes:** frames finales de Figma.
 
 <a id="toc-3-1-4-4-mobile-applications-user-flow-diagrams"></a>
 
 ### 3.1.4.4. Mobile Applications User Flow Diagrams
 
+Los User Flow Diagrams integrarán los mock-ups con el happy path y las rutas alternativas.
+
+| User goal | Happy path | Unhappy paths | Relación |
+|---|---|---|---|
+| Registro e inicio de sesión | Datos válidos y dashboard | Datos inválidos, cuenta existente, credenciales incorrectas y sin red | US-004, US-005, US-006 |
+| Dashboard | Resumen disponible y acceso a módulo | Sin datos, sesión vencida y error del servicio | US-007 y flujos del rol |
+| Registro de animal | Formulario válido y confirmación | Campos faltantes, duplicado, servidor y guardado offline | US-011, TS-004, TS-005 |
+| Consulta y actualización | Recurso autorizado y actualización | Sin permiso, inexistente y conflicto de sincronización | US-010, US-012, US-013 |
+| Historial sanitario | Historial disponible | Historial vacío, filtro sin resultados y acceso denegado | US-014 |
+| Registro sanitario | Datos válidos y confirmación | Validación, permiso insuficiente y sin conexión | US-015 |
+
+> **Pendiente de completar:** insertar diagramas Android y Flutter con condiciones y rutas alternativas.
+
 <a id="toc-3-1-4-5-mobile-applications-prototyping"></a>
 
 ### 3.1.4.5. Mobile Applications Prototyping
+
+Los prototipos simularán la navegación de los User Flow Diagrams y permitirán comprobar etiquetas, acciones, retroalimentación, recuperación ante errores y consistencia.
+
+| Aplicación | Prototipo Figma | Captura del video | Video en Microsoft Stream | Estado |
+|---|---|---|---|---|
+| Android | URL pendiente | Pendiente | URL pendiente | Pendiente |
+| Flutter | URL pendiente | Pendiente | URL pendiente | Pendiente |
+
+> **Pendiente de completar:** insertar una captura de cada video y reemplazar los enlaces después de publicar los prototipos y sus demostraciones.
 
 
 <div style="page-break-before: always;"></div>
@@ -8757,26 +9003,173 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 # 4. Product Implementation & Validation
 
+Este capítulo describe la configuración, planificación, implementación, comprobación, despliegue y validación de los productos que forman AniTec. El alcance comprende la Landing Page, los servicios REST desarrollados con ASP.NET Core, la aplicación Android nativa y la aplicación multiplataforma. El avance se organiza en sprints y se sustenta mediante evidencias trazables a los repositorios, pruebas, documentación OpenAPI, entornos publicados y sesiones con usuarios.
+
+Para el TB1 se documenta el Sprint 1. Los campos marcados como pendientes deberán completarse únicamente con información y evidencia producida durante la iteración vigente.
+
 
 <a id="toc-4-1-software-configuration-management"></a>
 
 # 4.1. Software Configuration Management
 
+La gestión de configuración de AniTec define las herramientas, repositorios, convenciones y procesos de publicación que permiten trabajar sobre la Landing Page, la API REST y las aplicaciones móviles de manera consistente y trazable.
+
 <a id="toc-4-1-1-software-development-environment-configuration"></a>
 
 ## 4.1.1. Software Development Environment Configuration
+
+Las herramientas se agrupan según la actividad que soportan. Todo integrante deberá utilizar versiones compatibles con los repositorios y registrar cualquier cambio de versión que afecte la compilación.
+
+**Project and Requirements Management**
+
+| Herramienta | Propósito | Referencia |
+|---|---|---|
+| Trello | Organizar Product Backlog, Sprint Backlog y estados de tareas. | <https://trello.com> |
+| GitHub Issues / Projects | Dar trazabilidad a incidencias, cambios y trabajo del repositorio. | <https://github.com/features/issues> |
+| Gherkin | Especificar criterios de aceptación y escenarios BDD. | <https://cucumber.io/docs/gherkin/> |
+| Miro | Modelar EventStorming y flujos colaborativos. | <https://miro.com> |
+
+**Product UX/UI Design**
+
+| Herramienta | Propósito | Referencia |
+|---|---|---|
+| Figma | Elaborar wireframes, mock-ups, wireflows, user flows y prototipos. | <https://www.figma.com> |
+| Canva | Preparar recursos visuales complementarios. | <https://www.canva.com> |
+| Lucidchart | Modelar flujos y diagramas auxiliares. | <https://www.lucidchart.com> |
+
+**Software Development**
+
+| Herramienta o tecnología | Propósito | Versión / estado |
+|---|---|---|
+| Git y GitHub | Control de versiones y colaboración. | Versión estable compatible |
+| Visual Studio Code | Landing Page, documentación y edición general. | Versión estable |
+| Rider / Visual Studio | Desarrollo de la API ASP.NET Core. | Versión compatible con .NET 10 |
+| .NET SDK | Compilar y ejecutar el backend. | .NET 10 |
+| ASP.NET Core | Exponer servicios REST y OpenAPI. | 10 |
+| MySQL / MySQL Workbench | Persistencia central y administración de datos. | Compatible con el proveedor EF Core 10 |
+| Android Studio | Desarrollo, emulación y depuración Android. | **Pendiente de registrar:** versión definitiva |
+| Kotlin | Implementar la aplicación Android nativa. | **Pendiente de registrar:** versión definitiva |
+| Jetpack Compose | Construir la interfaz Android. | **Pendiente de registrar:** BOM y versiones |
+| Flutter SDK y Dart | Implementar la aplicación multiplataforma. | **Pendiente de registrar:** versiones definitivas |
+
+**Software Testing**
+
+| Producto | Herramientas previstas | Tipo de comprobación |
+|---|---|---|
+| Backend | xUnit y herramientas de prueba de ASP.NET Core | Unitarias, integración y aceptación |
+| Android | JUnit, Compose UI Test y Android Emulator | Unitarias e interfaz |
+| Flutter | flutter_test e integration_test | Unitarias, widgets e integración |
+| API | Swagger UI y cliente HTTP controlado | Contratos y ejecución exploratoria |
+| Landing Page | DevTools, Lighthouse y validadores web | Responsive, accesibilidad y desempeño |
+
+**Deployment and Documentation**
+
+| Herramienta | Propósito | Referencia |
+|---|---|---|
+| GitHub Pages | Publicar la Landing Page. | <https://pages.github.com> |
+| Render | Publicar la API REST. | <https://render.com> |
+| Firebase App Distribution | Distribuir builds móviles para validación. | <https://firebase.google.com/docs/app-distribution> |
+| Swagger / OpenAPI | Documentar y probar endpoints. | <https://swagger.io/specification/> |
+| Structurizr | Mantener los diagramas C4. | <https://structurizr.com> |
+| PlantUML | Mantener diagramas de clases. | <https://plantuml.com> |
 
 <a id="toc-4-1-2-source-code-management"></a>
 
 ## 4.1.2. Source Code Management
 
+GitHub es la plataforma central de versionado. Los repositorios vigentes son:
+
+| Producto | Repositorio |
+|---|---|
+| Informe | <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe> |
+| Landing Page | <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page> |
+| Web Services | <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend> |
+| Android nativo | **Pendiente de completar:** URL del repositorio Android |
+| Aplicación Flutter | **Pendiente de completar:** URL del repositorio Flutter |
+
+**GitFlow**
+
+- main: versiones estables y entregables.
+- develop: integración del trabajo aprobado para la siguiente versión.
+- feature/<scope>-<description>: desarrollo de una funcionalidad o artefacto.
+- release/<version>: estabilización de una versión candidata.
+- hotfix/<description>: corrección urgente originada desde main.
+
+Cada Pull Request indicará propósito, cambios, evidencia de verificación y User Story relacionada. La integración requerirá revisión y comprobaciones correspondientes al producto.
+
+**Semantic Versioning.** Las versiones seguirán MAJOR.MINOR.PATCH: MAJOR para cambios incompatibles, MINOR para funcionalidad compatible y PATCH para correcciones compatibles.
+
+**Conventional Commits.** Se utilizará type(scope): description, con descripciones breves en inglés. Tipos principales: feat, fix, docs, style, refactor, test, build, ci y chore.
+
 <a id="toc-4-1-3-source-code-style-guide-conventions"></a>
 
 ## 4.1.3. Source Code Style Guide & Conventions
 
+El código fuente, nombres técnicos, rutas y mensajes de commit se redactarán en inglés. Las clases y funciones tendrán responsabilidades claras y se mantendrá la separación por capas y bounded contexts definida en el capítulo II.
+
+| Tecnología | Convenciones principales |
+|---|---|
+| HTML y CSS | HTML semántico, atributos de accesibilidad, indentación de dos espacios y clases kebab-case. |
+| JavaScript | Variables y funciones camelCase, constantes descriptivas, módulos pequeños y uso de async/await. |
+| Kotlin | Google Kotlin Style Guide; tipos y composables PascalCase, funciones y propiedades camelCase, paquetes en minúsculas. |
+| Jetpack Compose | Composables pequeños, estado elevado cuando corresponda, previews representativas y recursos fuera del código. |
+| Dart | Effective Dart; tipos UpperCamelCase, miembros lowerCamelCase, archivos lowercase_with_underscores. |
+| Flutter | Widgets pequeños, separación de presentación y estado, temas centralizados y textos localizables. |
+| C# | Convenciones Microsoft; tipos, métodos y propiedades PascalCase, parámetros camelCase y campos privados _camelCase. |
+| REST / OpenAPI | Sustantivos plurales en rutas, verbos HTTP correctos, resources/DTOs, códigos de estado y respuestas de error consistentes. |
+| Gherkin | Features y escenarios ligados a User Stories, pasos declarativos y estructura Given–When–Then. |
+
+**Reglas compartidas**
+
+- No incluir secretos, tokens ni cadenas de conexión en el repositorio.
+- Centralizar textos para i18n en lugar de escribirlos directamente en vistas.
+- Documentar interfaces públicas y decisiones no evidentes.
+- Evitar duplicar reglas de negocio entre UI y API; el backend conserva las reglas autoritativas.
+- Incluir pruebas para reglas o flujos incorporados durante el sprint.
+
 <a id="toc-4-1-4-software-deployment-configuration"></a>
 
 ## 4.1.4. Software Deployment Configuration
+
+Cada producto se configura y publica de manera independiente, pero las aplicaciones móviles consumen la misma API mediante HTTPS y contratos documentados en OpenAPI.
+
+**Landing Page — GitHub Pages**
+
+1. Integrar el contenido aprobado en main.
+2. Ejecutar las comprobaciones y el proceso de construcción si corresponde.
+3. Configurar GitHub Pages con la rama o workflow definido.
+4. verificar navegación, recursos, responsive, i18n y accesibilidad desde la URL pública.
+
+**Web Services — Render**
+
+1. Conectar el repositorio del backend y seleccionar el proyecto de inicio.
+2. Definir variables de entorno para base de datos, JWT, servicios externos y ambiente.
+3. Ejecutar restauración, compilación y publicación de ASP.NET Core.
+4. Verificar salud del servicio, persistencia y documentación Swagger.
+
+**Android y Flutter — Firebase App Distribution**
+
+1. Crear o vincular el proyecto Firebase y registrar cada aplicación.
+2. Configurar identificadores, firma de builds y variables de ambiente.
+3. Generar un artefacto instalable de prueba desde una versión trazable.
+4. Publicar el build para el grupo autorizado de testers.
+5. Registrar versión, commit, fecha, notas y resultados de instalación.
+
+| Producto | Entorno / servicio | URL o identificador | Estado |
+|---|---|---|---|
+| Landing Page | GitHub Pages | **Pendiente de confirmar:** URL vigente | Pendiente de evidencia TB1 |
+| Web Services | Render | **Pendiente de confirmar:** URL y Swagger vigentes | Pendiente de evidencia TB1 |
+| Android | Firebase App Distribution | **Pendiente:** App ID, release y grupo de testers | Pendiente |
+| Flutter | Firebase App Distribution | **Pendiente:** App ID, plataformas y release | Pendiente |
+
+El diagrama de despliegue muestra los dispositivos, productos, servicios externos y relaciones necesarias para ejecutar AniTec.
+
+<div align="center">
+  <img src="markdown/assets/chapter-2/AniTec-Deployment.svg" alt="Diagrama C4 de despliegue de AniTec" width="900">
+  <p><i>Figura 4.1.4.1. Software Architecture Deployment Diagram. Fuente: elaboración propia con Structurizr DSL.</i></p>
+</div>
+
+> **Pendiente de completar:** incorporar capturas de la configuración y publicación vigente de cada producto durante el Sprint 1.
 
 
 <div style="page-break-before: always;"></div>
@@ -8785,45 +9178,191 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 # 4.2. Landing Page & Mobile Application Implementation
 
-<a id="toc-4-2-1-sprint-n"></a>
+Esta sección registra el avance de la Landing Page, los Web Services y las aplicaciones móviles mediante sprints. Cada iteración relaciona el Product Backlog con tareas, responsables, commits, pruebas, documentación, ejecución y despliegue verificable.
 
-## 4.2.1. Sprint n
+<a id="toc-4-2-1-sprint-1"></a>
 
-<a id="toc-4-2-1-1-sprint-planning-n"></a>
+## 4.2.1. Sprint 1
 
-### 4.2.1.1. Sprint Planning n
+El Sprint 1 corresponde al TB1 y establece la base ejecutable de los productos de AniTec. El alcance candidato considera la Landing Page desplegada, el backend al 70 %, la configuración de Android y Flutter y las pantallas core de autenticación y gestión de animales. El compromiso definitivo se registrará después del Sprint Planning.
+
+<a id="toc-4-2-1-1-sprint-planning-1"></a>
+
+### 4.2.1.1. Sprint Planning 1
+
+La reunión de planificación definirá el Sprint Goal, la capacidad del equipo y el subconjunto de historias que puede completarse con evidencia verificable durante la iteración.
+
+<table>
+  <tr><th>Sprint #</th><td>Sprint 1</td></tr>
+  <tr><th colspan="2">Sprint Planning Background</th></tr>
+  <tr><th>Date</th><td><b>Pendiente:</b> YYYY-MM-DD</td></tr>
+  <tr><th>Time</th><td><b>Pendiente:</b> HH:MM AM/PM</td></tr>
+  <tr><th>Location</th><td><b>Pendiente:</b> ubicación física o plataforma virtual</td></tr>
+  <tr><th>Prepared By</th><td><b>Pendiente:</b> responsable del acta</td></tr>
+  <tr><th>Attendees</th><td>Beingolea Montalvo, Sebastian Martin / Melgarejo Quiroz, Josep Eliu / Ortega Muñoz, Saul / Sanchez Silva, Luciana Celeste / Villanueva Rodriguez, Giuseppe</td></tr>
+  <tr><th>Sprint 0 Review Summary</th><td>No aplica como sprint de implementación previo. La línea base comprende el informe hasta el capítulo II, la Landing Page, la API existente y los artefactos de arquitectura.</td></tr>
+  <tr><th>Sprint 0 Retrospective Summary</th><td>El equipo deberá iniciar la iteración con responsabilidades explícitas, trazabilidad entre historias y tareas, y evidencia continua en repositorios.</td></tr>
+  <tr><th colspan="2">Sprint Goal & User Stories</th></tr>
+  <tr><th>Sprint 1 Goal</th><td><b>Pendiente de acordar.</b> Propuesta: ofrecer una primera experiencia móvil ejecutable para que un usuario pueda autenticarse y consultar o registrar información esencial de animales, respaldada por la API pública y la Landing Page desplegada.</td></tr>
+  <tr><th>Sprint 1 Velocity</th><td><b>Pendiente:</b> capacidad acordada en Story Points</td></tr>
+  <tr><th>Sum of Story Points</th><td><b>Pendiente:</b> suma de las historias finalmente comprometidas</td></tr>
+</table>
+
+El Product Backlog asigna al Sprint 1 los siguientes candidatos. La suma total es 96 Story Points; por ello, el equipo debe confirmar durante el planning cuáles se comprometen según su capacidad y mantener el resto fuera del Sprint Backlog si no puede completarlos.
+
+| ID | Título | Story Points |
+|---|---|---:|
+| US-001 | Comprender la propuesta de valor de AniTec | 3 |
+| US-002 | Conocer las soluciones para cada segmento | 3 |
+| US-003 | Acceder a una landing page adaptable e internacionalizada | 5 |
+| TS-001 | Configurar la aplicación Android nativa | 5 |
+| TS-002 | Configurar la aplicación multiplataforma con Flutter | 5 |
+| TS-003 | Definir la arquitectura móvil por capas y bounded contexts | 5 |
+| TS-013 | Adaptar y documentar los servicios backend para móviles | 8 |
+| US-004 | Registrar una cuenta según el rol | 5 |
+| US-005 | Iniciar sesión | 3 |
+| US-006 | Mantener y finalizar la sesión móvil | 3 |
+| US-007 | Acceder únicamente a información autorizada | 5 |
+| TS-008 | Proteger credenciales y datos de sesión | 5 |
+| US-008 | Consultar las fincas registradas | 3 |
+| US-009 | Registrar y actualizar una finca | 5 |
+| US-010 | Consultar y buscar animales | 5 |
+| US-011 | Registrar un animal | 5 |
+| US-012 | Actualizar o archivar un animal | 5 |
+| US-013 | Consultar el detalle de un animal | 3 |
+| TS-004 | Integrar las aplicaciones con la API REST interna | 5 |
+| TS-005 | Implementar persistencia local segura en Android | 5 |
+| SP-001 | Investigar identificación de animales con Google ML Kit | 5 |
 
 <a id="toc-4-2-1-2-aspect-leaders-and-collaborators"></a>
 
 ### 4.2.1.2. Aspect Leaders and Collaborators
 
-<a id="toc-4-2-1-3-sprint-backlog-n"></a>
+La matriz LACX indicará un líder (L) y los colaboradores (C) de cada aspecto comprometido. La asignación deberá coincidir con las tareas del Sprint Backlog y asegurar participación de todos los integrantes.
 
-### 4.2.1.3. Sprint Backlog n
+| Team Member | GitHub Username | UX/UI | Android | Flutter | Backend | Landing Page | Testing | Documentation & Deployment |
+|---|---|---|---|---|---|---|---|---|
+| Beingolea Montalvo, Sebastian Martin | smbmontalvo | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
+| Melgarejo Quiroz, Josep Eliu | Melga1502 | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
+| Ortega Muñoz, Saul | Ss1lent10 | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
+| Sanchez Silva, Luciana Celeste | luccsss | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
+| Villanueva Rodriguez, Giuseppe | Giuseppe152004 | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
+
+> **Pendiente de completar:** reemplazar “Pendiente” por L, C o — después de aprobar la distribución del Sprint 1.
+
+<a id="toc-4-2-1-3-sprint-backlog-1"></a>
+
+### 4.2.1.3. Sprint Backlog 1
+
+El Sprint Backlog descompone las historias comprometidas en tareas comprobables. El tablero utilizará los estados Todo, In-Process, To-Review y Done.
+
+- **Sprint Goal:** pendiente de confirmar en el Sprint Planning.
+- **Board URL:** **Pendiente de completar:** URL pública del tablero.
+- **Board screenshot:** **Pendiente de completar:** captura del tablero del Sprint 1.
+
+| Story ID | Story Title | Task ID | Task Title | Description | Hours | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| ID pendiente | Título del Product Backlog | T-001 | Tarea concreta pendiente | Resultado verificable pendiente | Pendiente | Pendiente | Todo |
+| ID pendiente | Título del Product Backlog | T-002 | Tarea concreta pendiente | Resultado verificable pendiente | Pendiente | Pendiente | Todo |
+| ID pendiente | Título del Product Backlog | T-003 | Tarea concreta pendiente | Resultado verificable pendiente | Pendiente | Pendiente | Todo |
+
+| Métrica | Valor |
+|---|---|
+| Historias comprometidas | Pendiente |
+| Story Points comprometidos | Pendiente |
+| Tareas | Pendiente |
+| Horas estimadas | Pendiente |
+| Tareas completadas | Pendiente al cierre |
 
 <a id="toc-4-2-1-4-development-evidence-for-sprint-review"></a>
 
 ### 4.2.1.4. Development Evidence for Sprint Review
 
+Esta sección registrará únicamente commits que contribuyan al alcance comprometido. Cada evidencia debe poder localizarse en el repositorio y relacionarse con una historia o tarea.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
+|---|---|---|---|---|---|
+| Repositorio pendiente | Rama pendiente | SHA pendiente | Mensaje pendiente | Propósito y relación con la tarea pendientes | YYYY-MM-DD |
+
+> **Pendiente de completar:** agregar commits de Landing Page, backend, Android, Flutter e informe según el alcance real.
+
 <a id="toc-4-2-1-5-testing-suite-evidence-for-sprint-review"></a>
 
 ### 4.2.1.5. Testing Suite Evidence for Sprint Review
+
+La evidencia incluirá pruebas automatizadas relacionadas con las historias del sprint. Los escenarios BDD se expresarán en archivos .feature y sus pasos correspondientes.
+
+| Test ID | Product | Type | Class / Feature | Behavior | Related Story | Result |
+|---|---|---|---|---|---|---|
+| TEST-001 | Producto pendiente | Tipo de prueba pendiente | Ruta o clase pendiente | Comportamiento pendiente | US/TS pendiente | Pendiente |
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
+|---|---|---|---|---|---|
+| Repositorio pendiente | Rama pendiente | SHA pendiente | Mensaje de prueba pendiente | Pruebas incorporadas pendientes | YYYY-MM-DD |
+
+> **Pendiente de completar:** incluir resultados, capturas o reportes y enlaces a los archivos de pruebas.
 
 <a id="toc-4-2-1-6-execution-evidence-for-sprint-review"></a>
 
 ### 4.2.1.6. Execution Evidence for Sprint Review
 
+La evidencia de ejecución mostrará el resultado integrado del Sprint 1 mediante capturas identificables y un video que explique el recorrido implementado.
+
+| Producto | Vista o flujo | Entorno / dispositivo | Evidencia | Estado |
+|---|---|---|---|---|
+| Landing Page | Página principal y responsive | Navegador de escritorio y móvil | Pendiente de captura | Pendiente |
+| Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Pendiente de captura | Pendiente |
+| Flutter | Autenticación y funciones core comprometidas | Dispositivo o emulador objetivo | Pendiente de captura | Pendiente |
+| Integración | Consumo de API y manejo de errores | Aplicaciones contra backend vigente | Pendiente de captura | Pendiente |
+
+- **Execution video:** **Pendiente de completar:** URL del video.
+- **Timing:** **Pendiente:** inicio y duración de cada demostración.
+
 <a id="toc-4-2-1-7-services-documentation-evidence-for-sprint-review"></a>
 
 ### 4.2.1.7. Services Documentation Evidence for Sprint Review
+
+Se documentarán los endpoints utilizados por las historias comprometidas y su disponibilidad mediante OpenAPI.
+
+| Related Story | HTTP | Endpoint | Parameters / Body | Success Response | Error Responses | Documentation URL |
+|---|---|---|---|---|---|---|
+| US/TS pendiente | Verbo HTTP pendiente | Ruta pendiente | Parámetros o resource pendientes | Código y resource pendientes | Códigos y condiciones pendientes | URL Swagger pendiente |
+
+- **Web Services repository:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend>
+- **Swagger:** **Pendiente de confirmar:** URL pública vigente.
+- **Documentation commits:** **Pendiente de completar:** identificadores de commits.
+- **Interaction screenshots:** **Pendiente de completar:** llamadas con datos de muestra y respuestas.
 
 <a id="toc-4-2-1-8-software-deployment-evidence-for-sprint-review"></a>
 
 ### 4.2.1.8. Software Deployment Evidence for Sprint Review
 
+La evidencia explicará la configuración realizada durante el sprint y demostrará la disponibilidad de cada producto aplicable.
+
+| Product | Platform | Configuration performed | Version / Commit | Public URL or Release | Status |
+|---|---|---|---|---|---|
+| Landing Page | GitHub Pages | Workflow o rama pendientes | Commit pendiente | URL pendiente | Pendiente |
+| Web Services | Render | Build, variables y base de datos pendientes | Commit pendiente | URL y Swagger pendientes | Pendiente |
+| Android | Firebase App Distribution | Firma, aplicación y testers pendientes | Versión y commit pendientes | Release pendiente | Pendiente |
+| Flutter | Firebase App Distribution | Plataforma, aplicación y testers pendientes | Versión y commit pendientes | Release pendiente | Pendiente |
+
+> **Pendiente de completar:** insertar capturas y explicar los pasos efectivamente ejecutados durante el Sprint 1.
+
 <a id="toc-4-2-1-9-team-collaboration-insights-during-sprint"></a>
 
 ### 4.2.1.9. Team Collaboration Insights during Sprint
+
+Esta sección interpretará la participación del equipo a partir de commits, Pull Requests, revisiones y colaboración por producto. Las métricas se analizarán en contexto y no se usarán de forma aislada para medir aporte.
+
+| Integrante | Productos / aspectos | Contribución verificable | Evidencia | Reflexión |
+|---|---|---|---|---|
+| Sebastian Martin Beingolea Montalvo | Pendiente | Pendiente | Pendiente | Pendiente |
+| Josep Eliu Melgarejo Quiroz | Pendiente | Pendiente | Pendiente | Pendiente |
+| Saul Ortega Muñoz | Pendiente | Pendiente | Pendiente | Pendiente |
+| Luciana Celeste Sanchez Silva | Pendiente | Pendiente | Pendiente | Pendiente |
+| Giuseppe Villanueva Rodriguez | Pendiente | Pendiente | Pendiente | Pendiente |
+
+> **Pendiente de completar:** incorporar analíticos de GitHub por repositorio, capturas de colaboración y conclusiones del equipo al cierre del sprint.
 
 
 <div style="page-break-before: always;"></div>
@@ -8836,13 +9375,258 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 ## 4.3.1. Diseño de Entrevistas
 
+Las entrevistas de validación evalúan la percepción de los usuarios después de interactuar con la Landing Page y la aplicación web funcional de AniTec. Las sesiones se enfocan en la claridad de la propuesta de valor, la facilidad de navegación, la comprensión de las funcionalidades principales y la utilidad percibida por los segmentos objetivo. Sus hallazgos proporcionan una línea base para las decisiones de navegación, lenguaje, retroalimentación y accesibilidad de las aplicaciones móviles. Estas evidencias corresponden a la experiencia efectivamente mostrada durante las grabaciones y no se presentan como pruebas de ejecución de Android o Flutter.
+
+Para esta validación se consideran los dos segmentos principales definidos para AniTec:
+
+- Ganaderos.
+- Veterinarios.
+
+La dinámica de la entrevista consiste en presentar primero la landing page de AniTec para observar si el usuario comprende el problema que busca resolver la solución, la confianza que transmite y la claridad de sus secciones. Posteriormente, se muestra la aplicación web iniciando sesión según el segmento correspondiente, con el fin de revisar el dashboard, el menú de navegación y los módulos principales asociados al perfil del usuario.
+
+En el caso del segmento ganadero, la evaluación se orienta a la gestión de hatos, animales, eventos sanitarios, actividades, finanzas, dispositivos IoT y planes. En el caso del segmento veterinario, se evalúa la gestión de clientes asignados, pacientes por ganadero, información clínica, eventos sanitarios, actividades, analíticas e IoT. Al finalizar la demostración, el entrevistado responde un conjunto de preguntas diseñadas para recoger sus opiniones, dificultades y recomendaciones de mejora.
+
+### Guía de preguntas para el segmento Ganadero
+
+1. ¿A qué se dedica actualmente dentro de la actividad ganadera y qué tipo de animales maneja?
+2. ¿Cómo registra hoy la información de sus animales, fincas, actividades o gastos?
+3. Al ver el landing page de AniTec, ¿entiende rápidamente qué problema busca resolver la aplicación?
+4. ¿La información del landing page le genera confianza para probar la aplicación? ¿Por qué?
+5. ¿Qué sección del landing page le pareció más útil o clara?
+6. ¿Hubo alguna parte del landing page que le pareció confusa, innecesaria o poco creíble?
+7. Al iniciar sesión como ganadero, ¿le resultó claro hacia dónde debía ir primero?
+8. ¿El dashboard ganadero le muestra información útil para tomar decisiones rápidas?
+9. ¿Los nombres de las opciones del menú, como hatos, animales, sanidad, finanzas, actividades, IoT y planes, le resultan comprensibles?
+10. ¿Le resultó fácil encontrar la lista de animales registrados?
+11. ¿El formulario para agregar o editar un animal le parece claro y completo?
+12. ¿Qué dato importante sobre un animal cree que falta registrar?
+13. ¿Le resulta útil registrar eventos sanitarios como vacunas, tratamientos o incidencias?
+14. ¿La sección de actividades le ayudaría a organizar tareas de la finca? ¿Qué tareas agregaría?
+15. ¿La sección financiera le parece útil para controlar ingresos y gastos ganaderos?
+16. ¿La sección de dispositivos IoT le parece comprensible para asociar dispositivos a animales o fincas?
+17. ¿Qué tan fácil le parece interpretar el estado y las métricas de los dispositivos IoT?
+18. ¿El lenguaje usado en la aplicación le parece cercano y fácil de entender?
+19. ¿Qué parte de la aplicación le resultó más difícil de usar o encontrar?
+20. Después de probar AniTec, ¿la usaría en su trabajo diario? ¿Qué tendría que mejorar para que sí la use?
+
+### Guía de preguntas para el segmento Veterinario
+
+1. ¿Cuál es su experiencia trabajando con ganaderos o productores pecuarios?
+2. ¿Cómo organiza actualmente la información de sus clientes, pacientes y visitas?
+3. Al ver el landing page de AniTec, ¿queda claro que también está pensada para veterinarios?
+4. ¿Qué información del landing page le ayudó más a entender el valor de la aplicación?
+5. ¿Qué información agregaría al landing page para que un veterinario confíe más en AniTec?
+6. Al iniciar sesión como veterinario, ¿el dashboard le permite entender rápidamente su carga de trabajo?
+7. ¿La opción de clientes asignados le parece clara y útil?
+8. ¿Le resultó fácil agregar o revisar clientes ganaderos?
+9. ¿La vista de pacientes por ganadero le ayuda a encontrar animales bajo seguimiento?
+10. ¿Le parece adecuado que primero se seleccione un cliente para revisar sus fincas y animales?
+11. ¿La información clínica de cada animal es suficiente para una revisión veterinaria básica?
+12. ¿El formulario de eventos sanitarios permite registrar bien vacunas, diagnósticos, tratamientos o seguimientos?
+13. ¿Qué campos médicos considera que faltan en el registro sanitario?
+14. ¿La sección de actividades le serviría para programar visitas, controles o seguimientos?
+15. ¿Las alertas o estados sanitarios son fáciles de identificar dentro del dashboard?
+16. ¿La sección de analíticas le da información útil sobre clientes, animales o eventos sanitarios?
+17. ¿La sección IoT le parece útil para monitorear animales o fincas de sus clientes?
+18. ¿El menú y la organización de la aplicación coinciden con la forma en que usted trabaja?
+19. ¿Hubo alguna pantalla, botón o texto que no entendió durante la prueba?
+20. Después de probar AniTec, ¿la recomendaría como herramienta de apoyo veterinario? ¿Qué cambios serían prioritarios?
+
 <a id="toc-4-3-2-registro-de-entrevistas"></a>
 
 ## 4.3.2. Registro de Entrevistas
 
+A continuación se presentan los registros, evidencias y resultados obtenidos en las sesiones de validación con representantes de los segmentos Ganadero y Veterinario.
+
+**Segmento Objetivo 1: Ganaderos**
+<table>
+  <tr>
+    <th colspan="2">ENTREVISTA N°1</th>
+  </tr>
+  <tr><td><strong>Nombre del entrevistado</strong></td><td>Rodrigo Alfaro</td></tr>
+  <tr><td><strong>Edad</strong></td><td>25</td></tr>
+  <tr><td><strong>Profesión</strong></td><td>Ganadero</td></tr>
+  <tr><td><strong>Departamento</strong></td><td>Lima</td></tr>
+  <tr><td><strong>Inicio del video</strong></td><td>00:00:13</td></tr>
+  <tr><td><strong>Fin del video</strong></td><td>00:09:36</td></tr>
+  <tr><td><strong>Link del video</strong></td><td><a href="https://tinyurl.com/ValidacionRodrigoAlfaro">https://tinyurl.com/ValidacionRodrigoAlfaro</a></td></tr>
+  <tr><td><strong>Foto entrevista</strong></td><td><div align="center"><img src="markdown/assets/chapter-4/validation/validation-ganadero-01.jpeg" alt="Entrevista" width="350"></div></td></tr>
+  <tr><td><strong>Objetivo</strong></td><td>Validar si la landing page y la aplicación web AniTec responden a las necesidades del User Persona ganadero, evaluando la organización de información, la utilidad del dashboard y la percepción de valor de la plataforma.</td></tr>
+  <tr><td><strong>Aspecto del User Persona</strong></td><td><strong>Resultado obtenido / ¿Se valida?</strong></td></tr>
+  <tr><td>Frustración: pierde registros</td><td>Confirma uso de cuadernos y hojas sueltas; esto causa pérdida o desorden de información. / Sí</td></tr>
+  <tr><td>Frustración: recordar vacunas</td><td>Necesita revisar cuadernos; la aplicación sería útil para no olvidar vacunas y tratamientos. / Sí</td></tr>
+  <tr><td>Meta: controlar ganado</td><td>El dashboard facilita la visualización del estado de sus animales. / Sí</td></tr>
+  <tr><td>Meta: reducir pérdidas</td><td>El registro de ingresos y egresos ayuda a tomar mejores decisiones. / Sí</td></tr>
+  <tr><td>Motivación: negocio organizado</td><td>La plataforma centraliza la información y profesionaliza la gestión. / Sí</td></tr>
+  <tr><td><strong>Aspectos positivos</strong></td><td>Navegación intuitiva, propósito claro y secciones con nombres entendibles.</td></tr>
+  <tr><td><strong>Dificultades</strong></td><td>La sección IoT puede ser difícil de comprender y encontrar; requiere mayor apoyo visual.</td></tr>
+  <tr><td><strong>Recomendaciones</strong></td><td>Agregar alertas automáticas para actividades, fotos de animales y una versión móvil optimizada.</td></tr>
+  <tr><td><strong>Conclusión</strong></td><td>AniTec resuelve problemas reales relacionados con el registro manual. Se requiere simplificar la sección IoT y mejorar la usabilidad móvil.</td></tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">ENTREVISTA N°2</th>
+  </tr>
+  <tr><td><strong>Nombre del entrevistado</strong></td><td>Kiara Gallardo</td></tr>
+  <tr><td><strong>Edad</strong></td><td>22</td></tr>
+  <tr><td><strong>Profesión</strong></td><td>Ganadero</td></tr>
+  <tr><td><strong>Departamento</strong></td><td>Lima</td></tr>
+  <tr><td><strong>Inicio del video</strong></td><td>00:06:30</td></tr>
+  <tr><td><strong>Fin del video</strong></td><td>00:17:25</td></tr>
+  <tr><td><strong>Link del video</strong></td><td><a href="https://tinyurl.com/EntrevistaValidacion2">https://tinyurl.com/EntrevistaValidacion2</a></td></tr>
+  <tr><td><strong>Foto entrevista</strong></td><td><div align="center"><img src="markdown/assets/chapter-4/validation/validation-ganadero-02.png" alt="Entrevista" width="350"></div></td></tr>
+  <tr><td><strong>Objetivo</strong></td><td>Validar si la landing page y la aplicación web AniTec responden a las necesidades del User Persona, enfocándose en la gestión, organización y el valor de la herramienta.</td></tr>
+  <tr><td><strong>Aspecto del User Persona</strong></td><td><strong>Resultado obtenido / ¿Se valida?</strong></td></tr>
+  <tr><td>Frustración: desorden manual</td><td>Registra información en papeles y libros; le resulta difícil de ordenar. / Sí</td></tr>
+  <tr><td>Frustración: control de fechas</td><td>El control de fechas es un desafío constante; la aplicación ayudaría a no olvidarlas. / Sí</td></tr>
+  <tr><td>Meta: información organizada</td><td>Valora la centralización de información y el filtrado de animales. / Sí</td></tr>
+  <tr><td>Meta: decisiones basadas en datos</td><td>El dashboard y la sección financiera ayudan a visualizar ganancias, pérdidas y salud. / Sí</td></tr>
+  <tr><td><strong>Aspectos positivos</strong></td><td>Interfaz clara e intuitiva, dashboard muy útil y eliminación del uso de papel.</td></tr>
+  <tr><td><strong>Dificultades</strong></td><td>Desconocimiento del concepto y utilidad de IoT, además de familiarización inicial con el dashboard.</td></tr>
+  <tr><td><strong>Recomendaciones</strong></td><td>Incluir una explicación didáctica sobre IoT, versión móvil optimizada y mejores recordatorios automáticos.</td></tr>
+  <tr><td><strong>Conclusión</strong></td><td>AniTec satisface las necesidades de organización y control, validando su valor, aunque requiere mejorar la comunicación sobre tecnologías avanzadas como IoT.</td></tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">ENTREVISTA N°3</th>
+  </tr>
+  <tr><td><strong>Nombre del entrevistado</strong></td><td>Vicente</td></tr>
+  <tr><td><strong>Edad</strong></td><td>61</td></tr>
+  <tr><td><strong>Profesión</strong></td><td>Ganadero</td></tr>
+  <tr><td><strong>Departamento</strong></td><td>Lima</td></tr>
+  <tr><td><strong>Inicio del video</strong></td><td>00:00:00</td></tr>
+  <tr><td><strong>Fin del video</strong></td><td>00:07:30</td></tr>
+  <tr><td><strong>Link del video</strong></td><td><a href="https://tinyurl.com/ValidacionAppWebVicente">https://tinyurl.com/ValidacionAppWebVicente</a></td></tr>
+  <tr><td><strong>Foto entrevista</strong></td><td><div align="center"><img src="markdown/assets/chapter-4/validation/validation-ganadero-03.png" alt="Entrevista" width="350"></div></td></tr>
+  <tr><td><strong>Objetivo</strong></td><td>Validar si la landing page y la aplicación web AniTec responden a las necesidades del User Persona para la gestión de ganado, con enfoque en la organización sanitaria y administrativa.</td></tr>
+  <tr><td><strong>Aspecto del User Persona</strong></td><td><strong>Resultado obtenido / ¿Se valida?</strong></td></tr>
+  <tr><td>Frustración: registros manuales</td><td>Utiliza Excel y anotaciones manuales; el proceso es ineficiente y propenso a errores. / Sí</td></tr>
+  <tr><td>Meta: control preciso</td><td>Valora la centralización de datos estadísticos para mayor control y precisión. / Sí</td></tr>
+  <tr><td>Meta: decisiones basadas en datos</td><td>El dashboard facilita la toma de decisiones rápidas y precisas. / Sí</td></tr>
+  <tr><td>Motivación: organización sanitaria</td><td>Reconoce la importancia del módulo sanitario para gestionar el control de enfermedades. / Sí</td></tr>
+  <tr><td><strong>Aspectos positivos</strong></td><td>Herramienta fácil y efectiva; una versión móvil simplificaría las tareas diarias.</td></tr>
+  <tr><td><strong>Dificultades</strong></td><td>Requiere familiarización con el dashboard y puede existir confusión inicial en registros sanitarios.</td></tr>
+  <tr><td><strong>Recomendaciones</strong></td><td>Ampliar con funciones agrícolas, como suelo y cultivos, e implementar alertas automáticas.</td></tr>
+  <tr><td><strong>Conclusión</strong></td><td>AniTec centraliza la gestión y mejora la eficiencia. La integración de funciones agrícolas consolidaría su valor como solución integral.</td></tr>
+</table>
+
+<br>
+
+<h3>Segmento Objetivo 2: Veterinarios</h3>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">ENTREVISTA N°4</th>
+  </tr>
+  <tr><td><strong>Nombre del entrevistado</strong></td><td>Ariana Fernandez</td></tr>
+  <tr><td><strong>Edad</strong></td><td>21</td></tr>
+  <tr><td><strong>Profesión</strong></td><td>Veterinario</td></tr>
+  <tr><td><strong>Departamento</strong></td><td>Lima</td></tr>
+  <tr><td><strong>Inicio del video</strong></td><td>00:00:00</td></tr>
+  <tr><td><strong>Fin del video</strong></td><td>00:15:45</td></tr>
+  <tr><td><strong>Link del video</strong></td><td><a href="https://tinyurl.com/muxwt3cd">https://tinyurl.com/muxwt3cd</a></td></tr>
+  <tr><td><strong>Foto entrevista</strong></td><td><div align="center"><img src="markdown/assets/chapter-4/validation/validation-veterinario-01.jpeg" alt="Entrevista" width="350"></div></td></tr>
+  <tr><td><strong>Objetivo</strong></td><td>Validar si la aplicación AniTec responde a las necesidades del User Persona del segmento veterinario, evaluando funcionalidades clave como el historial clínico y la utilidad del dashboard.</td></tr>
+  <tr><td><strong>Aspecto del User Persona</strong></td><td><strong>Resultado obtenido / ¿Se valida?</strong></td></tr>
+  <tr><td>Frustración: falta de historial clínico organizado</td><td>Destaca la importancia y utilidad del historial médico de los animales como herramienta de trabajo. / Sí</td></tr>
+  <tr><td>Meta: acceder a información para tratamientos</td><td>Considera que disponer del historial médico permite un mejor tratamiento y seguimiento clínico. / Sí</td></tr>
+  <tr><td>Motivación: mejorar la eficiencia</td><td>Valora la centralización de la información y la posibilidad de ver problemas pasados de cada animal de forma organizada. / Sí</td></tr>
+  <tr><td>Meta: reducir carga administrativa</td><td>Considera que el sistema agiliza el trabajo diario en comparación con métodos tradicionales como Excel. / Sí</td></tr>
+  <tr><td><strong>Aspectos positivos</strong></td><td>El historial clínico se percibe como la funcionalidad más valiosa para el trabajo clínico diario. El dashboard permite obtener una visión general rápida del estado de salud de los animales.</td></tr>
+  <tr><td><strong>Dificultades</strong></td><td>Desconocimiento inicial sobre las funciones de los dispositivos inteligentes IoT, por lo que la terminología podría ser un reto.</td></tr>
+  <tr><td><strong>Recomendaciones</strong></td><td>Incluir una explicación didáctica sobre el significado y las ventajas de los dispositivos IoT. Integrar funcionalidades para registrar datos técnicos y clínicos más detallados.</td></tr>
+  <tr><td><strong>Conclusión</strong></td><td>La entrevista confirma que AniTec satisface necesidades clave del veterinario, especialmente la organización y acceso al historial médico. La plataforma optimiza el tiempo y mejora la calidad de la atención veterinaria, aunque requiere mejorar la comunicación sobre IoT.</td></tr>
+</table>
+
+<br>
+
+<table>
+  <tr>
+    <th colspan="2">ENTREVISTA N°5</th>
+  </tr>
+  <tr><td><strong>Nombre del entrevistado</strong></td><td>Hugo Jorge</td></tr>
+  <tr><td><strong>Edad</strong></td><td>25</td></tr>
+  <tr><td><strong>Profesión</strong></td><td>Veterinario</td></tr>
+  <tr><td><strong>Departamento</strong></td><td>Lima</td></tr>
+  <tr><td><strong>Inicio del video</strong></td><td>00:00:00</td></tr>
+  <tr><td><strong>Fin del video</strong></td><td>00:04:30</td></tr>
+  <tr><td><strong>Link del video</strong></td><td><a href="https://tinyurl.com/EntrevistaValidacionHugo">https://tinyurl.com/EntrevistaValidacionHugo</a></td></tr>
+  <tr><td><strong>Foto entrevista</strong></td><td><div align="center"><img src="markdown/assets/chapter-4/validation/validation-veterinario-02.png" alt="Entrevista" width="350"></div></td></tr>
+  <tr><td><strong>Objetivo</strong></td><td>Validar si la aplicación AniTec responde a las necesidades del User Persona del segmento veterinario, evaluando funcionalidades clave como el historial clínico y la utilidad del dashboard.</td></tr>
+  <tr><td><strong>Aspecto del User Persona</strong></td><td><strong>Resultado obtenido / ¿Se valida?</strong></td></tr>
+  <tr><td>Frustración: falta de historial organizado</td><td>Destaca la importancia y utilidad del historial médico como herramienta de trabajo. / Sí</td></tr>
+  <tr><td>Meta: acceder a información de tratamiento</td><td>Considera que el historial médico permite un mejor tratamiento y seguimiento clínico. / Sí</td></tr>
+  <tr><td>Motivación: mejorar eficiencia</td><td>Valora la centralización de información y la visualización organizada de problemas pasados. / Sí</td></tr>
+  <tr><td>Meta: reducir carga administrativa</td><td>Considera que el sistema agiliza el trabajo diario frente a métodos tradicionales como Excel. / Sí</td></tr>
+  <tr><td><strong>Aspectos positivos</strong></td><td>El historial clínico es la funcionalidad más valiosa; el dashboard resulta útil para una visión general rápida.</td></tr>
+  <tr><td><strong>Dificultades</strong></td><td>Desconocimiento sobre funciones de dispositivos inteligentes IoT y terminología técnica compleja.</td></tr>
+  <tr><td><strong>Recomendaciones</strong></td><td>Agregar explicación didáctica sobre ventajas de IoT e integrar registros clínicos más detallados.</td></tr>
+  <tr><td><strong>Conclusión</strong></td><td>AniTec satisface necesidades de organización y acceso al historial médico, optimizando el tiempo y la atención veterinaria, aunque requiere mejor comunicación sobre el alcance de IoT.</td></tr>
+</table>
+
 <a id="toc-4-3-3-evaluaciones-segun-heuristicas"></a>
 
 ## 4.3.3. Evaluaciones según heurísticas
+
+La evaluación heurística de AniTec se realizó a partir de las sesiones de validación con usuarios de los segmentos ganadero y veterinario. Durante estas sesiones, los entrevistados interactuaron con la landing page y con la aplicación web, revisando los flujos principales según su rol. La evaluación considera criterios de usabilidad, arquitectura de información e inclusive design, con el objetivo de identificar fortalezas, problemas de experiencia de usuario y oportunidades de mejora.
+
+Para registrar los hallazgos se utilizó una escala de severidad simple:
+
+| Severidad | Descripción |
+| --------- | ----------- |
+| 0 | No representa un problema de experiencia de usuario. |
+| 1 | Problema menor que puede corregirse sin afectar el flujo principal. |
+| 2 | Problema moderado que puede generar dudas o fricción en algunos usuarios. |
+| 3 | Problema importante que puede dificultar el cumplimiento de una tarea. |
+| 4 | Problema crítico que impide completar una tarea principal. |
+
+### Evaluación heurística - Segmento Ganadero:
+
+| Criterio evaluado | Evidencia observada | Severidad | Recomendación |
+| ----------------- | ------------------- | --------- | ------------- |
+| Visibilidad del estado del sistema | El dashboard ganadero permite visualizar animales, hatos, eventos sanitarios y actividades. | 1 | Mantener estados visibles de carga, éxito y error en formularios y listados. |
+| Correspondencia entre el sistema y el mundo real | Los términos animales, hatos, sanidad, actividades y finanzas fueron comprensibles. | 0 | Mantener vocabulario cercano al contexto ganadero. |
+| Control y libertad del usuario | Los usuarios navegan por módulos, pero faltan acciones de cancelación más visibles. | 1 | Hacer más claros los botones para cancelar o volver sin guardar. |
+| Consistencia y estándares | La aplicación mantiene navegación lateral, formularios y tarjetas con estructura similar. | 0 | Mantener la consistencia visual y de interacción. |
+| Prevención de errores | Los formularios tienen campos definidos, pero faltan validaciones adicionales. | 2 | Añadir mensajes claros para campos obligatorios y formatos esperados. |
+| Reconocimiento antes que memoria | El menú lateral permite reconocer las secciones disponibles sin memorizar rutas. | 0 | Mantener iconos y nombres de menú visibles. |
+| Flexibilidad y eficiencia de uso | El dashboard facilita tareas, pero faltan accesos rápidos a registros usados con frecuencia. | 1 | Añadir accesos directos a registrar animal, evento sanitario o actividad. |
+| Diseño estético y minimalista | Interfaz organizada, aunque algunos dashboards requieren mejor jerarquía visual. | 1 | Jerarquizar indicadores críticos y reducir contenido secundario. |
+| Ayuda al usuario a reconocer y recuperarse de errores | Mensajes de error insuficientes ante fallas de backend o conexión. | 2 | Mostrar mensajes de error específicos cuando falle una operación. |
+| Inclusive design y accesibilidad | Se debe seguir cuidando el contraste y legibilidad en dispositivos móviles. | 1 | Validar contrastes, tamaños de texto y uso en pantallas pequeñas. |
+
+<br>
+
+### Evaluación heurística - Segmento Veterinario:
+
+| Criterio evaluado | Evidencia observada | Severidad | Recomendación |
+| ----------------- | ------------------- | --------- | ------------- |
+| Visibilidad del estado del sistema | El dashboard veterinario muestra clientes, pacientes y alertas, lo que ayuda a entender la carga de trabajo inicial. | 0 | Mantener indicadores visibles de clientes y pacientes asignados. |
+| Correspondencia entre el sistema y el mundo real | Los conceptos clientes, pacientes, historial clínico, eventos sanitarios y actividades coinciden con tareas veterinarias básicas. | 0 | Reforzar textos específicos para veterinarios en landing page y aplicación. |
+| Control y libertad del usuario | El veterinario puede revisar clientes y pacientes, pero el flujo depende de seleccionar un cliente para ver información asociada. | 1 | Explicar mejor el paso de selección de cliente antes de revisar animales o historial. |
+| Consistencia y estándares | Las vistas mantienen estructura similar al resto de la aplicación, lo que facilita aprendizaje. | 0 | Mantener componentes y patrones ya definidos. |
+| Prevención de errores | El registro sanitario funciona para casos básicos, pero los entrevistados sugirieron campos clínicos adicionales. | 2 | Añadir campos como dosis, vía de administración, signos vitales u observaciones cuando el alcance lo permita. |
+| Reconocimiento antes que memoria | La navegación por menú facilita encontrar clientes, pacientes, sanidad, actividades e IoT. | 0 | Mantener agrupación de módulos por rol. |
+| Flexibilidad y eficiencia de uso | El dashboard centraliza información útil, pero podrían existir accesos rápidos para registrar visita o evento sanitario. | 1 | Agregar accesos directos a tareas veterinarias frecuentes. |
+| Diseño estético y minimalista | La información se presenta de forma ordenada, aunque las vistas clínicas podrían beneficiarse de una jerarquía más clara. | 1 | Diferenciar visualmente datos clínicos, historial y acciones principales. |
+| Ayuda al usuario a reconocer y recuperarse de errores | Los mensajes de error pueden mejorar cuando no se cargan clientes, pacientes o eventos sanitarios. | 2 | Mostrar mensajes específicos para errores de conexión o ausencia de datos asignados. |
+| Inclusive design y accesibilidad | La experiencia por rol ayuda a reducir información innecesaria, pero se debe seguir validando legibilidad en dispositivos pequeños. | 1 | Revisar responsive, contraste y claridad de textos médicos. |
+
+<br>
+
+### Resumen de hallazgos heurísticos:
+
+La evaluación muestra que **AniTec** cumple adecuadamente con criterios de correspondencia con el mundo real, consistencia, reconocimiento y organización general de la información. Los usuarios comprenden la división por roles y reconocen la utilidad de centralizar animales, sanidad, actividades, finanzas, clientes, pacientes, IoT y suscripciones en una sola plataforma.
+
+Los principales puntos de mejora se concentran en **prevención de errores**, **mensajes de retroalimentación** y **detalle de formularios**. En el segmento ganadero, se recomienda reforzar validaciones y accesos rápidos a tareas frecuentes. En el segmento veterinario, se recomienda ampliar progresivamente campos clínicos y explicar con mayor claridad el flujo de selección de cliente antes de revisar pacientes o historial sanitario.
 
 
 <div style="page-break-before: always;"></div>
