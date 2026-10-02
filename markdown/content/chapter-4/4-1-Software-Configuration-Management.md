@@ -189,6 +189,18 @@ La captura confirma el despliegue Docker del backend, el plan Free y la disponib
   <p><i>Figura 4.1.4.3. Variables de entorno del backend en Render (valores ocultos): ASPNETCORE_ENVIRONMENT, ConnectionStrings__DefaultConnection, TokenSettings__Secret y StripeSettings. Fuente: elaboración propia (captura de Render).</i></p>
 </div>
 
+A continuación, se evidencia la publicación de los artefactos móviles en Firebase App Distribution para el acceso de los evaluadores.
+
+<div align="center">
+  <img src="../../assets/chapter-4/mobile/firebase-android-release.png" width="800">
+  <p><i>Figura 4.1.4.4. Lanzamiento de la aplicación nativa Android en Firebase App Distribution (Sprint 1). Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/chapter-4/mobile/firebase-flutter-release.png" width="800">
+  <p><i>Figura 4.1.4.5. Lanzamiento de la aplicación multiplataforma Flutter en Firebase App Distribution (Sprint 1). Fuente: elaboración propia.</i></p>
+</div>
+
 La configuración de secretos se mantiene fuera del repositorio GitHub y se administra en el panel Environment de Render.
 
 > **Pendiente de completar:** capturas de Landing Page, Android y Flutter por parte de sus responsables.
