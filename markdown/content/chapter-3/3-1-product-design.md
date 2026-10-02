@@ -205,7 +205,9 @@ El retorno conservará filtros y datos no enviados. Las notificaciones y enlaces
 
 La Landing Page comunica el problema, los beneficios para cada segmento y las opciones para conocer las aplicaciones. Aplica la identidad visual, la organización jerárquica y una estructura responsive.
 
-**Enlace de diseño:** **Pendiente de confirmar:** URL vigente del archivo Figma de la Landing Page.
+**Enlace de diseño móvil:** 
+https://www.figma.com/design/DvQjG8GIupLP7TBQNi5Hr6/LandingMovil_MockUp?node-id=0-1&t=qJgJhyhc97VCfTMW-1
+https://www.figma.com/design/q7A10f5s09GjpeGGWNdsZG/LandingMovil_wireframe?node-id=0-1&t=FDHM5xffOJs1fj7Z-1
 
 <a id="toc-3-1-3-1-landing-page-wireframe"></a>
 
@@ -218,8 +220,13 @@ El wireframe de escritorio define la distribución del encabezado, propuesta de 
   <p><i>Figura 3.1.3.1. Wireframe de escritorio de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
-> **Pendiente de completar:** insertar la captura del wireframe para navegador móvil.<br>
-> **Enlace pendiente:** URL del frame correspondiente en Figma.
+<div align="center">
+  <img src="../../assets/chapter-3/landing-page/LandingMovil_wireframe.png" alt="Wireframe de movil de la Landing Page" width="500">
+  <p><i>Figura 3.1.3.1.2 Wireframe de movil de la Landing Page. Fuente: elaboración propia.</i></p>
+</div>
+
+Link del wireframe movil: https://www.figma.com/design/q7A10f5s09GjpeGGWNdsZG/LandingMovil_wireframe?node-id=0-1&t=FDHM5xffOJs1fj7Z-1 
+
 
 <a id="toc-3-1-3-2-landing-page-mock-up"></a>
 
@@ -232,8 +239,13 @@ El mock-up de escritorio incorpora la paleta, Poppins, imágenes, iconografía y
   <p><i>Figura 3.1.3.2. Mock-up de escritorio de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
-> **Pendiente de completar:** insertar la captura del mock-up para navegador móvil.<br>
-> **Enlace pendiente:** URL del frame correspondiente en Figma.
+<div align="center">
+  <img src="../../assets/chapter-3/landing-page/LandingMovil_MockUp.png" alt="Mock-up de movil de la Landing Page" width="500">
+  <p><i>Figura 3.1.3.2.2 Mock-up de movil de la Landing Page. Fuente: elaboración propia.</i></p>
+</div>
+
+Link del MockUp: https://www.figma.com/design/DvQjG8GIupLP7TBQNi5Hr6/LandingMovil_MockUp?node-id=0-1&t=qJgJhyhc97VCfTMW-1 
+
 
 <a id="toc-3-1-4-mobile-applications-ux-ui-design"></a>
 
