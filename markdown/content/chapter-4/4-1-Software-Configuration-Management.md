@@ -163,7 +163,7 @@ Para distribuir las aplicaciones móviles a los evaluadores (testers) del Sprint
 
 | Producto | Entorno / servicio | URL o identificador | Estado |
 |---|---|---|---|
-| Landing Page | GitHub Pages | URL: <https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/> | Live |
+| Landing Page | GitHub Pages | URL: <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page/> | Live |
 | Web Services | Render | API: <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live — evidencia en figuras 4.1.4.2 y 4.1.4.3 |
 | Android | Firebase App Distribution | App ID: `1:969068830564:android:5a2dafc1bf9a7f44652471` | Release v1.0.0 (Sprint 1) - Distribuido al grupo: Testers AniTec |
 | Flutter | Firebase App Distribution | App ID: `1:969068830564:ios:0bb12cea32f3d196652471` | Release v1.0.0 (Sprint 1) - Distribuido al grupo: Testers AniTec |
