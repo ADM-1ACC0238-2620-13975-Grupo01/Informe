@@ -130,7 +130,7 @@ La evidencia incluirá pruebas automatizadas relacionadas con las historias del 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
 |---|---|---|---|---|---|
 | anitec-backend | — | — | — | **Pendiente:** no existen commits de pruebas automatizadas; el repositorio no incluye proyecto `*Tests` / xUnit. | — |
-| anitec-landing-page | main | 2a88184 | chore: add initial project files | Agrega la estructura inicial del proyecto de la Landing Page, incluyendo configuración base y componentes principales para el desarrollo de la interfaz. | 2026-09-04 |
+| anitec-landing-page | main | 2a88184 | chore: add initial project files | Agrega la estructura inicial del proyecto de la Landing Page, incluyendo configuración base y componentes principales para el desarrollo de la interfaz | 2026-09-04 |
 
 > **Pendiente de completar (backend):** cuando exista proyecto xUnit, ejecutar `dotnet test`, adjuntar captura del resultado en `markdown/assets/chapter-4/backend/` y registrar el commit. Las filas de Landing / Android / Flutter las completa cada responsable.
 
