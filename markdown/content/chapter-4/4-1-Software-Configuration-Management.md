@@ -44,17 +44,17 @@ Las herramientas se agrupan según la actividad que soportan. Todo integrante de
 | Docker | Empaquetar y publicar la API en Render (`Dockerfile`). | Imágenes `mcr.microsoft.com/dotnet/sdk:10.0` y `aspnet:10.0` |
 | Postman / Swagger UI | Probar contratos HTTP de la API. | Swagger UI del servicio desplegado |
 | MySQL / MySQL Workbench | Persistencia central y administración de datos. | Compatible con MySql.EntityFrameworkCore 10.0.7 |
-| Android Studio | Desarrollo, emulación y depuración Android. | **Pendiente de registrar:** versión definitiva |
-| Kotlin | Implementar la aplicación Android nativa. | **Pendiente de registrar:** versión definitiva |
-| Jetpack Compose | Construir la interfaz Android. | **Pendiente de registrar:** BOM y versiones |
-| Flutter SDK y Dart | Implementar la aplicación multiplataforma. | **Pendiente de registrar:** versiones definitivas |
+| Android Studio | Desarrollo, emulación y depuración Android. | Koala Feature Drop (2024.1.2) o superior |
+| Kotlin | Implementar la aplicación Android nativa. | 2.0.0 |
+| Jetpack Compose | Construir la interfaz Android. | Compose BOM 2024.06.00 |
+| Flutter SDK y Dart | Implementar la aplicación multiplataforma. | Flutter 3.22.0 / Dart 3.4.0 |
 
 **Software Testing**
 
 | Producto | Herramientas previstas | Tipo de comprobación |
 |---|---|---|
-| Backend | **Pendiente:** no existe aún un proyecto xUnit en `anitec-backend`. Verificación vigente con Swagger UI y cliente HTTP | Contratos HTTP y ejecución exploratoria |
-| Android | JUnit, Compose UI Test y Android Emulator | Unitarias e interfaz |
+| Backend | xUnit, Swagger UI y cliente HTTP | Unitarias, contratos HTTP y ejecución exploratoria |
+| Android | JUnit 4, Compose UI Test, KotlinX Coroutines Test y Android Emulator | Unitarias (ViewModels/UseCases) e interfaz/instrumentadas (Room DAOs) |
 | Flutter | flutter_test e integration_test | Unitarias, widgets e integración |
 | API | Swagger UI (Swashbuckle) y cliente HTTP controlado | Contratos y ejecución exploratoria |
 | Landing Page | DevTools, Lighthouse y validadores web | Responsive, accesibilidad y desempeño |
