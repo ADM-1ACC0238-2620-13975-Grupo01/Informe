@@ -140,13 +140,13 @@ La evidencia incluirá pruebas automatizadas relacionadas con las historias del 
 
 La evidencia de ejecución mostrará el resultado integrado del Sprint 1 mediante capturas identificables y un video que explique el recorrido implementado.
 
-| Producto | Vista o flujo | Entorno / dispositivo | Evidencia | Estado |
-|---|---|---|---|---|
-| Landing Page | Página principal y responsive | Navegador de escritorio y móvil | Pendiente de captura | Pendiente |
-| Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Pendiente de captura | Pendiente |
-| Flutter | Autenticación y funciones core comprometidas | Dispositivo o emulador objetivo | Pendiente de captura | Pendiente |
+| Producto | Vista o flujo | Entorno / dispositivo | Evidencia                           | Estado     |
+|---|---|---|-------------------------------------|------------|
+| Landing Page | Página principal y responsive | Navegador de escritorio y móvil | Figura 4.2.1.6.2 (`landing_despliegue.png`)       | Completado |
+| Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Pendiente de captura                | Pendiente  |
+| Flutter | Autenticación y funciones core comprometidas | Dispositivo o emulador objetivo | Pendiente de captura                | Pendiente  |
 | Web Services | Swagger UI: documentación OpenAPI de la API publicada | Navegador contra <https://anitec-backend.onrender.com/swagger/index.html> | Figura 4.2.1.6.1 (`swagger-ui.png`) | Completado |
-| Integración | Consumo de API y manejo de errores | Aplicaciones contra backend vigente | Pendiente de captura | Pendiente |
+| Integración | Consumo de API y manejo de errores | Aplicaciones contra backend vigente | Pendiente de captura                | Pendiente  |
 
 <div align="center">
   <img src="../../assets/chapter-4/backend/swagger-ui.png" width="800">
@@ -158,7 +158,17 @@ La captura demuestra que la documentación interactiva carga desde el entorno pu
 - **Execution video:** **Pendiente de completar:** URL del video.
 - **Timing:** **Pendiente:** inicio y duración de cada demostración.
 
-<a id="toc-4-2-1-7-services-documentation-evidence-for-sprint-review"></a>
+<div align="center">
+  <img src="../../assets/chapter-4/landing_despliegue.png" width="800">
+  <p><i>Figura 4.2.1.6.2. Landing de AniTec desplegado, Fuente: elaboración propia.</i></p>
+</div>
+
+Las capturas muestran la implementación de la Landing Page de AniTec en navegadores. Se verificó la correcta visualización del contenido, la navegación entre secciones y la adaptación responsive de la interfaz para distintos tamaños de pantalla.
+
+- **Execution video:** 
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQBmZ8UxBU5zToJUnS4AN161Aa9ocLvYJcSFOja0Zogn_tE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=V8q9eK
+- **Timing:** 0:00 - 1:48 min
+  <a id="toc-4-2-1-7-services-documentation-evidence-for-sprint-review"></a>
 
 ### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
