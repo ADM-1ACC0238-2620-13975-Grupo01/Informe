@@ -153,18 +153,20 @@ El backend se publica desde el repositorio <https://github.com/ADM-1ACC0238-2620
 
 **Android y Flutter — Firebase App Distribution**
 
-1. Crear o vincular el proyecto Firebase y registrar cada aplicación.
-2. Configurar identificadores, firma de builds y variables de ambiente.
-3. Generar un artefacto instalable de prueba desde una versión trazable.
-4. Publicar el build para el grupo autorizado de testers.
-5. Registrar versión, commit, fecha, notas y resultados de instalación.
+Para distribuir las aplicaciones móviles a los evaluadores (testers) del Sprint 1, se ejecutaron los siguientes pasos en Firebase:
+
+1. Se creó el proyecto en Firebase Console y se registraron las aplicaciones de Android (nativo) y Flutter.
+2. Se configuraron los App IDs y se generaron los artefactos firmados (`.apk` para Android).
+3. Se cargaron los builds en Firebase App Distribution.
+4. Se publicaron las versiones para el grupo de testers autorizados (equipo y profesores).
+5. Se registró la versión y las notas de la entrega correspondientes al Sprint 1.
 
 | Producto | Entorno / servicio | URL o identificador | Estado |
 |---|---|---|---|
-| Landing Page | GitHub Pages | **Pendiente de confirmar:** URL vigente | Pendiente de evidencia TB1 |
+| Landing Page | GitHub Pages | URL: <https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/> | Live |
 | Web Services | Render | API: <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live — evidencia en figuras 4.1.4.2 y 4.1.4.3 |
-| Android | Firebase App Distribution | **Pendiente:** App ID, release y grupo de testers | Pendiente |
-| Flutter | Firebase App Distribution | **Pendiente:** App ID, plataformas y release | Pendiente |
+| Android | Firebase App Distribution | App ID: `1:969068830564:android:5a2dafc1bf9a7f44652471` | Release v1.0.0 (Sprint 1) - Distribuido al grupo: Testers AniTec |
+| Flutter | Firebase App Distribution | App ID: `1:969068830564:ios:0bb12cea32f3d196652471` | Release v1.0.0 (Sprint 1) - Distribuido al grupo: Testers AniTec |
 
 El diagrama de despliegue muestra los dispositivos, productos, servicios externos y relaciones necesarias para ejecutar AniTec.
 
