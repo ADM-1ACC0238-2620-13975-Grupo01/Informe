@@ -108,21 +108,21 @@ El código fuente, nombres técnicos, rutas y mensajes de commit se redactarán 
 |---|---|
 | HTML y CSS | HTML semántico, atributos de accesibilidad, indentación de dos espacios y clases `kebab-case`. |
 | JavaScript | Variables y funciones `camelCase`, constantes descriptivas, módulos pequeños y uso de `async/await`. |
-| Kotlin | Google Kotlin Style Guide; tipos y composables `PascalCase`, funciones y propiedades `camelCase`, paquetes en minúsculas. |
-| Jetpack Compose | Composables pequeños, estado elevado cuando corresponda, previews representativas y recursos fuera del código. |
-| Dart | Effective Dart; tipos `UpperCamelCase`, miembros `lowerCamelCase`, archivos `lowercase_with_underscores`. |
-| Flutter | Widgets pequeños, separación de presentación y estado, temas centralizados y textos localizables. |
-| C# | Convenciones Microsoft ([C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)); tipos, métodos y propiedades `PascalCase`, parámetros `camelCase` y campos privados `_camelCase`. Controllers: `*Controller` en `Interfaces/Rest`. Resources (DTOs): `*Resource` y assemblers `*FromResourceAssembler` / `*FromEntityAssembler`. Commands y Queries: `Create*Command`, `Get*Query` en `Domain/Model`. Rutas en minúsculas bajo `api/v1/...` (p. ej. `api/v1/authentication/sign-in`, `api/v1/animals`). Estructura por bounded context (`Iam`, `Livestock`, `Sanitary`, …) con capas `Domain`, `Application`, `Infrastructure` e `Interfaces`. Errores HTTP vía Problem Details y validaciones en controllers/services. |
-| REST / OpenAPI | Sustantivos plurales en rutas, verbos HTTP correctos, resources/DTOs, códigos de estado y respuestas de error consistentes. Documentación con Swashbuckle (`AddSwaggerGen`, anotaciones `[SwaggerOperation]` / `[SwaggerResponse]`) y esquema Bearer JWT. |
+| Kotlin (Android) | **Google Kotlin Style Guide**. Estructura estricta por Bounded Contexts (`iam`, `livestock`, `sanitary`, etc.) y Clean Architecture (capas `domain`, `application`, `infrastructure`, `interfaces/presentation`). Tipos y clases en `PascalCase`. Funciones y variables en `camelCase`. **Sufijos obligatorios:** `*UseCase` para lógica de aplicación, `*Entity` y `*Dao` para persistencia en Room, y `*RepositoryImpl` para adaptadores de infraestructura. Cero dependencias de Android en las capas de `domain` y `application`. |
+| Jetpack Compose | Patrón UDF (Unidirectional Data Flow) con estados inmutables expuestos desde el ViewModel (ej. `StateFlow<*UiState>`). Nombres de funciones Composable siempre en `PascalCase` y tratadas como sustantivos. Tema centralizado (`Theme.kt`, `Color.kt`, `Type.kt`) usando Material Design 3 y tipografía Poppins. |
+| Dart | **Effective Dart**. Archivos en `lowercase_with_underscores`. Clases, enums y typedefs en `UpperCamelCase`. Miembros de clases y variables en `lowerCamelCase`. |
+| Flutter | Separación estricta entre UI y lógica de estado. Estructura de carpetas alineada con la arquitectura nativa (Bounded Contexts y capas). Widgets pequeños y componibles. Textos centralizados y localizables. |
+| C# | Convenciones Microsoft ([C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)); tipos, métodos y propiedades `PascalCase`, parámetros `camelCase` y campos privados `_camelCase`. Controllers: `*Controller` en `Interfaces/Rest`. Resources (DTOs): `*Resource` y assemblers `*FromResourceAssembler` / `*FromEntityAssembler`. Commands y Queries: `Create*Command`, `Get*Query` en `Domain/Model`. Rutas en minúsculas bajo `api/v1/...`. Estructura por bounded context. Errores HTTP vía Problem Details. |
+| REST / OpenAPI | Sustantivos plurales en rutas, verbos HTTP correctos, resources/DTOs, códigos de estado y respuestas de error consistentes. Documentación con Swashbuckle (`AddSwaggerGen`, anotaciones `[SwaggerOperation]`) y esquema Bearer JWT. |
 | Gherkin | Features y escenarios ligados a User Stories, pasos declarativos y estructura Given–When–Then. |
 
 **Reglas compartidas**
 
-- No incluir secretos, tokens ni cadenas de conexión en el repositorio.
+- **Estrategia Offline-First:** Toda lectura y escritura en los clientes móviles interactúa primero con la base de datos local (Room/SQLite). Las escrituras locales se marcan con un estado de sincronización (ej. `PENDING`) antes de enviarse al backend.
+- **Inyección de Dependencias:** Uso centralizado de frameworks (Hilt en Android) para proveer repositorios y casos de uso, organizados mediante módulos (`*Module.kt`).
+- No incluir secretos, tokens ni cadenas de conexión en el repositorio (uso de `EncryptedSharedPreferences` o Keystore en móviles).
 - Centralizar textos para i18n en lugar de escribirlos directamente en vistas.
-- Documentar interfaces públicas y decisiones no evidentes.
-- Evitar duplicar reglas de negocio entre UI y API; el backend conserva las reglas autoritativas.
-- Incluir pruebas para reglas o flujos incorporados durante el sprint.
+- Evitar duplicar reglas de negocio entre UI y API; el backend conserva las reglas autoritativas y la validación final.
 
 <a id="toc-4-1-4-software-deployment-configuration"></a>
 
