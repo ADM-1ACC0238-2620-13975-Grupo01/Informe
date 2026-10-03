@@ -254,7 +254,7 @@ La evidencia explicará la configuración realizada durante el sprint y demostra
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/mobile/firebase-android-release.png" width="800">
+  <img src="../../assets/chapter-4/firebase-android-release.png" width="800">
   <p><i>Figura 4.2.1.8.3. Evidencia de configuración: Proyecto Android registrado en la consola de Firebase. Fuente: elaboración propia.</i></p>
 </div>
 
