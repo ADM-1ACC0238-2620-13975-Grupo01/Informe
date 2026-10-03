@@ -288,15 +288,143 @@ Cada wireflow mostrará cómo cambia la interfaz después de una acción.
 
 ### 3.1.4.3. Mobile Applications Mock-ups
 
-Los mock-ups aplicarán el Design System a los wireframes aprobados y mostrarán contenido representativo, controles táctiles y estados.
+Los mock-ups aplican el Design System de AniTec a los wireframes aprobados y muestran contenido representativo, controles táctiles, navegación y estados de la interfaz. Para facilitar su revisión, las 195 pantallas se organizan por tecnología y perfil funcional. Cada lámina se lee de izquierda a derecha y de arriba hacia abajo; los códigos Axx y Fxx conservan el identificador de la exportación original de Android y Flutter, respectivamente.
 
-| Aplicación | Pantallas mínimas | Decisiones a evidenciar |
-|---|---|---|
-| Android | Bienvenida, registro, login, dashboard, lista, detalle y formulario de animal, historial | Material Design, Compose, navegación, contraste y estados. |
-| Flutter | Las mismas pantallas y alcance funcional | Componentes Flutter, adaptación a plataforma y estados equivalentes. |
+| Aplicación | IAM | Usuario rancher | Usuario vet | Total |
+|---|---:|---:|---:|---:|
+| Flutter | 5 | 48 | 44 | 97 |
+| Android | 5 | 49 | 44 | 98 |
+| **Total** | **10** | **97** | **88** | **195** |
 
-> **Pendiente de completar:** insertar mock-ups de Android y Flutter.<br>
-> **Enlaces pendientes:** https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
+El prototipo editable se encuentra en [Figma - AniTec 2026-2](https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1).
+
+#### Aplicación Flutter
+
+##### IAM
+
+Este conjunto presenta el onboarding, el registro y el inicio de sesión compartidos por los usuarios de la aplicación.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/flutter-iam-01.jpg" alt="Mock-ups Flutter del módulo IAM" width="650">
+  <p><i>Figura 3.1.4.3.1. Mock-ups Flutter del módulo IAM. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario rancher
+
+Las siguientes láminas recorren la experiencia del ganadero: dashboard, animales, actividades, veterinarios, escaneo QR, finanzas, suscripción, configuración y los estados asociados a estas operaciones.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/flutter-rancher-01.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 1" width="650">
+  <p><i>Figura 3.1.4.3.2. Mock-ups Flutter del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/flutter-rancher-02.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 2" width="650">
+  <p><i>Figura 3.1.4.3.3. Mock-ups Flutter del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/flutter-rancher-03.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 3" width="650">
+  <p><i>Figura 3.1.4.3.4. Mock-ups Flutter del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/flutter-rancher-04.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 4" width="650">
+  <p><i>Figura 3.1.4.3.5. Mock-ups Flutter del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/flutter-rancher-05.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 5" width="650">
+  <p><i>Figura 3.1.4.3.6. Mock-ups Flutter del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario vet
+
+Las pantallas del veterinario cubren el dashboard profesional, la gestión de clientes, el historial clínico, el registro y corrección de visitas, el seguimiento, las actividades, los indicadores y la configuración.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/flutter-vet-01.jpg" alt="Mock-ups Flutter del usuario vet, lámina 1" width="650">
+  <p><i>Figura 3.1.4.3.7. Mock-ups Flutter del usuario vet, lámina 1 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/flutter-vet-02.jpg" alt="Mock-ups Flutter del usuario vet, lámina 2" width="650">
+  <p><i>Figura 3.1.4.3.8. Mock-ups Flutter del usuario vet, lámina 2 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/flutter-vet-03.jpg" alt="Mock-ups Flutter del usuario vet, lámina 3" width="650">
+  <p><i>Figura 3.1.4.3.9. Mock-ups Flutter del usuario vet, lámina 3 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/flutter-vet-04.jpg" alt="Mock-ups Flutter del usuario vet, lámina 4" width="650">
+  <p><i>Figura 3.1.4.3.10. Mock-ups Flutter del usuario vet, lámina 4 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+#### Aplicación Android
+
+##### IAM
+
+La versión Android conserva el mismo alcance funcional del acceso y adapta la presentación a los patrones visuales de la plataforma.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/android-iam-01.jpg" alt="Mock-ups Android del módulo IAM" width="650">
+  <p><i>Figura 3.1.4.3.11. Mock-ups Android del módulo IAM. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario rancher
+
+Las láminas Android mantienen la secuencia funcional del usuario rancher e incluyen vistas principales, formularios, estados vacíos, confirmaciones, errores y sincronización.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/android-rancher-01.jpg" alt="Mock-ups Android del usuario rancher, lámina 1" width="650">
+  <p><i>Figura 3.1.4.3.12. Mock-ups Android del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/android-rancher-02.jpg" alt="Mock-ups Android del usuario rancher, lámina 2" width="650">
+  <p><i>Figura 3.1.4.3.13. Mock-ups Android del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/android-rancher-03.jpg" alt="Mock-ups Android del usuario rancher, lámina 3" width="650">
+  <p><i>Figura 3.1.4.3.14. Mock-ups Android del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/android-rancher-04.jpg" alt="Mock-ups Android del usuario rancher, lámina 4" width="650">
+  <p><i>Figura 3.1.4.3.15. Mock-ups Android del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/android-rancher-05.jpg" alt="Mock-ups Android del usuario rancher, lámina 5" width="650">
+  <p><i>Figura 3.1.4.3.16. Mock-ups Android del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario vet
+
+La versión Android del perfil veterinario documenta la gestión de clientes y visitas, los estados operativos, los indicadores, el escaneo, las notificaciones y las opciones de cuenta.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/android-vet-01.jpg" alt="Mock-ups Android del usuario vet, lámina 1" width="650">
+  <p><i>Figura 3.1.4.3.17. Mock-ups Android del usuario vet, lámina 1 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/android-vet-02.jpg" alt="Mock-ups Android del usuario vet, lámina 2" width="650">
+  <p><i>Figura 3.1.4.3.18. Mock-ups Android del usuario vet, lámina 2 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/android-vet-03.jpg" alt="Mock-ups Android del usuario vet, lámina 3" width="650">
+  <p><i>Figura 3.1.4.3.19. Mock-ups Android del usuario vet, lámina 3 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/mock-up-sheets/android-vet-04.jpg" alt="Mock-ups Android del usuario vet, lámina 4" width="650">
+  <p><i>Figura 3.1.4.3.20. Mock-ups Android del usuario vet, lámina 4 de 4. Fuente: elaboración propia.</i></p>
+</div>
 
 <a id="toc-3-1-4-4-mobile-applications-user-flow-diagrams"></a>
 

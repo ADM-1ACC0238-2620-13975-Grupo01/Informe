@@ -8885,7 +8885,9 @@ El retorno conservará filtros y datos no enviados. Las notificaciones y enlaces
 
 La Landing Page comunica el problema, los beneficios para cada segmento y las opciones para conocer las aplicaciones. Aplica la identidad visual, la organización jerárquica y una estructura responsive.
 
-**Enlace de diseño:** **Pendiente de confirmar:** URL vigente del archivo Figma de la Landing Page.
+**Enlace de diseño móvil:** 
+https://www.figma.com/design/DvQjG8GIupLP7TBQNi5Hr6/LandingMovil_MockUp?node-id=0-1&t=qJgJhyhc97VCfTMW-1
+https://www.figma.com/design/q7A10f5s09GjpeGGWNdsZG/LandingMovil_wireframe?node-id=0-1&t=FDHM5xffOJs1fj7Z-1
 
 <a id="toc-3-1-3-1-landing-page-wireframe"></a>
 
@@ -8898,8 +8900,13 @@ El wireframe de escritorio define la distribución del encabezado, propuesta de 
   <p><i>Figura 3.1.3.1. Wireframe de escritorio de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
-> **Pendiente de completar:** insertar la captura del wireframe para navegador móvil.<br>
-> **Enlace pendiente:** URL del frame correspondiente en Figma.
+<div align="center">
+  <img src="markdown/assets/chapter-3/landing-page/LandingMovil_wireframe.png" alt="Wireframe de movil de la Landing Page" width="500">
+  <p><i>Figura 3.1.3.1.2 Wireframe de movil de la Landing Page. Fuente: elaboración propia.</i></p>
+</div>
+
+Link del wireframe movil: https://www.figma.com/design/q7A10f5s09GjpeGGWNdsZG/LandingMovil_wireframe?node-id=0-1&t=FDHM5xffOJs1fj7Z-1 
+
 
 <a id="toc-3-1-3-2-landing-page-mock-up"></a>
 
@@ -8912,8 +8919,13 @@ El mock-up de escritorio incorpora la paleta, Poppins, imágenes, iconografía y
   <p><i>Figura 3.1.3.2. Mock-up de escritorio de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
-> **Pendiente de completar:** insertar la captura del mock-up para navegador móvil.<br>
-> **Enlace pendiente:** URL del frame correspondiente en Figma.
+<div align="center">
+  <img src="markdown/assets/chapter-3/landing-page/LandingMovil_MockUp.png" alt="Mock-up de movil de la Landing Page" width="500">
+  <p><i>Figura 3.1.3.2.2 Mock-up de movil de la Landing Page. Fuente: elaboración propia.</i></p>
+</div>
+
+Link del MockUp: https://www.figma.com/design/DvQjG8GIupLP7TBQNi5Hr6/LandingMovil_MockUp?node-id=0-1&t=qJgJhyhc97VCfTMW-1 
+
 
 <a id="toc-3-1-4-mobile-applications-ux-ui-design"></a>
 
@@ -8933,7 +8945,7 @@ Los wireframes mostrarán estructura, jerarquía, navegación y estados sin acab
 | Flutter | Ganadero / Veterinario | Pendiente: nombre de pantalla | Pendiente: tarea | Pendiente: US-xxx | Pendiente |
 
 > **Pendiente de completar:** insertar wireframes de Android y Flutter para autenticación, dashboard, fincas, animales e historial sanitario.<br>
-> **Enlaces pendientes:** frames de Figma correspondientes.
+> **Enlaces pendientes:** https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
 
 <a id="toc-3-1-4-2-mobile-applications-wireflow-diagrams"></a>
 
@@ -8956,15 +8968,143 @@ Cada wireflow mostrará cómo cambia la interfaz después de una acción.
 
 ### 3.1.4.3. Mobile Applications Mock-ups
 
-Los mock-ups aplicarán el Design System a los wireframes aprobados y mostrarán contenido representativo, controles táctiles y estados.
+Los mock-ups aplican el Design System de AniTec a los wireframes aprobados y muestran contenido representativo, controles táctiles, navegación y estados de la interfaz. Para facilitar su revisión, las 195 pantallas se organizan por tecnología y perfil funcional. Cada lámina se lee de izquierda a derecha y de arriba hacia abajo; los códigos Axx y Fxx conservan el identificador de la exportación original de Android y Flutter, respectivamente.
 
-| Aplicación | Pantallas mínimas | Decisiones a evidenciar |
-|---|---|---|
-| Android | Bienvenida, registro, login, dashboard, lista, detalle y formulario de animal, historial | Material Design, Compose, navegación, contraste y estados. |
-| Flutter | Las mismas pantallas y alcance funcional | Componentes Flutter, adaptación a plataforma y estados equivalentes. |
+| Aplicación | IAM | Usuario rancher | Usuario vet | Total |
+|---|---:|---:|---:|---:|
+| Flutter | 5 | 48 | 44 | 97 |
+| Android | 5 | 49 | 44 | 98 |
+| **Total** | **10** | **97** | **88** | **195** |
 
-> **Pendiente de completar:** insertar mock-ups de Android y Flutter.<br>
-> **Enlaces pendientes:** frames finales de Figma.
+El prototipo editable se encuentra en [Figma - AniTec 2026-2](https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1).
+
+#### Aplicación Flutter
+
+##### IAM
+
+Este conjunto presenta el onboarding, el registro y el inicio de sesión compartidos por los usuarios de la aplicación.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-iam-01.jpg" alt="Mock-ups Flutter del módulo IAM" width="650">
+  <p><i>Figura 3.1.4.3.1. Mock-ups Flutter del módulo IAM. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario rancher
+
+Las siguientes láminas recorren la experiencia del ganadero: dashboard, animales, actividades, veterinarios, escaneo QR, finanzas, suscripción, configuración y los estados asociados a estas operaciones.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-rancher-01.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 1" width="650">
+  <p><i>Figura 3.1.4.3.2. Mock-ups Flutter del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-rancher-02.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 2" width="650">
+  <p><i>Figura 3.1.4.3.3. Mock-ups Flutter del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-rancher-03.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 3" width="650">
+  <p><i>Figura 3.1.4.3.4. Mock-ups Flutter del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-rancher-04.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 4" width="650">
+  <p><i>Figura 3.1.4.3.5. Mock-ups Flutter del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-rancher-05.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 5" width="650">
+  <p><i>Figura 3.1.4.3.6. Mock-ups Flutter del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario vet
+
+Las pantallas del veterinario cubren el dashboard profesional, la gestión de clientes, el historial clínico, el registro y corrección de visitas, el seguimiento, las actividades, los indicadores y la configuración.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-vet-01.jpg" alt="Mock-ups Flutter del usuario vet, lámina 1" width="650">
+  <p><i>Figura 3.1.4.3.7. Mock-ups Flutter del usuario vet, lámina 1 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-vet-02.jpg" alt="Mock-ups Flutter del usuario vet, lámina 2" width="650">
+  <p><i>Figura 3.1.4.3.8. Mock-ups Flutter del usuario vet, lámina 2 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-vet-03.jpg" alt="Mock-ups Flutter del usuario vet, lámina 3" width="650">
+  <p><i>Figura 3.1.4.3.9. Mock-ups Flutter del usuario vet, lámina 3 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-vet-04.jpg" alt="Mock-ups Flutter del usuario vet, lámina 4" width="650">
+  <p><i>Figura 3.1.4.3.10. Mock-ups Flutter del usuario vet, lámina 4 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+#### Aplicación Android
+
+##### IAM
+
+La versión Android conserva el mismo alcance funcional del acceso y adapta la presentación a los patrones visuales de la plataforma.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/android-iam-01.jpg" alt="Mock-ups Android del módulo IAM" width="650">
+  <p><i>Figura 3.1.4.3.11. Mock-ups Android del módulo IAM. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario rancher
+
+Las láminas Android mantienen la secuencia funcional del usuario rancher e incluyen vistas principales, formularios, estados vacíos, confirmaciones, errores y sincronización.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/android-rancher-01.jpg" alt="Mock-ups Android del usuario rancher, lámina 1" width="650">
+  <p><i>Figura 3.1.4.3.12. Mock-ups Android del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/android-rancher-02.jpg" alt="Mock-ups Android del usuario rancher, lámina 2" width="650">
+  <p><i>Figura 3.1.4.3.13. Mock-ups Android del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/android-rancher-03.jpg" alt="Mock-ups Android del usuario rancher, lámina 3" width="650">
+  <p><i>Figura 3.1.4.3.14. Mock-ups Android del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/android-rancher-04.jpg" alt="Mock-ups Android del usuario rancher, lámina 4" width="650">
+  <p><i>Figura 3.1.4.3.15. Mock-ups Android del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/android-rancher-05.jpg" alt="Mock-ups Android del usuario rancher, lámina 5" width="650">
+  <p><i>Figura 3.1.4.3.16. Mock-ups Android del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario vet
+
+La versión Android del perfil veterinario documenta la gestión de clientes y visitas, los estados operativos, los indicadores, el escaneo, las notificaciones y las opciones de cuenta.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/android-vet-01.jpg" alt="Mock-ups Android del usuario vet, lámina 1" width="650">
+  <p><i>Figura 3.1.4.3.17. Mock-ups Android del usuario vet, lámina 1 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/android-vet-02.jpg" alt="Mock-ups Android del usuario vet, lámina 2" width="650">
+  <p><i>Figura 3.1.4.3.18. Mock-ups Android del usuario vet, lámina 2 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/android-vet-03.jpg" alt="Mock-ups Android del usuario vet, lámina 3" width="650">
+  <p><i>Figura 3.1.4.3.19. Mock-ups Android del usuario vet, lámina 3 de 4. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/mock-up-sheets/android-vet-04.jpg" alt="Mock-ups Android del usuario vet, lámina 4" width="650">
+  <p><i>Figura 3.1.4.3.20. Mock-ups Android del usuario vet, lámina 4 de 4. Fuente: elaboración propia.</i></p>
+</div>
 
 <a id="toc-3-1-4-4-mobile-applications-user-flow-diagrams"></a>
 
@@ -9056,17 +9196,17 @@ Las herramientas se agrupan según la actividad que soportan. Todo integrante de
 | Docker | Empaquetar y publicar la API en Render (Dockerfile). | Imágenes mcr.microsoft.com/dotnet/sdk:10.0 y aspnet:10.0 |
 | Postman / Swagger UI | Probar contratos HTTP de la API. | Swagger UI del servicio desplegado |
 | MySQL / MySQL Workbench | Persistencia central y administración de datos. | Compatible con MySql.EntityFrameworkCore 10.0.7 |
-| Android Studio | Desarrollo, emulación y depuración Android. | **Pendiente de registrar:** versión definitiva |
-| Kotlin | Implementar la aplicación Android nativa. | **Pendiente de registrar:** versión definitiva |
-| Jetpack Compose | Construir la interfaz Android. | **Pendiente de registrar:** BOM y versiones |
-| Flutter SDK y Dart | Implementar la aplicación multiplataforma. | **Pendiente de registrar:** versiones definitivas |
+| Android Studio | Desarrollo, emulación y depuración Android. | Koala Feature Drop (2024.1.2) o superior |
+| Kotlin | Implementar la aplicación Android nativa. | 2.0.0 |
+| Jetpack Compose | Construir la interfaz Android. | Compose BOM 2024.06.00 |
+| Flutter SDK y Dart | Implementar la aplicación multiplataforma. | Flutter 3.22.0 / Dart 3.4.0 |
 
 **Software Testing**
 
 | Producto | Herramientas previstas | Tipo de comprobación |
 |---|---|---|
-| Backend | **Pendiente:** no existe aún un proyecto xUnit en anitec-backend. Verificación vigente con Swagger UI y cliente HTTP | Contratos HTTP y ejecución exploratoria |
-| Android | JUnit, Compose UI Test y Android Emulator | Unitarias e interfaz |
+| Backend | xUnit, Swagger UI y cliente HTTP | Unitarias, contratos HTTP y ejecución exploratoria |
+| Android | JUnit 4, Compose UI Test, KotlinX Coroutines Test y Android Emulator | Unitarias (ViewModels/UseCases) e interfaz/instrumentadas (Room DAOs) |
 | Flutter | flutter_test e integration_test | Unitarias, widgets e integración |
 | API | Swagger UI (Swashbuckle) y cliente HTTP controlado | Contratos y ejecución exploratoria |
 | Landing Page | DevTools, Lighthouse y validadores web | Responsive, accesibilidad y desempeño |
@@ -9120,21 +9260,21 @@ El código fuente, nombres técnicos, rutas y mensajes de commit se redactarán 
 |---|---|
 | HTML y CSS | HTML semántico, atributos de accesibilidad, indentación de dos espacios y clases kebab-case. |
 | JavaScript | Variables y funciones camelCase, constantes descriptivas, módulos pequeños y uso de async/await. |
-| Kotlin | Google Kotlin Style Guide; tipos y composables PascalCase, funciones y propiedades camelCase, paquetes en minúsculas. |
-| Jetpack Compose | Composables pequeños, estado elevado cuando corresponda, previews representativas y recursos fuera del código. |
-| Dart | Effective Dart; tipos UpperCamelCase, miembros lowerCamelCase, archivos lowercase_with_underscores. |
-| Flutter | Widgets pequeños, separación de presentación y estado, temas centralizados y textos localizables. |
-| C# | Convenciones Microsoft ([C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)); tipos, métodos y propiedades PascalCase, parámetros camelCase y campos privados _camelCase. Controllers: *Controller en Interfaces/Rest. Resources (DTOs): *Resource y assemblers *FromResourceAssembler / *FromEntityAssembler. Commands y Queries: Create*Command, Get*Query en Domain/Model. Rutas en minúsculas bajo api/v1/... (p. ej. api/v1/authentication/sign-in, api/v1/animals). Estructura por bounded context (Iam, Livestock, Sanitary, …) con capas Domain, Application, Infrastructure e Interfaces. Errores HTTP vía Problem Details y validaciones en controllers/services. |
-| REST / OpenAPI | Sustantivos plurales en rutas, verbos HTTP correctos, resources/DTOs, códigos de estado y respuestas de error consistentes. Documentación con Swashbuckle (AddSwaggerGen, anotaciones [SwaggerOperation] / [SwaggerResponse]) y esquema Bearer JWT. |
+| Kotlin (Android) | **Google Kotlin Style Guide**. Estructura estricta por Bounded Contexts (iam, livestock, sanitary, etc.) y Clean Architecture (capas domain, application, infrastructure, interfaces/presentation). Tipos y clases en PascalCase. Funciones y variables en camelCase. **Sufijos obligatorios:** *UseCase para lógica de aplicación, *Entity y *Dao para persistencia en Room, y *RepositoryImpl para adaptadores de infraestructura. Cero dependencias de Android en las capas de domain y application. |
+| Jetpack Compose | Patrón UDF (Unidirectional Data Flow) con estados inmutables expuestos desde el ViewModel (ej. StateFlow<*UiState>). Nombres de funciones Composable siempre en PascalCase y tratadas como sustantivos. Tema centralizado (Theme.kt, Color.kt, Type.kt) usando Material Design 3 y tipografía Poppins. |
+| Dart | **Effective Dart**. Archivos en lowercase_with_underscores. Clases, enums y typedefs en UpperCamelCase. Miembros de clases y variables en lowerCamelCase. |
+| Flutter | Separación estricta entre UI y lógica de estado. Estructura de carpetas alineada con la arquitectura nativa (Bounded Contexts y capas). Widgets pequeños y componibles. Textos centralizados y localizables. |
+| C# | Convenciones Microsoft ([C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)); tipos, métodos y propiedades PascalCase, parámetros camelCase y campos privados _camelCase. Controllers: *Controller en Interfaces/Rest. Resources (DTOs): *Resource y assemblers *FromResourceAssembler / *FromEntityAssembler. Commands y Queries: Create*Command, Get*Query en Domain/Model. Rutas en minúsculas bajo api/v1/.... Estructura por bounded context. Errores HTTP vía Problem Details. |
+| REST / OpenAPI | Sustantivos plurales en rutas, verbos HTTP correctos, resources/DTOs, códigos de estado y respuestas de error consistentes. Documentación con Swashbuckle (AddSwaggerGen, anotaciones [SwaggerOperation]) y esquema Bearer JWT. |
 | Gherkin | Features y escenarios ligados a User Stories, pasos declarativos y estructura Given–When–Then. |
 
 **Reglas compartidas**
 
-- No incluir secretos, tokens ni cadenas de conexión en el repositorio.
+- **Estrategia Offline-First:** Toda lectura y escritura en los clientes móviles interactúa primero con la base de datos local (Room/SQLite). Las escrituras locales se marcan con un estado de sincronización (ej. PENDING) antes de enviarse al backend.
+- **Inyección de Dependencias:** Uso centralizado de frameworks (Hilt en Android) para proveer repositorios y casos de uso, organizados mediante módulos (*Module.kt).
+- No incluir secretos, tokens ni cadenas de conexión en el repositorio (uso de EncryptedSharedPreferences o Keystore en móviles).
 - Centralizar textos para i18n en lugar de escribirlos directamente en vistas.
-- Documentar interfaces públicas y decisiones no evidentes.
-- Evitar duplicar reglas de negocio entre UI y API; el backend conserva las reglas autoritativas.
-- Incluir pruebas para reglas o flujos incorporados durante el sprint.
+- Evitar duplicar reglas de negocio entre UI y API; el backend conserva las reglas autoritativas y la validación final.
 
 <a id="toc-4-1-4-software-deployment-configuration"></a>
 
@@ -9165,18 +9305,20 @@ El backend se publica desde el repositorio <https://github.com/ADM-1ACC0238-2620
 
 **Android y Flutter — Firebase App Distribution**
 
-1. Crear o vincular el proyecto Firebase y registrar cada aplicación.
-2. Configurar identificadores, firma de builds y variables de ambiente.
-3. Generar un artefacto instalable de prueba desde una versión trazable.
-4. Publicar el build para el grupo autorizado de testers.
-5. Registrar versión, commit, fecha, notas y resultados de instalación.
+Para distribuir las aplicaciones móviles a los evaluadores (testers) del Sprint 1, se ejecutaron los siguientes pasos en Firebase:
+
+1. Se creó el proyecto en Firebase Console y se registraron las aplicaciones de Android (nativo) y Flutter.
+2. Se configuraron los App IDs y se generaron los artefactos firmados (.apk para Android).
+3. Se cargaron los builds en Firebase App Distribution.
+4. Se publicaron las versiones para el grupo de testers autorizados (equipo y profesores).
+5. Se registró la versión y las notas de la entrega correspondientes al Sprint 1.
 
 | Producto | Entorno / servicio | URL o identificador | Estado |
 |---|---|---|---|
-| Landing Page | GitHub Pages | **Pendiente de confirmar:** URL vigente | Pendiente de evidencia TB1 |
+| Landing Page | GitHub Pages | URL: <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page/> | Live |
 | Web Services | Render | API: <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live — evidencia en figuras 4.1.4.2 y 4.1.4.3 |
-| Android | Firebase App Distribution | **Pendiente:** App ID, release y grupo de testers | Pendiente |
-| Flutter | Firebase App Distribution | **Pendiente:** App ID, plataformas y release | Pendiente |
+| Android | Firebase App Distribution | App ID: 1:969068830564:android:5a2dafc1bf9a7f44652471 | Release v1.0.0 (Sprint 1) - Distribuido al grupo: Testers AniTec |
+| Flutter | Firebase App Distribution | App ID: 1:969068830564:ios:0bb12cea32f3d196652471 | Release v1.0.0 (Sprint 1) - Distribuido al grupo: Testers AniTec |
 
 El diagrama de despliegue muestra los dispositivos, productos, servicios externos y relaciones necesarias para ejecutar AniTec.
 
@@ -9197,6 +9339,18 @@ La captura confirma el despliegue Docker del backend, el plan Free y la disponib
 <div align="center">
   <img src="markdown/assets/chapter-4/backend/render-backend-environment.png" width="800">
   <p><i>Figura 4.1.4.3. Variables de entorno del backend en Render (valores ocultos): ASPNETCORE_ENVIRONMENT, ConnectionStrings__DefaultConnection, TokenSettings__Secret y StripeSettings. Fuente: elaboración propia (captura de Render).</i></p>
+</div>
+
+A continuación, se evidencia la publicación de los artefactos móviles en Firebase App Distribution para el acceso de los evaluadores.
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/firebase-android-release.png" width="800">
+  <p><i>Figura 4.1.4.4. Lanzamiento de la aplicación nativa Android en Firebase App Distribution (Sprint 1). Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/firebase-flutter-release.png" width="800">
+  <p><i>Figura 4.1.4.5. Lanzamiento de la aplicación multiplataforma Flutter en Firebase App Distribution (Sprint 1). Fuente: elaboración propia.</i></p>
 </div>
 
 La configuración de secretos se mantiene fuera del repositorio GitHub y se administra en el panel Environment de Render.
@@ -9312,10 +9466,20 @@ El Sprint Backlog descompone las historias comprometidas en tareas comprobables.
 
 Esta sección registrará únicamente commits que contribuyan al alcance comprometido. Cada evidencia debe poder localizarse en el repositorio y relacionarse con una historia o tarea.
 
+### 4.2.1.4. Development Evidence for Sprint Review
+
+Esta sección registrará únicamente commits que contribuyan al alcance comprometido. Cada evidencia debe poder localizarse en el repositorio y relacionarse con una historia o tarea.
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
 |---|---|---|---|---|---|
 | anitec-backend | main | 125d53e | chore: add initial commit with all project files | Incorpora la solución Anitec.Platform con bounded contexts (Iam, Profiles, Livestock, Sanitary, Financial, Activities, Analytics, Devices, Metrics, Subscriptions, Clients, Shared), controllers REST, EF Core + MySQL, JWT/BCrypt, Swagger y Dockerfile. | 2026-09-04 |
 | anitec-backend | main | 9831844 | chore: big update to add corrals and animal corral relationship | Extiende Livestock con corrales (CorralsController), relación animal–corral, operaciones bulk de animales y validaciones de resources. | 2026-09-30 |
+| anitec-landing-page | main | 2a88184| chore: add initial project files | Agrega la estructura inicial del proyecto de la Landing Page, incluyendo la configuración base, componentes principales y archivos necesarios para el desarrollo de la interfaz de presentación de AniTec. | 2026-09-04 |
+| anitec-android | main | 2f3b903 | feat: add Android project foundation and authentication | Implementa la estructura base nativa usando Clean Architecture. Integra AuthApiService, AuthRepositoryImpl y persistencia segura de tokens. | 2026-10-01 |
+| anitec-android | main | 8ade432 | feat: add livestock management, health records and rancher dashboard | Refactoriza la capa de dominio y la persistencia local integrando la jerarquía de hatos y animales. Asegura soporte Offline-First para registro. | 2026-10-01 |
+| Informe | main | c8b8be7 | docs: update report complete generation | Agrega la estructura inicial del informe de proyecto con sus capítulos, títulos y diagramas de arquitectura C4. | 2026-09-16 |
+
+<a id="toc-4-2-1-5-testing-suite-evidence-for-sprint-review"></a>
 
 > **Pendiente de completar:** agregar commits de Landing Page, Android, Flutter e informe según el alcance real. Las filas anteriores corresponden solo al backend.
 
@@ -9325,14 +9489,22 @@ Esta sección registrará únicamente commits que contribuyan al alcance comprom
 
 La evidencia incluirá pruebas automatizadas relacionadas con las historias del sprint. Los escenarios BDD se expresarán en archivos .feature y sus pasos correspondientes.
 
-| Test ID | Product | Type | Class / Feature | Behavior | Related Story | Result |
-|---|---|---|---|---|---|---|
+| Test ID     | Product | Type | Class / Feature | Behavior | Related Story | Result |
+|-------------|---|---|---|---|---|---|
 | TEST-BE-001 | Web Services | Exploratoria / contrato | Swagger UI (/swagger) | Validar disponibilidad de OpenAPI y endpoints Animals / Authentication en el entorno publicado | Autenticación y registro esencial de animales / sanidad | Completado — Figura 4.2.1.6.1 |
 | TEST-BE-002 | Web Services | Automatizada (xUnit) | **Pendiente:** no hay proyecto de pruebas en el repositorio | **Pendiente:** incorporar suite xUnit | — | No aplicable aún |
+| TEST-LP-003 | Landing Page | Funcional | Navigation | Validar la navegación entre las distintas secciones de la Landing Page. | Navegación y experiencia de usuario | Completado |
+| TEST-LP-004 | Landing Page | Responsive Testing | Responsive Design | Verificar la correcta adaptación de la interfaz en dispositivos móviles y escritorio. | Accesibilidad multiplataforma | Completado |
+| TEST-AN-001 | Android | Automatizada (JUnit) | AuthViewModelsTest, HomeViewModelTest | Validar flujos de estado de autenticación (Login) y carga del dashboard inicial. | Autenticación de usuario | Completado |
+| TEST-AN-002 | Android | Automatizada (JUnit) | LivestockDomainTest, LivestockUseCasesTest, SanitaryTest | Validar reglas de negocio del dominio de ganado, sanidad y casos de uso. | Gestión de ganado y Sanidad | Completado |
+| TEST-AN-003 | Android | Automatizada (Instrumentada) | RoomDaoTest | Verificar operaciones CRUD y persistencia local de la base de datos con Room (Offline-First). | Gestión de ganado | Completado |
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
 |---|---|---|---|---|---|
 | anitec-backend | — | — | — | **Pendiente:** no existen commits de pruebas automatizadas; el repositorio no incluye proyecto *Tests / xUnit. | — |
+| anitec-landing-page | main | 2a88184 | chore: add initial project files | Agrega la estructura inicial del proyecto de la Landing Page, incluyendo configuración base y componentes principales para el desarrollo de la interfaz | 2026-09-04 |
+| anitec-android | main | 2f3b903 | feat: add Android project foundation and authentication | Configura la arquitectura base e incluye pruebas unitarias iniciales para los flujos de autenticación (AuthViewModelsTest, HomeViewModelTest). | 2026-10-01 |
+| anitec-android | main | 8ade432 | feat: add livestock management, health records and rancher dashboard | Implementa la lógica de ganado/sanidad y adjunta las suites de pruebas unitarias e instrumentadas (LivestockDomainTest, SanitaryTest, RoomDaoTest). | 2026-10-01 |
 
 > **Pendiente de completar (backend):** cuando exista proyecto xUnit, ejecutar dotnet test, adjuntar captura del resultado en markdown/assets/chapter-4/backend/ y registrar el commit. Las filas de Landing / Android / Flutter las completa cada responsable.
 
@@ -9342,13 +9514,13 @@ La evidencia incluirá pruebas automatizadas relacionadas con las historias del 
 
 La evidencia de ejecución mostrará el resultado integrado del Sprint 1 mediante capturas identificables y un video que explique el recorrido implementado.
 
-| Producto | Vista o flujo | Entorno / dispositivo | Evidencia | Estado |
-|---|---|---|---|---|
-| Landing Page | Página principal y responsive | Navegador de escritorio y móvil | Pendiente de captura | Pendiente |
-| Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Pendiente de captura | Pendiente |
-| Flutter | Autenticación y funciones core comprometidas | Dispositivo o emulador objetivo | Pendiente de captura | Pendiente |
+| Producto | Vista o flujo | Entorno / dispositivo | Evidencia                           | Estado     |
+|---|---|---|-------------------------------------|------------|
+| Landing Page | Página principal y responsive | Navegador de escritorio y móvil | Figura 4.2.1.6.2 (landing_despliegue.png)       | Completado |
+| Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Pendiente de captura                | Pendiente  |
+| Flutter | Autenticación y funciones core comprometidas | Dispositivo o emulador objetivo | Pendiente de captura                | Pendiente  |
 | Web Services | Swagger UI: documentación OpenAPI de la API publicada | Navegador contra <https://anitec-backend.onrender.com/swagger/index.html> | Figura 4.2.1.6.1 (swagger-ui.png) | Completado |
-| Integración | Consumo de API y manejo de errores | Aplicaciones contra backend vigente | Pendiente de captura | Pendiente |
+| Integración | Consumo de API y manejo de errores | Aplicaciones contra backend vigente | Pendiente de captura                | Pendiente  |
 
 <div align="center">
   <img src="markdown/assets/chapter-4/backend/swagger-ui.png" width="800">
@@ -9360,7 +9532,17 @@ La captura demuestra que la documentación interactiva carga desde el entorno pu
 - **Execution video:** **Pendiente de completar:** URL del video.
 - **Timing:** **Pendiente:** inicio y duración de cada demostración.
 
-<a id="toc-4-2-1-7-services-documentation-evidence-for-sprint-review"></a>
+<div align="center">
+  <img src="markdown/assets/chapter-4/landing_despliegue.png" width="800">
+  <p><i>Figura 4.2.1.6.2. Landing de AniTec desplegado, Fuente: elaboración propia.</i></p>
+</div>
+
+Las capturas muestran la implementación de la Landing Page de AniTec en navegadores. Se verificó la correcta visualización del contenido, la navegación entre secciones y la adaptación responsive de la interfaz para distintos tamaños de pantalla.
+
+- **Execution video:** 
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQBmZ8UxBU5zToJUnS4AN161Aa9ocLvYJcSFOja0Zogn_tE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=V8q9eK
+- **Timing:** 0:00 - 1:48 min
+  <a id="toc-4-2-1-7-services-documentation-evidence-for-sprint-review"></a>
 
 ### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
