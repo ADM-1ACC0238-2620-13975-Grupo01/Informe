@@ -257,7 +257,9 @@ La propuesta comprende Android nativo con Kotlin y Jetpack Compose y una aplicac
 
 ### 3.1.4.1. Mobile Applications Wireframes
 
-Los wireframes presentan la estructura, la jerarquía y los estados de las aplicaciones móviles antes del acabado visual. Las 188 pantallas se organizan por tecnología y perfil funcional en láminas compactas, siguiendo la presentación de los mock-ups. Cada lámina se lee de izquierda a derecha y de arriba hacia abajo; las etiquetas conservan los identificadores de los archivos originales.
+Los wireframes representan la estructura funcional de cada pantalla de la aplicación móvil, definiendo la distribución de elementos y flujos de interacción básicos. Sirven como punto de partida para validar la organización visual y funcional del producto.
+
+
 
 El diseño en Figma se encuentra en: https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
 
@@ -391,7 +393,7 @@ El diseño en Figma se encuentra en: https://www.figma.com/design/uRmjCeeukXUb2A
 
 ### 3.1.4.2. Mobile Applications Wireflow Diagrams
 
-Cada wireflow mostrará cómo cambia la interfaz después de una acción.
+Cada wireflow muestra cómo cambia la interfaz después de una acción: las pantallas se conectan con flechas rotuladas con el gesto del usuario. La flecha continua representa el *happy path* y las flechas discontinuas rojas, las rutas alternativas (*unhappy paths*); cuando una alternativa no cuenta con una pantalla propia, se representa con un recuadro punteado. Se presenta un wireflow por cada user goal y por cada aplicación (Flutter y Android), con un carril por perfil cuando el objetivo lo realizan tanto el ganadero como el veterinario. Cada wireflow redacta su user goal desde la perspectiva de los User Personas del capítulo II, Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria). La ruta típica de pasos de cada goal es el happy path acordado en la tabla anterior y cada cambio de estado se representa agregando un paso con el wireframe del nuevo estado. Los wireflows reutilizan las pantallas de la sección 3.1.4.1 y son la base de los User Flow Diagrams de la sección 3.1.4.4.
 
 | User goal | Actor | Punto inicial | Pasos principales | Alternativas | Resultado |
 |---|---|---|---|---|---|
@@ -402,7 +404,153 @@ Cada wireflow mostrará cómo cambia la interfaz después de una acción.
 | Consultar historial sanitario | Usuario autorizado | Detalle del animal | Abrir sanidad, filtrar y revisar | Historial vacío o permiso insuficiente | Evento consultado |
 | Registrar evento sanitario | Usuario autorizado | Historial | Seleccionar tipo, completar y guardar | Validación, falta de permiso o sin conexión | Evento registrado o pendiente |
 
-> **Pendiente de completar:** insertar un wireflow por cada user goal y por cada aplicación.
+#### Aplicación Flutter
+
+##### Wireflow 1. Registrarse e iniciar sesión
+
+**User goal:** Crear mi cuenta con el rol que me corresponde e ingresar a AniTec para llegar a mi dashboard.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El usuario recorre el onboarding de tres pantallas, llega a Registration, elige el tipo de cuenta (Rancher o Veterinarian), completa los datos y accede al dashboard de su rol. Si los datos son inválidos se muestran errores en línea y permanece en el formulario; si ya tiene cuenta, pasa a Sign in; si falla la red, se informa el error y se permite reintentar.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireflow-diagrams/flutter-wireflow-01-registro-e-inicio-de-sesion.png" alt="Wireflow Flutter - Registrarse e iniciar sesión" width="650">
+  <p><i>Figura 3.1.4.2.1. Wireflow Flutter del user goal «Registrarse e iniciar sesión». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 2. Consultar dashboard
+
+**User goal:** Ver de un vistazo el estado de mi hato, mis actividades y mis alertas (en el caso de la veterinaria, mis clientes y seguimientos pendientes) y entrar al módulo que necesito.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+Con la sesión autenticada, el ganadero llega a su dashboard (animales, actividades y alertas) y abre un módulo desde la barra inferior; el veterinario llega al suyo (clientes y seguimientos) y abre Clients. Las alternativas cubren el primer uso sin datos, la carga del resumen, el trabajo sin conexión (banner offline y acceso al estado de sincronización), la sesión vencida, el servicio no disponible y el acceso no autorizado.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireflow-diagrams/flutter-wireflow-02-consultar-dashboard.png" alt="Wireflow Flutter - Consultar dashboard" width="526">
+  <p><i>Figura 3.1.4.2.2. Wireflow Flutter del user goal «Consultar dashboard». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 3. Registrar animal
+
+**User goal:** Registrar un animal nuevo en pocos pasos, incluso cuando estoy en el campo sin conexión.  
+**User Persona:** Jorge Luis Rivas (ganadero)
+
+Desde la lista de animales, el ganadero abre el formulario New animal, completa los datos y guarda; el resultado es el detalle del animal registrado. Si la lista está vacía se ofrece crear el primer animal; los campos incompletos o un tag duplicado se señalan en línea; sin conexión el registro se guarda en el dispositivo y queda pendiente de sincronizar; también puede cambiarse a registro masivo (Bulk).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireflow-diagrams/flutter-wireflow-03-registrar-animal.png" alt="Wireflow Flutter - Registrar animal" width="650">
+  <p><i>Figura 3.1.4.2.3. Wireflow Flutter del user goal «Registrar animal». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 4. Consultar o actualizar animal
+
+**User goal:** Encontrar un animal, revisar su información y mantenerla actualizada.  
+**User Persona:** Jorge Luis Rivas (ganadero)
+
+El ganadero busca o selecciona un animal, revisa su detalle, entra a Edit animal, modifica los datos y guarda; el detalle refleja la información actualizada. Una búsqueda sin coincidencias muestra el estado sin resultados; la falta de autorización o un animal archivado dejan el detalle en solo lectura; los datos inválidos se corrigen antes de guardar y un conflicto de sincronización se resuelve en Sync status (Keep mine / Use server).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireflow-diagrams/flutter-wireflow-04-consultar-o-actualizar-animal.png" alt="Wireflow Flutter - Consultar o actualizar animal" width="650">
+  <p><i>Figura 3.1.4.2.4. Wireflow Flutter del user goal «Consultar o actualizar animal». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 5. Consultar historial sanitario
+
+**User goal:** Revisar qué vacunas, tratamientos y controles ha recibido un animal para decidir qué hacer a continuación.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El usuario autorizado abre el historial sanitario del animal (el ganadero desde el detalle del animal; el veterinario desde el detalle del cliente y de su paciente) y revisa el detalle de un registro. Las alternativas son el historial vacío, el animal sin registros, el permiso insuficiente, la copia local sin conexión y el acceso revocado o finalizado por el ganadero.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireflow-diagrams/flutter-wireflow-05-historial-sanitario.png" alt="Wireflow Flutter - Consultar historial sanitario" width="526">
+  <p><i>Figura 3.1.4.2.5. Wireflow Flutter del user goal «Consultar historial sanitario». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 6. Registrar evento sanitario
+
+**User goal:** Dejar constancia de un evento de salud: reportar un problema (ganadero) o registrar la visita y su seguimiento (veterinaria).  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El ganadero reporta un evento desde el detalle del animal (Report health issue) y el veterinario registra una visita desde el historial del paciente (Record visit); en ambos casos se completa el formulario, se guarda y el evento queda visible en el historial. Los campos obligatorios vacíos se señalan en línea; sin conexión el evento queda guardado localmente y pendiente de sincronizar; sin permiso o con el acceso revocado no se puede registrar; el veterinario puede además programar un seguimiento o descartar los cambios sin guardar.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireflow-diagrams/flutter-wireflow-06-registro-sanitario.png" alt="Wireflow Flutter - Registrar evento sanitario" width="503">
+  <p><i>Figura 3.1.4.2.6. Wireflow Flutter del user goal «Registrar evento sanitario». Fuente: elaboración propia.</i></p>
+</div>
+
+#### Aplicación Android
+
+##### Wireflow 1. Registrarse e iniciar sesión
+
+**User goal:** Crear mi cuenta con el rol que me corresponde e ingresar a AniTec para llegar a mi dashboard.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El usuario recorre el onboarding de tres pantallas, llega a Registration, elige el tipo de cuenta (Rancher o Veterinarian), completa los datos y accede al dashboard de su rol. Si los datos son inválidos se muestran errores en línea y permanece en el formulario; si ya tiene cuenta, pasa a Sign in; si falla la red, se informa el error y se permite reintentar. El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireflow-diagrams/android-wireflow-01-registro-e-inicio-de-sesion.png" alt="Wireflow Android - Registrarse e iniciar sesión" width="650">
+  <p><i>Figura 3.1.4.2.7. Wireflow Android del user goal «Registrarse e iniciar sesión». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 2. Consultar dashboard
+
+**User goal:** Ver de un vistazo el estado de mi hato, mis actividades y mis alertas (en el caso de la veterinaria, mis clientes y seguimientos pendientes) y entrar al módulo que necesito.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+Con la sesión autenticada, el ganadero llega a su dashboard (animales, actividades y alertas) y abre un módulo desde la barra inferior; el veterinario llega al suyo (clientes y seguimientos) y abre Clients. Las alternativas cubren el primer uso sin datos, la carga del resumen, el trabajo sin conexión (banner offline y acceso al estado de sincronización), la sesión vencida, el servicio no disponible y el acceso no autorizado. El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireflow-diagrams/android-wireflow-02-consultar-dashboard.png" alt="Wireflow Android - Consultar dashboard" width="518">
+  <p><i>Figura 3.1.4.2.8. Wireflow Android del user goal «Consultar dashboard». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 3. Registrar animal
+
+**User goal:** Registrar un animal nuevo en pocos pasos, incluso cuando estoy en el campo sin conexión.  
+**User Persona:** Jorge Luis Rivas (ganadero)
+
+Desde la lista de animales, el ganadero abre el formulario New animal, completa los datos y guarda; el resultado es el detalle del animal registrado. Si la lista está vacía se ofrece crear el primer animal; los campos incompletos o un tag duplicado se señalan en línea; sin conexión el registro se guarda en el dispositivo y queda pendiente de sincronizar; también puede cambiarse a registro masivo (Bulk). El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireflow-diagrams/android-wireflow-03-registrar-animal.png" alt="Wireflow Android - Registrar animal" width="650">
+  <p><i>Figura 3.1.4.2.9. Wireflow Android del user goal «Registrar animal». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 4. Consultar o actualizar animal
+
+**User goal:** Encontrar un animal, revisar su información y mantenerla actualizada.  
+**User Persona:** Jorge Luis Rivas (ganadero)
+
+El ganadero busca o selecciona un animal, revisa su detalle, entra a Edit animal, modifica los datos y guarda; el detalle refleja la información actualizada. Una búsqueda sin coincidencias muestra el estado sin resultados; la falta de autorización o un animal archivado dejan el detalle en solo lectura; los datos inválidos se corrigen antes de guardar y un conflicto de sincronización se resuelve en Sync status (Keep mine / Use server). El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireflow-diagrams/android-wireflow-04-consultar-o-actualizar-animal.png" alt="Wireflow Android - Consultar o actualizar animal" width="650">
+  <p><i>Figura 3.1.4.2.10. Wireflow Android del user goal «Consultar o actualizar animal». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 5. Consultar historial sanitario
+
+**User goal:** Revisar qué vacunas, tratamientos y controles ha recibido un animal para decidir qué hacer a continuación.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El usuario autorizado abre el historial sanitario del animal (el ganadero desde el detalle del animal; el veterinario desde el detalle del cliente y de su paciente) y revisa el detalle de un registro. Las alternativas son el historial vacío, el animal sin registros, el permiso insuficiente, la copia local sin conexión y el acceso revocado o finalizado por el ganadero. El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireflow-diagrams/android-wireflow-05-historial-sanitario.png" alt="Wireflow Android - Consultar historial sanitario" width="518">
+  <p><i>Figura 3.1.4.2.11. Wireflow Android del user goal «Consultar historial sanitario». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 6. Registrar evento sanitario
+
+**User goal:** Dejar constancia de un evento de salud: reportar un problema (ganadero) o registrar la visita y su seguimiento (veterinaria).  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El ganadero reporta un evento desde el detalle del animal (Report health issue) y el veterinario registra una visita desde el historial del paciente (Record visit); en ambos casos se completa el formulario, se guarda y el evento queda visible en el historial. Los campos obligatorios vacíos se señalan en línea; sin conexión el evento queda guardado localmente y pendiente de sincronizar; sin permiso o con el acceso revocado no se puede registrar; el veterinario puede además programar un seguimiento o descartar los cambios sin guardar. El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireflow-diagrams/android-wireflow-06-registro-sanitario.png" alt="Wireflow Android - Registrar evento sanitario" width="496">
+  <p><i>Figura 3.1.4.2.12. Wireflow Android del user goal «Registrar evento sanitario». Fuente: elaboración propia.</i></p>
+</div>
 
 <a id="toc-3-1-4-3-mobile-applications-mock-ups"></a>
 

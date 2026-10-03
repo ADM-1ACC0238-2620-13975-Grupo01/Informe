@@ -8946,61 +8946,61 @@ El diseño en Figma se encuentra en: https://www.figma.com/design/uRmjCeeukXUb2A
 ##### IAM
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/flutter-iam-01.jpg" alt="Wireframes Flutter del módulo IAM, lámina 1 de 1" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-iam-01.jpg" alt="Wireframes Flutter del módulo IAM, lámina 1 de 1" width="650">
   <p><i>Figura 3.1.4.1.1. Wireframes Flutter del módulo IAM, lámina 1 de 1. Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Usuario rancher
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-01.jpg" alt="Wireframes Flutter del usuario rancher, lámina 1 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-01.jpg" alt="Wireframes Flutter del usuario rancher, lámina 1 de 5" width="650">
   <p><i>Figura 3.1.4.1.2. Wireframes Flutter del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-02.jpg" alt="Wireframes Flutter del usuario rancher, lámina 2 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-02.jpg" alt="Wireframes Flutter del usuario rancher, lámina 2 de 5" width="650">
   <p><i>Figura 3.1.4.1.3. Wireframes Flutter del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-03.jpg" alt="Wireframes Flutter del usuario rancher, lámina 3 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-03.jpg" alt="Wireframes Flutter del usuario rancher, lámina 3 de 5" width="650">
   <p><i>Figura 3.1.4.1.4. Wireframes Flutter del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-04.jpg" alt="Wireframes Flutter del usuario rancher, lámina 4 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-04.jpg" alt="Wireframes Flutter del usuario rancher, lámina 4 de 5" width="650">
   <p><i>Figura 3.1.4.1.5. Wireframes Flutter del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-05.jpg" alt="Wireframes Flutter del usuario rancher, lámina 5 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-05.jpg" alt="Wireframes Flutter del usuario rancher, lámina 5 de 5" width="650">
   <p><i>Figura 3.1.4.1.6. Wireframes Flutter del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Usuario veterinario
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/flutter-vet-01.jpg" alt="Wireframes Flutter del usuario vet, lámina 1 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-vet-01.jpg" alt="Wireframes Flutter del usuario vet, lámina 1 de 5" width="650">
   <p><i>Figura 3.1.4.1.7. Wireframes Flutter del usuario vet, lámina 1 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/flutter-vet-02.jpg" alt="Wireframes Flutter del usuario vet, lámina 2 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-vet-02.jpg" alt="Wireframes Flutter del usuario vet, lámina 2 de 5" width="650">
   <p><i>Figura 3.1.4.1.8. Wireframes Flutter del usuario vet, lámina 2 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/flutter-vet-03.jpg" alt="Wireframes Flutter del usuario vet, lámina 3 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-vet-03.jpg" alt="Wireframes Flutter del usuario vet, lámina 3 de 5" width="650">
   <p><i>Figura 3.1.4.1.9. Wireframes Flutter del usuario vet, lámina 3 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/flutter-vet-04.jpg" alt="Wireframes Flutter del usuario vet, lámina 4 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-vet-04.jpg" alt="Wireframes Flutter del usuario vet, lámina 4 de 5" width="650">
   <p><i>Figura 3.1.4.1.10. Wireframes Flutter del usuario vet, lámina 4 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/flutter-vet-05.jpg" alt="Wireframes Flutter del usuario vet, lámina 5 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-vet-05.jpg" alt="Wireframes Flutter del usuario vet, lámina 5 de 5" width="650">
   <p><i>Figura 3.1.4.1.11. Wireframes Flutter del usuario vet, lámina 5 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
@@ -9009,61 +9009,61 @@ El diseño en Figma se encuentra en: https://www.figma.com/design/uRmjCeeukXUb2A
 ##### IAM
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/android-iam-01.jpg" alt="Wireframes Android del módulo IAM, lámina 1 de 1" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-iam-01.jpg" alt="Wireframes Android del módulo IAM, lámina 1 de 1" width="650">
   <p><i>Figura 3.1.4.1.12. Wireframes Android del módulo IAM, lámina 1 de 1. Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Usuario rancher
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/android-rancher-01.jpg" alt="Wireframes Android del usuario rancher, lámina 1 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-rancher-01.jpg" alt="Wireframes Android del usuario rancher, lámina 1 de 5" width="650">
   <p><i>Figura 3.1.4.1.13. Wireframes Android del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/android-rancher-02.jpg" alt="Wireframes Android del usuario rancher, lámina 2 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-rancher-02.jpg" alt="Wireframes Android del usuario rancher, lámina 2 de 5" width="650">
   <p><i>Figura 3.1.4.1.14. Wireframes Android del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/android-rancher-03.jpg" alt="Wireframes Android del usuario rancher, lámina 3 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-rancher-03.jpg" alt="Wireframes Android del usuario rancher, lámina 3 de 5" width="650">
   <p><i>Figura 3.1.4.1.15. Wireframes Android del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/android-rancher-04.jpg" alt="Wireframes Android del usuario rancher, lámina 4 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-rancher-04.jpg" alt="Wireframes Android del usuario rancher, lámina 4 de 5" width="650">
   <p><i>Figura 3.1.4.1.16. Wireframes Android del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/android-rancher-05.jpg" alt="Wireframes Android del usuario rancher, lámina 5 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-rancher-05.jpg" alt="Wireframes Android del usuario rancher, lámina 5 de 5" width="650">
   <p><i>Figura 3.1.4.1.17. Wireframes Android del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Usuario veterinario
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/android-vet-01.jpg" alt="Wireframes Android del usuario vet, lámina 1 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-vet-01.jpg" alt="Wireframes Android del usuario vet, lámina 1 de 5" width="650">
   <p><i>Figura 3.1.4.1.18. Wireframes Android del usuario vet, lámina 1 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/android-vet-02.jpg" alt="Wireframes Android del usuario vet, lámina 2 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-vet-02.jpg" alt="Wireframes Android del usuario vet, lámina 2 de 5" width="650">
   <p><i>Figura 3.1.4.1.19. Wireframes Android del usuario vet, lámina 2 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/android-vet-03.jpg" alt="Wireframes Android del usuario vet, lámina 3 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-vet-03.jpg" alt="Wireframes Android del usuario vet, lámina 3 de 5" width="650">
   <p><i>Figura 3.1.4.1.20. Wireframes Android del usuario vet, lámina 3 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/android-vet-04.jpg" alt="Wireframes Android del usuario vet, lámina 4 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-vet-04.jpg" alt="Wireframes Android del usuario vet, lámina 4 de 5" width="650">
   <p><i>Figura 3.1.4.1.21. Wireframes Android del usuario vet, lámina 4 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
-  <img src="./markdown/assets/chapter-3/wireframe-sheets/android-vet-05.jpg" alt="Wireframes Android del usuario vet, lámina 5 de 5" width="650">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-vet-05.jpg" alt="Wireframes Android del usuario vet, lámina 5 de 5" width="650">
   <p><i>Figura 3.1.4.1.22. Wireframes Android del usuario vet, lámina 5 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
@@ -9071,7 +9071,7 @@ El diseño en Figma se encuentra en: https://www.figma.com/design/uRmjCeeukXUb2A
 
 ### 3.1.4.2. Mobile Applications Wireflow Diagrams
 
-Cada wireflow mostrará cómo cambia la interfaz después de una acción.
+Cada wireflow muestra cómo cambia la interfaz después de una acción: las pantallas se conectan con flechas rotuladas con el gesto del usuario. La flecha continua representa el *happy path* y las flechas discontinuas rojas, las rutas alternativas (*unhappy paths*); cuando una alternativa no cuenta con una pantalla propia, se representa con un recuadro punteado. Se presenta un wireflow por cada user goal y por cada aplicación (Flutter y Android), con un carril por perfil cuando el objetivo lo realizan tanto el ganadero como el veterinario. Cada wireflow redacta su user goal desde la perspectiva de los User Personas del capítulo II, Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria). La ruta típica de pasos de cada goal es el happy path acordado en la tabla anterior y cada cambio de estado se representa agregando un paso con el wireframe del nuevo estado. Los wireflows reutilizan las pantallas de la sección 3.1.4.1 y son la base de los User Flow Diagrams de la sección 3.1.4.4.
 
 | User goal | Actor | Punto inicial | Pasos principales | Alternativas | Resultado |
 |---|---|---|---|---|---|
@@ -9082,7 +9082,153 @@ Cada wireflow mostrará cómo cambia la interfaz después de una acción.
 | Consultar historial sanitario | Usuario autorizado | Detalle del animal | Abrir sanidad, filtrar y revisar | Historial vacío o permiso insuficiente | Evento consultado |
 | Registrar evento sanitario | Usuario autorizado | Historial | Seleccionar tipo, completar y guardar | Validación, falta de permiso o sin conexión | Evento registrado o pendiente |
 
-> **Pendiente de completar:** insertar un wireflow por cada user goal y por cada aplicación.
+#### Aplicación Flutter
+
+##### Wireflow 1. Registrarse e iniciar sesión
+
+**User goal:** Crear mi cuenta con el rol que me corresponde e ingresar a AniTec para llegar a mi dashboard.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El usuario recorre el onboarding de tres pantallas, llega a Registration, elige el tipo de cuenta (Rancher o Veterinarian), completa los datos y accede al dashboard de su rol. Si los datos son inválidos se muestran errores en línea y permanece en el formulario; si ya tiene cuenta, pasa a Sign in; si falla la red, se informa el error y se permite reintentar.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-01-registro-e-inicio-de-sesion.png" alt="Wireflow Flutter - Registrarse e iniciar sesión" width="650">
+  <p><i>Figura 3.1.4.2.1. Wireflow Flutter del user goal «Registrarse e iniciar sesión». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 2. Consultar dashboard
+
+**User goal:** Ver de un vistazo el estado de mi hato, mis actividades y mis alertas (en el caso de la veterinaria, mis clientes y seguimientos pendientes) y entrar al módulo que necesito.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+Con la sesión autenticada, el ganadero llega a su dashboard (animales, actividades y alertas) y abre un módulo desde la barra inferior; el veterinario llega al suyo (clientes y seguimientos) y abre Clients. Las alternativas cubren el primer uso sin datos, la carga del resumen, el trabajo sin conexión (banner offline y acceso al estado de sincronización), la sesión vencida, el servicio no disponible y el acceso no autorizado.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-02-consultar-dashboard.png" alt="Wireflow Flutter - Consultar dashboard" width="526">
+  <p><i>Figura 3.1.4.2.2. Wireflow Flutter del user goal «Consultar dashboard». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 3. Registrar animal
+
+**User goal:** Registrar un animal nuevo en pocos pasos, incluso cuando estoy en el campo sin conexión.  
+**User Persona:** Jorge Luis Rivas (ganadero)
+
+Desde la lista de animales, el ganadero abre el formulario New animal, completa los datos y guarda; el resultado es el detalle del animal registrado. Si la lista está vacía se ofrece crear el primer animal; los campos incompletos o un tag duplicado se señalan en línea; sin conexión el registro se guarda en el dispositivo y queda pendiente de sincronizar; también puede cambiarse a registro masivo (Bulk).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-03-registrar-animal.png" alt="Wireflow Flutter - Registrar animal" width="650">
+  <p><i>Figura 3.1.4.2.3. Wireflow Flutter del user goal «Registrar animal». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 4. Consultar o actualizar animal
+
+**User goal:** Encontrar un animal, revisar su información y mantenerla actualizada.  
+**User Persona:** Jorge Luis Rivas (ganadero)
+
+El ganadero busca o selecciona un animal, revisa su detalle, entra a Edit animal, modifica los datos y guarda; el detalle refleja la información actualizada. Una búsqueda sin coincidencias muestra el estado sin resultados; la falta de autorización o un animal archivado dejan el detalle en solo lectura; los datos inválidos se corrigen antes de guardar y un conflicto de sincronización se resuelve en Sync status (Keep mine / Use server).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-04-consultar-o-actualizar-animal.png" alt="Wireflow Flutter - Consultar o actualizar animal" width="650">
+  <p><i>Figura 3.1.4.2.4. Wireflow Flutter del user goal «Consultar o actualizar animal». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 5. Consultar historial sanitario
+
+**User goal:** Revisar qué vacunas, tratamientos y controles ha recibido un animal para decidir qué hacer a continuación.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El usuario autorizado abre el historial sanitario del animal (el ganadero desde el detalle del animal; el veterinario desde el detalle del cliente y de su paciente) y revisa el detalle de un registro. Las alternativas son el historial vacío, el animal sin registros, el permiso insuficiente, la copia local sin conexión y el acceso revocado o finalizado por el ganadero.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-05-historial-sanitario.png" alt="Wireflow Flutter - Consultar historial sanitario" width="526">
+  <p><i>Figura 3.1.4.2.5. Wireflow Flutter del user goal «Consultar historial sanitario». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 6. Registrar evento sanitario
+
+**User goal:** Dejar constancia de un evento de salud: reportar un problema (ganadero) o registrar la visita y su seguimiento (veterinaria).  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El ganadero reporta un evento desde el detalle del animal (Report health issue) y el veterinario registra una visita desde el historial del paciente (Record visit); en ambos casos se completa el formulario, se guarda y el evento queda visible en el historial. Los campos obligatorios vacíos se señalan en línea; sin conexión el evento queda guardado localmente y pendiente de sincronizar; sin permiso o con el acceso revocado no se puede registrar; el veterinario puede además programar un seguimiento o descartar los cambios sin guardar.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-06-registro-sanitario.png" alt="Wireflow Flutter - Registrar evento sanitario" width="503">
+  <p><i>Figura 3.1.4.2.6. Wireflow Flutter del user goal «Registrar evento sanitario». Fuente: elaboración propia.</i></p>
+</div>
+
+#### Aplicación Android
+
+##### Wireflow 1. Registrarse e iniciar sesión
+
+**User goal:** Crear mi cuenta con el rol que me corresponde e ingresar a AniTec para llegar a mi dashboard.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El usuario recorre el onboarding de tres pantallas, llega a Registration, elige el tipo de cuenta (Rancher o Veterinarian), completa los datos y accede al dashboard de su rol. Si los datos son inválidos se muestran errores en línea y permanece en el formulario; si ya tiene cuenta, pasa a Sign in; si falla la red, se informa el error y se permite reintentar. El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/android-wireflow-01-registro-e-inicio-de-sesion.png" alt="Wireflow Android - Registrarse e iniciar sesión" width="650">
+  <p><i>Figura 3.1.4.2.7. Wireflow Android del user goal «Registrarse e iniciar sesión». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 2. Consultar dashboard
+
+**User goal:** Ver de un vistazo el estado de mi hato, mis actividades y mis alertas (en el caso de la veterinaria, mis clientes y seguimientos pendientes) y entrar al módulo que necesito.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+Con la sesión autenticada, el ganadero llega a su dashboard (animales, actividades y alertas) y abre un módulo desde la barra inferior; el veterinario llega al suyo (clientes y seguimientos) y abre Clients. Las alternativas cubren el primer uso sin datos, la carga del resumen, el trabajo sin conexión (banner offline y acceso al estado de sincronización), la sesión vencida, el servicio no disponible y el acceso no autorizado. El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/android-wireflow-02-consultar-dashboard.png" alt="Wireflow Android - Consultar dashboard" width="518">
+  <p><i>Figura 3.1.4.2.8. Wireflow Android del user goal «Consultar dashboard». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 3. Registrar animal
+
+**User goal:** Registrar un animal nuevo en pocos pasos, incluso cuando estoy en el campo sin conexión.  
+**User Persona:** Jorge Luis Rivas (ganadero)
+
+Desde la lista de animales, el ganadero abre el formulario New animal, completa los datos y guarda; el resultado es el detalle del animal registrado. Si la lista está vacía se ofrece crear el primer animal; los campos incompletos o un tag duplicado se señalan en línea; sin conexión el registro se guarda en el dispositivo y queda pendiente de sincronizar; también puede cambiarse a registro masivo (Bulk). El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/android-wireflow-03-registrar-animal.png" alt="Wireflow Android - Registrar animal" width="650">
+  <p><i>Figura 3.1.4.2.9. Wireflow Android del user goal «Registrar animal». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 4. Consultar o actualizar animal
+
+**User goal:** Encontrar un animal, revisar su información y mantenerla actualizada.  
+**User Persona:** Jorge Luis Rivas (ganadero)
+
+El ganadero busca o selecciona un animal, revisa su detalle, entra a Edit animal, modifica los datos y guarda; el detalle refleja la información actualizada. Una búsqueda sin coincidencias muestra el estado sin resultados; la falta de autorización o un animal archivado dejan el detalle en solo lectura; los datos inválidos se corrigen antes de guardar y un conflicto de sincronización se resuelve en Sync status (Keep mine / Use server). El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/android-wireflow-04-consultar-o-actualizar-animal.png" alt="Wireflow Android - Consultar o actualizar animal" width="650">
+  <p><i>Figura 3.1.4.2.10. Wireflow Android del user goal «Consultar o actualizar animal». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 5. Consultar historial sanitario
+
+**User goal:** Revisar qué vacunas, tratamientos y controles ha recibido un animal para decidir qué hacer a continuación.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El usuario autorizado abre el historial sanitario del animal (el ganadero desde el detalle del animal; el veterinario desde el detalle del cliente y de su paciente) y revisa el detalle de un registro. Las alternativas son el historial vacío, el animal sin registros, el permiso insuficiente, la copia local sin conexión y el acceso revocado o finalizado por el ganadero. El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/android-wireflow-05-historial-sanitario.png" alt="Wireflow Android - Consultar historial sanitario" width="518">
+  <p><i>Figura 3.1.4.2.11. Wireflow Android del user goal «Consultar historial sanitario». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 6. Registrar evento sanitario
+
+**User goal:** Dejar constancia de un evento de salud: reportar un problema (ganadero) o registrar la visita y su seguimiento (veterinaria).  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El ganadero reporta un evento desde el detalle del animal (Report health issue) y el veterinario registra una visita desde el historial del paciente (Record visit); en ambos casos se completa el formulario, se guarda y el evento queda visible en el historial. Los campos obligatorios vacíos se señalan en línea; sin conexión el evento queda guardado localmente y pendiente de sincronizar; sin permiso o con el acceso revocado no se puede registrar; el veterinario puede además programar un seguimiento o descartar los cambios sin guardar. El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/android-wireflow-06-registro-sanitario.png" alt="Wireflow Android - Registrar evento sanitario" width="496">
+  <p><i>Figura 3.1.4.2.12. Wireflow Android del user goal «Registrar evento sanitario». Fuente: elaboración propia.</i></p>
+</div>
 
 <a id="toc-3-1-4-3-mobile-applications-mock-ups"></a>
 
@@ -9090,13 +9236,8 @@ Cada wireflow mostrará cómo cambia la interfaz después de una acción.
 
 Los mock-ups aplican el Design System de AniTec a los wireframes aprobados y muestran contenido representativo, controles táctiles, navegación y estados de la interfaz. Para facilitar su revisión, las 195 pantallas se organizan por tecnología y perfil funcional. Cada lámina se lee de izquierda a derecha y de arriba hacia abajo; los códigos Axx y Fxx conservan el identificador de la exportación original de Android y Flutter, respectivamente.
 
-| Aplicación | IAM | Usuario rancher | Usuario vet | Total |
-|---|---:|---:|---:|---:|
-| Flutter | 5 | 48 | 44 | 97 |
-| Android | 5 | 49 | 44 | 98 |
-| **Total** | **10** | **97** | **88** | **195** |
 
-El prototipo editable se encuentra en [Figma - AniTec 2026-2](https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1).
+El diseño en figma se encuentra en: https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
 
 #### Aplicación Flutter
 
@@ -9138,7 +9279,7 @@ Las siguientes láminas recorren la experiencia del ganadero: dashboard, animale
   <p><i>Figura 3.1.4.3.6. Mock-ups Flutter del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
-##### Usuario vet
+##### Usuario veterinario
 
 Las pantallas del veterinario cubren el dashboard profesional, la gestión de clientes, el historial clínico, el registro y corrección de visitas, el seguimiento, las actividades, los indicadores y la configuración.
 
@@ -9202,7 +9343,7 @@ Las láminas Android mantienen la secuencia funcional del usuario rancher e incl
   <p><i>Figura 3.1.4.3.16. Mock-ups Android del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
-##### Usuario vet
+##### Usuario veterinario
 
 La versión Android del perfil veterinario documenta la gestión de clientes y visitas, los estados operativos, los indicadores, el escaneo, las notificaciones y las opciones de cuenta.
 
@@ -9637,7 +9778,7 @@ La evidencia de ejecución mostrará el resultado integrado del Sprint 1 mediant
 | Producto | Vista o flujo | Entorno / dispositivo | Evidencia                           | Estado     |
 |---|---|---|-------------------------------------|------------|
 | Landing Page | Página principal y responsive | Navegador de escritorio y móvil | Figura 4.2.1.6.2 (landing_despliegue.png)       | Completado |
-| Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Pendiente de captura                | Pendiente  |
+| Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Figura 4.2.1.6.3 (android-login.png) | Completado |
 | Flutter | Autenticación y funciones core comprometidas | Dispositivo o emulador objetivo | Pendiente de captura                | Pendiente  |
 | Web Services | Swagger UI: documentación OpenAPI de la API publicada | Navegador contra <https://anitec-backend.onrender.com/swagger/index.html> | Figura 4.2.1.6.1 (swagger-ui.png) | Completado |
 | Integración | Consumo de API y manejo de errores | Aplicaciones contra backend vigente | Pendiente de captura                | Pendiente  |
@@ -9649,19 +9790,24 @@ La evidencia de ejecución mostrará el resultado integrado del Sprint 1 mediant
 
 La captura demuestra que la documentación interactiva carga desde el entorno publicado y expone los contratos REST usados por el Sprint 1.
 
-- **Execution video:** **Pendiente de completar:** URL del video.
-- **Timing:** **Pendiente:** inicio y duración de cada demostración.
-
 <div align="center">
   <img src="markdown/assets/chapter-4/landing_despliegue.png" width="800">
-  <p><i>Figura 4.2.1.6.2. Landing de AniTec desplegado, Fuente: elaboración propia.</i></p>
+  <p><i>Figura 4.2.1.6.2. Landing de AniTec desplegado. Fuente: elaboración propia.</i></p>
 </div>
 
 Las capturas muestran la implementación de la Landing Page de AniTec en navegadores. Se verificó la correcta visualización del contenido, la navegación entre secciones y la adaptación responsive de la interfaz para distintos tamaños de pantalla.
 
-- **Execution video:** 
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQBmZ8UxBU5zToJUnS4AN161Aa9ocLvYJcSFOja0Zogn_tE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=V8q9eK
-- **Timing:** 0:00 - 1:48 min
+<div align="center">
+  <img src="markdown/assets/chapter-4/android-login.png" width="300">
+  <p><i>Figura 4.2.1.6.3. Ejecución de la aplicación nativa Android mostrando el flujo de Autenticación. Fuente: elaboración propia.</i></p>
+</div>
+
+La captura evidencia el correcto funcionamiento de la aplicación Android instalada en el emulador, mostrando la interfaz nativa para el inicio de sesión de ganaderos y veterinarios.
+
+**Videos de Ejecución del Sprint 1:**
+- **Landing Page:** [Ver video de ejecución (0:00 - 1:48)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQBmZ8UxBU5zToJUnS4AN161Aa9ocLvYJcSFOja0Zogn_tE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=V8q9eK)
+- **Aplicación Android:** [Ver video de ejecución (0:00 - 2:15)](https://upcedupe-my.sharepoint.com/personal/u20221c554_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20221c554%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%2FClipchamp%2FVideo%20Project%2FExports%2FVideo%20Project%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E1bd670fc%2Db74c%2D4708%2Dafd0%2D3ea986759d22)
+- **Backend (Web Services):** **Pendiente de completar:** URL del video del backend.
   <a id="toc-4-2-1-7-services-documentation-evidence-for-sprint-review"></a>
 
 ### 4.2.1.7. Services Documentation Evidence for Sprint Review
@@ -9700,12 +9846,12 @@ La figura respalda que OpenAPI está disponible públicamente y que los endpoint
 
 La evidencia explicará la configuración realizada durante el sprint y demostrará la disponibilidad de cada producto aplicable.
 
-| Product | Platform | Configuration performed | Version / Commit | Public URL or Release | Status |
-|---|---|---|---|---|---|
-| Landing Page | GitHub Pages | Workflow o rama pendientes | Commit pendiente | URL pendiente | Pendiente |
-| Web Services | Render | Docker; variables ASPNETCORE_ENVIRONMENT, ConnectionStrings__DefaultConnection, TokenSettings__Secret, StripeSettings__*; MySQL externo | Deploy Live verificado en Events (Figuras 4.2.1.8.1–4.2.1.8.2) | <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live |
-| Android | Firebase App Distribution | Firma, aplicación y testers pendientes | Versión y commit pendientes | Release pendiente | Pendiente |
-| Flutter | Firebase App Distribution | Plataforma, aplicación y testers pendientes | Versión y commit pendientes | Release pendiente | Pendiente |
+| Product | Platform | Configuration performed                                                                                                                         | Version / Commit                                               | Public URL or Release | Status    |
+|---|---|-------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|---|-----------|
+| Landing Page | GitHub Pages | main, develop                                                                                                                                | Commit 2a88184                                               | https://upc-1asi0730-2610-12206-titan-team-4.github.io/anitec-landing-page/index.html | Live      |
+| Web Services | Render | Docker; variables ASPNETCORE_ENVIRONMENT, ConnectionStrings__DefaultConnection, TokenSettings__Secret, StripeSettings__*; MySQL externo | Deploy Live verificado en Events (Figuras 4.2.1.8.1–4.2.1.8.2) | <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live      |
+| Android | Firebase App Distribution | Registro del proyecto en Firebase (com.anitec.platform). Generación del instalable (.apk) y distribución a testers programada para el siguiente sprint. | Commit 8ade432 | <https://console.firebase.google.com/project/anitec-fc0dc/overview?hl=es-419> | Configurado |                                  | Release pendiente | Pendiente |
+| Flutter | Firebase App Distribution | Plataforma, aplicación y testers pendientes                                                                                                     | Versión y commit pendientes                                    | Release pendiente | Pendiente |
 
 **Pasos ejecutados (Web Services):**
 
@@ -9713,6 +9859,12 @@ La evidencia explicará la configuración realizada durante el sprint y demostra
 2. Configurar secretos de conexión MySQL, JWT y Stripe en Environment (valores no expuestos en el informe).
 3. Verificar estado **Live** en Events y disponibilidad de la URL primaria.
 4. Comprobar que Swagger UI responde en /swagger/index.html.
+
+**Pasos ejecutados (Mobile - Android):**
+
+1. Registro de la aplicación nativa (com.anitec.platform) en la consola de Firebase.
+2. Vinculación del App ID para habilitar los servicios de Google.
+3. La compilación y subida del archivo ejecutable (.apk) a App Distribution queda programada para el próximo ciclo de despliegue.
 
 <div align="center">
   <img src="markdown/assets/chapter-4/backend/render-backend-live.png" width="800">
@@ -9722,6 +9874,11 @@ La evidencia explicará la configuración realizada durante el sprint y demostra
 <div align="center">
   <img src="markdown/assets/chapter-4/backend/render-backend-environment.png" width="800">
   <p><i>Figura 4.2.1.8.2. Evidencia de configuración de despliegue: variables de entorno del backend con valores ocultos. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/firebase-android-release.png" width="800">
+  <p><i>Figura 4.2.1.8.3. Evidencia de configuración: Proyecto Android registrado en la consola de Firebase. Fuente: elaboración propia.</i></p>
 </div>
 
 Las capturas demuestran la publicación del servicio y la administración de secretos fuera del código fuente. Landing, Android y Flutter quedan a cargo de sus responsables.
