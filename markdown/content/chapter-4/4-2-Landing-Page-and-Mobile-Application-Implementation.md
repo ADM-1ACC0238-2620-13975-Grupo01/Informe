@@ -133,11 +133,16 @@ La evidencia incluirá pruebas automatizadas relacionadas con las historias del 
 | TEST-BE-002 | Web Services | Automatizada (xUnit) | **Pendiente:** no hay proyecto de pruebas en el repositorio | **Pendiente:** incorporar suite xUnit | — | No aplicable aún |
 | TEST-LP-003 | Landing Page | Funcional | Navigation | Validar la navegación entre las distintas secciones de la Landing Page. | Navegación y experiencia de usuario | Completado |
 | TEST-LP-004 | Landing Page | Responsive Testing | Responsive Design | Verificar la correcta adaptación de la interfaz en dispositivos móviles y escritorio. | Accesibilidad multiplataforma | Completado |
+| TEST-AN-001 | Android | Automatizada (JUnit) | `AuthViewModelsTest`, `HomeViewModelTest` | Validar flujos de estado de autenticación (Login) y carga del dashboard inicial. | Autenticación de usuario | Completado |
+| TEST-AN-002 | Android | Automatizada (JUnit) | `LivestockDomainTest`, `LivestockUseCasesTest`, `SanitaryTest` | Validar reglas de negocio del dominio de ganado, sanidad y casos de uso. | Gestión de ganado y Sanidad | Completado |
+| TEST-AN-003 | Android | Automatizada (Instrumentada) | `RoomDaoTest` | Verificar operaciones CRUD y persistencia local de la base de datos con Room (Offline-First). | Gestión de ganado | Completado |
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
 |---|---|---|---|---|---|
 | anitec-backend | — | — | — | **Pendiente:** no existen commits de pruebas automatizadas; el repositorio no incluye proyecto `*Tests` / xUnit. | — |
 | anitec-landing-page | main | 2a88184 | chore: add initial project files | Agrega la estructura inicial del proyecto de la Landing Page, incluyendo configuración base y componentes principales para el desarrollo de la interfaz | 2026-09-04 |
+| anitec-android | main | `2f3b903` | feat: add Android project foundation and authentication | Configura la arquitectura base e incluye pruebas unitarias iniciales para los flujos de autenticación (`AuthViewModelsTest`, `HomeViewModelTest`). | 2026-10-01 |
+| anitec-android | main | `8ade432` | feat: add livestock management, health records and rancher dashboard | Implementa la lógica de ganado/sanidad y adjunta las suites de pruebas unitarias e instrumentadas (`LivestockDomainTest`, `SanitaryTest`, `RoomDaoTest`). | 2026-10-01 |
 
 > **Pendiente de completar (backend):** cuando exista proyecto xUnit, ejecutar `dotnet test`, adjuntar captura del resultado en `markdown/assets/chapter-4/backend/` y registrar el commit. Las filas de Landing / Android / Flutter las completa cada responsable.
 
