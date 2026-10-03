@@ -218,12 +218,12 @@ La figura respalda que OpenAPI está disponible públicamente y que los endpoint
 
 La evidencia explicará la configuración realizada durante el sprint y demostrará la disponibilidad de cada producto aplicable.
 
-| Product | Platform | Configuration performed | Version / Commit | Public URL or Release | Status |
-|---|---|---|---|---|---|
-| Landing Page | GitHub Pages | Workflow o rama pendientes | Commit pendiente | URL pendiente | Pendiente |
-| Web Services | Render | Docker; variables `ASPNETCORE_ENVIRONMENT`, `ConnectionStrings__DefaultConnection`, `TokenSettings__Secret`, `StripeSettings__*`; MySQL externo | Deploy Live verificado en Events (Figuras 4.2.1.8.1–4.2.1.8.2) | <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live |
-| Android | Firebase App Distribution | Firma, aplicación y testers pendientes | Versión y commit pendientes | Release pendiente | Pendiente |
-| Flutter | Firebase App Distribution | Plataforma, aplicación y testers pendientes | Versión y commit pendientes | Release pendiente | Pendiente |
+| Product | Platform | Configuration performed                                                                                                                         | Version / Commit                                               | Public URL or Release | Status    |
+|---|---|-------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|---|-----------|
+| Landing Page | GitHub Pages | `main`, `develop`                                                                                                                                | Commit `2a88184`                                               | https://upc-1asi0730-2610-12206-titan-team-4.github.io/anitec-landing-page/index.html | Live      |
+| Web Services | Render | Docker; variables `ASPNETCORE_ENVIRONMENT`, `ConnectionStrings__DefaultConnection`, `TokenSettings__Secret`, `StripeSettings__*`; MySQL externo | Deploy Live verificado en Events (Figuras 4.2.1.8.1–4.2.1.8.2) | <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live      |
+| Android | Firebase App Distribution | Firma, aplicación y testers pendientes                                                                                                          | Versión y commit pendientes                                    | Release pendiente | Pendiente |
+| Flutter | Firebase App Distribution | Plataforma, aplicación y testers pendientes                                                                                                     | Versión y commit pendientes                                    | Release pendiente | Pendiente |
 
 **Pasos ejecutados (Web Services):**
 
