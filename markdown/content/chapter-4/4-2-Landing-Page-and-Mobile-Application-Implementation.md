@@ -175,7 +175,7 @@ La captura demuestra que la documentación interactiva carga desde el entorno pu
 Las capturas muestran la implementación de la Landing Page de AniTec en navegadores. Se verificó la correcta visualización del contenido, la navegación entre secciones y la adaptación responsive de la interfaz para distintos tamaños de pantalla.
 
 <div align="center">
-  <img src="../../assets/chapter-4/mobile/android_login.png" width="300">
+  <img src="../../assets/chapter-4/android_login.png" width="300">
   <p><i>Figura 4.2.1.6.3. Ejecución de la aplicación nativa Android mostrando el flujo de Autenticación. Fuente: elaboración propia.</i></p>
 </div>
 
