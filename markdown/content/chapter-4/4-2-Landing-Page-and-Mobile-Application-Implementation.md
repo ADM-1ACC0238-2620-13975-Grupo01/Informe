@@ -155,7 +155,7 @@ La evidencia de ejecución mostrará el resultado integrado del Sprint 1 mediant
 | Producto | Vista o flujo | Entorno / dispositivo | Evidencia                           | Estado     |
 |---|---|---|-------------------------------------|------------|
 | Landing Page | Página principal y responsive | Navegador de escritorio y móvil | Figura 4.2.1.6.2 (`landing_despliegue.png`)       | Completado |
-| Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Figura 4.2.1.6.3 (`android_login.png`) | Completado |
+| Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Figura 4.2.1.6.3 (`android-login.png`) | Completado |
 | Flutter | Autenticación y funciones core comprometidas | Dispositivo o emulador objetivo | Pendiente de captura                | Pendiente  |
 | Web Services | Swagger UI: documentación OpenAPI de la API publicada | Navegador contra <https://anitec-backend.onrender.com/swagger/index.html> | Figura 4.2.1.6.1 (`swagger-ui.png`) | Completado |
 | Integración | Consumo de API y manejo de errores | Aplicaciones contra backend vigente | Pendiente de captura                | Pendiente  |
@@ -175,7 +175,7 @@ La captura demuestra que la documentación interactiva carga desde el entorno pu
 Las capturas muestran la implementación de la Landing Page de AniTec en navegadores. Se verificó la correcta visualización del contenido, la navegación entre secciones y la adaptación responsive de la interfaz para distintos tamaños de pantalla.
 
 <div align="center">
-  <img src="../../assets/chapter-4/android_login.png" width="300">
+  <img src="../../assets/chapter-4/android-login.png" width="300">
   <p><i>Figura 4.2.1.6.3. Ejecución de la aplicación nativa Android mostrando el flujo de Autenticación. Fuente: elaboración propia.</i></p>
 </div>
 
