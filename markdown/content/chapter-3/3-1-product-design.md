@@ -265,7 +265,7 @@ Los wireframes mostrarán estructura, jerarquía, navegación y estados sin acab
 | Flutter | Ganadero / Veterinario | Pendiente: nombre de pantalla | Pendiente: tarea | Pendiente: US-xxx | Pendiente |
 
 > **Pendiente de completar:** insertar wireframes de Android y Flutter para autenticación, dashboard, fincas, animales e historial sanitario.<br>
-> **Enlaces pendientes:** frames de Figma correspondientes.
+> **Enlaces pendientes:** https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
 
 <a id="toc-3-1-4-2-mobile-applications-wireflow-diagrams"></a>
 
@@ -296,7 +296,7 @@ Los mock-ups aplicarán el Design System a los wireframes aprobados y mostrarán
 | Flutter | Las mismas pantallas y alcance funcional | Componentes Flutter, adaptación a plataforma y estados equivalentes. |
 
 > **Pendiente de completar:** insertar mock-ups de Android y Flutter.<br>
-> **Enlaces pendientes:** frames finales de Figma.
+> **Enlaces pendientes:** https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
 
 <a id="toc-3-1-4-4-mobile-applications-user-flow-diagrams"></a>
 
