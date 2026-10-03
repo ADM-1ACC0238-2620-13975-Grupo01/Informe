@@ -104,13 +104,20 @@ El Sprint Backlog descompone las historias comprometidas en tareas comprobables.
 
 Esta sección registrará únicamente commits que contribuyan al alcance comprometido. Cada evidencia debe poder localizarse en el repositorio y relacionarse con una historia o tarea.
 
-| Repository          | Branch | Commit Id | Commit Message | Commit Message Body                                                                                                                                                                                                                                           | Committed on |
-|---------------------|---|---|---|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---|
-| anitec-backend      | main | `125d53e` | chore: add initial commit with all project files | Incorpora la solución `Anitec.Platform` con bounded contexts (Iam, Profiles, Livestock, Sanitary, Financial, Activities, Analytics, Devices, Metrics, Subscriptions, Clients, Shared), controllers REST, EF Core + MySQL, JWT/BCrypt, Swagger y `Dockerfile`. | 2026-09-04 |
-| anitec-backend      | main | `9831844` | chore: big update to add corrals and animal corral relationship | Extiende Livestock con corrales (`CorralsController`), relación animal–corral, operaciones bulk de animales y validaciones de resources.                                                                                                                      | 2026-09-30 |
-| anitec-landing-page | main | `2a88184`| chore: add initial project files | Agrega la estructura inicial del proyecto de la Landing Page, incluyendo la configuración base, componentes principales y archivos necesarios para el desarrollo de la interfaz de presentación de AniTec.                                                    | 2026-09-04 |
-| anitec-android      | main | `2f3b903` | feat: add Android project foundation and authentication | Implementa la estructura base de la aplicación Android, incluyendo la configuración inicial del proyecto y las funcionalidades de autenticación para el acceso de usuarios.                                                                                   | 2026-10-01 |
-| Informe             | main | `c8b8be7` | docs: update report complete generation | Agrega la estructura inicial del informe de proyecto con sus capitulos y titulos                                                                                                                                                                              | 2026-09-16 |
+### 4.2.1.4. Development Evidence for Sprint Review
+
+Esta sección registrará únicamente commits que contribuyan al alcance comprometido. Cada evidencia debe poder localizarse en el repositorio y relacionarse con una historia o tarea.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
+|---|---|---|---|---|---|
+| anitec-backend | main | `125d53e` | chore: add initial commit with all project files | Incorpora la solución `Anitec.Platform` con bounded contexts (Iam, Profiles, Livestock, Sanitary, Financial, Activities, Analytics, Devices, Metrics, Subscriptions, Clients, Shared), controllers REST, EF Core + MySQL, JWT/BCrypt, Swagger y `Dockerfile`. | 2026-09-04 |
+| anitec-backend | main | `9831844` | chore: big update to add corrals and animal corral relationship | Extiende Livestock con corrales (`CorralsController`), relación animal–corral, operaciones bulk de animales y validaciones de resources. | 2026-09-30 |
+| anitec-landing-page | main | `2a88184`| chore: add initial project files | Agrega la estructura inicial del proyecto de la Landing Page, incluyendo la configuración base, componentes principales y archivos necesarios para el desarrollo de la interfaz de presentación de AniTec. | 2026-09-04 |
+| anitec-android | main | `2f3b903` | feat: add Android project foundation and authentication | Implementa la estructura base nativa usando Clean Architecture. Integra `AuthApiService`, `AuthRepositoryImpl` y persistencia segura de tokens. | 2026-10-01 |
+| anitec-android | main | `8ade432` | feat: add livestock management, health records and rancher dashboard | Refactoriza la capa de dominio y la persistencia local integrando la jerarquía de hatos y animales. Asegura soporte Offline-First para registro. | 2026-10-01 |
+| Informe | main | `c8b8be7` | docs: update report complete generation | Agrega la estructura inicial del informe de proyecto con sus capítulos, títulos y diagramas de arquitectura C4. | 2026-09-16 |
+
+<a id="toc-4-2-1-5-testing-suite-evidence-for-sprint-review"></a>
 
 > **Pendiente de completar:** agregar commits de Landing Page, Android, Flutter e informe según el alcance real. Las filas anteriores corresponden solo al backend.
 
