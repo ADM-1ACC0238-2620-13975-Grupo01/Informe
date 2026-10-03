@@ -257,15 +257,135 @@ La propuesta comprende Android nativo con Kotlin y Jetpack Compose y una aplicac
 
 ### 3.1.4.1. Mobile Applications Wireframes
 
-Los wireframes mostrarán estructura, jerarquía, navegación y estados sin acabado visual definitivo.
+Los wireframes presentan la estructura, la jerarquía y los estados de las aplicaciones móviles antes del acabado visual. Las 188 pantallas se organizan por tecnología y perfil funcional en láminas compactas, siguiendo la presentación de los mock-ups. Cada lámina se lee de izquierda a derecha y de arriba hacia abajo; las etiquetas conservan los identificadores de los archivos originales.
 
-| Aplicación | Rol | Pantalla | Objetivo | User Story | Estado |
-|---|---|---|---|---|---|
-| Android | Ganadero / Veterinario | Pendiente: nombre de pantalla | Pendiente: tarea | Pendiente: US-xxx | Pendiente |
-| Flutter | Ganadero / Veterinario | Pendiente: nombre de pantalla | Pendiente: tarea | Pendiente: US-xxx | Pendiente |
+El diseño en Figma se encuentra en: https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
 
-> **Pendiente de completar:** insertar wireframes de Android y Flutter para autenticación, dashboard, fincas, animales e historial sanitario.<br>
-> **Enlaces pendientes:** https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
+#### Aplicación Flutter
+
+##### IAM
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/flutter-iam-01.jpg" alt="Wireframes Flutter del módulo IAM, lámina 1 de 1" width="650">
+  <p><i>Figura 3.1.4.1.1. Wireframes Flutter del módulo IAM, lámina 1 de 1. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario rancher
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/flutter-rancher-01.jpg" alt="Wireframes Flutter del usuario rancher, lámina 1 de 5" width="650">
+  <p><i>Figura 3.1.4.1.2. Wireframes Flutter del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/flutter-rancher-02.jpg" alt="Wireframes Flutter del usuario rancher, lámina 2 de 5" width="650">
+  <p><i>Figura 3.1.4.1.3. Wireframes Flutter del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/flutter-rancher-03.jpg" alt="Wireframes Flutter del usuario rancher, lámina 3 de 5" width="650">
+  <p><i>Figura 3.1.4.1.4. Wireframes Flutter del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/flutter-rancher-04.jpg" alt="Wireframes Flutter del usuario rancher, lámina 4 de 5" width="650">
+  <p><i>Figura 3.1.4.1.5. Wireframes Flutter del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/flutter-rancher-05.jpg" alt="Wireframes Flutter del usuario rancher, lámina 5 de 5" width="650">
+  <p><i>Figura 3.1.4.1.6. Wireframes Flutter del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario veterinario
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/flutter-vet-01.jpg" alt="Wireframes Flutter del usuario vet, lámina 1 de 5" width="650">
+  <p><i>Figura 3.1.4.1.7. Wireframes Flutter del usuario vet, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/flutter-vet-02.jpg" alt="Wireframes Flutter del usuario vet, lámina 2 de 5" width="650">
+  <p><i>Figura 3.1.4.1.8. Wireframes Flutter del usuario vet, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/flutter-vet-03.jpg" alt="Wireframes Flutter del usuario vet, lámina 3 de 5" width="650">
+  <p><i>Figura 3.1.4.1.9. Wireframes Flutter del usuario vet, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/flutter-vet-04.jpg" alt="Wireframes Flutter del usuario vet, lámina 4 de 5" width="650">
+  <p><i>Figura 3.1.4.1.10. Wireframes Flutter del usuario vet, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/flutter-vet-05.jpg" alt="Wireframes Flutter del usuario vet, lámina 5 de 5" width="650">
+  <p><i>Figura 3.1.4.1.11. Wireframes Flutter del usuario vet, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+#### Aplicación Android
+
+##### IAM
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/android-iam-01.jpg" alt="Wireframes Android del módulo IAM, lámina 1 de 1" width="650">
+  <p><i>Figura 3.1.4.1.12. Wireframes Android del módulo IAM, lámina 1 de 1. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario rancher
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/android-rancher-01.jpg" alt="Wireframes Android del usuario rancher, lámina 1 de 5" width="650">
+  <p><i>Figura 3.1.4.1.13. Wireframes Android del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/android-rancher-02.jpg" alt="Wireframes Android del usuario rancher, lámina 2 de 5" width="650">
+  <p><i>Figura 3.1.4.1.14. Wireframes Android del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/android-rancher-03.jpg" alt="Wireframes Android del usuario rancher, lámina 3 de 5" width="650">
+  <p><i>Figura 3.1.4.1.15. Wireframes Android del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/android-rancher-04.jpg" alt="Wireframes Android del usuario rancher, lámina 4 de 5" width="650">
+  <p><i>Figura 3.1.4.1.16. Wireframes Android del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/android-rancher-05.jpg" alt="Wireframes Android del usuario rancher, lámina 5 de 5" width="650">
+  <p><i>Figura 3.1.4.1.17. Wireframes Android del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario veterinario
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/android-vet-01.jpg" alt="Wireframes Android del usuario vet, lámina 1 de 5" width="650">
+  <p><i>Figura 3.1.4.1.18. Wireframes Android del usuario vet, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/android-vet-02.jpg" alt="Wireframes Android del usuario vet, lámina 2 de 5" width="650">
+  <p><i>Figura 3.1.4.1.19. Wireframes Android del usuario vet, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/android-vet-03.jpg" alt="Wireframes Android del usuario vet, lámina 3 de 5" width="650">
+  <p><i>Figura 3.1.4.1.20. Wireframes Android del usuario vet, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/android-vet-04.jpg" alt="Wireframes Android del usuario vet, lámina 4 de 5" width="650">
+  <p><i>Figura 3.1.4.1.21. Wireframes Android del usuario vet, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/wireframe-sheets/android-vet-05.jpg" alt="Wireframes Android del usuario vet, lámina 5 de 5" width="650">
+  <p><i>Figura 3.1.4.1.22. Wireframes Android del usuario vet, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+</div>
 
 <a id="toc-3-1-4-2-mobile-applications-wireflow-diagrams"></a>
 
@@ -290,13 +410,8 @@ Cada wireflow mostrará cómo cambia la interfaz después de una acción.
 
 Los mock-ups aplican el Design System de AniTec a los wireframes aprobados y muestran contenido representativo, controles táctiles, navegación y estados de la interfaz. Para facilitar su revisión, las 195 pantallas se organizan por tecnología y perfil funcional. Cada lámina se lee de izquierda a derecha y de arriba hacia abajo; los códigos Axx y Fxx conservan el identificador de la exportación original de Android y Flutter, respectivamente.
 
-| Aplicación | IAM | Usuario rancher | Usuario vet | Total |
-|---|---:|---:|---:|---:|
-| Flutter | 5 | 48 | 44 | 97 |
-| Android | 5 | 49 | 44 | 98 |
-| **Total** | **10** | **97** | **88** | **195** |
 
-El prototipo editable se encuentra en [Figma - AniTec 2026-2](https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1).
+El diseño en figma se encuentra en: https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
 
 #### Aplicación Flutter
 
@@ -338,7 +453,7 @@ Las siguientes láminas recorren la experiencia del ganadero: dashboard, animale
   <p><i>Figura 3.1.4.3.6. Mock-ups Flutter del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
-##### Usuario vet
+##### Usuario veterinario
 
 Las pantallas del veterinario cubren el dashboard profesional, la gestión de clientes, el historial clínico, el registro y corrección de visitas, el seguimiento, las actividades, los indicadores y la configuración.
 
@@ -402,7 +517,7 @@ Las láminas Android mantienen la secuencia funcional del usuario rancher e incl
   <p><i>Figura 3.1.4.3.16. Mock-ups Android del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
-##### Usuario vet
+##### Usuario veterinario
 
 La versión Android del perfil veterinario documenta la gestión de clientes y visitas, los estados operativos, los indicadores, el escaneo, las notificaciones y las opciones de cuenta.
 
