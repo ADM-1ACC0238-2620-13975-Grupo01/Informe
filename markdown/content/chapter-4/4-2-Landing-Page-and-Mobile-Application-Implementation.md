@@ -227,7 +227,7 @@ La evidencia explicará la configuración realizada durante el sprint y demostra
 |---|---|-------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|---|-----------|
 | Landing Page | GitHub Pages | `main`, `develop`                                                                                                                                | Commit `2a88184`                                               | https://upc-1asi0730-2610-12206-titan-team-4.github.io/anitec-landing-page/index.html | Live      |
 | Web Services | Render | Docker; variables `ASPNETCORE_ENVIRONMENT`, `ConnectionStrings__DefaultConnection`, `TokenSettings__Secret`, `StripeSettings__*`; MySQL externo | Deploy Live verificado en Events (Figuras 4.2.1.8.1–4.2.1.8.2) | <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live      |
-| Android | Firebase App Distribution | Firma, aplicación y testers pendientes                                                                                                          | Versión y commit pendientes                                    | Release pendiente | Pendiente |
+| Android | Firebase App Distribution | Registro del proyecto en Firebase (`com.anitec.platform`). Generación del instalable (`.apk`) y distribución a testers programada para el siguiente sprint. | Commit `8ade432` | <https://console.firebase.google.com/project/anitec-fc0dc/overview?hl=es-419> | Configurado |                                  | Release pendiente | Pendiente |
 | Flutter | Firebase App Distribution | Plataforma, aplicación y testers pendientes                                                                                                     | Versión y commit pendientes                                    | Release pendiente | Pendiente |
 
 **Pasos ejecutados (Web Services):**
@@ -237,6 +237,12 @@ La evidencia explicará la configuración realizada durante el sprint y demostra
 3. Verificar estado **Live** en Events y disponibilidad de la URL primaria.
 4. Comprobar que Swagger UI responde en `/swagger/index.html`.
 
+**Pasos ejecutados (Mobile - Android):**
+
+1. Registro de la aplicación nativa (`com.anitec.platform`) en la consola de Firebase.
+2. Vinculación del App ID para habilitar los servicios de Google.
+3. La compilación y subida del archivo ejecutable (`.apk`) a App Distribution queda programada para el próximo ciclo de despliegue.
+
 <div align="center">
   <img src="../../assets/chapter-4/backend/render-backend-live.png" width="800">
   <p><i>Figura 4.2.1.8.1. Evidencia de despliegue: anitec-backend en estado Live en Render. Fuente: elaboración propia.</i></p>
@@ -245,6 +251,11 @@ La evidencia explicará la configuración realizada durante el sprint y demostra
 <div align="center">
   <img src="../../assets/chapter-4/backend/render-backend-environment.png" width="800">
   <p><i>Figura 4.2.1.8.2. Evidencia de configuración de despliegue: variables de entorno del backend con valores ocultos. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/chapter-4/mobile/firebase-android-release.png" width="800">
+  <p><i>Figura 4.2.1.8.3. Evidencia de configuración: Proyecto Android registrado en la consola de Firebase. Fuente: elaboración propia.</i></p>
 </div>
 
 Las capturas demuestran la publicación del servicio y la administración de secretos fuera del código fuente. Landing, Android y Flutter quedan a cargo de sus responsables.
