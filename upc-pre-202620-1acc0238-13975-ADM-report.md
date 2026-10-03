@@ -8937,7 +8937,9 @@ La propuesta comprende Android nativo con Kotlin y Jetpack Compose y una aplicac
 
 ### 3.1.4.1. Mobile Applications Wireframes
 
-Los wireframes presentan la estructura, la jerarquía y los estados de las aplicaciones móviles antes del acabado visual. Las 188 pantallas se organizan por tecnología y perfil funcional en láminas compactas, siguiendo la presentación de los mock-ups. Cada lámina se lee de izquierda a derecha y de arriba hacia abajo; las etiquetas conservan los identificadores de los archivos originales.
+Los wireframes representan la estructura funcional de cada pantalla de la aplicación móvil, definiendo la distribución de elementos y flujos de interacción básicos. Sirven como punto de partida para validar la organización visual y funcional del producto.
+
+
 
 El diseño en Figma se encuentra en: https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
 
@@ -9071,7 +9073,7 @@ El diseño en Figma se encuentra en: https://www.figma.com/design/uRmjCeeukXUb2A
 
 ### 3.1.4.2. Mobile Applications Wireflow Diagrams
 
-Cada wireflow muestra cómo cambia la interfaz después de una acción: las pantallas se conectan con flechas rotuladas con el gesto del usuario. La flecha continua representa el *happy path* y las flechas discontinuas rojas, las rutas alternativas (*unhappy paths*); cuando una alternativa no cuenta con una pantalla propia, se representa con un recuadro punteado. Se presenta un wireflow por cada user goal y por cada aplicación (Flutter y Android), con un carril por perfil cuando el objetivo lo realizan tanto el ganadero como el veterinario. Cada wireflow redacta su user goal desde la perspectiva de los User Personas del capítulo II, Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria). La ruta típica de pasos de cada goal es el happy path acordado en la tabla anterior y cada cambio de estado se representa agregando un paso con el wireframe del nuevo estado. Los wireflows reutilizan las pantallas de la sección 3.1.4.1 y son la base de los User Flow Diagrams de la sección 3.1.4.4.
+Cada wireflow muestra cómo cambia la interfaz después de una acción: La flecha continua representa el *happy path* y las flechas discontinuas rojas, las rutas alternativas (*unhappy paths*); cuando una alternativa no cuenta con una pantalla propia, se representa con un recuadro punteado. Se presenta un wireflow por cada user goal, y por perfil cuando el objetivo lo realizan tanto el ganadero como el veterinario. 
 
 | User goal | Actor | Punto inicial | Pasos principales | Alternativas | Resultado |
 |---|---|---|---|---|---|
@@ -9082,7 +9084,6 @@ Cada wireflow muestra cómo cambia la interfaz después de una acción: las pant
 | Consultar historial sanitario | Usuario autorizado | Detalle del animal | Abrir sanidad, filtrar y revisar | Historial vacío o permiso insuficiente | Evento consultado |
 | Registrar evento sanitario | Usuario autorizado | Historial | Seleccionar tipo, completar y guardar | Validación, falta de permiso o sin conexión | Evento registrado o pendiente |
 
-#### Aplicación Flutter
 
 ##### Wireflow 1. Registrarse e iniciar sesión
 
@@ -9093,7 +9094,7 @@ El usuario recorre el onboarding de tres pantallas, llega a Registration, elige 
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-01-registro-e-inicio-de-sesion.png" alt="Wireflow Flutter - Registrarse e iniciar sesión" width="650">
-  <p><i>Figura 3.1.4.2.1. Wireflow Flutter del user goal «Registrarse e iniciar sesión». Fuente: elaboración propia.</i></p>
+  <p><i>Figura 3.1.4.2.1. Wireflow del user goal «Registrarse e iniciar sesión». Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Wireflow 2. Consultar dashboard
@@ -9105,7 +9106,7 @@ Con la sesión autenticada, el ganadero llega a su dashboard (animales, activida
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-02-consultar-dashboard.png" alt="Wireflow Flutter - Consultar dashboard" width="526">
-  <p><i>Figura 3.1.4.2.2. Wireflow Flutter del user goal «Consultar dashboard». Fuente: elaboración propia.</i></p>
+  <p><i>Figura 3.1.4.2.2. Wireflow del user goal «Consultar dashboard». Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Wireflow 3. Registrar animal
@@ -9117,7 +9118,7 @@ Desde la lista de animales, el ganadero abre el formulario New animal, completa 
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-03-registrar-animal.png" alt="Wireflow Flutter - Registrar animal" width="650">
-  <p><i>Figura 3.1.4.2.3. Wireflow Flutter del user goal «Registrar animal». Fuente: elaboración propia.</i></p>
+  <p><i>Figura 3.1.4.2.3. Wireflow del user goal «Registrar animal». Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Wireflow 4. Consultar o actualizar animal
@@ -9129,7 +9130,7 @@ El ganadero busca o selecciona un animal, revisa su detalle, entra a Edit animal
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-04-consultar-o-actualizar-animal.png" alt="Wireflow Flutter - Consultar o actualizar animal" width="650">
-  <p><i>Figura 3.1.4.2.4. Wireflow Flutter del user goal «Consultar o actualizar animal». Fuente: elaboración propia.</i></p>
+  <p><i>Figura 3.1.4.2.4. Wireflow del user goal «Consultar o actualizar animal». Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Wireflow 5. Consultar historial sanitario
@@ -9141,7 +9142,7 @@ El usuario autorizado abre el historial sanitario del animal (el ganadero desde 
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-05-historial-sanitario.png" alt="Wireflow Flutter - Consultar historial sanitario" width="526">
-  <p><i>Figura 3.1.4.2.5. Wireflow Flutter del user goal «Consultar historial sanitario». Fuente: elaboración propia.</i></p>
+  <p><i>Figura 3.1.4.2.5. Wireflow del user goal «Consultar historial sanitario». Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Wireflow 6. Registrar evento sanitario
@@ -9153,97 +9154,37 @@ El ganadero reporta un evento desde el detalle del animal (Report health issue) 
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-06-registro-sanitario.png" alt="Wireflow Flutter - Registrar evento sanitario" width="503">
-  <p><i>Figura 3.1.4.2.6. Wireflow Flutter del user goal «Registrar evento sanitario». Fuente: elaboración propia.</i></p>
+  <p><i>Figura 3.1.4.2.6. Wireflow del user goal «Registrar evento sanitario». Fuente: elaboración propia.</i></p>
 </div>
 
-#### Aplicación Android
-
-##### Wireflow 1. Registrarse e iniciar sesión
-
-**User goal:** Crear mi cuenta con el rol que me corresponde e ingresar a AniTec para llegar a mi dashboard.  
-**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
-
-El usuario recorre el onboarding de tres pantallas, llega a Registration, elige el tipo de cuenta (Rancher o Veterinarian), completa los datos y accede al dashboard de su rol. Si los datos son inválidos se muestran errores en línea y permanece en el formulario; si ya tiene cuenta, pasa a Sign in; si falla la red, se informa el error y se permite reintentar. El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
-
-<div align="center" style="page-break-inside: avoid;">
-  <img src="markdown/assets/chapter-3/wireflow-diagrams/android-wireflow-01-registro-e-inicio-de-sesion.png" alt="Wireflow Android - Registrarse e iniciar sesión" width="650">
-  <p><i>Figura 3.1.4.2.7. Wireflow Android del user goal «Registrarse e iniciar sesión». Fuente: elaboración propia.</i></p>
-</div>
-
-##### Wireflow 2. Consultar dashboard
-
-**User goal:** Ver de un vistazo el estado de mi hato, mis actividades y mis alertas (en el caso de la veterinaria, mis clientes y seguimientos pendientes) y entrar al módulo que necesito.  
-**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
-
-Con la sesión autenticada, el ganadero llega a su dashboard (animales, actividades y alertas) y abre un módulo desde la barra inferior; el veterinario llega al suyo (clientes y seguimientos) y abre Clients. Las alternativas cubren el primer uso sin datos, la carga del resumen, el trabajo sin conexión (banner offline y acceso al estado de sincronización), la sesión vencida, el servicio no disponible y el acceso no autorizado. El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
-
-<div align="center" style="page-break-inside: avoid;">
-  <img src="markdown/assets/chapter-3/wireflow-diagrams/android-wireflow-02-consultar-dashboard.png" alt="Wireflow Android - Consultar dashboard" width="518">
-  <p><i>Figura 3.1.4.2.8. Wireflow Android del user goal «Consultar dashboard». Fuente: elaboración propia.</i></p>
-</div>
-
-##### Wireflow 3. Registrar animal
-
-**User goal:** Registrar un animal nuevo en pocos pasos, incluso cuando estoy en el campo sin conexión.  
-**User Persona:** Jorge Luis Rivas (ganadero)
-
-Desde la lista de animales, el ganadero abre el formulario New animal, completa los datos y guarda; el resultado es el detalle del animal registrado. Si la lista está vacía se ofrece crear el primer animal; los campos incompletos o un tag duplicado se señalan en línea; sin conexión el registro se guarda en el dispositivo y queda pendiente de sincronizar; también puede cambiarse a registro masivo (Bulk). El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
-
-<div align="center" style="page-break-inside: avoid;">
-  <img src="markdown/assets/chapter-3/wireflow-diagrams/android-wireflow-03-registrar-animal.png" alt="Wireflow Android - Registrar animal" width="650">
-  <p><i>Figura 3.1.4.2.9. Wireflow Android del user goal «Registrar animal». Fuente: elaboración propia.</i></p>
-</div>
-
-##### Wireflow 4. Consultar o actualizar animal
-
-**User goal:** Encontrar un animal, revisar su información y mantenerla actualizada.  
-**User Persona:** Jorge Luis Rivas (ganadero)
-
-El ganadero busca o selecciona un animal, revisa su detalle, entra a Edit animal, modifica los datos y guarda; el detalle refleja la información actualizada. Una búsqueda sin coincidencias muestra el estado sin resultados; la falta de autorización o un animal archivado dejan el detalle en solo lectura; los datos inválidos se corrigen antes de guardar y un conflicto de sincronización se resuelve en Sync status (Keep mine / Use server). El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
-
-<div align="center" style="page-break-inside: avoid;">
-  <img src="markdown/assets/chapter-3/wireflow-diagrams/android-wireflow-04-consultar-o-actualizar-animal.png" alt="Wireflow Android - Consultar o actualizar animal" width="650">
-  <p><i>Figura 3.1.4.2.10. Wireflow Android del user goal «Consultar o actualizar animal». Fuente: elaboración propia.</i></p>
-</div>
-
-##### Wireflow 5. Consultar historial sanitario
-
-**User goal:** Revisar qué vacunas, tratamientos y controles ha recibido un animal para decidir qué hacer a continuación.  
-**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
-
-El usuario autorizado abre el historial sanitario del animal (el ganadero desde el detalle del animal; el veterinario desde el detalle del cliente y de su paciente) y revisa el detalle de un registro. Las alternativas son el historial vacío, el animal sin registros, el permiso insuficiente, la copia local sin conexión y el acceso revocado o finalizado por el ganadero. El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
-
-<div align="center" style="page-break-inside: avoid;">
-  <img src="markdown/assets/chapter-3/wireflow-diagrams/android-wireflow-05-historial-sanitario.png" alt="Wireflow Android - Consultar historial sanitario" width="518">
-  <p><i>Figura 3.1.4.2.11. Wireflow Android del user goal «Consultar historial sanitario». Fuente: elaboración propia.</i></p>
-</div>
-
-##### Wireflow 6. Registrar evento sanitario
-
-**User goal:** Dejar constancia de un evento de salud: reportar un problema (ganadero) o registrar la visita y su seguimiento (veterinaria).  
-**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
-
-El ganadero reporta un evento desde el detalle del animal (Report health issue) y el veterinario registra una visita desde el historial del paciente (Record visit); en ambos casos se completa el formulario, se guarda y el evento queda visible en el historial. Los campos obligatorios vacíos se señalan en línea; sin conexión el evento queda guardado localmente y pendiente de sincronizar; sin permiso o con el acceso revocado no se puede registrar; el veterinario puede además programar un seguimiento o descartar los cambios sin guardar. El flujo es equivalente al de la aplicación Flutter y se muestra sobre los frames de Android (412 × 917 px).
-
-<div align="center" style="page-break-inside: avoid;">
-  <img src="markdown/assets/chapter-3/wireflow-diagrams/android-wireflow-06-registro-sanitario.png" alt="Wireflow Android - Registrar evento sanitario" width="496">
-  <p><i>Figura 3.1.4.2.12. Wireflow Android del user goal «Registrar evento sanitario». Fuente: elaboración propia.</i></p>
-</div>
 
 <a id="toc-3-1-4-3-mobile-applications-mock-ups"></a>
 
 ### 3.1.4.3. Mobile Applications Mock-ups
 
-Los mock-ups aplican el Design System de AniTec a los wireframes aprobados y muestran contenido representativo, controles táctiles, navegación y estados de la interfaz. Para facilitar su revisión, las 195 pantallas se organizan por tecnología y perfil funcional. Cada lámina se lee de izquierda a derecha y de arriba hacia abajo; los códigos Axx y Fxx conservan el identificador de la exportación original de Android y Flutter, respectivamente.
+Los mock-ups presentan la propuesta visual de las aplicaciones móviles de AniTec y aplican el Design System definido en la sección 3.1.1 a la estructura validada mediante los wireframes. Las 195 pantallas muestran contenido representativo, controles táctiles, navegación y estados de la interfaz para IAM, el usuario rancher y el usuario veterinario. Para facilitar su revisión se organizan por tecnología y perfil funcional; cada lámina se lee de izquierda a derecha y de arriba hacia abajo, y los códigos Axx y Fxx conservan el identificador de la exportación original de Android y Flutter, respectivamente.
 
+#### Criterios aplicados en los mock-ups
 
-El diseño en figma se encuentra en: https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
+La propuesta mantiene una experiencia coherente entre plataformas sin ignorar las convenciones de cada una. Flutter emplea componentes equivalentes y conserva el mismo orden de las tareas, mientras que Android adapta los controles, la navegación y la retroalimentación a los patrones de Material Design. La siguiente tabla explica cómo se evidencian las decisiones de diseño en las figuras de esta sección.
+
+| Criterio | Aplicación en la propuesta | Evidencia en los mock-ups |
+|---|---|---|
+| Principios de diseño | La consistencia se logra mediante posiciones estables para títulos, tarjetas, navegación y acciones principales. La jerarquía visual prioriza el resumen y la acción más frecuente; la retroalimentación hace visible el resultado de guardar, sincronizar, confirmar o cancelar; y la prevención de errores utiliza validación en línea, confirmaciones y acciones de recuperación. | IAM en las figuras 3.1.4.3.1 y 3.1.4.3.11; estados, formularios y confirmaciones en las figuras 3.1.4.3.2-3.1.4.3.10 y 3.1.4.3.12-3.1.4.3.20. |
+| Elementos visuales y Design System | Se aplican la paleta de verdes, marrones y superficies claras de AniTec; la tipografía Poppins y sus niveles de jerarquía; la cuadrícula base de 8 unidades; tarjetas con bordes redondeados; iconografía consistente; y botones primarios, secundarios y destructivos diferenciados por función. | La identidad se mantiene en todas las láminas; los dashboards, formularios, listas, tarjetas y estados operativos muestran la reutilización de los mismos patrones visuales. |
+| Diseño inclusivo | Los controles táctiles se plantean con un área mínima de 48 × 48 dp y una separación que evita activaciones accidentales. Los estados no dependen solamente del color: incorporan texto, iconos y mensajes. Se contemplan escalado de texto, etiquetas comprensibles, idiomas English y Español, estados sin conexión y una alternativa manual cuando la cámara o el lector QR no están disponibles. | Configuración de idioma, notificaciones y sincronización en las figuras 3.1.4.3.2-3.1.4.3.6 y 3.1.4.3.12-3.1.4.3.16; acceso, errores y recuperación en las figuras 3.1.4.3.7-3.1.4.3.10 y 3.1.4.3.17-3.1.4.3.20. |
+| Arquitectura de información | La organización es jerárquica en los dashboards, por tópicos en los módulos y por audiencia en la navegación diferenciada para ranchers y veterinarios. Las listas usan búsqueda y filtros; los registros e historiales emplean orden secuencial o cronológico; y las etiquetas utilizan vocabulario del dominio como Animals, Activities, Clients, Health history y Finances. | La navegación y agrupación del rancher se observan en las figuras 3.1.4.3.2-3.1.4.3.6 y 3.1.4.3.12-3.1.4.3.16; la del veterinario, en las figuras 3.1.4.3.7-3.1.4.3.10 y 3.1.4.3.17-3.1.4.3.20. |
+| Estados y continuidad de uso | Cada flujo contempla contenido, carga, ausencia de datos, validación, error, confirmación y operación sin conexión cuando corresponde. De esta manera, el usuario conoce el estado del sistema y la acción necesaria para continuar. | Estados vacíos, errores de acceso, pagos, sincronización, notificaciones y confirmaciones distribuidos en las láminas de ambos perfiles. |
+
+Estas decisiones reducen la carga cognitiva porque las funciones se agrupan según la tarea y el rol, las acciones mantienen nombres y posiciones previsibles y los cambios de estado ofrecen retroalimentación inmediata. La propuesta también favorece el reconocimiento sobre el recuerdo: la navegación inferior, los iconos acompañados por etiquetas y las llamadas a la acción permanecen visibles en los puntos de decisión.
+
+El diseño editable y la secuencia completa de pantallas se encuentran en [Figma - AniTec 2026-2](https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1).
 
 #### Aplicación Flutter
 
 ##### IAM
 
-Este conjunto presenta el onboarding, el registro y el inicio de sesión compartidos por los usuarios de la aplicación.
+Este conjunto presenta el onboarding, el registro y el inicio de sesión compartidos por los usuarios de la aplicación. La secuencia progresiva reduce la cantidad de información mostrada en cada paso; los formularios emplean etiquetas visibles, jerarquía tipográfica y una acción primaria destacada. Los mensajes de validación y recuperación ayudan a prevenir errores y permiten continuar sin depender exclusivamente del color.
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-iam-01.jpg" alt="Mock-ups Flutter del módulo IAM" width="650">
@@ -9252,7 +9193,7 @@ Este conjunto presenta el onboarding, el registro y el inicio de sesión compart
 
 ##### Usuario rancher
 
-Las siguientes láminas recorren la experiencia del ganadero: dashboard, animales, actividades, veterinarios, escaneo QR, finanzas, suscripción, configuración y los estados asociados a estas operaciones.
+Las siguientes láminas recorren la experiencia del ganadero: dashboard, animales, actividades, veterinarios, escaneo QR, finanzas, suscripción, configuración y los estados asociados a estas operaciones. El dashboard aplica jerarquía visual para priorizar alertas, indicadores y accesos frecuentes; la navegación agrupa las funciones por tareas del dominio; y las listas combinan etiquetas, búsqueda, filtros y estados. La alternativa de ingreso manual al escaneo, el estado de sincronización y los mensajes de confirmación evidencian continuidad de uso y diseño inclusivo.
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-rancher-01.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 1" width="650">
@@ -9281,7 +9222,7 @@ Las siguientes láminas recorren la experiencia del ganadero: dashboard, animale
 
 ##### Usuario veterinario
 
-Las pantallas del veterinario cubren el dashboard profesional, la gestión de clientes, el historial clínico, el registro y corrección de visitas, el seguimiento, las actividades, los indicadores y la configuración.
+Las pantallas del veterinario cubren el dashboard profesional, la gestión de clientes, el historial clínico, el registro y corrección de visitas, el seguimiento, las actividades, los indicadores y la configuración. La arquitectura por audiencia presenta solamente la información autorizada para este rol; los clientes y pacientes se organizan mediante búsqueda, filtros y orden cronológico; y los estados de acceso revocado, ausencia de registros y corrección de una visita explican cómo recuperar el flujo ante situaciones no ideales.
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-vet-01.jpg" alt="Mock-ups Flutter del usuario vet, lámina 1" width="650">
@@ -9307,7 +9248,7 @@ Las pantallas del veterinario cubren el dashboard profesional, la gestión de cl
 
 ##### IAM
 
-La versión Android conserva el mismo alcance funcional del acceso y adapta la presentación a los patrones visuales de la plataforma.
+La versión Android conserva el mismo alcance funcional del acceso y adapta la presentación a los patrones visuales de Material Design. Mantiene la identidad de AniTec, la jerarquía y las etiquetas del flujo Flutter, pero ajusta campos, botones y controles de navegación a las convenciones de Android para conservar familiaridad y consistencia externa.
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-iam-01.jpg" alt="Mock-ups Android del módulo IAM" width="650">
@@ -9316,7 +9257,7 @@ La versión Android conserva el mismo alcance funcional del acceso y adapta la p
 
 ##### Usuario rancher
 
-Las láminas Android mantienen la secuencia funcional del usuario rancher e incluyen vistas principales, formularios, estados vacíos, confirmaciones, errores y sincronización.
+Las láminas Android mantienen la secuencia funcional del usuario rancher e incluyen vistas principales, formularios, estados vacíos, confirmaciones, errores y sincronización. La misma arquitectura por tareas permite cambiar de plataforma sin reaprender el producto: Inicio resume la situación del hato, Animals concentra la gestión del ganado, Activities organiza el trabajo y More agrupa funciones de menor frecuencia. Los formularios conservan etiquetas persistentes, acciones principales visibles y mensajes que explican cómo corregir o reintentar.
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-rancher-01.jpg" alt="Mock-ups Android del usuario rancher, lámina 1" width="650">
@@ -9345,7 +9286,7 @@ Las láminas Android mantienen la secuencia funcional del usuario rancher e incl
 
 ##### Usuario veterinario
 
-La versión Android del perfil veterinario documenta la gestión de clientes y visitas, los estados operativos, los indicadores, el escaneo, las notificaciones y las opciones de cuenta.
+La versión Android del perfil veterinario documenta la gestión de clientes y visitas, los estados operativos, los indicadores, el escaneo, las notificaciones y las opciones de cuenta. El dashboard prioriza clientes, visitas y seguimientos; los historiales siguen una organización cronológica; y las pantallas de autorización, validación y estados vacíos combinan iconografía, texto y acciones de recuperación. Así, la adaptación a Android conserva tanto el Design System como los criterios de inclusión y arquitectura de información definidos para AniTec.
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-vet-01.jpg" alt="Mock-ups Android del usuario vet, lámina 1" width="650">
