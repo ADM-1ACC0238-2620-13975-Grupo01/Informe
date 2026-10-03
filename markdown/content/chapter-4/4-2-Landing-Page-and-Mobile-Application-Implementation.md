@@ -155,7 +155,7 @@ La evidencia de ejecución mostrará el resultado integrado del Sprint 1 mediant
 | Producto | Vista o flujo | Entorno / dispositivo | Evidencia                           | Estado     |
 |---|---|---|-------------------------------------|------------|
 | Landing Page | Página principal y responsive | Navegador de escritorio y móvil | Figura 4.2.1.6.2 (`landing_despliegue.png`)       | Completado |
-| Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Pendiente de captura                | Pendiente  |
+| Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Figura 4.2.1.6.3 (`android-login.png`) | Completado |
 | Flutter | Autenticación y funciones core comprometidas | Dispositivo o emulador objetivo | Pendiente de captura                | Pendiente  |
 | Web Services | Swagger UI: documentación OpenAPI de la API publicada | Navegador contra <https://anitec-backend.onrender.com/swagger/index.html> | Figura 4.2.1.6.1 (`swagger-ui.png`) | Completado |
 | Integración | Consumo de API y manejo de errores | Aplicaciones contra backend vigente | Pendiente de captura                | Pendiente  |
@@ -167,19 +167,24 @@ La evidencia de ejecución mostrará el resultado integrado del Sprint 1 mediant
 
 La captura demuestra que la documentación interactiva carga desde el entorno publicado y expone los contratos REST usados por el Sprint 1.
 
-- **Execution video:** **Pendiente de completar:** URL del video.
-- **Timing:** **Pendiente:** inicio y duración de cada demostración.
-
 <div align="center">
   <img src="../../assets/chapter-4/landing_despliegue.png" width="800">
-  <p><i>Figura 4.2.1.6.2. Landing de AniTec desplegado, Fuente: elaboración propia.</i></p>
+  <p><i>Figura 4.2.1.6.2. Landing de AniTec desplegado. Fuente: elaboración propia.</i></p>
 </div>
 
 Las capturas muestran la implementación de la Landing Page de AniTec en navegadores. Se verificó la correcta visualización del contenido, la navegación entre secciones y la adaptación responsive de la interfaz para distintos tamaños de pantalla.
 
-- **Execution video:** 
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQBmZ8UxBU5zToJUnS4AN161Aa9ocLvYJcSFOja0Zogn_tE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=V8q9eK
-- **Timing:** 0:00 - 1:48 min
+<div align="center">
+  <img src="../../assets/chapter-4/android-login.png" width="300">
+  <p><i>Figura 4.2.1.6.3. Ejecución de la aplicación nativa Android mostrando el flujo de Autenticación. Fuente: elaboración propia.</i></p>
+</div>
+
+La captura evidencia el correcto funcionamiento de la aplicación Android instalada en el emulador, mostrando la interfaz nativa para el inicio de sesión de ganaderos y veterinarios.
+
+**Videos de Ejecución del Sprint 1:**
+- **Landing Page:** [Ver video de ejecución (0:00 - 1:48)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQBmZ8UxBU5zToJUnS4AN161Aa9ocLvYJcSFOja0Zogn_tE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=V8q9eK)
+- **Aplicación Android:** [Ver video de ejecución (0:00 - 2:15)](https://upcedupe-my.sharepoint.com/personal/u20221c554_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20221c554%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%2FClipchamp%2FVideo%20Project%2FExports%2FVideo%20Project%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E1bd670fc%2Db74c%2D4708%2Dafd0%2D3ea986759d22)
+- **Backend (Web Services):** **Pendiente de completar:** URL del video del backend.
   <a id="toc-4-2-1-7-services-documentation-evidence-for-sprint-review"></a>
 
 ### 4.2.1.7. Services Documentation Evidence for Sprint Review
@@ -222,7 +227,7 @@ La evidencia explicará la configuración realizada durante el sprint y demostra
 |---|---|-------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|---|-----------|
 | Landing Page | GitHub Pages | `main`, `develop`                                                                                                                                | Commit `2a88184`                                               | https://upc-1asi0730-2610-12206-titan-team-4.github.io/anitec-landing-page/index.html | Live      |
 | Web Services | Render | Docker; variables `ASPNETCORE_ENVIRONMENT`, `ConnectionStrings__DefaultConnection`, `TokenSettings__Secret`, `StripeSettings__*`; MySQL externo | Deploy Live verificado en Events (Figuras 4.2.1.8.1–4.2.1.8.2) | <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live      |
-| Android | Firebase App Distribution | Firma, aplicación y testers pendientes                                                                                                          | Versión y commit pendientes                                    | Release pendiente | Pendiente |
+| Android | Firebase App Distribution | Registro del proyecto en Firebase (`com.anitec.platform`). Generación del instalable (`.apk`) y distribución a testers programada para el siguiente sprint. | Commit `8ade432` | <https://console.firebase.google.com/project/anitec-fc0dc/overview?hl=es-419> | Configurado |                                  | Release pendiente | Pendiente |
 | Flutter | Firebase App Distribution | Plataforma, aplicación y testers pendientes                                                                                                     | Versión y commit pendientes                                    | Release pendiente | Pendiente |
 
 **Pasos ejecutados (Web Services):**
@@ -232,6 +237,12 @@ La evidencia explicará la configuración realizada durante el sprint y demostra
 3. Verificar estado **Live** en Events y disponibilidad de la URL primaria.
 4. Comprobar que Swagger UI responde en `/swagger/index.html`.
 
+**Pasos ejecutados (Mobile - Android):**
+
+1. Registro de la aplicación nativa (`com.anitec.platform`) en la consola de Firebase.
+2. Vinculación del App ID para habilitar los servicios de Google.
+3. La compilación y subida del archivo ejecutable (`.apk`) a App Distribution queda programada para el próximo ciclo de despliegue.
+
 <div align="center">
   <img src="../../assets/chapter-4/backend/render-backend-live.png" width="800">
   <p><i>Figura 4.2.1.8.1. Evidencia de despliegue: anitec-backend en estado Live en Render. Fuente: elaboración propia.</i></p>
@@ -240,6 +251,11 @@ La evidencia explicará la configuración realizada durante el sprint y demostra
 <div align="center">
   <img src="../../assets/chapter-4/backend/render-backend-environment.png" width="800">
   <p><i>Figura 4.2.1.8.2. Evidencia de configuración de despliegue: variables de entorno del backend con valores ocultos. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/chapter-4/firebase-android-release.png" width="800">
+  <p><i>Figura 4.2.1.8.3. Evidencia de configuración: Proyecto Android registrado en la consola de Firebase. Fuente: elaboración propia.</i></p>
 </div>
 
 Las capturas demuestran la publicación del servicio y la administración de secretos fuera del código fuente. Landing, Android y Flutter quedan a cargo de sus responsables.
