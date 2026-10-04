@@ -712,9 +712,9 @@ Este flujo se deriva del Wireflow 6. Jorge utiliza Report health issue desde el 
 
 Los prototipos simularán la navegación de los User Flow Diagrams y permitirán comprobar etiquetas, acciones, retroalimentación, recuperación ante errores y consistencia.
 
-| Aplicación | Prototipo Figma | Captura del video | Video en Microsoft Stream | Estado |
-|---|---|---|---|---|
-| Android | URL pendiente | Pendiente | URL pendiente | Pendiente |
-| Flutter | URL pendiente | Pendiente | URL pendiente | Pendiente |
+| Usuario | Prototipo Evidencia | Captura del video | Video en Microsoft Stream |
+|---|---|---|---|
+| Ganadero | <img src="../../assets/chapter-3/prototypingFigmaEvidence.png" width="650">| <img src="../../assets/chapter-3/prototyping.png" width="650">  | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQAoOjKIja11SZkyivBWNnFHAfqWrhmYFjAEtX8G3aZOCPE?e=nkIv3O | 
+| Veterinario | URL pendiente | Pendiente | URL pendiente | 
 
 > **Pendiente de completar:** insertar una captura de cada video y reemplazar los enlaces después de publicar los prototipos y sus demostraciones.
