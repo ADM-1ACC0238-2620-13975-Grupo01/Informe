@@ -221,7 +221,7 @@ El wireframe de escritorio define la distribución del encabezado, propuesta de 
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-3/landing-page/LandingMovil_wireframe.png" alt="Wireframe de movil de la Landing Page" width="500">
+  <img src="../../assets/chapter-3/landing-page/LandingMovil_wireframe1.png" alt="Wireframe de movil de la Landing Page" width="500">
   <p><i>Figura 3.1.3.1.2 Wireframe de movil de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
@@ -240,7 +240,7 @@ El mock-up de escritorio incorpora la paleta, Poppins, imágenes, iconografía y
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-3/landing-page/LandingMovil_MockUp.png" alt="Mock-up de movil de la Landing Page" width="500">
+  <img src="../../assets/chapter-3/landing-page/LandingMovil_MockUp1.png" alt="Mock-up de movil de la Landing Page" width="500">
   <p><i>Figura 3.1.3.2.2 Mock-up de movil de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
