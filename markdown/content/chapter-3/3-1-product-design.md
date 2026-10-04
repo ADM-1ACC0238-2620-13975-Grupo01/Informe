@@ -621,7 +621,7 @@ La versión Android del perfil veterinario documenta la gestión de clientes y v
 
 ### 3.1.4.4. Mobile Applications User Flow Diagrams
 
-Los User Flow Diagrams integrarán los mock-ups con el happy path y las rutas alternativas.
+Los User Flow Diagrams presentan la navegación propuesta para alcanzar cada user goal definido. Se establece un único flujo estándar por objetivo, aplicable tanto a Android como a Flutter, porque ambas implementaciones comparten la misma arquitectura de información, las mismas acciones esenciales y las mismas condiciones de recuperación. Los diagramas se derivan de los wireflows y emplean mock-ups representativos de las vistas involucradas. Para conservar la legibilidad, cada lámina resume el recorrido en tres pantallas principales y concentra las condiciones secundarias en bloques breves; su explicación detallada se mantiene en el texto. La línea verde continua representa el *happy path*; la línea roja discontinua representa los *unhappy paths* que requieren corrección, reintento o recuperación; y la línea ámbar discontinua identifica una ruta alternativa válida que no constituye un error.
 
 | User goal | Happy path | Unhappy paths | Relación |
 |---|---|---|---|
@@ -632,7 +632,79 @@ Los User Flow Diagrams integrarán los mock-ups con el happy path y las rutas al
 | Historial sanitario | Historial disponible | Historial vacío, filtro sin resultados y acceso denegado | US-014 |
 | Registro sanitario | Datos válidos y confirmación | Validación, permiso insuficiente y sin conexión | US-015 |
 
-> **Pendiente de completar:** insertar diagramas Android y Flutter con condiciones y rutas alternativas.
+#### User Flow 1. Registrarse e iniciar sesión
+
+**User goal:** Crear mi cuenta con el rol que me corresponde e ingresar a AniTec para llegar a mi dashboard.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria).
+
+Este flujo se deriva del Wireflow 1. En el *happy path*, la persona recorre el onboarding, elige crear una cuenta o iniciar sesión, completa los datos requeridos y llega al dashboard correspondiente a su rol. Si el registro contiene datos inválidos, se mantienen los valores ingresados y se señalan los campos por corregir. Una cuenta existente conduce a Sign in como ruta alternativa válida. Las credenciales incorrectas permiten reintentar y un fallo de conexión conserva el contexto antes de volver a enviar la solicitud.
+
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/user-flow-diagrams/user-flow-01-registro-inicio-sesion.png" alt="User Flow estándar para registrarse e iniciar sesión" width="650">
+  <p><i>Figura 3.1.4.4.1. User Flow para registrarse e iniciar sesión. Fuente: elaboración propia.</i></p>
+</div>
+
+#### User Flow 2. Consultar dashboard
+
+**User goal:** Ver de un vistazo el estado de mi hato, mis actividades y mis alertas o, para la veterinaria, mis clientes y seguimientos pendientes, y entrar al módulo que necesito.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria).
+
+Este flujo se deriva del Wireflow 2. El *happy path* parte de una sesión autenticada, carga el dashboard ajustado al rol y continúa al módulo elegido desde la navegación. En el primer uso se muestra una llamada a crear la primera finca o agregar el primer cliente; durante la carga se conservan estructuras que anticipan el contenido. Sin conexión se informa el uso de datos locales; una sesión vencida solicita autenticación y los errores de servicio o autorización ofrecen reintento o recuperación de acceso.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/user-flow-diagrams/user-flow-02-consultar-dashboard.png" alt="User Flow estándar para consultar el dashboard" width="650">
+  <p><i>Figura 3.1.4.4.2. User Flow para consultar el dashboard. Fuente: elaboración propia.</i></p>
+</div>
+
+
+#### User Flow 3. Registrar animal
+
+**User goal:** Registrar un animal nuevo en pocos pasos, incluso cuando estoy en el campo sin conexión.  
+**User Persona:** Jorge Luis Rivas (ganadero).
+
+Este flujo se deriva del Wireflow 3. En la ruta esperada, Jorge abre Animals, toca la acción de nuevo registro, completa el formulario, guarda y revisa el detalle creado. Si la lista está vacía se ofrece registrar el primer animal. Los campos incompletos o un tag duplicado mantienen el formulario abierto con mensajes de corrección; sin conexión el registro queda pendiente en Sync status. El formulario Bulk constituye una alternativa válida cuando necesita registrar varios animales.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/user-flow-diagrams/user-flow-03-registrar-animal.png" alt="User Flow estándar para registrar un animal" width="650">
+  <p><i>Figura 3.1.4.4.3. User Flow para registrar un animal. Fuente: elaboración propia.</i></p>
+</div>
+
+#### User Flow 4. Consultar o actualizar animal
+
+**User goal:** Encontrar un animal, revisar su información y mantenerla actualizada.  
+**User Persona:** Jorge Luis Rivas (ganadero).
+
+Este flujo se deriva del Wireflow 4. El *happy path* comienza con la búsqueda o selección de un animal, continúa con la revisión del detalle y la edición y termina mostrando los datos actualizados. Una búsqueda sin coincidencias permite limpiar los filtros; la falta de autorización o el estado archivado mantienen el recurso en solo lectura. Los datos inválidos se corrigen antes de guardar y los conflictos de sincronización se resuelven eligiendo entre la versión local y la versión del servidor.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/user-flow-diagrams/user-flow-04-consultar-actualizar-animal.png" alt="User Flow estándar para consultar o actualizar un animal" width="650">
+  <p><i>Figura 3.1.4.4.4. User Flow para consultar o actualizar un animal. Fuente: elaboración propia.</i></p>
+</div>
+
+#### User Flow 5. Consultar historial sanitario
+
+**User goal:** Revisar qué vacunas, tratamientos y controles ha recibido un animal para decidir qué hacer a continuación.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria).
+
+Este flujo se deriva del Wireflow 5 y muestra los puntos de entrada de ambos perfiles. Jorge parte del detalle del animal y Valeria del cliente o paciente autorizado; ambos abren Health history y seleccionan un registro. Si no existen antecedentes, se ofrece crear el primero; si una búsqueda no devuelve resultados, se modifican sus criterios. El contenido protegido no se muestra sin permiso, la copia local se identifica como potencialmente desactualizada y un acceso revocado finaliza la consulta indicando cómo solicitar una nueva autorización.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/user-flow-diagrams/user-flow-05-historial-sanitario.png" alt="User Flow estándar para consultar el historial sanitario" width="650">
+  <p><i>Figura 3.1.4.4.5. User Flow para consultar el historial sanitario. Fuente: elaboración propia.</i></p>
+</div>
+
+#### User Flow 6. Registrar evento sanitario
+
+**User goal:** Dejar constancia de un evento de salud: reportar un problema como ganadero o registrar la visita y su seguimiento como veterinaria.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria).
+
+Este flujo se deriva del Wireflow 6. Jorge utiliza Report health issue desde el detalle del animal y Valeria utiliza Record visit desde el historial del paciente; ambos completan los datos, guardan y comprueban que el evento aparezca en el historial. Los campos obligatorios vacíos mantienen el formulario abierto, el trabajo sin conexión guarda una copia pendiente y un permiso revocado bloquea el registro. Antes de salir sin guardar se solicita confirmación. Como ruta alternativa válida, Valeria puede programar un seguimiento posterior a la visita.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="../../assets/chapter-3/user-flow-diagrams/user-flow-06-registrar-evento-sanitario.png" alt="User Flow estándar para registrar un evento sanitario" width="650">
+  <p><i>Figura 3.1.4.4.6. User Flow para registrar un evento sanitario. Fuente: elaboración propia.</i></p>
+</div>
 
 <a id="toc-3-1-4-5-mobile-applications-prototyping"></a>
 
