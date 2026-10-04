@@ -715,5 +715,5 @@ Los prototipos simularán la navegación de los User Flow Diagrams y permitirán
 | Usuario | Prototipo Evidencia | Captura del video | Video en Microsoft Stream |
 |---|---|---|---|
 | Ganadero | <img src="../../assets/chapter-3/prototypingFigmaEvidence.png" width="650">| <img src="../../assets/chapter-3/prototyping.png" width="650">  | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQAoOjKIja11SZkyivBWNnFHAfqWrhmYFjAEtX8G3aZOCPE?e=nkIv3O | 
-| Veterinario | URL pendiente | Pendiente | URL pendiente | 
+| Veterinario | <img src="../../assets/chapter-3/prototypingFigmaEvidenceVet.png" width="650"> | <img src="../../assets/chapter-3/prototypingVet.png" width="650"> | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQC1i57fMYVmS5YQVocXyarQAfhuAk37q3v1QPCuDFJ7Yyw?e=KRkjwP | 
 
