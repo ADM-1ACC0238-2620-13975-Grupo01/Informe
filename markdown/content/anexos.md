@@ -80,4 +80,4 @@ Estos enlaces corresponden al trabajo anterior que sirve como punto de partida. 
 
 ## Anexo F. Videos de exposición y validación
 
-Hasta el AV1 no se han incorporado enlaces públicos para el video de exposición, las entrevistas de validación de la aplicación móvil, el video About the Product ni el video About the Team. Estos recursos se añadirán en los hitos que correspondan según el statement del curso.
+Hasta el AV1 no se han incorporado enlaces públicos para el video de exposición, las entrevistas de validación de la aplicación móvil, el video About the Product ni el video About the Team. Estos recursos se añadirán en los hitos que correspondan.

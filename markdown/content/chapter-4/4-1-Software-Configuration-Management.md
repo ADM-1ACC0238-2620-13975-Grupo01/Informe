@@ -8,7 +8,7 @@ La gestión de configuración de AniTec define las herramientas, repositorios, c
 
 ## 4.1.1. Software Development Environment Configuration
 
-Las herramientas se agrupan según la actividad que soportan e incluyen su propósito y su ruta de referencia (servicios en línea) o de descarga (programas instalados). Las tecnologías obligatorias del enunciado son Figma, Lucidchart, Structurizr, PlantUML, HTML5/CSS3/JavaScript, ASP.NET Core con OpenAPI vía Swagger, Kotlin en Android, Flutter con Dart, Trello y Git con GitHub. Todo integrante debe utilizar versiones compatibles con los repositorios y registrar cualquier cambio de versión que afecte la compilación.
+Las herramientas se agrupan según la actividad que soportan e incluyen su propósito y su ruta de referencia (servicios en línea) o de descarga (programas instalados). Las tecnologías del proyecto son Figma, Lucidchart, Structurizr, PlantUML, HTML5/CSS3/JavaScript, ASP.NET Core con OpenAPI vía Swagger, Kotlin en Android, Flutter con Dart, Trello y Git con GitHub. Todo integrante debe utilizar versiones compatibles con los repositorios y registrar cualquier cambio de versión que afecte la compilación.
 
 **Project Management**
 
@@ -216,8 +216,8 @@ Cada producto se configura y publica de manera independiente, pero las aplicacio
 
 | Producto | Repositorio | Plataforma | URL o identificador | Estado |
 |---|---|---|---|---|
-| Landing Page | `anitec-landing-page` | GitHub Pages | **Pendiente de completar:** URL pública | Pendiente de publicar |
-| Web Services | `anitec-backend` | Render (Docker) | **Pendiente de completar:** URL pública de la API y de Swagger | Pendiente de publicar |
+| Landing Page | `anitec-landing-page` | GitHub Pages | <https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/> | Publicada |
+| Web Services | `anitec-backend` | Render (Docker) | API: <https://anitec-backend-android.onrender.com>. Swagger: <https://anitec-backend-android.onrender.com/swagger/index.html> | Publicado |
 | Android | `anitec-android` | Firebase App Distribution | App ID `1:969068830564:android:5a2dafc1bf9a7f44652471` (paquete `com.anitec.platform`) | Aplicación registrada; release pendiente |
 | Flutter | **Pendiente:** repositorio | Firebase App Distribution | App ID `1:969068830564:ios:0bb12cea32f3d196652471` (registro previo) | Registro previo; desarrollo y release pendientes |
 
@@ -237,13 +237,13 @@ La Landing Page es un sitio estático (`index.html` y carpeta `assets`), por lo 
 1. Integrar el contenido aprobado en la rama `main` del repositorio `anitec-landing-page`.
 2. En GitHub, abrir **Settings → Pages** del repositorio.
 3. En **Build and deployment**, elegir **Deploy from a branch**, seleccionar la rama `main` y la carpeta `/ (root)`, y guardar.
-4. Esperar a que la acción de publicación termine. La URL tendrá la forma `https://<organización>.github.io/anitec-landing-page/`.
+4. Esperar a que la acción de publicación termine. La URL tiene la forma `https://<organización>.github.io/anitec-landing-page/`; la del proyecto es <https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/>.
 5. Verificar desde la URL pública la navegación entre secciones, la carga de recursos, el diseño responsive en escritorio y móvil, el cambio de idioma, la accesibilidad básica y el enlace a los Términos de Servicio en el pie de página.
-6. Registrar la URL en esta sección y en 4.2.1.8.
+6. Registrar la URL en esta sección y en 4.2.1.8. Ya está registrada en ambas.
 
 **Web Services: Render**
 
-El backend se publica desde el repositorio `anitec-backend` con Docker. Requiere una base de datos MySQL accesible por Internet, porque Render no ofrece MySQL administrado.
+El backend se publica desde la rama `main` del repositorio `anitec-backend` (<https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend/tree/main>) con Docker, como el servicio `anitec-backend-android`. Requiere una base de datos MySQL accesible por Internet, porque Render no ofrece MySQL administrado.
 
 1. **Base de datos.** Crear una base MySQL 8 en un proveedor externo y anotar servidor, puerto, usuario, contraseña y nombre de la base. No es necesario crear las tablas: la API aplica las migraciones de Entity Framework Core al iniciar (`Database.Migrate()`), incluidas las de corrales y del correo del usuario.
 2. **Servicio.** En Render, crear un **New → Web Service**, conectar el repositorio `anitec-backend`, elegir la rama `main`, el entorno **Docker** (usa el `Dockerfile` de la raíz) y el plan Free.
@@ -264,11 +264,11 @@ El backend se publica desde el repositorio `anitec-backend` con Docker. Requiere
 7. **Verificación.** Abrir `/swagger/index.html` en la URL pública, registrar un usuario, iniciar sesión, autorizar con el token en Swagger y consultar `GET /api/v1/animals`.
 8. **Consideraciones del plan gratuito.** El servicio se suspende tras un periodo de inactividad y la primera solicitud posterior puede tardar casi un minuto. El disco es efímero: las fotos de animales guardadas en `wwwroot/uploads/animals` se pierden al reiniciar el servicio, por lo que, para producción, se requiere un almacenamiento externo.
 
-La URL pública de la API y de Swagger se registrará en la tabla de esta sección cuando el servicio esté publicado. La evidencia siguiente muestra la configuración del servicio en Render, con las variables ocultas; se reemplazará por las capturas del despliegue final.
+El servicio quedó publicado en <https://anitec-backend-android.onrender.com> y su documentación Swagger en <https://anitec-backend-android.onrender.com/swagger/index.html>. Al verificarlo se comprobó que Swagger responde y que los endpoints protegidos devuelven `401` sin token. La evidencia siguiente muestra el servicio en Render y la configuración de sus variables, con los valores ocultos.
 
 <div align="center">
   <img src="../../assets/chapter-4/backend/render-backend-live.png" width="800">
-  <p><i>Figura 4.1.4.2. Servicio anitec-backend en Render con estado Live y URL pública. Fuente: elaboración propia (captura de Render).</i></p>
+  <p><i>Figura 4.1.4.2. Servicio anitec-backend-android en Render con estado Live y URL pública. Fuente: elaboración propia (captura de Render).</i></p>
 </div>
 
 <div align="center">
@@ -280,7 +280,7 @@ La URL pública de la API y de Swagger se registrará en la tabla de esta secci�
 
 El proyecto Firebase «Anitec» (plan Spark) ya tiene registrada la aplicación «AniTec Android» con el nombre de paquete `com.anitec.platform` y el App ID indicado en la tabla. Para publicar una versión:
 
-1. **URL de la API.** La compilación `release` usa la dirección configurada en `API_BASE_URL` (`app/build.gradle.kts`), hoy `https://anitec-backend.onrender.com/api/v1/`. Debe actualizarse a la URL final del backend antes de generar la versión.
+1. **URL de la API.** La compilación `release` usa la dirección configurada en `API_BASE_URL` (`app/build.gradle.kts`), que apunta a `https://anitec-backend-android.onrender.com/api/v1/`, el backend publicado. Debe revisarse antes de generar cada versión.
 2. **Versión.** Incrementar `versionCode` y asignar `versionName` según Semantic Versioning (actualmente `1` y `0.1.0`).
 3. **Firma.** Crear un keystore con `keytool -genkeypair` y guardarlo fuera del repositorio (los archivos `*.jks` y `*.keystore` están en `.gitignore`). Definir `signingConfigs` en `app/build.gradle.kts` leyendo las contraseñas desde `local.properties` o variables de entorno. **Pendiente:** el proyecto aún no tiene configurada la firma de la compilación `release`.
 4. **Compilación.** Ejecutar `./gradlew assembleRelease`. El archivo resultante es `app/build/outputs/apk/release/app-release.apk`.

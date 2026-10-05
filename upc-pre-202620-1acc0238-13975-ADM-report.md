@@ -89,6 +89,7 @@ Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicacion
 - Landing page: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page
 - Frontend web: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend
 - Backend: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend
+- Android: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-android
 
 ## **AV1. Distribución del trabajo**
 
@@ -283,6 +284,8 @@ El repositorio del informe conserva el historial de los cambios documentales del
 - [3.1. Product design](#toc-3-1-product-design)
   - [3.1.1. Style Guidelines](#toc-3-1-1-style-guidelines)
     - [3.1.1.1. General Style Guidelines](#toc-3-1-1-1-general-style-guidelines)
+    - [3.1.1.2. Web Style Guidelines](#toc-3-1-1-2-web-style-guidelines)
+    - [3.1.1.3. Mobile Style Guidelines](#toc-3-1-1-3-mobile-style-guidelines)
   - [3.1.2. Information Architecture](#toc-3-1-2-information-architecture)
     - [3.1.2.1. Organization Systems](#toc-3-1-2-1-organization-systems)
     - [3.1.2.2. Labelling Systems](#toc-3-1-2-2-labelling-systems)
@@ -1608,7 +1611,7 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   <tbody>
     <tr><td>EP-001</td><td>Landing Page</td><td>Comunica la propuesta de valor, los segmentos atendidos y los canales de acceso a las aplicaciones móviles de AniTec.</td></tr>
     <tr><td>EP-002</td><td>Identity and Access Management</td><td>Gestiona el registro, la autenticación, la sesión y la autorización de ganaderos y veterinarios.</td></tr>
-    <tr><td>EP-003</td><td>Farm and Livestock Management</td><td>Permite organizar fincas y registrar, consultar, actualizar y archivar animales desde las aplicaciones móviles.</td></tr>
+    <tr><td>EP-003</td><td>Farm and Livestock Management</td><td>Permite organizar fincas y corrales y registrar, consultar, actualizar y archivar animales, con su fotografía, desde las aplicaciones móviles.</td></tr>
     <tr><td>EP-004</td><td>Sanitary Management</td><td>Centraliza incidencias, diagnósticos, tratamientos, controles e historiales sanitarios de los animales.</td></tr>
     <tr><td>EP-005</td><td>Veterinary Collaboration</td><td>Gestiona la relación autorizada entre ganaderos y veterinarios para el seguimiento de clientes y pacientes.</td></tr>
     <tr><td>EP-006</td><td>Activities and Notifications</td><td>Organiza actividades ganaderas y sanitarias y genera recordatorios en los dispositivos móviles.</td></tr>
@@ -2956,6 +2959,68 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
 </table>
 
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style="text-align: center;">Story ID</th>
+    <th style="text-align: center;">User</th>
+    <th style="text-align: center;">Priority</th>
+    <th style="text-align: center;">Epic</th>
+  </tr>
+  <tr>
+    <td>US-044</td>
+    <td>Ganadero</td>
+    <td>Must Have</td>
+    <td>EP-003</td>
+  </tr>
+  <tr>
+    <th style="text-align: center;">Title</th>
+    <td colspan="3">Gestionar los corrales de una finca</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero crear, editar y eliminar los corrales de mis fincas para organizar mis animales según el lugar donde se encuentran.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Alta de un corral</b><br><b>Given</b> el ganadero tiene una finca registrada y proporciona el nombre del corral<br><b>When</b> el ganadero solicita crear el corral<br><b>Then</b> el sistema asocia el corral con la finca y lo ofrece para ubicar animales<br><br><b>Scenario 2: Datos incompletos</b><br><b>Given</b> el ganadero no proporciona el nombre del corral<br><b>When</b> el ganadero solicita crearlo<br><b>Then</b> el sistema rechaza la operación e indica el dato obligatorio<br><br><b>Scenario 3: Eliminación de un corral</b><br><b>Given</b> el ganadero tiene un corral registrado<br><b>When</b> el ganadero confirma su eliminación<br><b>Then</b> el sistema elimina el corral y deja de ofrecerlo en la finca</td>
+  </tr>
+</table>
+
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style="text-align: center;">Story ID</th>
+    <th style="text-align: center;">User</th>
+    <th style="text-align: center;">Priority</th>
+    <th style="text-align: center;">Epic</th>
+  </tr>
+  <tr>
+    <td>US-045</td>
+    <td>Ganadero</td>
+    <td>Should Have</td>
+    <td>EP-003</td>
+  </tr>
+  <tr>
+    <th style="text-align: center;">Title</th>
+    <td colspan="3">Adjuntar una fotografía al animal</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como ganadero, quiero adjuntar una fotografía a un animal para reconocerlo visualmente en su ficha.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Fotografía válida</b><br><b>Given</b> el ganadero registra o edita un animal y proporciona una imagen válida<br><b>When</b> el ganadero guarda el animal<br><b>Then</b> el sistema almacena la imagen y la asocia con el animal para mostrarla en su ficha<br><br><b>Scenario 2: Imagen no admitida</b><br><b>Given</b> la imagen supera el tamaño máximo o no tiene un formato admitido<br><b>When</b> el ganadero intenta adjuntarla<br><b>Then</b> el sistema rechaza la imagen e informa el motivo sin perder los demás datos del animal</td>
+  </tr>
+</table>
+
 ### Technical Stories
 
 La estrategia técnica de AniTec considera Android nativo y Flutter porque la selección de un enfoque multiplataforma debe evaluar su adopción, mantenibilidad y consistencia entre plataformas (Jošt & Taneski, 2025). Además, las historias técnicas incorporan pruebas unitarias, de interfaz e integración en distintas configuraciones, debido a que la evidencia reciente identifica una adopción y cobertura todavía limitadas de las pruebas automatizadas en proyectos Android reales (Mahmud et al., 2025).
@@ -3484,7 +3549,7 @@ La siguiente matriz hace trazable cada condición tecnológica obligatoria con u
   </tr>
   <tr>
     <th>Timebox</th>
-    <td colspan="3">Entre 8 y 16 horas dentro del Sprint 1.</td>
+    <td colspan="3">Entre 8 y 16 horas dentro del Sprint 2, antes de iniciar TS-010.</td>
   </tr>
   <tr>
     <th colspan="4">Acceptance Criteria</th>
@@ -3569,7 +3634,7 @@ El Impact Mapping conecta objetivos SMART del piloto con los User Personas, los 
       <td>Jorge Luis Rivas — Ganadero</td>
       <td>Registra la información en el lugar donde ocurre y deja de postergarla por falta de una computadora.</td>
       <td>Gestión móvil de fincas y animales.</td>
-      <td>Como ganadero, deseo registrar y consultar mis animales desde el teléfono para mantener su trazabilidad. US-008 a US-013.</td>
+      <td>Como ganadero, deseo registrar y consultar mis animales desde el teléfono para mantener su trazabilidad. US-008 a US-013, US-044 y US-045.</td>
     </tr>
     <tr>
       <td>Jorge Luis Rivas — Ganadero</td>
@@ -3617,14 +3682,14 @@ El Impact Mapping conecta objetivos SMART del piloto con los User Personas, los 
 
 ## 2.4.3. Product Backlog
 
-El Product Backlog contiene todas las User Stories, Technical Stories y Spike Stories definidas en esta sección. Como exige el statement, el orden lo determina el valor para el negocio: al inicio se ubican las historias del core del producto —registro y consulta de animales y fincas, seguimiento sanitario, colaboración autorizada con veterinarios, recordatorios, trabajo sin conexión e identificación mediante QR— y no las de autenticación o seguridad, que se ubican después como procesos de soporte. Las historias de la landing page se consideran desde el Sprint 1. Las historias técnicas y los spikes se colocan después del core que habilitan en el Sprint 1 y inmediatamente antes de las historias que habilitan en los sprints posteriores. Todas las estimaciones utilizan la escala 1, 2, 3, 5 u 8.
+El Product Backlog contiene todas las User Stories, Technical Stories y Spike Stories definidas en esta sección. El orden lo determina el valor para el negocio: al inicio se ubican las historias del core del producto —registro y consulta de animales y fincas, seguimiento sanitario, colaboración autorizada con veterinarios, recordatorios, trabajo sin conexión e identificación mediante QR— y no las de autenticación o seguridad, que se ubican después como procesos de soporte. Las historias de la landing page se consideran desde el Sprint 1. Las historias técnicas y los spikes se colocan después del core que habilitan en el Sprint 1 y inmediatamente antes de las historias que habilitan en los sprints posteriores. Todas las estimaciones utilizan la escala 1, 2, 3, 5 u 8. Al planificar el Sprint 1 (sección 4.2.1.1), el backlog incorporó US-044 y US-045 y adelantó US-014, US-015 y US-016 al Sprint 1, mientras que TS-002 y SP-001 pasaron al Sprint 2.
 
 **Producto mínimo viable (MVP).** El MVP contiene los procesos core validados en las entrevistas y en el Impact Mapping: gestión móvil de fincas y animales (BG-01), seguimiento sanitario y recordatorios (BG-02), colaboración entre ganaderos y veterinarios (BG-03) e identificación de animales (BG-04), junto con la base técnica, el acceso y la landing page que permiten usarlos. Está formado por las historias de los Sprints 1 y 2, excepto US-003 y SP-002, y queda completo al cierre del Sprint 2 (AV2). El Sprint 3 agrega el cierre de la trazabilidad sanitaria y de la sincronización, la suscripción y los pagos, la analítica, la accesibilidad, el idioma, las pruebas automatizadas y la distribución.
 
 La distribución considera los hitos del curso:
 
-- **Sprint 1 — TB1, semana 7:** landing page desplegada, backend al 70 %, bases de Android y Flutter y pantallas core de acceso y gestión de animales.
-- **Sprint 2 — AV2, semana 12:** backend al 100 % y principales funciones core de sanidad, colaboración veterinaria, notificaciones, trabajo offline e identificación mediante cámara.
+- **Sprint 1 — TB1, semana 7:** landing page desplegada, backend al 70 %, base de la aplicación Android y pantallas core de acceso, gestión de fincas, corrales y animales, y registros sanitarios básicos.
+- **Sprint 2 — AV2, semana 12:** backend al 100 %, base de la aplicación Flutter y principales funciones core de sanidad, colaboración veterinaria, notificaciones, trabajo offline e identificación mediante cámara.
 - **Sprint 3 — TB2, semana 15:** cierre de trazabilidad sanitaria y sincronización, reportes, pagos, accesibilidad, pruebas, distribución y aplicación completa según el backlog.
 
 <table>
@@ -3643,61 +3708,63 @@ La distribución considera los hitos del curso:
     <tr><td>3</td><td>US-013</td><td>Consultar el detalle de un animal</td><td>3</td><td>Sprint 1</td></tr>
     <tr><td>4</td><td>US-009</td><td>Registrar y actualizar una finca</td><td>5</td><td>Sprint 1</td></tr>
     <tr><td>5</td><td>US-008</td><td>Consultar las fincas registradas</td><td>3</td><td>Sprint 1</td></tr>
-    <tr><td>6</td><td>US-012</td><td>Actualizar o archivar un animal</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>7</td><td>US-001</td><td>Comprender la propuesta de valor de AniTec</td><td>3</td><td>Sprint 1</td></tr>
-    <tr><td>8</td><td>US-002</td><td>Conocer las soluciones para cada segmento</td><td>3</td><td>Sprint 1</td></tr>
-    <tr><td>9</td><td>TS-013</td><td>Adaptar y documentar los servicios backend para móviles</td><td>8</td><td>Sprint 1</td></tr>
-    <tr><td>10</td><td>TS-004</td><td>Integrar las aplicaciones con la API REST interna</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>11</td><td>TS-003</td><td>Definir la arquitectura móvil por capas y bounded contexts</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>12</td><td>TS-001</td><td>Configurar la aplicación Android nativa</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>13</td><td>TS-002</td><td>Configurar la aplicación multiplataforma con Flutter</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>14</td><td>TS-005</td><td>Implementar persistencia local segura en Android</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>15</td><td>US-004</td><td>Registrar una cuenta según el rol</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>16</td><td>US-005</td><td>Iniciar sesión</td><td>3</td><td>Sprint 1</td></tr>
-    <tr><td>17</td><td>US-007</td><td>Acceder únicamente a información autorizada</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>18</td><td>US-006</td><td>Mantener y finalizar la sesión móvil</td><td>3</td><td>Sprint 1</td></tr>
-    <tr><td>19</td><td>TS-008</td><td>Proteger credenciales y datos de sesión</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>20</td><td>SP-001</td><td>Investigar identificación de animales con Google ML Kit</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>21</td><td>US-003</td><td>Acceder a una landing page adaptable e internacionalizada</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>22</td><td>US-015</td><td>Registrar una incidencia sanitaria</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>23</td><td>US-016</td><td>Registrar diagnóstico y tratamiento</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>24</td><td>US-017</td><td>Consultar el historial sanitario de un animal</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>25</td><td>US-021</td><td>Aceptar o rechazar acceso veterinario</td><td>3</td><td>Sprint 2</td></tr>
-    <tr><td>26</td><td>US-024</td><td>Consultar antecedentes de un paciente autorizado</td><td>3</td><td>Sprint 2</td></tr>
-    <tr><td>27</td><td>US-023</td><td>Consultar clientes y pacientes autorizados</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>28</td><td>US-020</td><td>Recibir una solicitud de seguimiento veterinario</td><td>3</td><td>Sprint 2</td></tr>
-    <tr><td>29</td><td>US-014</td><td>Consultar eventos sanitarios</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>6</td><td>US-044</td><td>Gestionar los corrales de una finca</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>7</td><td>US-012</td><td>Actualizar o archivar un animal</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>8</td><td>US-015</td><td>Registrar una incidencia sanitaria</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>9</td><td>US-016</td><td>Registrar diagnóstico y tratamiento</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>10</td><td>US-014</td><td>Consultar eventos sanitarios</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>11</td><td>US-045</td><td>Adjuntar una fotografía al animal</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>12</td><td>US-001</td><td>Comprender la propuesta de valor de AniTec</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>13</td><td>US-002</td><td>Conocer las soluciones para cada segmento</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>14</td><td>TS-013</td><td>Adaptar y documentar los servicios backend para móviles</td><td>8</td><td>Sprint 1</td></tr>
+    <tr><td>15</td><td>TS-004</td><td>Integrar las aplicaciones con la API REST interna</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>16</td><td>TS-003</td><td>Definir la arquitectura móvil por capas y bounded contexts</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>17</td><td>TS-001</td><td>Configurar la aplicación Android nativa</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>18</td><td>TS-005</td><td>Implementar persistencia local segura en Android</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>19</td><td>US-004</td><td>Registrar una cuenta según el rol</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>20</td><td>US-005</td><td>Iniciar sesión</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>21</td><td>US-007</td><td>Acceder únicamente a información autorizada</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>22</td><td>US-006</td><td>Mantener y finalizar la sesión móvil</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>23</td><td>TS-008</td><td>Proteger credenciales y datos de sesión</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>24</td><td>US-003</td><td>Acceder a una landing page adaptable e internacionalizada</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>25</td><td>US-017</td><td>Consultar el historial sanitario de un animal</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>26</td><td>US-021</td><td>Aceptar o rechazar acceso veterinario</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>27</td><td>US-024</td><td>Consultar antecedentes de un paciente autorizado</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>28</td><td>US-023</td><td>Consultar clientes y pacientes autorizados</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>29</td><td>US-020</td><td>Recibir una solicitud de seguimiento veterinario</td><td>3</td><td>Sprint 2</td></tr>
     <tr><td>30</td><td>US-022</td><td>Revocar el acceso de un veterinario</td><td>3</td><td>Sprint 2</td></tr>
     <tr><td>31</td><td>TS-009</td><td>Implementar notificaciones móviles</td><td>5</td><td>Sprint 2</td></tr>
     <tr><td>32</td><td>US-026</td><td>Gestionar una actividad o recordatorio</td><td>5</td><td>Sprint 2</td></tr>
     <tr><td>33</td><td>US-027</td><td>Recibir una notificación de actividad</td><td>5</td><td>Sprint 2</td></tr>
     <tr><td>34</td><td>US-025</td><td>Consultar actividades programadas</td><td>3</td><td>Sprint 2</td></tr>
-    <tr><td>35</td><td>TS-006</td><td>Implementar persistencia local en Flutter</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>36</td><td>US-029</td><td>Consultar información esencial sin conexión</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>37</td><td>US-030</td><td>Guardar trabajo pendiente sin conexión</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>38</td><td>TS-007</td><td>Implementar sincronización idempotente</td><td>8</td><td>Sprint 2</td></tr>
-    <tr><td>39</td><td>US-031</td><td>Sincronizar operaciones pendientes</td><td>8</td><td>Sprint 2</td></tr>
-    <tr><td>40</td><td>TS-010</td><td>Integrar identificación QR mediante Google ML Kit</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>41</td><td>US-033</td><td>Identificar un animal mediante código QR</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>42</td><td>US-034</td><td>Identificar un animal sin utilizar la cámara</td><td>3</td><td>Sprint 2</td></tr>
-    <tr><td>43</td><td>SP-002</td><td>Investigar la integración de Stripe para suscripciones móviles</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>44</td><td>US-019</td><td>Programar un control sanitario posterior</td><td>3</td><td>Sprint 3</td></tr>
-    <tr><td>45</td><td>US-028</td><td>Atender o reprogramar una actividad</td><td>3</td><td>Sprint 3</td></tr>
-    <tr><td>46</td><td>US-032</td><td>Resolver errores o conflictos de sincronización</td><td>8</td><td>Sprint 3</td></tr>
-    <tr><td>47</td><td>US-018</td><td>Corregir un registro sanitario con trazabilidad</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>48</td><td>US-038</td><td>Consultar planes de suscripción</td><td>3</td><td>Sprint 3</td></tr>
-    <tr><td>49</td><td>TS-011</td><td>Integrar el checkout externo de Stripe</td><td>8</td><td>Sprint 3</td></tr>
-    <tr><td>50</td><td>US-039</td><td>Iniciar un pago mediante un proveedor externo</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>51</td><td>US-040</td><td>Consultar el resultado del pago y la suscripción</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>52</td><td>TS-012</td><td>Aplicar internacionalización y accesibilidad móvil</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>53</td><td>US-042</td><td>Utilizar la aplicación con necesidades de accesibilidad</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>54</td><td>US-043</td><td>Comprender errores y estados de conectividad</td><td>3</td><td>Sprint 3</td></tr>
-    <tr><td>55</td><td>TS-015</td><td>Configurar compilación y distribución de versiones móviles</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>56</td><td>US-035</td><td>Consultar indicadores del hato</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>57</td><td>US-036</td><td>Consultar indicadores sanitarios de clientes</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>58</td><td>US-041</td><td>Cambiar el idioma de la aplicación</td><td>3</td><td>Sprint 3</td></tr>
-    <tr><td>59</td><td>TS-014</td><td>Automatizar pruebas de los flujos móviles críticos</td><td>8</td><td>Sprint 3</td></tr>
-    <tr><td>60</td><td>US-037</td><td>Registrar y consultar movimientos financieros</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>35</td><td>TS-002</td><td>Configurar la aplicación multiplataforma con Flutter</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>36</td><td>TS-006</td><td>Implementar persistencia local en Flutter</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>37</td><td>US-029</td><td>Consultar información esencial sin conexión</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>38</td><td>US-030</td><td>Guardar trabajo pendiente sin conexión</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>39</td><td>TS-007</td><td>Implementar sincronización idempotente</td><td>8</td><td>Sprint 2</td></tr>
+    <tr><td>40</td><td>US-031</td><td>Sincronizar operaciones pendientes</td><td>8</td><td>Sprint 2</td></tr>
+    <tr><td>41</td><td>SP-001</td><td>Investigar identificación de animales con Google ML Kit</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>42</td><td>TS-010</td><td>Integrar identificación QR mediante Google ML Kit</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>43</td><td>US-033</td><td>Identificar un animal mediante código QR</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>44</td><td>US-034</td><td>Identificar un animal sin utilizar la cámara</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>45</td><td>SP-002</td><td>Investigar la integración de Stripe para suscripciones móviles</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>46</td><td>US-019</td><td>Programar un control sanitario posterior</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>47</td><td>US-028</td><td>Atender o reprogramar una actividad</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>48</td><td>US-032</td><td>Resolver errores o conflictos de sincronización</td><td>8</td><td>Sprint 3</td></tr>
+    <tr><td>49</td><td>US-018</td><td>Corregir un registro sanitario con trazabilidad</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>50</td><td>US-038</td><td>Consultar planes de suscripción</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>51</td><td>TS-011</td><td>Integrar el checkout externo de Stripe</td><td>8</td><td>Sprint 3</td></tr>
+    <tr><td>52</td><td>US-039</td><td>Iniciar un pago mediante un proveedor externo</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>53</td><td>US-040</td><td>Consultar el resultado del pago y la suscripción</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>54</td><td>TS-012</td><td>Aplicar internacionalización y accesibilidad móvil</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>55</td><td>US-042</td><td>Utilizar la aplicación con necesidades de accesibilidad</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>56</td><td>US-043</td><td>Comprender errores y estados de conectividad</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>57</td><td>TS-015</td><td>Configurar compilación y distribución de versiones móviles</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>58</td><td>US-035</td><td>Consultar indicadores del hato</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>59</td><td>US-036</td><td>Consultar indicadores sanitarios de clientes</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>60</td><td>US-041</td><td>Cambiar el idioma de la aplicación</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>61</td><td>TS-014</td><td>Automatizar pruebas de los flujos móviles críticos</td><td>8</td><td>Sprint 3</td></tr>
+    <tr><td>62</td><td>US-037</td><td>Registrar y consultar movimientos financieros</td><td>5</td><td>Sprint 3</td></tr>
   </tbody>
 </table>
 
@@ -8698,12 +8765,12 @@ Estas pautas establecen un lenguaje visual común para que las interfaces sean c
 
 <div align="center">
   <img src="markdown/assets/chapter-3/style-guidelines/logo-startup.png" alt="Logo de la startup Titan" width="220">
-  <p><i>Figura 3.1.1.1. Logo de la startup Titan. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 1. Logo de la startup Titan. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
   <img src="markdown/assets/chapter-3/style-guidelines/logo-producto.png" alt="Logo del producto AniTec" width="220">
-  <p><i>Figura 3.1.1.2. Logo de AniTec. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 2. Logo de AniTec. Fuente: elaboración propia.</i></p>
 </div>
 
 **Paleta de colores.** Los verdes representan salud, campo y crecimiento; los marrones conectan la interfaz con la actividad ganadera; y los tonos claros producen superficies legibles. Ningún estado dependerá únicamente del color: las alertas, confirmaciones y errores también usarán texto o iconografía.
@@ -8727,7 +8794,7 @@ Estas pautas establecen un lenguaje visual común para que las interfaces sean c
   <img src="markdown/assets/chapter-3/style-guidelines/A3C4A8.png" alt="Color A3C4A8" width="105">
   <img src="markdown/assets/chapter-3/style-guidelines/D1BFA5.png" alt="Color D1BFA5" width="105">
   <img src="markdown/assets/chapter-3/style-guidelines/F5F0E6.png" alt="Color F5F0E6" width="105">
-  <p><i>Figura 3.1.1.3. Paleta cromática de AniTec. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 3. Paleta cromática de AniTec. Fuente: elaboración propia.</i></p>
 </div>
 
 **Tipografía.** AniTec utiliza Poppins por su lectura clara. Los encabezados emplean SemiBold o Bold y el cuerpo Regular o Medium. En móviles se respetará el escalado configurado por el usuario y se evitarán bloques extensos en mayúsculas.
@@ -8743,14 +8810,14 @@ Estas pautas establecen un lenguaje visual común para que las interfaces sean c
 
 <div align="center">
   <img src="markdown/assets/chapter-3/style-guidelines/poppins.png" alt="Muestra de Poppins" width="650">
-  <p><i>Figura 3.1.1.4. Tipografía Poppins. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 4. Tipografía Poppins. Fuente: elaboración propia.</i></p>
 </div>
 
 **Espaciado, formas e iconografía.** Se usará una cuadrícula base de 8 unidades. Las tarjetas podrán utilizar radios de 8 a 16 dp y los controles táctiles mantendrán un área mínima de 48 × 48 dp. Los iconos tendrán etiquetas o descripciones accesibles cuando su significado no sea evidente.
 
 <div align="center">
   <img src="markdown/assets/chapter-3/style-guidelines/icons.png" alt="Iconografía de AniTec" width="650">
-  <p><i>Figura 3.1.1.5. Referencia de iconografía. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 5. Referencia de iconografía. Fuente: elaboración propia.</i></p>
 </div>
 
 **Tono de comunicación.** La comunicación será clara, respetuosa, serena y orientada a la acción. Usará términos conocidos por ganaderos y veterinarios, instrucciones breves y mensajes que indiquen cómo recuperarse de un problema.
@@ -8763,6 +8830,24 @@ Estas pautas establecen un lenguaje visual común para que las interfaces sean c
 | Sin resultados | “No se encontraron animales con esos filtros.” |
 | Permiso | “AniTec necesita acceso a la cámara para leer el código del animal.” |
 
+**Dimensiones del tono.** El tono de comunicación se ubica en las siguientes posiciones:
+
+| Dimensión | Posición | Cómo se aplica |
+|---|---|---|
+| Divertido / Serio | Serio, con cercanía | Mensajes profesionales; sin bromas en alertas sanitarias o financieras. |
+| Formal / Casual | Casual profesional | Tuteo y frases breves, como «Revisa tu conexión»; sin jerga técnica. |
+| Respetuoso / Irreverente | Respetuoso | Reconoce el conocimiento del ganadero y del veterinario y nunca culpa al usuario por un error. |
+| Entusiasta / Sereno | Sereno | Confirmaciones claras y sin exceso; ante un problema se mantiene la calma e indica el siguiente paso. |
+
+**Sustento de las decisiones.** Las decisiones de marca, color, tipografía y espaciado se apoyan en los siguientes principios y elementos de diseño:
+
+- **Jerarquía visual:** la escala tipográfica y el peso de la fuente ordenan la lectura de títulos, cuerpo y textos de ayuda.
+- **Contraste y legibilidad:** los fondos claros y sin brillo excesivo favorecen la lectura en exteriores, y el texto y los controles recurren a las variantes más oscuras de verdes y marrones cuando se necesita contraste suficiente.
+- **Proximidad y consistencia:** las tarjetas agrupan la información relacionada, y los mismos componentes, colores y espaciados se repiten en todos los productos, de modo que lo aprendido en uno sirve en los demás.
+- **Significado cromático:** el verde se asocia con la salud y las acciones principales, el marrón con la actividad ganadera y los tonos beige con superficies neutras; el color nunca es la única señal de un estado.
+- **Facilidad de uso táctil:** el área mínima de 48 × 48 dp y la cuadrícula de 8 unidades reducen los errores al tocar los controles.
+- **Carga cognitiva:** cada nivel de navegación ofrece pocas opciones (cinco destinos principales), lo que reduce el esfuerzo de decisión.
+
 **Accesibilidad e internacionalización**
 
 - Mantener contraste suficiente y no depender solo del color.
@@ -8774,6 +8859,33 @@ Estas pautas establecen un lenguaje visual común para que las interfaces sean c
 - Usar etiquetas semánticas, foco visible y atributos ARIA en la Landing Page.
 
 **Criterios por producto.** La Landing Page tendrá jerarquía vertical, navegación superior y diseño responsive. Android aplicará los patrones de Material Design con Jetpack Compose. Flutter utilizará componentes equivalentes y conservará la misma identidad y orden de tareas. Ambas aplicaciones contemplarán carga, contenido, ausencia de datos, error, confirmación y operación sin conexión cuando corresponda.
+
+<a id="toc-3-1-1-2-web-style-guidelines"></a>
+
+### 3.1.1.2. Web Style Guidelines
+
+Estas pautas aplican a la Landing Page y a la aplicación web, y complementan las pautas generales.
+
+- **Estructura:** encabezado con navegación superior, secciones apiladas con un encabezado centrado, contenido en bloques de ancho limitado y pie de página con columnas de enlaces.
+- **Diseño responsive:** la Landing Page se diseñó para escritorio y para un ancho móvil de 412 px; la aplicación web reorganiza su contenido en pantallas de hasta 720 px, por ejemplo al ocultar las columnas secundarias de las tablas.
+- **Componentes:** botones principales rellenos en verde y secundarios con borde; tarjetas de esquinas redondeadas sobre fondo crema o beige; secciones que alternan fondos para separar los temas. La aplicación web utiliza los componentes de PrimeVue adaptados a la paleta de AniTec.
+- **Accesibilidad:** HTML semántico, atributos ARIA, foco visible, textos alternativos en las imágenes y no depender solo del color.
+- **Internacionalización:** inglés (en_US) como idioma predeterminado y español latinoamericano (es_419) como alternativa.
+- **Recursos compartidos:** los logotipos, las fuentes y la iconografía se conservan en la carpeta assets de cada repositorio y en el archivo de diseño de Figma del proyecto.
+
+<a id="toc-3-1-1-3-mobile-style-guidelines"></a>
+
+### 3.1.1.3. Mobile Style Guidelines
+
+Estas pautas aplican a la aplicación Android nativa y a la aplicación Flutter, que comparten identidad y orden de tareas.
+
+- **Plataforma y componentes:** Android utiliza Material Design 3 con Jetpack Compose; Flutter emplea componentes equivalentes con la misma identidad visual. Se usa un único tema claro.
+- **Navegación:** barra superior con título y acciones, barra inferior de cinco destinos por rol, botón de acción flotante para crear registros y pantallas completas con flecha de retorno para formularios y detalles.
+- **Contenedores:** tarjetas con esquinas de 8 a 16 dp, fichas de detalle en hojas inferiores y etiquetas de estado que combinan color y texto.
+- **Controles:** objetivos táctiles de al menos 48 × 48 dp, botón principal de ancho completo con degradado verde, teclado decimal en los campos de importes y selectores de fecha del sistema.
+- **Estados:** cada pantalla de datos contempla carga, lista vacía, error con opción de reintentar y operación sin conexión, con un aviso de los cambios pendientes de sincronizar.
+- **Permisos y alternativas:** la cámara se solicita al abrir el escáner o al tomar una foto; si se deniega, el usuario puede escribir el código del arete o elegir una imagen de la galería.
+- **Accesibilidad e internacionalización:** descripciones accesibles en los iconos, textos que respetan el tamaño de fuente del sistema, inglés (en_US) como idioma predeterminado y español latinoamericano (es_419) con un selector dentro de la aplicación.
 
 <a id="toc-3-1-2-information-architecture"></a>
 
@@ -8790,6 +8902,7 @@ La arquitectura de información organiza la Landing Page y las aplicaciones para
 | Jerárquico | Los dashboards priorizan alertas, indicadores y acciones frecuentes. |
 | Secuencial | Registro de cuenta, finca, animal y evento sanitario se resuelve en pasos ordenados. |
 | Cronológico | Actividades, historial sanitario, pagos y operaciones pendientes se ordenan por fecha. |
+| Alfabético | Las listas de animales, fincas y corrales se ordenan por nombre para localizar un elemento con rapidez. |
 | Por tópicos | Animales, fincas, sanidad, actividades, finanzas, colaboración, analíticas y suscripciones. |
 | Por audiencia | La Landing Page y la navegación diferencian a ganaderos y veterinarios. |
 | Matricial | Los reportes cruzan indicadores por finca, animal, categoría, estado o periodo. |
@@ -8800,7 +8913,7 @@ La Landing Page sigue un recorrido de descubrimiento: propuesta de valor, proble
 
 ### 3.1.2.2. Labelling Systems
 
-Las etiquetas representan conceptos del dominio y evitan términos técnicos internos.
+Las etiquetas representan conceptos del dominio y evitan términos técnicos internos. Las etiquetas de las aplicaciones corresponden a la aplicación Android implementada y se conservan en la aplicación Flutter.
 
 | Producto o rol | Etiqueta | Significado |
 |---|---|---|
@@ -8809,34 +8922,45 @@ Las etiquetas representan conceptos del dominio y evitan términos técnicos int
 | Landing Page | Ganaderos | Capacidades de gestión del hato. |
 | Landing Page | Veterinarios | Capacidades de seguimiento clínico. |
 | Landing Page | Planes | Alternativas de suscripción. |
-| Ganadero | Inicio | Alertas, animales, actividades e indicadores. |
-| Ganadero | Fincas | Unidades productivas. |
-| Ganadero | Animales | Búsqueda, registro y consulta de animales. |
-| Ganadero | Sanidad | Incidencias, visitas, tratamientos e historial. |
-| Ganadero | Actividades | Tareas y recordatorios. |
-| Ganadero | Finanzas | Ingresos, egresos y resúmenes. |
-| Veterinario | Clientes | Ganaderos que autorizaron colaboración. |
-| Veterinario | Pacientes | Animales autorizados por cada cliente. |
-| Veterinario | Seguimiento | Información clínica autorizada. |
-| Compartido | Reportes | Métricas y tendencias del rol. |
-| Compartido | Plan | Suscripción y condiciones vigentes. |
+| Ganadero | Inicio | Alertas, indicadores del hato, próximas actividades y registros sanitarios recientes. |
+| Ganadero | Animales | Búsqueda, registro individual o masivo, ficha técnica y acciones sobre varios animales. |
+| Ganadero | Sanidad | Incidencias, vacunas, revisiones, tratamientos y diagnósticos. |
+| Ganadero | Actividades | Tareas y recordatorios ordenados por fecha. |
+| Ganadero | Más | Fincas, Corrales, Finanzas, Analítica, Dispositivos IoT, Suscripciones y Términos de Servicio. |
+| Veterinario | Inicio | Resumen de clientes, pacientes que requieren atención y seguimientos pendientes. |
+| Veterinario | Pacientes | Animales de cada cliente, con acceso a su historial clínico. |
+| Veterinario | Sanidad | Registros sanitarios de los pacientes. |
+| Veterinario | Actividades | Visitas y tareas programadas para los clientes. |
+| Veterinario | Más | Clientes, Analítica, Dispositivos IoT, Suscripciones y Términos de Servicio. |
+| Compartido | Escanear arete | Identificación del animal mediante código QR o de barras, con ingreso manual como alternativa. |
+| Compartido | Cambios pendientes | Aviso de registros guardados sin conexión que esperan sincronizarse. |
 
-Las acciones principales serán “Registrar”, “Guardar”, “Actualizar”, “Archivar”, “Buscar”, “Filtrar”, “Reintentar” y “Cancelar”. “Eliminar” se reservará para operaciones destructivas y requerirá confirmación.
+Las acciones principales serán «Registrar», «Guardar», «Editar», «Buscar», «Filtrar», «Escanear», «Reintentar» y «Cancelar». «Eliminar» se reservará para operaciones destructivas y requerirá confirmación; «Descartar» se usará solo para los cambios sin sincronizar que el servidor rechazó.
 
 <a id="toc-3-1-2-3-seo-tags-and-meta-tags"></a>
 
 ### 3.1.2.3. SEO Tags and Meta Tags
 
-**Landing Page**
+**Landing Page.** El sitio define sus etiquetas en inglés, idioma predeterminado; la tabla las muestra junto con su versión en español.
 
-| Elemento | Valor propuesto |
+| Elemento | Valor implementado (en_US) | Valor en español (es_419) |
+|---|---|---|
+| Title | AniTec - Livestock Management App for Ranchers and Veterinarians | AniTec - App de gestión ganadera para ganaderos y veterinarios |
+| Description | AniTec is a mobile app for ranchers and veterinarians. Register farms and animals, keep health records, schedule activities and keep working with limited signal. | AniTec es una aplicación móvil para ganaderos y veterinarios. Registra fincas y animales, lleva los registros sanitarios, programa actividades y sigue trabajando con poca señal. |
+| Keywords | livestock management app, rancher app, veterinarian app, animal health records, farm management, livestock traceability, Android app, AniTec | app de gestión ganadera, app para ganaderos, app para veterinarios, registros sanitarios, gestión de fincas, trazabilidad animal, aplicación Android, AniTec |
+| Author | AniTec | AniTec |
+| Robots | index, follow | index, follow |
+| Open Graph title | AniTec - Livestock Management App for Ranchers and Veterinarians | AniTec - App de gestión ganadera |
+| Open Graph description | AniTec is a mobile app for ranchers and veterinarians. Register farms and animals, keep health records and keep working with limited signal. | AniTec es una aplicación móvil para ganaderos y veterinarios. Registra fincas y animales, lleva los registros sanitarios y sigue trabajando con poca señal. |
+
+**Aplicación web.** La aplicación web define hoy solo el título de la página; los demás valores son la propuesta que se incorporará.
+
+| Elemento | Valor |
 |---|---|
-| Title | AniTec – Gestión y trazabilidad inteligente para la ganadería |
-| Description | AniTec ayuda a ganaderos y veterinarios a organizar animales, sanidad, actividades y decisiones de campo desde experiencias móviles conectadas. |
-| Keywords | AniTec, gestión ganadera, trazabilidad animal, salud animal, veterinarios, aplicación ganadera, ganado, Perú |
-| Author | AniTec |
-| Open Graph title | AniTec – Información ganadera donde la necesitas |
-| Open Graph description | Gestiona animales, registros sanitarios y actividades desde una experiencia diseñada para el trabajo de campo. |
+| Title | AniTec Web App |
+| Description | AniTec Web App helps ranchers and veterinarians manage animals, health records, activities and finances from the browser. (propuesto) |
+| Keywords | AniTec, livestock management, animal health, ranchers, veterinarians, web application (propuesto) |
+| Author | AniTec (propuesto) |
 
 **ASO de las aplicaciones móviles**
 
@@ -8856,15 +8980,15 @@ Los textos definitivos se ajustarán a las restricciones de longitud de cada tie
 
 | Datos | Búsqueda | Filtros | Presentación |
 |---|---|---|---|
-| Animales | Nombre o identificador | Finca, especie, raza y estado | Tarjetas con identificación, finca y estado. |
-| Fincas | Nombre o ubicación | Estado y actividad | Lista con cantidad de animales. |
-| Historial sanitario | Animal, diagnóstico o tratamiento | Tipo, fecha y profesional | Línea de tiempo cronológica. |
-| Clientes | Nombre del ganadero | Autorización y estado | Lista con acceso disponible o pendiente. |
-| Pacientes | Nombre o identificador | Cliente, especie y condición | Tarjetas con acceso al historial. |
-| Actividades | Título o animal | Fecha, prioridad y estado | Lista por urgencia y fecha. |
-| Finanzas | Concepto o categoría | Tipo, categoría y periodo | Resumen y lista de movimientos. |
+| Animales | Código, nombre, especie, raza, sexo, estado, finca o corral | Corral | Lista con foto, código, finca, corral y estado; la selección múltiple habilita acciones masivas. |
+| Pacientes (veterinario) | No aplica | Cliente y finca | Lista de animales con acceso al historial clínico. |
+| Historial sanitario | No aplica | Animal | Registros en orden cronológico. |
+| Clientes (veterinario) | Nombre o usuario del ganadero al agregar un cliente | No aplica | Lista de ganaderos disponibles con la acción de agregar. |
+| Actividades | No aplica | No aplica | Próximas actividades primero y luego las vencidas, con prioridad y estado. |
+| Finanzas | No aplica | No aplica | Resumen de ingresos, egresos y balance, y lista de movimientos por fecha. |
+| Identificación de animales | Código del arete leído por cámara o escrito a mano | No aplica | Ficha del animal encontrado o mensaje de que no existe. |
 
-Los resultados permitirán limpiar criterios y mostrarán un estado vacío cuando no existan coincidencias. Las búsquedas esenciales podrán consultar la caché local sin conexión.
+Las búsquedas se realizan sobre los datos guardados en el dispositivo, por lo que también están disponibles sin conexión. Cuando no hay coincidencias se muestra un estado vacío que explica la situación.
 
 <a id="toc-3-1-2-5-navigation-systems"></a>
 
@@ -8872,18 +8996,20 @@ Los resultados permitirán limpiar criterios y mostrarán un estado vacío cuand
 
 La Landing Page navega hacia Inicio, Beneficios, Ganaderos, Veterinarios, Planes y Contacto. En pantallas pequeñas usará un menú condensado sin ocultar las llamadas a la acción.
 
-| Rol | Destinos principales | Rutas secundarias |
+| Rol | Destinos principales | Rutas secundarias (Más) |
 |---|---|---|
-| Ganadero | Inicio, Animales, Actividades, Reportes y Más | Fincas, sanidad, finanzas, plan, perfil y configuración. |
-| Veterinario | Inicio, Clientes, Pacientes, Actividades y Más | Seguimiento, reportes, plan, perfil y configuración. |
+| Ganadero | Inicio, Animales, Sanidad, Actividades y Más | Fincas, Corrales, Finanzas, Analítica, Dispositivos IoT, Suscripciones, Términos de Servicio y cambio de idioma. |
+| Veterinario | Inicio, Pacientes, Sanidad, Actividades y Más | Clientes, Analítica, Dispositivos IoT, Suscripciones, Términos de Servicio y cambio de idioma. |
 
-El retorno conservará filtros y datos no enviados. Las notificaciones y enlaces profundos comprobarán autenticación y autorización antes de abrir un recurso; si no está disponible, mostrarán una explicación y una ruta segura hacia el inicio.
+La barra superior de las pantallas principales da acceso al escáner de aretes. Los formularios y las pantallas secundarias se abren a pantalla completa con una flecha de retorno, y las acciones destructivas piden confirmación. Si la sesión vence, la aplicación regresa al inicio de sesión. Las notificaciones y los enlaces profundos, como el retorno del pago de la suscripción, se incorporarán en una etapa posterior y comprobarán autenticación y autorización antes de abrir un recurso.
 
 <a id="toc-3-1-3-landing-page-ui-design"></a>
 
 ## 3.1.3. Landing Page UI Design
 
 La Landing Page comunica el problema, los beneficios para cada segmento y las opciones para conocer las aplicaciones. Aplica la identidad visual, la organización jerárquica y una estructura responsive.
+
+La propuesta aplica la arquitectura de información de la sección 3.1.2 y el Design System de la sección 3.1.1. El recorrido combina los sistemas de organización secuencial y por audiencia: propuesta de valor, características, pasos para comenzar, testimonios, planes y una llamada final a la acción. La navegación superior, las etiquetas breves y la repetición de colores, tipografía e iconografía permiten reconocer AniTec en cualquier punto de contacto, y el mismo recorrido se mantiene en el navegador de escritorio y en el móvil.
 
 **Enlace de diseño móvil:** 
 https://www.figma.com/design/DvQjG8GIupLP7TBQNi5Hr6/LandingMovil_MockUp?node-id=0-1&t=qJgJhyhc97VCfTMW-1
@@ -8895,14 +9021,16 @@ https://www.figma.com/design/q7A10f5s09GjpeGGWNdsZG/LandingMovil_wireframe?node-
 
 El wireframe de escritorio define la distribución del encabezado, propuesta de valor, beneficios, secciones por segmento, planes, testimonios y pie de página antes de aplicar el acabado visual.
 
+El wireframe prescinde del color y de las imágenes para evaluar solo la estructura. De arriba hacia abajo se distinguen una cabecera con cinco enlaces de navegación; un bloque principal con titular, texto de apoyo, dos llamadas a la acción y tres indicadores; una cuadrícula de seis tarjetas de características; una secuencia de cuatro pasos; tres testimonios; tres planes, con el central destacado; una llamada final a la acción y un pie de página con columnas de enlaces. Se aplicaron los principios de jerarquía (los títulos de sección dominan visualmente), proximidad (cada tarjeta agrupa icono, título y descripción), repetición (todas las secciones usan el mismo encabezado centrado) y contraste (el plan recomendado y las llamadas a la acción se distinguen del resto). Como parte del diseño inclusivo, el orden visual coincide con el orden de lectura, de modo que la estructura puede recorrerse con teclado o lector de pantalla.
+
 <div align="center">
   <img src="markdown/assets/chapter-3/landing-page/landing-page-wireframe-desktop.png" alt="Wireframe de escritorio de la Landing Page" width="500">
-  <p><i>Figura 3.1.3.1. Wireframe de escritorio de la Landing Page. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 6. Wireframe de escritorio de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
   <img src="markdown/assets/chapter-3/landing-page/LandingMovil_wireframe.png" alt="Wireframe de movil de la Landing Page" width="500">
-  <p><i>Figura 3.1.3.1.2 Wireframe de movil de la Landing Page. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 7. Wireframe de movil de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
 Link del wireframe movil: https://www.figma.com/design/q7A10f5s09GjpeGGWNdsZG/LandingMovil_wireframe?node-id=0-1&t=FDHM5xffOJs1fj7Z-1 
@@ -8914,14 +9042,16 @@ Link del wireframe movil: https://www.figma.com/design/q7A10f5s09GjpeGGWNdsZG/La
 
 El mock-up de escritorio incorpora la paleta, Poppins, imágenes, iconografía y llamadas a la acción para transmitir confianza y relación con el entorno agropecuario.
 
+El mock-up traduce la estructura anterior al Design System de AniTec: fondo crema y tarjetas beige, verde para las acciones principales, marrón para las secciones destacadas, como los testimonios, y tipografía Poppins con una jerarquía clara de pesos. Cada característica usa un icono con título y descripción breve, y los tres planes comparan la oferta con la misma estructura para facilitar la elección. Las llamadas a la acción conservan el mismo estilo en el bloque principal y en el cierre, y las secciones alternan fondos para separar los temas sin depender solo del color. La versión móvil conserva el mismo orden de secciones y el mismo lenguaje visual.
+
 <div align="center">
   <img src="markdown/assets/chapter-3/landing-page/landing-page-mockup-desktop.png" alt="Mock-up de escritorio de la Landing Page" width="500">
-  <p><i>Figura 3.1.3.2. Mock-up de escritorio de la Landing Page. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 8. Mock-up de escritorio de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
   <img src="markdown/assets/chapter-3/landing-page/LandingMovil_MockUp.png" alt="Mock-up de movil de la Landing Page" width="500">
-  <p><i>Figura 3.1.3.2.2 Mock-up de movil de la Landing Page. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 9. Mock-up de movil de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
 Link del MockUp: https://www.figma.com/design/DvQjG8GIupLP7TBQNi5Hr6/LandingMovil_MockUp?node-id=0-1&t=qJgJhyhc97VCfTMW-1 
@@ -8933,11 +9063,21 @@ Link del MockUp: https://www.figma.com/design/DvQjG8GIupLP7TBQNi5Hr6/LandingMovi
 
 La propuesta comprende Android nativo con Kotlin y Jetpack Compose y una aplicación multiplataforma con Flutter y Dart. Ambas comparten objetivos, contratos, identidad y reglas de negocio, pero respetan los patrones de su plataforma. Los primeros flujos cubren autenticación, dashboard, registro y mantenimiento de animales, consulta del historial y registro sanitario.
 
+Los diseños de ambas aplicaciones aplican la arquitectura de información de la sección 3.1.2 y el Design System de la sección 3.1.1: navegación diferenciada por rol con una barra inferior de cinco destinos, pantallas que combinan tarjetas, listas y formularios con la misma jerarquía de títulos, colores de estado acompañados de texto o icono, objetivos táctiles de al menos 48 × 48 dp y una alternativa manual a la lectura con cámara. El diseño inclusivo se refleja en el contraste, en el texto que acompaña a cada color de estado, en las descripciones accesibles de los iconos y en estados que explican qué ocurrió y cómo continuar: carga, vacío, sin resultados, error, sesión vencida, permiso de cámara denegado y trabajo sin conexión.
+
 <a id="toc-3-1-4-1-mobile-applications-wireframes"></a>
 
 ### 3.1.4.1. Mobile Applications Wireframes
 
 Los wireframes mostrarán estructura, jerarquía, navegación y estados sin acabado visual definitivo.
+
+Los wireframes de baja fidelidad se elaboran en Figma sin color ni imágenes finales y sirven para validar la jerarquía, el orden de los controles y la navegación. Cada pantalla se documenta con su objetivo y con la User Story que satisface. Para ambos roles se aplican los siguientes criterios:
+
+- Una acción principal por pantalla, ubicada en una zona alcanzable con el pulgar.
+- Información agrupada por proximidad, por ejemplo los datos del animal, su ubicación y su estado, y ordenada por prioridad.
+- Formularios por secciones, con etiquetas visibles, campos agrupados y mensajes de validación junto al campo.
+- Navegación persistente con los destinos principales y acceso a las funciones secundarias desde «Más».
+- Estados previstos desde el inicio: carga, sin datos, error y sin conexión.
 
 | Aplicación | Rol | Pantalla | Objetivo | User Story | Estado |
 |---|---|---|---|---|---|
@@ -8964,6 +9104,15 @@ Cada wireflow mostrará cómo cambia la interfaz después de una acción.
 
 > **Pendiente de completar:** insertar un wireflow por cada user goal y por cada aplicación.
 
+**Descripción de los wireflows.** Cada wireflow parte de un user goal y de un User Persona de la sección 2.3.1, y muestra cómo cambia la interfaz después de cada acción añadiendo un paso con el estado resultante.
+
+- **Registrarse e iniciar sesión.** El ganadero o la veterinaria abre la aplicación, elige su tipo de cuenta, completa el formulario, acepta los Términos de Servicio y accede al dashboard de su rol. Si los datos son inválidos se marca el campo con el error; si la cuenta ya existe se ofrece iniciar sesión; si falla la red se permite reintentar.
+- **Consultar el dashboard.** Desde la sesión autenticada se muestran los indicadores y alertas del rol, y el usuario abre un módulo desde una tarjeta o desde la barra de navegación. Sin datos se invita a registrar el primer elemento; sin conexión se muestran los datos guardados con un aviso.
+- **Registrar un animal.** El ganadero abre la lista de animales, elige el registro individual o masivo, completa los datos (código, nombre, especie, finca y corral) y guarda. Si faltan campos obligatorios se resalta el primero; sin conexión el registro se guarda en el dispositivo y queda pendiente de sincronizar.
+- **Consultar o actualizar un animal.** Desde la lista o la búsqueda se abre la ficha del animal con su historial y desde allí se edita y se guarda. Si no hay resultados se ofrece limpiar la búsqueda; si el recurso ya no está disponible se explica la situación y se regresa a la lista.
+- **Consultar el historial sanitario.** Desde la ficha del animal, o desde un paciente en el caso del veterinario, se abre el historial en orden cronológico. Si está vacío se invita a registrar el primer evento.
+- **Registrar un evento sanitario.** Desde el historial se elige el tipo de evento, se completan fecha, descripción y seguimiento, y se guarda. Si falta información se muestra la validación; sin conexión el evento queda pendiente de sincronizar.
+
 <a id="toc-3-1-4-3-mobile-applications-mock-ups"></a>
 
 ### 3.1.4.3. Mobile Applications Mock-ups
@@ -8978,6 +9127,10 @@ Los mock-ups aplican el Design System de AniTec a los wireframes aprobados y mue
 
 El prototipo editable se encuentra en [Figma - AniTec 2026-2](https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1).
 
+**Aplicación del Design System.** Los mock-ups usan la paleta, la tipografía y la iconografía de la sección 3.1.1: fondo crema, tarjetas claras con bordes suaves, verde para las acciones principales y la selección activa, y etiquetas de estado, como Saludable o En observación, que combinan color y texto. Las pantallas se organizan con patrones que se repiten (lista con búsqueda y filtros, ficha de detalle, formulario por secciones y tarjeta de resumen), de modo que el usuario reconoce cómo operar un módulo nuevo a partir de otro que ya conoce. Los formularios muestran etiquetas visibles, selectores para los valores controlados y mensajes de validación junto al campo, y la acción de guardar permanece fija al pie de la pantalla.
+
+**Estados e inclusión.** Para los flujos principales se diseñaron los estados que evitan dejar al usuario sin orientación: carga con marcadores de posición, listas vacías con una acción sugerida, búsquedas sin resultados con la opción de limpiar el filtro, errores de conexión con reintento, aviso de sesión vencida, permiso de cámara denegado con alternativa de ingreso manual del código, cancelación de pago y avisos de que los registros se guardan en el dispositivo y se sincronizan después. Estos estados responden al uso en campo con conexión inestable que motiva el diseño del producto (sección 3.1).
+
 #### Aplicación Flutter
 
 ##### IAM
@@ -8986,7 +9139,7 @@ Este conjunto presenta el onboarding, el registro y el inicio de sesión compart
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-iam-01.jpg" alt="Mock-ups Flutter del módulo IAM" width="650">
-  <p><i>Figura 3.1.4.3.1. Mock-ups Flutter del módulo IAM. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 10. Mock-ups Flutter del módulo IAM. Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Usuario rancher
@@ -8995,27 +9148,27 @@ Las siguientes láminas recorren la experiencia del ganadero: dashboard, animale
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-rancher-01.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 1" width="650">
-  <p><i>Figura 3.1.4.3.2. Mock-ups Flutter del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 11. Mock-ups Flutter del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-rancher-02.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 2" width="650">
-  <p><i>Figura 3.1.4.3.3. Mock-ups Flutter del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 12. Mock-ups Flutter del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-rancher-03.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 3" width="650">
-  <p><i>Figura 3.1.4.3.4. Mock-ups Flutter del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 13. Mock-ups Flutter del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-rancher-04.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 4" width="650">
-  <p><i>Figura 3.1.4.3.5. Mock-ups Flutter del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 14. Mock-ups Flutter del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-rancher-05.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 5" width="650">
-  <p><i>Figura 3.1.4.3.6. Mock-ups Flutter del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 15. Mock-ups Flutter del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Usuario vet
@@ -9024,22 +9177,22 @@ Las pantallas del veterinario cubren el dashboard profesional, la gestión de cl
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-vet-01.jpg" alt="Mock-ups Flutter del usuario vet, lámina 1" width="650">
-  <p><i>Figura 3.1.4.3.7. Mock-ups Flutter del usuario vet, lámina 1 de 4. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 16. Mock-ups Flutter del usuario vet, lámina 1 de 4. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-vet-02.jpg" alt="Mock-ups Flutter del usuario vet, lámina 2" width="650">
-  <p><i>Figura 3.1.4.3.8. Mock-ups Flutter del usuario vet, lámina 2 de 4. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 17. Mock-ups Flutter del usuario vet, lámina 2 de 4. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-vet-03.jpg" alt="Mock-ups Flutter del usuario vet, lámina 3" width="650">
-  <p><i>Figura 3.1.4.3.9. Mock-ups Flutter del usuario vet, lámina 3 de 4. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 18. Mock-ups Flutter del usuario vet, lámina 3 de 4. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-vet-04.jpg" alt="Mock-ups Flutter del usuario vet, lámina 4" width="650">
-  <p><i>Figura 3.1.4.3.10. Mock-ups Flutter del usuario vet, lámina 4 de 4. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 19. Mock-ups Flutter del usuario vet, lámina 4 de 4. Fuente: elaboración propia.</i></p>
 </div>
 
 #### Aplicación Android
@@ -9050,7 +9203,7 @@ La versión Android conserva el mismo alcance funcional del acceso y adapta la p
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-iam-01.jpg" alt="Mock-ups Android del módulo IAM" width="650">
-  <p><i>Figura 3.1.4.3.11. Mock-ups Android del módulo IAM. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 20. Mock-ups Android del módulo IAM. Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Usuario rancher
@@ -9059,27 +9212,27 @@ Las láminas Android mantienen la secuencia funcional del usuario rancher e incl
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-rancher-01.jpg" alt="Mock-ups Android del usuario rancher, lámina 1" width="650">
-  <p><i>Figura 3.1.4.3.12. Mock-ups Android del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 21. Mock-ups Android del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-rancher-02.jpg" alt="Mock-ups Android del usuario rancher, lámina 2" width="650">
-  <p><i>Figura 3.1.4.3.13. Mock-ups Android del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 22. Mock-ups Android del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-rancher-03.jpg" alt="Mock-ups Android del usuario rancher, lámina 3" width="650">
-  <p><i>Figura 3.1.4.3.14. Mock-ups Android del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 23. Mock-ups Android del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-rancher-04.jpg" alt="Mock-ups Android del usuario rancher, lámina 4" width="650">
-  <p><i>Figura 3.1.4.3.15. Mock-ups Android del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 24. Mock-ups Android del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-rancher-05.jpg" alt="Mock-ups Android del usuario rancher, lámina 5" width="650">
-  <p><i>Figura 3.1.4.3.16. Mock-ups Android del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 25. Mock-ups Android del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
 ##### Usuario vet
@@ -9088,22 +9241,22 @@ La versión Android del perfil veterinario documenta la gestión de clientes y v
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-vet-01.jpg" alt="Mock-ups Android del usuario vet, lámina 1" width="650">
-  <p><i>Figura 3.1.4.3.17. Mock-ups Android del usuario vet, lámina 1 de 4. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 26. Mock-ups Android del usuario vet, lámina 1 de 4. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-vet-02.jpg" alt="Mock-ups Android del usuario vet, lámina 2" width="650">
-  <p><i>Figura 3.1.4.3.18. Mock-ups Android del usuario vet, lámina 2 de 4. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 27. Mock-ups Android del usuario vet, lámina 2 de 4. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-vet-03.jpg" alt="Mock-ups Android del usuario vet, lámina 3" width="650">
-  <p><i>Figura 3.1.4.3.19. Mock-ups Android del usuario vet, lámina 3 de 4. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 28. Mock-ups Android del usuario vet, lámina 3 de 4. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-vet-04.jpg" alt="Mock-ups Android del usuario vet, lámina 4" width="650">
-  <p><i>Figura 3.1.4.3.20. Mock-ups Android del usuario vet, lámina 4 de 4. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 29. Mock-ups Android del usuario vet, lámina 4 de 4. Fuente: elaboración propia.</i></p>
 </div>
 
 <a id="toc-3-1-4-4-mobile-applications-user-flow-diagrams"></a>
@@ -9123,11 +9276,22 @@ Los User Flow Diagrams integrarán los mock-ups con el happy path y las rutas al
 
 > **Pendiente de completar:** insertar diagramas Android y Flutter con condiciones y rutas alternativas.
 
+**Descripción de los User Flows.** Cada User Flow reutiliza los mock-ups del wireflow correspondiente y agrega las decisiones que separan el camino esperado (happy path) de los caminos alternativos (unhappy paths). Comienza en la pantalla desde la que el usuario inicia la tarea y termina en la que confirma el resultado.
+
+- **Registro e inicio de sesión:** bienvenida, formulario, validación y dashboard del rol. Decisiones: ¿los datos son válidos?, ¿la cuenta ya existe?, ¿hay conexión?
+- **Dashboard:** sesión autenticada, carga, resumen y módulo elegido. Decisiones: ¿hay datos?, ¿la sesión sigue vigente?
+- **Registro de animal:** lista, formulario individual o masivo, validación y confirmación. Decisiones: ¿los campos están completos?, ¿el código ya existe?, ¿hay conexión o debe guardarse localmente?
+- **Consulta y actualización:** lista o búsqueda, ficha, edición y confirmación. Decisiones: ¿hay resultados?, ¿el usuario tiene permiso?
+- **Historial sanitario:** ficha o paciente e historial. Decisiones: ¿hay eventos?, ¿el filtro devuelve resultados?, ¿el acceso está autorizado?
+- **Registro sanitario:** historial, formulario, validación y confirmación. Decisiones: ¿los datos son válidos?, ¿el usuario tiene permiso?, ¿hay conexión?
+
 <a id="toc-3-1-4-5-mobile-applications-prototyping"></a>
 
 ### 3.1.4.5. Mobile Applications Prototyping
 
 Los prototipos simularán la navegación de los User Flow Diagrams y permitirán comprobar etiquetas, acciones, retroalimentación, recuperación ante errores y consistencia.
+
+Los criterios de interacción de los prototipos derivan de la arquitectura de información de la sección 3.1.2 y de los User Flows de la sección 3.1.4.4. La navegación principal se resuelve con una barra inferior de cinco destinos por rol y las funciones secundarias se agrupan en «Más». Las tareas de creación se inician desde un botón de acción visible en cada lista, los formularios se abren a pantalla completa con retorno explícito y las acciones destructivas piden confirmación. Cada interacción devuelve retroalimentación inmediata, como la selección activa en la barra, los mensajes de validación junto al campo, las confirmaciones y los avisos de sincronización, y los errores ofrecen una acción de recuperación: reintentar, limpiar la búsqueda o ingresar el código manualmente. Con ello se comprueban las etiquetas, la jerarquía, la recuperación ante errores y la consistencia entre pantallas.
 
 | Aplicación | Prototipo Figma | Captura del video | Video en Microsoft Stream | Estado |
 |---|---|---|---|---|
@@ -9135,6 +9299,8 @@ Los prototipos simularán la navegación de los User Flow Diagrams y permitirán
 | Flutter | URL pendiente | Pendiente | URL pendiente | Pendiente |
 
 > **Pendiente de completar:** insertar una captura de cada video y reemplazar los enlaces después de publicar los prototipos y sus demostraciones.
+
+**Enlace de diseño en Figma:** <https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1>
 
 
 <div style="page-break-before: always;"></div>
@@ -9160,67 +9326,133 @@ La gestión de configuración de AniTec define las herramientas, repositorios, c
 
 ## 4.1.1. Software Development Environment Configuration
 
-Las herramientas se agrupan según la actividad que soportan. Todo integrante deberá utilizar versiones compatibles con los repositorios y registrar cualquier cambio de versión que afecte la compilación.
+Las herramientas se agrupan según la actividad que soportan e incluyen su propósito y su ruta de referencia (servicios en línea) o de descarga (programas instalados). Las tecnologías del proyecto son Figma, Lucidchart, Structurizr, PlantUML, HTML5/CSS3/JavaScript, ASP.NET Core con OpenAPI vía Swagger, Kotlin en Android, Flutter con Dart, Trello y Git con GitHub. Todo integrante debe utilizar versiones compatibles con los repositorios y registrar cualquier cambio de versión que afecte la compilación.
 
-**Project and Requirements Management**
+**Project Management**
 
 | Herramienta | Propósito | Referencia |
 |---|---|---|
-| Trello | Organizar Product Backlog, Sprint Backlog y estados de tareas. | <https://trello.com> |
-| GitHub Issues / Projects | Dar trazabilidad a incidencias, cambios y trabajo del repositorio. | <https://github.com/features/issues> |
-| Gherkin | Especificar criterios de aceptación y escenarios BDD. | <https://cucumber.io/docs/gherkin/> |
-| Miro | Modelar EventStorming y flujos colaborativos. | <https://miro.com> |
+| Trello | Organizar el Sprint Backlog y los estados de las tareas (Todo, In-Process, To-Review, Done). | <https://trello.com> |
+| GitHub Issues / Projects | Dar trazabilidad a incidencias, cambios y trabajo de cada repositorio. | <https://github.com/features/issues> |
+
+**Requirements Management**
+
+| Herramienta | Propósito | Referencia |
+|---|---|---|
+| UXPressia | Elaborar User Personas, Empathy Maps, Journey Maps e Impact Maps. | <https://uxpressia.com> |
+| Miro | Modelar el EventStorming y otros flujos colaborativos. | <https://miro.com> |
+| Trello | Mantener el Product Backlog con estimación y prioridad. | <https://trello.com> |
+| Gherkin | Especificar criterios de aceptación y escenarios BDD en archivos .feature. | <https://cucumber.io/docs/gherkin/> |
 
 **Product UX/UI Design**
 
 | Herramienta | Propósito | Referencia |
 |---|---|---|
-| Figma | Elaborar wireframes, mock-ups, wireflows, user flows y prototipos. | <https://www.figma.com> |
+| Figma | Elaborar wireframes, mock-ups y prototipos de la Landing Page y de las aplicaciones móviles. | <https://www.figma.com> |
+| Lucidchart | Elaborar wireflows, user flows, diagramas UML y el diseño de la base de datos. | <https://www.lucidchart.com> |
 | Canva | Preparar recursos visuales complementarios. | <https://www.canva.com> |
-| Lucidchart | Modelar flujos y diagramas auxiliares. | <https://www.lucidchart.com> |
+| Material Design 3 | Lenguaje de diseño y componentes de la aplicación Android. | <https://m3.material.io> |
 
 **Software Development**
 
-| Herramienta o tecnología | Propósito | Versión / estado |
+*Control de versiones y edición*
+
+| Herramienta | Propósito | Referencia | Versión |
+|---|---|---|---|
+| Git y GitHub | Control de versiones y colaboración. | <https://git-scm.com/downloads> · <https://github.com> | Versión estable |
+| Visual Studio Code | Landing Page, frontend web, documentación y edición general. | <https://code.visualstudio.com/download> | Versión estable |
+
+*Landing Page y aplicación web*
+
+| Tecnología | Propósito | Referencia | Versión |
+|---|---|---|---|
+| HTML5, CSS3 y JavaScript | Landing Page estática (anitec-landing-page). | <https://developer.mozilla.org> | Sin framework |
+| Node.js | Ejecutar las herramientas de construcción del frontend web. | <https://nodejs.org/en/download> | ^20.19.0 o >=22.12.0 |
+| Vue, Vite, Pinia, Vue Router | Aplicación web (anitec-frontend): componentes, construcción, estado y rutas. | <https://vuejs.org> · <https://vite.dev> | Vue 3.5, Vite 8, Pinia 3, Vue Router 5 |
+| PrimeVue, vue-i18n, Axios, Chart.js | Componentes de interfaz, internacionalización, consumo de la API y gráficos. | <https://primevue.org> | PrimeVue 4.5, vue-i18n 11, Axios 1.16, Chart.js 4.5 |
+
+*Web Services (anitec-backend)*
+
+| Herramienta o tecnología | Propósito | Referencia | Versión |
+|---|---|---|---|
+| Rider / Visual Studio | Desarrollo de la API ASP.NET Core. | <https://www.jetbrains.com/rider/download> | Compatible con .NET SDK 10 |
+| .NET SDK | Compilar y ejecutar el backend (global.json). | <https://dotnet.microsoft.com/download> | 10.0.0 con rollForward: latestMajor |
+| ASP.NET Core | Exponer servicios REST y OpenAPI. | <https://learn.microsoft.com/aspnet/core> | net10.0 |
+| Entity Framework Core | Persistencia y migraciones. | <https://learn.microsoft.com/ef/core> | 10.0.8 |
+| MySql.EntityFrameworkCore | Proveedor MySQL para EF Core. | <https://www.nuget.org/packages/MySql.EntityFrameworkCore> | 10.0.7 |
+| MySQL / MySQL Workbench | Base de datos relacional y su administración. | <https://dev.mysql.com/downloads> | MySQL 8.0 |
+| Swashbuckle.AspNetCore | Documentación OpenAPI y Swagger UI. | <https://github.com/domaindrivendev/Swashbuckle.AspNetCore> | 10.2.0 |
+| System.IdentityModel.Tokens.Jwt / JwtBearer | Emisión y validación de JWT. | <https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer> | 8.18.0 / 10.0.8 |
+| BCrypt.Net-Next | Hash de contraseñas. | <https://www.nuget.org/packages/BCrypt.Net-Next> | 4.2.0 |
+| Stripe.net | Cliente de Stripe para el módulo de suscripciones. | <https://docs.stripe.com/api> | 52.1.0 |
+| Cortex.Mediator | Despacho de comandos y consultas. | <https://www.nuget.org/packages/Cortex.Mediator> | 3.1.2 |
+| Docker | Empaquetar la API para su publicación (Dockerfile). | <https://www.docker.com/products/docker-desktop> | Imágenes mcr.microsoft.com/dotnet/sdk:10.0 y aspnet:10.0 |
+| Postman / Swagger UI | Probar los contratos HTTP de la API. | <https://www.postman.com/downloads> | Swagger UI del servicio |
+
+*Aplicación Android (anitec-android)*
+
+| Herramienta o tecnología | Propósito | Referencia | Versión |
+|---|---|---|---|
+| Android Studio | Desarrollo, emulación y depuración. | <https://developer.android.com/studio> | Build AI-261.26222.65.2613.15948027 |
+| Kotlin | Lenguaje de la aplicación nativa. | <https://kotlinlang.org/docs/home.html> | 2.4.20 |
+| Android Gradle Plugin / Gradle | Construcción del proyecto. | <https://developer.android.com/build> | AGP 9.3.3 / Gradle 9.5.0 (wrapper) |
+| JDK | Compilación y ejecución de Gradle. | <https://adoptium.net> | Código para Java 17; Gradle ejecuta con un toolchain JVM 25 |
+| KSP | Procesamiento de símbolos para Hilt y Room. | <https://github.com/google/ksp> | 2.3.12 |
+| Jetpack Compose y Material 3 | Interfaz de usuario declarativa. | <https://developer.android.com/compose> | Compose BOM 2026.09.00 |
+| SDK de Android | Plataforma de compilación y destino. | <https://developer.android.com/tools/releases/platforms> | minSdk 26, compileSdk y targetSdk 37 |
+| Android Emulator | Ejecutar y depurar la aplicación. | <https://developer.android.com/studio/run/emulator> | Dispositivo Pixel_7_sem2, API 33, imagen Google APIs con Play Store |
+| Dispositivo físico | Demostración final de la aplicación instalada. | — | **Pendiente:** modelo y versión de Android |
+
+*Librerías de la aplicación Android*
+
+| Librería | Propósito | Versión |
 |---|---|---|
-| Git y GitHub | Control de versiones y colaboración. | Versión estable compatible |
-| Visual Studio Code | Landing Page, documentación y edición general. | Versión estable |
-| Rider / Visual Studio | Desarrollo de la API ASP.NET Core. | Compatible con .NET SDK 10.0.x (SDK instalado: 10.0.401) |
-| .NET SDK | Compilar y ejecutar el backend (global.json). | 10.0.0 (rollForward: latestMajor) |
-| ASP.NET Core | Exponer servicios REST y OpenAPI (TargetFramework). | net10.0 |
-| Entity Framework Core | Persistencia y migraciones. | 10.0.8 |
-| MySql.EntityFrameworkCore | Proveedor MySQL para EF Core. | 10.0.7 |
-| Swashbuckle.AspNetCore | Documentación OpenAPI / Swagger UI. | 10.2.0 |
-| System.IdentityModel.Tokens.Jwt / JwtBearer | Emisión y validación de JWT. | 8.18.0 / 10.0.8 |
-| BCrypt.Net-Next | Hash de contraseñas. | 4.2.0 |
-| Docker | Empaquetar y publicar la API en Render (Dockerfile). | Imágenes mcr.microsoft.com/dotnet/sdk:10.0 y aspnet:10.0 |
-| Postman / Swagger UI | Probar contratos HTTP de la API. | Swagger UI del servicio desplegado |
-| MySQL / MySQL Workbench | Persistencia central y administración de datos. | Compatible con MySql.EntityFrameworkCore 10.0.7 |
-| Android Studio | Desarrollo, emulación y depuración Android. | Koala Feature Drop (2024.1.2) o superior |
-| Kotlin | Implementar la aplicación Android nativa. | 2.0.0 |
-| Jetpack Compose | Construir la interfaz Android. | Compose BOM 2024.06.00 |
-| Flutter SDK y Dart | Implementar la aplicación multiplataforma. | Flutter 3.22.0 / Dart 3.4.0 |
+| Navigation Compose | Navegación con rutas tipadas. | 2.10.2 |
+| Hilt (Dagger) y AndroidX Hilt | Inyección de dependencias y workers. | 2.60.1 y 1.4.0 |
+| Room | Base de datos local (SQLite) con caché y cola de cambios pendientes. | 2.8.5 |
+| DataStore y Tink | Almacenamiento cifrado de la sesión (AES-256-GCM con Android Keystore). | 1.2.1 y 1.23.0 |
+| Retrofit, OkHttp y kotlinx.serialization | Consumo del API REST propio. | 3.0.0, 5.5.0 y 1.11.0 |
+| Kotlin Coroutines | Concurrencia y flujos de estado. | 1.11.0 |
+| Coil | Carga de imágenes de los animales. | 3.6.3 |
+| CameraX | Acceso a la cámara (recurso interno del dispositivo). | 1.6.2 |
+| Google ML Kit Barcode Scanning | Lectura de códigos QR y de barras (feature de aprendizaje autónomo). | 17.3.0 |
+| WorkManager | Envío en segundo plano de los cambios hechos sin conexión. | 2.12.0 |
+| AppCompat | Cambio de idioma dentro de la aplicación (English y Español). | 1.8.0 |
+
+*Aplicación Flutter*
+
+| Herramienta | Propósito | Referencia | Versión |
+|---|---|---|---|
+| Flutter SDK y Dart | Aplicación multiplataforma. | <https://docs.flutter.dev/get-started/install> | **Pendiente:** se registrará al iniciar su desarrollo |
 
 **Software Testing**
 
-| Producto | Herramientas previstas | Tipo de comprobación |
+| Producto | Herramientas | Tipo de comprobación |
 |---|---|---|
-| Backend | xUnit, Swagger UI y cliente HTTP | Unitarias, contratos HTTP y ejecución exploratoria |
-| Android | JUnit 4, Compose UI Test, KotlinX Coroutines Test y Android Emulator | Unitarias (ViewModels/UseCases) e interfaz/instrumentadas (Room DAOs) |
-| Flutter | flutter_test e integration_test | Unitarias, widgets e integración |
-| API | Swagger UI (Swashbuckle) y cliente HTTP controlado | Contratos y ejecución exploratoria |
-| Landing Page | DevTools, Lighthouse y validadores web | Responsive, accesibilidad y desempeño |
+| Backend | xUnit, Swagger UI y cliente HTTP. Gherkin con una biblioteca BDD para .NET. | Unitarias, integración y aceptación BDD (**pendiente:** el proyecto de pruebas aún no existe); contratos HTTP y ejecución exploratoria. |
+| Android | JUnit 4, MockK, Turbine, KotlinX Coroutines Test, MockWebServer, Room Testing y Android Emulator. | Unitarias de dominio, casos de uso, repositorios y ViewModels; instrumentadas de DAO de Room y carga de imágenes. |
+| Flutter | flutter_test e integration_test. | **Pendiente.** |
+| Landing Page | DevTools, Lighthouse y validadores web. | Responsive, accesibilidad y desempeño. |
 
-**Deployment and Documentation**
+**Software Deployment**
 
 | Herramienta | Propósito | Referencia |
 |---|---|---|
 | GitHub Pages | Publicar la Landing Page. | <https://pages.github.com> |
 | Render | Publicar la API REST. | <https://render.com> |
-| Firebase App Distribution | Distribuir builds móviles para validación. | <https://firebase.google.com/docs/app-distribution> |
-| Swagger / OpenAPI | Documentar y probar endpoints. | <https://swagger.io/specification/> |
-| Structurizr | Mantener los diagramas C4. | <https://structurizr.com> |
-| PlantUML | Mantener diagramas de clases. | <https://plantuml.com> |
+| Firebase App Distribution | Distribuir las aplicaciones Android y Flutter a los evaluadores. | <https://firebase.google.com/docs/app-distribution> |
+| Firebase CLI | Subir compilaciones a App Distribution desde la terminal (opcional). | <https://firebase.google.com/docs/cli> |
+| Stripe (modo de prueba) | Servicio externo de pagos del módulo de suscripciones. | <https://stripe.com> |
+
+**Software Documentation**
+
+| Herramienta | Propósito | Referencia |
+|---|---|---|
+| Markdown y Visual Studio Code | Redactar el informe en el repositorio Informe y exportarlo a PDF con una extensión de VS Code. | <https://code.visualstudio.com/download> |
+| Python | Ejecutar generar_reporte_completo.py, que reúne los archivos de markdown/content en el informe completo. | <https://www.python.org/downloads> |
+| Structurizr | Mantener los diagramas C4 (Structurizr DSL). | <https://structurizr.com> |
+| PlantUML | Mantener los diagramas de clases. | <https://plantuml.com> |
+| Swagger / OpenAPI | Documentar y probar los endpoints. | <https://swagger.io/specification/> |
 
 <a id="toc-4-1-2-source-code-management"></a>
 
@@ -9233,8 +9465,9 @@ GitHub es la plataforma central de versionado. Los repositorios vigentes son:
 | Informe | <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe> |
 | Landing Page | <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page> |
 | Web Services | <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend> |
-| Android nativo | **Pendiente de completar:** URL del repositorio Android |
-| Aplicación Flutter | **Pendiente de completar:** URL del repositorio Flutter |
+| Aplicación web (frontend) | <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend> |
+| Android nativo | <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-android> |
+| Aplicación Flutter | **Pendiente de completar:** URL del repositorio Flutter (se creará al iniciar su desarrollo) |
 
 **GitFlow**
 
@@ -9254,71 +9487,59 @@ Cada Pull Request indicará propósito, cambios, evidencia de verificación y Us
 
 ## 4.1.3. Source Code Style Guide & Conventions
 
-El código fuente, nombres técnicos, rutas y mensajes de commit se redactarán en inglés. Las clases y funciones tendrán responsabilidades claras y se mantendrá la separación por capas y bounded contexts definida en el capítulo II.
+El código fuente, los nombres técnicos, las rutas y los mensajes de commit se redactarán en inglés. Las clases y funciones tendrán responsabilidades claras y se mantendrá la separación por capas y bounded contexts definida en el capítulo II.
 
 | Tecnología | Convenciones principales |
 |---|---|
 | HTML y CSS | HTML semántico, atributos de accesibilidad, indentación de dos espacios y clases kebab-case. |
 | JavaScript | Variables y funciones camelCase, constantes descriptivas, módulos pequeños y uso de async/await. |
-| Kotlin (Android) | **Google Kotlin Style Guide**. Estructura estricta por Bounded Contexts (iam, livestock, sanitary, etc.) y Clean Architecture (capas domain, application, infrastructure, interfaces/presentation). Tipos y clases en PascalCase. Funciones y variables en camelCase. **Sufijos obligatorios:** *UseCase para lógica de aplicación, *Entity y *Dao para persistencia en Room, y *RepositoryImpl para adaptadores de infraestructura. Cero dependencias de Android en las capas de domain y application. |
-| Jetpack Compose | Patrón UDF (Unidirectional Data Flow) con estados inmutables expuestos desde el ViewModel (ej. StateFlow<*UiState>). Nombres de funciones Composable siempre en PascalCase y tratadas como sustantivos. Tema centralizado (Theme.kt, Color.kt, Type.kt) usando Material Design 3 y tipografía Poppins. |
+| Kotlin (Android) | **Google Kotlin Style Guide** y convenciones de Kotlin de JetBrains. Estructura por bounded contexts (iam, livestock, sanitary, veterinary, activities, financial, devices, analytics, scanner) y capas domain, application, infrastructure (con remote y local) e interfaces (con ui y viewmodel). Tipos y clases en PascalCase; funciones y variables en camelCase. **Sufijos:** *UseCase para la lógica de aplicación, *Entity y *Dao para Room, *Api y *Dto para Retrofit, *RepositoryImpl para los adaptadores de infraestructura, *ViewModel y *UiState para la presentación y *Module para Hilt. Las capas domain y application no importan clases de Android. |
+| Jetpack Compose | Flujo de datos unidireccional: el ViewModel expone un estado inmutable (StateFlow<*UiState>) y la interfaz emite eventos. Las funciones Composable usan PascalCase y se nombran como sustantivos. El tema se centraliza en Theme.kt, Color.kt y Type.kt con Material Design 3; la fuente configurada actualmente es la sans-serif del sistema, mientras que Poppins es la fuente definida por el Design System. Los componentes reutilizables viven en core/designsystem. |
+| Recursos de Android | Todo texto de interfaz se define en strings*.xml por bounded context. El inglés es el idioma predeterminado (values) y el español latinoamericano está en values-b+es+419. Las cantidades usan plurals. |
+| Room (SQLite) | Tablas en snake_case y plural; entidades *Entity; esquemas exportados en app/schemas para cada versión de la base de datos. |
 | Dart | **Effective Dart**. Archivos en lowercase_with_underscores. Clases, enums y typedefs en UpperCamelCase. Miembros de clases y variables en lowerCamelCase. |
-| Flutter | Separación estricta entre UI y lógica de estado. Estructura de carpetas alineada con la arquitectura nativa (Bounded Contexts y capas). Widgets pequeños y componibles. Textos centralizados y localizables. |
+| Flutter | Separación entre interfaz y lógica de estado. Estructura de carpetas alineada con la arquitectura nativa (bounded contexts y capas). Widgets pequeños y componibles. Textos centralizados y localizables. |
 | C# | Convenciones Microsoft ([C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)); tipos, métodos y propiedades PascalCase, parámetros camelCase y campos privados _camelCase. Controllers: *Controller en Interfaces/Rest. Resources (DTOs): *Resource y assemblers *FromResourceAssembler / *FromEntityAssembler. Commands y Queries: Create*Command, Get*Query en Domain/Model. Rutas en minúsculas bajo api/v1/.... Estructura por bounded context. Errores HTTP vía Problem Details. |
 | REST / OpenAPI | Sustantivos plurales en rutas, verbos HTTP correctos, resources/DTOs, códigos de estado y respuestas de error consistentes. Documentación con Swashbuckle (AddSwaggerGen, anotaciones [SwaggerOperation]) y esquema Bearer JWT. |
-| Gherkin | Features y escenarios ligados a User Stories, pasos declarativos y estructura Given–When–Then. |
+| Pruebas | Clases *Test junto a la clase probada, con nombres de prueba que describen el comportamiento esperado (por ejemplo, «a refused change is marked failed and the next one is still sent»). Las pruebas se organizan por bounded context. |
+| Gherkin | Features y escenarios ligados a User Stories, pasos declarativos y estructura Given–When–Then. Los archivos .feature se ubicarán en el proyecto de pruebas del backend (**pendiente**). |
+
+**Referencias adoptadas.** Las convenciones anteriores se basan en las siguientes guías estándar:
+
+| Tecnología | Referencia |
+|---|---|
+| HTML y CSS | HTML Style Guide and Coding Conventions: <https://www.w3schools.com/html/html5_syntax.asp>. Google HTML/CSS Style Guide: <https://google.github.io/styleguide/htmlcssguide.html>. |
+| JavaScript y Vue | Google JavaScript Style Guide: <https://google.github.io/styleguide/jsguide.html>. Guía de estilo de Vue: <https://vuejs.org/style-guide/>. |
+| Kotlin | Android Kotlin Style Guide: <https://developer.android.com/kotlin/style-guide>. Kotlin Coding Conventions: <https://kotlinlang.org/docs/coding-conventions.html>. |
+| Jetpack Compose | API Guidelines for Jetpack Compose: <https://github.com/androidx/androidx/blob/androidx-main/compose/docs/compose-api-guidelines.md>. |
+| Dart y Flutter | Effective Dart: <https://dart.dev/effective-dart>. |
+| C# | C# Coding Conventions: <https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions>. |
+| REST / OpenAPI | OpenAPI Specification: <https://swagger.io/specification/>. |
+| Gherkin | Gherkin Conventions for Readable Specifications: <https://specflow.org/gherkin/gherkin-conventions-for-readable-specifications/>. |
 
 **Reglas compartidas**
 
-- **Estrategia Offline-First:** Toda lectura y escritura en los clientes móviles interactúa primero con la base de datos local (Room/SQLite). Las escrituras locales se marcan con un estado de sincronización (ej. PENDING) antes de enviarse al backend.
-- **Inyección de Dependencias:** Uso centralizado de frameworks (Hilt en Android) para proveer repositorios y casos de uso, organizados mediante módulos (*Module.kt).
-- No incluir secretos, tokens ni cadenas de conexión en el repositorio (uso de EncryptedSharedPreferences o Keystore en móviles).
-- Centralizar textos para i18n en lugar de escribirlos directamente en vistas.
-- Evitar duplicar reglas de negocio entre UI y API; el backend conserva las reglas autoritativas y la validación final.
+- **Caché local y cambios pendientes:** las pantallas de la aplicación Android leen siempre de la base de datos local (Room), que se actualiza desde la API; por eso la información ya consultada está disponible sin conexión. Las escrituras se envían primero al servidor. Solo la **creación** de animales, registros sanitarios y actividades, si no hay conexión, se guarda en el dispositivo con un identificador temporal negativo, se muestra como «Pendiente de sincronizar» y se envía en segundo plano cuando vuelve la red. Editar y eliminar requieren conexión.
+- **Inyección de dependencias:** uso centralizado de Hilt para proveer repositorios, casos de uso y servicios, organizado mediante módulos (*Module).
+- **Secretos:** no incluir secretos, tokens ni cadenas de conexión en el repositorio. El token de sesión se guarda cifrado con Tink (AES-256-GCM) sobre Android Keystore; las claves de firma (*.jks, *.keystore) y google-services.json están excluidos por .gitignore; los secretos del backend se configuran como variables de entorno en Render.
+- **Internacionalización:** centralizar los textos en recursos en lugar de escribirlos en las vistas.
+- **Reglas de negocio:** evitar duplicarlas entre la interfaz y la API; el backend conserva las reglas autoritativas y la validación final. Los clientes solo aplican validaciones de formato para dar respuesta inmediata.
+- **Análisis estático:** hasta ahora no se emplean ktlint, detekt, dart format ni flutter analyze. La calidad se comprueba con las inspecciones de Android Studio, las advertencias del compilador y la revisión de los cambios. Si se incorporan herramientas, se registrarán aquí.
 
 <a id="toc-4-1-4-software-deployment-configuration"></a>
 
 ## 4.1.4. Software Deployment Configuration
 
-Cada producto se configura y publica de manera independiente, pero las aplicaciones móviles consumen la misma API mediante HTTPS y contratos documentados en OpenAPI.
+Cada producto se configura y publica de manera independiente, pero las aplicaciones móviles consumen la misma API mediante HTTPS y contratos documentados con OpenAPI. Esta sección describe los pasos para que, a partir de los repositorios de código fuente, se publique cada producto: la Landing Page en GitHub Pages, los Web Services en Render y las aplicaciones Android y Flutter en Firebase App Distribution.
 
-**Landing Page — GitHub Pages**
+| Producto | Repositorio | Plataforma | URL o identificador | Estado |
+|---|---|---|---|---|
+| Landing Page | anitec-landing-page | GitHub Pages | <https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/> | Publicada |
+| Web Services | anitec-backend | Render (Docker) | API: <https://anitec-backend-android.onrender.com>. Swagger: <https://anitec-backend-android.onrender.com/swagger/index.html> | Publicado |
+| Android | anitec-android | Firebase App Distribution | App ID 1:969068830564:android:5a2dafc1bf9a7f44652471 (paquete com.anitec.platform) | Aplicación registrada; release pendiente |
+| Flutter | **Pendiente:** repositorio | Firebase App Distribution | App ID 1:969068830564:ios:0bb12cea32f3d196652471 (registro previo) | Registro previo; desarrollo y release pendientes |
 
-1. Integrar el contenido aprobado en main.
-2. Ejecutar las comprobaciones y el proceso de construcción si corresponde.
-3. Configurar GitHub Pages con la rama o workflow definido.
-4. verificar navegación, recursos, responsive, i18n y accesibilidad desde la URL pública.
-
-**Web Services — Render**
-
-El backend se publica desde el repositorio <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend> mediante Docker. El Dockerfile en la raíz del repo:
-
-1. Construir con la imagen mcr.microsoft.com/dotnet/sdk:10.0, restaurar y publicar Anitec.Platform/Anitec.Platform.csproj en Release.
-2. Ejecutar con la imagen mcr.microsoft.com/dotnet/aspnet:10.0, exponer el puerto 8080 y definir ASPNETCORE_URLS=http://0.0.0.0:8080.
-3. En Render, conectar el repositorio, seleccionar despliegue por Docker (o build equivalente) y mapear el puerto del servicio.
-4. Configurar variables de entorno / secretos (valores no publicados en el informe):
-   - ConnectionStrings__DefaultConnection (o ANITEC_CONNECTION_STRING para migraciones)
-   - TokenSettings__Secret
-   - StripeSettings__SecretKey, StripeSettings__WebhookSecret, StripeSettings__SuccessUrl, StripeSettings__CancelUrl (si aplica el módulo de suscripciones)
-   - ASPNETCORE_ENVIRONMENT (p. ej. Production)
-5. Verificar salud del servicio, persistencia MySQL y documentación en /swagger.
-
-**Android y Flutter — Firebase App Distribution**
-
-Para distribuir las aplicaciones móviles a los evaluadores (testers) del Sprint 1, se ejecutaron los siguientes pasos en Firebase:
-
-1. Se creó el proyecto en Firebase Console y se registraron las aplicaciones de Android (nativo) y Flutter.
-2. Se configuraron los App IDs y se generaron los artefactos firmados (.apk para Android).
-3. Se cargaron los builds en Firebase App Distribution.
-4. Se publicaron las versiones para el grupo de testers autorizados (equipo y profesores).
-5. Se registró la versión y las notas de la entrega correspondientes al Sprint 1.
-
-| Producto | Entorno / servicio | URL o identificador | Estado |
-|---|---|---|---|
-| Landing Page | GitHub Pages | URL: <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page/> | Live |
-| Web Services | Render | API: <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live — evidencia en figuras 4.1.4.2 y 4.1.4.3 |
-| Android | Firebase App Distribution | App ID: 1:969068830564:android:5a2dafc1bf9a7f44652471 | Release v1.0.0 (Sprint 1) - Distribuido al grupo: Testers AniTec |
-| Flutter | Firebase App Distribution | App ID: 1:969068830564:ios:0bb12cea32f3d196652471 | Release v1.0.0 (Sprint 1) - Distribuido al grupo: Testers AniTec |
+**Diagrama de despliegue**
 
 El diagrama de despliegue muestra los dispositivos, productos, servicios externos y relaciones necesarias para ejecutar AniTec.
 
@@ -9327,35 +9548,81 @@ El diagrama de despliegue muestra los dispositivos, productos, servicios externo
   <p><i>Figura 4.1.4.1. Software Architecture Deployment Diagram. Fuente: elaboración propia con Structurizr DSL.</i></p>
 </div>
 
-La evidencia siguiente corresponde al Web Service publicado en Render. Las variables se muestran con valores ocultos; no se incluyen secretos en el informe.
+**Landing Page: GitHub Pages**
+
+La Landing Page es un sitio estático (index.html y carpeta assets), por lo que no requiere compilación.
+
+1. Integrar el contenido aprobado en la rama main del repositorio anitec-landing-page.
+2. En GitHub, abrir **Settings → Pages** del repositorio.
+3. En **Build and deployment**, elegir **Deploy from a branch**, seleccionar la rama main y la carpeta / (root), y guardar.
+4. Esperar a que la acción de publicación termine. La URL tiene la forma https://<organización>.github.io/anitec-landing-page/; la del proyecto es <https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/>.
+5. Verificar desde la URL pública la navegación entre secciones, la carga de recursos, el diseño responsive en escritorio y móvil, el cambio de idioma, la accesibilidad básica y el enlace a los Términos de Servicio en el pie de página.
+6. Registrar la URL en esta sección y en 4.2.1.8. Ya está registrada en ambas.
+
+**Web Services: Render**
+
+El backend se publica desde la rama main del repositorio anitec-backend (<https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend/tree/main>) con Docker, como el servicio anitec-backend-android. Requiere una base de datos MySQL accesible por Internet, porque Render no ofrece MySQL administrado.
+
+1. **Base de datos.** Crear una base MySQL 8 en un proveedor externo y anotar servidor, puerto, usuario, contraseña y nombre de la base. No es necesario crear las tablas: la API aplica las migraciones de Entity Framework Core al iniciar (Database.Migrate()), incluidas las de corrales y del correo del usuario.
+2. **Servicio.** En Render, crear un **New → Web Service**, conectar el repositorio anitec-backend, elegir la rama main, el entorno **Docker** (usa el Dockerfile de la raíz) y el plan Free.
+3. **Imagen.** El Dockerfile compila en una primera etapa con mcr.microsoft.com/dotnet/sdk:10.0 (restaura y publica Anitec.Platform/Anitec.Platform.csproj en Release) y ejecuta en una segunda con mcr.microsoft.com/dotnet/aspnet:10.0, expone el puerto 8080 y define ASPNETCORE_URLS=http://0.0.0.0:8080.
+4. **Variables de entorno.** Configurarlas en el panel **Environment** de Render; los valores no se publican en el informe ni en el repositorio:
+
+| Variable | Contenido |
+|---|---|
+| ASPNETCORE_ENVIRONMENT | Production. |
+| ConnectionStrings__DefaultConnection | Cadena de conexión MySQL del paso 1. |
+| TokenSettings__Secret | Cadena aleatoria larga (al menos 32 caracteres) para firmar los JWT. |
+| StripeSettings__SecretKey | Clave secreta de Stripe en modo de prueba. |
+| StripeSettings__WebhookSecret | Secreto del webhook de Stripe. |
+| StripeSettings__SuccessUrl y StripeSettings__CancelUrl | URLs de retorno del pago. Por defecto apuntan a http://localhost:5173; deben cambiarse a las URLs finales. |
+
+5. **Publicación.** Pulsar **Create Web Service**. Render construye la imagen y publica el servicio. Con la rama main conectada, cada push posterior inicia un despliegue automático.
+6. **Datos iniciales.** Los usuarios y planes de demostración se cargan solo en el entorno Development; en producción la base queda vacía. Las cuentas se crean con POST /api/v1/authentication/sign-up y los planes de suscripción deben insertarse en la base. **Pendiente de completar:** definir el procedimiento de carga de los planes.
+7. **Verificación.** Abrir /swagger/index.html en la URL pública, registrar un usuario, iniciar sesión, autorizar con el token en Swagger y consultar GET /api/v1/animals.
+8. **Consideraciones del plan gratuito.** El servicio se suspende tras un periodo de inactividad y la primera solicitud posterior puede tardar casi un minuto. El disco es efímero: las fotos de animales guardadas en wwwroot/uploads/animals se pierden al reiniciar el servicio, por lo que, para producción, se requiere un almacenamiento externo.
+
+El servicio quedó publicado en <https://anitec-backend-android.onrender.com> y su documentación Swagger en <https://anitec-backend-android.onrender.com/swagger/index.html>. Al verificarlo se comprobó que Swagger responde y que los endpoints protegidos devuelven 401 sin token. La evidencia siguiente muestra el servicio en Render y la configuración de sus variables, con los valores ocultos.
 
 <div align="center">
   <img src="markdown/assets/chapter-4/backend/render-backend-live.png" width="800">
-  <p><i>Figura 4.1.4.2. Servicio anitec-backend en Render con estado Live y URL pública. Fuente: elaboración propia (captura de Render).</i></p>
+  <p><i>Figura 4.1.4.2. Servicio anitec-backend-android en Render con estado Live y URL pública. Fuente: elaboración propia (captura de Render).</i></p>
 </div>
-
-La captura confirma el despliegue Docker del backend, el plan Free y la disponibilidad en https://anitec-backend.onrender.com.
 
 <div align="center">
   <img src="markdown/assets/chapter-4/backend/render-backend-environment.png" width="800">
   <p><i>Figura 4.1.4.3. Variables de entorno del backend en Render (valores ocultos): ASPNETCORE_ENVIRONMENT, ConnectionStrings__DefaultConnection, TokenSettings__Secret y StripeSettings. Fuente: elaboración propia (captura de Render).</i></p>
 </div>
 
-A continuación, se evidencia la publicación de los artefactos móviles en Firebase App Distribution para el acceso de los evaluadores.
+**Android: Firebase App Distribution**
+
+El proyecto Firebase «Anitec» (plan Spark) ya tiene registrada la aplicación «AniTec Android» con el nombre de paquete com.anitec.platform y el App ID indicado en la tabla. Para publicar una versión:
+
+1. **URL de la API.** La compilación release usa la dirección configurada en API_BASE_URL (app/build.gradle.kts), que apunta a https://anitec-backend-android.onrender.com/api/v1/, el backend publicado. Debe revisarse antes de generar cada versión.
+2. **Versión.** Incrementar versionCode y asignar versionName según Semantic Versioning (actualmente 1 y 0.1.0).
+3. **Firma.** Crear un keystore con keytool -genkeypair y guardarlo fuera del repositorio (los archivos *.jks y *.keystore están en .gitignore). Definir signingConfigs en app/build.gradle.kts leyendo las contraseñas desde local.properties o variables de entorno. **Pendiente:** el proyecto aún no tiene configurada la firma de la compilación release.
+4. **Compilación.** Ejecutar ./gradlew assembleRelease. El archivo resultante es app/build/outputs/apk/release/app-release.apk.
+5. **Publicación.** Subir el archivo desde la consola de Firebase (**Release & Monitor → App Distribution → Releases**) o desde la terminal con firebase appdistribution:distribute app-release.apk --app <APP_ID> --groups "<grupo>" --release-notes "<notas>". No se necesita google-services.json, porque la aplicación no usa el SDK de Firebase; el archivo, si se descargara, no se versiona.
+6. **Testers.** Crear el grupo de testers con el equipo y los profesores e invitarlos por correo. Cada evaluador acepta la invitación e instala la versión desde el enlace o desde la aplicación Firebase App Tester.
+7. **Registro.** Anotar versión, commit y fecha de cada release en 4.2.1.8 y verificar la instalación en un dispositivo físico, con inicio de sesión contra el backend desplegado.
+
+**Flutter: Firebase App Distribution**
+
+**Pendiente de completar:** la aplicación Flutter se desarrollará en una etapa posterior. En el proyecto Firebase está registrada «AniTec Flutter» como aplicación de Apple (identificador de paquete com.anitec.platform). Para distribuir una compilación de Android de Flutter se deberá registrar además una aplicación Android con su propio nombre de paquete, y para iOS se requerirá una cuenta de desarrollador de Apple. Los pasos serán equivalentes a los de Android, con flutter build apk --release como comando de compilación.
+
+Las capturas siguientes muestran el registro de las aplicaciones en el proyecto Firebase.
 
 <div align="center">
   <img src="markdown/assets/chapter-4/firebase-android-release.png" width="800">
-  <p><i>Figura 4.1.4.4. Lanzamiento de la aplicación nativa Android en Firebase App Distribution (Sprint 1). Fuente: elaboración propia.</i></p>
+  <p><i>Figura 4.1.4.4. Aplicación «AniTec Android» registrada en el proyecto Firebase Anitec (App ID y nombre de paquete). Fuente: elaboración propia (captura de Firebase).</i></p>
 </div>
 
 <div align="center">
   <img src="markdown/assets/chapter-4/firebase-flutter-release.png" width="800">
-  <p><i>Figura 4.1.4.5. Lanzamiento de la aplicación multiplataforma Flutter en Firebase App Distribution (Sprint 1). Fuente: elaboración propia.</i></p>
+  <p><i>Figura 4.1.4.5. Aplicación «AniTec Flutter» registrada como aplicación de Apple en el proyecto Firebase Anitec. Fuente: elaboración propia (captura de Firebase).</i></p>
 </div>
 
-La configuración de secretos se mantiene fuera del repositorio GitHub y se administra en el panel Environment de Render.
-
-> **Pendiente de completar:** capturas de Landing Page, Android y Flutter por parte de sus responsables.
+La configuración de secretos se mantiene fuera de los repositorios de GitHub y se administra en el panel Environment de Render y en el equipo de cada desarrollador.
 
 
 <div style="page-break-before: always;"></div>
@@ -9370,129 +9637,360 @@ Esta sección registra el avance de la Landing Page, los Web Services y las apli
 
 ## 4.2.1. Sprint 1
 
-El Sprint 1 corresponde al TB1 y establece la base ejecutable de los productos de AniTec. El alcance candidato considera la Landing Page desplegada, el backend al 70 %, la configuración de Android y Flutter y las pantallas core de autenticación y gestión de animales. El compromiso definitivo se registrará después del Sprint Planning.
+El Sprint 1 corresponde al TB1 y establece la base ejecutable de los productos de AniTec. Su alcance es el publicado en la rama main del repositorio de la aplicación Android (<https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-android>): la Landing Page, la adaptación del backend para el uso móvil y la aplicación Android nativa con autenticación, gestión de fincas, corrales y animales, y registros sanitarios básicos. La aplicación Flutter queda como placeholder para un sprint posterior.
 
 <a id="toc-4-2-1-1-sprint-planning-1"></a>
 
 ### 4.2.1.1. Sprint Planning 1
 
-La reunión de planificación definirá el Sprint Goal, la capacidad del equipo y el subconjunto de historias que puede completarse con evidencia verificable durante la iteración.
+La reunión de planificación definió el Sprint Goal, la capacidad del equipo y el conjunto de historias que podía completarse con evidencia verificable. El Product Backlog del AV1 asignaba al Sprint 1 veintiuna historias (96 Story Points); al contrastarlas con lo realmente publicado en main, el compromiso quedó ajustado a las historias de la tabla siguiente y el Product Backlog de la sección 2.4.3 se actualizó con ese ajuste: 24 historias y 105 Story Points.
 
 <table>
   <tr><th>Sprint #</th><td>Sprint 1</td></tr>
   <tr><th colspan="2">Sprint Planning Background</th></tr>
-  <tr><th>Date</th><td><b>Pendiente:</b> YYYY-MM-DD</td></tr>
-  <tr><th>Time</th><td><b>Pendiente:</b> HH:MM AM/PM</td></tr>
-  <tr><th>Location</th><td><b>Pendiente:</b> ubicación física o plataforma virtual</td></tr>
-  <tr><th>Prepared By</th><td><b>Pendiente:</b> responsable del acta</td></tr>
+  <tr><th>Date</th><td>2026-09-25</td></tr>
+  <tr><th>Time</th><td>10:53 PM</td></tr>
+  <tr><th>Location</th><td>Discord (reunión virtual)</td></tr>
+  <tr><th>Prepared By</th><td>Melgarejo Quiroz, Josep Eliu</td></tr>
   <tr><th>Attendees</th><td>Beingolea Montalvo, Sebastian Martin / Melgarejo Quiroz, Josep Eliu / Ortega Muñoz, Saul / Sanchez Silva, Luciana Celeste / Villanueva Rodriguez, Giuseppe</td></tr>
-  <tr><th>Sprint 0 Review Summary</th><td>No aplica como sprint de implementación previo. La línea base comprende el informe hasta el capítulo II, la Landing Page, la API existente y los artefactos de arquitectura.</td></tr>
-  <tr><th>Sprint 0 Retrospective Summary</th><td>El equipo deberá iniciar la iteración con responsabilidades explícitas, trazabilidad entre historias y tareas, y evidencia continua en repositorios.</td></tr>
-  <tr><th colspan="2">Sprint Goal & User Stories</th></tr>
-  <tr><th>Sprint 1 Goal</th><td><b>Pendiente de acordar.</b> Propuesta: ofrecer una primera experiencia móvil ejecutable para que un usuario pueda autenticarse y consultar o registrar información esencial de animales, respaldada por la API pública y la Landing Page desplegada.</td></tr>
-  <tr><th>Sprint 1 Velocity</th><td><b>Pendiente:</b> capacidad acordada en Story Points</td></tr>
-  <tr><th>Sum of Story Points</th><td><b>Pendiente:</b> suma de las historias finalmente comprometidas</td></tr>
+  <tr><th>Sprint 0 Review Summary</th><td>No existe un sprint de implementación previo. La línea base del Sprint 1 es el AV1: el informe hasta el capítulo II (requisitos, Product Backlog y diseño estratégico y táctico), la Landing Page inicial y el backend ASP.NET Core con sus bounded contexts.</td></tr>
+  <tr><th>Sprint 0 Retrospective Summary</th><td>Como aciertos del AV1, el equipo valoró haber cerrado los capítulos I y II con los requisitos y el diseño estratégico y táctico, y contar con una Landing Page inicial y un backend organizado por bounded contexts. Como oportunidades de mejora, identificó definir el alcance móvil (Android nativo y Flutter para una etapa posterior) antes de empezar a implementar, mantener alineados el informe y el código, y incorporar pruebas automatizadas al backend desde el inicio.</td></tr>
+  <tr><th colspan="2">Sprint Goal &amp; User Stories</th></tr>
+  <tr><th>Sprint 1 Goal</th><td><b>Nuestro foco</b> es ofrecer una primera aplicación Android ejecutable para ganaderos y veterinarios. <b>Creemos que</b> entrega una forma rápida de registrar y consultar sus fincas, animales y registros sanitarios desde el teléfono a los ganaderos y veterinarios de pequeñas y medianas explotaciones. <b>Lo confirmaremos cuando</b> un usuario pueda registrarse, iniciar sesión y registrar y consultar un animal desde la aplicación instalada, usando la API del backend, con la Landing Page publicada.</td></tr>
+  <tr><th>Sprint 1 Velocity</th><td>105 Story Points, igual a la suma de las historias comprometidas. Es la capacidad acordada por el equipo para el sprint; al no existir un sprint previo, no hay una velocidad histórica de referencia.</td></tr>
+  <tr><th>Sum of Story Points</th><td>105</td></tr>
 </table>
 
-El Product Backlog asigna al Sprint 1 los siguientes candidatos. La suma total es 96 Story Points; por ello, el equipo debe confirmar durante el planning cuáles se comprometen según su capacidad y mantener el resto fuera del Sprint Backlog si no puede completarlos.
+La tabla siguiente lista las 24 historias comprometidas, sus Story Points y su estado al cierre del sprint. Las historias US-014, US-015 y US-016 se adelantaron desde el Sprint 2; TS-002 (configurar Flutter) y SP-001 (investigar ML Kit) pasan al Sprint 2, y US-044 y US-045 son historias nuevas incorporadas al Product Backlog (sección 2.4).
 
-| ID | Título | Story Points |
-|---|---|---:|
-| US-001 | Comprender la propuesta de valor de AniTec | 3 |
-| US-002 | Conocer las soluciones para cada segmento | 3 |
-| US-003 | Acceder a una landing page adaptable e internacionalizada | 5 |
-| TS-001 | Configurar la aplicación Android nativa | 5 |
-| TS-002 | Configurar la aplicación multiplataforma con Flutter | 5 |
-| TS-003 | Definir la arquitectura móvil por capas y bounded contexts | 5 |
-| TS-013 | Adaptar y documentar los servicios backend para móviles | 8 |
-| US-004 | Registrar una cuenta según el rol | 5 |
-| US-005 | Iniciar sesión | 3 |
-| US-006 | Mantener y finalizar la sesión móvil | 3 |
-| US-007 | Acceder únicamente a información autorizada | 5 |
-| TS-008 | Proteger credenciales y datos de sesión | 5 |
-| US-008 | Consultar las fincas registradas | 3 |
-| US-009 | Registrar y actualizar una finca | 5 |
-| US-010 | Consultar y buscar animales | 5 |
-| US-011 | Registrar un animal | 5 |
-| US-012 | Actualizar o archivar un animal | 5 |
-| US-013 | Consultar el detalle de un animal | 3 |
-| TS-004 | Integrar las aplicaciones con la API REST interna | 5 |
-| TS-005 | Implementar persistencia local segura en Android | 5 |
-| SP-001 | Investigar identificación de animales con Google ML Kit | 5 |
+| ID | Título | Story Points | Estado al cierre |
+|---|---|---:|---|
+| US-011 | Registrar un animal | 5 | Completa: registro individual y masivo. |
+| US-010 | Consultar y buscar animales | 5 | Completa. |
+| US-013 | Consultar el detalle de un animal | 3 | Completa: ficha técnica. |
+| US-009 | Registrar y actualizar una finca | 5 | Completa. |
+| US-008 | Consultar las fincas registradas | 3 | Completa. |
+| US-044 | Gestionar los corrales de una finca | 3 | Completa. |
+| US-012 | Actualizar o archivar un animal | 5 | Parcial: se actualiza y se elimina; el archivado no está implementado. |
+| US-015 | Registrar una incidencia sanitaria | 5 | Adelantada desde el Sprint 2. |
+| US-016 | Registrar diagnóstico y tratamiento | 5 | Adelantada desde el Sprint 2. |
+| US-014 | Consultar eventos sanitarios | 3 | Adelantada desde el Sprint 2. |
+| US-045 | Adjuntar una fotografía al animal | 3 | Completa. |
+| US-001 | Comprender la propuesta de valor de AniTec | 3 | Completa. |
+| US-002 | Conocer las soluciones para cada segmento | 3 | Completa. |
+| TS-013 | Adaptar y documentar los servicios backend para móviles | 8 | Completa: corrales, operaciones masivas, OpenAPI y pruebas automatizadas del backend (sección 4.2.1.5). |
+| TS-004 | Integrar las aplicaciones con la API REST interna | 5 | Completa para Android. |
+| TS-003 | Definir la arquitectura móvil por capas y bounded contexts | 5 | Completa. |
+| TS-001 | Configurar la aplicación Android nativa | 5 | Completa. |
+| TS-005 | Implementar persistencia local segura en Android | 5 | Completa: Room y sesión cifrada. |
+| US-004 | Registrar una cuenta según el rol | 5 | Completa. |
+| US-005 | Iniciar sesión | 3 | Completa. |
+| US-007 | Acceder únicamente a información autorizada | 5 | Parcial: el filtrado se hace en la aplicación; el backend aún no filtra por usuario. |
+| US-006 | Mantener y finalizar la sesión móvil | 3 | Completa. |
+| TS-008 | Proteger credenciales y datos de sesión | 5 | Completa. |
+| US-003 | Acceder a una landing page adaptable e internacionalizada | 5 | Completa. |
 
 <a id="toc-4-2-1-2-aspect-leaders-and-collaborators"></a>
 
 ### 4.2.1.2. Aspect Leaders and Collaborators
 
-La matriz LACX indicará un líder (L) y los colaboradores (C) de cada aspecto comprometido. La asignación deberá coincidir con las tareas del Sprint Backlog y asegurar participación de todos los integrantes.
+La matriz LACX indica un líder (L) y los colaboradores (C) de cada aspecto del sprint. Los aspectos corresponden a los productos y actividades del Sprint 1: diseño UX/UI, aplicación Android, aplicación Flutter, backend, Landing Page, pruebas, y documentación y despliegue. La matriz se deriva de las tareas asignadas en el Sprint Backlog (sección 4.2.1.3) y de las contribuciones al Informe; la aplicación Flutter no tiene responsables porque su desarrollo no forma parte de este sprint.
 
 | Team Member | GitHub Username | UX/UI | Android | Flutter | Backend | Landing Page | Testing | Documentation & Deployment |
 |---|---|---|---|---|---|---|---|---|
-| Beingolea Montalvo, Sebastian Martin | smbmontalvo | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
-| Melgarejo Quiroz, Josep Eliu | Melga1502 | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
-| Ortega Muñoz, Saul | Ss1lent10 | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
-| Sanchez Silva, Luciana Celeste | luccsss | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
-| Villanueva Rodriguez, Giuseppe | Giuseppe152004 | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
+| Beingolea Montalvo, Sebastian Martin | smbmontalvo | — | C | — | L | — | C | C |
+| Melgarejo Quiroz, Josep Eliu | Melga1502 | — | L | — | — | — | — | C |
+| Ortega Muñoz, Saul | Ss1lent10 | C | C | — | — | L | — | C |
+| Sanchez Silva, Luciana Celeste | luccsss | L | C | — | — | — | — | C |
+| Villanueva Rodriguez, Giuseppe | Giuseppe152004 | — | C | — | — | — | L | L |
 
-> **Pendiente de completar:** reemplazar “Pendiente” por L, C o — después de aprobar la distribución del Sprint 1.
 
 <a id="toc-4-2-1-3-sprint-backlog-1"></a>
 
 ### 4.2.1.3. Sprint Backlog 1
 
-El Sprint Backlog descompone las historias comprometidas en tareas comprobables. El tablero utilizará los estados Todo, In-Process, To-Review y Done.
+El Sprint Backlog descompone las historias comprometidas en tareas comprobables y refleja el objetivo del sprint: una primera aplicación Android ejecutable, respaldada por la API del backend y por la Landing Page publicada. El tablero utiliza los estados Todo, In-Process, To-Review y Done.
 
-- **Sprint Goal:** pendiente de confirmar en el Sprint Planning.
+- **Sprint Goal:** ofrecer una primera aplicación Android ejecutable para ganaderos y veterinarios (ver 4.2.1.1).
 - **Board URL:** **Pendiente de completar:** URL pública del tablero.
 - **Board screenshot:** **Pendiente de completar:** captura del tablero del Sprint 1.
 
 | Story ID | Story Title | Task ID | Task Title | Description | Hours | Assigned To | Status |
 |---|---|---|---|---|---:|---|---|
-| ID pendiente | Título del Product Backlog | T-001 | Tarea concreta pendiente | Resultado verificable pendiente | Pendiente | Pendiente | Todo |
-| ID pendiente | Título del Product Backlog | T-002 | Tarea concreta pendiente | Resultado verificable pendiente | Pendiente | Pendiente | Todo |
-| ID pendiente | Título del Product Backlog | T-003 | Tarea concreta pendiente | Resultado verificable pendiente | Pendiente | Pendiente | Todo |
+| US-001 | Comprender la propuesta de valor de AniTec | T-001 | Diseñar la sección de propuesta de valor | Encabezado, mensaje principal e indicadores de la Landing Page. | 4 | Ortega Muñoz, Saul | Done |
+| US-002 | Conocer las soluciones para cada segmento | T-002 | Implementar las secciones para ganaderos y veterinarios | Páginas por segmento con sus funcionalidades. | 6 | Ortega Muñoz, Saul | Done |
+| US-003 | Acceder a una landing page adaptable e internacionalizada | T-003 | Implementar el diseño responsive y el selector de idioma | Adaptación a móvil y textos en inglés y español. | 8 | Ortega Muñoz, Saul | Done |
+| TS-001 | Configurar la aplicación Android nativa | T-004 | Crear el proyecto Android | Proyecto Kotlin con Jetpack Compose, Hilt y la configuración de compilación. | 6 | Villanueva Rodriguez, Giuseppe | Done |
+| TS-003 | Definir la arquitectura móvil por capas y bounded contexts | T-005 | Organizar el código por bounded contexts y capas | Paquetes domain, application, infrastructure e interfaces por contexto. | 6 | Villanueva Rodriguez, Giuseppe | Done |
+| TS-004 | Integrar las aplicaciones con la API REST interna | T-006 | Implementar el cliente REST | Retrofit y OkHttp con interceptor de token y mapeo de errores HTTP. | 8 | Beingolea Montalvo, Sebastian Martin | Done |
+| TS-005 | Implementar persistencia local segura en Android | T-007 | Implementar la caché local con Room | Entidades y DAO por contexto; limpieza de la caché al cerrar sesión. | 8 | Melgarejo Quiroz, Josep Eliu | Done |
+| TS-013 | Adaptar y documentar los servicios backend para móviles | T-008 | Agregar corrales y operaciones masivas al backend | Entidad Corral, relación animal-corral y endpoints de alta, estado y baja masiva. | 10 | Beingolea Montalvo, Sebastian Martin | Done |
+| TS-013 | Adaptar y documentar los servicios backend para móviles | T-009 | Documentar los endpoints con OpenAPI | Swagger UI con esquema Bearer JWT para los endpoints del Sprint. | 4 | Beingolea Montalvo, Sebastian Martin | Done |
+| US-004 | Registrar una cuenta según el rol | T-010 | Pantalla de registro | Formulario con selección de rol y aceptación de los Términos de Servicio. | 6 | Ortega Muñoz, Saul | Done |
+| US-005 | Iniciar sesión | T-011 | Pantalla de inicio de sesión | Formulario, validaciones y mensajes de error recuperables. | 4 | Ortega Muñoz, Saul | Done |
+| US-006 | Mantener y finalizar la sesión móvil | T-012 | Mantener y finalizar la sesión | Sesión persistente, cierre de sesión y retorno al inicio al vencer el token. | 6 | Ortega Muñoz, Saul | Done |
+| US-007 | Acceder únicamente a información autorizada | T-013 | Navegación por rol y filtrado de datos | Barra de navegación por rol y filtrado de fincas, animales y registros del usuario en la aplicación. | 8 | Melgarejo Quiroz, Josep Eliu | To-Review |
+| TS-008 | Proteger credenciales y datos de sesión | T-014 | Cifrar el token de sesión | Almacenamiento con DataStore, Tink (AES-256-GCM) y Android Keystore. | 6 | Beingolea Montalvo, Sebastian Martin | Done |
+| US-008 | Consultar las fincas registradas | T-015 | Lista de fincas | Tarjetas con ubicación, propietario y conteo de corrales y animales. | 4 | Sanchez Silva, Luciana Celeste | Done |
+| US-009 | Registrar y actualizar una finca | T-016 | Formulario de fincas | Alta y edición con validaciones y eliminación con confirmación. | 5 | Sanchez Silva, Luciana Celeste | Done |
+| US-010 | Consultar y buscar animales | T-017 | Lista de animales con búsqueda y filtro | Búsqueda por varios campos y filtro por corral. | 8 | Melgarejo Quiroz, Josep Eliu | Done |
+| US-011 | Registrar un animal | T-018 | Formulario de registro de animales | Registro individual y masivo de 1 a 500 animales. | 10 | Melgarejo Quiroz, Josep Eliu | Done |
+| US-012 | Actualizar o archivar un animal | T-019 | Edición y eliminación de animales | Edición, eliminación individual y acciones sobre varios animales con confirmación. | 6 | Villanueva Rodriguez, Giuseppe | To-Review |
+| US-013 | Consultar el detalle de un animal | T-020 | Ficha técnica del animal | Hoja de detalle con todos los datos y la fotografía. | 6 | Ortega Muñoz, Saul | Done |
+| US-014 | Consultar eventos sanitarios | T-021 | Lista de registros sanitarios | Tarjetas con tipo, fecha y seguimiento. | 5 | Sanchez Silva, Luciana Celeste | Done |
+| US-015 | Registrar una incidencia sanitaria | T-022 | Formulario de registro sanitario | Tipo, fecha, descripción y fecha de seguimiento. | 6 | Sanchez Silva, Luciana Celeste | Done |
+| US-016 | Registrar diagnóstico y tratamiento | T-023 | Diagnóstico y tratamiento | Campos de diagnóstico, tratamiento y prescripción del registro sanitario. | 3 | Sanchez Silva, Luciana Celeste | Done |
+| US-044 | Gestionar los corrales de una finca | T-024 | Lista y formulario de corrales | Alta, edición y eliminación de corrales por finca. | 6 | Sanchez Silva, Luciana Celeste | Done |
+| US-045 | Adjuntar una fotografía al animal | T-025 | Fotografía del animal | Captura con cámara o elección de galería, reducción de tamaño y subida al servidor. | 8 | Melgarejo Quiroz, Josep Eliu | Done |
+| Sin historia | Tarea técnica sin historia asociada | T-026 | Pruebas unitarias e instrumentadas de Android | JUnit, MockK y pruebas de DAO de Room sobre dominio, casos de uso, repositorios y ViewModels. | 12 | Villanueva Rodriguez, Giuseppe | Done |
+| Sin historia | Tarea técnica sin historia asociada | T-027 | Pantalla de inicio del ganadero | Contadores del hato, alertas y registros sanitarios recientes. | 6 | Villanueva Rodriguez, Giuseppe | Done |
+| TS-013 | Adaptar y documentar los servicios backend para móviles | T-028 | Crear la suite de pruebas automatizadas del backend | Proyecto Anitec.Platform.Tests con pruebas unitarias, de integración y BDD (xUnit, NSubstitute y Reqnroll) de Iam, Livestock y Sanitary. | 12 | Beingolea Montalvo, Sebastian Martin | Done |
+| Sin historia | Tarea de diseño sin historia asociada | T-029 | Elaborar los mock-ups móviles | Mock-ups de Android y Flutter organizados por aplicación y rol, base de las pantallas de la aplicación. | 12 | Sanchez Silva, Luciana Celeste | Done |
+| Sin historia | Tarea de despliegue sin historia asociada | T-030 | Registrar las aplicaciones en Firebase y documentar su despliegue | Aplicaciones Android y Flutter registradas en Firebase App Distribution y documentación del proceso de publicación. | 6 | Villanueva Rodriguez, Giuseppe | Done |
 
 | Métrica | Valor |
 |---|---|
-| Historias comprometidas | Pendiente |
-| Story Points comprometidos | Pendiente |
-| Tareas | Pendiente |
-| Horas estimadas | Pendiente |
-| Tareas completadas | Pendiente al cierre |
+| Historias comprometidas | 24 |
+| Story Points comprometidos | 105 |
+| Tareas | 30 |
+| Horas estimadas | 205 |
+| Tareas completadas (Done) | 28 de 30; las 2 restantes están en To-Review |
+
 
 <a id="toc-4-2-1-4-development-evidence-for-sprint-review"></a>
 
 ### 4.2.1.4. Development Evidence for Sprint Review
 
-Esta sección registrará únicamente commits que contribuyan al alcance comprometido. Cada evidencia debe poder localizarse en el repositorio y relacionarse con una historia o tarea.
-
-### 4.2.1.4. Development Evidence for Sprint Review
-
-Esta sección registrará únicamente commits que contribuyan al alcance comprometido. Cada evidencia debe poder localizarse en el repositorio y relacionarse con una historia o tarea.
+Esta sección registra los commits que contribuyen al alcance comprometido. La aplicación Android se desarrolló durante el sprint sobre la rama main; el backend y la aplicación web parten de proyectos creados antes del sprint, por lo que se registra su commit de creación, y el backend suma el commit de sus pruebas automatizadas. El Informe documenta el diseño, la configuración y las evidencias del sprint.
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
 |---|---|---|---|---|---|
-| anitec-backend | main | 125d53e | chore: add initial commit with all project files | Incorpora la solución Anitec.Platform con bounded contexts (Iam, Profiles, Livestock, Sanitary, Financial, Activities, Analytics, Devices, Metrics, Subscriptions, Clients, Shared), controllers REST, EF Core + MySQL, JWT/BCrypt, Swagger y Dockerfile. | 2026-09-04 |
-| anitec-backend | main | 9831844 | chore: big update to add corrals and animal corral relationship | Extiende Livestock con corrales (CorralsController), relación animal–corral, operaciones bulk de animales y validaciones de resources. | 2026-09-30 |
-| anitec-landing-page | main | 2a88184| chore: add initial project files | Agrega la estructura inicial del proyecto de la Landing Page, incluyendo la configuración base, componentes principales y archivos necesarios para el desarrollo de la interfaz de presentación de AniTec. | 2026-09-04 |
-| anitec-android | main | 2f3b903 | feat: add Android project foundation and authentication | Implementa la estructura base nativa usando Clean Architecture. Integra AuthApiService, AuthRepositoryImpl y persistencia segura de tokens. | 2026-10-01 |
-| anitec-android | main | 8ade432 | feat: add livestock management, health records and rancher dashboard | Refactoriza la capa de dominio y la persistencia local integrando la jerarquía de hatos y animales. Asegura soporte Offline-First para registro. | 2026-10-01 |
-| Informe | main | c8b8be7 | docs: update report complete generation | Agrega la estructura inicial del informe de proyecto con sus capítulos, títulos y diagramas de arquitectura C4. | 2026-09-16 |
-
-<a id="toc-4-2-1-5-testing-suite-evidence-for-sprint-review"></a>
-
-> **Pendiente de completar:** agregar commits de Landing Page, Android, Flutter e informe según el alcance real. Las filas anteriores corresponden solo al backend.
+| anitec-android | main | 2f3b903 | feat: add Android project foundation and authentication | Aplicación Compose con el sistema de diseño de AniTec y localización es-419/en; red con Retrofit/OkHttp, sesión cifrada y manejo de 401; inicio de sesión, registro, términos de servicio y navegación por rol; pruebas unitarias del mapeo de errores y de los ViewModels de autenticación. | 2026-10-01 |
+| anitec-android | main | 8ade432 | feat: add livestock management, health records and rancher dashboard | Fincas, corrales y animales con búsqueda, filtro por corral, selección múltiple con acciones masivas, ficha técnica y subida de fotografía; lista y formulario de registros sanitarios; inicio del ganadero con contadores y registros recientes; caché Room limitada al usuario y limpiada al cerrar sesión; pruebas instrumentadas. | 2026-10-01 |
+| anitec-backend | main | 125d53e | chore: add initial commit with all project files | Solución Anitec.Platform con sus bounded contexts (Iam, Profiles, Livestock, Sanitary, Financial, Activities, Analytics, Devices, Metrics, Subscriptions, Clients, Shared), controllers REST, Entity Framework Core con MySQL, JWT y Swagger. | 2026-09-04 |
+| anitec-backend | main | 888f1b9 | chore: add tests for Anitec.Platform | Proyecto Anitec.Platform.Tests con 52 pruebas unitarias, 32 de integración y 20 escenarios BDD (4 archivos .feature con sus pasos); respuesta 403 en lugar de 500 para un rol sin permiso y entorno Testing para ejecutar la API con SQLite en memoria. | 2026-10-04 |
+| anitec-frontend | main | f12794d | chore: add initial project files | Estructura inicial de la aplicación web en Vue. | 2026-09-04 |
+| Informe | main | c8b8be7 | docs: update report complete generation | Estructura del informe con sus capítulos, títulos y diagramas de arquitectura C4. | 2026-09-16 |
+| Informe | main | d09a7e2 | docs(chapter-4): add backend evidence | Evidencias del despliegue y de la documentación del backend. | 2026-10-01 |
+| Informe | main | cd83263 | docs(update): mockups organized | Mock-ups móviles organizados por aplicación y rol. | 2026-10-02 |
 
 <a id="toc-4-2-1-5-testing-suite-evidence-for-sprint-review"></a>
 
 ### 4.2.1.5. Testing Suite Evidence for Sprint Review
 
-La evidencia incluirá pruebas automatizadas relacionadas con las historias del sprint. Los escenarios BDD se expresarán en archivos .feature y sus pasos correspondientes.
+Los Web Services cuentan con una suite de pruebas automatizadas en el proyecto Anitec.Platform.Tests (xUnit), dentro del repositorio anitec-backend: <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend/tree/main/Anitec.Platform.Tests>. La suite reúne tres tipos de pruebas, todas relacionadas con las historias del Sprint 1:
+
+| Tipo | Herramientas | Carpeta del proyecto | Pruebas |
+|---|---|---|---|
+| Unit Tests | xUnit y NSubstitute (repositorios simulados) | Unit/ | 52 |
+| Integration Tests | xUnit y WebApplicationFactory | Integration/ | 32 |
+| Acceptance Tests (BDD) | Reqnroll sobre xUnit, archivos .feature en Gherkin | Bdd/Features/ y Bdd/Steps/ | 20 escenarios |
+| **Total** | | | **104** |
+
+Las pruebas de integración y de BDD arrancan la API real en memoria con WebApplicationFactory. Para no depender de un servidor MySQL, la base de datos es SQLite en memoria y el entorno es Testing: en él la API crea el esquema con EnsureCreated() en lugar de aplicar las migraciones de MySQL. Las pruebas se ejecutan con dotnet test desde la carpeta del repositorio.
+
+**Unit Tests.** Cada clase valida un servicio de la capa de aplicación o de infraestructura con sus dependencias simuladas.
+
+| Test ID | Clase probada | Clase de pruebas | Comportamientos verificados | Historias relacionadas | Pruebas | Resultado |
+|---|---|---|---|---|---|---|
+| TEST-BE-U01 | UserCommandService | UserCommandServiceTests | Registro con la contraseña cifrada; nombre de usuario repetido; rol inválido y normalización del rol; correo mal formado, repetido y normalizado a minúsculas; nombre completo vacío; error de base de datos; inicio de sesión con credenciales válidas, usuario inexistente y contraseña incorrecta. | US-004, US-005 | 18 | Completado |
+| TEST-BE-U02 | TokenService | TokenServiceTests | El token incluye usuario y rol y vence a los 7 días; un token válido devuelve el id del usuario; un token ausente, mal formado, firmado con otra clave, alterado o vencido se rechaza. | US-005, US-007 | 9 | Completado |
+| TEST-BE-U03 | HashingService | HashingServiceTests | La contraseña no se guarda en claro, cada cifrado produce un hash distinto y la verificación acepta solo la contraseña original. | US-004, US-005 | 3 | Completado |
+| TEST-BE-U04 | AnimalCommandService | AnimalCommandServiceTests | Alta, edición y baja de un animal con y sin registro existente; alta masiva de 1 a 500 animales, rechazo de cantidades fuera de rango y de un corral inexistente, y códigos consecutivos por corral; cambio de estado y baja de varios animales ignorando los inexistentes. | US-011, US-012, TS-013 | 17 | Completado |
+| TEST-BE-U05 | CorralCommandService | CorralCommandServiceTests | Alta, edición y baja de un corral, y respuesta de «no encontrado» cuando no existe. | US-044, TS-013 | 5 | Completado |
+
+**Integration Tests.** Cada prueba llama a los endpoints REST de la API en memoria con usuarios registrados durante la prueba.
+
+| Test ID | Clase de pruebas | Endpoints y comportamientos verificados | Historias relacionadas | Pruebas | Resultado |
+|---|---|---|---|---|---|
+| TEST-BE-I01 | AuthenticationApiTests | POST /authentication/sign-up (alta, usuario repetido 409, rol inválido 400), POST /authentication/sign-in (token, contraseña incorrecta 400) y 401 en /animals, /herds, /corrals y /health-events sin token o con un token inválido. | US-004, US-005, US-007 | 11 | Completado |
+| TEST-BE-I02 | LivestockApiTests | Fincas (POST, GET, validación 400, no encontrada 404), corrales (POST, listado, DELETE), animales (POST con corral obligatorio, GET, PUT, DELETE, POST /animals/bulk, PATCH /animals/bulk-status y DELETE /animals/bulk con cuerpo JSON) y permisos por rol: el veterinario consulta animales, pero no los crea (403). | US-007, US-008, US-009, US-010, US-011, US-012, US-044, TS-013 | 16 | Completado |
+| TEST-BE-I03 | HealthEventsApiTests | POST, GET y DELETE de /health-events, evento inexistente 404 y registro de un evento por un veterinario. | US-014, US-015, US-016 | 5 | Completado |
+
+**Acceptance Tests (BDD).** Los escenarios se escriben en Gherkin (Given-When-Then) en cuatro archivos .feature dentro de Anitec.Platform.Tests/Bdd/Features. Los pasos se implementan en C# en Anitec.Platform.Tests/Bdd/Steps y ejecutan los escenarios contra la API en memoria.
+
+| Archivo .feature | Escenarios | Historias relacionadas |
+|---|---|---|
+| Authentication.feature | 7 | US-004, US-005, US-007 |
+| AnimalManagement.feature | 7 | US-010, US-011, US-012, US-044, TS-013 |
+| HealthRecords.feature | 3 | US-014, US-015, US-016 |
+| RolePermissions.feature | 3 | US-007 |
+
+Código de Authentication.feature:
+
+<pre>
+Feature: Authentication
+  As a rancher or a veterinarian
+  I want to create an account and sign in
+  So that I can work with my own information in AniTec
+
+  Scenario: A new rancher signs up and signs in
+    Given I am a new visitor
+    When I sign up as a "Rancher"
+    And I sign in with my credentials
+    Then I receive a session token
+    And my role is "Rancher"
+
+  Scenario: A new veterinarian signs up and signs in
+    Given I am a new visitor
+    When I sign up as a "Veterinarian"
+    And I sign in with my credentials
+    Then I receive a session token
+    And my role is "Veterinarian"
+
+  Scenario: Signing up with an unknown role is rejected
+    Given I am a new visitor
+    When I sign up as a "Administrator"
+    Then the request is rejected with status 400
+
+  Scenario: Signing up twice with the same username is rejected
+    Given I have an account as a "Rancher"
+    When I sign up as a "Rancher"
+    Then the request is rejected with status 409
+
+  Scenario: Signing in with a wrong password is rejected
+    Given I have an account as a "Rancher"
+    When I sign in with the password "wrong-password"
+    Then the request is rejected with status 400
+    And I do not receive a session token
+
+  Scenario: Protected information requires a session
+    Given I am a new visitor
+    When I request the list of animals
+    Then the request is rejected with status 401
+
+  Scenario: A signed-in user can request protected information
+    Given I am signed in as a "Rancher"
+    When I request the list of animals
+    Then the request succeeds
+</pre>
+
+Código de AnimalManagement.feature:
+
+<pre>
+Feature: Animal management
+  As a rancher
+  I want to register and organize my animals by farm and corral
+  So that I always know what I have and in what condition
+
+  Background:
+    Given I am signed in as a "Rancher"
+    And I have a farm called "La Esperanza"
+    And the farm has a corral called "Corral A"
+
+  Scenario: Register an animal in a corral
+    When I register an animal with the code "COW-001" in "Corral A"
+    Then the animal "COW-001" appears in the animal list
+
+  Scenario: An animal must belong to a corral
+    When I register an animal without a corral
+    Then the request is rejected with status 400
+
+  Scenario: Register several animals at once
+    When I register 3 animals in bulk in "Corral A"
+    Then the codes "CorralA-001, CorralA-002, CorralA-003" are assigned
+
+  Scenario: Bulk registration is limited to 500 animals
+    When I register 501 animals in bulk in "Corral A"
+    Then the request is rejected with status 400
+
+  Scenario: Mark several animals as sold
+    Given the corral "Corral A" has the animal "COW-001"
+    And the corral "Corral A" has the animal "COW-002"
+    When I mark the animals "COW-001, COW-002" as "Vendido"
+    Then the animals "COW-001, COW-002" have the status "Vendido"
+
+  Scenario: Remove an animal
+    Given the corral "Corral A" has the animal "COW-003"
+    When I delete the animal "COW-003"
+    Then the animal "COW-003" no longer appears in the animal list
+
+  Scenario: Remove several animals at once
+    Given the corral "Corral A" has the animal "COW-004"
+    And the corral "Corral A" has the animal "COW-005"
+    When I delete the animals "COW-004, COW-005"
+    Then the animal "COW-004" no longer appears in the animal list
+    And the animal "COW-005" no longer appears in the animal list
+</pre>
+
+Código de HealthRecords.feature:
+
+<pre>
+Feature: Health records
+  As a rancher or a veterinarian
+  I want to keep the health history of each animal
+  So that incidents, vaccines and treatments are never forgotten
+
+  Background:
+    Given a rancher has a farm called "La Esperanza"
+    And the farm has a corral called "Corral A"
+    And the corral "Corral A" has the animal "COW-001"
+
+  Scenario: A rancher records a health incident
+    Given I am signed in as a "Rancher"
+    When I record a "Incidencia" health event for the animal "COW-001" with the description "Cojera en la pata trasera"
+    Then the health event is created
+    And the health record of the animal "COW-001" includes the description "Cojera en la pata trasera"
+
+  Scenario: A veterinarian records a treatment
+    Given I am signed in as a "Veterinarian"
+    When I record a "Tratamiento" health event for the animal "COW-001" with the description "Antibiótico por 5 días"
+    Then the health event is created
+    And the health record of the animal "COW-001" includes the description "Antibiótico por 5 días"
+
+  Scenario: Health records require a session
+    Given I am a new visitor
+    When I request the health records
+    Then the request is rejected with status 401
+</pre>
+
+Código de RolePermissions.feature:
+
+<pre>
+Feature: Role permissions
+  As the owner of the information
+  I want each role to do only what it is meant to do
+  So that a veterinarian can follow animals without changing the herd
+
+  Background:
+    Given a rancher has a farm called "La Esperanza"
+    And the farm has a corral called "Corral A"
+    And the corral "Corral A" has the animal "COW-001"
+
+  Scenario: A veterinarian can see the animals
+    Given I am signed in as a "Veterinarian"
+    When I request the list of animals
+    Then the request succeeds
+    And the animal "COW-001" appears in the animal list
+
+  Scenario: A veterinarian cannot register animals
+    Given I am signed in as a "Veterinarian"
+    When I register an animal with the code "COW-009" in "Corral A"
+    Then the request is rejected with status 403
+
+  Scenario: A veterinarian cannot delete animals
+    Given I am signed in as a "Veterinarian"
+    When I delete the animal "COW-001"
+    Then the request is rejected with status 403
+</pre>
+
+**Resultado de la ejecución.** Las 104 pruebas del backend (52 unitarias, 32 de integración y 20 escenarios BDD) pasan sin errores. Las pruebas de integración detectaron un defecto: un veterinario que intentaba crear un animal recibía 500 en lugar de 403. Se corrigió en AuthorizeAttribute, que ahora responde 403 Forbidden, y quedó cubierto por la prueba AVeterinarian_CannotCreateAnimals y por el escenario «A veterinarian cannot register animals».
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/PruebasTest104Exitos.png" width="800">
+  <p><i>Figura 4.2.1.5.1. Captura de los 104 tests exitosos. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/ListaTests.png" width="800">
+  <p><i>Figura 4.2.1.5.2. Captura de la lista de tests. Fuente: elaboración propia.</i></p>
+</div>
+
+**Otras pruebas del sprint.** Pruebas de la documentación publicada, de la Landing Page y de la aplicación Android.
 
 | Test ID     | Product | Type | Class / Feature | Behavior | Related Story | Result |
 |-------------|---|---|---|---|---|---|
 | TEST-BE-001 | Web Services | Exploratoria / contrato | Swagger UI (/swagger) | Validar disponibilidad de OpenAPI y endpoints Animals / Authentication en el entorno publicado | Autenticación y registro esencial de animales / sanidad | Completado — Figura 4.2.1.6.1 |
-| TEST-BE-002 | Web Services | Automatizada (xUnit) | **Pendiente:** no hay proyecto de pruebas en el repositorio | **Pendiente:** incorporar suite xUnit | — | No aplicable aún |
 | TEST-LP-003 | Landing Page | Funcional | Navigation | Validar la navegación entre las distintas secciones de la Landing Page. | Navegación y experiencia de usuario | Completado |
 | TEST-LP-004 | Landing Page | Responsive Testing | Responsive Design | Verificar la correcta adaptación de la interfaz en dispositivos móviles y escritorio. | Accesibilidad multiplataforma | Completado |
 | TEST-AN-001 | Android | Automatizada (JUnit) | AuthViewModelsTest, HomeViewModelTest | Validar flujos de estado de autenticación (Login) y carga del dashboard inicial. | Autenticación de usuario | Completado |
@@ -9501,26 +9999,24 @@ La evidencia incluirá pruebas automatizadas relacionadas con las historias del 
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
 |---|---|---|---|---|---|
-| anitec-backend | — | — | — | **Pendiente:** no existen commits de pruebas automatizadas; el repositorio no incluye proyecto *Tests / xUnit. | — |
+| anitec-backend | main | 888f1b9 | chore: add tests for Anitec.Platform | Agrega el proyecto Anitec.Platform.Tests con las pruebas unitarias, de integración y BDD, y la corrección de AuthorizeAttribute (403 en lugar de 500). | 2026-10-04 |
 | anitec-landing-page | main | 2a88184 | chore: add initial project files | Agrega la estructura inicial del proyecto de la Landing Page, incluyendo configuración base y componentes principales para el desarrollo de la interfaz | 2026-09-04 |
 | anitec-android | main | 2f3b903 | feat: add Android project foundation and authentication | Configura la arquitectura base e incluye pruebas unitarias iniciales para los flujos de autenticación (AuthViewModelsTest, HomeViewModelTest). | 2026-10-01 |
 | anitec-android | main | 8ade432 | feat: add livestock management, health records and rancher dashboard | Implementa la lógica de ganado/sanidad y adjunta las suites de pruebas unitarias e instrumentadas (LivestockDomainTest, SanitaryTest, RoomDaoTest). | 2026-10-01 |
-
-> **Pendiente de completar (backend):** cuando exista proyecto xUnit, ejecutar dotnet test, adjuntar captura del resultado en markdown/assets/chapter-4/backend/ y registrar el commit. Las filas de Landing / Android / Flutter las completa cada responsable.
 
 <a id="toc-4-2-1-6-execution-evidence-for-sprint-review"></a>
 
 ### 4.2.1.6. Execution Evidence for Sprint Review
 
-La evidencia de ejecución mostrará el resultado integrado del Sprint 1 mediante capturas identificables y un video que explique el recorrido implementado.
+El Sprint 1 permite recorrer la Landing Page publicada, consultar la documentación de la API y ejecutar la aplicación Android con autenticación, fincas, corrales, animales y registros sanitarios. La evidencia de ejecución muestra el resultado mediante capturas identificables y un video que explica el recorrido implementado.
 
-| Producto | Vista o flujo | Entorno / dispositivo | Evidencia                           | Estado     |
-|---|---|---|-------------------------------------|------------|
-| Landing Page | Página principal y responsive | Navegador de escritorio y móvil | Figura 4.2.1.6.2 (landing_despliegue.png)       | Completado |
-| Android | Autenticación y funciones core comprometidas | Emulador y dispositivo físico | Pendiente de captura                | Pendiente  |
-| Flutter | Autenticación y funciones core comprometidas | Dispositivo o emulador objetivo | Pendiente de captura                | Pendiente  |
-| Web Services | Swagger UI: documentación OpenAPI de la API publicada | Navegador contra <https://anitec-backend.onrender.com/swagger/index.html> | Figura 4.2.1.6.1 (swagger-ui.png) | Completado |
-| Integración | Consumo de API y manejo de errores | Aplicaciones contra backend vigente | Pendiente de captura                | Pendiente  |
+| Producto | Vista o flujo | Entorno / dispositivo | Evidencia | Estado |
+|---|---|---|---|---|
+| Landing Page | Página principal y responsive | Navegador de escritorio y móvil | Figura 4.2.1.6.2 (landing_despliegue.png) | Completado |
+| Android | Registro, inicio de sesión, inicio del ganadero, fincas, corrales, animales (lista, ficha y formulario) y registros sanitarios | Emulador y dispositivo físico | Figuras 4.2.1.6.3 a 4.2.1.6.10 | Parcial: captura del inicio de sesión; el resto pendiente |
+| Flutter | Autenticación y funciones core comprometidas | Dispositivo o emulador objetivo | Pendiente | Pendiente (placeholder) |
+| Web Services | Swagger UI: documentación OpenAPI de la API publicada | Navegador contra el Swagger del servicio publicado en Render | Figura 4.2.1.6.1 (swagger-ui.png) | Completado |
+| Integración | Consumo de la API y manejo de errores desde la aplicación Android | Aplicación contra el backend vigente | Figura 4.2.1.6.11 | Pendiente de captura |
 
 <div align="center">
   <img src="markdown/assets/chapter-4/backend/swagger-ui.png" width="800">
@@ -9529,9 +10025,6 @@ La evidencia de ejecución mostrará el resultado integrado del Sprint 1 mediant
 
 La captura demuestra que la documentación interactiva carga desde el entorno publicado y expone los contratos REST usados por el Sprint 1.
 
-- **Execution video:** **Pendiente de completar:** URL del video.
-- **Timing:** **Pendiente:** inicio y duración de cada demostración.
-
 <div align="center">
   <img src="markdown/assets/chapter-4/landing_despliegue.png" width="800">
   <p><i>Figura 4.2.1.6.2. Landing de AniTec desplegado, Fuente: elaboración propia.</i></p>
@@ -9539,33 +10032,128 @@ La captura demuestra que la documentación interactiva carga desde el entorno pu
 
 Las capturas muestran la implementación de la Landing Page de AniTec en navegadores. Se verificó la correcta visualización del contenido, la navegación entre secciones y la adaptación responsive de la interfaz para distintos tamaños de pantalla.
 
-- **Execution video:** 
-https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQBmZ8UxBU5zToJUnS4AN161Aa9ocLvYJcSFOja0Zogn_tE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=V8q9eK
-- **Timing:** 0:00 - 1:48 min
-  <a id="toc-4-2-1-7-services-documentation-evidence-for-sprint-review"></a>
+**Aplicación Android.** La captura del inicio de sesión ya está incorporada; las demás se añadirán desde el emulador y el dispositivo físico.
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/android-login.png" width="300">
+  <p><i>Figura 4.2.1.6.3. Ejecución de la aplicación nativa Android mostrando el flujo de Autenticación. Fuente: elaboración propia.</i></p>
+</div>
+
+La captura evidencia el correcto funcionamiento de la aplicación Android instalada en el emulador, mostrando la interfaz nativa para el inicio de sesión de ganaderos y veterinarios.
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/AndroidSS/android-home.png" alt="Captura pendiente: Inicio del ganadero" width="400">
+  <p><i>Figura 4.2.1.6.4. Inicio del ganadero. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/AndroidSS/android-farms.png" alt="Captura pendiente: Lista de fincas y formulario" width="400">
+  <p><i>Figura 4.2.1.6.5. Lista de fincas. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/AndroidSS/android-activities.png" alt="Captura pendiente: Lista de corrales y formulario" width="400">
+  <p><i>Figura 4.2.1.6.6. Lista de actividades. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/AndroidSS/android-finance.png" alt="Captura pendiente: Lista de animales con búsqueda y selección múltiple" width="400">
+  <p><i>Figura 4.2.1.6.7. Pantalla de fiananzas Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/AndroidSS/android-analytics.png" alt="Captura pendiente: Ficha técnica del animal" width="400">
+  <p><i>Figura 4.2.1.6.8. Pantalla de analiticas. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/AndroidSS/android-health.png" alt="Captura pendiente: Formulario de registro de animal con fotografía" width="400">
+  <p><i>Figura 4.2.1.6.9. Pantalla de sanidad Fuente: elaboración propia.</i></p>
+</div>
+
+
+**Videos de Ejecución del Sprint 1:**
+
+- **Landing Page:** [Ver video de ejecución (0:00 - 1:48)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQBmZ8UxBU5zToJUnS4AN161Aa9ocLvYJcSFOja0Zogn_tE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=V8q9eK)
+- **Aplicación Android:** [Ver video de ejecución (0:00 - 2:15)](https://upcedupe-my.sharepoint.com/personal/u20221c554_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20221c554%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%2FClipchamp%2FVideo%20Project%2FExports%2FVideo%20Project%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E1bd670fc%2Db74c%2D4708%2Dafd0%2D3ea986759d22)
+- **Backend (Web Services):** **Pendiente de completar:** URL del video del backend.
+- **Aplicación Flutter:** **Pendiente de completar** cuando exista la aplicación.
+
+<a id="toc-4-2-1-7-services-documentation-evidence-for-sprint-review"></a>
 
 ### 4.2.1.7. Services Documentation Evidence for Sprint Review
 
-Se documentarán los endpoints utilizados por las historias comprometidas y su disponibilidad mediante OpenAPI. La documentación interactiva se genera con Swashbuckle (Program.cs: AddSwaggerGen, UseSwagger, UseSwaggerUI) e incluye esquema Bearer JWT.
+El backend documenta su API con OpenAPI mediante Swashbuckle (AddSwaggerGen, UseSwagger y UseSwaggerUI en Program.cs) e incluye el esquema Bearer JWT para autorizar las llamadas desde la interfaz de Swagger. Durante el Sprint 1 quedaron documentados los endpoints de autenticación, fincas, corrales, animales y registros sanitarios que consume la aplicación Android, incluidos los de corrales y las operaciones masivas añadidos para el uso móvil.
 
-| Related Story | HTTP | Endpoint | Parameters / Body | Success Response | Error Responses | Documentation URL |
-|---|---|---|---|---|---|---|
-| Autenticación — registro | POST | /api/v1/authentication/sign-up | Body SignUpResource: username, password, fullName, role (Rancher \| Veterinarian) | 200 — { "message": "..." } | 400 — usuario no creado / datos inválidos | <https://anitec-backend.onrender.com/swagger/index.html> |
-| Autenticación — inicio de sesión | POST | /api/v1/authentication/sign-in | Body SignInResource: username, password | 200 — AuthenticatedUserResource (id, username, fullName, role, token) | 400 — credenciales inválidas | Idem |
-| Animales — listar | GET | /api/v1/animals | Header Authorization: Bearer <JWT> (roles Rancher, Veterinarian) | 200 — lista de AnimalResource | 401 sin token; 403 rol no autorizado | Idem |
-| Animales — obtener por id | GET | /api/v1/animals/{id} | Path id; Bearer JWT | 200 — AnimalResource | 404 no encontrado; 401/403 | Idem |
-| Animales — crear | POST | /api/v1/animals | Bearer JWT (Rancher); Body CreateAnimalResource: tag, name, species, breed, gender, birthDate, weight, status, herdId, corralId, source, ageRange, imageUrl | 201 — AnimalResource | 400 validación; 401/403 | Idem |
-| Animales — actualizar | PUT | /api/v1/animals/{id} | Path id; Body CreateAnimalResource; Bearer (Rancher) | 200 — AnimalResource | 400; 404; 401/403 | Idem |
-| Animales — eliminar | DELETE | /api/v1/animals/{id} | Path id; Bearer (Rancher) | 204 | 404; 401/403 | Idem |
-| Sanidad — listar eventos | GET | /api/v1/health-events | Bearer JWT (Rancher, Veterinarian) | 200 — lista de HealthEventResource | 401/403 | Idem |
-| Sanidad — crear evento | POST | /api/v1/health-events | Body CreateHealthEventResource: animalId, type, date, description, veterinarian, diagnosis, treatment, prescription, followUp, nextDueDate | 201 — HealthEventResource | 401/403; errores de dominio | Idem |
-| Rebaños — listar (soporte) | GET | /api/v1/herds | Bearer JWT | 200 — lista de herds | 401/403 | Idem |
-| Corrales — listar (soporte) | GET | /api/v1/corrals | Bearer JWT | 200 — lista de corrals | 401/403 | Idem |
+**Convención de llamada.** Todas las rutas parten de {BASE_URL}/api/v1, donde {BASE_URL} es la URL del servicio (local o publicado). Las solicitudes con cuerpo usan Content-Type: application/json. Salvo el registro y el inicio de sesión, cada llamada envía el token en la cabecera Authorization: Bearer <token> y recibe 401 si falta o no es válido. Las fechas usan el formato yyyy-MM-dd. Los valores de estado, tipo y especie son texto en español, por ejemplo Saludable o Vacuna. En los ejemplos, <token> y <password> representan los valores reales.
 
-- **Web Services repository:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend>
-- **Swagger:** <https://anitec-backend.onrender.com/swagger/index.html>
-- **Documentation commits:** 125d53e (configuración inicial Swagger/OpenAPI y controllers); 9831844 (documentación/endpoints de corrals y ampliación de animals).
-- **Interaction screenshots:** Swagger UI publicado (Figura 4.2.1.7.1). **Pendiente:** capturas adicionales de sign-in exitoso, llamada con Bearer token y respuesta 401/400.
+**Autenticación** (/authentication)
+
+| Related story | HTTP | Call syntax | Parameters / body | Success response | Error responses |
+|---|---|---|---|---|---|
+| US-004 | POST | curl -X POST "{BASE_URL}/api/v1/authentication/sign-up" -H "Content-Type: application/json" -d '{"fullName":"Carlos Mendoza","username":"cmendoza","password":"<password>","role":"Rancher"}' | Body SignUpResource: username, password, fullName y role (Rancher o Veterinarian). | 200 con {"message": ...}: la cuenta se creó. El registro no devuelve token; la aplicación inicia sesión a continuación. | 400 si los datos son inválidos o el usuario ya existe. |
+| US-005 | POST | curl -X POST "{BASE_URL}/api/v1/authentication/sign-in" -H "Content-Type: application/json" -d '{"username":"ganadero","password":"<password>"}' | Body SignInResource: username y password. | 200 con {"id":1,"username":"ganadero","fullName":"Carlos Mendoza","role":"Rancher","token":"eyJhbGciOi..."}: el token JWT identifica al usuario y su rol y se envía en las demás llamadas. | 400 si las credenciales son inválidas. |
+
+**Fincas** (/herds; lectura para Rancher y Veterinarian, escritura solo para Rancher)
+
+Ejemplo de HerdResource: {"id":1,"name":"Hato Los Alamos","location":"Cajamarca","owner":"Carlos Mendoza","ownerId":1,"veterinarianId":2,"mainType":"Mixto"}.
+
+| Related story | HTTP | Call syntax | Parameters / body | Success response | Error responses |
+|---|---|---|---|---|---|
+| US-008 | GET | curl "{BASE_URL}/api/v1/herds" -H "Authorization: Bearer <token>" | Ninguno. | 200 con la lista de fincas (un HerdResource por elemento). | 401 sin token; 403 si el rol no está autorizado. |
+| US-008 | GET | curl "{BASE_URL}/api/v1/herds/1" -H "Authorization: Bearer <token>" | Ruta: id. | 200 con el HerdResource de la finca. | 404 si no existe; 401. |
+| US-009 | POST | curl -X POST "{BASE_URL}/api/v1/herds" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{"name":"Hato Los Alamos","location":"Cajamarca","owner":"Carlos Mendoza","ownerId":1,"veterinarianId":null,"mainType":"Mixto"}' | Body CreateHerdResource: name, location, owner, ownerId, veterinarianId (opcional) y mainType. | 201 con el HerdResource creado. | 400 datos inválidos; 401; 403 solo Rancher. |
+| US-009 | PUT | curl -X PUT "{BASE_URL}/api/v1/herds/1" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{...}' | Ruta: id. Body CreateHerdResource. | 200 con la finca actualizada. | 404 si no existe; 400; 401; 403. |
+| US-009 | DELETE | curl -X DELETE "{BASE_URL}/api/v1/herds/1" -H "Authorization: Bearer <token>" | Ruta: id. | 204 sin contenido. | 404 si no existe; 401; 403. |
+
+**Corrales** (/corrals; lectura para Rancher y Veterinarian, escritura solo para Rancher)
+
+Ejemplo de CorralResource: {"id":1,"name":"Corral ALAMOS 1","herdId":1}.
+
+| Related story | HTTP | Call syntax | Parameters / body | Success response | Error responses |
+|---|---|---|---|---|---|
+| US-044 | GET | curl "{BASE_URL}/api/v1/corrals" -H "Authorization: Bearer <token>" | Ninguno. | 200 con la lista de corrales. | 401; 403. |
+| US-044 | GET | curl "{BASE_URL}/api/v1/corrals/1" -H "Authorization: Bearer <token>" | Ruta: id. | 200 con el CorralResource. | 404; 401. |
+| US-044 | POST | curl -X POST "{BASE_URL}/api/v1/corrals" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{"name":"Corral ALAMOS 1","herdId":1}' | Body CreateCorralResource: name y herdId. | 201 con el corral creado. | 400; 401; 403. |
+| US-044 | PUT | curl -X PUT "{BASE_URL}/api/v1/corrals/1" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{...}' | Ruta: id. Body CreateCorralResource. | 200 con el corral actualizado. | 404; 400; 401; 403. |
+| US-044 | DELETE | curl -X DELETE "{BASE_URL}/api/v1/corrals/1" -H "Authorization: Bearer <token>" | Ruta: id. | 204 sin contenido. | 404; 401; 403. |
+
+**Animales** (/animals; lectura para Rancher y Veterinarian, escritura solo para Rancher)
+
+Ejemplo de AnimalResource: {"id":1,"tag":"BOV-001","name":"Luna","species":"Bovino","breed":"Brown Swiss","gender":"Hembra","birthDate":"2021-03-14","weight":410.0,"status":"Saludable","herdId":1,"corralId":1,"source":"Comprado","ageRange":"Adulto","imageUrl":"/uploads/animals/<archivo>.jpg"}.
+
+| Related story | HTTP | Call syntax | Parameters / body | Success response | Error responses |
+|---|---|---|---|---|---|
+| US-010 | GET | curl "{BASE_URL}/api/v1/animals" -H "Authorization: Bearer <token>" | Ninguno. | 200 con la lista de animales (un AnimalResource por elemento). La aplicación filtra los del usuario y busca localmente. | 401; 403. |
+| US-013 | GET | curl "{BASE_URL}/api/v1/animals/1" -H "Authorization: Bearer <token>" | Ruta: id. | 200 con el AnimalResource. | 404; 401. |
+| US-011 | POST | curl -X POST "{BASE_URL}/api/v1/animals" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{"tag":"BOV-900","name":"Nube","species":"Bovino","breed":"Holstein","gender":"Hembra","birthDate":"2024-02-01","weight":280.0,"status":"Saludable","herdId":1,"corralId":1}' | Body CreateAnimalResource: tag, name, species, breed, gender, birthDate, weight, status, herdId, corralId, source, ageRange e imageUrl. | 201 con el AnimalResource creado. | 400 datos inválidos; 401; 403. |
+| US-012 | PUT | curl -X PUT "{BASE_URL}/api/v1/animals/1" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{...}' | Ruta: id. Body CreateAnimalResource. | 200 con el animal actualizado. | 404; 400; 401; 403. |
+| US-012 | DELETE | curl -X DELETE "{BASE_URL}/api/v1/animals/1" -H "Authorization: Bearer <token>" | Ruta: id. | 204 sin contenido. | 404; 401; 403. |
+| US-011 | POST | curl -X POST "{BASE_URL}/api/v1/animals/bulk" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{"species":"Bovino","breed":"Holstein","gender":"Hembra","weight":120.0,"status":"Saludable","herdId":1,"corralId":1,"quantity":10}' | Body CreateAnimalBatchResource: los datos comunes del lote y quantity (de 1 a 500). | 201 con la lista de animales creados; el servidor asigna un código a cada uno. | 400 si el lote es inválido; 401; 403. |
+| US-012 | PATCH | curl -X PATCH "{BASE_URL}/api/v1/animals/bulk-status" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{"animalIds":[1,2],"status":"Observacion"}' | Body UpdateAnimalsStatusResource: animalIds y status. | 200 con la lista de animales actualizados. | 400 si no hay animales seleccionados o falta el estado; 401; 403. |
+| US-012 | DELETE | curl -X DELETE "{BASE_URL}/api/v1/animals/bulk" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{"animalIds":[1,2]}' | Body DeleteAnimalsResource: animalIds. La baja masiva envía cuerpo JSON. | 204 sin contenido. | 400 si no hay animales seleccionados; 401; 403. |
+| US-045 | POST | curl -X POST "{BASE_URL}/api/v1/animals/upload-image" -H "Authorization: Bearer <token>" -F "file=@foto.jpg" | Formulario multipart/form-data con la parte file (JPEG, PNG, WEBP o GIF). | 200 con {"url":"/uploads/animals/<guid>.jpg"}; esa ruta, relativa a la raíz del servidor, se guarda en imageUrl del animal. | 400 si falta el archivo o su formato no es válido; 401; 403. |
+
+**Registros sanitarios** (/health-events; Rancher y Veterinarian)
+
+Ejemplo de HealthEventResource: {"id":1,"animalId":1,"type":"Vacuna","date":"2026-05-10","description":"Vacuna anual contra carbunco","veterinarian":"Dra. Ana Lopez","diagnosis":"Control preventivo","treatment":"Aplicacion de vacuna","prescription":"Refuerzo anual","followUp":"Revisar proxima campana","nextDueDate":"2026-11-10"}.
+
+| Related story | HTTP | Call syntax | Parameters / body | Success response | Error responses |
+|---|---|---|---|---|---|
+| US-014 | GET | curl "{BASE_URL}/api/v1/health-events" -H "Authorization: Bearer <token>" | Ninguno. | 200 con la lista de registros sanitarios. | 401; 403. |
+| US-014 | GET | curl "{BASE_URL}/api/v1/health-events/1" -H "Authorization: Bearer <token>" | Ruta: id. | 200 con el HealthEventResource. | 404; 401. |
+| US-015, US-016 | POST | curl -X POST "{BASE_URL}/api/v1/health-events" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{"animalId":1,"type":"Incidencia","date":"2026-10-01","description":"Cojera en la pata trasera","veterinarian":"Dra. Ana Lopez","diagnosis":"","treatment":"","prescription":"","followUp":"","nextDueDate":null}' | Body CreateHealthEventResource: animalId, type, date, description, veterinarian, diagnosis, treatment, prescription, followUp y nextDueDate (opcional). | 201 con el HealthEventResource creado. | 400 datos inválidos; 401; 403. |
+| US-015 | PUT | curl -X PUT "{BASE_URL}/api/v1/health-events/1" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{...}' | Ruta: id. Body CreateHealthEventResource. | 200 con el registro actualizado. | 404; 400; 401; 403. |
+| US-015 | DELETE | curl -X DELETE "{BASE_URL}/api/v1/health-events/1" -H "Authorization: Bearer <token>" | Ruta: id. | 204 sin contenido. | 404; 401; 403. |
+
+Una solicitud con un rol no autorizado responde 403: las pruebas de integración (sección 4.2.1.5) detectaron que antes respondía 500 y se corrigió en AuthorizeAttribute. El servidor aún devuelve todos los registros sin filtrarlos por usuario; ese punto se corregirá en el backend y mientras tanto la aplicación filtra en el cliente.
+
+- **Web Services repository:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend/tree/main>
+- **Swagger:** <https://anitec-backend-android.onrender.com/swagger/index.html>
+- **API publicada:** <https://anitec-backend-android.onrender.com>
+- **Documentation commits:** 125d53e (configuración inicial de Swagger/OpenAPI y controllers) y 9831844 (endpoints de corrales y operaciones masivas de animales).
+- **Interaction screenshots:** las capturas siguientes muestran llamadas con datos de muestra desde Swagger.
+
 
 <div align="center">
   <img src="markdown/assets/chapter-4/backend/swagger-ui.png" width="800">
@@ -9574,29 +10162,49 @@ Se documentarán los endpoints utilizados por las historias comprometidas y su d
 
 La figura respalda que OpenAPI está disponible públicamente y que los endpoints del Sprint 1 pueden ejercitarse desde Swagger.
 
+<div align="center">
+  <img src="markdown/assets/chapter-4/backend/LoginToken.png" alt="Captura pendiente: POST /authentication/sign-in con datos de muestra y su respuesta con token" width="800">
+  <p><i>Figura 4.2.1.7.2. POST /authentication/sign-in con datos de muestra y su respuesta con token. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/backend/getAnimals.png" alt="Captura pendiente: GET /animals autorizado con el token" width="800">
+  <p><i>Figura 4.2.1.7.3. GET /animals autorizado con el token. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/backend/postAnimales.png" alt="Captura pendiente: POST /animals con un animal de muestra y su respuesta 201" width="800">
+  <p><i>Figura 4.2.1.7.4. POST /animals con un animal de muestra y su respuesta 201. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/backend/SinToken.png" alt="Captura pendiente: Respuesta 401 al llamar un endpoint sin token" width="800">
+  <p><i>Figura 4.2.1.7.5. Respuesta 401 al llamar un endpoint sin token. Fuente: elaboración propia.</i></p>
+</div>
+
 <a id="toc-4-2-1-8-software-deployment-evidence-for-sprint-review"></a>
 
 ### 4.2.1.8. Software Deployment Evidence for Sprint Review
 
-La evidencia explicará la configuración realizada durante el sprint y demostrará la disponibilidad de cada producto aplicable.
+Durante el Sprint 1 se prepararon los entornos de publicación de cada producto: el backend se configuró como servicio Docker en Render con una base de datos MySQL externa, la Landing Page se publicó en GitHub Pages y el proyecto de Firebase tiene registradas las aplicaciones Android y Flutter para su distribución. Las cuentas utilizadas son la organización de GitHub del equipo, Render, Firebase (plan Spark) y el proveedor de MySQL. Los pasos detallados de cada despliegue se describen en la sección 4.1.4.
 
 | Product | Platform | Configuration performed | Version / Commit | Public URL or Release | Status |
 |---|---|---|---|---|---|
-| Landing Page | GitHub Pages | Workflow o rama pendientes | Commit pendiente | URL pendiente | Pendiente |
-| Web Services | Render | Docker; variables ASPNETCORE_ENVIRONMENT, ConnectionStrings__DefaultConnection, TokenSettings__Secret, StripeSettings__*; MySQL externo | Deploy Live verificado en Events (Figuras 4.2.1.8.1–4.2.1.8.2) | <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live |
-| Android | Firebase App Distribution | Firma, aplicación y testers pendientes | Versión y commit pendientes | Release pendiente | Pendiente |
-| Flutter | Firebase App Distribution | Plataforma, aplicación y testers pendientes | Versión y commit pendientes | Release pendiente | Pendiente |
+| Landing Page | GitHub Pages | Repositorio anitec-landing-page; publicación desde la rama main y la carpeta raíz. | Commit d774fb1 | <https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/> | Publicada |
+| Web Services | Render | Docker con el Dockerfile de la raíz; variables ASPNETCORE_ENVIRONMENT, ConnectionStrings__DefaultConnection, TokenSettings__Secret y StripeSettings__*; MySQL externo; migraciones automáticas al iniciar. | Commit 2d08551 | API: <https://anitec-backend-android.onrender.com>. Swagger: <https://anitec-backend-android.onrender.com/swagger/index.html> | Publicado |
+| Android | Firebase App Distribution | Proyecto «Anitec» y aplicación «AniTec Android» registrada con el paquete com.anitec.platform (App ID 1:969068830564:android:5a2dafc1bf9a7f44652471). Firma, grupo de testers y release pendientes. | versionName 0.1.0; commit 8ade432 | Release pendiente | Registrada; release pendiente |
+| Flutter | Firebase App Distribution | Aplicación «AniTec Flutter» registrada como aplicación de Apple en el proyecto. El desarrollo y la distribución están pendientes. | Pendiente | Release pendiente | Pendiente (placeholder) |
 
 **Pasos ejecutados (Web Services):**
 
-1. Publicar el Web Service anitec-backend en Render con runtime Docker.
-2. Configurar secretos de conexión MySQL, JWT y Stripe en Environment (valores no expuestos en el informe).
-3. Verificar estado **Live** en Events y disponibilidad de la URL primaria.
-4. Comprobar que Swagger UI responde en /swagger/index.html.
+1. Publicar el Web Service anitec-backend-android en Render con runtime Docker desde la rama main de anitec-backend.
+2. Configurar los secretos de conexión MySQL, JWT y Stripe en Environment (los valores no se exponen en el informe).
+3. Verificar el estado **Live** en Events y la disponibilidad de la URL primaria (<https://anitec-backend-android.onrender.com>).
+4. Comprobar que Swagger UI responde en /swagger/index.html (<https://anitec-backend-android.onrender.com/swagger/index.html>). Verificado: responde 200, y los endpoints protegidos responden 401 sin token.
 
 <div align="center">
   <img src="markdown/assets/chapter-4/backend/render-backend-live.png" width="800">
-  <p><i>Figura 4.2.1.8.1. Evidencia de despliegue: anitec-backend en estado Live en Render. Fuente: elaboración propia.</i></p>
+  <p><i>Figura 4.2.1.8.1. Evidencia de despliegue: anitec-backend-android en estado Live en Render. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
@@ -9604,23 +10212,85 @@ La evidencia explicará la configuración realizada durante el sprint y demostra
   <p><i>Figura 4.2.1.8.2. Evidencia de configuración de despliegue: variables de entorno del backend con valores ocultos. Fuente: elaboración propia.</i></p>
 </div>
 
-Las capturas demuestran la publicación del servicio y la administración de secretos fuera del código fuente. Landing, Android y Flutter quedan a cargo de sus responsables.
+Las capturas demuestran la publicación del servicio y la administración de secretos fuera del código fuente.
+
+**Pasos ejecutados (aplicaciones móviles):**
+
+1. Crear el proyecto «Anitec» en Firebase Console.
+2. Registrar la aplicación Android con el nombre de paquete com.anitec.platform y la aplicación Flutter (Figuras 4.1.4.4 y 4.1.4.5).
+3. Generar la compilación firmada de la aplicación Android y subirla a App Distribution. **Pendiente.**
+4. Crear el grupo de testers (equipo y profesores) e invitarlos. **Pendiente.**
+
+**Pasos ejecutados (Landing Page):**
+
+1. Integrar el contenido aprobado en la rama main.
+2. Activar GitHub Pages en **Settings → Pages**, con la rama main y la carpeta raíz.
+3. Verificar la URL pública (<https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/>). Verificado: carga la versión de la aplicación móvil y sus imágenes responden 200.
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/githubLandingpage.png" alt="Captura pendiente: Configuración de GitHub Pages del repositorio de la Landing Page" width="800">
+  <p><i>Figura 4.2.1.8.3. Configuración de GitHub Pages del repositorio de la Landing Page. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/Ladingconurl.png" alt="Captura pendiente: Landing Page publicada en la URL de la organización" width="800">
+  <p><i>Figura 4.2.1.8.4. Landing Page publicada en la URL de la organización. Fuente: elaboración propia.</i></p>
+</div>
+
+
 
 <a id="toc-4-2-1-9-team-collaboration-insights-during-sprint"></a>
 
 ### 4.2.1.9. Team Collaboration Insights during Sprint
 
-Esta sección interpretará la participación del equipo a partir de commits, Pull Requests, revisiones y colaboración por producto. Las métricas se analizarán en contexto y no se usarán de forma aislada para medir aporte.
+Esta sección interpreta la participación del equipo a partir de commits, Pull Requests, revisiones y colaboración por producto. Las métricas se analizan en contexto y no se usan de forma aislada para medir aporte. La tabla registra la contribución de cada integrante a partir de las tareas del Sprint Backlog (sección 4.2.1.3) y de los commits de los repositorios del proyecto, y se complementa con los analíticos de colaboración de GitHub.
 
-| Integrante | Productos / aspectos | Contribución verificable | Evidencia | Reflexión |
+| Integrante | Productos / aspectos | Contribución en el sprint | Evidencia | Reflexión |
 |---|---|---|---|---|
-| Sebastian Martin Beingolea Montalvo | Pendiente | Pendiente | Pendiente | Pendiente |
-| Josep Eliu Melgarejo Quiroz | Pendiente | Pendiente | Pendiente | Pendiente |
-| Saul Ortega Muñoz | Pendiente | Pendiente | Pendiente | Pendiente |
-| Luciana Celeste Sanchez Silva | Pendiente | Pendiente | Pendiente | Pendiente |
-| Giuseppe Villanueva Rodriguez | Pendiente | Pendiente | Pendiente | Pendiente |
+| Sebastian Martin Beingolea Montalvo | Backend, aplicación Android (red y seguridad) y documentación | Implementó el cliente REST de la aplicación, agregó los corrales y las operaciones masivas al backend, documentó los endpoints con OpenAPI, cifró el token de sesión y creó la suite de pruebas automatizadas del backend. Documentó la evidencia del despliegue del backend en Render y de Swagger. | Tareas T-006, T-008, T-009, T-014 y T-028. Informe: d09a7e2 | Trabajar el cliente REST, los corrales del backend y las pruebas me mostró que un contrato de API estable permite que la aplicación y el servicio avancen por separado. Aprendí a proteger el token de sesión con Tink y Android Keystore, a documentar con OpenAPI y a comprobar con pruebas unitarias, de integración y BDD que cada endpoint responde lo acordado. Me llevo la importancia de probar también los casos de error, como un rol sin permiso, y no solo el camino feliz. |
+| Josep Eliu Melgarejo Quiroz | Aplicación Android e informe | Implementó la caché local con Room, la navegación por rol con el filtrado de datos del usuario, la lista de animales con búsqueda y filtro, el registro individual y masivo de animales y la fotografía del animal. Mantiene la estructura del informe y su generación. | Tareas T-007, T-013, T-017, T-018 y T-025. anitec-android: 2f3b903, 8ade432. anitec-backend: 125d53e, 9831844. anitec-frontend: f12794d. anitec-landing-page: 2a88184. Informe: cd00045 | Diseñar la caché con Room, limpiarla al cerrar sesión y filtrar los datos del usuario en la aplicación me enseñó que la seguridad de la información también depende de cómo se guarda y se muestra en el teléfono. El registro masivo y la fotografía me obligaron a cuidar los límites, como de 1 a 500 animales o el tamaño de la imagen, y a mostrar errores que el usuario pueda corregir. Queda pendiente que el backend filtre por usuario para no depender solo de la aplicación. |
+| Saul Ortega Muñoz | Landing Page, aplicación Android (acceso y ficha del animal) y documentación | Diseñó el wireframe y el mock-up móvil de la Landing Page, implementó sus secciones, el diseño responsive y el selector de idioma, las pantallas de registro e inicio de sesión, el mantenimiento de la sesión y la ficha técnica del animal. Documentó las evidencias de desarrollo, ejecución, pruebas y despliegue de la Landing Page. | Tareas T-001, T-002, T-003, T-010, T-011, T-012 y T-020. Informe: e2d2cd6, 9beefe6, bbff341, c150062 | Diseñar una Landing Page adaptable y bilingüe, y las pantallas de acceso, me enseñó a cuidar el primer contacto del usuario con mensajes claros, validaciones y formas de recuperarse de un error. Implementar la sesión persistente y su cierre al vencer el token me mostró que la seguridad también forma parte de la experiencia. La ficha técnica me dejó la lección de presentar mucha información de forma legible en pantallas pequeñas. |
+| Luciana Celeste Sanchez Silva | Diseño UX/UI y aplicación Android (fincas, corrales y sanidad) | Elaboró los mock-ups móviles de Android y Flutter, los organizó por aplicación y rol, y construyó las pantallas de fincas, corrales y registros sanitarios con sus formularios y validaciones. Actualizó el Product Backlog. | Tareas T-015, T-016, T-021, T-022, T-023, T-024 y T-029. Informe: da15998, cd83263, 5f57a44 | Llevar los mock-ups de Figma a pantallas reales me mostró que un diseño debe prever los estados vacíos, los errores y las confirmaciones antes de implementarse. Reutilizar los mismos componentes en fincas, corrales y sanidad dio coherencia visual y ahorró trabajo. Aprendí que el diseño y el desarrollo deben revisarse juntos para que lo prototipado sea lo que usa el ganadero. |
+| Giuseppe Villanueva Rodriguez | Aplicación Android (base y pruebas), configuración y despliegue móvil | Creó el proyecto Android y organizó el código por bounded contexts y capas, implementó la edición y eliminación de animales y la pantalla de inicio del ganadero, escribió las pruebas unitarias e instrumentadas de Android y registró las aplicaciones en Firebase. Actualizó la configuración del entorno y del despliegue (4.1). | Tareas T-004, T-005, T-019, T-026, T-027 y T-030. Informe: 0cf6d49, 66de467, e01ac6f, a5835de | Crear el proyecto y organizar el código por capas me enseñó que una estructura clara facilita el trabajo de todos y hace posibles las pruebas. Escribir pruebas del dominio, de los casos de uso y de los ViewModels me ayudó a detectar errores antes de añadir nuevas pantallas, y registrar las aplicaciones en Firebase me dio una visión completa del camino hasta la distribución. Me llevo que probar desde el inicio reduce el costo de los cambios. |
 
-> **Pendiente de completar:** incorporar analíticos de GitHub por repositorio, capturas de colaboración y conclusiones del equipo al cierre del sprint.
+Los repositorios del proyecto son:
+
+- Informe: <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/Informe>
+- Landing Page: <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page>
+- Web Services: <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend>
+- Aplicación web: <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend>
+- Android: <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-android>
+
+Las capturas siguientes muestran los analíticos de colaboración y de commits de GitHub (**Insights → Contributors** y **Insights → Commits**) de cada repositorio.
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/commitsInformeSprint1.png" alt="Captura pendiente: Analíticos de colaboración del repositorio Informe" width="800">
+  <p><i>Figura 4.2.1.9.1. Analíticos de colaboración del repositorio Informe. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-android" width="800">
+  <p><i>Figura 4.2.1.9.2. Analíticos de colaboración del repositorio anitec-android. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/CommitsbackSprint1.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-backend" width="800">
+  <p><i>Figura 4.2.1.9.3. Analíticos de colaboración del repositorio anitec-backend. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/CommitLandingSprint1.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-landing-page" width="800">
+  <p><i>Figura 4.2.1.9.4. Analíticos de colaboración del repositorio anitec-landing-page. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/CommitsFrontSprint1.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-frontend" width="800">
+  <p><i>Figura 4.2.1.9.5. Analíticos de colaboración del repositorio anitec-frontend. Fuente: elaboración propia.</i></p>
+</div>
+
+**Interpretación de los analíticos.** Los analíticos de GitHub muestran la actividad de cada repositorio durante el sprint y se leen junto con las tareas del Sprint Backlog (sección 4.2.1.3), porque el número de commits por autor no mide por sí solo el aporte de cada integrante. El trabajo se concentró en la aplicación Android, que reúne 143 de las 205 horas estimadas del sprint (cerca del 70 %) y en la que participaron los cinco integrantes: Josep Melgarejo con 42 horas, Giuseppe Villanueva con 36, Luciana Sanchez con 29, Saul Ortega con 22 y Sebastian Beingolea con 14. El resto se repartió por producto: el backend, con 26 horas a cargo de Sebastian Beingolea (corrales, documentación OpenAPI y pruebas automatizadas); la Landing Page, con 18 horas a cargo de Saul Ortega; los mock-ups móviles, con 12 horas de Luciana Sanchez; y el registro de las aplicaciones en Firebase, con 6 horas de Giuseppe Villanueva. Cada integrante lideró un aspecto y colaboró en al menos otro, como indica la matriz de la sección 4.2.1.2, y el reparto por persona quedó entre 40 y 42 horas.
+
+**Conclusión del trabajo en equipo.** Al cierre del Sprint 1 el equipo entregó la Landing Page publicada, el backend desplegado y respaldado por 104 pruebas automatizadas, y una aplicación Android que permite registrarse, iniciar sesión y gestionar fincas, corrales, animales y registros sanitarios. De las 30 tareas del sprint, 28 quedaron en Done y 2 en To-Review, y las historias US-007 y US-012 quedaron parciales: falta que el backend filtre la información por usuario y que se implemente el archivado de animales. El trabajo por productos con un líder por aspecto permitió avanzar en paralelo en Android, backend, Landing Page y diseño. Como aprendizajes, el equipo destaca definir el alcance móvil antes de implementar, probar desde el inicio y mantener alineados el informe y el código. Para el Sprint 2, el foco será la vista del veterinario, la colaboración con el ganadero, las actividades, el trabajo sin conexión y la identificación de animales con la cámara.
 
 
 <div style="page-break-before: always;"></div>
@@ -10086,8 +10756,9 @@ Los enlaces públicos del Impact Mapping y del Product Backlog todavía no han s
 - **Repositorio de la landing page:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page>
 - **Repositorio del frontend web:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend>
 - **Repositorio del backend:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend>
+- **Repositorio de la aplicación Android:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-android>
 
-Los repositorios de Android y Flutter se incorporarán cuando se creen los proyectos móviles correspondientes.
+El repositorio de la aplicación Flutter se incorporará cuando se cree el proyecto correspondiente.
 
 <div style="page-break-before: always;"></div>
 
@@ -10129,7 +10800,7 @@ Estos enlaces corresponden al trabajo anterior que sirve como punto de partida. 
 
 ## Anexo F. Videos de exposición y validación
 
-Hasta el AV1 no se han incorporado enlaces públicos para el video de exposición, las entrevistas de validación de la aplicación móvil, el video About the Product ni el video About the Team. Estos recursos se añadirán en los hitos que correspondan según el statement del curso.
+Hasta el AV1 no se han incorporado enlaces públicos para el video de exposición, las entrevistas de validación de la aplicación móvil, el video About the Product ni el video About the Team. Estos recursos se añadirán en los hitos que correspondan.
 
 
 </div>

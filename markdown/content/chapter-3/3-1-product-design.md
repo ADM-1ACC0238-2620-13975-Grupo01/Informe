@@ -198,13 +198,13 @@ Las acciones principales serán «Registrar», «Guardar», «Editar», «Buscar
 
 | Elemento | Valor implementado (en_US) | Valor en español (es_419) |
 |---|---|---|
-| Title | AniTec - Digital Platform for Livestock Management | AniTec – Gestión y trazabilidad inteligente para la ganadería |
-| Description | AniTec is the leading digital platform in Latin America for livestock management. Manage health, reproduction, and productivity of your herd with innovative technology designed for ranchers and veterinarians. | AniTec ayuda a ganaderos y veterinarios a organizar animales, sanidad, actividades y decisiones de campo desde experiencias móviles conectadas. |
-| Keywords | livestock management, rancher platform, AniTec, livestock traceability, digital livestock, animal health, herd control, platform for veterinarians, rural technology, livestock organizer, cattle management, farm management, agricultural technology, agtech | AniTec, gestión ganadera, trazabilidad animal, salud animal, veterinarios, aplicación ganadera, ganado, Perú |
+| Title | AniTec - Livestock Management App for Ranchers and Veterinarians | AniTec - App de gestión ganadera para ganaderos y veterinarios |
+| Description | AniTec is a mobile app for ranchers and veterinarians. Register farms and animals, keep health records, schedule activities and keep working with limited signal. | AniTec es una aplicación móvil para ganaderos y veterinarios. Registra fincas y animales, lleva los registros sanitarios, programa actividades y sigue trabajando con poca señal. |
+| Keywords | livestock management app, rancher app, veterinarian app, animal health records, farm management, livestock traceability, Android app, AniTec | app de gestión ganadera, app para ganaderos, app para veterinarios, registros sanitarios, gestión de fincas, trazabilidad animal, aplicación Android, AniTec |
 | Author | AniTec | AniTec |
 | Robots | index, follow | index, follow |
-| Open Graph title | AniTec - Digital Platform for Livestock Management | AniTec – Información ganadera donde la necesitas |
-| Open Graph description | AniTec is the leading digital platform in Latin America for livestock management. Manage health, reproduction, and productivity of your herd with innovative technology. | Gestiona animales, registros sanitarios y actividades desde una experiencia diseñada para el trabajo de campo. |
+| Open Graph title | AniTec - Livestock Management App for Ranchers and Veterinarians | AniTec - App de gestión ganadera |
+| Open Graph description | AniTec is a mobile app for ranchers and veterinarians. Register farms and animals, keep health records and keep working with limited signal. | AniTec es una aplicación móvil para ganaderos y veterinarios. Registra fincas y animales, lleva los registros sanitarios y sigue trabajando con poca señal. |
 
 **Aplicación web.** La aplicación web define hoy solo el título de la página; los demás valores son la propuesta que se incorporará.
 
