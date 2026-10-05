@@ -9029,7 +9029,7 @@ El wireframe prescinde del color y de las imágenes para evaluar solo la estruct
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-3/landing-page/LandingMovil_wireframe.png" alt="Wireframe de movil de la Landing Page" width="500">
+  <img src="markdown/assets/chapter-3/landing-page/LandingMovil_wireframe1.png" alt="Wireframe de movil de la Landing Page" width="500">
   <p><i>Figura 7. Wireframe de movil de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
@@ -9050,7 +9050,7 @@ El mock-up traduce la estructura anterior al Design System de AniTec: fondo crem
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-3/landing-page/LandingMovil_MockUp.png" alt="Mock-up de movil de la Landing Page" width="500">
+  <img src="markdown/assets/chapter-3/landing-page/LandingMovil_MockUp1.png" alt="Mock-up de movil de la Landing Page" width="500">
   <p><i>Figura 9. Mock-up de movil de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
@@ -9069,7 +9069,7 @@ Los diseños de ambas aplicaciones aplican la arquitectura de información de la
 
 ### 3.1.4.1. Mobile Applications Wireframes
 
-Los wireframes mostrarán estructura, jerarquía, navegación y estados sin acabado visual definitivo.
+Los wireframes representan la estructura funcional de cada pantalla de la aplicación móvil, definiendo la distribución de elementos y flujos de interacción básicos. Sirven como punto de partida para validar la organización visual y funcional del producto.
 
 Los wireframes de baja fidelidad se elaboran en Figma sin color ni imágenes finales y sirven para validar la jerarquía, el orden de los controles y la navegación. Cada pantalla se documenta con su objetivo y con la User Story que satisface. Para ambos roles se aplican los siguientes criterios:
 
@@ -9079,19 +9079,141 @@ Los wireframes de baja fidelidad se elaboran en Figma sin color ni imágenes fin
 - Navegación persistente con los destinos principales y acceso a las funciones secundarias desde «Más».
 - Estados previstos desde el inicio: carga, sin datos, error y sin conexión.
 
-| Aplicación | Rol | Pantalla | Objetivo | User Story | Estado |
-|---|---|---|---|---|---|
-| Android | Ganadero / Veterinario | Pendiente: nombre de pantalla | Pendiente: tarea | Pendiente: US-xxx | Pendiente |
-| Flutter | Ganadero / Veterinario | Pendiente: nombre de pantalla | Pendiente: tarea | Pendiente: US-xxx | Pendiente |
 
-> **Pendiente de completar:** insertar wireframes de Android y Flutter para autenticación, dashboard, fincas, animales e historial sanitario.<br>
-> **Enlaces pendientes:** https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
+
+El diseño en Figma se encuentra en: https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1
+
+#### Aplicación Flutter
+
+##### IAM
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-iam-01.jpg" alt="Wireframes Flutter del módulo IAM, lámina 1 de 1" width="650">
+  <p><i>Figura 3.1.4.1.1. Wireframes Flutter del módulo IAM, lámina 1 de 1. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario rancher
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-01.jpg" alt="Wireframes Flutter del usuario rancher, lámina 1 de 5" width="650">
+  <p><i>Figura 3.1.4.1.2. Wireframes Flutter del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-02.jpg" alt="Wireframes Flutter del usuario rancher, lámina 2 de 5" width="650">
+  <p><i>Figura 3.1.4.1.3. Wireframes Flutter del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-03.jpg" alt="Wireframes Flutter del usuario rancher, lámina 3 de 5" width="650">
+  <p><i>Figura 3.1.4.1.4. Wireframes Flutter del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-04.jpg" alt="Wireframes Flutter del usuario rancher, lámina 4 de 5" width="650">
+  <p><i>Figura 3.1.4.1.5. Wireframes Flutter del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-rancher-05.jpg" alt="Wireframes Flutter del usuario rancher, lámina 5 de 5" width="650">
+  <p><i>Figura 3.1.4.1.6. Wireframes Flutter del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario veterinario
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-vet-01.jpg" alt="Wireframes Flutter del usuario vet, lámina 1 de 5" width="650">
+  <p><i>Figura 3.1.4.1.7. Wireframes Flutter del usuario vet, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-vet-02.jpg" alt="Wireframes Flutter del usuario vet, lámina 2 de 5" width="650">
+  <p><i>Figura 3.1.4.1.8. Wireframes Flutter del usuario vet, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-vet-03.jpg" alt="Wireframes Flutter del usuario vet, lámina 3 de 5" width="650">
+  <p><i>Figura 3.1.4.1.9. Wireframes Flutter del usuario vet, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-vet-04.jpg" alt="Wireframes Flutter del usuario vet, lámina 4 de 5" width="650">
+  <p><i>Figura 3.1.4.1.10. Wireframes Flutter del usuario vet, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/flutter-vet-05.jpg" alt="Wireframes Flutter del usuario vet, lámina 5 de 5" width="650">
+  <p><i>Figura 3.1.4.1.11. Wireframes Flutter del usuario vet, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+#### Aplicación Android
+
+##### IAM
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-iam-01.jpg" alt="Wireframes Android del módulo IAM, lámina 1 de 1" width="650">
+  <p><i>Figura 3.1.4.1.12. Wireframes Android del módulo IAM, lámina 1 de 1. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario rancher
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-rancher-01.jpg" alt="Wireframes Android del usuario rancher, lámina 1 de 5" width="650">
+  <p><i>Figura 3.1.4.1.13. Wireframes Android del usuario rancher, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-rancher-02.jpg" alt="Wireframes Android del usuario rancher, lámina 2 de 5" width="650">
+  <p><i>Figura 3.1.4.1.14. Wireframes Android del usuario rancher, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-rancher-03.jpg" alt="Wireframes Android del usuario rancher, lámina 3 de 5" width="650">
+  <p><i>Figura 3.1.4.1.15. Wireframes Android del usuario rancher, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-rancher-04.jpg" alt="Wireframes Android del usuario rancher, lámina 4 de 5" width="650">
+  <p><i>Figura 3.1.4.1.16. Wireframes Android del usuario rancher, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-rancher-05.jpg" alt="Wireframes Android del usuario rancher, lámina 5 de 5" width="650">
+  <p><i>Figura 3.1.4.1.17. Wireframes Android del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+##### Usuario veterinario
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-vet-01.jpg" alt="Wireframes Android del usuario vet, lámina 1 de 5" width="650">
+  <p><i>Figura 3.1.4.1.18. Wireframes Android del usuario vet, lámina 1 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-vet-02.jpg" alt="Wireframes Android del usuario vet, lámina 2 de 5" width="650">
+  <p><i>Figura 3.1.4.1.19. Wireframes Android del usuario vet, lámina 2 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-vet-03.jpg" alt="Wireframes Android del usuario vet, lámina 3 de 5" width="650">
+  <p><i>Figura 3.1.4.1.20. Wireframes Android del usuario vet, lámina 3 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-vet-04.jpg" alt="Wireframes Android del usuario vet, lámina 4 de 5" width="650">
+  <p><i>Figura 3.1.4.1.21. Wireframes Android del usuario vet, lámina 4 de 5. Fuente: elaboración propia.</i></p>
+</div>
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireframe-sheets/android-vet-05.jpg" alt="Wireframes Android del usuario vet, lámina 5 de 5" width="650">
+  <p><i>Figura 3.1.4.1.22. Wireframes Android del usuario vet, lámina 5 de 5. Fuente: elaboración propia.</i></p>
+</div>
 
 <a id="toc-3-1-4-2-mobile-applications-wireflow-diagrams"></a>
 
 ### 3.1.4.2. Mobile Applications Wireflow Diagrams
 
-Cada wireflow mostrará cómo cambia la interfaz después de una acción.
+Cada wireflow muestra cómo cambia la interfaz después de una acción: La flecha continua representa el *happy path* y las flechas discontinuas rojas, las rutas alternativas (*unhappy paths*); cuando una alternativa no cuenta con una pantalla propia, se representa con un recuadro punteado. Se presenta un wireflow por cada user goal, y por perfil cuando el objetivo lo realizan tanto el ganadero como el veterinario. 
 
 | User goal | Actor | Punto inicial | Pasos principales | Alternativas | Resultado |
 |---|---|---|---|---|---|
@@ -9102,7 +9224,79 @@ Cada wireflow mostrará cómo cambia la interfaz después de una acción.
 | Consultar historial sanitario | Usuario autorizado | Detalle del animal | Abrir sanidad, filtrar y revisar | Historial vacío o permiso insuficiente | Evento consultado |
 | Registrar evento sanitario | Usuario autorizado | Historial | Seleccionar tipo, completar y guardar | Validación, falta de permiso o sin conexión | Evento registrado o pendiente |
 
-> **Pendiente de completar:** insertar un wireflow por cada user goal y por cada aplicación.
+
+##### Wireflow 1. Registrarse e iniciar sesión
+
+**User goal:** Crear mi cuenta con el rol que me corresponde e ingresar a AniTec para llegar a mi dashboard.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El usuario recorre el onboarding de tres pantallas, llega a Registration, elige el tipo de cuenta (Rancher o Veterinarian), completa los datos y accede al dashboard de su rol. Si los datos son inválidos se muestran errores en línea y permanece en el formulario; si ya tiene cuenta, pasa a Sign in; si falla la red, se informa el error y se permite reintentar.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-01-registro-e-inicio-de-sesion.png" alt="Wireflow Flutter - Registrarse e iniciar sesión" width="650">
+  <p><i>Figura 3.1.4.2.1. Wireflow del user goal «Registrarse e iniciar sesión». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 2. Consultar dashboard
+
+**User goal:** Ver de un vistazo el estado de mi hato, mis actividades y mis alertas (en el caso de la veterinaria, mis clientes y seguimientos pendientes) y entrar al módulo que necesito.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+Con la sesión autenticada, el ganadero llega a su dashboard (animales, actividades y alertas) y abre un módulo desde la barra inferior; el veterinario llega al suyo (clientes y seguimientos) y abre Clients. Las alternativas cubren el primer uso sin datos, la carga del resumen, el trabajo sin conexión (banner offline y acceso al estado de sincronización), la sesión vencida, el servicio no disponible y el acceso no autorizado.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-02-consultar-dashboard.png" alt="Wireflow Flutter - Consultar dashboard" width="526">
+  <p><i>Figura 3.1.4.2.2. Wireflow del user goal «Consultar dashboard». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 3. Registrar animal
+
+**User goal:** Registrar un animal nuevo en pocos pasos, incluso cuando estoy en el campo sin conexión.  
+**User Persona:** Jorge Luis Rivas (ganadero)
+
+Desde la lista de animales, el ganadero abre el formulario New animal, completa los datos y guarda; el resultado es el detalle del animal registrado. Si la lista está vacía se ofrece crear el primer animal; los campos incompletos o un tag duplicado se señalan en línea; sin conexión el registro se guarda en el dispositivo y queda pendiente de sincronizar; también puede cambiarse a registro masivo (Bulk).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-03-registrar-animal.png" alt="Wireflow Flutter - Registrar animal" width="650">
+  <p><i>Figura 3.1.4.2.3. Wireflow del user goal «Registrar animal». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 4. Consultar o actualizar animal
+
+**User goal:** Encontrar un animal, revisar su información y mantenerla actualizada.  
+**User Persona:** Jorge Luis Rivas (ganadero)
+
+El ganadero busca o selecciona un animal, revisa su detalle, entra a Edit animal, modifica los datos y guarda; el detalle refleja la información actualizada. Una búsqueda sin coincidencias muestra el estado sin resultados; la falta de autorización o un animal archivado dejan el detalle en solo lectura; los datos inválidos se corrigen antes de guardar y un conflicto de sincronización se resuelve en Sync status (Keep mine / Use server).
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-04-consultar-o-actualizar-animal.png" alt="Wireflow Flutter - Consultar o actualizar animal" width="650">
+  <p><i>Figura 3.1.4.2.4. Wireflow del user goal «Consultar o actualizar animal». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 5. Consultar historial sanitario
+
+**User goal:** Revisar qué vacunas, tratamientos y controles ha recibido un animal para decidir qué hacer a continuación.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El usuario autorizado abre el historial sanitario del animal (el ganadero desde el detalle del animal; el veterinario desde el detalle del cliente y de su paciente) y revisa el detalle de un registro. Las alternativas son el historial vacío, el animal sin registros, el permiso insuficiente, la copia local sin conexión y el acceso revocado o finalizado por el ganadero.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-05-historial-sanitario.png" alt="Wireflow Flutter - Consultar historial sanitario" width="526">
+  <p><i>Figura 3.1.4.2.5. Wireflow del user goal «Consultar historial sanitario». Fuente: elaboración propia.</i></p>
+</div>
+
+##### Wireflow 6. Registrar evento sanitario
+
+**User goal:** Dejar constancia de un evento de salud: reportar un problema (ganadero) o registrar la visita y su seguimiento (veterinaria).  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria)
+
+El ganadero reporta un evento desde el detalle del animal (Report health issue) y el veterinario registra una visita desde el historial del paciente (Record visit); en ambos casos se completa el formulario, se guarda y el evento queda visible en el historial. Los campos obligatorios vacíos se señalan en línea; sin conexión el evento queda guardado localmente y pendiente de sincronizar; sin permiso o con el acceso revocado no se puede registrar; el veterinario puede además programar un seguimiento o descartar los cambios sin guardar.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/wireflow-diagrams/flutter-wireflow-06-registro-sanitario.png" alt="Wireflow Flutter - Registrar evento sanitario" width="503">
+  <p><i>Figura 3.1.4.2.6. Wireflow del user goal «Registrar evento sanitario». Fuente: elaboración propia.</i></p>
+</div>
+
 
 **Descripción de los wireflows.** Cada wireflow parte de un user goal y de un User Persona de la sección 2.3.1, y muestra cómo cambia la interfaz después de cada acción añadiendo un paso con el estado resultante.
 
@@ -9117,15 +9311,10 @@ Cada wireflow mostrará cómo cambia la interfaz después de una acción.
 
 ### 3.1.4.3. Mobile Applications Mock-ups
 
-Los mock-ups aplican el Design System de AniTec a los wireframes aprobados y muestran contenido representativo, controles táctiles, navegación y estados de la interfaz. Para facilitar su revisión, las 195 pantallas se organizan por tecnología y perfil funcional. Cada lámina se lee de izquierda a derecha y de arriba hacia abajo; los códigos Axx y Fxx conservan el identificador de la exportación original de Android y Flutter, respectivamente.
+Los mock-ups presentan la propuesta visual de las aplicaciones móviles de AniTec y aplican el Design System definido en la sección 3.1.1 a la estructura validada mediante los wireframes. Las pantallas muestran contenido representativo, controles táctiles, navegación y estados de la interfaz para IAM, el usuario rancher y el usuario veterinario. Para facilitar su revisión se organizan por tecnología y perfil funcional.
 
-| Aplicación | IAM | Usuario rancher | Usuario vet | Total |
-|---|---:|---:|---:|---:|
-| Flutter | 5 | 48 | 44 | 97 |
-| Android | 5 | 49 | 44 | 98 |
-| **Total** | **10** | **97** | **88** | **195** |
 
-El prototipo editable se encuentra en [Figma - AniTec 2026-2](https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1).
+El diseño editable y completo de pantallas se encuentran en https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1 
 
 **Aplicación del Design System.** Los mock-ups usan la paleta, la tipografía y la iconografía de la sección 3.1.1: fondo crema, tarjetas claras con bordes suaves, verde para las acciones principales y la selección activa, y etiquetas de estado, como Saludable o En observación, que combinan color y texto. Las pantallas se organizan con patrones que se repiten (lista con búsqueda y filtros, ficha de detalle, formulario por secciones y tarjeta de resumen), de modo que el usuario reconoce cómo operar un módulo nuevo a partir de otro que ya conoce. Los formularios muestran etiquetas visibles, selectores para los valores controlados y mensajes de validación junto al campo, y la acción de guardar permanece fija al pie de la pantalla.
 
@@ -9135,7 +9324,7 @@ El prototipo editable se encuentra en [Figma - AniTec 2026-2](https://www.figma.
 
 ##### IAM
 
-Este conjunto presenta el onboarding, el registro y el inicio de sesión compartidos por los usuarios de la aplicación.
+Este conjunto presenta el onboarding, el registro y el inicio de sesión compartidos por los usuarios de la aplicación. La secuencia progresiva reduce la cantidad de información mostrada en cada paso; los formularios emplean etiquetas visibles, jerarquía tipográfica y una acción primaria destacada. 
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-iam-01.jpg" alt="Mock-ups Flutter del módulo IAM" width="650">
@@ -9144,7 +9333,7 @@ Este conjunto presenta el onboarding, el registro y el inicio de sesión compart
 
 ##### Usuario rancher
 
-Las siguientes láminas recorren la experiencia del ganadero: dashboard, animales, actividades, veterinarios, escaneo QR, finanzas, suscripción, configuración y los estados asociados a estas operaciones.
+Las siguientes láminas recorren la experiencia del ganadero: dashboard, animales, actividades, veterinarios, escaneo QR, finanzas, suscripción, configuración y los estados asociados a estas operaciones. El dashboard aplica jerarquía visual para priorizar alertas, indicadores y accesos frecuentes; la navegación agrupa las funciones por tareas del dominio; y las listas combinan etiquetas, búsqueda, filtros y estados.
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-rancher-01.jpg" alt="Mock-ups Flutter del usuario rancher, lámina 1" width="650">
@@ -9171,9 +9360,11 @@ Las siguientes láminas recorren la experiencia del ganadero: dashboard, animale
   <p><i>Figura 15. Mock-ups Flutter del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
-##### Usuario vet
+##### Usuario veterinario
 
-Las pantallas del veterinario cubren el dashboard profesional, la gestión de clientes, el historial clínico, el registro y corrección de visitas, el seguimiento, las actividades, los indicadores y la configuración.
+Las pantallas del veterinario cubren el dashboard profesional, la gestión de clientes, el historial clínico, el registro y corrección de visitas, el seguimiento, las actividades, los indicadores y la configuración. La arquitectura por audiencia presenta solamente la información autorizada para este rol; los clientes y pacientes se organizan mediante búsqueda, filtros y orden cronológico
+
+
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/flutter-vet-01.jpg" alt="Mock-ups Flutter del usuario vet, lámina 1" width="650">
@@ -9199,7 +9390,7 @@ Las pantallas del veterinario cubren el dashboard profesional, la gestión de cl
 
 ##### IAM
 
-La versión Android conserva el mismo alcance funcional del acceso y adapta la presentación a los patrones visuales de la plataforma.
+La versión Android conserva el mismo alcance funcional del acceso y adapta la presentación a los patrones visuales de Material Design. Mantiene la identidad de AniTec, la jerarquía y las etiquetas del flujo Flutter, pero ajusta campos, botones y controles de navegación a las convenciones de Android para conservar familiaridad y consistencia externa.
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-iam-01.jpg" alt="Mock-ups Android del módulo IAM" width="650">
@@ -9208,7 +9399,7 @@ La versión Android conserva el mismo alcance funcional del acceso y adapta la p
 
 ##### Usuario rancher
 
-Las láminas Android mantienen la secuencia funcional del usuario rancher e incluyen vistas principales, formularios, estados vacíos, confirmaciones, errores y sincronización.
+Las láminas Android mantienen la secuencia funcional del usuario rancher e incluyen vistas principales, formularios, estados vacíos, confirmaciones, errores y sincronización. La misma arquitectura por tareas permite cambiar de plataforma sin reaprender el producto: Inicio resume la situación del hato, Animals concentra la gestión del ganado, Activities organiza el trabajo y More agrupa funciones de menor frecuencia. Los formularios conservan etiquetas persistentes, acciones principales visibles y mensajes que explican cómo corregir o reintentar.
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-rancher-01.jpg" alt="Mock-ups Android del usuario rancher, lámina 1" width="650">
@@ -9235,9 +9426,9 @@ Las láminas Android mantienen la secuencia funcional del usuario rancher e incl
   <p><i>Figura 25. Mock-ups Android del usuario rancher, lámina 5 de 5. Fuente: elaboración propia.</i></p>
 </div>
 
-##### Usuario vet
+##### Usuario veterinario
 
-La versión Android del perfil veterinario documenta la gestión de clientes y visitas, los estados operativos, los indicadores, el escaneo, las notificaciones y las opciones de cuenta.
+La versión Android del perfil veterinario documenta la gestión de clientes y visitas, los estados operativos, los indicadores, el escaneo, las notificaciones y las opciones de cuenta. El dashboard prioriza clientes, visitas y seguimientos; los historiales siguen una organización cronológica; y las pantallas de autorización, validación y estados vacíos combinan iconografía, texto y acciones de recuperación. Así, la adaptación a Android conserva tanto el Design System como los criterios de inclusión y arquitectura de información definidos para AniTec.
 
 <div align="center" style="page-break-inside: avoid;">
   <img src="markdown/assets/chapter-3/mock-up-sheets/android-vet-01.jpg" alt="Mock-ups Android del usuario vet, lámina 1" width="650">
@@ -9263,7 +9454,7 @@ La versión Android del perfil veterinario documenta la gestión de clientes y v
 
 ### 3.1.4.4. Mobile Applications User Flow Diagrams
 
-Los User Flow Diagrams integrarán los mock-ups con el happy path y las rutas alternativas.
+Los User Flow Diagrams presentan la navegación propuesta para alcanzar cada user goal definido. Se establece un único flujo estándar por objetivo, aplicable tanto a Android como a Flutter, porque ambas implementaciones comparten la misma arquitectura de información, las mismas acciones esenciales y las mismas condiciones de recuperación. Los diagramas se derivan de los wireflows y emplean mock-ups representativos de las vistas involucradas. Para conservar la legibilidad, cada lámina resume el recorrido en tres pantallas principales y concentra las condiciones secundarias en bloques breves; su explicación detallada se mantiene en el texto. La línea verde continua representa el *happy path*; la línea roja discontinua representa los *unhappy paths* que requieren corrección, reintento o recuperación; y la línea ámbar discontinua identifica una ruta alternativa válida que no constituye un error.
 
 | User goal | Happy path | Unhappy paths | Relación |
 |---|---|---|---|
@@ -9274,7 +9465,79 @@ Los User Flow Diagrams integrarán los mock-ups con el happy path y las rutas al
 | Historial sanitario | Historial disponible | Historial vacío, filtro sin resultados y acceso denegado | US-014 |
 | Registro sanitario | Datos válidos y confirmación | Validación, permiso insuficiente y sin conexión | US-015 |
 
-> **Pendiente de completar:** insertar diagramas Android y Flutter con condiciones y rutas alternativas.
+#### User Flow 1. Registrarse e iniciar sesión
+
+**User goal:** Crear mi cuenta con el rol que me corresponde e ingresar a AniTec para llegar a mi dashboard.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria).
+
+Este flujo se deriva del Wireflow 1. En el *happy path*, la persona recorre el onboarding, elige crear una cuenta o iniciar sesión, completa los datos requeridos y llega al dashboard correspondiente a su rol. Si el registro contiene datos inválidos, se mantienen los valores ingresados y se señalan los campos por corregir. Una cuenta existente conduce a Sign in como ruta alternativa válida. Las credenciales incorrectas permiten reintentar y un fallo de conexión conserva el contexto antes de volver a enviar la solicitud.
+
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/user-flow-diagrams/user-flow-01-registro-inicio-sesion.png" alt="User Flow estándar para registrarse e iniciar sesión" width="650">
+  <p><i>Figura 3.1.4.4.1. User Flow para registrarse e iniciar sesión. Fuente: elaboración propia.</i></p>
+</div>
+
+#### User Flow 2. Consultar dashboard
+
+**User goal:** Ver de un vistazo el estado de mi hato, mis actividades y mis alertas o, para la veterinaria, mis clientes y seguimientos pendientes, y entrar al módulo que necesito.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria).
+
+Este flujo se deriva del Wireflow 2. El *happy path* parte de una sesión autenticada, carga el dashboard ajustado al rol y continúa al módulo elegido desde la navegación. En el primer uso se muestra una llamada a crear la primera finca o agregar el primer cliente; durante la carga se conservan estructuras que anticipan el contenido. Sin conexión se informa el uso de datos locales; una sesión vencida solicita autenticación y los errores de servicio o autorización ofrecen reintento o recuperación de acceso.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/user-flow-diagrams/user-flow-02-consultar-dashboard.png" alt="User Flow estándar para consultar el dashboard" width="650">
+  <p><i>Figura 3.1.4.4.2. User Flow para consultar el dashboard. Fuente: elaboración propia.</i></p>
+</div>
+
+
+#### User Flow 3. Registrar animal
+
+**User goal:** Registrar un animal nuevo en pocos pasos, incluso cuando estoy en el campo sin conexión.  
+**User Persona:** Jorge Luis Rivas (ganadero).
+
+Este flujo se deriva del Wireflow 3. En la ruta esperada, Jorge abre Animals, toca la acción de nuevo registro, completa el formulario, guarda y revisa el detalle creado. Si la lista está vacía se ofrece registrar el primer animal. Los campos incompletos o un tag duplicado mantienen el formulario abierto con mensajes de corrección; sin conexión el registro queda pendiente en Sync status. El formulario Bulk constituye una alternativa válida cuando necesita registrar varios animales.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/user-flow-diagrams/user-flow-03-registrar-animal.png" alt="User Flow estándar para registrar un animal" width="650">
+  <p><i>Figura 3.1.4.4.3. User Flow para registrar un animal. Fuente: elaboración propia.</i></p>
+</div>
+
+#### User Flow 4. Consultar o actualizar animal
+
+**User goal:** Encontrar un animal, revisar su información y mantenerla actualizada.  
+**User Persona:** Jorge Luis Rivas (ganadero).
+
+Este flujo se deriva del Wireflow 4. El *happy path* comienza con la búsqueda o selección de un animal, continúa con la revisión del detalle y la edición y termina mostrando los datos actualizados. Una búsqueda sin coincidencias permite limpiar los filtros; la falta de autorización o el estado archivado mantienen el recurso en solo lectura. Los datos inválidos se corrigen antes de guardar y los conflictos de sincronización se resuelven eligiendo entre la versión local y la versión del servidor.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/user-flow-diagrams/user-flow-04-consultar-actualizar-animal.png" alt="User Flow estándar para consultar o actualizar un animal" width="650">
+  <p><i>Figura 3.1.4.4.4. User Flow para consultar o actualizar un animal. Fuente: elaboración propia.</i></p>
+</div>
+
+#### User Flow 5. Consultar historial sanitario
+
+**User goal:** Revisar qué vacunas, tratamientos y controles ha recibido un animal para decidir qué hacer a continuación.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria).
+
+Este flujo se deriva del Wireflow 5 y muestra los puntos de entrada de ambos perfiles. Jorge parte del detalle del animal y Valeria del cliente o paciente autorizado; ambos abren Health history y seleccionan un registro. Si no existen antecedentes, se ofrece crear el primero; si una búsqueda no devuelve resultados, se modifican sus criterios. El contenido protegido no se muestra sin permiso, la copia local se identifica como potencialmente desactualizada y un acceso revocado finaliza la consulta indicando cómo solicitar una nueva autorización.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/user-flow-diagrams/user-flow-05-historial-sanitario.png" alt="User Flow estándar para consultar el historial sanitario" width="650">
+  <p><i>Figura 3.1.4.4.5. User Flow para consultar el historial sanitario. Fuente: elaboración propia.</i></p>
+</div>
+
+#### User Flow 6. Registrar evento sanitario
+
+**User goal:** Dejar constancia de un evento de salud: reportar un problema como ganadero o registrar la visita y su seguimiento como veterinaria.  
+**User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria).
+
+Este flujo se deriva del Wireflow 6. Jorge utiliza Report health issue desde el detalle del animal y Valeria utiliza Record visit desde el historial del paciente; ambos completan los datos, guardan y comprueban que el evento aparezca en el historial. Los campos obligatorios vacíos mantienen el formulario abierto, el trabajo sin conexión guarda una copia pendiente y un permiso revocado bloquea el registro. Antes de salir sin guardar se solicita confirmación. Como ruta alternativa válida, Valeria puede programar un seguimiento posterior a la visita.
+
+<div align="center" style="page-break-inside: avoid;">
+  <img src="markdown/assets/chapter-3/user-flow-diagrams/user-flow-06-registrar-evento-sanitario.png" alt="User Flow estándar para registrar un evento sanitario" width="650">
+  <p><i>Figura 3.1.4.4.6. User Flow para registrar un evento sanitario. Fuente: elaboración propia.</i></p>
+</div>
 
 **Descripción de los User Flows.** Cada User Flow reutiliza los mock-ups del wireflow correspondiente y agrega las decisiones que separan el camino esperado (happy path) de los caminos alternativos (unhappy paths). Comienza en la pantalla desde la que el usuario inicia la tarea y termina en la que confirma el resultado.
 
@@ -9293,12 +9556,10 @@ Los prototipos simularán la navegación de los User Flow Diagrams y permitirán
 
 Los criterios de interacción de los prototipos derivan de la arquitectura de información de la sección 3.1.2 y de los User Flows de la sección 3.1.4.4. La navegación principal se resuelve con una barra inferior de cinco destinos por rol y las funciones secundarias se agrupan en «Más». Las tareas de creación se inician desde un botón de acción visible en cada lista, los formularios se abren a pantalla completa con retorno explícito y las acciones destructivas piden confirmación. Cada interacción devuelve retroalimentación inmediata, como la selección activa en la barra, los mensajes de validación junto al campo, las confirmaciones y los avisos de sincronización, y los errores ofrecen una acción de recuperación: reintentar, limpiar la búsqueda o ingresar el código manualmente. Con ello se comprueban las etiquetas, la jerarquía, la recuperación ante errores y la consistencia entre pantallas.
 
-| Aplicación | Prototipo Figma | Captura del video | Video en Microsoft Stream | Estado |
-|---|---|---|---|---|
-| Android | URL pendiente | Pendiente | URL pendiente | Pendiente |
-| Flutter | URL pendiente | Pendiente | URL pendiente | Pendiente |
-
-> **Pendiente de completar:** insertar una captura de cada video y reemplazar los enlaces después de publicar los prototipos y sus demostraciones.
+| Usuario | Prototipo Evidencia | Captura del video | Video en Microsoft Stream |
+|---|---|---|---|
+| Ganadero | <img src="markdown/assets/chapter-3/prototypingFigmaEvidence.png" width="650">| <img src="markdown/assets/chapter-3/prototyping.png" width="650">  | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQAoOjKIja11SZkyivBWNnFHAfqWrhmYFjAEtX8G3aZOCPE?e=nkIv3O | 
+| Veterinario | <img src="markdown/assets/chapter-3/prototypingFigmaEvidenceVet.png" width="650"> | <img src="markdown/assets/chapter-3/prototypingVet.png" width="650"> | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQC1i57fMYVmS5YQVocXyarQAfhuAk37q3v1QPCuDFJ7Yyw?e=KRkjwP | 
 
 **Enlace de diseño en Figma:** <https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1>
 
