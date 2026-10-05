@@ -206,6 +206,8 @@
 - [3.1. Product design](#toc-3-1-product-design)
   - [3.1.1. Style Guidelines](#toc-3-1-1-style-guidelines)
     - [3.1.1.1. General Style Guidelines](#toc-3-1-1-1-general-style-guidelines)
+    - [3.1.1.2. Web Style Guidelines](#toc-3-1-1-2-web-style-guidelines)
+    - [3.1.1.3. Mobile Style Guidelines](#toc-3-1-1-3-mobile-style-guidelines)
   - [3.1.2. Information Architecture](#toc-3-1-2-information-architecture)
     - [3.1.2.1. Organization Systems](#toc-3-1-2-1-organization-systems)
     - [3.1.2.2. Labelling Systems](#toc-3-1-2-2-labelling-systems)
