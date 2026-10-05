@@ -43,9 +43,9 @@ La tabla siguiente lista las 24 historias comprometidas, sus Story Points y su e
 | US-008 | Consultar las fincas registradas | 3 | Completa. |
 | US-044 | Gestionar los corrales de una finca | 3 | Completa. |
 | US-012 | Actualizar o archivar un animal | 5 | Parcial: se actualiza y se elimina; el archivado no está implementado. |
-| US-015 | Registrar una incidencia sanitaria | 5 | Adelantada desde el Sprint 2. |
-| US-016 | Registrar diagnóstico y tratamiento | 5 | Adelantada desde el Sprint 2. |
-| US-014 | Consultar eventos sanitarios | 3 | Adelantada desde el Sprint 2. |
+| US-015 | Registrar una incidencia sanitaria | 5 | Completa. |
+| US-016 | Registrar diagnóstico y tratamiento | 5 | Completa. |
+| US-014 | Consultar eventos sanitarios | 3 | Completa. |
 | US-045 | Adjuntar una fotografía al animal | 3 | Completa. |
 | US-001 | Comprender la propuesta de valor de AniTec | 3 | Completa. |
 | US-002 | Conocer las soluciones para cada segmento | 3 | Completa. |
@@ -83,8 +83,13 @@ La matriz LACX indica un líder (L) y los colaboradores (C) de cada aspecto del 
 El Sprint Backlog descompone las historias comprometidas en tareas comprobables y refleja el objetivo del sprint: una primera aplicación Android ejecutable, respaldada por la API del backend y por la Landing Page publicada. El tablero utiliza los estados Todo, In-Process, To-Review y Done.
 
 - **Sprint Goal:** ofrecer una primera aplicación Android ejecutable para ganaderos y veterinarios (ver 4.2.1.1).
-- **Board URL:** **Pendiente de completar:** URL pública del tablero.
-- **Board screenshot:** **Pendiente de completar:** captura del tablero del Sprint 1.
+- **Board URL:** [URL pública del tablero.](https://trello.com/invite/b/6a4ecb3af66dcec21f2d23be/ATTIc5c2e19d1656e989be48cf69d975850827DF607A/sprint1-anitec)
+
+<div align="center">
+  <img src="../../assets/chapter-4/TrelloSprin1Appmoviles.png" width="800">
+  <p><i>Figura 4.2.1.3.1 Tablero de Trello Sprint 1 Fuente: elaboración propia.</i></p>
+</div>
+
 
 | Story ID | Story Title | Task ID | Task Title | Description | Hours | Assigned To | Status |
 |---|---|---|---|---|---:|---|---|
