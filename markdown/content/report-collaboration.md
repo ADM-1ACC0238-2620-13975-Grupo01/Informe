@@ -6,6 +6,7 @@
 - Landing page: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page
 - Frontend web: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend
 - Backend: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend
+- Android: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-android
 
 ## **AV1. Distribución del trabajo**
 

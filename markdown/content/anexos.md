@@ -36,8 +36,9 @@ Los enlaces públicos del Impact Mapping y del Product Backlog todavía no han s
 - **Repositorio de la landing page:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page>
 - **Repositorio del frontend web:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend>
 - **Repositorio del backend:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend>
+- **Repositorio de la aplicación Android:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-android>
 
-Los repositorios de Android y Flutter se incorporarán cuando se creen los proyectos móviles correspondientes.
+El repositorio de la aplicación Flutter se incorporará cuando se cree el proyecto correspondiente.
 
 <div style="page-break-before: always;"></div>
 
@@ -79,4 +80,4 @@ Estos enlaces corresponden al trabajo anterior que sirve como punto de partida. 
 
 ## Anexo F. Videos de exposición y validación
 
-Hasta el AV1 no se han incorporado enlaces públicos para el video de exposición, las entrevistas de validación de la aplicación móvil, el video About the Product ni el video About the Team. Estos recursos se añadirán en los hitos que correspondan según el statement del curso.
+Hasta el AV1 no se han incorporado enlaces públicos para el video de exposición, las entrevistas de validación de la aplicación móvil, el video About the Product ni el video About the Team. Estos recursos se añadirán en los hitos que correspondan.
