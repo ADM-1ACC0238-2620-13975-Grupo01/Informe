@@ -67,7 +67,7 @@
 
 # Registro de versiones del informe
 
-Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicaciones para Dispositivos Móviles. La fecha indica la actualización de este registro.
+Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicaciones para Dispositivos Móviles y las de la versión 2, al TB1 (Sprint 1). La fecha indica la actualización de este registro.
 
 | Versión | Fecha | Autor | Descripción de modificación |
 | :---: | :---: | :--- | :--- |
@@ -77,6 +77,12 @@ Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicacion
 | 1.3 | 16/09/2026 | Josep Eliu Melgarejo Quiroz | Redacción de las secciones 2.6.1 a 2.6.9 del capítulo II. |
 | 1.4 | 16/09/2026 | Giuseppe Villanueva Rodriguez | Realizó una entrevista. |
 | 1.5 | 16/09/2026 | Luciana Celeste Sanchez Silva | Redacción de las secciones 2.5 a 2.6 del capítulo II. |
+| 2.0 | 25/09/2026 | Josep Eliu Melgarejo Quiroz | Sprint Planning 1: definición del Sprint Goal, de la capacidad del equipo y de las historias comprometidas del Sprint 1. |
+| 2.1 | 01/10/2026 | Sebastian Martin Beingolea Montalvo | Evidencias del backend en el capítulo IV: despliegue en Render y documentación con Swagger. |
+| 2.2 | 02/10/2026 | Saul Ortega Muñoz | Wireframe y mock-up móvil de la Landing Page, y evidencias de desarrollo, ejecución, pruebas y despliegue de la Landing Page. |
+| 2.3 | 02/10/2026 | Giuseppe Villanueva Rodriguez | Configuración y despliegue de las aplicaciones móviles (sección 4.1), registro en Firebase y evidencias de las pruebas de Android. |
+| 2.4 | 03/10/2026 | Luciana Celeste Sanchez Silva | Wireframes, wireflows, user flow diagrams y evidencias del prototipo de las aplicaciones móviles en el capítulo III. |
+| 2.5 | 04/10/2026 | Josep Eliu Melgarejo Quiroz | Documentación completa del Sprint 1 en el capítulo IV, actualización del Product Backlog, student outcomes e integración de los cambios del equipo. |
 
 
 <div style="page-break-before: always;"></div>
@@ -89,6 +95,7 @@ Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicacion
 - Landing page: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-landing-page
 - Frontend web: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend
 - Backend: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend
+- Android: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-android
 
 ## **AV1. Distribución del trabajo**
 
@@ -102,15 +109,27 @@ Durante AV1, el equipo adaptó el informe y el diseño de AniTec al alcance de u
 | Giuseppe Villanueva Rodriguez | Realizó una entrevista. |
 | Luciana Celeste Sanchez Silva | Redactó las secciones 2.5 a 2.6 del capítulo II. |
 
+## **TB1. Distribución del trabajo**
+
+Durante el TB1 (Sprint 1), el equipo implementó la Landing Page, el backend y la aplicación Android, y documentó el sprint en los capítulos III y IV del informe. Las contribuciones de los cinco integrantes, según las tareas del Sprint Backlog, son las siguientes:
+
+| Integrante | Contribución en TB1 |
+| :--- | :--- |
+| Sebastian Martin Beingolea Montalvo | Conectó la aplicación con la API, agregó los corrales y las operaciones masivas al backend, documentó los endpoints con OpenAPI, protegió la sesión del usuario y creó las pruebas automatizadas del backend. Documentó las evidencias del backend en el informe. |
+| Saul Ortega Muñoz | Diseñó el wireframe y el mock-up móvil de la Landing Page y construyó sus secciones, su diseño adaptable y el cambio de idioma. Desarrolló las pantallas de registro, inicio de sesión, mantenimiento de la sesión y ficha técnica del animal. |
+| Josep Eliu Melgarejo Quiroz | Desarrolló el almacenamiento local de la aplicación Android, la navegación por rol, la lista de animales con búsqueda, el registro individual y masivo de animales y la fotografía del animal. Dirigió la planificación del Sprint 1 y mantiene la estructura del informe. |
+| Giuseppe Villanueva Rodriguez | Creó el proyecto Android y organizó su código por capas, y desarrolló la edición de animales y la pantalla de inicio del ganadero. Escribió las pruebas de la aplicación y registró las aplicaciones en Firebase. |
+| Luciana Celeste Sanchez Silva | Elaboró los mock-ups, wireframes, wireflows, user flow diagrams y el prototipo de las aplicaciones móviles. Desarrolló las pantallas de fincas, corrales y registros sanitarios. |
+
 ## GitHub Collaboration Insights
 
 El repositorio del informe conserva el historial de los cambios documentales del equipo. Las siguientes capturas muestran el grafo general y los commits asociados a cada integrante durante el avance.
 
-### *Grafo general de commits*
+### *Grafo general de commits AV1*
 
 ![Grafo de commits del informe en AV1](markdown/assets/chapter-1/Comitsgrahp.png)
 
-### *Commits por integrante*
+### *Commits por integrante AV1*
 
 *Luciana Celeste Sanchez Silva*
 
@@ -140,6 +159,42 @@ El repositorio del informe conserva el historial de los cambios documentales del
 
 <div align="center">
   <img src="markdown/assets/chapter-1/Giuseppe152004Commits.png" alt="Commits de Giuseppe Villanueva" width="650">
+</div>
+
+### *Grafo general de commits TB1*
+
+![Grafo de commits del informe en AV1](markdown/assets/chapter-1/GrafoTB1.png)
+
+### *Commits por integrante TB1*
+
+*Luciana Celeste Sanchez Silva*
+
+<div align="center">
+  <img src="markdown/assets/chapter-1/CommitsLucianaTB1.png" alt="Commits de Luciana Sánchez" width="650">
+</div>
+
+*Josep Eliu Melgarejo Quiroz*
+
+<div align="center">
+  <img src="markdown/assets/chapter-1/CommitsMelgaTB1.png" alt="Commits de Josep Melgarejo" width="650">
+</div>
+
+*Sebastian Martin Beingolea Montalvo*
+
+<div align="center">
+  <img src="markdown/assets/chapter-1/CommitsSileTB1.png" alt="Commits de Sebastian Beingolea" width="650">
+</div>
+
+*Saul Ortega Muñoz*
+
+<div align="center">
+  <img src="markdown/assets/chapter-1/CommitsGuissepteTB1.png" alt="Commits de Saul Ortega" width="650">
+</div>
+
+*Giuseppe Villanueva Rodriguez*
+
+<div align="center">
+  <img src="markdown/assets/chapter-1/CommitsMoltavioTB1.png" alt="Commits de Giuseppe Villanueva" width="650">
 </div>
 
 
@@ -339,12 +394,12 @@ El repositorio del informe conserva el historial de los cambios documentales del
 
 **Criterio:** La capacidad de adquirir y aplicar nuevos conocimientos según sea necesario, utilizando estrategias de aprendizaje apropiadas.
 
-En el siguiente cuadro se describen las acciones realizadas y los enunciados de conclusiones por parte del grupo durante el AV1, que permiten sustentar el logro del ABET - EAC - Student Outcome 7.
+En el siguiente cuadro se describen las acciones realizadas y los enunciados de conclusiones por parte de cada integrante y del grupo durante el AV1 y el TB1, que permiten sustentar el logro del ABET - EAC - Student Outcome 7.
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|
-| Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software. | **AV1:**<br><br>**Luciana Celeste Sanchez Silva:** Revisó los conceptos de Lean UX, segmentación de usuarios y diseño centrado en las necesidades del ganadero y del veterinario. Aplicó estos conocimientos al actualizar el Startup Profile, el Solution Profile, los Problem Statements, Assumptions e Hypothesis Statements para orientar AniTec hacia una aplicación móvil.<br><br>**Josep Eliu Melgarejo Quiroz:** Analizó el statement del curso y estudió la estructura requerida para la especificación de requisitos móviles. Aplicó lo aprendido al reorganizar el índice del informe, adaptar las User Stories y Technical Stories, y distribuir el Product Backlog en tres sprints alineados con los hitos del curso.<br><br>**Sebastian Martin Beingolea Montalvo:** Profundizó en los fundamentos de Domain-Driven Design, EventStorming y lenguaje ubicuo. Aplicó estos conceptos en la identificación y delimitación de los bounded contexts, así como en la revisión de los flujos de mensajes del dominio ganadero.<br><br>**Saul Ortega Muñoz:** Investigó la notación C4, Structurizr DSL y la representación de arquitecturas para aplicaciones móviles. Aplicó estos conocimientos al apoyar la definición de los diagramas de contexto, contenedores, despliegue y componentes de AniTec.<br><br>**Giuseppe Villanueva Rodriguez:** Revisó conceptos relacionados con desarrollo Android, aplicaciones multiplataforma, persistencia local, sincronización, uso de cámara y notificaciones. Aplicó estos conocimientos al verificar la coherencia entre los requisitos obligatorios del curso, las funcionalidades móviles y las historias incluidas en el Product Backlog. | **AV1:**<br><br>El equipo actualizó conocimientos de Lean UX, Requirements Engineering, Domain-Driven Design, arquitectura C4 y desarrollo para dispositivos móviles. Estos conocimientos se aplicaron directamente en la corrección de los capítulos I y II, la definición del alcance de Android y Flutter, la elaboración de requisitos trazables y el diseño estratégico y táctico de los nueve bounded contexts. Como resultado, AniTec cuenta con una base documental coherente con el statement del curso y preparada para orientar su posterior implementación móvil. |
-| Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software. | **AV1:**<br><br>**Luciana Celeste Sanchez Silva:** Identificó que los supuestos sobre facilidad de uso, adopción y colaboración entre ganaderos y veterinarios deben contrastarse continuamente mediante entrevistas y validaciones. Por ello, consideró la investigación con usuarios como una fuente permanente de aprendizaje para mejorar la propuesta móvil.<br><br>**Josep Eliu Melgarejo Quiroz:** Reconoció la necesidad de revisar continuamente el statement, el Product Backlog y los criterios de evaluación para detectar brechas entre el trabajo heredado y las exigencias del nuevo curso. Utilizó la comparación sistemática y la mejora iterativa del informe como estrategia de aprendizaje.<br><br>**Sebastian Martin Beingolea Montalvo:** Comprendió que la delimitación del dominio puede evolucionar conforme aparecen nuevos eventos, reglas y dependencias. Adoptó la revisión de recursos anteriores, la discusión del lenguaje ubicuo y la contrastación entre diagramas como estrategias para refinar el diseño.<br><br>**Saul Ortega Muñoz:** Reconoció que las herramientas y convenciones de arquitectura requieren práctica y actualización constante. Consultó ejemplos, documentación y resultados exportados para comprobar que los diagramas representaran correctamente las relaciones entre usuarios, aplicaciones y servicios.<br><br>**Giuseppe Villanueva Rodriguez:** Identificó que las capacidades móviles plantean riesgos que deben investigarse antes de implementarse, especialmente en conectividad, permisos, almacenamiento local y uso de recursos del dispositivo. Consideró las Spike Stories, los prototipos y las pruebas en dispositivos físicos como estrategias necesarias para adquirir evidencia y ajustar decisiones. | **AV1:**<br><br>El equipo reconoció que el desarrollo de AniTec requiere aprendizaje continuo porque combina un producto web heredado con nuevas plataformas, herramientas y restricciones móviles. La revisión de documentación, el análisis de trabajos anteriores, la investigación individual, la discusión en equipo y la validación progresiva permitieron corregir supuestos y fundamentar decisiones. Estas prácticas fortalecen la capacidad del grupo para incorporar nuevos conocimientos durante los siguientes hitos y responder a cambios técnicos o de usuario sin perder coherencia en la solución. |
+| Actualiza conceptos y conocimientos necesarios para su desarrollo profesional y en especial para su proyecto en soluciones de software. | **Luciana Celeste Sanchez Silva:**<br>**AV1:** Revisó los conceptos de Lean UX, segmentación de usuarios y diseño centrado en las necesidades del ganadero y del veterinario. Aplicó estos conocimientos al actualizar el Startup Profile, el Solution Profile, los Problem Statements, Assumptions e Hypothesis Statements para orientar AniTec hacia una aplicación móvil.<br>**TB1:** Aprendió a convertir los diseños de Figma en pantallas reales de la aplicación, pensando en lo que necesita el ganadero al usarla en el campo. Aplicó este conocimiento al elaborar los mock-ups móviles y al construir las pantallas de fincas, corrales y registros sanitarios con formularios claros y mensajes fáciles de entender.<br><br>**Josep Eliu Melgarejo Quiroz:**<br>**AV1:** Analizó los requisitos del proyecto y estudió la estructura requerida para la especificación de requisitos móviles. Aplicó lo aprendido al reorganizar el índice del informe, adaptar las User Stories y Technical Stories, y distribuir el Product Backlog en tres sprints alineados con los hitos del curso.<br>**TB1:** Aprendió a construir una aplicación móvil que guarda la información en el teléfono y muestra a cada usuario solo lo que le corresponde. Aplicó este conocimiento al desarrollar la lista de animales con búsqueda, el registro de animales uno por uno o varios a la vez, la fotografía del animal y la organización de la información de cada rol.<br><br>**Sebastian Martin Beingolea Montalvo:**<br>**AV1:** Profundizó en los fundamentos de Domain-Driven Design, EventStorming y lenguaje ubicuo. Aplicó estos conceptos en la identificación y delimitación de los bounded contexts, así como en la revisión de los flujos de mensajes del dominio ganadero.<br>**TB1:** Aprendió cómo se comunican la aplicación y el servidor y cómo comprobar que ese servicio funciona correctamente. Aplicó este conocimiento al conectar la aplicación con el servidor, añadir los corrales, documentar los servicios, proteger la sesión del usuario y crear las pruebas automáticas del servidor.<br><br>**Saul Ortega Muñoz:**<br>**AV1:** Investigó la notación C4, Structurizr DSL y la representación de arquitecturas para aplicaciones móviles. Aplicó estos conocimientos al apoyar la definición de los diagramas de contexto, contenedores, despliegue y componentes de AniTec.<br>**TB1:** Aprendió a diseñar páginas y pantallas fáciles de usar en cualquier dispositivo y en dos idiomas. Aplicó este conocimiento al construir la Landing Page adaptable al celular y las pantallas de registro, inicio de sesión y ficha del animal de la aplicación.<br><br>**Giuseppe Villanueva Rodriguez:**<br>**AV1:** Revisó conceptos relacionados con desarrollo Android, aplicaciones multiplataforma, persistencia local, sincronización, uso de cámara y notificaciones. Aplicó estos conocimientos al verificar la coherencia entre los requisitos del proyecto, las funcionalidades móviles y las historias incluidas en el Product Backlog.<br>**TB1:** Aprendió a organizar un proyecto móvil de forma ordenada, a comprobar que funciona mediante pruebas y a preparar una aplicación para distribuirla. Aplicó este conocimiento al crear la base del proyecto Android, la pantalla de inicio del ganadero y la edición de animales, al escribir las pruebas de la aplicación y al registrar las aplicaciones en Firebase. | **AV1:**<br><br>El equipo actualizó conocimientos de Lean UX, Requirements Engineering, Domain-Driven Design, arquitectura C4 y desarrollo para dispositivos móviles. Estos conocimientos se aplicaron directamente en la corrección de los capítulos I y II, la definición del alcance de Android y Flutter, la elaboración de requisitos trazables y el diseño estratégico y táctico de los nueve bounded contexts. Como resultado, AniTec cuenta con una base documental coherente con el alcance del proyecto y preparada para orientar su posterior implementación móvil.<br><br>**TB1:**<br><br>El equipo pasó del diseño a la implementación y tuvo que aprender nuevas herramientas para construir la Landing Page, el servidor y la aplicación Android. Cada integrante aplicó lo aprendido en las tareas del Sprint 1, lo que permitió entregar una Landing Page publicada, un servidor desplegado y probado, y una aplicación que permite registrarse, iniciar sesión y gestionar fincas, corrales, animales y registros sanitarios. |
+| Reconoce la necesidad del aprendizaje permanente para el desempeño profesional y el desarrollo de proyectos en soluciones de software. | **Luciana Celeste Sanchez Silva:**<br>**AV1:** Identificó que los supuestos sobre facilidad de uso, adopción y colaboración entre ganaderos y veterinarios deben contrastarse continuamente mediante entrevistas y validaciones. Por ello, consideró la investigación con usuarios como una fuente permanente de aprendizaje para mejorar la propuesta móvil.<br>**TB1:** Reconoció que un diseño no está terminado hasta que se prueba en la aplicación real. Al llevar los mock-ups a pantallas, ajustó los estados sin datos, los errores y las confirmaciones, y entendió que debe seguir revisando el diseño con los usuarios para mejorarlo.<br><br>**Josep Eliu Melgarejo Quiroz:**<br>**AV1:** Reconoció la necesidad de revisar continuamente los requisitos del proyecto, el Product Backlog y los criterios de evaluación para detectar brechas entre el trabajo heredado y las exigencias del nuevo curso. Utilizó la comparación sistemática y la mejora iterativa del informe como estrategia de aprendizaje.<br>**TB1:** Reconoció que lo aprendido debe comprobarse con el uso real. Al ver que el filtrado de la información por usuario se hacía solo en la aplicación, identificó que debe reforzarse también en el servidor, y adoptó la revisión continua del trabajo como forma de aprender.<br><br>**Sebastian Martin Beingolea Montalvo:**<br>**AV1:** Comprendió que la delimitación del dominio puede evolucionar conforme aparecen nuevos eventos, reglas y dependencias. Adoptó la revisión de recursos anteriores, la discusión del lenguaje ubicuo y la contrastación entre diagramas como estrategias para refinar el diseño.<br>**TB1:** Comprendió que escribir pruebas también es una forma de aprender. Gracias a ellas descubrió un error de permisos, en el que un veterinario recibía un fallo del servidor en lugar de un aviso de acceso denegado, y lo corrigió, lo que le mostró la importancia de probar también los casos de error y no solo los que funcionan.<br><br>**Saul Ortega Muñoz:**<br>**AV1:** Reconoció que las herramientas y convenciones de arquitectura requieren práctica y actualización constante. Consultó ejemplos, documentación y resultados exportados para comprobar que los diagramas representaran correctamente las relaciones entre usuarios, aplicaciones y servicios.<br>**TB1:** Reconoció que el primer contacto del usuario con el producto, ya sea la Landing Page o el inicio de sesión, debe revisarse continuamente. Aprendió a mejorar los mensajes, las validaciones y la presentación de la información después de comprobar cómo se ven en pantallas pequeñas.<br><br>**Giuseppe Villanueva Rodriguez:**<br>**AV1:** Identificó que las capacidades móviles plantean riesgos que deben investigarse antes de implementarse, especialmente en conectividad, permisos, almacenamiento local y uso de recursos del dispositivo. Consideró las Spike Stories, los prototipos y las pruebas en dispositivos físicos como estrategias necesarias para adquirir evidencia y ajustar decisiones.<br>**TB1:** Reconoció que probar desde el inicio reduce el costo de los cambios y que distribuir una aplicación exige aprender pasos nuevos, como la firma y el envío a los evaluadores. Identificó esos pasos como pendientes y los asumió como aprendizaje para el siguiente hito. | **AV1:**<br><br>El equipo reconoció que el desarrollo de AniTec requiere aprendizaje continuo porque combina un producto web heredado con nuevas plataformas, herramientas y restricciones móviles. La revisión de documentación, el análisis de trabajos anteriores, la investigación individual, la discusión en equipo y la validación progresiva permitieron corregir supuestos y fundamentar decisiones. Estas prácticas fortalecen la capacidad del grupo para incorporar nuevos conocimientos durante los siguientes hitos y responder a cambios técnicos o de usuario sin perder coherencia en la solución.<br><br>**TB1:**<br><br>El equipo comprobó que implementar obliga a seguir aprendiendo: las pruebas mostraron errores, la implementación mostró aspectos del diseño que debían ajustarse y el despliegue exigió dominar nuevas herramientas. El equipo respondió revisando y corrigiendo lo hecho, y dejó identificados los puntos por aprender para el siguiente hito, como el filtrado por usuario en el servidor y la distribución firmada de la aplicación. |
 
 
 <div style="page-break-before: always;"></div>
@@ -9580,12 +9635,12 @@ La figura respalda que OpenAPI está disponible públicamente y que los endpoint
 
 La evidencia explicará la configuración realizada durante el sprint y demostrará la disponibilidad de cada producto aplicable.
 
-| Product | Platform | Configuration performed | Version / Commit | Public URL or Release | Status |
-|---|---|---|---|---|---|
-| Landing Page | GitHub Pages | Workflow o rama pendientes | Commit pendiente | URL pendiente | Pendiente |
-| Web Services | Render | Docker; variables ASPNETCORE_ENVIRONMENT, ConnectionStrings__DefaultConnection, TokenSettings__Secret, StripeSettings__*; MySQL externo | Deploy Live verificado en Events (Figuras 4.2.1.8.1–4.2.1.8.2) | <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live |
-| Android | Firebase App Distribution | Firma, aplicación y testers pendientes | Versión y commit pendientes | Release pendiente | Pendiente |
-| Flutter | Firebase App Distribution | Plataforma, aplicación y testers pendientes | Versión y commit pendientes | Release pendiente | Pendiente |
+| Product | Platform | Configuration performed                                                                                                                         | Version / Commit                                               | Public URL or Release | Status    |
+|---|---|-------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|---|-----------|
+| Landing Page | GitHub Pages | main, develop                                                                                                                                | Commit 2a88184                                               | https://upc-1asi0730-2610-12206-titan-team-4.github.io/anitec-landing-page/index.html | Live      |
+| Web Services | Render | Docker; variables ASPNETCORE_ENVIRONMENT, ConnectionStrings__DefaultConnection, TokenSettings__Secret, StripeSettings__*; MySQL externo | Deploy Live verificado en Events (Figuras 4.2.1.8.1–4.2.1.8.2) | <https://anitec-backend.onrender.com> · Swagger: <https://anitec-backend.onrender.com/swagger/index.html> | Live      |
+| Android | Firebase App Distribution | Firma, aplicación y testers pendientes                                                                                                          | Versión y commit pendientes                                    | Release pendiente | Pendiente |
+| Flutter | Firebase App Distribution | Plataforma, aplicación y testers pendientes                                                                                                     | Versión y commit pendientes                                    | Release pendiente | Pendiente |
 
 **Pasos ejecutados (Web Services):**
 
