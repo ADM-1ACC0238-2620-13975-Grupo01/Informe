@@ -448,12 +448,10 @@ La captura evidencia el correcto funcionamiento de la aplicación Android instal
 </div>
 
 
-**Videos de Ejecución del Sprint 1:**
 
 - **Landing Page:** [Ver video de ejecución (0:00 - 1:48)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQBmZ8UxBU5zToJUnS4AN161Aa9ocLvYJcSFOja0Zogn_tE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=V8q9eK)
-- **Aplicación Android:** [Ver video de ejecución (0:00 - 2:15)](https://upcedupe-my.sharepoint.com/personal/u20221c554_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20221c554%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%2FClipchamp%2FVideo%20Project%2FExports%2FVideo%20Project%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E1bd670fc%2Db74c%2D4708%2Dafd0%2D3ea986759d22)
+
 - **Backend (Web Services):** **Pendiente de completar:** URL del video del backend.
-- **Aplicación Flutter:** **Pendiente de completar** cuando exista la aplicación.
 
 <a id="toc-4-2-1-7-services-documentation-evidence-for-sprint-review"></a>
 
@@ -645,7 +643,7 @@ Las capturas siguientes muestran los analíticos de colaboración y de commits d
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-android" width="800">
+  <img src="../../assets/chapter-4/AndroidCommits.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-android" width="800">
   <p><i>Figura 4.2.1.9.2. Analíticos de colaboración del repositorio anitec-android. Fuente: elaboración propia.</i></p>
 </div>
 

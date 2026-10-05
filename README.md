@@ -31,12 +31,6 @@
     </thead>
     <tbody>
       <tr>
-        <th align="center" >Código</th>
-        <th align="center" >Nombre</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
         <td align="center" >U202217853</td>
         <td align="center" >Beingolea Montalvo, Sebastian Martin </td>
       </tr>
