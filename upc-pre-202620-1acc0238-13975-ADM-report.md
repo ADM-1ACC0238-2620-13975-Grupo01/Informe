@@ -57,7 +57,7 @@
 </div>
 
 <h2 align="center"><strong>Período 202620</strong></h2>
-<h2 align="center"><strong>Septiembre 2026</strong></h2>
+<h2 align="center"><strong>Octubre 2026</strong></h2>
 
 </div>
 
@@ -9987,9 +9987,9 @@ La tabla siguiente lista las 24 historias comprometidas, sus Story Points y su e
 | US-008 | Consultar las fincas registradas | 3 | Completa. |
 | US-044 | Gestionar los corrales de una finca | 3 | Completa. |
 | US-012 | Actualizar o archivar un animal | 5 | Parcial: se actualiza y se elimina; el archivado no está implementado. |
-| US-015 | Registrar una incidencia sanitaria | 5 | Adelantada desde el Sprint 2. |
-| US-016 | Registrar diagnóstico y tratamiento | 5 | Adelantada desde el Sprint 2. |
-| US-014 | Consultar eventos sanitarios | 3 | Adelantada desde el Sprint 2. |
+| US-015 | Registrar una incidencia sanitaria | 5 | Completa. |
+| US-016 | Registrar diagnóstico y tratamiento | 5 | Completa. |
+| US-014 | Consultar eventos sanitarios | 3 | Completa. |
 | US-045 | Adjuntar una fotografía al animal | 3 | Completa. |
 | US-001 | Comprender la propuesta de valor de AniTec | 3 | Completa. |
 | US-002 | Conocer las soluciones para cada segmento | 3 | Completa. |
@@ -10027,8 +10027,13 @@ La matriz LACX indica un líder (L) y los colaboradores (C) de cada aspecto del 
 El Sprint Backlog descompone las historias comprometidas en tareas comprobables y refleja el objetivo del sprint: una primera aplicación Android ejecutable, respaldada por la API del backend y por la Landing Page publicada. El tablero utiliza los estados Todo, In-Process, To-Review y Done.
 
 - **Sprint Goal:** ofrecer una primera aplicación Android ejecutable para ganaderos y veterinarios (ver 4.2.1.1).
-- **Board URL:** **Pendiente de completar:** URL pública del tablero.
-- **Board screenshot:** **Pendiente de completar:** captura del tablero del Sprint 1.
+- **Board URL:** [URL pública del tablero.](https://trello.com/invite/b/6a4ecb3af66dcec21f2d23be/ATTIc5c2e19d1656e989be48cf69d975850827DF607A/sprint1-anitec)
+
+<div align="center">
+  <img src="markdown/assets/chapter-4/TrelloSprin1Appmoviles.png" width="800">
+  <p><i>Figura 4.2.1.3.1 Tablero de Trello Sprint 1 Fuente: elaboración propia.</i></p>
+</div>
+
 
 | Story ID | Story Title | Task ID | Task Title | Description | Hours | Assigned To | Status |
 |---|---|---|---|---|---:|---|---|
@@ -10387,12 +10392,13 @@ La captura evidencia el correcto funcionamiento de la aplicación Android instal
 </div>
 
 
-**Videos de Ejecución del Sprint 1:**
 
-- **Landing Page:** [Ver video de ejecución (0:00 - 1:48)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQBmZ8UxBU5zToJUnS4AN161Aa9ocLvYJcSFOja0Zogn_tE?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=V8q9eK)
-- **Aplicación Android:** [Ver video de ejecución (0:00 - 2:15)](https://upcedupe-my.sharepoint.com/personal/u20221c554_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20221c554%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%2FClipchamp%2FVideo%20Project%2FExports%2FVideo%20Project%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E1bd670fc%2Db74c%2D4708%2Dafd0%2D3ea986759d22)
-- **Backend (Web Services):** **Pendiente de completar:** URL del video del backend.
-- **Aplicación Flutter:** **Pendiente de completar** cuando exista la aplicación.
+- **Landing Page:** [Ver video de ejecución (0:00 - 2:04)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQC9e4SO4wT5RopewpwydbIHAQjJNIqXvrvINMYNLShoyhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=BLnNPm)
+
+- **Backend:** [Ver video de ejecución (0:00 - 4:24)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQC_M8DM0KkwQ64hoYsg3Q58Aci6zoCFip2MPM2vGoEVWdQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=y2ktfd)
+
+- **App Android:** [Ver video de ejecución (0:00 - 2:59)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQCm4SMXxUWfSK1OsYwNSK7HAboFuxNyT6OII8F2u84yVIU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=xfkfJL)
+
 
 <a id="toc-4-2-1-7-services-documentation-evidence-for-sprint-review"></a>
 
@@ -10584,7 +10590,7 @@ Las capturas siguientes muestran los analíticos de colaboración y de commits d
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-android" width="800">
+  <img src="markdown/assets/chapter-4/AndroidCommits.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-android" width="800">
   <p><i>Figura 4.2.1.9.2. Analíticos de colaboración del repositorio anitec-android. Fuente: elaboración propia.</i></p>
 </div>
 
@@ -11037,7 +11043,7 @@ El video About The Team presenta la participación de los integrantes del equipo
 
 # Anexos
 
-Los siguientes anexos reúnen los enlaces disponibles hasta el AV1. Se incluyen únicamente evidencias utilizadas en los capítulos I y II, repositorios vigentes del curso y despliegues del producto web tomado como base. Los recursos correspondientes a validación de la aplicación móvil y a los siguientes sprints se incorporarán cuando sean elaborados.
+Los siguientes anexos reúnen los enlaces disponibles hasta el TB1. Se incluyen las evidencias utilizadas en los capítulos I y II, los repositorios vigentes del curso, los despliegues del producto web tomado como base, el video de exposición del TB1 y los videos de ejecución del Sprint 1. Los recursos correspondientes a validación de la aplicación móvil y a los siguientes sprints se incorporarán cuando sean elaborados.
 
 <div style="page-break-before: always;"></div>
 
@@ -11115,7 +11121,17 @@ Estos enlaces corresponden al trabajo anterior que sirve como punto de partida. 
 
 ## Anexo F. Videos de exposición y validación
 
-Hasta el AV1 no se han incorporado enlaces públicos para el video de exposición, las entrevistas de validación de la aplicación móvil, el video About the Product ni el video About the Team. Estos recursos se añadirán en los hitos que correspondan.
+Hasta el AV1 no se habían incorporado enlaces públicos de videos. Con el TB1 se incorporan el video de exposición y los videos de ejecución del Sprint 1; las entrevistas de validación de la aplicación móvil, el video About the Product y el video About the Team se añadirán en los hitos que correspondan.
+
+### Video de exposición del TB1
+
+- **Exposición TB1:** [Ver video de exposición](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBB8LskxiihR5D5LWoOkTryAWx52SgzfPR9cLuSFL74xLo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=ovWTn7)
+
+### Videos de ejecución del Sprint 1 (TB1)
+
+- **Landing Page:** [Ver video de ejecución (0:00 - 2:04)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQC9e4SO4wT5RopewpwydbIHAQjJNIqXvrvINMYNLShoyhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=BLnNPm)
+- **Backend:** [Ver video de ejecución (0:00 - 4:24)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQC_M8DM0KkwQ64hoYsg3Q58Aci6zoCFip2MPM2vGoEVWdQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=y2ktfd)
+- **Aplicación Android:** [Ver video de ejecución (0:00 - 2:59)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQCm4SMXxUWfSK1OsYwNSK7HAboFuxNyT6OII8F2u84yVIU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=xfkfJL)
 
 
 </div>

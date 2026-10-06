@@ -2,7 +2,7 @@
 
 # Anexos
 
-Los siguientes anexos reúnen los enlaces disponibles hasta el AV1. Se incluyen únicamente evidencias utilizadas en los capítulos I y II, repositorios vigentes del curso y despliegues del producto web tomado como base. Los recursos correspondientes a validación de la aplicación móvil y a los siguientes sprints se incorporarán cuando sean elaborados.
+Los siguientes anexos reúnen los enlaces disponibles hasta el TB1. Se incluyen las evidencias utilizadas en los capítulos I y II, los repositorios vigentes del curso, los despliegues del producto web tomado como base, el video de exposición del TB1 y los videos de ejecución del Sprint 1. Los recursos correspondientes a validación de la aplicación móvil y a los siguientes sprints se incorporarán cuando sean elaborados.
 
 <div style="page-break-before: always;"></div>
 
@@ -80,4 +80,14 @@ Estos enlaces corresponden al trabajo anterior que sirve como punto de partida. 
 
 ## Anexo F. Videos de exposición y validación
 
-Hasta el AV1 no se han incorporado enlaces públicos para el video de exposición, las entrevistas de validación de la aplicación móvil, el video About the Product ni el video About the Team. Estos recursos se añadirán en los hitos que correspondan.
+Hasta el AV1 no se habían incorporado enlaces públicos de videos. Con el TB1 se incorporan el video de exposición y los videos de ejecución del Sprint 1; las entrevistas de validación de la aplicación móvil, el video About the Product y el video About the Team se añadirán en los hitos que correspondan.
+
+### Video de exposición del TB1
+
+- **Exposición TB1:** [Ver video de exposición](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBB8LskxiihR5D5LWoOkTryAWx52SgzfPR9cLuSFL74xLo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=ovWTn7)
+
+### Videos de ejecución del Sprint 1 (TB1)
+
+- **Landing Page:** [Ver video de ejecución (0:00 - 2:04)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQC9e4SO4wT5RopewpwydbIHAQjJNIqXvrvINMYNLShoyhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=BLnNPm)
+- **Backend:** [Ver video de ejecución (0:00 - 4:24)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQC_M8DM0KkwQ64hoYsg3Q58Aci6zoCFip2MPM2vGoEVWdQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=y2ktfd)
+- **Aplicación Android:** [Ver video de ejecución (0:00 - 2:59)](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQCm4SMXxUWfSK1OsYwNSK7HAboFuxNyT6OII8F2u84yVIU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=xfkfJL)
