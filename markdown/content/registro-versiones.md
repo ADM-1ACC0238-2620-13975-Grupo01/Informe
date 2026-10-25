@@ -1,6 +1,6 @@
 # Registro de versiones del informe
 
-Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicaciones para Dispositivos Móviles y las de la versión 2, al TB1 (Sprint 1). La fecha indica la actualización de este registro.
+Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicaciones para Dispositivos Móviles, las de la versión 2, al TB1 (Sprint 1) y las de la versión 3, al AV2 (Sprint 2). La fecha indica la actualización de este registro.
 
 | Versión | Fecha | Autor | Descripción de modificación |
 | :---: | :---: | :--- | :--- |
@@ -16,3 +16,7 @@ Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicacion
 | 2.3 | 02/10/2026 | Giuseppe Villanueva Rodriguez | Configuración y despliegue de las aplicaciones móviles (sección 4.1), registro en Firebase y evidencias de las pruebas de Android. |
 | 2.4 | 03/10/2026 | Luciana Celeste Sanchez Silva | Wireframes, wireflows, user flow diagrams y evidencias del prototipo de las aplicaciones móviles en el capítulo III. |
 | 2.5 | 04/10/2026 | Josep Eliu Melgarejo Quiroz | Documentación completa del Sprint 1 en el capítulo IV, actualización del Product Backlog, student outcomes e integración de los cambios del equipo. |
+| 3.0 | 25/10/2026 | Josep Eliu Melgarejo Quiroz | Sprint Planning 2: Sprint Goal, historias comprometidas y ajuste del Product Backlog (secciones 2.4.3 y 4.2.2.1). |
+| 3.1 | 25/10/2026 | Josep Eliu Melgarejo Quiroz | Documentación del Sprint 2 en el capítulo IV (4.2.2): matriz LACX, Sprint Backlog, evidencias de desarrollo, pruebas, ejecución, servicios y despliegue, y colaboración del equipo. |
+| 3.2 | 25/10/2026 | Josep Eliu Melgarejo Quiroz | Actualización de la configuración de despliegue (4.1): aplicación Flutter, firma de las compilaciones, distribución en Firebase App Distribution, datos de demostración y límite de conexiones del backend. |
+| 3.3 | 25/10/2026 | Josep Eliu Melgarejo Quiroz | Actualización del registro de versiones, del Project Report Collaboration Insights, del Student Outcome y del anexo F para el AV2. |

@@ -2165,15 +2165,15 @@ El Impact Mapping conecta objetivos SMART del piloto con los User Personas, los 
 
 ## 2.4.3. Product Backlog
 
-El Product Backlog contiene todas las User Stories, Technical Stories y Spike Stories definidas en esta sección. El orden lo determina el valor para el negocio: al inicio se ubican las historias del core del producto —registro y consulta de animales y fincas, seguimiento sanitario, colaboración autorizada con veterinarios, recordatorios, trabajo sin conexión e identificación mediante QR— y no las de autenticación o seguridad, que se ubican después como procesos de soporte. Las historias de la landing page se consideran desde el Sprint 1. Las historias técnicas y los spikes se colocan después del core que habilitan en el Sprint 1 y inmediatamente antes de las historias que habilitan en los sprints posteriores. Todas las estimaciones utilizan la escala 1, 2, 3, 5 u 8. Al planificar el Sprint 1 (sección 4.2.1.1), el backlog incorporó US-044 y US-045 y adelantó US-014, US-015 y US-016 al Sprint 1, mientras que TS-002 y SP-001 pasaron al Sprint 2.
+El Product Backlog contiene todas las User Stories, Technical Stories y Spike Stories definidas en esta sección. El orden lo determina el valor para el negocio: al inicio se ubican las historias del core del producto —registro y consulta de animales y fincas, seguimiento sanitario, colaboración autorizada con veterinarios, recordatorios, trabajo sin conexión e identificación mediante QR— y no las de autenticación o seguridad, que se ubican después como procesos de soporte. Las historias de la landing page se consideran desde el Sprint 1. Las historias técnicas y los spikes se colocan después del core que habilitan en el Sprint 1 y inmediatamente antes de las historias que habilitan en los sprints posteriores. Todas las estimaciones utilizan la escala 1, 2, 3, 5 u 8. Al planificar el Sprint 1 (sección 4.2.1.1), el backlog incorporó US-044 y US-045 y adelantó US-014, US-015 y US-016 al Sprint 1, mientras que TS-002 y SP-001 pasaron al Sprint 2. Al planificar el Sprint 2 (sección 4.2.2.1), el backlog se contrastó con lo realmente construido: las historias de solicitud, aceptación y revocación del acceso veterinario (US-020, US-021 y US-022), las notificaciones (TS-009 y US-027), la persistencia local en Flutter (TS-006) y la sincronización idempotente (TS-007) pasaron al Sprint 3, mientras que diez historias del Sprint 3 se adelantaron al Sprint 2 porque ya estaban construidas: las suscripciones con Stripe (US-038, TS-011, US-039 y US-040), los indicadores del hato y de los clientes (US-035 y US-036), los movimientos financieros (US-037), el cambio de idioma (US-041), los errores y estados de conectividad (US-043) y la compilación y distribución de versiones (TS-015). El Sprint 2 quedó con 24 historias y 114 Story Points, y el Sprint 3 con 14 historias y 69 Story Points.
 
-**Producto mínimo viable (MVP).** El MVP contiene los procesos core validados en las entrevistas y en el Impact Mapping: gestión móvil de fincas y animales (BG-01), seguimiento sanitario y recordatorios (BG-02), colaboración entre ganaderos y veterinarios (BG-03) e identificación de animales (BG-04), junto con la base técnica, el acceso y la landing page que permiten usarlos. Está formado por las historias de los Sprints 1 y 2, excepto US-003 y SP-002, y queda completo al cierre del Sprint 2 (AV2). El Sprint 3 agrega el cierre de la trazabilidad sanitaria y de la sincronización, la suscripción y los pagos, la analítica, la accesibilidad, el idioma, las pruebas automatizadas y la distribución.
+**Producto mínimo viable (MVP).** El MVP contiene los procesos core validados en las entrevistas y en el Impact Mapping: gestión móvil de fincas y animales (BG-01), seguimiento sanitario y recordatorios (BG-02), colaboración entre ganaderos y veterinarios (BG-03) e identificación de animales (BG-04), junto con la base técnica, el acceso y la landing page que permiten usarlos. Está formado por las historias de los Sprints 1 y 2 según su distribución original, excepto US-003 y SP-002. Con el ajuste de la planificación del Sprint 2, el consentimiento del ganadero sobre el acceso veterinario y las notificaciones de actividades pasaron al Sprint 3, por lo que el MVP queda completo al cierre del Sprint 3 (TB2). El Sprint 2 entrega la mayor parte de los procesos core y las suscripciones; el Sprint 3 agrega esas historias, el cierre de la trazabilidad sanitaria y de la sincronización, la persistencia local en Flutter, la accesibilidad y las pruebas automatizadas.
 
 La distribución considera los hitos del curso:
 
 - **Sprint 1 — TB1, semana 7:** landing page desplegada, backend al 70 %, base de la aplicación Android y pantallas core de acceso, gestión de fincas, corrales y animales, y registros sanitarios básicos.
-- **Sprint 2 — AV2, semana 12:** backend al 100 %, base de la aplicación Flutter y principales funciones core de sanidad, colaboración veterinaria, notificaciones, trabajo offline e identificación mediante cámara.
-- **Sprint 3 — TB2, semana 15:** cierre de trazabilidad sanitaria y sincronización, reportes, pagos, accesibilidad, pruebas, distribución y aplicación completa según el backlog.
+- **Sprint 2 — AV2, semana 12:** backend al 100 %, primera versión de la aplicación Flutter (inicio del ganadero) y principales funciones core de sanidad, vista del veterinario, actividades, finanzas, analítica, trabajo offline, identificación mediante cámara, suscripciones con Stripe y distribución en Firebase App Distribution.
+- **Sprint 3 — TB2, semana 15:** consentimiento veterinario, notificaciones, cierre de trazabilidad sanitaria y sincronización idempotente, persistencia local en Flutter, accesibilidad, pruebas automatizadas y aplicación completa según el backlog.
 
 <table>
   <thead>
@@ -2211,42 +2211,42 @@ La distribución considera los hitos del curso:
     <tr><td>23</td><td>TS-008</td><td>Proteger credenciales y datos de sesión</td><td>5</td><td>Sprint 1</td></tr>
     <tr><td>24</td><td>US-003</td><td>Acceder a una landing page adaptable e internacionalizada</td><td>5</td><td>Sprint 1</td></tr>
     <tr><td>25</td><td>US-017</td><td>Consultar el historial sanitario de un animal</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>26</td><td>US-021</td><td>Aceptar o rechazar acceso veterinario</td><td>3</td><td>Sprint 2</td></tr>
-    <tr><td>27</td><td>US-024</td><td>Consultar antecedentes de un paciente autorizado</td><td>3</td><td>Sprint 2</td></tr>
-    <tr><td>28</td><td>US-023</td><td>Consultar clientes y pacientes autorizados</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>29</td><td>US-020</td><td>Recibir una solicitud de seguimiento veterinario</td><td>3</td><td>Sprint 2</td></tr>
-    <tr><td>30</td><td>US-022</td><td>Revocar el acceso de un veterinario</td><td>3</td><td>Sprint 2</td></tr>
-    <tr><td>31</td><td>TS-009</td><td>Implementar notificaciones móviles</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>32</td><td>US-026</td><td>Gestionar una actividad o recordatorio</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>33</td><td>US-027</td><td>Recibir una notificación de actividad</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>34</td><td>US-025</td><td>Consultar actividades programadas</td><td>3</td><td>Sprint 2</td></tr>
-    <tr><td>35</td><td>TS-002</td><td>Configurar la aplicación multiplataforma con Flutter</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>36</td><td>TS-006</td><td>Implementar persistencia local en Flutter</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>37</td><td>US-029</td><td>Consultar información esencial sin conexión</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>38</td><td>US-030</td><td>Guardar trabajo pendiente sin conexión</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>39</td><td>TS-007</td><td>Implementar sincronización idempotente</td><td>8</td><td>Sprint 2</td></tr>
-    <tr><td>40</td><td>US-031</td><td>Sincronizar operaciones pendientes</td><td>8</td><td>Sprint 2</td></tr>
-    <tr><td>41</td><td>SP-001</td><td>Investigar identificación de animales con Google ML Kit</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>42</td><td>TS-010</td><td>Integrar identificación QR mediante Google ML Kit</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>43</td><td>US-033</td><td>Identificar un animal mediante código QR</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>44</td><td>US-034</td><td>Identificar un animal sin utilizar la cámara</td><td>3</td><td>Sprint 2</td></tr>
-    <tr><td>45</td><td>SP-002</td><td>Investigar la integración de Stripe para suscripciones móviles</td><td>5</td><td>Sprint 2</td></tr>
-    <tr><td>46</td><td>US-019</td><td>Programar un control sanitario posterior</td><td>3</td><td>Sprint 3</td></tr>
-    <tr><td>47</td><td>US-028</td><td>Atender o reprogramar una actividad</td><td>3</td><td>Sprint 3</td></tr>
-    <tr><td>48</td><td>US-032</td><td>Resolver errores o conflictos de sincronización</td><td>8</td><td>Sprint 3</td></tr>
-    <tr><td>49</td><td>US-018</td><td>Corregir un registro sanitario con trazabilidad</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>50</td><td>US-038</td><td>Consultar planes de suscripción</td><td>3</td><td>Sprint 3</td></tr>
-    <tr><td>51</td><td>TS-011</td><td>Integrar el checkout externo de Stripe</td><td>8</td><td>Sprint 3</td></tr>
-    <tr><td>52</td><td>US-039</td><td>Iniciar un pago mediante un proveedor externo</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>53</td><td>US-040</td><td>Consultar el resultado del pago y la suscripción</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>54</td><td>TS-012</td><td>Aplicar internacionalización y accesibilidad móvil</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>55</td><td>US-042</td><td>Utilizar la aplicación con necesidades de accesibilidad</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>56</td><td>US-043</td><td>Comprender errores y estados de conectividad</td><td>3</td><td>Sprint 3</td></tr>
-    <tr><td>57</td><td>TS-015</td><td>Configurar compilación y distribución de versiones móviles</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>58</td><td>US-035</td><td>Consultar indicadores del hato</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>59</td><td>US-036</td><td>Consultar indicadores sanitarios de clientes</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>60</td><td>US-041</td><td>Cambiar el idioma de la aplicación</td><td>3</td><td>Sprint 3</td></tr>
-    <tr><td>61</td><td>TS-014</td><td>Automatizar pruebas de los flujos móviles críticos</td><td>8</td><td>Sprint 3</td></tr>
-    <tr><td>62</td><td>US-037</td><td>Registrar y consultar movimientos financieros</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>26</td><td>US-024</td><td>Consultar antecedentes de un paciente autorizado</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>27</td><td>US-023</td><td>Consultar clientes y pacientes autorizados</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>28</td><td>US-026</td><td>Gestionar una actividad o recordatorio</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>29</td><td>US-025</td><td>Consultar actividades programadas</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>30</td><td>US-037</td><td>Registrar y consultar movimientos financieros</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>31</td><td>US-035</td><td>Consultar indicadores del hato</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>32</td><td>US-036</td><td>Consultar indicadores sanitarios de clientes</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>33</td><td>TS-002</td><td>Configurar la aplicación multiplataforma con Flutter</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>34</td><td>US-029</td><td>Consultar información esencial sin conexión</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>35</td><td>US-030</td><td>Guardar trabajo pendiente sin conexión</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>36</td><td>US-031</td><td>Sincronizar operaciones pendientes</td><td>8</td><td>Sprint 2</td></tr>
+    <tr><td>37</td><td>SP-001</td><td>Investigar identificación de animales con Google ML Kit</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>38</td><td>TS-010</td><td>Integrar identificación QR mediante Google ML Kit</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>39</td><td>US-033</td><td>Identificar un animal mediante código QR</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>40</td><td>US-034</td><td>Identificar un animal sin utilizar la cámara</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>41</td><td>SP-002</td><td>Investigar la integración de Stripe para suscripciones móviles</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>42</td><td>US-038</td><td>Consultar planes de suscripción</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>43</td><td>TS-011</td><td>Integrar el checkout externo de Stripe</td><td>8</td><td>Sprint 2</td></tr>
+    <tr><td>44</td><td>US-039</td><td>Iniciar un pago mediante un proveedor externo</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>45</td><td>US-040</td><td>Consultar el resultado del pago y la suscripción</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>46</td><td>US-041</td><td>Cambiar el idioma de la aplicación</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>47</td><td>US-043</td><td>Comprender errores y estados de conectividad</td><td>3</td><td>Sprint 2</td></tr>
+    <tr><td>48</td><td>TS-015</td><td>Configurar compilación y distribución de versiones móviles</td><td>5</td><td>Sprint 2</td></tr>
+    <tr><td>49</td><td>US-020</td><td>Recibir una solicitud de seguimiento veterinario</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>50</td><td>US-021</td><td>Aceptar o rechazar acceso veterinario</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>51</td><td>US-022</td><td>Revocar el acceso de un veterinario</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>52</td><td>TS-009</td><td>Implementar notificaciones móviles</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>53</td><td>US-027</td><td>Recibir una notificación de actividad</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>54</td><td>US-019</td><td>Programar un control sanitario posterior</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>55</td><td>US-028</td><td>Atender o reprogramar una actividad</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>56</td><td>TS-006</td><td>Implementar persistencia local en Flutter</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>57</td><td>TS-007</td><td>Implementar sincronización idempotente</td><td>8</td><td>Sprint 3</td></tr>
+    <tr><td>58</td><td>US-032</td><td>Resolver errores o conflictos de sincronización</td><td>8</td><td>Sprint 3</td></tr>
+    <tr><td>59</td><td>US-018</td><td>Corregir un registro sanitario con trazabilidad</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>60</td><td>TS-012</td><td>Aplicar internacionalización y accesibilidad móvil</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>61</td><td>US-042</td><td>Utilizar la aplicación con necesidades de accesibilidad</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>62</td><td>TS-014</td><td>Automatizar pruebas de los flujos móviles críticos</td><td>8</td><td>Sprint 3</td></tr>
   </tbody>
 </table>

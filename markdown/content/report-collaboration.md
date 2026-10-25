@@ -7,6 +7,7 @@
 - Frontend web: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend
 - Backend: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend
 - Android: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-android
+- Flutter: https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-flutter
 
 ## **AV1. Distribución del trabajo**
 
@@ -31,6 +32,18 @@ Durante el TB1 (Sprint 1), el equipo implementó la Landing Page, el backend y l
 | Josep Eliu Melgarejo Quiroz | Desarrolló el almacenamiento local de la aplicación Android, la navegación por rol, la lista de animales con búsqueda, el registro individual y masivo de animales y la fotografía del animal. Dirigió la planificación del Sprint 1 y mantiene la estructura del informe. |
 | Giuseppe Villanueva Rodriguez | Creó el proyecto Android y organizó su código por capas, y desarrolló la edición de animales y la pantalla de inicio del ganadero. Escribió las pruebas de la aplicación y registró las aplicaciones en Firebase. |
 | Luciana Celeste Sanchez Silva | Elaboró los mock-ups, wireframes, wireflows, user flow diagrams y el prototipo de las aplicaciones móviles. Desarrolló las pantallas de fincas, corrales y registros sanitarios. |
+
+## **AV2. Distribución del trabajo**
+
+Durante el AV2 (Sprint 2), el equipo completó el backend y la aplicación Android, construyó la primera versión de la aplicación Flutter, distribuyó las dos aplicaciones en Firebase App Distribution y documentó el sprint en el capítulo IV del informe. Las tareas se repartieron en partes iguales, con 40 horas estimadas por integrante. Las contribuciones, según las tareas del Sprint Backlog 2, son las siguientes:
+
+| Integrante | Contribución en AV2 |
+| :--- | :--- |
+| Sebastian Martin Beingolea Montalvo | Filtró los datos por usuario en el servidor, integró el retorno móvil de Stripe y la confirmación del pago, cargó los planes de suscripción, agregó el archivado de animales y el nombre base del alta masiva con los datos de demostración, configuró el servicio publicado y escribió las pruebas de la aplicación Flutter. |
+| Saul Ortega Muñoz | Implementó el escáner de códigos QR con ML Kit y la búsqueda manual, los dispositivos IoT, la arquitectura y el diseño del proyecto Flutter, las pruebas de integración y BDD del backend y los mensajes de error y el idioma. Tiene pendiente la actualización de la Landing Page. |
+| Josep Eliu Melgarejo Quiroz | Desarrolló la vista del veterinario, el trabajo sin conexión, las suscripciones con Stripe en Android, la corrección de la navegación inferior y el permiso de red local para depurar. Dirigió la planificación del Sprint 2, mantiene la estructura del informe y documentó el sprint. |
+| Giuseppe Villanueva Rodriguez | Implementó la analítica y el archivado de animales en Android, la compilación firmada con R8, la distribución de las dos aplicaciones en Firebase y las pruebas de Android. Tiene pendiente la verificación del QR y del pago de prueba en un dispositivo físico. |
+| Luciana Celeste Sanchez Silva | Construyó las pantallas de actividades y de finanzas, el nombre base del formulario de lotes y, en Flutter, el inicio de sesión y el inicio del ganadero. Tiene pendientes los videos del AV2. |
 
 ## GitHub Collaboration Insights
 
@@ -106,4 +119,42 @@ El repositorio del informe conserva el historial de los cambios documentales del
 
 <div align="center">
   <img src="../assets/chapter-1/CommitsMoltavioTB1.png" alt="Commits de Giuseppe Villanueva" width="650">
+</div>
+
+### *Grafo general de commits AV2*
+
+<div align="center">
+  <img src="../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio Informe, Insights → Network (grafo de commits) con los commits del periodo del AV2" width="650">
+</div>
+
+### *Commits por integrante AV2*
+
+*Luciana Celeste Sanchez Silva*
+
+<div align="center">
+  <img src="../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Luciana Sanchez en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+</div>
+
+*Josep Eliu Melgarejo Quiroz*
+
+<div align="center">
+  <img src="../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Josep Melgarejo en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+</div>
+
+*Sebastian Martin Beingolea Montalvo*
+
+<div align="center">
+  <img src="../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Sebastian Beingolea en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+</div>
+
+*Saul Ortega Muñoz*
+
+<div align="center">
+  <img src="../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Saul Ortega en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+</div>
+
+*Giuseppe Villanueva Rodriguez*
+
+<div align="center">
+  <img src="../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Giuseppe Villanueva en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
 </div>

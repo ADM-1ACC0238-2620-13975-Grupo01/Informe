@@ -62,7 +62,7 @@ Las herramientas se agrupan según la actividad que soportan e incluyen su prop�
 | ASP.NET Core | Exponer servicios REST y OpenAPI. | <https://learn.microsoft.com/aspnet/core> | `net10.0` |
 | Entity Framework Core | Persistencia y migraciones. | <https://learn.microsoft.com/ef/core> | 10.0.8 |
 | MySql.EntityFrameworkCore | Proveedor MySQL para EF Core. | <https://www.nuget.org/packages/MySql.EntityFrameworkCore> | 10.0.7 |
-| MySQL / MySQL Workbench | Base de datos relacional y su administración. | <https://dev.mysql.com/downloads> | MySQL 8.0 |
+| MySQL / MySQL Workbench | Base de datos relacional y su administración. | <https://dev.mysql.com/downloads> | MySQL 8.4 como servicio de Windows en el equipo de desarrollo y MySQL 8.0 en el servicio externo |
 | Swashbuckle.AspNetCore | Documentación OpenAPI y Swagger UI. | <https://github.com/domaindrivendev/Swashbuckle.AspNetCore> | 10.2.0 |
 | System.IdentityModel.Tokens.Jwt / JwtBearer | Emisión y validación de JWT. | <https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer> | 8.18.0 / 10.0.8 |
 | BCrypt.Net-Next | Hash de contraseñas. | <https://www.nuget.org/packages/BCrypt.Net-Next> | 4.2.0 |
@@ -82,8 +82,10 @@ Las herramientas se agrupan según la actividad que soportan e incluyen su prop�
 | KSP | Procesamiento de símbolos para Hilt y Room. | <https://github.com/google/ksp> | 2.3.12 |
 | Jetpack Compose y Material 3 | Interfaz de usuario declarativa. | <https://developer.android.com/compose> | Compose BOM 2026.09.00 |
 | SDK de Android | Plataforma de compilación y destino. | <https://developer.android.com/tools/releases/platforms> | `minSdk` 26, `compileSdk` y `targetSdk` 37 |
-| Android Emulator | Ejecutar y depurar la aplicación. | <https://developer.android.com/studio/run/emulator> | Dispositivo `Pixel_7_sem2`, API 33, imagen Google APIs con Play Store |
-| Dispositivo físico | Demostración final de la aplicación instalada. | — | **Pendiente:** modelo y versión de Android |
+| Android Emulator | Ejecutar y depurar la aplicación. | <https://developer.android.com/studio/run/emulator> | Sprint 1: dispositivo `Pixel_7_sem2`, API 33. Sprint 2: dispositivo `Medium_Phone_API_37.0`, API 37 (Android 17) |
+| R8 | Reducir y ofuscar el código de la compilación `release` (`app/proguard-rules.pro`). | <https://developer.android.com/build/shrink-code> | Integrado en AGP 9.3.3 |
+| keytool y apksigner | Crear el keystore de firma y comprobar la firma del APK. | <https://developer.android.com/tools/apksigner> | JDK de Android Studio y build-tools 36.0.0 |
+| Dispositivo físico | Instalación del APK `release` distribuido por Firebase y demostración final. | — | **Pendiente:** modelo y versión de Android |
 
 *Librerías de la aplicación Android*
 
@@ -100,20 +102,29 @@ Las herramientas se agrupan según la actividad que soportan e incluyen su prop�
 | Google ML Kit Barcode Scanning | Lectura de códigos QR y de barras (feature de aprendizaje autónomo). | 17.3.0 |
 | WorkManager | Envío en segundo plano de los cambios hechos sin conexión. | 2.12.0 |
 | AppCompat | Cambio de idioma dentro de la aplicación (English y Español). | 1.8.0 |
+| AndroidX Browser (Custom Tabs) | Abre el Checkout de Stripe en una pestaña personalizada del navegador. | 1.10.0 |
+| Navigation Testing | Pruebas instrumentadas de la navegación inferior. | 2.10.2 |
 
-*Aplicación Flutter*
+*Aplicación Flutter (`anitec-flutter`)*
 
-| Herramienta | Propósito | Referencia | Versión |
+| Herramienta o paquete | Propósito | Referencia | Versión |
 |---|---|---|---|
-| Flutter SDK y Dart | Aplicación multiplataforma. | <https://docs.flutter.dev/get-started/install> | **Pendiente:** se registrará al iniciar su desarrollo |
+| Flutter SDK y Dart | Aplicación multiplataforma. | <https://docs.flutter.dev/get-started/install> | Flutter 3.47.7 (stable) y Dart 3.13.5 |
+| flutter_riverpod | Estado de las pantallas, separado de la interfaz. | <https://pub.dev/packages/flutter_riverpod> | ^3.4.3 |
+| go_router | Navegación y redirección según la sesión. | <https://pub.dev/packages/go_router> | ^18.1.1 |
+| dio | Cliente HTTP con interceptor Bearer y manejo de `401`. | <https://pub.dev/packages/dio> | ^5.11.1 |
+| flutter_secure_storage | Almacenamiento cifrado del token de sesión. | <https://pub.dev/packages/flutter_secure_storage> | ^11.2.0 |
+| shared_preferences | Idioma elegido por el usuario. | <https://pub.dev/packages/shared_preferences> | ^2.5.6 |
+| flutter_localizations e intl | Textos en inglés y español (es-419) con archivos ARB. | <https://docs.flutter.dev/ui/accessibility-and-localization/internationalization> | intl ^0.20.3 |
+| mocktail y flutter_lints | Dobles de prueba y reglas de análisis estático. | <https://pub.dev/packages/mocktail> | ^1.0.5 y ^6.0.0 |
 
 **Software Testing**
 
 | Producto | Herramientas | Tipo de comprobación |
 |---|---|---|
-| Backend | xUnit, Swagger UI y cliente HTTP. Gherkin con una biblioteca BDD para .NET. | Unitarias, integración y aceptación BDD (**pendiente:** el proyecto de pruebas aún no existe); contratos HTTP y ejecución exploratoria. |
-| Android | JUnit 4, MockK, Turbine, KotlinX Coroutines Test, MockWebServer, Room Testing y Android Emulator. | Unitarias de dominio, casos de uso, repositorios y ViewModels; instrumentadas de DAO de Room y carga de imágenes. |
-| Flutter | `flutter_test` e `integration_test`. | **Pendiente.** |
+| Backend | xUnit, NSubstitute, `WebApplicationFactory` con SQLite en memoria, Reqnroll (Gherkin), Swagger UI y cliente HTTP. | Unitarias, integración y aceptación BDD (proyecto `Anitec.Platform.Tests`); contratos HTTP y ejecución exploratoria. |
+| Android | JUnit 4, MockK, Turbine, KotlinX Coroutines Test, MockWebServer, Room Testing, Navigation Testing y Android Emulator. | Unitarias de dominio, casos de uso, repositorios y ViewModels; instrumentadas de DAO de Room, carga de imágenes y navegación inferior. |
+| Flutter | `flutter_test` y `mocktail`. | Unitarias y de widgets (dominio, estado y pantallas); análisis con `flutter analyze`. |
 | Landing Page | DevTools, Lighthouse y validadores web. | Responsive, accesibilidad y desempeño. |
 
 **Software Deployment**
@@ -149,7 +160,7 @@ GitHub es la plataforma central de versionado. Los repositorios vigentes son:
 | Web Services | <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend> |
 | Aplicación web (frontend) | <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-frontend> |
 | Android nativo | <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-android> |
-| Aplicación Flutter | **Pendiente de completar:** URL del repositorio Flutter (se creará al iniciar su desarrollo) |
+| Aplicación Flutter | <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-flutter> |
 
 **GitFlow**
 
@@ -180,11 +191,11 @@ El código fuente, los nombres técnicos, las rutas y los mensajes de commit se 
 | Recursos de Android | Todo texto de interfaz se define en `strings*.xml` por bounded context. El inglés es el idioma predeterminado (`values`) y el español latinoamericano está en `values-b+es+419`. Las cantidades usan `plurals`. |
 | Room (SQLite) | Tablas en `snake_case` y plural; entidades `*Entity`; esquemas exportados en `app/schemas` para cada versión de la base de datos. |
 | Dart | **Effective Dart**. Archivos en `lowercase_with_underscores`. Clases, enums y typedefs en `UpperCamelCase`. Miembros de clases y variables en `lowerCamelCase`. |
-| Flutter | Separación entre interfaz y lógica de estado. Estructura de carpetas alineada con la arquitectura nativa (bounded contexts y capas). Widgets pequeños y componibles. Textos centralizados y localizables. |
+| Flutter | Separación entre interfaz y lógica de estado (notifiers de Riverpod). Carpetas por bounded context (`iam`, `livestock`, `sanitary`, `activities`) y un `core` con el diseño, el cliente HTTP, la sesión y el idioma. Widgets pequeños y componibles. Textos centralizados en archivos ARB (`lib/l10n`) y localizables; los tokens de color y tipografía siguen los de la aplicación Android. |
 | C# | Convenciones Microsoft ([C# Coding Conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)); tipos, métodos y propiedades `PascalCase`, parámetros `camelCase` y campos privados `_camelCase`. Controllers: `*Controller` en `Interfaces/Rest`. Resources (DTOs): `*Resource` y assemblers `*FromResourceAssembler` / `*FromEntityAssembler`. Commands y Queries: `Create*Command`, `Get*Query` en `Domain/Model`. Rutas en minúsculas bajo `api/v1/...`. Estructura por bounded context. Errores HTTP vía Problem Details. |
 | REST / OpenAPI | Sustantivos plurales en rutas, verbos HTTP correctos, resources/DTOs, códigos de estado y respuestas de error consistentes. Documentación con Swashbuckle (`AddSwaggerGen`, anotaciones `[SwaggerOperation]`) y esquema Bearer JWT. |
 | Pruebas | Clases `*Test` junto a la clase probada, con nombres de prueba que describen el comportamiento esperado (por ejemplo, «a refused change is marked failed and the next one is still sent»). Las pruebas se organizan por bounded context. |
-| Gherkin | Features y escenarios ligados a User Stories, pasos declarativos y estructura Given–When–Then. Los archivos `.feature` se ubicarán en el proyecto de pruebas del backend (**pendiente**). |
+| Gherkin | Features y escenarios ligados a User Stories, pasos declarativos y estructura Given–When–Then. Los archivos `.feature` están en el proyecto de pruebas del backend (`Anitec.Platform.Tests/Bdd/Features`). |
 
 **Referencias adoptadas.** Las convenciones anteriores se basan en las siguientes guías estándar:
 
@@ -201,12 +212,12 @@ El código fuente, los nombres técnicos, las rutas y los mensajes de commit se 
 
 **Reglas compartidas**
 
-- **Caché local y cambios pendientes:** las pantallas de la aplicación Android leen siempre de la base de datos local (Room), que se actualiza desde la API; por eso la información ya consultada está disponible sin conexión. Las escrituras se envían primero al servidor. Solo la **creación** de animales, registros sanitarios y actividades, si no hay conexión, se guarda en el dispositivo con un identificador temporal negativo, se muestra como «Pendiente de sincronizar» y se envía en segundo plano cuando vuelve la red. Editar y eliminar requieren conexión.
+- **Caché local y cambios pendientes:** las pantallas de la aplicación Android leen siempre de la base de datos local (Room), que se actualiza desde la API; por eso la información ya consultada está disponible sin conexión. Las escrituras se envían primero al servidor. Solo la **creación** de animales, registros sanitarios, actividades y movimientos financieros, si no hay conexión, se guarda en el dispositivo con un identificador temporal negativo, se muestra como «Pendiente de sincronizar» y se envía en segundo plano cuando vuelve la red. Editar y eliminar requieren conexión. La aplicación Flutter no tiene caché local: consulta siempre al servidor.
 - **Inyección de dependencias:** uso centralizado de Hilt para proveer repositorios, casos de uso y servicios, organizado mediante módulos (`*Module`).
-- **Secretos:** no incluir secretos, tokens ni cadenas de conexión en el repositorio. El token de sesión se guarda cifrado con Tink (AES-256-GCM) sobre Android Keystore; las claves de firma (`*.jks`, `*.keystore`) y `google-services.json` están excluidos por `.gitignore`; los secretos del backend se configuran como variables de entorno en Render.
+- **Secretos:** no incluir secretos, tokens ni cadenas de conexión en el repositorio. El token de sesión se guarda cifrado con Tink (AES-256-GCM) sobre Android Keystore; las claves de firma (`*.jks`, `*.keystore`), los archivos con sus contraseñas (`keystore.properties` en Android y `key.properties` en Flutter) y `google-services.json` están excluidos por `.gitignore`; los secretos del backend se configuran como variables de entorno en Render.
 - **Internacionalización:** centralizar los textos en recursos en lugar de escribirlos en las vistas.
 - **Reglas de negocio:** evitar duplicarlas entre la interfaz y la API; el backend conserva las reglas autoritativas y la validación final. Los clientes solo aplican validaciones de formato para dar respuesta inmediata.
-- **Análisis estático:** hasta ahora no se emplean `ktlint`, `detekt`, `dart format` ni `flutter analyze`. La calidad se comprueba con las inspecciones de Android Studio, las advertencias del compilador y la revisión de los cambios. Si se incorporan herramientas, se registrarán aquí.
+- **Análisis estático:** en Android no se emplean `ktlint` ni `detekt`; la calidad se comprueba con las inspecciones de Android Studio, las advertencias del compilador y la revisión de los cambios. En Flutter se ejecutan `dart format --set-exit-if-changed lib test` y `flutter analyze` con las reglas de `flutter_lints` antes de cada entrega.
 
 <a id="toc-4-1-4-software-deployment-configuration"></a>
 
@@ -218,8 +229,8 @@ Cada producto se configura y publica de manera independiente, pero las aplicacio
 |---|---|---|---|---|
 | Landing Page | `anitec-landing-page` | GitHub Pages | <https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/> | Publicada |
 | Web Services | `anitec-backend` | Render (Docker) | API: <https://anitec-backend-android.onrender.com>. Swagger: <https://anitec-backend-android.onrender.com/swagger/index.html> | Publicado |
-| Android | `anitec-android` | Firebase App Distribution | App ID `1:969068830564:android:5a2dafc1bf9a7f44652471` (paquete `com.anitec.platform`) | Aplicación registrada; release pendiente |
-| Flutter | **Pendiente:** repositorio | Firebase App Distribution | App ID `1:969068830564:ios:0bb12cea32f3d196652471` (registro previo) | Registro previo; desarrollo y release pendientes |
+| Android | `anitec-android` | Firebase App Distribution | Proyecto Firebase «AniTec» (`anitec-17af9`), App ID `1:630071935433:android:d5f011b7f718ab5c0fe818` (paquete `com.anitec.platform`). Vínculo de invitación: <https://appdistribution.firebase.dev/i/417dc4e6d8ae3e32> | Publicada: versión 0.2.0 (2) |
+| Flutter | `anitec-flutter` | Firebase App Distribution | Mismo proyecto Firebase, paquete `com.anitec.platform.flutter`, App ID **pendiente de copiar de la consola**. Vínculo de invitación: <https://appdistribution.firebase.dev/i/862507cca1d4abc6> | Publicada: versión 1.0.0 (1) |
 
 **Diagrama de despliegue**
 
@@ -252,17 +263,19 @@ El backend se publica desde la rama `main` del repositorio `anitec-backend` (<ht
 
 | Variable | Contenido |
 |---|---|
-| `ASPNETCORE_ENVIRONMENT` | `Production`. |
-| `ConnectionStrings__DefaultConnection` | Cadena de conexión MySQL del paso 1. |
+| `ASPNETCORE_ENVIRONMENT` | `Production` para la operación normal. Con `Development` la API carga además los datos de demostración (paso 6). |
+| `ConnectionStrings__DefaultConnection` | Cadena de conexión MySQL del paso 1. El plan gratuito del proveedor limita las conexiones simultáneas y la aplicación pide varias listas a la vez al abrir el inicio; por eso la cadena termina con `;Maximum Pool Size=2`, que hace que las peticiones esperen turno en lugar de fallar con `500`. |
 | `TokenSettings__Secret` | Cadena aleatoria larga (al menos 32 caracteres) para firmar los JWT. |
 | `StripeSettings__SecretKey` | Clave secreta de Stripe en modo de prueba. |
 | `StripeSettings__WebhookSecret` | Secreto del webhook de Stripe. |
-| `StripeSettings__SuccessUrl` y `StripeSettings__CancelUrl` | URLs de retorno del pago. Por defecto apuntan a `http://localhost:5173`; deben cambiarse a las URLs finales. |
+| `StripeSettings__SuccessUrl` y `StripeSettings__CancelUrl` | URLs de retorno del pago para la aplicación web. Por defecto apuntan a `http://localhost:5173`; deben cambiarse a las URLs finales. |
+| `StripeSettings__MobileReturnBaseUrl` | Opcional. Dirección HTTPS pública del backend usada como retorno del pago iniciado desde la aplicación móvil; si no se define, el backend la deduce de la solicitud. |
+| `SeedDemoData` | Opcional. Con el valor `true`, la API carga los datos de demostración al iniciar aunque el entorno no sea `Development`; solo actúa sobre una base sin usuarios (paso 6). Se retira o se pone en `false` una vez cargados. |
 
 5. **Publicación.** Pulsar **Create Web Service**. Render construye la imagen y publica el servicio. Con la rama `main` conectada, cada push posterior inicia un despliegue automático.
-6. **Datos iniciales.** Los usuarios y planes de demostración se cargan solo en el entorno `Development`; en producción la base queda vacía. Las cuentas se crean con `POST /api/v1/authentication/sign-up` y los planes de suscripción deben insertarse en la base. **Pendiente de completar:** definir el procedimiento de carga de los planes.
+6. **Datos iniciales.** Los planes de suscripción se cargan en cualquier entorno al iniciar, y solo si la tabla está vacía. Los usuarios, fincas, corrales y animales de demostración se cargan cuando `ASPNETCORE_ENVIRONMENT` es `Development` o cuando la variable `SeedDemoData` vale `true`, y únicamente si la base no tiene ningún usuario; si ya hay usuarios, el cargador no modifica nada. Para cargar la demostración en una base ya usada, se vacían primero sus tablas desde el cliente web del proveedor (con `DROP TABLE` de cada tabla; no se elimina la base, para conservar sus credenciales), se define `SeedDemoData=true` en Render y, al redesplegar, la API crea las tablas con las migraciones y carga los datos. Una vez cargados, se retira la variable. Las cuentas de demostración (`ganadero`, `maria`, `jose` y `rosa` como ganaderos; `veterinaria`, `vetpedro` y `vetlucia` como veterinarios) comparten la contraseña de demostración documentada en el `README` del backend; con datos reales deben cambiarse o eliminarse.
 7. **Verificación.** Abrir `/swagger/index.html` en la URL pública, registrar un usuario, iniciar sesión, autorizar con el token en Swagger y consultar `GET /api/v1/animals`.
-8. **Consideraciones del plan gratuito.** El servicio se suspende tras un periodo de inactividad y la primera solicitud posterior puede tardar casi un minuto. El disco es efímero: las fotos de animales guardadas en `wwwroot/uploads/animals` se pierden al reiniciar el servicio, por lo que, para producción, se requiere un almacenamiento externo.
+8. **Consideraciones del plan gratuito.** El servicio se suspende tras un periodo de inactividad y la primera solicitud posterior puede tardar casi un minuto. La base de datos externa limita las conexiones simultáneas: sin el ajuste `Maximum Pool Size=2` de la cadena de conexión, la mayoría de las ocho listas que pide la aplicación al abrir el inicio fallaban con `500` cuando se pedían a la vez, y con el ajuste las peticiones se atienden por turno. El disco es efímero: las fotos de animales guardadas en `wwwroot/uploads/animals` se pierden al reiniciar el servicio, por lo que, para producción, se requiere un almacenamiento externo.
 
 El servicio quedó publicado en <https://anitec-backend-android.onrender.com> y su documentación Swagger en <https://anitec-backend-android.onrender.com/swagger/index.html>. Al verificarlo se comprobó que Swagger responde y que los endpoints protegidos devuelven `401` sin token. La evidencia siguiente muestra el servicio en Render y la configuración de sus variables, con los valores ocultos.
 
@@ -278,30 +291,44 @@ El servicio quedó publicado en <https://anitec-backend-android.onrender.com> y 
 
 **Android: Firebase App Distribution**
 
-El proyecto Firebase «Anitec» (plan Spark) ya tiene registrada la aplicación «AniTec Android» con el nombre de paquete `com.anitec.platform` y el App ID indicado en la tabla. Para publicar una versión:
+La distribución usa un proyecto de Firebase llamado «AniTec» (plan Spark, sin costo) con dos aplicaciones de Android registradas: «AniTec» (`com.anitec.platform`) y «AniTec Flutter» (`com.anitec.platform.flutter`). Las dos usan el mismo grupo de evaluadores, «Equipo AniTec». Para publicar una versión de la aplicación nativa:
 
-1. **URL de la API.** La compilación `release` usa la dirección configurada en `API_BASE_URL` (`app/build.gradle.kts`), que apunta a `https://anitec-backend-android.onrender.com/api/v1/`, el backend publicado. Debe revisarse antes de generar cada versión.
-2. **Versión.** Incrementar `versionCode` y asignar `versionName` según Semantic Versioning (actualmente `1` y `0.1.0`).
-3. **Firma.** Crear un keystore con `keytool -genkeypair` y guardarlo fuera del repositorio (los archivos `*.jks` y `*.keystore` están en `.gitignore`). Definir `signingConfigs` en `app/build.gradle.kts` leyendo las contraseñas desde `local.properties` o variables de entorno. **Pendiente:** el proyecto aún no tiene configurada la firma de la compilación `release`.
-4. **Compilación.** Ejecutar `./gradlew assembleRelease`. El archivo resultante es `app/build/outputs/apk/release/app-release.apk`.
-5. **Publicación.** Subir el archivo desde la consola de Firebase (**Release & Monitor → App Distribution → Releases**) o desde la terminal con `firebase appdistribution:distribute app-release.apk --app <APP_ID> --groups "<grupo>" --release-notes "<notas>"`. No se necesita `google-services.json`, porque la aplicación no usa el SDK de Firebase; el archivo, si se descargara, no se versiona.
-6. **Testers.** Crear el grupo de testers con el equipo y los profesores e invitarlos por correo. Cada evaluador acepta la invitación e instala la versión desde el enlace o desde la aplicación Firebase App Tester.
-7. **Registro.** Anotar versión, commit y fecha de cada release en 4.2.1.8 y verificar la instalación en un dispositivo físico, con inicio de sesión contra el backend desplegado.
+1. **URL de la API.** La compilación `release` usa la dirección configurada en `app/build.gradle.kts`, que por defecto apunta a `https://anitec-backend-android.onrender.com` (`SERVER_URL` y `API_BASE_URL`). La propiedad `anitec.releaseServerUrl` de `local.properties`, que no se versiona, permite cambiarla para una prueba. La compilación `debug` usa `http://10.0.2.2:5191`, el backend local visto desde el emulador.
+2. **Versión.** Incrementar `versionCode` y asignar `versionName` según Semantic Versioning antes de cada subida (la versión distribuida en el Sprint 2 es `0.2.0`, con `versionCode` 2).
+3. **Firma.** Crear el keystore una sola vez con `keytool -genkeypair -v -keystore <ruta>/anitec-release.jks -alias anitec -keyalg RSA -keysize 2048 -validity 10000`, fuera del repositorio, y guardar una copia de respaldo con sus contraseñas, porque sin ellas no se puede actualizar una aplicación ya instalada. Copiar `keystore.properties.example` a `keystore.properties` (ignorado por git) y completar `storeFile`, `storePassword`, `keyAlias` y `keyPassword`. Si el archivo no existe, la compilación avisa y firma con la llave de depuración, que no debe distribuirse. Las contraseñas no se escriben en el repositorio ni en el informe.
+4. **Compilación.** Desde la carpeta del proyecto y con el JDK de Android Studio, ejecutar `./gradlew --stop` (cierra daemons iniciados con otro JDK, como el de la extensión de Java de VS Code, que no incluye `jlink` y hace fallar la compilación) y luego `./gradlew assembleRelease`. R8 reduce el código en esta compilación. El archivo resultante es `app/build/outputs/apk/release/app-release.apk`.
+5. **Prueba previa.** Instalar el APK en un dispositivo físico, iniciar sesión y comprobar que se cargan los datos del backend publicado, antes de distribuirlo.
+6. **Proyecto y aplicaciones en Firebase.** En la consola de Firebase, crear el proyecto (sin Gemini ni Google Analytics, que no se necesitan) y registrar la aplicación con **Agregar app → Android**, el nombre de paquete y un alias, sin huella SHA-1. No se descarga `google-services.json`, porque la aplicación no usa el SDK de Firebase y App Distribution solo necesita que la aplicación esté registrada.
+7. **Subida.** En **App Distribution**, elegir la aplicación en el selector superior y pulsar **Comenzar**. En **Versiones**, arrastrar el archivo `.apk` al recuadro de carga. La consola también permite subirlo desde la terminal con `firebase appdistribution:distribute`.
+8. **Evaluadores.** En **Verificadores y grupos** se crea el grupo «Equipo AniTec». Al distribuir la versión se eligen los destinatarios (correos de Google o el grupo) y se escriben las notas; el botón **Distribuir** solo se habilita si hay al menos un destinatario con miembros. Cada evaluador recibe un correo con el enlace de instalación.
+9. **Vínculo de invitación.** Para que otras personas se unan sin que se escriba su correo, en **Vínculos de invitación → Crear vínculo de invitación** se elige el grupo y se deja vacía la restricción de dominio. Quien abre el vínculo con una cuenta de Google se une al grupo; el grupo debe estar entre los destinatarios de la versión para que reciba la compilación. El vínculo puede desactivarse en cualquier momento.
+10. **Instalación.** El evaluador abre el correo o el vínculo con su cuenta de Google, acepta la invitación, descarga la versión (Firebase puede sugerir su aplicación App Tester) y permite una vez la instalación desde ese origen. Si ya hay instalado un APK firmado con otra llave, por ejemplo uno de depuración, debe desinstalarse antes.
+11. **Registro.** Anotar versión, commit y fecha de cada release en la sección de despliegue del sprint (4.2.2.8).
 
 **Flutter: Firebase App Distribution**
 
-**Pendiente de completar:** la aplicación Flutter se desarrollará en una etapa posterior. En el proyecto Firebase está registrada «AniTec Flutter» como aplicación de Apple (identificador de paquete `com.anitec.platform`). Para distribuir una compilación de Android de Flutter se deberá registrar además una aplicación Android con su propio nombre de paquete, y para iOS se requerirá una cuenta de desarrollador de Apple. Los pasos serán equivalentes a los de Android, con `flutter build apk --release` como comando de compilación.
+La aplicación Flutter sigue el mismo proceso, con estas diferencias. El proyecto (`anitec-flutter`) usa el paquete `com.anitec.platform.flutter` en `android/app/build.gradle.kts` y su versión sale de `pubspec.yaml` (`version: 1.0.0+1`; el número después del `+` es el `versionCode` y debe aumentarse en cada subida). La firma usa `android/key.properties`, que tiene el mismo formato que `keystore.properties` y por tanto admite el mismo keystore; el archivo está ignorado por git y, si no existe, la compilación firma con la llave de depuración. La compilación es `flutter build apk --release`, que genera `build/app/outputs/flutter-apk/app-release.apk` y apunta al backend publicado (la URL puede cambiarse con `--dart-define=API_BASE_URL=...`). La firma del APK se comprobó con `apksigner verify --print-certs`. En Firebase se registra una segunda aplicación **Android**, no la opción «Flutter» del asistente, que instala herramientas y modifica el proyecto. En App Distribution se cambia el selector a «AniTec Flutter» y se repiten los pasos de subida, destinatarios y vínculo de invitación; la versión `1.0.0 (1)` se distribuyó con el grupo «Equipo AniTec».
 
-Las capturas siguientes muestran el registro de las aplicaciones en el proyecto Firebase.
+Las capturas siguientes muestran el proyecto de Firebase, el registro de las aplicaciones y la distribución de las dos versiones.
 
 <div align="center">
-  <img src="../../assets/chapter-4/firebase-android-release.png" width="800">
-  <p><i>Figura 4.1.4.4. Aplicación «AniTec Android» registrada en el proyecto Firebase Anitec (App ID y nombre de paquete). Fuente: elaboración propia (captura de Firebase).</i></p>
+  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: consola de Firebase, Configuración del proyecto → General, sección «Tus apps», con las dos aplicaciones Android registradas (AniTec y AniTec Flutter) y el nombre de paquete visible" width="800">
+  <p><i>Figura 4.1.4.4. Aplicaciones «AniTec» y «AniTec Flutter» registradas en el proyecto Firebase AniTec (nombre de paquete y App ID). Fuente: elaboración propia (captura de Firebase).</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/firebase-flutter-release.png" width="800">
-  <p><i>Figura 4.1.4.5. Aplicación «AniTec Flutter» registrada como aplicación de Apple en el proyecto Firebase Anitec. Fuente: elaboración propia (captura de Firebase).</i></p>
+  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: App Distribution con la aplicación AniTec seleccionada, pestaña Versiones, mostrando la versión 0.2.0 (2) con sus contadores de invitados, aceptadas y descargas" width="800">
+  <p><i>Figura 4.1.4.5. Versión 0.2.0 de la aplicación Android nativa en Firebase App Distribution. Fuente: elaboración propia (captura de Firebase).</i></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: App Distribution con la aplicación AniTec Flutter seleccionada, pestaña Versiones, mostrando la versión 1.0.0 (1)" width="800">
+  <p><i>Figura 4.1.4.6. Versión 1.0.0 de la aplicación Flutter en Firebase App Distribution. Fuente: elaboración propia (captura de Firebase).</i></p>
+</div>
+
+<div align="center">
+  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: App Distribution, pestaña Vínculos de invitación, con el vínculo creado y el grupo Equipo AniTec asociado (hacerla para cada una de las dos aplicaciones)" width="800">
+  <p><i>Figura 4.1.4.7. Vínculo de invitación de la aplicación con el grupo «Equipo AniTec». Fuente: elaboración propia (captura de Firebase).</i></p>
 </div>
 
 La configuración de secretos se mantiene fuera de los repositorios de GitHub y se administra en el panel Environment de Render y en el equipo de cada desarrollador.
