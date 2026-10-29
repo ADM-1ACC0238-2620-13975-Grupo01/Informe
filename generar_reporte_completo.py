@@ -47,7 +47,9 @@ SECTIONS = [
     ("Capítulo IV: Product Implementation & Validation", [
         "chapter-4/4-0-Product-Implementation-and-Validation.md",
         "chapter-4/4-1-Software-Configuration-Management.md",
-        "chapter-4/4-2-Landing-Page-and-Mobile-Application-Implementation.md",
+        "chapter-4/4-2-0-Landing-Page-and-Mobile-Application-Implementation.md",
+        "chapter-4/4-2-1-Sprint1.md",
+        "chapter-4/4-2-2-Sprint2.md",
         "chapter-4/4-3-validation-interviews.md",
     ]),
     (None, ["conclusiones.md", "bibliografia.md", "anexos.md"]),
