@@ -1022,60 +1022,60 @@ Las 16 pruebas instrumentadas se ejecutan en el emulador (`Medium_Phone_API_37.0
 
 ### 4.2.2.6. Execution Evidence for Sprint Review
 
-El Sprint 2 permite instalar las aplicaciones Android y Flutter desde Firebase App Distribution, iniciar sesión contra el backend publicado y recorrer los flujos del ganadero y del veterinario con los datos de demostración: inicio, fincas, corrales, animales (con archivado y registro masivo con nombre base), registros sanitarios, actividades, finanzas, analítica, dispositivos IoT, escáner de códigos QR, trabajo sin conexión, suscripciones y, para el veterinario, clientes, pacientes e historial clínico. La aplicación Flutter muestra el inicio del ganadero. Las capturas se toman con la aplicación instalada, e identifican el usuario de demostración usado.
+El Sprint 2 permite instalar las aplicaciones Android y Flutter desde Firebase App Distribution, iniciar sesión contra el backend publicado y recorrer los flujos del ganadero y del veterinario con los datos de demostración: inicio, fincas, corrales, animales (con archivado y registro masivo con nombre base), registros sanitarios, actividades, finanzas, analítica, dispositivos IoT, escáner de códigos QR, trabajo sin conexión, suscripciones y, para el veterinario, clientes, pacientes e historial clínico. La aplicación Flutter muestra el inicio del ganadero. Las capturas de las figuras 4.2.2.6.1 a 4.2.2.6.8 y 4.2.2.6.13 a 4.2.2.6.22 se tomaron en el emulador `Medium_Phone_API_37.0` (Android 17): las de Android con la compilación de depuración y las de Flutter con la compilación de perfil (la pantalla de inicio de sesión, con la compilación `release`), conectadas al backend local con los datos de demostración, e identifican el usuario de demostración usado. Las pantallas de pago con Stripe, del escáner de códigos QR y de la instalación desde Firebase requieren un dispositivo físico y se capturarán en él.
 
 | Producto | Vista o flujo | Entorno / dispositivo | Evidencia | Estado |
 |---|---|---|---|---|
-| Android (ganadero) | Inicio, animales y archivado, registro masivo con nombre base, actividades, finanzas, analítica, dispositivos IoT | Aplicación instalada, usuario `ganadero` | Figuras 4.2.2.6.1 a 4.2.2.6.7 | Pendiente de captura |
-| Android (ganadero) | Suscripciones: planes, pago con Stripe, resultado e historial | Dispositivo físico con tarjeta de prueba de Stripe | Figuras 4.2.2.6.8 a 4.2.2.6.10 | Pendiente de captura y de la prueba de pago |
+| Android (ganadero) | Inicio, animales y archivado, registro masivo con nombre base, actividades, finanzas, analítica, dispositivos IoT | Emulador, usuario `ganadero` | Figuras 4.2.2.6.1 a 4.2.2.6.7 | Completado |
+| Android (ganadero) | Suscripciones: planes, pago con Stripe, resultado e historial | Planes e historial en el emulador; pago en un dispositivo físico con tarjeta de prueba de Stripe | Figuras 4.2.2.6.8 a 4.2.2.6.10 | Parcial: capturada la figura 4.2.2.6.8; pendientes el pago y su resultado |
 | Android (ganadero) | Escáner de códigos QR y búsqueda manual | Dispositivo físico | Figuras 4.2.2.6.11 y 4.2.2.6.12 | Pendiente de captura y de la prueba con cámara real |
-| Android (ganadero) | Trabajo sin conexión y aviso de sincronización | Dispositivo con el modo avión activado | Figura 4.2.2.6.13 | Pendiente de captura |
-| Android (veterinario) | Inicio, clientes, pacientes, historial clínico y analítica | Aplicación instalada, usuario `veterinaria` | Figuras 4.2.2.6.14 a 4.2.2.6.18 | Pendiente de captura |
-| Flutter | Inicio de sesión, inicio del ganadero, cambio de idioma y mensaje para el veterinario | Aplicación instalada, usuario `ganadero` | Figuras 4.2.2.6.19 a 4.2.2.6.22 | Pendiente de captura |
+| Android (ganadero) | Trabajo sin conexión y aviso de sincronización | Emulador con el modo avión activado | Figura 4.2.2.6.13 | Completado |
+| Android (veterinario) | Inicio, clientes, pacientes, historial clínico y analítica | Emulador, usuario `veterinaria` | Figuras 4.2.2.6.14 a 4.2.2.6.18 | Completado |
+| Flutter | Inicio de sesión, inicio del ganadero, cambio de idioma y mensaje para el veterinario | Emulador, usuarios `ganadero` y `veterinaria` | Figuras 4.2.2.6.19 a 4.2.2.6.22 | Completado |
 | Distribución | Instalación desde Firebase App Distribution | Dispositivo físico | Figura 4.2.2.6.23 | Pendiente de captura |
 | Web Services | Swagger UI con los endpoints del Sprint 2 | Navegador contra el Swagger del servicio publicado | Figuras de la sección 4.2.2.7 | Pendiente de captura |
 
 **Aplicación Android: ganadero.** Se inicia sesión con el usuario `ganadero` (los datos de demostración se describen en 4.1.4).
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla Inicio de la aplicación Android con el usuario ganadero, con los contadores de animales, requieren atención, registros sanitarios y seguimientos" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-01-android-inicio-ganadero.png" alt="Inicio de la aplicación Android con el usuario ganadero: contadores de animales, requieren atención, registros sanitarios, seguimientos y actividades próximas" width="300">
   <p><i>Figura 4.2.2.6.1. Inicio del ganadero con los datos de demostración. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pestaña Animales con la lista, el modo de selección múltiple con la acción Archivar y el filtro Archivados visible" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-02a-android-animales-filtro-archivados.png" alt="Pestaña Animales con el filtro Activos y Archivados" width="300"> <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-02b-android-animales-seleccion-archivar.png" alt="Selección múltiple de animales con las acciones de archivar y eliminar" width="300">
   <p><i>Figura 4.2.2.6.2. Lista de animales con selección múltiple, acción de archivar y filtro de archivados. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: formulario de registro masivo de animales con el campo Nombre base escrito (por ejemplo polloComercio), la cantidad y la vista previa de los nombres polloComercio-001 a polloComercio-010" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-03-android-registro-masivo-nombre-base.png" alt="Formulario de registro masivo con el nombre base polloComercio y la vista previa de los nombres polloComercio-001 a polloComercio-010" width="300">
   <p><i>Figura 4.2.2.6.3. Registro masivo de animales con nombre base y vista previa. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla Actividades (Más → Actividades o la pestaña Actividades) con la lista por fecha y el botón para agregar una actividad" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-04-android-actividades.png" alt="Lista de actividades ordenada por fecha, con los botones Editar y Eliminar y el botón para agregar una actividad" width="300">
   <p><i>Figura 4.2.2.6.4. Lista de actividades. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla Finanzas (Más → Finanzas) con el resumen de ingresos, gastos y saldo y la lista de movimientos" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-05-android-finanzas.png" alt="Pantalla de finanzas con el resumen de ingresos, gastos y saldo y la lista de movimientos" width="300">
   <p><i>Figura 4.2.2.6.5. Pantalla de finanzas. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla Analítica (Más → Analítica) del ganadero con los gráficos de estados de los animales y de registros por tipo" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-06-android-analitica-ganadero.png" alt="Pantalla de analítica del ganadero con el gráfico del estado del hato y los registros por tipo" width="300">
   <p><i>Figura 4.2.2.6.6. Pantalla de analítica del ganadero. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla Dispositivos IoT (Más → IoT) con la lista de dispositivos, su última lectura y el número de lecturas" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-07-android-dispositivos-iot.png" alt="Lista de dispositivos IoT con su ubicación, el número de lecturas y la última lectura" width="300">
   <p><i>Figura 4.2.2.6.7. Dispositivos IoT con su última lectura. Fuente: elaboración propia.</i></p>
 </div>
 
 **Aplicación Android: suscripciones.** Se captura en un dispositivo físico con una tarjeta de prueba de Stripe.
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla Suscripciones (Más → Suscripciones) con los planes disponibles para el ganadero y sus precios" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-08-android-suscripciones-planes.png" alt="Pantalla de suscripciones con el plan actual, los planes disponibles con sus precios y el historial de pagos" width="300">
   <p><i>Figura 4.2.2.6.8. Planes de suscripción. Fuente: elaboración propia.</i></p>
 </div>
 
@@ -1104,56 +1104,56 @@ El Sprint 2 permite instalar las aplicaciones Android y Flutter desde Firebase A
 **Aplicación Android: trabajo sin conexión.**
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: con el modo avión activado, registrar una actividad o un animal y mostrar el aviso de operaciones pendientes de sincronizar; si es posible, tomar una segunda captura después de desactivar el modo avión" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-13a-android-sin-conexion-pendiente.png" alt="Con el modo avión activo, aviso de un cambio pendiente de sincronizar después de registrar una actividad" width="300"> <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-13b-android-sincronizado.png" alt="Después de recuperar la conexión, el aviso desaparece porque la actividad se envió al servidor" width="300">
   <p><i>Figura 4.2.2.6.13. Registro sin conexión y aviso de sincronización pendiente. Fuente: elaboración propia.</i></p>
 </div>
 
 **Aplicación Android: veterinario.** Se inicia sesión con el usuario `veterinaria`.
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla Inicio del veterinario con los contadores, la lista de sus clientes y los registros sanitarios recientes" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-14a-android-vet-inicio.png" alt="Inicio del veterinario con los contadores de clientes, animales que requieren atención, registros clínicos y seguimientos" width="300"> <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-14b-android-vet-clientes-inicio.png" alt="Lista de clientes del veterinario en el inicio, con sus fincas, alertas y el botón Ver pacientes" width="300">
   <p><i>Figura 4.2.2.6.14. Inicio del veterinario. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla Clientes (Más → Clientes) con la lista de clientes del veterinario y el botón para agregar un cliente" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-15-android-vet-clientes.png" alt="Pantalla Clientes del veterinario con los botones Ver pacientes y Quitar cliente y el botón para agregar un cliente" width="300">
   <p><i>Figura 4.2.2.6.15. Clientes del veterinario. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pestaña Pacientes con un cliente y una finca elegidos y la lista de sus animales" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-16-android-vet-pacientes.png" alt="Pestaña Pacientes con el cliente Carlos Mendoza y la finca Hato Los Alamos elegidos y la lista de sus 18 animales" width="300">
   <p><i>Figura 4.2.2.6.16. Pacientes de un cliente por finca. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: historial clínico de un paciente (botón Ver historial en una tarjeta de paciente) con los registros sanitarios ordenados" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-17-android-vet-historial-clinico.png" alt="Historial clínico del animal Lola con sus registros sanitarios, el más reciente primero" width="300">
   <p><i>Figura 4.2.2.6.17. Historial clínico de un paciente. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla Analítica del veterinario (Más → Analítica) con los indicadores de sus clientes" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-18a-android-vet-analitica.png" alt="Analítica del veterinario con los clientes asignados, los pacientes monitoreados y los registros sanitarios" width="300"> <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-18b-android-vet-analitica-graficos.png" alt="Analítica del veterinario con los registros por tipo y las visitas sanitarias por finca" width="300">
   <p><i>Figura 4.2.2.6.18. Analítica del veterinario. Fuente: elaboración propia.</i></p>
 </div>
 
 **Aplicación Flutter.** Se captura en un dispositivo o emulador, con el usuario `ganadero`.
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla de inicio de sesión de la aplicación Flutter" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-19-flutter-inicio-sesion.png" alt="Pantalla de inicio de sesión de la aplicación Flutter" width="300">
   <p><i>Figura 4.2.2.6.19. Inicio de sesión de la aplicación Flutter. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla de inicio del ganadero en Flutter con el selector de finca, los contadores, las próximas actividades y los registros recientes" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-20a-flutter-inicio-ganadero.png" alt="Inicio del ganadero en Flutter con el selector de finca, los contadores y las próximas actividades" width="300"> <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-20b-flutter-registros-recientes.png" alt="Registros sanitarios recientes en el inicio del ganadero en Flutter" width="300">
   <p><i>Figura 4.2.2.6.20. Inicio del ganadero en la aplicación Flutter. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: la aplicación Flutter después de cambiar el idioma de English a Español (menú de idioma)" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-21a-flutter-menu-idioma.png" alt="Menú de idioma de la aplicación Flutter con English y Español" width="300"> <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-21b-flutter-espanol.png" alt="Inicio del ganadero en Flutter después de cambiar el idioma a Español" width="300">
   <p><i>Figura 4.2.2.6.21. Cambio de idioma en la aplicación Flutter. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: iniciar sesión en Flutter con el usuario veterinaria y mostrar el mensaje que indica que la aplicación es solo para ganaderos" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-22-flutter-veterinario-mensaje.png" alt="Inicio de sesión en Flutter con una cuenta de veterinario y el mensaje de que la aplicación es solo para ganaderos" width="300">
   <p><i>Figura 4.2.2.6.22. Mensaje al iniciar sesión con el rol de veterinario en Flutter. Fuente: elaboración propia.</i></p>
 </div>
 
