@@ -103,5 +103,7 @@ Pendiente de completar: los enlaces se agregarán cuando los videos estén graba
 
 ### Distribución de las aplicaciones (Firebase App Distribution)
 
-- **Aplicación Android (versión 0.2.0):** <https://appdistribution.firebase.dev/i/417dc4e6d8ae3e32>
-- **Aplicación Flutter (versión 1.0.0):** <https://appdistribution.firebase.dev/i/862507cca1d4abc6>
+Vínculos de invitación del grupo «Equipo AniTec», que tiene acceso a la versión 0.2.0 de la aplicación Android y a la versión 1.0.0 de la aplicación Flutter:
+
+- <https://appdistribution.firebase.dev/i/417dc4e6d8ae3e32>
+- <https://appdistribution.firebase.dev/i/862507cca1d4abc6>

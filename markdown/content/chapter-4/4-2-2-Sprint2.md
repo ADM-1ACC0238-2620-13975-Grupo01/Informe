@@ -629,14 +629,14 @@ Los endpoints entregan indicadores calculados en el servidor. La aplicación And
 
 ### 4.2.2.8. Software Deployment Evidence for Sprint Review
 
-Durante el Sprint 2 se desplegó la versión completa del backend, se cargaron en el servicio publicado los datos de demostración y se distribuyeron las dos aplicaciones móviles. Para la distribución se creó el proyecto de Firebase «AniTec», se registraron las aplicaciones Android y Flutter, se generaron los APK firmados y se publicaron en App Distribution con un grupo de evaluadores y un vínculo de invitación para cada aplicación. Los pasos detallados están en la sección 4.1.4.
+Durante el Sprint 2 se desplegó la versión completa del backend, se cargaron en el servicio publicado los datos de demostración y se distribuyeron las dos aplicaciones móviles. Para la distribución se creó el proyecto de Firebase «AniTec», se registraron las aplicaciones Android y Flutter, se generaron los APK firmados y se publicaron en App Distribution con un grupo de evaluadores con vínculos de invitación. Los pasos detallados están en la sección 4.1.4.
 
 | Product | Platform | Configuration performed | Version / Commit | Public URL or Release | Status |
 |---|---|---|---|---|---|
 | Landing Page | GitHub Pages | Sin cambios en el sprint. Queda pendiente reemplazar el botón de descarga de Android por el vínculo de invitación de Firebase (tarea T-061). | Pendiente | <https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/> | Publicada |
 | Web Services | Render | Redespliegue del servicio con el backend completo, variable `SeedDemoData` para cargar los datos de demostración y límite de conexiones en la cadena de conexión. | Pendiente | API: <https://anitec-backend-android.onrender.com>. Swagger: <https://anitec-backend-android.onrender.com/swagger/index.html> | Publicado |
-| Android | Firebase App Distribution | Proyecto «AniTec» (`anitec-17af9`), aplicación `com.anitec.platform`, APK `release` firmado con R8 (cerca de 25 MB), grupo «Equipo AniTec» y vínculo de invitación. | `versionName` `0.2.0` (`versionCode` 2); commit pendiente | Versión 0.2.0 (2) del 2026-10-25. Vínculo: <https://appdistribution.firebase.dev/i/417dc4e6d8ae3e32> | Publicada |
-| Flutter | Firebase App Distribution | Aplicación `com.anitec.platform.flutter` en el mismo proyecto, APK `release` firmado con el mismo keystore (52 MB), mismo grupo y vínculo de invitación propio. | Versión `1.0.0+1`; commit pendiente | Versión 1.0.0 (1) del 2026-10-25. Vínculo: <https://appdistribution.firebase.dev/i/862507cca1d4abc6> | Publicada |
+| Android | Firebase App Distribution | Proyecto «AniTec» (`anitec-17af9`), aplicación `com.anitec.platform`, APK `release` firmado con R8 (cerca de 25 MB), grupo «Equipo AniTec» y vínculos de invitación del grupo. | `versionName` `0.2.0` (`versionCode` 2); commit pendiente | Versión 0.2.0 (2) del 2026-10-25. Vínculos del grupo: <https://appdistribution.firebase.dev/i/417dc4e6d8ae3e32> y <https://appdistribution.firebase.dev/i/862507cca1d4abc6> | Publicada |
+| Flutter | Firebase App Distribution | Aplicación `com.anitec.platform.flutter` en el mismo proyecto, APK `release` firmado con el mismo keystore (52 MB) y el mismo grupo, con los mismos vínculos de invitación. | Versión `1.0.0+1`; commit pendiente | Versión 1.0.0 (1) del 2026-10-25, en el mismo grupo | Publicada |
 
 **Pasos ejecutados (Web Services):**
 
@@ -663,7 +663,7 @@ Durante el Sprint 2 se desplegó la versión completa del backend, se cargaron e
 3. Instalar el APK de Android en un dispositivo físico y comprobar que inicia sesión y carga los datos del backend publicado.
 4. Crear el proyecto «AniTec» en Firebase Console, sin Gemini ni Google Analytics, y registrar las dos aplicaciones Android (Figura 4.1.4.4).
 5. Subir los APK en App Distribution (Figuras 4.1.4.5 y 4.1.4.6), crear el grupo «Equipo AniTec» y distribuir cada versión.
-6. Crear un vínculo de invitación para cada aplicación con el grupo «Equipo AniTec» (Figura 4.1.4.7) y comprobar la instalación.
+6. Crear vínculos de invitación para el grupo «Equipo AniTec» (Figura 4.1.4.7), que la consola muestra desde las dos aplicaciones, y comprobar la instalación.
 
 <div align="center">
   <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: terminal con el comando keytool -genkeypair terminado (sin mostrar contraseñas) o la salida de gradlew assembleRelease con BUILD SUCCESSFUL y la ruta de app-release.apk" width="800">
@@ -671,7 +671,7 @@ Durante el Sprint 2 se desplegó la versión completa del backend, se cargaron e
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: consola de Firebase, App Distribution, pestaña Verificadores y grupos, con el grupo Equipo AniTec" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-8-4-firebase-grupo-equipo-anitec.png" alt="App Distribution, pestaña Verificadores y grupos, con el grupo Equipo AniTec seleccionado y sus miembros" width="800">
   <p><i>Figura 4.2.2.8.4. Grupo de evaluadores «Equipo AniTec» en App Distribution. Fuente: elaboración propia (captura de Firebase).</i></p>
 </div>
 
