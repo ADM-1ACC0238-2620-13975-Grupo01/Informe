@@ -40,10 +40,10 @@ Durante el AV2 (Sprint 2), el equipo completó el backend y la aplicación Andro
 | Integrante | Contribución en AV2 |
 | :--- | :--- |
 | Sebastian Martin Beingolea Montalvo | Filtró los datos por usuario en el servidor, integró el retorno móvil de Stripe y la confirmación del pago, cargó los planes de suscripción, agregó el archivado de animales y el nombre base del alta masiva con los datos de demostración, configuró el servicio publicado y escribió las pruebas de la aplicación Flutter. |
-| Saul Ortega Muñoz | Implementó el escáner de códigos QR con ML Kit y la búsqueda manual, los dispositivos IoT, la arquitectura y el diseño del proyecto Flutter, las pruebas de integración y BDD del backend y los mensajes de error y el idioma. Tiene pendiente la actualización de la Landing Page. |
+| Saul Ortega Muñoz | Implementó el escáner de códigos QR con ML Kit y la búsqueda manual, los dispositivos IoT, la arquitectura y el diseño del proyecto Flutter, las pruebas de integración y BDD del backend y los mensajes de error y el idioma. Actualizó la Landing Page con el vínculo de descarga. |
 | Josep Eliu Melgarejo Quiroz | Desarrolló la vista del veterinario, el trabajo sin conexión, las suscripciones con Stripe en Android, la corrección de la navegación inferior y el permiso de red local para depurar. Dirigió la planificación del Sprint 2, mantiene la estructura del informe y documentó el sprint. |
-| Giuseppe Villanueva Rodriguez | Implementó la analítica y el archivado de animales en Android, la compilación firmada con R8, la distribución de las dos aplicaciones en Firebase y las pruebas de Android. Tiene pendiente la verificación del QR y del pago de prueba en un dispositivo físico. |
-| Luciana Celeste Sanchez Silva | Construyó las pantallas de actividades y de finanzas, el nombre base del formulario de lotes y, en Flutter, el inicio de sesión y el inicio del ganadero. Tiene pendientes los videos del AV2. |
+| Giuseppe Villanueva Rodriguez | Implementó la analítica y el archivado de animales en Android, la compilación firmada con R8, la distribución de las dos aplicaciones en Firebase y las pruebas de Android. Verificó el escáner QR y el pago de prueba en un dispositivo físico. |
+| Luciana Celeste Sanchez Silva | Construyó las pantallas de actividades y de finanzas, el nombre base del formulario de lotes y, en Flutter, el inicio de sesión y el inicio del ganadero. Elaboró los videos del AV2. |
 
 ## GitHub Collaboration Insights
 
