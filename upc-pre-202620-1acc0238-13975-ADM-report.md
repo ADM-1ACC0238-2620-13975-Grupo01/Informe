@@ -11029,23 +11029,23 @@ Las 16 pruebas instrumentadas se ejecutan en el emulador (Medium_Phone_API_37.0,
 **Resultado de la ejecución.** Las 150 pruebas del backend, las 214 pruebas unitarias de Android, las 16 instrumentadas y las 88 de Flutter pasan sin errores. Las pruebas ayudaron a detectar defectos durante el sprint. La prueba BottomNavigationTest reprodujo el defecto de la navegación inferior reportado al usar la aplicación: antes de la corrección fallaban 3 de sus 4 casos, porque la barra restauraba la pila guardada con los pacientes de un cliente en lugar de volver a Inicio; la corrección, que vuelve directamente a Inicio, hizo que pasaran los 4. Al verificar la pantalla de suscripciones en el emulador apareció un cierre inesperado por claves duplicadas en una lista (un plan y un pago con el mismo identificador), que se corrigió con claves distintas por tipo de elemento. El filtrado por usuario del backend quedó cubierto por las 23 pruebas de AccessScopeApiTests.
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: terminal con la salida de dotnet test en la carpeta anitec-backend mostrando 150 pruebas superadas y 0 con error" width="800">
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-5-1-backend-dotnet-test.png" alt="Terminal de VS Code con el resumen de dotnet test del backend: 150 pruebas, 0 con errores y 150 correctas" width="800">
   <p><i>Figura 4.2.2.5.1. Captura de las 150 pruebas exitosas del backend. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: Explorador de pruebas del IDE (Rider o Visual Studio) con los grupos Unit, Integration y Bdd expandidos y todas las pruebas en verde" width="800">
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-5-2-backend-explorador-pruebas.png" alt="Explorador de pruebas de VS Code con 150 de 150 pruebas aprobadas, agrupadas en Bdd, Integration y Unit" width="800">
   <p><i>Figura 4.2.2.5.2. Lista de pruebas del backend por tipo. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: Android Studio con la ventana Run mostrando el resultado de testDebugUnitTest (214 pruebas correctas) o el informe HTML de app/build/reports/tests/testDebugUnitTest/index.html" width="800">
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-5-3-android-pruebas-unitarias.png" alt="Informe de Gradle de testDebugUnitTest: 214 pruebas, 0 fallos y 100 % correctas" width="800">
   <p><i>Figura 4.2.2.5.3. Resultado de las pruebas unitarias de Android. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: resultado de connectedDebugAndroidTest en el emulador con las 16 pruebas instrumentadas correctas, incluidas las 4 de BottomNavigationTest" width="800">
-  <p><i>Figura 4.2.2.5.4. Resultado de las pruebas instrumentadas de Android. Fuente: elaboración propia.</i></p>
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-5-4-android-pruebas-instrumentadas.png" alt="Informe de connectedDebugAndroidTest en el emulador: 16 pruebas, 0 fallos y 100 % correctas, con 4 pruebas en el paquete app, que es el de BottomNavigationTest" width="800">
+  <p><i>Figura 4.2.2.5.4. Resultado de las pruebas instrumentadas de Android (4 pruebas del paquete app, que incluye BottomNavigationTest). Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
@@ -11387,8 +11387,8 @@ Durante el Sprint 2 se desplegó la versión completa del backend, se cargaron e
 6. Crear vínculos de invitación para el grupo «Equipo AniTec» (Figura 4.1.4.7), que la consola muestra desde las dos aplicaciones, y comprobar la instalación.
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: terminal con el comando keytool -genkeypair terminado (sin mostrar contraseñas) o la salida de gradlew assembleRelease con BUILD SUCCESSFUL y la ruta de app-release.apk" width="800">
-  <p><i>Figura 4.2.2.8.3. Generación del keystore y de la compilación release firmada. Fuente: elaboración propia.</i></p>
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-8-3-android-assemble-release.png" alt="Terminal de Android Studio con gradlew assembleRelease terminado en BUILD SUCCESSFUL y el archivo app-release.apk de 25,9 MB" width="800">
+  <p><i>Figura 4.2.2.8.3. Compilación release firmada de la aplicación Android y APK generado. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
