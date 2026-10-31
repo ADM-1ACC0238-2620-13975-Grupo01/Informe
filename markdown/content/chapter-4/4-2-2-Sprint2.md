@@ -328,7 +328,7 @@ Las 16 pruebas instrumentadas se ejecutan en el emulador (`Medium_Phone_API_37.0
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: terminal en la carpeta anitec-flutter con la salida de flutter test mostrando 88 pruebas correctas" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-5-5-flutter-test.png" alt="Terminal de Android Studio en la carpeta anitec-flutter con la salida de flutter test: 88 pruebas, All tests passed" width="800">
   <p><i>Figura 4.2.2.5.5. Resultado de las pruebas de la aplicación Flutter. Fuente: elaboración propia.</i></p>
 </div>
 
