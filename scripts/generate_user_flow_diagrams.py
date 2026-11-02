@@ -109,6 +109,7 @@ def named(platform: str, filename: str) -> Path:
 
 
 def wrap(draw: ImageDraw.ImageDraw, text: str, selected_font: ImageFont.ImageFont, width: int) -> list[str]:
+    """Divide un texto en líneas que caben en el ancho indicado con la fuente elegida."""
     lines: list[str] = []
     current = ""
     for word in text.split():
@@ -132,6 +133,7 @@ def centered_text(
     fill: str,
     gap: int = 4,
 ) -> None:
+    """Escribe un texto ajustado y centrado dentro de una caja."""
     x1, y1, x2, y2 = box
     lines = wrap(draw, text, selected_font, x2 - x1)
     line_box = draw.textbbox((0, 0), "Ag", font=selected_font)
@@ -152,6 +154,7 @@ def arrow(
     width: int = 6,
     dashed: bool = False,
 ) -> None:
+    """Dibuja una flecha entre dos puntos, continua o discontinua."""
     import math
 
     x1, y1 = start
@@ -184,6 +187,7 @@ def arrow(
 
 
 def paste_phone(canvas: Image.Image, source_path: Path, box: tuple[int, int, int, int]) -> None:
+    """Pega la captura de una pantalla escalada y centrada dentro de la caja."""
     x1, y1, x2, y2 = box
     with Image.open(source_path) as source:
         phone = source.convert("RGB")
@@ -200,6 +204,7 @@ def draw_screen_card(
     x: int,
     y: int,
 ) -> tuple[int, int, int, int]:
+    """Dibuja la tarjeta de una pantalla con su sombra, captura y etiqueta, y devuelve su caja."""
     width, height = 330, 610
     draw.rounded_rectangle((x + 9, y + 10, x + width + 9, y + height + 10), radius=24, fill=SHADOW)
     draw.rounded_rectangle((x, y, x + width, y + height), radius=24, fill="white", outline=BORDER, width=3)
@@ -211,6 +216,7 @@ def draw_screen_card(
 
 
 def draw_decision(draw: ImageDraw.ImageDraw, center: tuple[int, int], label: str) -> tuple[int, int, int, int]:
+    """Dibuja el rombo de decisión con su texto y devuelve su caja."""
     cx, cy = center
     points = [(cx, cy - 110), (cx + 150, cy), (cx, cy + 110), (cx - 150, cy)]
     draw.polygon(points, fill="#F2F7EF", outline=GREEN)
@@ -220,6 +226,7 @@ def draw_decision(draw: ImageDraw.ImageDraw, center: tuple[int, int], label: str
 
 
 def build(flow: Flow) -> None:
+    """Dibuja un user flow completo y lo guarda como PNG."""
     image = Image.new("RGB", CANVAS, "white")
     draw = ImageDraw.Draw(image)
 
@@ -277,6 +284,7 @@ def build(flow: Flow) -> None:
 
 
 def flows() -> list[Flow]:
+    """Devuelve los seis user flows del informe."""
     return [
         Flow(
             "user-flow-01-registro-inicio-sesion",
@@ -384,6 +392,7 @@ def flows() -> list[Flow]:
 
 
 def main() -> None:
+    """Genera todos los user flows e imprime la ruta de cada PNG."""
     all_flows = flows()
     for flow in all_flows:
         build(flow)
