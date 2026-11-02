@@ -76,14 +76,17 @@ class Svg:
             self.text(x, y + index * line_height, line, size=size, weight=weight, fill=fill, anchor=anchor)
 
     def path(self, d, stroke="#595959", sw=2, dash=None, arrow=True):
+        """Dibuja un trazo SVG, opcionalmente discontinuo y con flecha al final."""
         dash_attr = f' stroke-dasharray="{dash}"' if dash else ""
         marker = ' marker-end="url(#arrow)"' if arrow else ""
         self.parts.append(f'<path d="{d}" fill="none" stroke="{stroke}" stroke-width="{sw}"{dash_attr}{marker}/>' )
 
     def line(self, x1, y1, x2, y2, stroke="#595959", sw=2, dash=None, arrow=True):
+        """Dibuja una línea recta entre dos puntos usando path."""
         self.path(f"M{x1},{y1} L{x2},{y2}", stroke=stroke, sw=sw, dash=dash, arrow=arrow)
 
     def save(self, name: str):
+        """Cierra el SVG y lo guarda en la carpeta de salida con el nombre indicado."""
         self.parts.append("</svg>")
         (OUTPUT / name).write_text("\n".join(self.parts), encoding="utf-8")
 
