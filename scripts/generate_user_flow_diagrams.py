@@ -32,6 +32,7 @@ SHADOW = "#DDE5E8"
 
 
 def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
+    """Carga Arial o DejaVu Sans en el tamaño indicado; si no existen, usa la fuente por defecto."""
     candidates = [
         Path("C:/Windows/Fonts/arialbd.ttf" if bold else "C:/Windows/Fonts/arial.ttf"),
         Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
@@ -54,12 +55,14 @@ F_SMALL = font(18)
 
 @dataclass(frozen=True)
 class ScreenNode:
+    """Pantalla del flujo con su etiqueta y la imagen del mock-up."""
     label: str
     image: Path
 
 
 @dataclass(frozen=True)
 class Branch:
+    """Resultado posible después de la decisión del flujo."""
     title: str
     response: str
     alternative: bool = False
@@ -67,6 +70,7 @@ class Branch:
 
 @dataclass(frozen=True)
 class Flow:
+    """User flow completo: pantallas, acciones, decisión y ramas."""
     slug: str
     title: str
     personas: str
@@ -77,6 +81,7 @@ class Flow:
 
 
 def mockup(platform: str, role: str, filename: str) -> Path:
+    """Devuelve la ruta de un mock-up de Flutter o Android y falla si no existe."""
     platform_folder = {
         "flutter": "mock-upsMobileFlutter",
         "android": "mock-upsMobileAndroid",
@@ -89,14 +94,17 @@ def mockup(platform: str, role: str, filename: str) -> Path:
 
 
 def flutter_screen(role: str, number: int) -> Path:
+    """Devuelve el mock-up "iPhone 17 - N" de Flutter para el rol indicado."""
     return mockup("flutter", role, f"iPhone 17 - {number}.png")
 
 
 def android_screen(role: str, number: int) -> Path:
+    """Devuelve el mock-up "Android Compact - N" de Android para el rol indicado."""
     return mockup("android", role, f"Android Compact - {number}.png")
 
 
 def named(platform: str, filename: str) -> Path:
+    """Devuelve un mock-up del ganadero por su nombre de archivo."""
     return mockup(platform, "rancher", filename)
 
 
