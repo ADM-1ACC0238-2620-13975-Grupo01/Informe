@@ -1,3 +1,5 @@
+"""Genera los artefactos tácticos de cada bounded context (C4, UML, SQL) y sus capítulos 2.6.x del informe."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -13,6 +15,7 @@ CODE = ROOT / "markdown" / "assets" / "codefordiagrams"
 
 @dataclass(frozen=True)
 class Context:
+    """Datos de un bounded context usados para generar sus diagramas, esquemas y capítulo."""
     number: int
     name: str
     slug: str
