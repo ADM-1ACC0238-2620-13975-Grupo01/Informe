@@ -1114,6 +1114,7 @@ MYSQL_FK_TARGETS = {
 
 
 def sql_type(source_type: str, comment: str, dialect: str) -> str:
+    """Traduce un tipo del ERD al tipo de columna de MySQL o SQLite."""
     if dialect == "sqlite":
         return {
             "int": "INTEGER",
@@ -1142,6 +1143,7 @@ def sql_type(source_type: str, comment: str, dialect: str) -> str:
 
 
 def parse_mermaid_entities(source: str) -> list[tuple[str, list[tuple[str, str, str, str]]]]:
+    """Lee las entidades y columnas de un ERD en formato Mermaid."""
     entities: list[tuple[str, list[tuple[str, str, str, str]]]] = []
     current_name: str | None = None
     current_fields: list[tuple[str, str, str, str]] = []
@@ -1165,6 +1167,7 @@ def parse_mermaid_entities(source: str) -> list[tuple[str, list[tuple[str, str, 
 
 
 def mysql_sql(context: Context) -> str:
+    """Genera el DDL de MySQL del servidor a partir del ERD del contexto."""
     entities = parse_mermaid_entities(context.server_erd)
     table_names = {name for name, _ in entities}
     statements = [
@@ -1208,6 +1211,7 @@ def mysql_sql(context: Context) -> str:
 
 
 def sqlite_sql(context: Context, product: str) -> str:
+    """Genera el DDL SQLite de la base local de Android Room o Flutter."""
     entity_names = {name for name, _ in context.local_entities}
     local_fk_targets = {
         "herd_id": ("CACHED_HERDS", "herd_id"),
