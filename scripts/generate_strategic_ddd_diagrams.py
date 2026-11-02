@@ -1,3 +1,5 @@
+"""Genera los diagramas SVG del diseño estratégico de AniTec (EventStorming, contextos, flujos, canvases y context map)."""
+
 from __future__ import annotations
 
 from html import escape
@@ -30,6 +32,7 @@ COLORS = {
 
 
 def lines(text: str, width: int) -> list[str]:
+    """Divide un texto en líneas de como máximo width caracteres, respetando los saltos de línea."""
     result: list[str] = []
     for paragraph in text.split("\n"):
         result.extend(wrap(paragraph, width=width, break_long_words=False) or [""])
