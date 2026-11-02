@@ -1370,6 +1370,7 @@ def write_context(context: Context) -> None:
 
 
 def write_main_markdown() -> None:
+    """Escribe el capítulo 2.6 con la tabla de los nueve bounded contexts."""
     rows = "\n".join(
         f"    <tr><td>2.6.{c.number}</td><td><a href=\"./2-6-{c.number}-Bounded-Context-{c.name.replace(' ', '-')}.md\">{escape(c.name)}</a></td><td>{escape(c.module)}</td><td>{escape(c.purpose)}</td></tr>"
         for c in CONTEXTS
@@ -1400,6 +1401,7 @@ Para todos los contextos se aplican las siguientes convenciones:
 
 
 def update_report_readme() -> None:
+    """Actualiza en el README los enlaces del índice a los capítulos 2.6.x."""
     path = ROOT / "README.md"
     text = path.read_text(encoding="utf-8")
     start = text.index("- [2.6. Tactical-Level Domain-Driven Design]")
@@ -1427,6 +1429,7 @@ def update_report_readme() -> None:
 
 
 def update_diagram_readme() -> None:
+    """Reescribe la sección de diagramas tácticos del README de codefordiagrams."""
     path = CODE / "README.md"
     current = path.read_text(encoding="utf-8") if path.exists() else "# Diagramas de AniTec\n"
     marker = "\n## Diagramas tácticos de bounded contexts"
@@ -1459,6 +1462,7 @@ Cada carpeta contiene un workspace C4 con tres vistas, un UML del dominio y tres
 
 
 def main() -> None:
+    """Genera los artefactos de todos los contextos y actualiza los capítulos y los README."""
     for context in CONTEXTS:
         write_context(context)
     write_main_markdown()
