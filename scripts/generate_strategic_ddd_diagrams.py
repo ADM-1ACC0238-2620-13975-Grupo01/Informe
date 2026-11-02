@@ -315,6 +315,7 @@ CANVAS_VISUALS = {
 
 
 def sticky(svg: Svg, x: int, y: int, w: int, h: int, value: str, fill: str, stroke: str, chars: int = 18, size: int = 12):
+    """Dibuja una nota adhesiva con el texto centrado."""
     svg.rect(x, y, w, h, fill, stroke=stroke, radius=1, shadow=True, sw=1)
     wrapped = lines(value, chars)
     start_y = y + h / 2 - ((len(wrapped) - 1) * size * 0.62) + 4
@@ -323,6 +324,7 @@ def sticky(svg: Svg, x: int, y: int, w: int, h: int, value: str, fill: str, stro
 
 
 def bullet_text(svg: Svg, x: int, y: int, value: str, chars: int, size: int = 13):
+    """Escribe una lista con viñetas a partir de un texto separado por punto y coma o por punto."""
     items = [item.strip().rstrip(".") for item in value.replace(". ", "; ").split(";") if item.strip()]
     cursor = y
     for item in items:
@@ -335,6 +337,7 @@ def bullet_text(svg: Svg, x: int, y: int, value: str, chars: int, size: int = 13
 
 
 def draw_canvas(key: str, data: dict[str, str]):
+    """Genera el Bounded Context Canvas de un contexto a partir de sus datos."""
     visual = CANVAS_VISUALS[key]
     svg = Svg(1600, 1300, f"Bounded Context Canvas — {data['name']}")
     svg.parts[-1] = '<rect width="1600" height="1300" fill="#C9C9C9"/>'
