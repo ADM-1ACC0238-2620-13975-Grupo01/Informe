@@ -863,6 +863,7 @@ erDiagram
 
 
 def html_table(rows: list[tuple[str, str, str, str, str]]) -> str:
+    """Arma la tabla HTML de clases y componentes con sus responsabilidades."""
     body = "\n".join(
         "    <tr>" + "".join(f"<td>{escape(value)}</td>" for value in row) + "</tr>"
         for row in rows
@@ -878,11 +879,13 @@ def html_table(rows: list[tuple[str, str, str, str, str]]) -> str:
 
 
 def symbol_name(value: str) -> str:
+    """Convierte un texto en un identificador PascalCase sin espacios ni signos."""
     words = "".join(character if character.isalnum() else " " for character in value).split()
     return "".join(word[:1].upper() + word[1:] for word in words)
 
 
 def layer_rows(context: Context, layer: str) -> list[tuple[str, str, str, str, str]]:
+    """Devuelve las filas de la tabla de clases de una capa (domain, interface, application o infrastructure)."""
     if layer == "domain":
         rows = []
         for name in context.existing_domain:
