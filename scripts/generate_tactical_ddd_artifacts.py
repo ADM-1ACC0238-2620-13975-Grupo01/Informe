@@ -946,6 +946,7 @@ def layer_rows(context: Context, layer: str) -> list[tuple[str, str, str, str, s
 
 
 def dsl_for(context: Context) -> str:
+    """Genera el workspace Structurizr DSL con las vistas de componentes de la API, Android y Flutter."""
     key = f"BC{context.number}"
     external_defs = "\n".join(
         f'        external{i} = softwareSystem "{name}" "Dependencia externa de {context.name}."'
@@ -1073,6 +1074,7 @@ def dsl_for(context: Context) -> str:
 
 
 def puml_for(context: Context) -> str:
+    """Genera el diagrama de clases PlantUML de la capa de dominio del contexto."""
     return f'''@startuml
 title AniTec - {context.name} - Domain Layer
 hide circle
