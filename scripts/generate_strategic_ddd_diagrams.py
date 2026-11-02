@@ -418,6 +418,7 @@ def draw_canvas(key: str, data: dict[str, str]):
 
 
 def draw_context_map():
+    """Genera el context map con las relaciones numeradas entre los bounded contexts."""
     svg = Svg(1800, 1430, "Context Mapping de AniTec")
     title(svg, "Context Mapping — AniTec", "Mapa seleccionado después de comparar alternativas de descomposición")
     nodes = {
@@ -446,10 +447,12 @@ def draw_context_map():
         boxes[key] = (x, y, w, h)
 
     def badge(x, y, number):
+        """Dibuja el círculo con el número de una relación."""
         svg.rect(x - 17, y - 15, 34, 30, COLORS["white"], stroke=COLORS["navy"], radius=15, sw=2)
         svg.text(x, y + 6, str(number), size=14, weight="bold", fill=COLORS["navy"], anchor="middle")
 
     def connect(a, b, number, y_offset=0, dash=None, route_y=None):
+        """Une dos contextos con una flecha directa o con un recorrido por route_y y su número."""
         ax, ay, aw, ah = boxes[a]
         bx, by, bw, bh = boxes[b]
         if route_y is not None:
@@ -515,6 +518,7 @@ def draw_context_map():
 
 
 def main():
+    """Genera todos los diagramas estratégicos e informa cuántos SVG hay en la carpeta."""
     draw_eventstorming_overview()
     draw_candidate_contexts()
     draw_domain_message_flows()
