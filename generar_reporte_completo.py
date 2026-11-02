@@ -57,11 +57,13 @@ SECTIONS = [
 
 
 def numeric_key(label: str) -> str | None:
+    """Devuelve el número de sección de un encabezado (por ejemplo "2.6.1") o None si no tiene."""
     match = re.match(r"^(\d+(?:\.\d+)*)(?:\.)?(?:\s|$)", label)
     return match.group(1) if match else None
 
 
 def normalise(label: str) -> str:
+    """Normaliza un título sin mayúsculas, tildes ni signos para compararlo con el índice."""
     value = unicodedata.normalize("NFKD", label.casefold())
     return "".join(char for char in value if char.isalnum())
 
