@@ -173,6 +173,7 @@ FLOW_COLORS = {"actor": COLORS["yellow_light"], "command": COLORS["blue_light"],
 
 
 def draw_flow(filename: str, heading: str, subtitle: str, steps: list[tuple[str, str, str]], messages: list[str]):
+    """Dibuja un domain story como una fila de pasos unidos por flechas con sus mensajes."""
     width = max(1500, 80 + len(steps) * 215)
     svg = Svg(width, 500, heading)
     title(svg, heading, subtitle)
@@ -198,6 +199,7 @@ def draw_flow(filename: str, heading: str, subtitle: str, steps: list[tuple[str,
 
 
 def draw_domain_message_flows():
+    """Genera los seis domain stories del diseño estratégico."""
     draw_flow(
         "domain-flow-01-register-animal.svg",
         "Domain Story 1 — Registro móvil de un animal",
