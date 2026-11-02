@@ -109,6 +109,7 @@ if unlisted_sources:
 
 
 def first_anchor(path: Path) -> str:
+    """Obtiene el ancla del índice que corresponde al primer encabezado de un archivo del informe."""
     contents = path.read_text(encoding="utf-8-sig")
     heading = re.search(r"^#{1,6}\s+(.+?)\s*$", contents, re.MULTILINE)
     if not heading:
