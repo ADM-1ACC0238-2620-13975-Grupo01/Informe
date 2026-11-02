@@ -1270,6 +1270,7 @@ def sqlite_sql(context: Context, product: str) -> str:
 
 
 def placeholder(path: str, alt: str, caption: str, note: str) -> str:
+    """Devuelve el bloque HTML de una figura con un comentario de marcador de posición."""
     return f'''<div align="center">
   <!-- Placeholder: {note} -->
   <img src="{path}" alt="{alt}" width="900">
@@ -1278,6 +1279,7 @@ def placeholder(path: str, alt: str, caption: str, note: str) -> str:
 
 
 def markdown_for(context: Context) -> str:
+    """Genera el capítulo 2.6.x de un bounded context con sus tablas y figuras."""
     prefix = f"2.6.{context.number}"
     asset = f"../../assets/chapter-2/tactical-ddd/{context.slug}"
     code_link = f"../../assets/codefordiagrams/{context.folder}"
@@ -1352,6 +1354,7 @@ def markdown_for(context: Context) -> str:
 
 
 def write_context(context: Context) -> None:
+    """Escribe en codefordiagrams los archivos DSL, PUML, SQL y ERD de un contexto."""
     folder = CODE / context.folder
     folder.mkdir(parents=True, exist_ok=True)
     (folder / "component-level.dsl").write_text(dsl_for(context), encoding="utf-8")
