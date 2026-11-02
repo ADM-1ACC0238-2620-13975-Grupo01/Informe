@@ -152,7 +152,9 @@ def rewrite_target(target: str, source: Path, *, image: bool = False) -> str:
 
 
 def rewrite_refs(contents: str, source: Path) -> str:
+    """Reescribe los atributos src/href y los enlaces Markdown de un archivo para el informe unificado."""
     def html_attribute(match: re.Match[str]) -> str:
+        """Reescribe un atributo src o href y codifica la ruta cuando es una imagen local."""
         prefix, target, suffix = match.groups()
         is_image = prefix.lower().lstrip().startswith("src")
         rewritten = rewrite_target(target, source, image=is_image)
@@ -163,6 +165,7 @@ def rewrite_refs(contents: str, source: Path) -> str:
     contents = re.sub(r'((?:src|href)\s*=\s*")([^"]+)(")', html_attribute, contents, flags=re.IGNORECASE)
 
     def markdown_link(match: re.Match[str]) -> str:
+        """Reescribe el destino de un enlace o imagen Markdown, usando <...> si contiene espacios."""
         prefix, raw, suffix = match.groups()
         angled = raw.startswith("<") and raw.endswith(">")
         target = raw[1:-1] if angled else raw
