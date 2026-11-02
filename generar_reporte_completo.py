@@ -179,6 +179,7 @@ def rewrite_refs(contents: str, source: Path) -> str:
 
 
 def add_toc_anchors(contents: str) -> str:
+    """Añade antes de cada encabezado el ancla <a id> que usa el índice, sin duplicar las existentes."""
     existing = set(re.findall(r'<a\s+(?:id|name)="([^"]+)"', contents, flags=re.IGNORECASE))
     lines = contents.splitlines()
     result = []
@@ -195,6 +196,7 @@ def add_toc_anchors(contents: str) -> str:
 
 
 def table_font_size(match: re.Match[str]) -> str:
+    """Reduce el tamaño de letra de una tabla HTML, salvo las tablas centradas de la carátula."""
     attributes = match.group(1)
     if re.search(r"\balign\s*=", attributes, flags=re.IGNORECASE):
         return match.group(0)  # Conserva la tabla de integrantes de la carátula.
@@ -209,6 +211,7 @@ def table_font_size(match: re.Match[str]) -> str:
 
 
 def render_source(name: str) -> str:
+    """Lee un archivo de markdown/content y lo prepara para el informe: enlaces, anclas y tablas."""
     source = (CONTENT / name).resolve()
     contents = source.read_text(encoding="utf-8-sig")
     if name == "conclusiones.md":
