@@ -40,7 +40,9 @@ def lines(text: str, width: int) -> list[str]:
 
 
 class Svg:
+    """Construye un documento SVG agregando sus elementos como texto."""
     def __init__(self, width: int, height: int, title: str):
+        """Inicia el SVG con su título, la sombra y la punta de flecha reutilizables."""
         self.width = width
         self.height = height
         self.parts = [
@@ -54,18 +56,21 @@ class Svg:
         ]
 
     def rect(self, x, y, w, h, fill, stroke="#BFBFBF", radius=12, shadow=False, sw=2):
+        """Dibuja un rectángulo redondeado, con sombra opcional."""
         filt = ' filter="url(#shadow)"' if shadow else ""
         self.parts.append(
             f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{filt}/>'
         )
 
     def text(self, x, y, value, size=18, weight="normal", fill="#1F1F1F", anchor="start", italic=False):
+        """Escribe una línea de texto escapada en la posición indicada."""
         style = "italic" if italic else "normal"
         self.parts.append(
             f'<text x="{x}" y="{y}" font-family="Arial, sans-serif" font-size="{size}" font-weight="{weight}" font-style="{style}" fill="{fill}" text-anchor="{anchor}">{escape(value)}</text>'
         )
 
     def multiline(self, x, y, value, width=28, size=17, weight="normal", fill="#1F1F1F", anchor="start", line_height=None):
+        """Escribe un texto largo en varias líneas ajustadas al ancho indicado."""
         line_height = line_height or int(size * 1.28)
         for index, line in enumerate(lines(value, width)):
             self.text(x, y + index * line_height, line, size=size, weight=weight, fill=fill, anchor=anchor)
