@@ -92,11 +92,13 @@ class Svg:
 
 
 def title(svg: Svg, heading: str, subtitle: str):
+    """Escribe el título y el subtítulo en la cabecera del diagrama."""
     svg.text(50, 48, heading, size=30, weight="bold", fill=COLORS["navy"])
     svg.text(50, 78, subtitle, size=16, fill=COLORS["gray_dark"])
 
 
 def draw_eventstorming_overview():
+    """Genera la síntesis del EventStorming móvil por fases del flujo principal."""
     svg = Svg(1800, 760, "EventStorming móvil actualizado de AniTec")
     title(svg, "EventStorming móvil actualizado — AniTec", "Síntesis del flujo principal validado contra el Product Backlog móvil")
     phases = [
@@ -131,6 +133,7 @@ def draw_eventstorming_overview():
 
 
 def draw_candidate_contexts():
+    """Genera el diagrama de Candidate Context Discovery agrupado en core, supporting y generic."""
     svg = Svg(1500, 900, "Candidate Context Discovery de AniTec")
     title(svg, "Candidate Context Discovery — AniTec", "Resultado de Start-with-Value y búsqueda de pivotal events")
     columns = [
