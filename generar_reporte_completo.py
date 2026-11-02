@@ -129,6 +129,7 @@ missing_resources: list[tuple[str, str]] = []
 
 
 def rewrite_target(target: str, source: Path, *, image: bool = False) -> str:
+    """Convierte un enlace relativo en un ancla interna o en una ruta desde la raíz y registra imágenes faltantes."""
     if target.startswith(("#", "http://", "https://", "mailto:", "data:", "javascript:")):
         return target
     path_text, separator, fragment = target.partition("#")
