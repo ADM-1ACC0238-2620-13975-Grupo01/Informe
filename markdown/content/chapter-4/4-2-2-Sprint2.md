@@ -391,7 +391,7 @@ El Sprint 2 permite instalar las aplicaciones Android y Flutter desde Firebase A
   <p><i>Figura 4.2.2.6.7. Dispositivos IoT con su última lectura. Fuente: elaboración propia.</i></p>
 </div>
 
-**Aplicación Android: suscripciones.** Se captura en un dispositivo físico con una tarjeta de prueba de Stripe.
+**Aplicación Android: suscripciones.** El pago se hace en el modo de prueba de Stripe, con la tarjeta de prueba 4242 4242 4242 4242.
 
 <div align="center">
   <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-08-android-suscripciones-planes.png" alt="Pantalla de suscripciones con el plan actual, los planes disponibles con sus precios y el historial de pagos" width="300">
@@ -399,25 +399,25 @@ El Sprint 2 permite instalar las aplicaciones Android y Flutter desde Firebase A
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: página del Checkout de Stripe abierta en la pestaña del navegador (Custom Tab) con la tarjeta de prueba 4242 4242 4242 4242 escrita, sin datos reales" width="300">
-  <p><i>Figura 4.2.2.6.9. Checkout de Stripe en modo de prueba abierto desde la aplicación. Fuente: elaboración propia.</i></p>
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-09a-android-stripe-checkout.png" alt="Checkout de Stripe en modo Sandbox para el plan Ganadero Pro, abierto en la pestaña del navegador, con la tarjeta de prueba 4242 4242 4242 4242 escrita" width="300"> <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-09b-android-stripe-pago-enviado.png" alt="Parte inferior del Checkout de Stripe con el formulario enviado y el botón de suscripción en estado de procesamiento" width="300">
+  <p><i>Figura 4.2.2.6.9. Checkout de Stripe en modo de prueba abierto desde la aplicación, con la tarjeta de prueba y el formulario enviado. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla de resultado de la suscripción tras volver a la aplicación, y la pantalla Suscripciones con el plan activo y el historial de pagos" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-10a-android-pago-confirmado.png" alt="Pantalla Payment confirmed al volver a la aplicación, con el mensaje de que el plan Ganadero Pro está activo" width="300"> <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-10b-android-plan-activo-historial.png" alt="Pantalla Suscripciones con el plan actual Ganadero Pro en estado Active y el historial de pagos con el último pago de S/ 99.00" width="300">
   <p><i>Figura 4.2.2.6.10. Resultado del pago, plan activo e historial de pagos. Fuente: elaboración propia.</i></p>
 </div>
 
-**Aplicación Android: escáner de códigos QR.** Se captura en un dispositivo físico, porque el emulador no lee códigos.
+**Aplicación Android: escáner de códigos QR.** Así se ve la pantalla del escáner en el emulador, cuya cámara es virtual.
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla del escáner QR (botón de escáner en el inicio) con la cámara apuntando a un código QR de un animal y el resultado con la ficha del animal; el código QR puede generarse con el código del animal (por ejemplo BOV-001)" width="300">
-  <p><i>Figura 4.2.2.6.11. Lectura de un código QR con la cámara. Fuente: elaboración propia.</i></p>
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-11-android-escaner-emulador.png" alt="Pantalla Scan animal tag del escáner con la vista de la cámara virtual del emulador y el campo para escribir el código" width="300">
+  <p><i>Figura 4.2.2.6.11. Pantalla del escáner de códigos en el emulador. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: pantalla del escáner con la sección de búsqueda manual, escribiendo un código de animal, o con el permiso de cámara denegado" width="300">
-  <p><i>Figura 4.2.2.6.12. Búsqueda manual de un animal sin cámara. Fuente: elaboración propia.</i></p>
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-12-android-busqueda-manual-emulador.png" alt="Pantalla del escáner con el campo Tag code en el que se escribe el código del animal para buscarlo sin cámara" width="300">
+  <p><i>Figura 4.2.2.6.12. Campo de búsqueda manual del código del animal en el emulador. Fuente: elaboración propia.</i></p>
 </div>
 
 **Aplicación Android: trabajo sin conexión.**
@@ -479,7 +479,7 @@ El Sprint 2 permite instalar las aplicaciones Android y Flutter desde Firebase A
 **Distribución.**
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: dispositivo físico con el correo de invitación de Firebase App Distribution o la aplicación App Tester mostrando la versión 0.2.0 lista para instalar" width="300">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-6-23-android-correo-firebase.jpg" alt="Correo de Firebase App Distribution en un teléfono físico con la aplicación AniTec (com.anitec.platform), las notas de la versión 0.2.0 (2) y el botón para descargar la última compilación" width="300">
   <p><i>Figura 4.2.2.6.23. Instalación de la aplicación desde Firebase App Distribution. Fuente: elaboración propia.</i></p>
 </div>
 
