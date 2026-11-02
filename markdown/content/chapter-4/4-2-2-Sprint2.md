@@ -596,32 +596,32 @@ Los endpoints entregan indicadores calculados en el servidor. La aplicación And
 - **Interaction screenshots:** las capturas siguientes muestran llamadas con datos de muestra desde Swagger.
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: Swagger UI del servicio publicado con los grupos Animals, Subscriptions, SubscriptionPlans, FarmActivities, FinancialRecords, Devices y VeterinarianClients desplegados" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-7-1-swagger-vista-general.png" alt="Swagger UI del servicio publicado con los grupos de endpoints, entre ellos Animals, FarmActivities, FinancialRecords, Devices, SubscriptionPlans, Subscriptions y VeterinarianClients" width="800">
   <p><i>Figura 4.2.2.7.1. Swagger UI con los endpoints del Sprint 2. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: en Swagger, PATCH /api/v1/animals/{id}/status con el cuerpo {&quot;status&quot;:&quot;Archivado&quot;}, un id de animal de muestra, y la respuesta 200 (hacerlo autorizado con el token del usuario ganadero)" width="800">
-  <p><i>Figura 4.2.2.7.2. PATCH /animals/{id}/status para archivar un animal. Fuente: elaboración propia.</i></p>
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-7-2-swagger-archivar-animal.png" alt="PATCH /api/v1/animals/1/status con el cuerpo {&quot;status&quot;: &quot;Archivado&quot;} y la respuesta 200 con el animal Luna en estado Archivado" width="800">
+  <p><i>Figura 4.2.2.7.2. PATCH /animals/{id}/status para archivar un animal (con el usuario ganadero; el token de la cabecera está oculto). Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: en Swagger, GET /api/v1/subscription-plans autorizado con el token y la respuesta 200 con los tres planes" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-7-3-swagger-planes.png" alt="GET /api/v1/subscription-plans con la respuesta 200 y los tres planes de suscripción" width="800">
   <p><i>Figura 4.2.2.7.3. GET /subscription-plans con los planes de suscripción. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: en Swagger, POST /api/v1/subscriptions/stripe-checkout con el cuerpo {&quot;planId&quot;:1,&quot;platform&quot;:&quot;android&quot;} y la respuesta 200 con el sessionId y la checkoutUrl (ocultar parte de la URL si lo prefieres)" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-7-4-swagger-stripe-checkout.png" alt="POST /api/v1/subscriptions/stripe-checkout con planId 1 y platform android, y la respuesta 200 con el sessionId y la checkoutUrl de la sesión de pago de prueba" width="800">
   <p><i>Figura 4.2.2.7.4. POST /subscriptions/stripe-checkout con la sesión de pago creada. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: en Swagger, GET /api/v1/farm-events o GET /api/v1/financial-records autorizado con el token y la respuesta 200 con datos de muestra" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-7-5-swagger-actividades.png" alt="GET /api/v1/farm-events con la respuesta 200 y las actividades del ganadero" width="800">
   <p><i>Figura 4.2.2.7.5. Consulta de actividades o movimientos financieros con datos de muestra. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: en Swagger, autorizado con el token de un ganadero, GET /api/v1/animals/{id} con el id de un animal de otro ganadero (por ejemplo del usuario maria) y la respuesta 403" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-7-6-swagger-403.png" alt="GET /api/v1/animals/60, un animal de otro ganadero, con la respuesta 403 Forbidden" width="800">
   <p><i>Figura 4.2.2.7.6. Respuesta 403 al consultar un animal de otro ganadero. Fuente: elaboración propia.</i></p>
 </div>
 
