@@ -7,10 +7,12 @@ from pathlib import Path
 from textwrap import wrap
 
 
+# Los SVG se guardan en markdown/assets/chapter-2/strategic-ddd; la carpeta se crea si no existe.
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "markdown" / "assets" / "chapter-2" / "strategic-ddd"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 
+# Paleta común de todos los diagramas estratégicos.
 COLORS = {
     "navy": "#17365D",
     "blue": "#5B9BD5",
