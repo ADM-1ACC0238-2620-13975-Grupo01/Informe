@@ -169,10 +169,12 @@ def rewrite_refs(contents: str, source: Path) -> str:
         prefix, target, suffix = match.groups()
         is_image = prefix.lower().lstrip().startswith("src")
         rewritten = rewrite_target(target, source, image=is_image)
+        # Codifica espacios y tildes de la ruta para que el src de la imagen siga funcionando.
         if is_image and not rewritten.startswith(("http://", "https://", "data:")):
             rewritten = quote(rewritten, safe="/:#%?=&")
         return prefix + rewritten + suffix
 
+    # Primero se reescriben los atributos HTML y luego los enlaces Markdown.
     contents = re.sub(r'((?:src|href)\s*=\s*")([^"]+)(")', html_attribute, contents, flags=re.IGNORECASE)
 
     def markdown_link(match: re.Match[str]) -> str:
