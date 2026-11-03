@@ -13,7 +13,10 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "markdown" / "content" / "chapter-2"
 CODE = ROOT / "markdown" / "assets" / "codefordiagrams"
 
-
+"""
+Data class representing immutable configuration and domain data for a bounded context,
+used to generate architecture diagrams, database schemas, and documentation chapters.
+"""
 @dataclass(frozen=True)
 class Context:
     """Datos de un bounded context usados para generar sus diagramas, esquemas y capítulo."""
