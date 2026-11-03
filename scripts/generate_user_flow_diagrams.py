@@ -97,7 +97,7 @@ def mockup(platform: str, role: str, filename: str) -> Path:
 def flutter_screen(role: str, number: int) -> Path:
     return mockup("flutter", role, f"iPhone 17 - {number}.png")
 
-
+# Devuelve la ruta del archivo de mock-up "Android Compact - N" de Android para el rol indicado.
 def android_screen(role: str, number: int) -> Path:
     """Devuelve el mock-up "Android Compact - N" de Android para el rol indicado."""
     return mockup("android", role, f"Android Compact - {number}.png")
