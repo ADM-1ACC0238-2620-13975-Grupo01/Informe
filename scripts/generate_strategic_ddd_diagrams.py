@@ -174,7 +174,7 @@ def draw_candidate_contexts():
 # Color de cada tipo de elemento en los domain message flows.
 FLOW_COLORS = {"actor": COLORS["yellow_light"], "command": COLORS["blue_light"], "context": COLORS["green_light"], "event": COLORS["orange_light"], "external": "#F4CCCC", "local": COLORS["purple_light"]}
 
-
+# Generates and saves an SVG domain story visualization depicting a sequential flow of steps and messages.
 def draw_flow(filename: str, heading: str, subtitle: str, steps: list[tuple[str, str, str]], messages: list[str]):
     """Dibuja un domain story como una fila de pasos unidos por flechas con sus mensajes."""
     width = max(1500, 80 + len(steps) * 215)
