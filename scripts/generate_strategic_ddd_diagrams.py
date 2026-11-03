@@ -171,6 +171,7 @@ def draw_candidate_contexts():
     svg.save("candidate-context-discovery.svg")
 
 
+# Color de cada tipo de elemento en los domain message flows.
 FLOW_COLORS = {"actor": COLORS["yellow_light"], "command": COLORS["blue_light"], "context": COLORS["green_light"], "event": COLORS["orange_light"], "external": "#F4CCCC", "local": COLORS["purple_light"]}
 
 
@@ -246,6 +247,7 @@ def draw_domain_message_flows():
     )
 
 
+# Contenido de cada bounded context canvas: nombre, clasificación, propósito, lenguaje y reglas.
 CANVASES = {
     "iam": {
         "name": "Identity and Access Management", "classification": "Generic subdomain · Custom built", "purpose": "Autenticar usuarios, emitir sesiones y aplicar autorización por rol.", "roles": "Identity provider · Policy and execution context",
@@ -303,6 +305,7 @@ CANVASES = {
     },
 }
 
+# Etiquetas visuales de cada canvas: tipo de dominio, rol de negocio, evolución y actores.
 CANVAS_VISUALS = {
     "iam": {"domain": "Generic", "business": "Enabler", "evolution": "Custom built", "actor": "Mobile User", "downstream": "Profiles / Subscriptions", "reads": ["Account Status", "Role Catalog"], "incoming": ["Access Requested"]},
     "profiles": {"domain": "Supporting", "business": "Engagement", "evolution": "Custom built", "actor": "Authenticated User", "downstream": "Livestock / Collaboration", "reads": ["Current Profile", "Role Details"], "incoming": ["User Registered"]},
