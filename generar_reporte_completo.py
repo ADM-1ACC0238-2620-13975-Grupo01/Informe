@@ -102,8 +102,10 @@ if unexpected_toc_entries or duplicate_numbers:
     if duplicate_numbers:
         details.append("numeraciones duplicadas: " + ", ".join(duplicate_numbers))
     raise ValueError("El índice de caratula.md no es el índice curado: " + "; ".join(details))
+# Anclas del índice por número de sección y por título normalizado.
 number_to_id = {numeric_key(label): anchor for label, anchor in toc_pairs if numeric_key(label)}
 title_to_id = {normalise(label): anchor for label, anchor in toc_pairs if not numeric_key(label)}
+# Todo .md de markdown/content debe estar en el informe; si falta alguno se detiene la generación.
 all_sources = [
     *((CONTENT / name).resolve() for name in PRE_TOC_CONTENT),
     *((CONTENT / name).resolve() for _, names in SECTIONS for name in names),
@@ -130,6 +132,7 @@ def first_anchor(path: Path) -> str:
     return anchor
 
 
+# Ancla de destino de cada archivo y lista de imágenes locales que no existen.
 source_anchors = {path: first_anchor(path) for path in all_sources}
 missing_resources: list[tuple[str, str]] = []
 
