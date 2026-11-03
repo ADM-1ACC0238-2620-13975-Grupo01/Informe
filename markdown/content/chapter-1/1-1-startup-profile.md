@@ -1,5 +1,7 @@
 # 1.1. Startup Profile
 
+<!-- Documentation marker: Startup Profile section. -->
+
 En esta sección se presenta la startup responsable de AniTec y a los integrantes del equipo que desarrollarán la solución durante el curso de Aplicaciones para Dispositivos Móviles.
 
 ## 1.1.1. Descripción de la Startup
