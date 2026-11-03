@@ -45,6 +45,7 @@ def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
     return ImageFont.load_default()
 
 
+# Fuentes cargadas una sola vez y reutilizadas en todos los diagramas.
 F_TITLE = font(46, True)
 F_SUBTITLE = font(25)
 F_NODE = font(28, True)
