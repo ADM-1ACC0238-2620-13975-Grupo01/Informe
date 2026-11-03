@@ -2,6 +2,8 @@
 
 # 2.6.8. Bounded Context: Subscription Management
 
+<!-- Documentation marker: Subscription Management section. -->
+
 Administrar planes, vigencia de suscripciones y pagos confirmados sin introducir conceptos propios de Stripe en el dominio.
 
 La base implementada se encuentra en el módulo `Subscriptions` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
