@@ -62,7 +62,7 @@ class ScreenNode:
     label: str
     image: Path
 
-
+# Resultado posible después de la decisión del flujo, indicando su título, respuesta y si es una alternativa.
 @dataclass(frozen=True)
 class Branch:
     """Resultado posible después de la decisión del flujo."""
