@@ -10,9 +10,11 @@ const source = path.join(root, 'upc-pre-202620-1acc0238-13975-ADM-report.md');
 const htmlPath = path.join(__dirname, 'updated-report.html');
 const pdfPath = path.join(__dirname, 'updated-report.pdf');
 
+// GitHub Flavored Markdown para las tablas, sin ids automáticos en los títulos.
 marked.setOptions({ gfm: true, breaks: false, headerIds: false, mangle: false });
 const markdown = fs.readFileSync(source, 'utf8');
 const content = marked.parse(markdown);
+// <base> hace que las rutas relativas de las imágenes se resuelvan desde la raíz del repositorio.
 const base = pathToFileURL(root + path.sep).href;
 
 const html = `<!doctype html>
