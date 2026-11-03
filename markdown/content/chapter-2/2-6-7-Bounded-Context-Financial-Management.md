@@ -2,6 +2,8 @@
 
 # 2.6.7. Bounded Context: Financial Management
 
+<!-- Documentation marker: Financial Management section. -->
+
 Registrar ingresos y egresos operativos y producir resúmenes económicos básicos para apoyar decisiones del ganadero.
 
 La base implementada se encuentra en el módulo `Financial` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
