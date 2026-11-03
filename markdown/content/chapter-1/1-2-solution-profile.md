@@ -1,5 +1,7 @@
 # 1.2. Solution Profile
 
+<!-- Documentation marker: Solution Profile section. -->
+
 ## 1.2.1. Antecedentes y problemática
 
 **Qué (What)**
