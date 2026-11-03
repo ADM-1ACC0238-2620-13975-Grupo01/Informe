@@ -607,6 +607,8 @@ Durante el primer año después de graduarse, Giuseppe buscará experiencia en a
 
 # 1.1. Startup Profile
 
+<!-- Documentation marker: Startup Profile section. -->
+
 En esta sección se presenta la startup responsable de AniTec y a los integrantes del equipo que desarrollarán la solución durante el curso de Aplicaciones para Dispositivos Móviles.
 
 <a id="toc-1-1-1-descripcion-de-la-startup"></a>
@@ -711,6 +713,8 @@ El ecosistema se complementará con la landing page existente, que comunicará l
 <a id="toc-1-2-solution-profile"></a>
 
 # 1.2. Solution Profile
+
+<!-- Documentation marker: Solution Profile section. -->
 
 <a id="toc-1-2-1-antecedentes-y-problematica"></a>
 
@@ -927,6 +931,8 @@ Enlace para acceder al Lean UX Canvas en Mural:  https://tinyurl.com/LeanUxCanva
 
 # 1.3. Segmentos objetivo
 
+<!-- Documentation marker: target segments section. -->
+
 AniTec prioriza dos segmentos que participan directamente en el registro y uso de la información ganadera: pequeños y medianos ganaderos y veterinarios de campo. Esta delimitación permite diseñar los flujos móviles alrededor de tareas concretas y evita considerar como usuarios principales a organizaciones que solo cumplen un rol de apoyo o influencia.
 
 El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y encontró que el 79,6 % tenía unidades de menos de cinco hectáreas (INEI, 2014). Aunque estas cifras incluyen distintas actividades agropecuarias y no representan por sí solas el mercado de AniTec, evidencian la relevancia de la pequeña producción. El diseño también debe considerar la brecha de conectividad: en el primer trimestre de 2025, el 20,5 % de los hogares rurales disponía de Internet en el hogar (INEI, 2025). A la vez, el teléfono móvil es el principal medio de acceso: en el cuarto trimestre de 2025, el 89,2 % de las personas usuarias de Internet se conectó mediante un celular y, en el área rural, la proporción fue de 88,4 % (INEI, 2026). Estas condiciones respaldan una experiencia centrada en el teléfono, con persistencia local y tolerancia a conexiones intermitentes.
@@ -969,6 +975,8 @@ Las asociaciones ganaderas, cooperativas, técnicos agropecuarios y entidades p�
 <a id="toc-2-1-competidores"></a>
 
 # 2.1. Competidores
+
+<!-- Documentation marker: competitor analysis section. -->
 
 El análisis competitivo permite conocer cómo otras soluciones digitales atienden la gestión ganadera y qué aspectos debe validar AniTec para diferenciarse. Se seleccionaron tres competidores directos con productos móviles vigentes: Livestock Manager, AgriWebb e iLivestock. La comparación se concentra en las capacidades relevantes para la aplicación Android de AniTec y utiliza información publicada en los sitios oficiales de cada producto, consultada el 13 de septiembre de 2026.
 
@@ -1149,6 +1157,8 @@ Las campañas de referidos, alianzas con asociaciones, participación en ferias 
 <a id="toc-2-2-entrevistas"></a>
 
 # 2.2. Entrevistas.
+
+<!-- Documentation marker: interview research section. -->
 
 Las entrevistas son una herramienta esencial para comprender a fondo a nuestro público objetivo. Para que sean efectivas, deben seguir una estructura clara y directa, utilizando preguntas específicas que permitan recolectar información de valor y datos precisos de los participantes.
 
@@ -1485,6 +1495,8 @@ En cuanto a características subjetivas, ambos veterinarios se muestran más fam
 
 # 2.3. Needfinding.
 
+<!-- Documentation marker: Needfinding section. -->
+
 En esta sección se presentarán los artefactos resultantes del proceso de análisis de la información recolectada de los segmentos objetivos. Aquí se incluyen secciones para User Personas, User Task Matrix, User Journey Maps, Empathy Mapping y As-is Scenario Mapping.
 
 <a id="toc-2-3-1-user-personas"></a>
@@ -1629,6 +1641,8 @@ Siguiendo los conceptos de **Ubiquitous Language** definidos por **Eric Evans (2
 <a id="toc-2-4-requirements-specification"></a>
 
 # 2.4. Requirements specification
+
+<!-- Documentation marker: requirements specification section. -->
 
 Esta sección especifica los requisitos de la solución móvil de AniTec a partir de las entrevistas, los User Personas, el Needfinding y los supuestos Lean UX. El alcance comprende la landing page estática, la API REST propia, una aplicación Android nativa desarrollada con Kotlin y Jetpack Compose, y una aplicación multiplataforma desarrollada con Flutter y Dart. Los requisitos también incluyen almacenamiento local, uso de la cámara, notificaciones, integración con Stripe como servicio externo y un feature de aprendizaje autónomo basado en Google ML Kit Barcode Scanning.
 
@@ -3894,6 +3908,8 @@ La distribución considera los hitos del curso:
 
 # 2.5. Strategic-Level Domain-Driven Design
 
+<!-- Documentation marker: strategic DDD section. -->
+
 El diseño estratégico de AniTec utiliza Domain-Driven Design para separar el dominio ganadero en modelos con responsabilidades, reglas y lenguaje propios. El proceso parte del Big Picture EventStorming de la sección 2.3.5, lo contrasta con los User Personas, entrevistas y requisitos de la sección 2.4, y concluye con bounded contexts y relaciones que pueden mantenerse de forma coherente en el backend y en las aplicaciones móviles.
 
 La revisión recupera la evidencia del trabajo anterior —especialmente los pasos 4 al 10 del EventStorming, los canvases de Livestock, Sanitary, Financial y Analytics, y la estructura modular del backend— y la adapta al alcance actual: una aplicación Android nativa, una aplicación multiplataforma, operación offline, identificación QR, colaboración veterinaria, notificaciones y pagos mediante Stripe.
@@ -4424,6 +4440,8 @@ Las tres imágenes deben exportarse desde el mismo archivo DSL. Los nombres y ru
 
 # 2.6. Tactical-Level Domain-Driven Design
 
+<!-- Documentation marker: tactical DDD section. -->
+
 Esta sección describe cómo los nueve bounded contexts identificados en el diseño estratégico se materializan en clases, capas, componentes y estructuras de persistencia. La propuesta utiliza un enfoque híbrido trazable: conserva nombres y responsabilidades del backend heredado y marca como no implementados los elementos requeridos para Android, Flutter y la evolución del dominio que todavía no existen en el código.
 
 Para todos los contextos se aplican las siguientes convenciones:
@@ -4460,6 +4478,8 @@ Para mantener el informe legible, las fichas individuales se reservan para aggre
 <a id="toc-2-6-1-bounded-context-identity-and-access-management"></a>
 
 # 2.6.1. Bounded Context: Identity and Access Management
+
+<!-- Documentation marker: Identity and Access Management section. -->
 
 Administrar identidades, credenciales, roles y sesiones para que cada operación de AniTec se ejecute con una identidad autenticada y autorizada.
 
@@ -4953,6 +4973,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 # 2.6.2. Bounded Context: Profile Management
 
+<!-- Documentation marker: Profile Management section. -->
+
 Mantener la información personal y de contacto asociada con una identidad sin mezclarla con credenciales o reglas de autenticación.
 
 La base implementada se encuentra en el módulo Profiles de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
@@ -5419,6 +5441,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 <a id="toc-2-6-3-bounded-context-livestock-management"></a>
 
 # 2.6.3. Bounded Context: Livestock Management
+
+<!-- Documentation marker: Livestock Management section. -->
 
 Gestionar fincas, hatos, animales e identificadores QR como fuente de referencia para los demás procesos ganaderos.
 
@@ -5949,6 +5973,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 # 2.6.4. Bounded Context: Sanitary Management
 
+<!-- Documentation marker: Sanitary Management section. -->
+
 Conservar la historia sanitaria del animal y controlar el registro de diagnósticos, tratamientos, prescripciones y seguimientos autorizados.
 
 La base implementada se encuentra en el módulo Sanitary de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
@@ -6441,6 +6467,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 # 2.6.5. Bounded Context: Veterinary Collaboration
 
+<!-- Documentation marker: Veterinary Collaboration section. -->
+
 Administrar solicitudes y autorizaciones entre ganaderos y veterinarios, delimitando clientes, pacientes y alcance de acceso.
 
 La base implementada se encuentra en el módulo Clients de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
@@ -6914,6 +6942,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 # 2.6.6. Bounded Context: Activity Management
 
+<!-- Documentation marker: Activity Management section. -->
+
 Planificar actividades ganaderas y sanitarias, controlar su estado y decidir cuándo corresponde generar un recordatorio.
 
 La base implementada se encuentra en el módulo Activities de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
@@ -7385,6 +7415,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 # 2.6.7. Bounded Context: Financial Management
 
+<!-- Documentation marker: Financial Management section. -->
+
 Registrar ingresos y egresos operativos y producir resúmenes económicos básicos para apoyar decisiones del ganadero.
 
 La base implementada se encuentra en el módulo Financial de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
@@ -7852,6 +7884,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 <a id="toc-2-6-8-bounded-context-subscription-management"></a>
 
 # 2.6.8. Bounded Context: Subscription Management
+
+<!-- Documentation marker: Subscription Management section. -->
 
 Administrar planes, vigencia de suscripciones y pagos confirmados sin introducir conceptos propios de Stripe en el dominio.
 
@@ -8392,6 +8426,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 
 # 2.6.9. Bounded Context: Analytics and Reporting
 
+<!-- Documentation marker: Analytics and Reporting section. -->
+
 Construir proyecciones y métricas de consulta para los dashboards sin adquirir propiedad sobre los registros de los contextos fuente.
 
 La base implementada se encuentra en el módulo Analytics de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
@@ -8867,6 +8903,8 @@ MySQL mantiene la persistencia autoritativa. Room y SQLite contienen únicamente
 <a id="toc-3-1-product-design"></a>
 
 # 3.1. Product design
+
+<!-- Documentation marker: Product Design section. -->
 
 El diseño de AniTec traduce las necesidades de ganaderos y veterinarios en una experiencia coherente entre la Landing Page, la aplicación Android nativa y la aplicación multiplataforma. Se priorizan la consulta rápida en campo, el registro con pocos pasos, la legibilidad en exteriores y la continuidad ante una conexión inestable. Los artefactos mantienen trazabilidad con los User Personas, User Stories y bounded contexts del capítulo II.
 
@@ -9690,6 +9728,8 @@ Los criterios de interacción de los prototipos derivan de la arquitectura de in
 <a id="toc-4-product-implementation-validation"></a>
 
 # 4. Product Implementation & Validation
+
+<!-- Documentation marker: Product Implementation and Validation section. -->
 
 Este capítulo describe la configuración, planificación, implementación, comprobación, despliegue y validación de los productos que forman AniTec. El alcance comprende la Landing Page, los servicios REST desarrollados con ASP.NET Core, la aplicación Android nativa y la aplicación multiplataforma. El avance se organiza en sprints y se sustenta mediante evidencias trazables a los repositorios, pruebas, documentación OpenAPI, entornos publicados y sesiones con usuarios.
 
