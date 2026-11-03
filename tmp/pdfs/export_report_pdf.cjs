@@ -78,6 +78,7 @@ fs.writeFileSync(htmlPath, html, 'utf8');
     .filter((img) => !img.naturalWidth)
     .map((img) => img.getAttribute('src')));
   if (missing.length) throw new Error(`Images failed to load: ${missing.join(', ')}`);
+  // PDF A4 con el nombre del informe arriba y el número de página abajo.
   await page.pdf({
     path: pdfPath,
     format: 'A4',
@@ -90,6 +91,7 @@ fs.writeFileSync(htmlPath, html, 'utf8');
   });
   await browser.close();
   console.log(pdfPath);
+// Cualquier error termina el proceso con código 1.
 })().catch((error) => {
   console.error(error);
   process.exit(1);
