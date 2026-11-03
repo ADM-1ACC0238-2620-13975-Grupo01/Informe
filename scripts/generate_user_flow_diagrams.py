@@ -55,7 +55,7 @@ F_BRANCH = font(24, True)
 F_BRANCH_BODY = font(21)
 F_SMALL = font(18)
 
-
+# Pantalla del flujo con su etiqueta y la ruta de la imagen del mock-up.
 @dataclass(frozen=True)
 class ScreenNode:
     """Pantalla del flujo con su etiqueta y la imagen del mock-up."""
