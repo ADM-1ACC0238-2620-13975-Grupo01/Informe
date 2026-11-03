@@ -132,6 +132,8 @@ erDiagram
         "IAM Context Facade y almacenamiento local de perfiles",
         ("IAM Context",),
         r'''
+# Domain model representing the Profile aggregate root, encapsulating identity,
+# personal information, and core behavior such as updating email and address details.
 class Profile <<Aggregate Root>> {
   -id: int
   -ownerId: int
