@@ -124,7 +124,7 @@ def wrap(draw: ImageDraw.ImageDraw, text: str, selected_font: ImageFont.ImageFon
         lines.append(current)
     return lines
 
-
+# Dibuja texto centrado vertical y horizontalmente dentro de una caja delimitadora específica.
 def centered_text(
     draw: ImageDraw.ImageDraw,
     text: str,
