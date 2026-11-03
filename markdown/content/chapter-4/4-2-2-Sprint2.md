@@ -13,11 +13,11 @@ La planificación del Sprint 2 parte del Product Backlog del AV1, que asignaba a
 <table>
   <tr><th>Sprint #</th><td>Sprint 2</td></tr>
   <tr><th colspan="2">Sprint Planning Background</th></tr>
-  <tr><th>Date</th><td>Pendiente de completar</td></tr>
-  <tr><th>Time</th><td>Pendiente de completar</td></tr>
-  <tr><th>Location</th><td>Pendiente de completar</td></tr>
+  <tr><th>Date</th><td>2026-10-20</td></tr>
+  <tr><th>Time</th><td>06:00 PM</td></tr>
+  <tr><th>Location</th><td>Discord (reunión virtual)</td></tr>
   <tr><th>Prepared By</th><td>Melgarejo Quiroz, Josep Eliu</td></tr>
-  <tr><th>Attendees</th><td>Pendiente de completar</td></tr>
+  <tr><th>Attendees</th><td>Beingolea Montalvo, Sebastian Martin / Melgarejo Quiroz, Josep Eliu / Ortega Muñoz, Saul / Sanchez Silva, Luciana Celeste / Villanueva Rodriguez, Giuseppe</td></tr>
   <tr><th>Sprint 1 Review Summary</th><td>El Sprint 1 entregó la Landing Page publicada, el backend desplegado con 104 pruebas automatizadas y la aplicación Android con autenticación, fincas, corrales, animales y registros sanitarios. De las 30 tareas, 28 quedaron en Done y 2 en To-Review; de las 24 historias, 22 se completaron y 2 quedaron parciales (US-007, porque el backend aún no filtraba por usuario, y US-012, porque faltaba archivar animales), por lo que se completaron 95 de los 105 Story Points comprometidos. La retroalimentación recibida en la revisión del TB1: pendiente de completar.</td></tr>
   <tr><th>Sprint 1 Retrospective Summary</th><td>Como aciertos, el equipo valoró repartir el trabajo por aspecto con un líder por producto, haber escrito pruebas automatizadas del backend que descubrieron un error de permisos y mantener el informe alineado con el código. Como oportunidades de mejora, identificó cerrar antes las historias parciales (filtrado por usuario en el servidor y archivado), preparar la firma y la distribución de la aplicación desde el inicio del sprint y comprobar en un dispositivo físico lo que el emulador no permite probar, como la cámara y la lectura de códigos QR.</td></tr>
   <tr><th colspan="2">Sprint Goal &amp; User Stories</th></tr>
@@ -145,10 +145,30 @@ Esta sección registra los commits que contribuyen al alcance del Sprint 2. Los 
 - **Aplicación Flutter (`anitec-flutter`).** Primera versión con el inicio de sesión del ganadero, el inicio con selector de finca, contadores, próximas actividades y registros sanitarios recientes, cambio de idioma, sesión cifrada y compilación `release` firmada.
 - **Informe.** Documentación del Sprint 2, ajuste del Product Backlog y actualización de la configuración de despliegue.
 
-**Pendiente de completar:** las tablas siguientes se llenarán con los commits reales del sprint.
-
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
 |---|---|---|---|---|---|
+| anitec-backend | main | `642e129` | feat: scope data by user, seed plans, mobile Stripe return and archive animals | Servicio de alcance de acceso aplicado a los controladores de fincas, corrales, animales, registros sanitarios, actividades, finanzas, dispositivos, métricas, clientes y paneles, con `403` ante recursos ajenos; carga de los planes de suscripción en cualquier entorno; páginas HTTPS de retorno de Stripe y parámetro `platform` en el checkout; estado «Archivado» y `PATCH animals/{id}/status`; pruebas de integración y escenarios BDD nuevos. | 2026-10-23 |
+| anitec-backend | main | `0c4f7cc` | feat: name animals in a batch and seed three ranchers with corrals and many animals | Nombre base opcional en el alta masiva con numeración consecutiva por finca; semilla de demostración con tres ganaderos con fincas, corrales y animales, y los veterinarios que los atienden; pruebas `SeedDataTests` y de alta masiva. | 2026-10-24 |
+| anitec-backend | main | `309c3b4` | feat: let a hosted environment load the demo data with SeedDemoData | La variable `SeedDemoData` permite cargar los datos de demostración en un entorno publicado cuando la tabla de usuarios está vacía; es el commit que Render muestra como desplegado. | 2026-10-25 |
+| anitec-backend | main | `88265b2` | docs: explain how to set the Stripe test key for local payments | Sección del README con el comando para definir `StripeSettings__SecretKey` solo en la terminal y probar los pagos de prueba con Stripe. | 2026-11-02 |
+| anitec-android | main | `959defc` | feat: AV2 - activities, finance, IoT, analytics, QR scanner and offline outbox | Vista del veterinario (clientes, pacientes e historial), actividades, finanzas, dispositivos IoT, analítica con gráficos propios, escáner QR con CameraX y ML Kit y cola de operaciones sin conexión con WorkManager; esquemas de Room de la versión 3 a la 7 y pruebas unitarias de cada contexto. | 2026-10-02 |
+| anitec-android | main | `b5bbb72` | Merge branch 'feature/av2' into main | Integra en `main` el alcance del AV2 (vista del veterinario, actividades, finanzas, dispositivos, analítica, escáner y cola sin conexión) y resuelve los conflictos de `AniTecApplication`, `AuthRepository` y `AndroidManifest`. | 2026-10-23 |
+| anitec-android | main | `000a6f4` | feat: improve validation errors, accessibility and tablet layout | Mensajes de validación específicos, semántica de accesibilidad en los componentes y las listas, disposición con barra lateral para pantallas anchas, historial de lecturas por dispositivo IoT y pruebas. | 2026-10-23 |
+| anitec-android | main | `5553a38` | feat: add Stripe subscriptions, archive animals, offline finance records and release build setup | Contexto `subscriptions` con planes, plan activo, historial de pagos, checkout en Custom Tab y enlace de retorno `anitec://subscriptions`; archivado y restauración de animales con filtro; movimientos financieros en la cola sin conexión; compilación `release` con firma desde `keystore.properties`, R8 y versión 0.2.0; pruebas. | 2026-10-23 |
+| anitec-android | main | `7d34023` | feat: ask for local network access when the debug build opens | Solicitud del permiso de red local de Android 17 solo en la compilación de depuración, con su prueba y la nota en el README. | 2026-10-24 |
+| anitec-android | main | `85a687f` | feat: name the animals of a batch with a base name and number | Campo de nombre base opcional en el formulario de lotes con vista previa de los nombres, textos en inglés y español y `BatchNamingTest`. | 2026-10-24 |
+| anitec-android | main | `2e63643` | fix: return to Home from the bottom bar after opening a client's patients | Corrige la navegación inferior para volver a Inicio desde Pacientes o Sanidad, con `BottomNavigationTest` (prueba instrumentada) que reproduce el defecto. | 2026-10-24 |
+| anitec-android | main | `1c2e451` | docs: add release build and Firebase App Distribution steps | Pasos del README para crear el keystore, compilar el APK `release`, registrar la aplicación en Firebase, subirla y enviarla a los testers. | 2026-10-25 |
+| anitec-android | main | `3a404f4` | docs: explain how to switch between the local and the hosted backend | Explica cómo elegir la variante `debug` (backend local) o `release` (backend publicado) y los avisos de la firma y del paquete compartido. | 2026-11-02 |
+| anitec-android | main | `3716e53` | fix: always send the platform in the Stripe checkout request | El campo `platform` del checkout de Stripe deja de omitirse al serializar, de modo que el pago vuelve a la aplicación; incluye una prueba que comprueba el cuerpo serializado. | 2026-11-02 |
+| anitec-flutter | main | `bc56f7e` | feat: add rancher dashboard with sign-in and language switch | Proyecto Flutter `com.anitec.platform.flutter` con carpetas por contexto, tema con los tokens de AniTec, enrutamiento, inicio de sesión del ganadero con sesión cifrada, inicio con selector de finca, contadores, próximas actividades y registros recientes, cambio de idioma inglés y español, y pruebas unitarias y de widgets. | 2026-10-23 |
+| anitec-flutter | main | `721fe36` | fix: leave archived animals out of the dashboard and keep a new session on a late 401 | Los animales archivados no cuentan en el inicio y una respuesta `401` tardía ya no cierra la sesión nueva; incluye pruebas de ambos casos. | 2026-10-23 |
+| anitec-flutter | main | `e59fe06` | feat: sign the release build with a keystore and document the release APK | Firma de la compilación `release` desde `android/key.properties` (con ejemplo) y pasos del README para generar el APK. | 2026-10-25 |
+| anitec-flutter | main | `bf89e95` | fix: show the farm selector choice in the language of the app | El selector de finca se reconstruye al cambiar el idioma, con la comprobación en la prueba del flujo de la aplicación. | 2026-10-29 |
+| anitec-flutter | main | `b71a597` | docs: explain how to switch between the local and the hosted backend | Explica que `flutter run` usa el backend local y `flutter run --release` el publicado, y los avisos de la firma y del paquete. | 2026-11-02 |
+| Informe | main | `eea6574` | docs: document sprint 2 and update deployment configuration | Primera versión de la documentación del Sprint 2, ajuste del Product Backlog y actualización de la configuración de despliegue. | 2026-10-25 |
+| Informe | main | `36d8c8c` | docs: add Swagger screenshots of the Sprint 2 endpoints | Capturas de Swagger con los endpoints nuevos y la respuesta `403` ante un recurso ajeno. | 2026-11-01 |
+| Informe | main | `af41f37` | docs: add Sprint 2 phone captures and update the AV2 student outcomes | Capturas del pago con Stripe, del escáner y de la distribución en Firebase, y student outcomes del AV2 según las tareas del sprint. | 2026-11-02 |
 
 <a id="toc-4-2-2-5-testing-suite-evidence-for-sprint-review"></a>
 
@@ -332,10 +352,20 @@ Las 16 pruebas instrumentadas se ejecutan en el emulador (`Medium_Phone_API_37.0
   <p><i>Figura 4.2.2.5.5. Resultado de las pruebas de la aplicación Flutter. Fuente: elaboración propia.</i></p>
 </div>
 
-**Pendiente de completar:** las tablas siguientes se llenarán con los commits reales de pruebas del sprint.
-
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on |
 |---|---|---|---|---|---|
+| anitec-backend | main | `642e129` | feat: scope data by user, seed plans, mobile Stripe return and archive animals | Agrega `AccessScopeApiTests` y `SubscriptionsApiTests`, amplía `LivestockApiTests` y `HealthEventsApiTests`, y actualiza los escenarios `RolePermissions.feature` y `HealthRecords.feature`. | 2026-10-23 |
+| anitec-backend | main | `0c4f7cc` | feat: name animals in a batch and seed three ranchers with corrals and many animals | Agrega `SeedDataTests` y las pruebas del alta masiva con nombre base en `LivestockApiTests`. | 2026-10-24 |
+| anitec-android | main | `959defc` | feat: AV2 - activities, finance, IoT, analytics, QR scanner and offline outbox | Pruebas unitarias de dominio, casos de uso, repositorios y ViewModels de actividades, analítica, dispositivos, finanzas, registro con correo, escáner, cola sin conexión y vista del veterinario. | 2026-10-02 |
+| anitec-android | main | `000a6f4` | feat: improve validation errors, accessibility and tablet layout | Agrega `ErrorMessagesTest`, `StringResourcesTest` y `NavigationLayoutTest`, y amplía `DevicesTest` y `FinancialTest`. | 2026-10-23 |
+| anitec-android | main | `5553a38` | feat: add Stripe subscriptions, archive animals, offline finance records and release build setup | Agrega `SubscriptionsTest`, `ArchiveAnimalsTest` y `AuthInterceptorTest`, y amplía `OutboxTest`, `FinancialTest` y `ScannerTest`. | 2026-10-23 |
+| anitec-android | main | `7d34023` | feat: ask for local network access when the debug build opens | Agrega `LocalNetworkAccessTest`. | 2026-10-24 |
+| anitec-android | main | `85a687f` | feat: name the animals of a batch with a base name and number | Agrega `BatchNamingTest`. | 2026-10-24 |
+| anitec-android | main | `2e63643` | fix: return to Home from the bottom bar after opening a client's patients | Agrega `BottomNavigationTest`, prueba instrumentada con cuatro casos que reproduce el defecto de la navegación inferior. | 2026-10-24 |
+| anitec-android | main | `3716e53` | fix: always send the platform in the Stripe checkout request | Agrega a `SubscriptionsTest` una prueba que serializa el cuerpo del checkout con la configuración de la aplicación. | 2026-11-02 |
+| anitec-flutter | main | `bc56f7e` | feat: add rancher dashboard with sign-in and language switch | Pruebas del dominio, del estado, del cliente HTTP, de los repositorios y de las pantallas con `flutter_test` y `mocktail`. | 2026-10-23 |
+| anitec-flutter | main | `721fe36` | fix: leave archived animals out of the dashboard and keep a new session on a late 401 | Agrega `archived_animals_test.dart` y amplía `api_client_test.dart`. | 2026-10-23 |
+| anitec-flutter | main | `bf89e95` | fix: show the farm selector choice in the language of the app | Amplía `app_flow_test.dart` con la comprobación del selector de finca al cambiar de idioma. | 2026-10-29 |
 
 <a id="toc-4-2-2-6-execution-evidence-for-sprint-review"></a>
 
@@ -592,7 +622,7 @@ Los endpoints entregan indicadores calculados en el servidor. La aplicación And
 - **Web Services repository:** <https://github.com/ADM-1ACC0238-2620-13975-Grupo01/anitec-backend/tree/main>
 - **Swagger:** <https://anitec-backend-android.onrender.com/swagger/index.html>
 - **API publicada:** <https://anitec-backend-android.onrender.com>
-- **Documentation commits:** pendiente de completar.
+- **Documentation commits:** `642e129` (endpoint de archivado, páginas de retorno de Stripe y alcance por usuario) y `0c4f7cc` (nombre base del alta masiva).
 - **Interaction screenshots:** las capturas siguientes muestran llamadas con datos de muestra desde Swagger.
 
 <div align="center">
@@ -635,8 +665,8 @@ Durante el Sprint 2 se desplegó la versión completa del backend, se cargaron e
 |---|---|---|---|---|---|
 | Landing Page | GitHub Pages | El botón de descarga de Android reemplaza su marcador por el vínculo de invitación de Firebase (tarea T-061). | Pendiente | <https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/> | Publicada |
 | Web Services | Render | Redespliegue del servicio con el backend completo, variable `SeedDemoData` para cargar los datos de demostración y límite de conexiones en la cadena de conexión. | Commit `309c3b4` (el que Render muestra como desplegado, estado Live) | API: <https://anitec-backend-android.onrender.com>. Swagger: <https://anitec-backend-android.onrender.com/swagger/index.html> | Publicado |
-| Android | Firebase App Distribution | Proyecto «AniTec» (`anitec-17af9`), aplicación `com.anitec.platform`, APK `release` firmado con R8 (cerca de 25 MB), grupo «Equipo AniTec» y vínculos de invitación del grupo. | `versionName` `0.2.0` (`versionCode` 2); commit pendiente | Versión 0.2.0 (2) del 2026-10-25. Vínculos del grupo: <https://appdistribution.firebase.dev/i/417dc4e6d8ae3e32> y <https://appdistribution.firebase.dev/i/862507cca1d4abc6> | Publicada |
-| Flutter | Firebase App Distribution | Aplicación `com.anitec.platform.flutter` en el mismo proyecto, APK `release` firmado con el mismo keystore (52 MB) y el mismo grupo, con los mismos vínculos de invitación. | Versión `1.0.0+1`; commit pendiente | Versión 1.0.0 (1) del 2026-10-25, en el mismo grupo | Publicada |
+| Android | Firebase App Distribution | Proyecto «AniTec» (`anitec-17af9`), aplicación `com.anitec.platform`, APK `release` firmado con R8 (cerca de 25 MB), grupo «Equipo AniTec» y vínculos de invitación del grupo. | `versionName` `0.2.0` (`versionCode` 2); versión definida en el commit `5553a38` | Versión 0.2.0 (2) del 2026-10-25. Vínculos del grupo: <https://appdistribution.firebase.dev/i/417dc4e6d8ae3e32> y <https://appdistribution.firebase.dev/i/862507cca1d4abc6> | Publicada |
+| Flutter | Firebase App Distribution | Aplicación `com.anitec.platform.flutter` en el mismo proyecto, APK `release` firmado con el mismo keystore (52 MB) y el mismo grupo, con los mismos vínculos de invitación. | Versión `1.0.0+1`; versión definida en el commit `bc56f7e` | Versión 1.0.0 (1) del 2026-10-25, en el mismo grupo | Publicada |
 
 **Pasos ejecutados (Web Services):**
 
