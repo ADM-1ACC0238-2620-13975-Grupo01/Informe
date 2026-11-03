@@ -200,7 +200,7 @@ def draw_flow(filename: str, heading: str, subtitle: str, steps: list[tuple[str,
     svg.multiline(65, 408, subtitle, width=max(100, int((width - 140) / 9)), size=16)
     svg.save(filename)
 
-
+# Generates the six core domain stories (visual event flows) for the strategic design documentation.
 def draw_domain_message_flows():
     """Genera los seis domain stories del diseño estratégico."""
     draw_flow(
