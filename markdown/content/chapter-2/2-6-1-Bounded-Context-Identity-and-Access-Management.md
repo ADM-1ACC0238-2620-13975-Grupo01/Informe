@@ -2,6 +2,8 @@
 
 # 2.6.1. Bounded Context: Identity and Access Management
 
+<!-- Documentation marker: Identity and Access Management section. -->
+
 Administrar identidades, credenciales, roles y sesiones para que cada operación de AniTec se ejecute con una identidad autenticada y autorizada.
 
 La base implementada se encuentra en el módulo `Iam` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
