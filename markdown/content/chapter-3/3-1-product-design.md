@@ -2,6 +2,8 @@
 
 # 3.1. Product design
 
+<!-- Documentation marker: Product Design section. -->
+
 El diseño de AniTec traduce las necesidades de ganaderos y veterinarios en una experiencia coherente entre la Landing Page, la aplicación Android nativa y la aplicación multiplataforma. Se priorizan la consulta rápida en campo, el registro con pocos pasos, la legibilidad en exteriores y la continuidad ante una conexión inestable. Los artefactos mantienen trazabilidad con los User Personas, User Stories y bounded contexts del capítulo II.
 
 <a id="toc-3-1-1-style-guidelines"></a>
