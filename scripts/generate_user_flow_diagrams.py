@@ -32,7 +32,7 @@ MUTED = "#52636D"
 BORDER = "#AEBCC2"
 SHADOW = "#DDE5E8"
 
-
+# Carga la fuente Arial o DejaVu Sans en el tamaño indicado; si no existen, usa la fuente por defecto.
 def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
     """Carga Arial o DejaVu Sans en el tamaño indicado; si no existen, usa la fuente por defecto."""
     candidates = [
