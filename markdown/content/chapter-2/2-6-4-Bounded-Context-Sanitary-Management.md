@@ -2,6 +2,8 @@
 
 # 2.6.4. Bounded Context: Sanitary Management
 
+<!-- Documentation marker: Sanitary Management section. -->
+
 Conservar la historia sanitaria del animal y controlar el registro de diagnósticos, tratamientos, prescripciones y seguimientos autorizados.
 
 La base implementada se encuentra en el módulo `Sanitary` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
