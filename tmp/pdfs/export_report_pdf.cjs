@@ -66,12 +66,14 @@ fs.writeFileSync(htmlPath, html, 'utf8');
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
   await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'networkidle', timeout: 120000 });
+  // Espera a que carguen todas las imágenes y las fuentes antes de imprimir.
   await page.evaluate(async () => {
     await Promise.all(Array.from(document.images, (img) => img.complete
       ? Promise.resolve()
       : new Promise((resolve) => { img.onload = img.onerror = resolve; })));
     if (document.fonts && document.fonts.ready) await document.fonts.ready;
   });
+  // Si alguna imagen no cargó se detiene, en lugar de generar un PDF incompleto.
   const missing = await page.evaluate(() => Array.from(document.images)
     .filter((img) => !img.naturalWidth)
     .map((img) => img.getAttribute('src')));
