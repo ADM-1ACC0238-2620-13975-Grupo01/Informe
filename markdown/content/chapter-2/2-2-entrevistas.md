@@ -1,5 +1,7 @@
 # 2.2. Entrevistas.
 
+<!-- Documentation marker: interview research section. -->
+
 Las entrevistas son una herramienta esencial para comprender a fondo a nuestro público objetivo. Para que sean efectivas, deben seguir una estructura clara y directa, utilizando preguntas específicas que permitan recolectar información de valor y datos precisos de los participantes.
 
 <div id='2.2.1.'><h4> 2.2.1. Diseño de entrevistas. </h4></div>
