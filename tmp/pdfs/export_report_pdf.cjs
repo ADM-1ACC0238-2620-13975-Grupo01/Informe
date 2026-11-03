@@ -17,6 +17,7 @@ const content = marked.parse(markdown);
 // <base> hace que las rutas relativas de las imágenes se resuelvan desde la raíz del repositorio.
 const base = pathToFileURL(root + path.sep).href;
 
+// Página A4 con estilo parecido a GitHub; las tablas repiten el encabezado y sus filas no se parten entre páginas.
 const html = `<!doctype html>
 <html lang="es">
 <head>
@@ -58,6 +59,7 @@ const html = `<!doctype html>
 <body>${content}</body>
 </html>`;
 
+// Se guarda el HTML para poder revisarlo en un navegador.
 fs.writeFileSync(htmlPath, html, 'utf8');
 
 (async () => {
