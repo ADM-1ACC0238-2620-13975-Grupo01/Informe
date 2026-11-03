@@ -9,6 +9,7 @@ from pathlib import Path
 from urllib.parse import quote, unquote
 
 
+# Rutas base: el informe se escribe en la raíz, salvo que ANITEC_REPORT_OUTPUT indique otra ruta.
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "markdown" / "content"
 OUTPUT = (
@@ -16,6 +17,7 @@ OUTPUT = (
     if os.environ.get("ANITEC_REPORT_OUTPUT")
     else ROOT / "upc-pre-202620-1acc0238-13975-ADM-report.md"
 )
+# Archivos que van antes del índice: registro de versiones y colaboración del equipo.
 PRE_TOC_CONTENT = ["registro-versiones.md", "report-collaboration.md"]
 SECTIONS = [
     (None, ["student-outcome.md", "objetivos-smart.md"]),
