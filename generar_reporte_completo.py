@@ -252,7 +252,9 @@ def needs_section_page_break(name: str) -> bool:
     section_number = numeric_key(heading.group(1))
     if not section_number:
         return False
+    # Por ejemplo, "2.6.3" se divide en ["2", "6", "3"].
     components = section_number.split(".")
+    # Secciones de segundo nivel: solo desde la x.2 se empieza en página nueva.
     if len(components) == 2:
         return int(components[1]) >= 2
     return (
