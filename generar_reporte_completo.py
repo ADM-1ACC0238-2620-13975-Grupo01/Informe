@@ -83,6 +83,7 @@ while toc_lines and (not toc_lines[0].strip() or toc_lines[0].strip() == "</div>
 while toc_lines and (not toc_lines[-1].strip() or toc_lines[-1].strip() == "</div>"):
     toc_lines.pop()
 
+# Valida el índice: solo entradas numeradas o las secciones sin número permitidas, y sin números repetidos.
 toc_pairs = re.findall(r"\[([^]]+)\]\(#([^)]+)\)", "\n".join(toc_lines))
 allowed_unnumbered = {
     "Student Outcome",
