@@ -327,7 +327,7 @@ def sticky(svg: Svg, x: int, y: int, w: int, h: int, value: str, fill: str, stro
     for index, line in enumerate(wrapped):
         svg.text(x + w / 2, start_y + index * int(size * 1.22), line, size=size, fill="#404040", anchor="middle")
 
-
+# Renders a bulleted list of text items separated by semicolons or periods onto the SVG canvas.
 def bullet_text(svg: Svg, x: int, y: int, value: str, chars: int, size: int = 13):
     """Escribe una lista con viñetas a partir de un texto separado por punto y coma o por punto."""
     items = [item.strip().rstrip(".") for item in value.replace(". ", "; ").split(";") if item.strip()]
