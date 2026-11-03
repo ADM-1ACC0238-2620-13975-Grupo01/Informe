@@ -145,7 +145,7 @@ def centered_text(
         draw.text(((x1 + x2 - length) / 2, y), line, font=selected_font, fill=fill)
         y += line_height + gap
 
-
+# Dibuja una flecha entre dos puntos, con soporte opcional para líneas discontinuas y grosor personalizado.
 def arrow(
     draw: ImageDraw.ImageDraw,
     start: tuple[int, int],
