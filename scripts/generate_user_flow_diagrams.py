@@ -93,9 +93,8 @@ def mockup(platform: str, role: str, filename: str) -> Path:
         raise FileNotFoundError(path)
     return path
 
-
+# Devuelve la ruta del archivo de mock-up "iPhone 17 - N" de Flutter para el rol indicado.
 def flutter_screen(role: str, number: int) -> Path:
-    """Devuelve el mock-up "iPhone 17 - N" de Flutter para el rol indicado."""
     return mockup("flutter", role, f"iPhone 17 - {number}.png")
 
 
