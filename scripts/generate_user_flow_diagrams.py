@@ -102,7 +102,7 @@ def android_screen(role: str, number: int) -> Path:
     """Devuelve el mock-up "Android Compact - N" de Android para el rol indicado."""
     return mockup("android", role, f"Android Compact - {number}.png")
 
-
+# Devuelve la ruta del mock-up correspondiente al rol de ganadero utilizando su nombre de archivo específico.
 def named(platform: str, filename: str) -> Path:
     """Devuelve un mock-up del ganadero por su nombre de archivo."""
     return mockup(platform, "rancher", filename)
