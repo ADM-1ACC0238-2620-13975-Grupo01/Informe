@@ -95,7 +95,7 @@ El To-Be Scenario Mapping representa cómo realizarán sus tareas Jorge Luis Riv
 Las Epics y las historias siguientes describen resultados esperados para la landing page, las aplicaciones móviles y los servicios. Las User Stories evitan decisiones de interfaz en sus criterios de aceptación; las Technical Stories describen capacidades sin interacción directa y utilizan el rol Developer. Por otro lado, las Spike Stories delimitan investigaciones técnicas breves para reducir incertidumbre y comprobar la viabilidad de una alternativa antes de implementarla.
 ### Epics
 
-<table style="text-align: center;">
+<table>
   <thead><tr><th>Epic ID</th><th>Title</th><th>Description</th></tr></thead>
   <tbody>
     <tr><td>EP-001</td><td>Landing Page</td><td>Comunica la propuesta de valor, los segmentos atendidos y los canales de acceso a las aplicaciones móviles de AniTec.</td></tr>
@@ -2179,14 +2179,14 @@ La distribución considera los hitos del curso:
 - **Sprint 2 — AV2, semana 12:** backend al 100 %, primera versión de la aplicación Flutter (inicio del ganadero) y principales funciones core de sanidad, vista del veterinario, actividades, finanzas, analítica, trabajo offline, identificación mediante cámara, suscripciones con Stripe y distribución en Firebase App Distribution.
 - **Sprint 3 — TB2, semana 15:** consentimiento veterinario, notificaciones, cierre de trazabilidad sanitaria y sincronización idempotente, persistencia local en Flutter, accesibilidad, pruebas automatizadas y aplicación completa según el backlog.
 
-<table>
+<table style="text-align: center;">
   <thead>
     <tr>
-      <th># Orden</th>
-      <th>User Story Id</th>
-      <th>Título</th>
-      <th>Story Points (1 / 2 / 3 / 5 / 8)</th>
-      <th>Sprint</th>
+      <th style="text-align: center;"># Orden</th>
+      <th style="text-align: center;">User Story Id</th>
+      <th style="text-align: center;">Título</th>
+      <th style="text-align: center;">Story Points (1 / 2 / 3 / 5 / 8)</th>
+      <th style="text-align: center;">Sprint</th>
     </tr>
   </thead>
   <tbody>

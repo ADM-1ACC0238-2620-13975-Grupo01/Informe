@@ -3815,9 +3815,11 @@ El Impact Mapping conecta objetivos SMART del piloto con los User Personas, los 
 
 ## 2.4.3. Product Backlog
 
-El Product Backlog contiene todas las User Stories, Technical Stories y Spike Stories definidas en esta sección. El orden lo determina el valor para el negocio: al inicio se ubican las historias del core del producto —registro y consulta de animales y fincas, seguimiento sanitario, colaboración autorizada con veterinarios, recordatorios, trabajo sin conexión e identificación mediante QR— y no las de autenticación o seguridad, que se ubican después como procesos de soporte. Las historias de la landing page se consideran desde el Sprint 1. Las historias técnicas y los spikes se colocan después del core que habilitan en el Sprint 1 y inmediatamente antes de las historias que habilitan en los sprints posteriores. Todas las estimaciones utilizan la escala 1, 2, 3, 5 u 8. Al planificar el Sprint 1 (sección 4.2.1.1), el backlog incorporó US-044 y US-045 y adelantó US-014, US-015 y US-016 al Sprint 1, mientras que TS-002 y SP-001 pasaron al Sprint 2. Al planificar el Sprint 2 (sección 4.2.2.1), el backlog se contrastó con lo realmente construido: las historias de solicitud, aceptación y revocación del acceso veterinario (US-020, US-021 y US-022), las notificaciones (TS-009 y US-027), la persistencia local en Flutter (TS-006) y la sincronización idempotente (TS-007) pasaron al Sprint 3, mientras que diez historias del Sprint 3 se adelantaron al Sprint 2 porque ya estaban construidas: las suscripciones con Stripe (US-038, TS-011, US-039 y US-040), los indicadores del hato y de los clientes (US-035 y US-036), los movimientos financieros (US-037), el cambio de idioma (US-041), los errores y estados de conectividad (US-043) y la compilación y distribución de versiones (TS-015). El Sprint 2 quedó con 24 historias y 114 Story Points, y el Sprint 3 con 14 historias y 69 Story Points.
+El Product Backlog reúne las User Stories, Technical Stories y Spike Stories del producto, priorizadas según su valor para el negocio. Primero se presentan las historias del core y luego los procesos de soporte. Las historias técnicas y los spikes se ubican antes de las funcionalidades que habilitan. Las estimaciones utilizan la escala 1, 2, 3, 5 u 8.
 
-**Producto mínimo viable (MVP).** El MVP contiene los procesos core validados en las entrevistas y en el Impact Mapping: gestión móvil de fincas y animales (BG-01), seguimiento sanitario y recordatorios (BG-02), colaboración entre ganaderos y veterinarios (BG-03) e identificación de animales (BG-04), junto con la base técnica, el acceso y la landing page que permiten usarlos. Está formado por las historias de los Sprints 1 y 2 según su distribución original, excepto US-003 y SP-002. Con el ajuste de la planificación del Sprint 2, el consentimiento del ganadero sobre el acceso veterinario y las notificaciones de actividades pasaron al Sprint 3, por lo que el MVP queda completo al cierre del Sprint 3 (TB2). El Sprint 2 entrega la mayor parte de los procesos core y las suscripciones; el Sprint 3 agrega esas historias, el cierre de la trazabilidad sanitaria y de la sincronización, la persistencia local en Flutter, la accesibilidad y las pruebas automatizadas.
+Durante la planificación de los Sprints 1 y 2 (secciones 4.2.1.1 y 4.2.2.1), el backlog se ajustó según el avance real del producto. La distribución final, detallada en el siguiente cuadro, dejó 24 historias y 114 Story Points en el Sprint 2, y 14 historias y 69 Story Points en el Sprint 3.
+
+**Producto mínimo viable (MVP).** El MVP comprende la gestión de fincas y animales (BG-01), el seguimiento sanitario (BG-02), la colaboración con veterinarios (BG-03), la identificación de animales (BG-04) y la base técnica necesaria. Debido a los ajustes de planificación, su alcance queda completo al cierre del Sprint 3 (TB2).
 
 La distribución considera los hitos del curso:
 
@@ -3825,14 +3827,14 @@ La distribución considera los hitos del curso:
 - **Sprint 2 — AV2, semana 12:** backend al 100 %, primera versión de la aplicación Flutter (inicio del ganadero) y principales funciones core de sanidad, vista del veterinario, actividades, finanzas, analítica, trabajo offline, identificación mediante cámara, suscripciones con Stripe y distribución en Firebase App Distribution.
 - **Sprint 3 — TB2, semana 15:** consentimiento veterinario, notificaciones, cierre de trazabilidad sanitaria y sincronización idempotente, persistencia local en Flutter, accesibilidad, pruebas automatizadas y aplicación completa según el backlog.
 
-<table>
+<table style="text-align: center;">
   <thead>
     <tr>
-      <th># Orden</th>
-      <th>User Story Id</th>
-      <th>Título</th>
-      <th>Story Points (1 / 2 / 3 / 5 / 8)</th>
-      <th>Sprint</th>
+      <th style="text-align: center;"># Orden</th>
+      <th style="text-align: center;">User Story Id</th>
+      <th style="text-align: center;">Título</th>
+      <th style="text-align: center;">Story Points (1 / 2 / 3 / 5 / 8)</th>
+      <th style="text-align: center;">Sprint</th>
     </tr>
   </thead>
   <tbody>
