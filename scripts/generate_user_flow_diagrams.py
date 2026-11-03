@@ -81,9 +81,8 @@ class Flow:
     decision: str
     branches: tuple[Branch, Branch, Branch]
 
-
+# Devuelve la ruta de un mock-up de Flutter o Android y genera un error si el archivo no existe.
 def mockup(platform: str, role: str, filename: str) -> Path:
-    """Devuelve la ruta de un mock-up de Flutter o Android y falla si no existe."""
     platform_folder = {
         "flutter": "mock-upsMobileFlutter",
         "android": "mock-upsMobileAndroid",
