@@ -13,11 +13,13 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 
+# Los mock-ups se leen del capítulo 3 y los diagramas se guardan en user-flow-diagrams.
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "markdown" / "assets" / "chapter-3"
 OUTPUT = ASSETS / "user-flow-diagrams"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 
+# Tamaño en píxeles de cada diagrama y colores de nodos, ramas, texto y bordes.
 CANVAS = (2200, 1080)
 GREEN = "#3F7F2A"
 GREEN_LIGHT = "#EAF5E5"
