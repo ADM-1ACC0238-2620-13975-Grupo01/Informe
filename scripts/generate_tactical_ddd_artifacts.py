@@ -8,6 +8,7 @@ from pathlib import Path
 import re
 
 
+# Capítulos 2.6.x en markdown/content/chapter-2 y código de diagramas en markdown/assets/codefordiagrams.
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "markdown" / "content" / "chapter-2"
 CODE = ROOT / "markdown" / "assets" / "codefordiagrams"
@@ -38,6 +39,7 @@ class Context:
     local_entities: tuple[tuple[str, tuple[tuple[str, str], ...]], ...]
 
 
+# Los nueve bounded contexts con los datos que generan sus capítulos y diagramas.
 CONTEXTS = (
     Context(
         1,
@@ -1099,6 +1101,7 @@ end note
 '''
 
 
+# Tabla y columna a la que apunta cada clave foránea en el esquema MySQL.
 MYSQL_FK_TARGETS = {
     "user_id": ("USERS", "id"),
     "owner_id": ("USERS", "id"),
