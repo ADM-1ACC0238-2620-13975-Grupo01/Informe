@@ -72,6 +72,7 @@ def normalise(label: str) -> str:
     return "".join(char for char in value if char.isalnum())
 
 
+# Separa la carátula del índice de caratula.md y quita las líneas vacías y los </div> sobrantes del índice.
 caratula = (ROOT / "caratula.md").read_text(encoding="utf-8-sig")
 cover, toc_source = caratula.split('<div style="font-size: 18px; line-height: 1.65;">', 1)
 toc_source = toc_source.split("## Contenido", 1)[1]
