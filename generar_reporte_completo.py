@@ -144,8 +144,10 @@ def rewrite_target(target: str, source: Path, *, image: bool = False) -> str:
     path_text, separator, fragment = target.partition("#")
     path_text = unquote(path_text)
     resolved = (source.parent / path_text).resolve()
+    # Un enlace a otro archivo del informe pasa a ser un enlace interno a su ancla.
     if resolved in source_set:
         return "#" + (fragment if separator else source_anchors[resolved])
+    # Corrige enlaces a carpetas de diagramas que aún usan el nombre antiguo "2.6.N. Bounded Context ...".
     if not resolved.exists() and resolved.name == "component-level.dsl":
         old_folder = re.fullmatch(r"2\.6\.(\d+)\. Bounded Context (.+)", resolved.parent.name)
         if old_folder:
