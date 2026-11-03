@@ -4,6 +4,7 @@ const { pathToFileURL } = require('url');
 const { marked } = require('marked');
 const { chromium } = require('playwright');
 
+// El Markdown del informe está en la raíz del repositorio; el HTML y el PDF se generan junto a este script.
 const root = path.resolve(__dirname, '..', '..');
 const source = path.join(root, 'upc-pre-202620-1acc0238-13975-ADM-report.md');
 const htmlPath = path.join(__dirname, 'updated-report.html');
