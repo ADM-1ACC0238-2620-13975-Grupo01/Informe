@@ -2,6 +2,8 @@
 
 # 2.6.2. Bounded Context: Profile Management
 
+<!-- Documentation marker: Profile Management section. -->
+
 Mantener la información personal y de contacto asociada con una identidad sin mezclarla con credenciales o reglas de autenticación.
 
 La base implementada se encuentra en el módulo `Profiles` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
