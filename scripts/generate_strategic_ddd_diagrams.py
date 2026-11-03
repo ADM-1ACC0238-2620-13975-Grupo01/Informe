@@ -318,7 +318,7 @@ CANVAS_VISUALS = {
     "analytics": {"domain": "Supporting", "business": "Engagement", "evolution": "Custom built", "actor": "Rancher / Veterinarian", "downstream": "Rancher / Veterinarian", "reads": ["Dashboard", "Date Range", "Authorized Scope"], "incoming": ["Livestock Updated", "Health Event Recorded", "Financial Movement Recorded"]},
 }
 
-
+# Renders a sticky note graphic element containing vertically and horizontally centered wrapped text.
 def sticky(svg: Svg, x: int, y: int, w: int, h: int, value: str, fill: str, stroke: str, chars: int = 18, size: int = 12):
     """Dibuja una nota adhesiva con el texto centrado."""
     svg.rect(x, y, w, h, fill, stroke=stroke, radius=1, shadow=True, sw=1)
