@@ -95,7 +95,7 @@ El To-Be Scenario Mapping representa cómo realizarán sus tareas Jorge Luis Riv
 Las Epics y las historias siguientes describen resultados esperados para la landing page, las aplicaciones móviles y los servicios. Las User Stories evitan decisiones de interfaz en sus criterios de aceptación; las Technical Stories describen capacidades sin interacción directa y utilizan el rol Developer. Por otro lado, las Spike Stories delimitan investigaciones técnicas breves para reducir incertidumbre y comprobar la viabilidad de una alternativa antes de implementarla.
 ### Epics
 
-<table>
+<table style="text-align: center;">
   <thead><tr><th>Epic ID</th><th>Title</th><th>Description</th></tr></thead>
   <tbody>
     <tr><td>EP-001</td><td>Landing Page</td><td>Comunica la propuesta de valor, los segmentos atendidos y los canales de acceso a las aplicaciones móviles de AniTec.</td></tr>
