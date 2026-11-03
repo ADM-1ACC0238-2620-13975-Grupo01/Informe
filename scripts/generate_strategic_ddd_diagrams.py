@@ -450,7 +450,7 @@ def draw_context_map():
         svg.multiline(x + w / 2, y + 40, label, width=25, size=18, weight="bold", fill=COLORS["navy"], anchor="middle")
         svg.text(x + w / 2, y + 91, kind, size=14, fill=COLORS["gray_dark"], anchor="middle")
         boxes[key] = (x, y, w, h)
-
+# Renders a circular badge with a centered relationship index number onto the SVG canvas.
     def badge(x, y, number):
         """Dibuja el círculo con el número de una relación."""
         svg.rect(x - 17, y - 15, 34, 30, COLORS["white"], stroke=COLORS["navy"], radius=15, sw=2)
