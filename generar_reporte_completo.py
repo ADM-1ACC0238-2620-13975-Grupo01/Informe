@@ -9,6 +9,7 @@ from pathlib import Path
 from urllib.parse import quote, unquote
 
 
+# Rutas base: el informe se escribe en la raíz, salvo que ANITEC_REPORT_OUTPUT indique otra ruta.
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "markdown" / "content"
 OUTPUT = (
@@ -16,7 +17,10 @@ OUTPUT = (
     if os.environ.get("ANITEC_REPORT_OUTPUT")
     else ROOT / "upc-pre-202620-1acc0238-13975-ADM-report.md"
 )
+# Archivos que van antes del índice: registro de versiones y colaboración del equipo.
 PRE_TOC_CONTENT = ["registro-versiones.md", "report-collaboration.md"]
+# Orden del informe: cada capítulo con sus archivos de markdown/content.
+# None indica archivos que se agregan sin un título de capítulo.
 SECTIONS = [
     (None, ["student-outcome.md", "objetivos-smart.md"]),
     ("Capítulo I: Presentación", [
@@ -57,15 +61,18 @@ SECTIONS = [
 
 
 def numeric_key(label: str) -> str | None:
+    """Devuelve el número de sección de un encabezado (por ejemplo "2.6.1") o None si no tiene."""
     match = re.match(r"^(\d+(?:\.\d+)*)(?:\.)?(?:\s|$)", label)
     return match.group(1) if match else None
 
 
 def normalise(label: str) -> str:
+    """Normaliza un título sin mayúsculas, tildes ni signos para compararlo con el índice."""
     value = unicodedata.normalize("NFKD", label.casefold())
     return "".join(char for char in value if char.isalnum())
 
 
+# Separa la carátula del índice de caratula.md y quita las líneas vacías y los </div> sobrantes del índice.
 caratula = (ROOT / "caratula.md").read_text(encoding="utf-8-sig")
 cover, toc_source = caratula.split('<div style="font-size: 18px; line-height: 1.65;">', 1)
 toc_source = toc_source.split("## Contenido", 1)[1]
@@ -76,6 +83,7 @@ while toc_lines and (not toc_lines[0].strip() or toc_lines[0].strip() == "</div>
 while toc_lines and (not toc_lines[-1].strip() or toc_lines[-1].strip() == "</div>"):
     toc_lines.pop()
 
+# Valida el índice: solo entradas numeradas o las secciones sin número permitidas, y sin números repetidos.
 toc_pairs = re.findall(r"\[([^]]+)\]\(#([^)]+)\)", "\n".join(toc_lines))
 allowed_unnumbered = {
     "Student Outcome",
@@ -94,8 +102,10 @@ if unexpected_toc_entries or duplicate_numbers:
     if duplicate_numbers:
         details.append("numeraciones duplicadas: " + ", ".join(duplicate_numbers))
     raise ValueError("El índice de caratula.md no es el índice curado: " + "; ".join(details))
+# Anclas del índice por número de sección y por título normalizado.
 number_to_id = {numeric_key(label): anchor for label, anchor in toc_pairs if numeric_key(label)}
 title_to_id = {normalise(label): anchor for label, anchor in toc_pairs if not numeric_key(label)}
+# Todo .md de markdown/content debe estar en el informe; si falta alguno se detiene la generación.
 all_sources = [
     *((CONTENT / name).resolve() for name in PRE_TOC_CONTENT),
     *((CONTENT / name).resolve() for _, names in SECTIONS for name in names),
@@ -107,6 +117,7 @@ if unlisted_sources:
 
 
 def first_anchor(path: Path) -> str:
+    """Obtiene el ancla del índice que corresponde al primer encabezado de un archivo del informe."""
     contents = path.read_text(encoding="utf-8-sig")
     heading = re.search(r"^#{1,6}\s+(.+?)\s*$", contents, re.MULTILINE)
     if not heading:
@@ -121,18 +132,22 @@ def first_anchor(path: Path) -> str:
     return anchor
 
 
+# Ancla de destino de cada archivo y lista de imágenes locales que no existen.
 source_anchors = {path: first_anchor(path) for path in all_sources}
 missing_resources: list[tuple[str, str]] = []
 
 
 def rewrite_target(target: str, source: Path, *, image: bool = False) -> str:
+    """Convierte un enlace relativo en un ancla interna o en una ruta desde la raíz y registra imágenes faltantes."""
     if target.startswith(("#", "http://", "https://", "mailto:", "data:", "javascript:")):
         return target
     path_text, separator, fragment = target.partition("#")
     path_text = unquote(path_text)
     resolved = (source.parent / path_text).resolve()
+    # Un enlace a otro archivo del informe pasa a ser un enlace interno a su ancla.
     if resolved in source_set:
         return "#" + (fragment if separator else source_anchors[resolved])
+    # Corrige enlaces a carpetas de diagramas que aún usan el nombre antiguo "2.6.N. Bounded Context ...".
     if not resolved.exists() and resolved.name == "component-level.dsl":
         old_folder = re.fullmatch(r"2\.6\.(\d+)\. Bounded Context (.+)", resolved.parent.name)
         if old_folder:
@@ -148,17 +163,22 @@ def rewrite_target(target: str, source: Path, *, image: bool = False) -> str:
 
 
 def rewrite_refs(contents: str, source: Path) -> str:
+    """Reescribe los atributos src/href y los enlaces Markdown de un archivo para el informe unificado."""
     def html_attribute(match: re.Match[str]) -> str:
+        """Reescribe un atributo src o href y codifica la ruta cuando es una imagen local."""
         prefix, target, suffix = match.groups()
         is_image = prefix.lower().lstrip().startswith("src")
         rewritten = rewrite_target(target, source, image=is_image)
+        # Codifica espacios y tildes de la ruta para que el src de la imagen siga funcionando.
         if is_image and not rewritten.startswith(("http://", "https://", "data:")):
             rewritten = quote(rewritten, safe="/:#%?=&")
         return prefix + rewritten + suffix
 
+    # Primero se reescriben los atributos HTML y luego los enlaces Markdown.
     contents = re.sub(r'((?:src|href)\s*=\s*")([^"]+)(")', html_attribute, contents, flags=re.IGNORECASE)
 
     def markdown_link(match: re.Match[str]) -> str:
+        """Reescribe el destino de un enlace o imagen Markdown, usando <...> si contiene espacios."""
         prefix, raw, suffix = match.groups()
         angled = raw.startswith("<") and raw.endswith(">")
         target = raw[1:-1] if angled else raw
@@ -172,6 +192,7 @@ def rewrite_refs(contents: str, source: Path) -> str:
 
 
 def add_toc_anchors(contents: str) -> str:
+    """Añade antes de cada encabezado el ancla <a id> que usa el índice, sin duplicar las existentes."""
     existing = set(re.findall(r'<a\s+(?:id|name)="([^"]+)"', contents, flags=re.IGNORECASE))
     lines = contents.splitlines()
     result = []
@@ -188,6 +209,7 @@ def add_toc_anchors(contents: str) -> str:
 
 
 def table_font_size(match: re.Match[str]) -> str:
+    """Reduce el tamaño de letra de una tabla HTML, salvo las tablas centradas de la carátula."""
     attributes = match.group(1)
     if re.search(r"\balign\s*=", attributes, flags=re.IGNORECASE):
         return match.group(0)  # Conserva la tabla de integrantes de la carátula.
@@ -202,6 +224,7 @@ def table_font_size(match: re.Match[str]) -> str:
 
 
 def render_source(name: str) -> str:
+    """Lee un archivo de markdown/content y lo prepara para el informe: enlaces, anclas y tablas."""
     source = (CONTENT / name).resolve()
     contents = source.read_text(encoding="utf-8-sig")
     if name == "conclusiones.md":
@@ -229,7 +252,9 @@ def needs_section_page_break(name: str) -> bool:
     section_number = numeric_key(heading.group(1))
     if not section_number:
         return False
+    # Por ejemplo, "2.6.3" se divide en ["2", "6", "3"].
     components = section_number.split(".")
+    # Secciones de segundo nivel: solo desde la x.2 se empieza en página nueva.
     if len(components) == 2:
         return int(components[1]) >= 2
     return (
@@ -240,6 +265,7 @@ def needs_section_page_break(name: str) -> bool:
     )
 
 
+# Armado: carátula, registro y colaboración, índice y después los capítulos en orden.
 parts = [cover.strip(), '<div style="font-size: 20px; line-height: 1.8;">']
 for name in PRE_TOC_CONTENT:
     parts.extend(['<div style="page-break-before: always;"></div>', render_source(name)])
@@ -250,6 +276,7 @@ parts.extend([
     "\n".join(toc_lines).strip(),
     '<div style="page-break-before: always;"></div>',
 ])
+# Cada capítulo empieza en página nueva con el ancla que usa el índice.
 for chapter, names in SECTIONS:
     if chapter:
         chapter_anchor = title_to_id.get(normalise(chapter))
@@ -267,6 +294,7 @@ report = "\n\n".join(parts).rstrip() + "\n"
 report = report.replace("<code>", "").replace("</code>", "").replace("`", "")
 OUTPUT.write_text(report, encoding="utf-8")
 
+# Resumen en consola: anclas del índice sin destino e imágenes locales que faltan.
 defined_anchors = set(re.findall(r'<a\s+(?:id|name)="([^"]+)"', report, flags=re.IGNORECASE))
 missing_anchors = sorted({anchor for _, anchor in toc_pairs if anchor not in defined_anchors})
 print(f"Generado: {OUTPUT}")
@@ -293,5 +321,6 @@ for ref in missing_files:
 print(f"Enlaces internos sin destino: {len(missing_internal)}")
 for ref in missing_internal:
     print(f"  Destino ausente: {ref}")
+# Cualquier problema termina con código 1 para que no pase desapercibido.
 if missing_anchors or missing_resources or missing_files or missing_internal:
     raise SystemExit(1)

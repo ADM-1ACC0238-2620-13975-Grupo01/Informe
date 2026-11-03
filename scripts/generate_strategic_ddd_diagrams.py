@@ -1,3 +1,5 @@
+"""Genera los diagramas SVG del diseño estratégico de AniTec (EventStorming, contextos, flujos, canvases y context map)."""
+
 from __future__ import annotations
 
 from html import escape
@@ -5,10 +7,12 @@ from pathlib import Path
 from textwrap import wrap
 
 
+# Los SVG se guardan en markdown/assets/chapter-2/strategic-ddd; la carpeta se crea si no existe.
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "markdown" / "assets" / "chapter-2" / "strategic-ddd"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 
+# Paleta común de todos los diagramas estratégicos.
 COLORS = {
     "navy": "#17365D",
     "blue": "#5B9BD5",
@@ -30,6 +34,7 @@ COLORS = {
 
 
 def lines(text: str, width: int) -> list[str]:
+    """Divide un texto en líneas de como máximo width caracteres, respetando los saltos de línea."""
     result: list[str] = []
     for paragraph in text.split("\n"):
         result.extend(wrap(paragraph, width=width, break_long_words=False) or [""])
@@ -37,7 +42,9 @@ def lines(text: str, width: int) -> list[str]:
 
 
 class Svg:
+    """Construye un documento SVG agregando sus elementos como texto."""
     def __init__(self, width: int, height: int, title: str):
+        """Inicia el SVG con su título, la sombra y la punta de flecha reutilizables."""
         self.width = width
         self.height = height
         self.parts = [
@@ -51,41 +58,49 @@ class Svg:
         ]
 
     def rect(self, x, y, w, h, fill, stroke="#BFBFBF", radius=12, shadow=False, sw=2):
+        """Dibuja un rectángulo redondeado, con sombra opcional."""
         filt = ' filter="url(#shadow)"' if shadow else ""
         self.parts.append(
             f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="{radius}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{filt}/>'
         )
 
     def text(self, x, y, value, size=18, weight="normal", fill="#1F1F1F", anchor="start", italic=False):
+        """Escribe una línea de texto escapada en la posición indicada."""
         style = "italic" if italic else "normal"
         self.parts.append(
             f'<text x="{x}" y="{y}" font-family="Arial, sans-serif" font-size="{size}" font-weight="{weight}" font-style="{style}" fill="{fill}" text-anchor="{anchor}">{escape(value)}</text>'
         )
 
     def multiline(self, x, y, value, width=28, size=17, weight="normal", fill="#1F1F1F", anchor="start", line_height=None):
+        """Escribe un texto largo en varias líneas ajustadas al ancho indicado."""
         line_height = line_height or int(size * 1.28)
         for index, line in enumerate(lines(value, width)):
             self.text(x, y + index * line_height, line, size=size, weight=weight, fill=fill, anchor=anchor)
 
     def path(self, d, stroke="#595959", sw=2, dash=None, arrow=True):
+        """Dibuja un trazo SVG, opcionalmente discontinuo y con flecha al final."""
         dash_attr = f' stroke-dasharray="{dash}"' if dash else ""
         marker = ' marker-end="url(#arrow)"' if arrow else ""
         self.parts.append(f'<path d="{d}" fill="none" stroke="{stroke}" stroke-width="{sw}"{dash_attr}{marker}/>' )
 
     def line(self, x1, y1, x2, y2, stroke="#595959", sw=2, dash=None, arrow=True):
+        """Dibuja una línea recta entre dos puntos usando path."""
         self.path(f"M{x1},{y1} L{x2},{y2}", stroke=stroke, sw=sw, dash=dash, arrow=arrow)
 
     def save(self, name: str):
+        """Cierra el SVG y lo guarda en la carpeta de salida con el nombre indicado."""
         self.parts.append("</svg>")
         (OUTPUT / name).write_text("\n".join(self.parts), encoding="utf-8")
 
 
 def title(svg: Svg, heading: str, subtitle: str):
+    """Escribe el título y el subtítulo en la cabecera del diagrama."""
     svg.text(50, 48, heading, size=30, weight="bold", fill=COLORS["navy"])
     svg.text(50, 78, subtitle, size=16, fill=COLORS["gray_dark"])
 
 
 def draw_eventstorming_overview():
+    """Genera la síntesis del EventStorming móvil por fases del flujo principal."""
     svg = Svg(1800, 760, "EventStorming móvil actualizado de AniTec")
     title(svg, "EventStorming móvil actualizado — AniTec", "Síntesis del flujo principal validado contra el Product Backlog móvil")
     phases = [
@@ -120,6 +135,7 @@ def draw_eventstorming_overview():
 
 
 def draw_candidate_contexts():
+    """Genera el diagrama de Candidate Context Discovery agrupado en core, supporting y generic."""
     svg = Svg(1500, 900, "Candidate Context Discovery de AniTec")
     title(svg, "Candidate Context Discovery — AniTec", "Resultado de Start-with-Value y búsqueda de pivotal events")
     columns = [
@@ -155,10 +171,12 @@ def draw_candidate_contexts():
     svg.save("candidate-context-discovery.svg")
 
 
+# Color de cada tipo de elemento en los domain message flows.
 FLOW_COLORS = {"actor": COLORS["yellow_light"], "command": COLORS["blue_light"], "context": COLORS["green_light"], "event": COLORS["orange_light"], "external": "#F4CCCC", "local": COLORS["purple_light"]}
 
 
 def draw_flow(filename: str, heading: str, subtitle: str, steps: list[tuple[str, str, str]], messages: list[str]):
+    """Dibuja un domain story como una fila de pasos unidos por flechas con sus mensajes."""
     width = max(1500, 80 + len(steps) * 215)
     svg = Svg(width, 500, heading)
     title(svg, heading, subtitle)
@@ -184,6 +202,7 @@ def draw_flow(filename: str, heading: str, subtitle: str, steps: list[tuple[str,
 
 
 def draw_domain_message_flows():
+    """Genera los seis domain stories del diseño estratégico."""
     draw_flow(
         "domain-flow-01-register-animal.svg",
         "Domain Story 1 — Registro móvil de un animal",
@@ -228,6 +247,7 @@ def draw_domain_message_flows():
     )
 
 
+# Contenido de cada bounded context canvas: nombre, clasificación, propósito, lenguaje y reglas.
 CANVASES = {
     "iam": {
         "name": "Identity and Access Management", "classification": "Generic subdomain · Custom built", "purpose": "Autenticar usuarios, emitir sesiones y aplicar autorización por rol.", "roles": "Identity provider · Policy and execution context",
@@ -285,6 +305,7 @@ CANVASES = {
     },
 }
 
+# Etiquetas visuales de cada canvas: tipo de dominio, rol de negocio, evolución y actores.
 CANVAS_VISUALS = {
     "iam": {"domain": "Generic", "business": "Enabler", "evolution": "Custom built", "actor": "Mobile User", "downstream": "Profiles / Subscriptions", "reads": ["Account Status", "Role Catalog"], "incoming": ["Access Requested"]},
     "profiles": {"domain": "Supporting", "business": "Engagement", "evolution": "Custom built", "actor": "Authenticated User", "downstream": "Livestock / Collaboration", "reads": ["Current Profile", "Role Details"], "incoming": ["User Registered"]},
@@ -299,6 +320,7 @@ CANVAS_VISUALS = {
 
 
 def sticky(svg: Svg, x: int, y: int, w: int, h: int, value: str, fill: str, stroke: str, chars: int = 18, size: int = 12):
+    """Dibuja una nota adhesiva con el texto centrado."""
     svg.rect(x, y, w, h, fill, stroke=stroke, radius=1, shadow=True, sw=1)
     wrapped = lines(value, chars)
     start_y = y + h / 2 - ((len(wrapped) - 1) * size * 0.62) + 4
@@ -307,6 +329,7 @@ def sticky(svg: Svg, x: int, y: int, w: int, h: int, value: str, fill: str, stro
 
 
 def bullet_text(svg: Svg, x: int, y: int, value: str, chars: int, size: int = 13):
+    """Escribe una lista con viñetas a partir de un texto separado por punto y coma o por punto."""
     items = [item.strip().rstrip(".") for item in value.replace(". ", "; ").split(";") if item.strip()]
     cursor = y
     for item in items:
@@ -319,6 +342,7 @@ def bullet_text(svg: Svg, x: int, y: int, value: str, chars: int, size: int = 13
 
 
 def draw_canvas(key: str, data: dict[str, str]):
+    """Genera el Bounded Context Canvas de un contexto a partir de sus datos."""
     visual = CANVAS_VISUALS[key]
     svg = Svg(1600, 1300, f"Bounded Context Canvas — {data['name']}")
     svg.parts[-1] = '<rect width="1600" height="1300" fill="#C9C9C9"/>'
@@ -399,6 +423,7 @@ def draw_canvas(key: str, data: dict[str, str]):
 
 
 def draw_context_map():
+    """Genera el context map con las relaciones numeradas entre los bounded contexts."""
     svg = Svg(1800, 1430, "Context Mapping de AniTec")
     title(svg, "Context Mapping — AniTec", "Mapa seleccionado después de comparar alternativas de descomposición")
     nodes = {
@@ -427,10 +452,12 @@ def draw_context_map():
         boxes[key] = (x, y, w, h)
 
     def badge(x, y, number):
+        """Dibuja el círculo con el número de una relación."""
         svg.rect(x - 17, y - 15, 34, 30, COLORS["white"], stroke=COLORS["navy"], radius=15, sw=2)
         svg.text(x, y + 6, str(number), size=14, weight="bold", fill=COLORS["navy"], anchor="middle")
 
     def connect(a, b, number, y_offset=0, dash=None, route_y=None):
+        """Une dos contextos con una flecha directa o con un recorrido por route_y y su número."""
         ax, ay, aw, ah = boxes[a]
         bx, by, bw, bh = boxes[b]
         if route_y is not None:
@@ -496,6 +523,7 @@ def draw_context_map():
 
 
 def main():
+    """Genera todos los diagramas estratégicos e informa cuántos SVG hay en la carpeta."""
     draw_eventstorming_overview()
     draw_candidate_contexts()
     draw_domain_message_flows()

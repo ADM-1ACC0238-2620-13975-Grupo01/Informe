@@ -1,3 +1,5 @@
+"""Genera los artefactos tácticos de cada bounded context (C4, UML, SQL) y sus capítulos 2.6.x del informe."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -6,6 +8,7 @@ from pathlib import Path
 import re
 
 
+# Capítulos 2.6.x en markdown/content/chapter-2 y código de diagramas en markdown/assets/codefordiagrams.
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "markdown" / "content" / "chapter-2"
 CODE = ROOT / "markdown" / "assets" / "codefordiagrams"
@@ -13,6 +16,7 @@ CODE = ROOT / "markdown" / "assets" / "codefordiagrams"
 
 @dataclass(frozen=True)
 class Context:
+    """Datos de un bounded context usados para generar sus diagramas, esquemas y capítulo."""
     number: int
     name: str
     slug: str
@@ -35,6 +39,7 @@ class Context:
     local_entities: tuple[tuple[str, tuple[tuple[str, str], ...]], ...]
 
 
+# Los nueve bounded contexts con los datos que generan sus capítulos y diagramas.
 CONTEXTS = (
     Context(
         1,
@@ -860,6 +865,7 @@ erDiagram
 
 
 def html_table(rows: list[tuple[str, str, str, str, str]]) -> str:
+    """Arma la tabla HTML de clases y componentes con sus responsabilidades."""
     body = "\n".join(
         "    <tr>" + "".join(f"<td>{escape(value)}</td>" for value in row) + "</tr>"
         for row in rows
@@ -875,11 +881,13 @@ def html_table(rows: list[tuple[str, str, str, str, str]]) -> str:
 
 
 def symbol_name(value: str) -> str:
+    """Convierte un texto en un identificador PascalCase sin espacios ni signos."""
     words = "".join(character if character.isalnum() else " " for character in value).split()
     return "".join(word[:1].upper() + word[1:] for word in words)
 
 
 def layer_rows(context: Context, layer: str) -> list[tuple[str, str, str, str, str]]:
+    """Devuelve las filas de la tabla de clases de una capa (domain, interface, application o infrastructure)."""
     if layer == "domain":
         rows = []
         for name in context.existing_domain:
@@ -940,6 +948,7 @@ def layer_rows(context: Context, layer: str) -> list[tuple[str, str, str, str, s
 
 
 def dsl_for(context: Context) -> str:
+    """Genera el workspace Structurizr DSL con las vistas de componentes de la API, Android y Flutter."""
     key = f"BC{context.number}"
     external_defs = "\n".join(
         f'        external{i} = softwareSystem "{name}" "Dependencia externa de {context.name}."'
@@ -1067,6 +1076,7 @@ def dsl_for(context: Context) -> str:
 
 
 def puml_for(context: Context) -> str:
+    """Genera el diagrama de clases PlantUML de la capa de dominio del contexto."""
     return f'''@startuml
 title AniTec - {context.name} - Domain Layer
 hide circle
@@ -1091,6 +1101,7 @@ end note
 '''
 
 
+# Tabla y columna a la que apunta cada clave foránea en el esquema MySQL.
 MYSQL_FK_TARGETS = {
     "user_id": ("USERS", "id"),
     "owner_id": ("USERS", "id"),
@@ -1106,6 +1117,7 @@ MYSQL_FK_TARGETS = {
 
 
 def sql_type(source_type: str, comment: str, dialect: str) -> str:
+    """Traduce un tipo del ERD al tipo de columna de MySQL o SQLite."""
     if dialect == "sqlite":
         return {
             "int": "INTEGER",
@@ -1134,6 +1146,7 @@ def sql_type(source_type: str, comment: str, dialect: str) -> str:
 
 
 def parse_mermaid_entities(source: str) -> list[tuple[str, list[tuple[str, str, str, str]]]]:
+    """Lee las entidades y columnas de un ERD en formato Mermaid."""
     entities: list[tuple[str, list[tuple[str, str, str, str]]]] = []
     current_name: str | None = None
     current_fields: list[tuple[str, str, str, str]] = []
@@ -1157,6 +1170,7 @@ def parse_mermaid_entities(source: str) -> list[tuple[str, list[tuple[str, str, 
 
 
 def mysql_sql(context: Context) -> str:
+    """Genera el DDL de MySQL del servidor a partir del ERD del contexto."""
     entities = parse_mermaid_entities(context.server_erd)
     table_names = {name for name, _ in entities}
     statements = [
@@ -1200,6 +1214,7 @@ def mysql_sql(context: Context) -> str:
 
 
 def sqlite_sql(context: Context, product: str) -> str:
+    """Genera el DDL SQLite de la base local de Android Room o Flutter."""
     entity_names = {name for name, _ in context.local_entities}
     local_fk_targets = {
         "herd_id": ("CACHED_HERDS", "herd_id"),
@@ -1258,6 +1273,7 @@ def sqlite_sql(context: Context, product: str) -> str:
 
 
 def placeholder(path: str, alt: str, caption: str, note: str) -> str:
+    """Devuelve el bloque HTML de una figura con un comentario de marcador de posición."""
     return f'''<div align="center">
   <!-- Placeholder: {note} -->
   <img src="{path}" alt="{alt}" width="900">
@@ -1266,6 +1282,7 @@ def placeholder(path: str, alt: str, caption: str, note: str) -> str:
 
 
 def markdown_for(context: Context) -> str:
+    """Genera el capítulo 2.6.x de un bounded context con sus tablas y figuras."""
     prefix = f"2.6.{context.number}"
     asset = f"../../assets/chapter-2/tactical-ddd/{context.slug}"
     code_link = f"../../assets/codefordiagrams/{context.folder}"
@@ -1340,6 +1357,7 @@ def markdown_for(context: Context) -> str:
 
 
 def write_context(context: Context) -> None:
+    """Escribe en codefordiagrams los archivos DSL, PUML, SQL y ERD de un contexto."""
     folder = CODE / context.folder
     folder.mkdir(parents=True, exist_ok=True)
     (folder / "component-level.dsl").write_text(dsl_for(context), encoding="utf-8")
@@ -1355,6 +1373,7 @@ def write_context(context: Context) -> None:
 
 
 def write_main_markdown() -> None:
+    """Escribe el capítulo 2.6 con la tabla de los nueve bounded contexts."""
     rows = "\n".join(
         f"    <tr><td>2.6.{c.number}</td><td><a href=\"./2-6-{c.number}-Bounded-Context-{c.name.replace(' ', '-')}.md\">{escape(c.name)}</a></td><td>{escape(c.module)}</td><td>{escape(c.purpose)}</td></tr>"
         for c in CONTEXTS
@@ -1385,6 +1404,7 @@ Para todos los contextos se aplican las siguientes convenciones:
 
 
 def update_report_readme() -> None:
+    """Actualiza en el README los enlaces del índice a los capítulos 2.6.x."""
     path = ROOT / "README.md"
     text = path.read_text(encoding="utf-8")
     start = text.index("- [2.6. Tactical-Level Domain-Driven Design]")
@@ -1412,6 +1432,7 @@ def update_report_readme() -> None:
 
 
 def update_diagram_readme() -> None:
+    """Reescribe la sección de diagramas tácticos del README de codefordiagrams."""
     path = CODE / "README.md"
     current = path.read_text(encoding="utf-8") if path.exists() else "# Diagramas de AniTec\n"
     marker = "\n## Diagramas tácticos de bounded contexts"
@@ -1444,6 +1465,7 @@ Cada carpeta contiene un workspace C4 con tres vistas, un UML del dominio y tres
 
 
 def main() -> None:
+    """Genera los artefactos de todos los contextos y actualiza los capítulos y los README."""
     for context in CONTEXTS:
         write_context(context)
     write_main_markdown()

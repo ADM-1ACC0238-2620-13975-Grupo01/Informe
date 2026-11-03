@@ -4,16 +4,20 @@ const { pathToFileURL } = require('url');
 const { marked } = require('marked');
 const { chromium } = require('playwright');
 
+// El Markdown del informe está en la raíz del repositorio; el HTML y el PDF se generan junto a este script.
 const root = path.resolve(__dirname, '..', '..');
 const source = path.join(root, 'upc-pre-202620-1acc0238-13975-ADM-report.md');
 const htmlPath = path.join(__dirname, 'updated-report.html');
 const pdfPath = path.join(__dirname, 'updated-report.pdf');
 
+// GitHub Flavored Markdown para las tablas, sin ids automáticos en los títulos.
 marked.setOptions({ gfm: true, breaks: false, headerIds: false, mangle: false });
 const markdown = fs.readFileSync(source, 'utf8');
 const content = marked.parse(markdown);
+// <base> hace que las rutas relativas de las imágenes se resuelvan desde la raíz del repositorio.
 const base = pathToFileURL(root + path.sep).href;
 
+// Página A4 con estilo parecido a GitHub; las tablas repiten el encabezado y sus filas no se parten entre páginas.
 const html = `<!doctype html>
 <html lang="es">
 <head>
@@ -55,22 +59,26 @@ const html = `<!doctype html>
 <body>${content}</body>
 </html>`;
 
+// Se guarda el HTML para poder revisarlo en un navegador.
 fs.writeFileSync(htmlPath, html, 'utf8');
 
 (async () => {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
   await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'networkidle', timeout: 120000 });
+  // Espera a que carguen todas las imágenes y las fuentes antes de imprimir.
   await page.evaluate(async () => {
     await Promise.all(Array.from(document.images, (img) => img.complete
       ? Promise.resolve()
       : new Promise((resolve) => { img.onload = img.onerror = resolve; })));
     if (document.fonts && document.fonts.ready) await document.fonts.ready;
   });
+  // Si alguna imagen no cargó se detiene, en lugar de generar un PDF incompleto.
   const missing = await page.evaluate(() => Array.from(document.images)
     .filter((img) => !img.naturalWidth)
     .map((img) => img.getAttribute('src')));
   if (missing.length) throw new Error(`Images failed to load: ${missing.join(', ')}`);
+  // PDF A4 con el nombre del informe arriba y el número de página abajo.
   await page.pdf({
     path: pdfPath,
     format: 'A4',
@@ -83,6 +91,7 @@ fs.writeFileSync(htmlPath, html, 'utf8');
   });
   await browser.close();
   console.log(pdfPath);
+// Cualquier error termina el proceso con código 1.
 })().catch((error) => {
   console.error(error);
   process.exit(1);
