@@ -294,6 +294,7 @@ report = "\n\n".join(parts).rstrip() + "\n"
 report = report.replace("<code>", "").replace("</code>", "").replace("`", "")
 OUTPUT.write_text(report, encoding="utf-8")
 
+# Resumen en consola: anclas del índice sin destino e imágenes locales que faltan.
 defined_anchors = set(re.findall(r'<a\s+(?:id|name)="([^"]+)"', report, flags=re.IGNORECASE))
 missing_anchors = sorted({anchor for _, anchor in toc_pairs if anchor not in defined_anchors})
 print(f"Generado: {OUTPUT}")
@@ -320,5 +321,6 @@ for ref in missing_files:
 print(f"Enlaces internos sin destino: {len(missing_internal)}")
 for ref in missing_internal:
     print(f"  Destino ausente: {ref}")
+# Cualquier problema termina con código 1 para que no pase desapercibido.
 if missing_anchors or missing_resources or missing_files or missing_internal:
     raise SystemExit(1)
