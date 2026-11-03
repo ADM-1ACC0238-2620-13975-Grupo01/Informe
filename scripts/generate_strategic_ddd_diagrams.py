@@ -421,7 +421,7 @@ def draw_canvas(key: str, data: dict[str, str]):
     svg.text(1560, 1244, "Template Bounded Context Canvas after DDD Crew Version 1", size=11, fill="#666666", anchor="end")
     svg.save(f"bounded-context-canvas-{key}.svg")
 
-
+# Generates the strategic Context Map SVG visualization showing bounded contexts and their numbered relationships.
 def draw_context_map():
     """Genera el context map con las relaciones numeradas entre los bounded contexts."""
     svg = Svg(1800, 1430, "Context Mapping de AniTec")
