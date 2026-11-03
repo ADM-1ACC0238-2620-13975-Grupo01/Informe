@@ -19,6 +19,8 @@ OUTPUT = (
 )
 # Archivos que van antes del índice: registro de versiones y colaboración del equipo.
 PRE_TOC_CONTENT = ["registro-versiones.md", "report-collaboration.md"]
+# Orden del informe: cada capítulo con sus archivos de markdown/content.
+# None indica archivos que se agregan sin un título de capítulo.
 SECTIONS = [
     (None, ["student-outcome.md", "objetivos-smart.md"]),
     ("Capítulo I: Presentación", [
