@@ -340,7 +340,7 @@ def bullet_text(svg: Svg, x: int, y: int, value: str, chars: int, size: int = 13
             cursor += int(size * 1.28)
         cursor += 5
 
-
+# Generates and saves a detailed Bounded Context Canvas SVG graphic based on provided contextual data.
 def draw_canvas(key: str, data: dict[str, str]):
     """Genera el Bounded Context Canvas de un contexto a partir de sus datos."""
     visual = CANVAS_VISUALS[key]
