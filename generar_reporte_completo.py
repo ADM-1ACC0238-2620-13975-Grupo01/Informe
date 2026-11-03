@@ -265,6 +265,7 @@ def needs_section_page_break(name: str) -> bool:
     )
 
 
+# Armado: carátula, registro y colaboración, índice y después los capítulos en orden.
 parts = [cover.strip(), '<div style="font-size: 20px; line-height: 1.8;">']
 for name in PRE_TOC_CONTENT:
     parts.extend(['<div style="page-break-before: always;"></div>', render_source(name)])
@@ -275,6 +276,7 @@ parts.extend([
     "\n".join(toc_lines).strip(),
     '<div style="page-break-before: always;"></div>',
 ])
+# Cada capítulo empieza en página nueva con el ancla que usa el índice.
 for chapter, names in SECTIONS:
     if chapter:
         chapter_anchor = title_to_id.get(normalise(chapter))
