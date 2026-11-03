@@ -70,10 +70,9 @@ class Branch:
     response: str
     alternative: bool = False
 
-
+# User flow completo que agrupa las pantallas, acciones, decisiones y ramas del proceso de negocio.
 @dataclass(frozen=True)
 class Flow:
-    """User flow completo: pantallas, acciones, decisión y ramas."""
     slug: str
     title: str
     personas: str
