@@ -32,7 +32,7 @@ COLORS = {
     "white": "#FFFFFF",
 }
 
-
+# Splits text into lines of a maximum specified width while preserving paragraph breaks.
 def lines(text: str, width: int) -> list[str]:
     """Divide un texto en líneas de como máximo width caracteres, respetando los saltos de línea."""
     result: list[str] = []
