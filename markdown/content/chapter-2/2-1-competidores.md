@@ -2,7 +2,7 @@
 
 <!-- Documentation marker: competitor analysis section. -->
 
-El análisis competitivo permite conocer cómo otras soluciones digitales atienden la gestión ganadera y qué aspectos debe validar AniTec para diferenciarse. Se seleccionaron tres competidores directos con productos móviles vigentes: Livestock Manager, AgriWebb e iLivestock. La comparación se concentra en las capacidades relevantes para la aplicación Android de AniTec y utiliza información publicada en los sitios oficiales de cada producto, consultada el 13 de septiembre de 2026.
+El análisis competitivo permite conocer cómo otras soluciones digitales atienden la gestión ganadera y qué aspectos debe validar AniTec para diferenciarse. Se seleccionaron tres competidores directos con productos móviles vigentes: Livestock Manager, AgriWebb e iLivestock. La comparación se concentra en las capacidades relevantes para la aplicación Android de AniTec y utiliza información publicada en los sitios oficiales de cada producto, consultada el 13 de septiembre de 2026 (AgriWebb, s. f.-a, s. f.-b; iLivestock, s. f.-a, s. f.-b; Livestock Manager, s. f.).
 
 ## 2.1.1. Análisis competitivo
 
@@ -93,7 +93,7 @@ El análisis competitivo permite conocer cómo otras soluciones digitales atiend
       <td>Landing page web y, cuando se implemente y publique, Google Play para la aplicación Android. El canal de la aplicación multiplataforma permanece por definir.</td>
       <td>Aplicaciones para Android e iOS y acceso web o de escritorio.</td>
       <td>Aplicaciones para Android e iOS y aplicación web.</td>
-      <td>Aplicaciones para Android e iOS y acceso desde smartphone, tableta, PC o Mac.</td>
+      <td>Aplicaciones para Android e iOS y acceso desde un teléfono inteligente, una tableta, una PC o una Mac.</td>
     </tr>
   </tbody>
 </table>

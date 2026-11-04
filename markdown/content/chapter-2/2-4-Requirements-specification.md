@@ -92,14 +92,14 @@ El To-Be Scenario Mapping representa cómo realizarán sus tareas Jorge Luis Riv
 
 ## 2.4.1. User Stories
 
-Las Epics y las historias siguientes describen resultados esperados para la landing page, las aplicaciones móviles y los servicios. Las User Stories evitan decisiones de interfaz en sus criterios de aceptación; las Technical Stories describen capacidades sin interacción directa y utilizan el rol Developer. Por otro lado, las Spike Stories delimitan investigaciones técnicas breves para reducir incertidumbre y comprobar la viabilidad de una alternativa antes de implementarla.
+Las épicas y las historias siguientes describen resultados esperados para la landing page, las aplicaciones móviles y los servicios. Las User Stories se formulan desde el valor para el usuario y evitan decisiones de interfaz en sus criterios de aceptación (Cohn, 2006; Weerakoon, 2020). Las Technical Stories describen capacidades sin interacción directa y utilizan el rol Developer. Por otro lado, las Spike Stories delimitan investigaciones técnicas breves para reducir incertidumbre y comprobar la viabilidad de una alternativa antes de implementarla.
 ### Epics
 
 <table>
   <thead><tr><th>Epic ID</th><th>Title</th><th>Description</th></tr></thead>
   <tbody>
     <tr><td>EP-001</td><td>Landing Page</td><td>Comunica la propuesta de valor, los segmentos atendidos y los canales de acceso a las aplicaciones móviles de AniTec.</td></tr>
-    <tr><td>EP-002</td><td>Identity and Access Management</td><td>Gestiona el registro, la autenticación, la sesión y la autorización de ganaderos y veterinarios.</td></tr>
+    <tr><td>EP-002</td><td>Identity and Access Management</td><td>Gestiona el registro, la autenticación, la sesión, la autorización y la protección de datos de ganaderos y veterinarios.</td></tr>
     <tr><td>EP-003</td><td>Farm and Livestock Management</td><td>Permite organizar fincas y corrales y registrar, consultar, actualizar y archivar animales, con su fotografía, desde las aplicaciones móviles.</td></tr>
     <tr><td>EP-004</td><td>Sanitary Management</td><td>Centraliza incidencias, diagnósticos, tratamientos, controles e historiales sanitarios de los animales.</td></tr>
     <tr><td>EP-005</td><td>Veterinary Collaboration</td><td>Gestiona la relación autorizada entre ganaderos y veterinarios para el seguimiento de clientes y pacientes.</td></tr>
@@ -108,7 +108,7 @@ Las Epics y las historias siguientes describen resultados esperados para la land
     <tr><td>EP-008</td><td>Animal Identification and Autonomous Feature</td><td>Identifica animales mediante códigos QR y la cámara, incorporando una tecnología investigada de forma autónoma.</td></tr>
     <tr><td>EP-009</td><td>Analytics and Reports</td><td>Presenta indicadores sanitarios y operativos relevantes para ganaderos y veterinarios.</td></tr>
     <tr><td>EP-010</td><td>Financial and Subscription Management</td><td>Permite consultar finanzas, planes, pagos y el estado de la suscripción mediante un servicio externo.</td></tr>
-    <tr><td>EP-011</td><td>Accessibility, Internationalization and Resilience</td><td>Asegura una experiencia comprensible, accesible, internacionalizada y tolerante a errores.</td></tr>
+    <tr><td>EP-011</td><td>Accessibility, Internationalization and Resilience</td><td>Asegura una experiencia comprensible, accesible, internacionalizada, oportuna y tolerante a errores.</td></tr>
     <tr><td>EP-012</td><td>Mobile Platforms and Services</td><td>Agrupa la arquitectura y las integraciones técnicas de Android nativo, Flutter, API REST, almacenamiento y distribución.</td></tr>
   </tbody>
 </table>
@@ -223,19 +223,19 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
   <tr>
     <th style="text-align: center;">Title</th>
-    <td colspan="3">Registrar una cuenta según el rol</td>
+    <td colspan="3">Crear una cuenta con un rol autorizado</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como ganadero o veterinario, quiero crear una cuenta con mi rol para acceder a las capacidades que corresponden a mi actividad.</td>
+    <td colspan="4">Como ganadero o veterinario, quiero crear una cuenta con un rol autorizado para utilizar las funciones que corresponden a mi actividad.</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4"><b>Scenario 1: Registro válido</b><br><b>Given</b> la persona proporciona datos válidos y selecciona un rol permitido<br><b>When</b> la persona solicita crear su cuenta<br><b>Then</b> el sistema registra la cuenta y asocia el rol seleccionado<br><br><b>Scenario 2: Datos duplicados o inválidos</b><br><b>Given</b> ya existe una cuenta con el mismo correo o los datos incumplen una regla<br><b>When</b> la persona solicita crear su cuenta<br><b>Then</b> el sistema rechaza el registro e informa la causa sin exponer información sensible</td>
+    <td colspan="4"><b>Scenario 1: Registro válido</b><br><b>Given</b> la persona completa los datos obligatorios, acepta los términos y selecciona un rol permitido<br><b>When</b> solicita crear la cuenta<br><b>Then</b> el sistema registra una identidad única, protege la contraseña y asocia el rol seleccionado<br><br><b>Scenario 2: Datos inválidos</b><br><b>Given</b> uno o más datos incumplen las reglas de formato o de contraseña<br><b>When</b> la persona solicita crear la cuenta<br><b>Then</b> el sistema rechaza la solicitud, identifica los campos por corregir y conserva únicamente los datos no sensibles<br><br><b>Scenario 3: Identidad existente</b><br><b>Given</b> ya existe una cuenta con el nombre de usuario o correo proporcionado<br><b>When</b> la persona solicita crear la cuenta<br><b>Then</b> el sistema rechaza el registro sin revelar información adicional de la cuenta existente</td>
   </tr>
 </table>
 
@@ -254,19 +254,19 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
   <tr>
     <th style="text-align: center;">Title</th>
-    <td colspan="3">Iniciar sesión</td>
+    <td colspan="3">Iniciar una sesión segura</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como usuario registrado, quiero autenticarme con mis credenciales para consultar de manera segura mi información en AniTec.</td>
+    <td colspan="4">Como usuario registrado, quiero iniciar una sesión segura para acceder a AniTec con las funciones y los datos permitidos para mi rol.</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4"><b>Scenario 1: Credenciales válidas</b><br><b>Given</b> existe una cuenta activa con las credenciales proporcionadas<br><b>When</b> el usuario solicita iniciar sesión<br><b>Then</b> el sistema autentica al usuario y habilita las capacidades de su rol<br><br><b>Scenario 2: Credenciales inválidas</b><br><b>Given</b> las credenciales no corresponden a una cuenta activa<br><b>When</b> el usuario solicita iniciar sesión<br><b>Then</b> el sistema rechaza el acceso mediante un mensaje que no revela qué dato es incorrecto</td>
+    <td colspan="4"><b>Scenario 1: Credenciales válidas</b><br><b>Given</b> existe una cuenta activa con las credenciales proporcionadas<br><b>When</b> el usuario solicita iniciar sesión<br><b>Then</b> el sistema autentica la identidad, emite una sesión con vigencia definida y dirige al usuario a la experiencia de su rol<br><br><b>Scenario 2: Credenciales inválidas</b><br><b>Given</b> las credenciales no corresponden a una cuenta activa<br><b>When</b> el usuario solicita iniciar sesión<br><b>Then</b> el sistema rechaza el acceso, no crea una sesión y muestra un mensaje que no revela cuál dato es incorrecto</td>
   </tr>
 </table>
 
@@ -285,19 +285,19 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
   <tr>
     <th style="text-align: center;">Title</th>
-    <td colspan="3">Mantener y finalizar la sesión móvil</td>
+    <td colspan="3">Mantener y cerrar una sesión segura</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como usuario autenticado, quiero conservar mi sesión de manera segura y poder finalizarla para evitar accesos no autorizados a mis datos.</td>
+    <td colspan="4">Como usuario autenticado, quiero mantener una sesión vigente y cerrarla cuando lo decida para evitar accesos posteriores a mi información.</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4"><b>Scenario 1: Sesión vigente</b><br><b>Given</b> el usuario tiene una sesión válida almacenada de forma segura<br><b>When</b> el usuario vuelve a abrir la aplicación<br><b>Then</b> el sistema recupera la sesión y valida su vigencia antes de entregar información protegida<br><br><b>Scenario 2: Cierre de sesión</b><br><b>Given</b> el usuario mantiene una sesión activa<br><b>When</b> el usuario solicita finalizarla<br><b>Then</b> el sistema elimina las credenciales locales y bloquea el acceso a la información protegida</td>
+    <td colspan="4"><b>Scenario 1: Sesión vigente</b><br><b>Given</b> el usuario tiene una sesión válida almacenada de forma segura<br><b>When</b> vuelve a abrir la aplicación<br><b>Then</b> el sistema valida la vigencia antes de mostrar información protegida y recupera la sesión sin solicitar nuevamente las credenciales<br><br><b>Scenario 2: Sesión vencida o inválida</b><br><b>Given</b> la sesión venció, fue revocada o no puede validarse<br><b>When</b> el usuario intenta acceder a una función protegida<br><b>Then</b> el sistema elimina los datos de sesión, oculta la información protegida y solicita una nueva autenticación<br><br><b>Scenario 3: Cierre de sesión</b><br><b>Given</b> el usuario mantiene una sesión activa<br><b>When</b> solicita cerrarla<br><b>Then</b> la aplicación elimina las credenciales locales, bloquea el acceso en el dispositivo y vuelve a la pantalla de acceso</td>
   </tr>
 </table>
 
@@ -316,19 +316,19 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
   <tr>
     <th style="text-align: center;">Title</th>
-    <td colspan="3">Acceder únicamente a información autorizada</td>
+    <td colspan="3">Restringir el acceso según el rol y la relación autorizada</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como usuario autenticado, quiero acceder solamente a los datos permitidos para mi rol y relaciones vigentes para proteger la información ganadera y clínica.</td>
+    <td colspan="4">Como usuario autenticado, quiero que el sistema limite cada consulta y modificación según mi rol y mis relaciones vigentes para proteger la información ganadera y clínica.</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4"><b>Scenario 1: Acceso permitido</b><br><b>Given</b> el usuario posee el rol y la relación requeridos por una operación<br><b>When</b> el usuario solicita consultar o modificar información<br><b>Then</b> el sistema procesa la operación dentro del alcance autorizado<br><br><b>Scenario 2: Acceso denegado</b><br><b>Given</b> el usuario no posee el rol o la relación requeridos<br><b>When</b> el usuario solicita consultar o modificar información protegida<br><b>Then</b> el sistema rechaza la operación y registra el resultado de autorización</td>
+    <td colspan="4"><b>Scenario 1: Consulta autorizada</b><br><b>Given</b> el usuario posee el rol, la propiedad o la relación vigentes requeridos<br><b>When</b> solicita una lista o el detalle de un recurso<br><b>Then</b> el servidor devuelve únicamente los recursos comprendidos en su alcance autorizado<br><br><b>Scenario 2: Modificación no autorizada</b><br><b>Given</b> el usuario no posee el rol, la propiedad o la relación requeridos<br><b>When</b> intenta crear, modificar o eliminar un recurso protegido<br><b>Then</b> el servidor rechaza la operación con el estado correspondiente, no modifica datos y no devuelve información protegida</td>
   </tr>
 </table>
 
@@ -868,7 +868,7 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
   <tr>
     <td>US-025</td>
-    <td>Usuario autenticado</td>
+    <td>Usuario</td>
     <td>Must Have</td>
     <td>EP-006</td>
   </tr>
@@ -1510,6 +1510,103 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
 </table>
 
+### Non-Functional User Stories
+
+Las siguientes historias expresan atributos de calidad observables y medibles que se aplican de forma transversal a los flujos móviles.
+
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style="text-align: center;">Story ID</th>
+    <th style="text-align: center;">User</th>
+    <th style="text-align: center;">Priority</th>
+    <th style="text-align: center;">Epic</th>
+  </tr>
+  <tr>
+    <td>US-046</td>
+    <td>Usuario</td>
+    <td>Must Have</td>
+    <td>EP-002</td>
+  </tr>
+  <tr>
+    <th style="text-align: center;">Title</th>
+    <td colspan="3">Proteger las credenciales y los datos sensibles</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario, quiero que mis credenciales y datos sensibles se almacenen y transmitan de forma segura para evitar su exposición.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Transmisión segura</b><br><b>Given</b> la aplicación envía credenciales o información personal o sanitaria<br><b>When</b> se comunica con la API<br><b>Then</b> utiliza HTTPS y no incluye datos sensibles en la URL, los registros ni los mensajes de error<br><br><b>Scenario 2: Almacenamiento de credenciales</b><br><b>Given</b> el sistema almacena una contraseña o un token de sesión<br><b>When</b> persiste la credencial en el servidor o el dispositivo<br><b>Then</b> la contraseña se conserva únicamente como un hash seguro y el token utiliza el almacenamiento protegido del sistema operativo<br><br><b>Scenario 3: Eliminación local</b><br><b>Given</b> el usuario cierra la sesión o esta deja de ser válida<br><b>When</b> la aplicación procesa el cierre<br><b>Then</b> elimina el token y los datos protegidos asociados con la sesión</td>
+  </tr>
+</table>
+
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style="text-align: center;">Story ID</th>
+    <th style="text-align: center;">User</th>
+    <th style="text-align: center;">Priority</th>
+    <th style="text-align: center;">Epic</th>
+  </tr>
+  <tr>
+    <td>US-047</td>
+    <td>Usuario móvil</td>
+    <td>Should Have</td>
+    <td>EP-011</td>
+  </tr>
+  <tr>
+    <th style="text-align: center;">Title</th>
+    <td colspan="3">Obtener respuestas oportunas en operaciones frecuentes</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario móvil, quiero que las consultas y acciones frecuentes respondan con rapidez para completar mi trabajo sin esperas innecesarias.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Consulta frecuente</b><br><b>Given</b> un dispositivo de prueba, conectividad estable y el volumen de datos del piloto<br><b>When</b> el usuario abre el dashboard, una lista o un detalle<br><b>Then</b> el 95% de las consultas muestra el resultado utilizable en un máximo de tres segundos<br><br><b>Scenario 2: Operación en proceso</b><br><b>Given</b> una acción tarda más de dos segundos<br><b>When</b> el usuario la confirma<br><b>Then</b> la aplicación muestra su progreso y evita envíos duplicados</td>
+  </tr>
+</table>
+
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style="text-align: center;">Story ID</th>
+    <th style="text-align: center;">User</th>
+    <th style="text-align: center;">Priority</th>
+    <th style="text-align: center;">Epic</th>
+  </tr>
+  <tr>
+    <td>US-048</td>
+    <td>Usuario móvil</td>
+    <td>Must Have</td>
+    <td>EP-011</td>
+  </tr>
+  <tr>
+    <th style="text-align: center;">Title</th>
+    <td colspan="3">Recuperar una operación ante fallos temporales</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario móvil, quiero recuperar una operación después de un fallo temporal para continuar sin perder ni duplicar los datos ingresados.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Conservación de datos</b><br><b>Given</b> el usuario completó un formulario válido<br><b>When</b> ocurre un error temporal o se agota el tiempo de espera<br><b>Then</b> la aplicación conserva los datos y ofrece reintentar la operación<br><br><b>Scenario 2: Reintento seguro</b><br><b>Given</b> una operación quedó sin confirmación<br><b>When</b> el usuario o la aplicación vuelve a enviarla<br><b>Then</b> el sistema registra como máximo un resultado y muestra su estado final</td>
+  </tr>
+</table>
+
 ### Technical Stories
 
 La estrategia técnica de AniTec considera Android nativo y Flutter porque la selección de un enfoque multiplataforma debe evaluar su adopción, mantenibilidad y consistencia entre plataformas (Jošt & Taneski, 2025). Además, las historias técnicas incorporan pruebas unitarias, de interfaz e integración en distintas configuraciones, debido a que la evidencia reciente identifica una adopción y cobertura todavía limitadas de las pruebas automatizadas en proyectos Android reales (Mahmud et al., 2025).
@@ -1997,10 +2094,11 @@ La siguiente matriz hace trazable cada condición tecnológica obligatoria con u
     <tr><td>Aplicación multiplataforma</td><td>Flutter y Dart, con el mismo alcance funcional y contratos de servicio que la aplicación Android.</td><td>Proyecto Flutter compilable y comparación de los flujos core en las plataformas objetivo definidas por el equipo.</td><td>TS-002, TS-003, TS-004, TS-006 y US-004 a US-043.</td></tr>
     <tr><td>Almacenamiento local</td><td>Room en Android y una base de datos local compatible en Flutter para caché, operaciones pendientes y estado de sincronización.</td><td>Consulta y registro de información esencial sin conexión, seguidos por una sincronización idempotente.</td><td>US-029 a US-032 y TS-005 a TS-007.</td></tr>
     <tr><td>Recurso interno del dispositivo</td><td>Cámara del teléfono para leer el código QR que identifica al animal, con alternativa de búsqueda manual.</td><td>Prueba con permiso concedido, permiso denegado, código válido, código inválido y condiciones reales de iluminación.</td><td>US-033, US-034, TS-010 y SP-001.</td></tr>
-    <tr><td>Servicio REST interno</td><td>API REST propia de AniTec, documentada con OpenAPI y protegida mediante autenticación y autorización por rol y relación.</td><td>Backend público al 70 % en Sprint 1 y al 100 % desde Sprint 2, con documentación accesible.</td><td>US-004 a US-040, TS-004, TS-008 y TS-013.</td></tr>
+    <tr><td>Servicio REST interno</td><td>API REST propia de AniTec, documentada con OpenAPI y protegida mediante autenticación y autorización por rol y relación.</td><td>Backend público al 70% en Sprint 1 y al 100% desde Sprint 2, con documentación accesible.</td><td>US-004 a US-040, TS-004, TS-008 y TS-013.</td></tr>
     <tr><td>Servicio externo</td><td>Stripe Checkout para iniciar pagos y confirmar el estado de la suscripción sin almacenar datos de tarjeta en AniTec.</td><td>Flujos de pago aprobado, rechazado o cancelado y validación del resultado desde el backend.</td><td>US-038 a US-040, SP-002 y TS-011.</td></tr>
     <tr><td>Feature de aprendizaje autónomo</td><td>Investigación, prototipo e integración de Google ML Kit Barcode Scanning para reconocer códigos QR en el dispositivo.</td><td>Informe del Spike, fuentes consultadas, alternativas, riesgos, prueba física y conclusión de viabilidad.</td><td>US-033, TS-010 y SP-001.</td></tr>
     <tr><td>Notificaciones móviles</td><td>Recordatorios locales o remotos asociados con actividades ganaderas y sanitarias.</td><td>Recepción, atención y reprogramación de recordatorios con permisos habilitados o denegados.</td><td>US-025 a US-028 y TS-009.</td></tr>
+    <tr><td>Atributos de calidad no funcionales</td><td>Protección de datos, tiempos de respuesta verificables y recuperación segura ante fallos temporales.</td><td>Pruebas de autorización, transmisión segura, rendimiento y reintentos sin pérdida ni duplicación de datos.</td><td>US-046, US-047, US-048, TS-007, TS-008 y TS-014.</td></tr>
     <tr><td>Despliegue y validación física</td><td>Versiones firmadas y distribuidas mediante Firebase App Distribution o un servicio equivalente.</td><td>Instalación trazable en dispositivos físicos y registro de versión para la Release Review.</td><td>TS-014 y TS-015.</td></tr>
   </tbody>
 </table>
@@ -2121,16 +2219,16 @@ El Impact Mapping conecta objetivos SMART del piloto con los User Personas, los 
       <td>Jorge Luis Rivas — Ganadero</td>
       <td>Registra la información en el lugar donde ocurre y deja de postergarla por falta de una computadora.</td>
       <td>Gestión móvil de fincas y animales.</td>
-      <td>Como ganadero, deseo registrar y consultar mis animales desde el teléfono para mantener su trazabilidad. US-008 a US-013, US-044 y US-045.</td>
+      <td>Como ganadero, deseo registrar y consultar mis animales desde el teléfono para mantener su trazabilidad. US-008 a US-013, US-044, US-045 y US-047.</td>
     </tr>
     <tr>
       <td>Jorge Luis Rivas — Ganadero</td>
       <td>Continúa trabajando durante interrupciones de red y confirma después la sincronización.</td>
       <td>Persistencia local, cola de operaciones y estados de sincronización.</td>
-      <td>Como ganadero, deseo guardar y sincronizar registros sin repetirlos para trabajar con conectividad intermitente. US-029 a US-032.</td>
+      <td>Como ganadero, deseo guardar y sincronizar registros sin repetirlos para trabajar con conectividad intermitente. US-029 a US-032 y US-048.</td>
     </tr>
     <tr>
-      <td rowspan="2"><b>BG-02:</b> Conseguir que al menos el 70 % de los recordatorios sanitarios creados durante el piloto se marquen como atendidos o reprogramados dentro de su plazo, antes del cierre del Sprint 3.</td>
+      <td rowspan="2"><b>BG-02:</b> Conseguir que al menos el 70% de los recordatorios sanitarios creados durante el piloto se marquen como atendidos o reprogramados dentro de su plazo, antes del cierre del Sprint 3.</td>
       <td>Jorge Luis Rivas — Ganadero</td>
       <td>Registra incidencias y consulta actividades pendientes con mayor frecuencia.</td>
       <td>Historial sanitario, calendario y notificaciones móviles.</td>
@@ -2153,10 +2251,10 @@ El Impact Mapping conecta objetivos SMART del piloto con los User Personas, los 
       <td>Jorge Luis Rivas — Ganadero</td>
       <td>Controla quién puede consultar y registrar información sanitaria.</td>
       <td>Solicitudes, aceptación y revocación de acceso.</td>
-      <td>Como ganadero, deseo conceder o revocar acceso veterinario para proteger los datos de mis animales. US-020 a US-022.</td>
+      <td>Como ganadero, deseo conceder o revocar acceso veterinario para proteger los datos de mis animales. US-007, US-020 a US-022 y US-046.</td>
     </tr>
     <tr>
-      <td><b>BG-04:</b> Conseguir que al menos el 80 % de los participantes identifique correctamente un animal mediante QR o la alternativa manual en menos de 30 segundos, durante las pruebas del Sprint 2.</td>
+      <td><b>BG-04:</b> Conseguir que al menos el 80% de los participantes identifique correctamente un animal mediante QR o la alternativa manual en menos de 30 segundos, durante las pruebas del Sprint 2.</td>
       <td>Jorge Luis Rivas y Valeria Mendoza</td>
       <td>Localizan la ficha correcta con menos tiempo y mantienen una alternativa cuando la cámara falla.</td>
       <td>Escaneo QR con Google ML Kit y búsqueda manual.</td>
@@ -2169,21 +2267,21 @@ El Impact Mapping conecta objetivos SMART del piloto con los User Personas, los 
 
 El Product Backlog reúne las User Stories, Technical Stories y Spike Stories del producto, priorizadas según su valor para el negocio. Primero se presentan las historias del core y luego los procesos de soporte. Las historias técnicas y los spikes se ubican antes de las funcionalidades que habilitan. Las estimaciones utilizan la escala 1, 2, 3, 5 u 8.
 
-Durante la planificación de los Sprints 1 y 2 (secciones 4.2.1.1 y 4.2.2.1), el backlog se ajustó según el avance real del producto. La distribución final, detallada en el siguiente cuadro, dejó 24 historias y 114 Story Points en el Sprint 2, y 14 historias y 69 Story Points en el Sprint 3.
+Durante la planificación de los Sprints 1 y 2 (secciones 4.2.1.1 y 4.2.2.1), el backlog se ajustó según el avance real del producto. La distribución final, detallada en el siguiente cuadro, dejó 24 historias y 114 Story Points en el Sprint 2, y 17 historias y 82 Story Points en el Sprint 3.
 
 **Producto mínimo viable (MVP).** El MVP comprende la gestión de fincas y animales (BG-01), el seguimiento sanitario (BG-02), la colaboración con veterinarios (BG-03), la identificación de animales (BG-04) y la base técnica necesaria. Debido a los ajustes de planificación, su alcance queda completo al cierre del Sprint 3 (TB2).
 
 La distribución considera los hitos del curso:
 
-- **Sprint 1 — TB1, semana 7:** landing page desplegada, backend al 70 %, base de la aplicación Android y pantallas core de acceso, gestión de fincas, corrales y animales, y registros sanitarios básicos.
-- **Sprint 2 — AV2, semana 12:** backend al 100 %, primera versión de la aplicación Flutter (inicio del ganadero) y principales funciones core de sanidad, vista del veterinario, actividades, finanzas, analítica, trabajo offline, identificación mediante cámara, suscripciones con Stripe y distribución en Firebase App Distribution.
-- **Sprint 3 — TB2, semana 15:** consentimiento veterinario, notificaciones, cierre de trazabilidad sanitaria y sincronización idempotente, persistencia local en Flutter, accesibilidad, pruebas automatizadas y aplicación completa según el backlog.
+- **Sprint 1 — TB1, semana 7:** landing page desplegada, backend al 70%, base de la aplicación Android y pantallas core de acceso, gestión de fincas, corrales y animales, y registros sanitarios básicos.
+- **Sprint 2 — AV2, semana 12:** backend al 100%, primera versión de la aplicación Flutter (inicio del ganadero) y principales funciones core de sanidad, vista del veterinario, actividades, finanzas, analítica, trabajo offline, identificación mediante cámara, suscripciones con Stripe y distribución en Firebase App Distribution.
+- **Sprint 3 — TB2, semana 15:** consentimiento veterinario, notificaciones, cierre de trazabilidad sanitaria y sincronización idempotente, persistencia local en Flutter, accesibilidad, protección de datos, rendimiento, recuperación ante fallos, pruebas automatizadas y aplicación completa según el backlog.
 
 <table style="text-align: center;">
   <thead>
     <tr>
       <th style="text-align: center;"># Orden</th>
-      <th style="text-align: center;">User Story Id</th>
+      <th style="text-align: center;">User Story ID</th>
       <th style="text-align: center;">Título</th>
       <th style="text-align: center;">Story Points (1 / 2 / 3 / 5 / 8)</th>
       <th style="text-align: center;">Sprint</th>
@@ -2208,10 +2306,10 @@ La distribución considera los hitos del curso:
     <tr><td>16</td><td>TS-003</td><td>Definir la arquitectura móvil por capas y bounded contexts</td><td>5</td><td>Sprint 1</td></tr>
     <tr><td>17</td><td>TS-001</td><td>Configurar la aplicación Android nativa</td><td>5</td><td>Sprint 1</td></tr>
     <tr><td>18</td><td>TS-005</td><td>Implementar persistencia local segura en Android</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>19</td><td>US-004</td><td>Registrar una cuenta según el rol</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>20</td><td>US-005</td><td>Iniciar sesión</td><td>3</td><td>Sprint 1</td></tr>
-    <tr><td>21</td><td>US-007</td><td>Acceder únicamente a información autorizada</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>22</td><td>US-006</td><td>Mantener y finalizar la sesión móvil</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>19</td><td>US-004</td><td>Crear una cuenta con un rol autorizado</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>20</td><td>US-005</td><td>Iniciar una sesión segura</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>21</td><td>US-007</td><td>Restringir el acceso según el rol y la relación autorizada</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>22</td><td>US-006</td><td>Mantener y cerrar una sesión segura</td><td>3</td><td>Sprint 1</td></tr>
     <tr><td>23</td><td>TS-008</td><td>Proteger credenciales y datos de sesión</td><td>5</td><td>Sprint 1</td></tr>
     <tr><td>24</td><td>US-003</td><td>Acceder a una landing page adaptable e internacionalizada</td><td>5</td><td>Sprint 1</td></tr>
     <tr><td>25</td><td>US-017</td><td>Consultar el historial sanitario de un animal</td><td>5</td><td>Sprint 2</td></tr>
@@ -2251,6 +2349,9 @@ La distribución considera los hitos del curso:
     <tr><td>59</td><td>US-018</td><td>Corregir un registro sanitario con trazabilidad</td><td>5</td><td>Sprint 3</td></tr>
     <tr><td>60</td><td>TS-012</td><td>Aplicar internacionalización y accesibilidad móvil</td><td>5</td><td>Sprint 3</td></tr>
     <tr><td>61</td><td>US-042</td><td>Utilizar la aplicación con necesidades de accesibilidad</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>62</td><td>TS-014</td><td>Automatizar pruebas de los flujos móviles críticos</td><td>8</td><td>Sprint 3</td></tr>
+    <tr><td>62</td><td>US-046</td><td>Proteger las credenciales y los datos sensibles</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>63</td><td>US-047</td><td>Obtener respuestas oportunas en operaciones frecuentes</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>64</td><td>US-048</td><td>Recuperar una operación ante fallos temporales</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>65</td><td>TS-014</td><td>Automatizar pruebas de los flujos móviles críticos</td><td>8</td><td>Sprint 3</td></tr>
   </tbody>
 </table>

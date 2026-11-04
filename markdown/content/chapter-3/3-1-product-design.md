@@ -284,11 +284,11 @@ El wireframe prescinde del color y de las imágenes para evaluar solo la estruct
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-3/landing-page/LandingMovil_wireframe1.png" alt="Wireframe de movil de la Landing Page" width="500">
-  <p><i>Figura 7. Wireframe de movil de la Landing Page. Fuente: elaboración propia.</i></p>
+  <img src="../../assets/chapter-3/landing-page/LandingMovil_wireframe1.png" alt="Wireframe móvil de la landing page" width="500">
+  <p><i>Figura 7. Wireframe móvil de la landing page. Fuente: elaboración propia.</i></p>
 </div>
 
-Link del wireframe movil: https://www.figma.com/design/q7A10f5s09GjpeGGWNdsZG/LandingMovil_wireframe?node-id=0-1&t=FDHM5xffOJs1fj7Z-1 
+Enlace del wireframe móvil: https://www.figma.com/design/q7A10f5s09GjpeGGWNdsZG/LandingMovil_wireframe?node-id=0-1&t=FDHM5xffOJs1fj7Z-1
 
 
 <a id="toc-3-1-3-2-landing-page-mock-up"></a>
@@ -305,8 +305,8 @@ El mock-up traduce la estructura anterior al Design System de AniTec: fondo crem
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-3/landing-page/LandingMovil_MockUp1.png" alt="Mock-up de movil de la Landing Page" width="500">
-  <p><i>Figura 9. Mock-up de movil de la Landing Page. Fuente: elaboración propia.</i></p>
+  <img src="../../assets/chapter-3/landing-page/LandingMovil_MockUp1.png" alt="Mock-up móvil de la landing page" width="500">
+  <p><i>Figura 9. Mock-up móvil de la landing page. Fuente: elaboración propia.</i></p>
 </div>
 
 Link del MockUp: https://www.figma.com/design/DvQjG8GIupLP7TBQNi5Hr6/LandingMovil_MockUp?node-id=0-1&t=qJgJhyhc97VCfTMW-1 
@@ -709,23 +709,23 @@ La versión Android del perfil veterinario documenta la gestión de clientes y v
 
 ### 3.1.4.4. Mobile Applications User Flow Diagrams
 
-Los User Flow Diagrams presentan la navegación propuesta para alcanzar cada user goal definido. Se establece un único flujo estándar por objetivo, aplicable tanto a Android como a Flutter, porque ambas implementaciones comparten la misma arquitectura de información, las mismas acciones esenciales y las mismas condiciones de recuperación. Los diagramas se derivan de los wireflows y emplean mock-ups representativos de las vistas involucradas. Para conservar la legibilidad, cada lámina resume el recorrido en tres pantallas principales y concentra las condiciones secundarias en bloques breves; su explicación detallada se mantiene en el texto. La línea verde continua representa el *happy path*; la línea roja discontinua representa los *unhappy paths* que requieren corrección, reintento o recuperación; y la línea ámbar discontinua identifica una ruta alternativa válida que no constituye un error.
+Los User Flow Diagrams presentan la navegación propuesta para alcanzar cada user goal definido. Se establece un único flujo estándar por objetivo, aplicable tanto a Android como a Flutter, porque ambas implementaciones comparten la misma arquitectura de información y las mismas acciones esenciales. Cada lámina muestra únicamente las pantallas, acciones y condiciones necesarias para comprender la interacción. La línea verde continua representa el *happy path*; la línea roja discontinua representa los *unhappy paths*; y la línea ámbar discontinua identifica una ruta alternativa válida.
 
 | User goal | Happy path | Unhappy paths | Relación |
 |---|---|---|---|
-| Registro e inicio de sesión | Datos válidos y dashboard | Datos inválidos, cuenta existente, credenciales incorrectas y sin red | US-004, US-005, US-006 |
-| Dashboard | Resumen disponible y acceso a módulo | Sin datos, sesión vencida y error del servicio | US-007 y flujos del rol |
-| Registro de animal | Formulario válido y confirmación | Campos faltantes, duplicado, servidor y guardado offline | US-011, TS-004, TS-005 |
-| Consulta y actualización | Recurso autorizado y actualización | Sin permiso, inexistente y conflicto de sincronización | US-010, US-012, US-013 |
-| Historial sanitario | Historial disponible | Historial vacío, filtro sin resultados y acceso denegado | US-014 |
-| Registro sanitario | Datos válidos y confirmación | Validación, permiso insuficiente y sin conexión | US-015 |
+| Registrarse e iniciar sesión | Cuenta creada, sesión segura y dashboard | Datos inválidos, cuenta existente, credenciales incorrectas, sesión vencida y sin red | US-004, US-005, US-006, US-046 y TS-008 |
+| Consultar el dashboard | Resumen disponible y acceso a módulo | Sin datos, sesión vencida y error del servicio | US-007, US-047 y flujos del rol |
+| Registrar un animal | Formulario válido y confirmación | Campos faltantes, duplicado, servidor y guardado offline | US-011, US-048, TS-004 y TS-005 |
+| Consultar o actualizar un animal | Recurso autorizado y actualización | Sin permiso, inexistente y conflicto de sincronización | US-010, US-012, US-013 |
+| Consultar el historial sanitario | Historial disponible | Historial vacío, filtro sin resultados y acceso denegado | US-014 |
+| Registrar un evento sanitario | Datos válidos y confirmación | Validación, permiso insuficiente y sin conexión | US-015 |
 
 #### User Flow 1. Registrarse e iniciar sesión
 
 **User goal:** Crear mi cuenta con el rol que me corresponde e ingresar a AniTec para llegar a mi dashboard.  
 **User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria).
 
-Este flujo se deriva del Wireflow 1. En el *happy path*, la persona recorre el onboarding, elige crear una cuenta o iniciar sesión, completa los datos requeridos y llega al dashboard correspondiente a su rol. Si el registro contiene datos inválidos, se mantienen los valores ingresados y se señalan los campos por corregir. Una cuenta existente conduce a Sign in como ruta alternativa válida. Las credenciales incorrectas permiten reintentar y un fallo de conexión conserva el contexto antes de volver a enviar la solicitud.
+Este flujo se deriva del Wireflow 1. En el *happy path*, la persona recorre el onboarding, crea una cuenta con un rol autorizado o ingresa con una cuenta existente y llega al dashboard correspondiente. Los datos inválidos señalan los campos por corregir sin conservar la contraseña; una cuenta existente conduce a Sign in; y las credenciales incorrectas muestran un mensaje genérico. Una sesión vencida vuelve al acceso y un fallo de conexión conserva únicamente el contexto no sensible antes del reintento.
 
 
 <div align="center" style="page-break-inside: avoid;">
@@ -813,7 +813,7 @@ Los criterios de interacción de los prototipos derivan de la arquitectura de in
 
 | Usuario | Prototipo Evidencia | Captura del video | Video en Microsoft Stream |
 |---|---|---|---|
-| Ganadero | <img src="../../assets/chapter-3/prototypingFigmaEvidence.png" width="650">| <img src="../../assets/chapter-3/prototyping.png" width="650">  | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQAoOjKIja11SZkyivBWNnFHAfqWrhmYFjAEtX8G3aZOCPE?e=nkIv3O | 
-| Veterinario | <img src="../../assets/chapter-3/prototypingFigmaEvidenceVet.png" width="650"> | <img src="../../assets/chapter-3/prototypingVet.png" width="650"> | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQC1i57fMYVmS5YQVocXyarQAfhuAk37q3v1QPCuDFJ7Yyw?e=KRkjwP | 
+| Ganadero | <img src="../../assets/chapter-3/prototypingFigmaEvidence.png" width="650"> | <img src="../../assets/chapter-3/prototyping.png" width="650"> | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQAoOjKIja11SZkyivBWNnFHAfqWrhmYFjAEtX8G3aZOCPE?e=nkIv3O |
+| Veterinario | <img src="../../assets/chapter-3/prototypingFigmaEvidenceVet.png" width="650"> | <img src="../../assets/chapter-3/prototypingVet.png" width="650"> | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQC1i57fMYVmS5YQVocXyarQAfhuAk37q3v1QPCuDFJ7Yyw?e=KRkjwP |
 
 **Enlace de diseño en Figma:** <https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1>

@@ -87,6 +87,7 @@ Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicacion
 | 3.1 | 25/10/2026 | Josep Eliu Melgarejo Quiroz | Documentación del Sprint 2 en el capítulo IV (4.2.2): matriz LACX, Sprint Backlog, evidencias de desarrollo, pruebas, ejecución, servicios y despliegue, y colaboración del equipo. |
 | 3.2 | 25/10/2026 | Josep Eliu Melgarejo Quiroz | Actualización de la configuración de despliegue (4.1): aplicación Flutter, firma de las compilaciones, distribución en Firebase App Distribution, datos de demostración y límite de conexiones del backend. |
 | 3.3 | 25/10/2026 | Josep Eliu Melgarejo Quiroz | Actualización del registro de versiones, del Project Report Collaboration Insights, del Student Outcome y del anexo F para el AV2. |
+| 3.4 | 03/11/2026 | Luciana Celeste Sanchez Silva | Mejora de las User Stories de IAM y su trazabilidad, incorporación de requisitos no funcionales y corrección de referencias en formato APA 7, ortografía y espaciado. |
 
 
 <div style="page-break-before: always;"></div>
@@ -521,7 +522,7 @@ Durante su primer año después de graduarse, Josep construirá evidencias de su
 | Criterio SMART | Aplicación concreta |
 |---|---|
 | **Específico** | Aprender metodologías ágiles y coordinar una iniciativa académica, comunitaria o laboral de 3 a 5 participantes. |
-| **Medible** | Completar 60 horas de formación, entregar al menos el 80 % del alcance acordado y registrar 3 aprendizajes en una retrospectiva. |
+| **Medible** | Completar 60 horas de formación, entregar al menos el 80% del alcance acordado y registrar 3 aprendizajes en una retrospectiva. |
 | **Alcanzable** | Empezará con un equipo y un alcance reducidos, utilizando un backlog y reuniones breves de seguimiento. |
 | **Relevante** | La experiencia mejorará su capacidad de colaborar y asumir gradualmente responsabilidades de coordinación. |
 | **Temporal** | Completará la formación y la iniciativa dentro de los 18 meses posteriores a su graduación. |
@@ -545,7 +546,7 @@ Durante el primer año después de graduarse, Saul buscará incorporarse al desa
 | Criterio SMART | Aplicación concreta |
 |---|---|
 | **Específico** | Fortalecer pruebas unitarias, pruebas de interfaz, seguridad básica y generación de versiones móviles. |
-| **Medible** | Completar 80 horas de formación, cubrir al menos el 70 % de la lógica crítica y corregir todos los defectos de severidad alta detectados. |
+| **Medible** | Completar 80 horas de formación, cubrir al menos el 70% de la lógica crítica y corregir todos los defectos de severidad alta detectados. |
 | **Alcanzable** | Dedicará 3 horas semanales, conservará reportes de prueba y solicitará revisión de código antes de cada versión importante. |
 | **Relevante** | Estas prácticas mejorarán la estabilidad de sus aplicaciones y su perfil como desarrollador móvil. |
 | **Temporal** | Completará la formación y las mejoras dentro de los 18 meses posteriores a su graduación. |
@@ -662,7 +663,7 @@ El ecosistema se complementará con la landing page existente, que comunicará l
       <h3>Josep Eliu Melgarejo Quiroz</h3>
       <h4>u202315165</h4>
       <p>
-        Mi nombre es Josep Eliu Melgarejo Quiroz, tengo 21 años y nací en Huaral, aunque actualmente vivo en San Miguel, Lima. Me encuentro cursando el 5.º ciclo de la carrera de Ingeniería de Software en la UPC. Siempre me fascinó el ámbito tecnológico y, como era un apasionado por los juegos, fui conociendo poco a poco el mundo de la programación, lo que me llevó a decidir estudiar esta carrera. Me comprometo a apoyar y motivar siempre a mis compañeros para realizar el mejor trabajo posible y dar el 100 % de mi capacidad en este proyecto.
+        Mi nombre es Josep Eliu Melgarejo Quiroz, tengo 21 años y nací en Huaral, aunque actualmente vivo en San Miguel, Lima. Me encuentro cursando el 5.º ciclo de la carrera de Ingeniería de Software en la UPC. Siempre me fascinó el ámbito tecnológico y, como era un apasionado por los juegos, fui conociendo poco a poco el mundo de la programación, lo que me llevó a decidir estudiar esta carrera. Me comprometo a apoyar y motivar siempre a mis compañeros para realizar el mejor trabajo posible y dar el 100% de mi capacidad en este proyecto.
       </p>
     </td>
   </tr>
@@ -726,7 +727,7 @@ _¿Cuál es la situación problemática?_
 
 Los pequeños y medianos ganaderos suelen distribuir la información de sus animales entre cuadernos, hojas sueltas, archivos y mensajes. Esto dificulta mantener historiales completos, encontrar datos durante una atención, recordar actividades sanitarias y compartir información confiable con el veterinario. La aplicación web tomada como base centraliza parte de esos datos, pero no cubre por sí sola la necesidad de registrar y consultar información mientras el usuario se desplaza por el campo.
 
-La literatura reciente respalda esta necesidad. Las soluciones digitales aplicadas a la ganadería pueden mejorar el monitoreo de la salud, la productividad y el uso de recursos, aunque su adopción todavía depende de factores como el costo, la infraestructura y la integración tecnológica (Papadopoulos et al., 2025). Asimismo, los sistemas de monitoreo en tiempo real y apoyo a decisiones permiten transformar los datos del hato en alertas y acciones oportunas para una gestión más resiliente (Nsabiyeze et al., 2025).
+La literatura reciente respalda esta necesidad. Las soluciones digitales aplicadas a la ganadería pueden mejorar el monitoreo de la salud, la productividad y el uso de recursos, aunque su adopción todavía depende de factores como el costo, la infraestructura y la integración tecnológica (Food and Agriculture Organization of the United Nations, 2022; Papadopoulos et al., 2025). Asimismo, los sistemas de monitoreo en tiempo real y apoyo a decisiones permiten transformar los datos del hato en alertas y acciones oportunas para una gestión más resiliente (Food and Agriculture Organization of the United Nations, 2023; Nsabiyeze et al., 2025).
 
 **Cuándo (When)**
 
@@ -766,7 +767,7 @@ Se diseñarán flujos breves, formularios con validación, estados claros de sin
 
 _¿Cuál es la magnitud del contexto?_
 
-El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y señaló que el 79,6 % tenía unidades de menos de cinco hectáreas (INEI, 2014). Además, durante el primer trimestre de 2025 solo el 20,5 % de los hogares rurales disponía de Internet en el hogar (INEI, 2025). Estas cifras no cuantifican por sí solas el mercado de AniTec, pero muestran la escala de la pequeña producción agropecuaria y la necesidad de diseñar para un entorno de conectividad restringida.
+El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y señaló que el 79,6% tenía unidades de menos de cinco hectáreas (Instituto Nacional de Estadística e Informática [INEI], 2014). Además, durante el primer trimestre de 2025 solo el 20,5% de los hogares rurales disponía de Internet en el hogar (INEI, 2025). Estas cifras no cuantifican por sí solas el mercado de AniTec, pero muestran la escala de la pequeña producción agropecuaria y la necesidad de diseñar para un entorno de conectividad restringida.
 
 ### Descripción consolidada de los antecedentes y la problemática
 
@@ -778,11 +779,11 @@ El objetivo del proyecto es reducir la pérdida y fragmentación de información
 
 <a id="toc-1-2-2-lean-ux-process"></a>
 
-## 1.2.2. Lean UX Process.
+## 1.2.2. Lean UX Process
 
 <a id="toc-1-2-2-1-lean-ux-problem-statements"></a>
 
-### 1.2.2.1. Lean UX Problem Statements.
+### 1.2.2.1. Lean UX Problem Statements
 
 **Problem Statement:**
 
@@ -798,7 +799,7 @@ Sabremos que hemos tenido éxito cuando observemos una reducción en el uso de r
 
 <a id="toc-1-2-2-2-lean-ux-assumptions"></a>
 
-### 1.2.2.2. Lean UX Assumptions.
+### 1.2.2.2. Lean UX Assumptions
 
 ### **Business Assumptions:**
 
@@ -826,7 +827,7 @@ Sabremos que hemos tenido éxito cuando observemos una reducción en el uso de r
 
 - **Creemos que** AniTec debe ofrecer una experiencia Android intuitiva, legible y estable, pensada para usuarios con distintos niveles de experiencia tecnológica. También debe proteger los datos, comunicar los errores de conexión y permitir recuperar el trabajo pendiente.
 
-### Feature Assumptions:
+### Feature Assumptions
 
 **Feature Assumption 01**
 
@@ -860,7 +861,7 @@ Sabremos que hemos tenido éxito cuando observemos una reducción en el uso de r
 
 <a id="toc-1-2-2-3-lean-ux-hypothesis-statements"></a>
 
-### 1.2.2.3. Lean UX Hypothesis Statements.
+### 1.2.2.3. Lean UX Hypothesis Statements
 
 - **Hypothesis Statement 01:**
 
@@ -917,12 +918,12 @@ Sabremos que hemos tenido éxito cuando observemos una reducción en el uso de r
 
 <a id="toc-1-2-2-4-lean-ux-canvas"></a>
 
-### 1.2.2.4. Lean UX Canvas.
+### 1.2.2.4. Lean UX Canvas
 
-El Lean UX Canvas es una herramienta utilizada en el marco del diseño centrado en el usuario (UX) y la metodología Lean, cuyo objetivo es apoyar la creación y mejora de productos de manera ágil y eficiente. Su propósito principal es proporcionar una estructura organizada que fomente la colaboración entre equipos multidisciplinarios. A continuación, se presenta el Lean UX Canvas elaborado por el equipo utilizando la plataforma digital Mural.
+El Lean UX Canvas es una herramienta de diseño centrado en el usuario que permite organizar supuestos, resultados esperados y aprendizaje de manera colaborativa (Gothelf & Seiden, 2021). A continuación, se presenta el canvas elaborado por el equipo en Mural.
 
 ![Lean UX Canvas](markdown/assets/chapter-1/lean_ux_canvas.png)
-Enlace para acceder al Lean UX Canvas en Mural:  https://tinyurl.com/LeanUxCanvasMural
+Enlace para acceder al Lean UX Canvas en Mural: https://tinyurl.com/LeanUxCanvasMural
 
 
 <div style="page-break-before: always;"></div>
@@ -935,7 +936,7 @@ Enlace para acceder al Lean UX Canvas en Mural:  https://tinyurl.com/LeanUxCanva
 
 AniTec prioriza dos segmentos que participan directamente en el registro y uso de la información ganadera: pequeños y medianos ganaderos y veterinarios de campo. Esta delimitación permite diseñar los flujos móviles alrededor de tareas concretas y evita considerar como usuarios principales a organizaciones que solo cumplen un rol de apoyo o influencia.
 
-El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y encontró que el 79,6 % tenía unidades de menos de cinco hectáreas (INEI, 2014). Aunque estas cifras incluyen distintas actividades agropecuarias y no representan por sí solas el mercado de AniTec, evidencian la relevancia de la pequeña producción. El diseño también debe considerar la brecha de conectividad: en el primer trimestre de 2025, el 20,5 % de los hogares rurales disponía de Internet en el hogar (INEI, 2025). A la vez, el teléfono móvil es el principal medio de acceso: en el cuarto trimestre de 2025, el 89,2 % de las personas usuarias de Internet se conectó mediante un celular y, en el área rural, la proporción fue de 88,4 % (INEI, 2026). Estas condiciones respaldan una experiencia centrada en el teléfono, con persistencia local y tolerancia a conexiones intermitentes.
+El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y encontró que el 79,6% tenía unidades de menos de cinco hectáreas (INEI, 2014). Aunque estas cifras incluyen distintas actividades agropecuarias y no representan por sí solas el mercado de AniTec, evidencian la relevancia de la pequeña producción. El diseño también debe considerar la brecha de conectividad: en el primer trimestre de 2025, el 20,5% de los hogares rurales disponía de Internet en el hogar (INEI, 2025). A la vez, el teléfono móvil es el principal medio de acceso: en el cuarto trimestre de 2025, el 89,2% de las personas usuarias de Internet se conectó mediante un celular y, en el área rural, la proporción fue de 88,4% (INEI, 2026). Estas condiciones respaldan una experiencia centrada en el teléfono, con persistencia local y tolerancia a conexiones intermitentes.
 
 ## Pequeños y medianos ganaderos
 
@@ -978,7 +979,7 @@ Las asociaciones ganaderas, cooperativas, técnicos agropecuarios y entidades p�
 
 <!-- Documentation marker: competitor analysis section. -->
 
-El análisis competitivo permite conocer cómo otras soluciones digitales atienden la gestión ganadera y qué aspectos debe validar AniTec para diferenciarse. Se seleccionaron tres competidores directos con productos móviles vigentes: Livestock Manager, AgriWebb e iLivestock. La comparación se concentra en las capacidades relevantes para la aplicación Android de AniTec y utiliza información publicada en los sitios oficiales de cada producto, consultada el 13 de septiembre de 2026.
+El análisis competitivo permite conocer cómo otras soluciones digitales atienden la gestión ganadera y qué aspectos debe validar AniTec para diferenciarse. Se seleccionaron tres competidores directos con productos móviles vigentes: Livestock Manager, AgriWebb e iLivestock. La comparación se concentra en las capacidades relevantes para la aplicación Android de AniTec y utiliza información publicada en los sitios oficiales de cada producto, consultada el 13 de septiembre de 2026 (AgriWebb, s. f.-a, s. f.-b; iLivestock, s. f.-a, s. f.-b; Livestock Manager, s. f.).
 
 <a id="toc-2-1-1-analisis-competitivo"></a>
 
@@ -1071,7 +1072,7 @@ El análisis competitivo permite conocer cómo otras soluciones digitales atiend
       <td>Landing page web y, cuando se implemente y publique, Google Play para la aplicación Android. El canal de la aplicación multiplataforma permanece por definir.</td>
       <td>Aplicaciones para Android e iOS y acceso web o de escritorio.</td>
       <td>Aplicaciones para Android e iOS y aplicación web.</td>
-      <td>Aplicaciones para Android e iOS y acceso desde smartphone, tableta, PC o Mac.</td>
+      <td>Aplicaciones para Android e iOS y acceso desde un teléfono inteligente, una tableta, una PC o una Mac.</td>
     </tr>
   </tbody>
 </table>
@@ -1156,29 +1157,27 @@ Las campañas de referidos, alianzas con asociaciones, participación en ferias 
 
 <a id="toc-2-2-entrevistas"></a>
 
-# 2.2. Entrevistas.
+# 2.2. Entrevistas
 
 <!-- Documentation marker: interview research section. -->
 
 Las entrevistas son una herramienta esencial para comprender a fondo a nuestro público objetivo. Para que sean efectivas, deben seguir una estructura clara y directa, utilizando preguntas específicas que permitan recolectar información de valor y datos precisos de los participantes.
 
-<div id='2.2.1.'><h4> 2.2.1. Diseño de entrevistas. </h4></div>
-
 Objetivo: Identificar frustraciones, necesidades, dispositivos disponibles, grado de digitalización y percepción sobre el registro de información ganadera.
 
 <a id="toc-2-2-1-diseno-de-entrevistas"></a>
 
-## 2.2.1. Diseño de entrevistas.
+## 2.2.1. Diseño de entrevistas
 
-### Segmentos entrevistados:
+### Segmentos entrevistados
 
 - Ganaderos
 
 - Veterinarios
 
-Formato: Entrevistas semiestructuradas, de 25-30 minutos, registradas en video con consentimiento.
+Formato: Entrevistas semiestructuradas, de 25 a 30 minutos, registradas en video con consentimiento.
 
-Preguntas dirigidas al personal de **Ganaderos**.
+Preguntas dirigidas a los **ganaderos**.
 
 Preguntas principales:
 
@@ -1206,12 +1205,12 @@ Preguntas principales:
 
 - ¿Qué tipo de información considera más importante tener a la mano sobre su ganado?
 
-- ¿Estaría dispuesto a usar una aplicación móvil/web para llevar el control del ganado si fuera sencilla y funcional?
+- ¿Estaría dispuesto a usar una aplicación móvil o web para llevar el control del ganado si fuera sencilla y funcional?
 
 - ¿Qué funcionalidades le gustaría que tenga esta herramienta (alertas, historial médico, reproductivo, reportes, etc.)?
 - ¿Qué beneficios espera al adoptar una herramienta digital para su ganadería?
 
-### Preguntas dirigidas a los **Veterinarios**
+### Preguntas dirigidas a los **veterinarios**
 
 Preguntas principales:
 
@@ -1237,7 +1236,7 @@ Preguntas principales:
 
 - ¿Le resultaría útil tener acceso al historial médico del animal antes de una consulta?
 
-- ¿Qué tan dispuesto estaría a utilizar una aplicación móvil/web para registrar y acceder al historial de sus pacientes?
+- ¿Qué tan dispuesto estaría a utilizar una aplicación móvil o web para registrar y acceder al historial de sus pacientes?
 
 - ¿Qué funcionalidades considera clave en una herramienta digital veterinaria (calendario, historial, recordatorios, fichas clínicas)?
 
@@ -1245,15 +1244,15 @@ Preguntas principales:
 
 - ¿Qué tan importante considera el análisis de datos (estadísticas de salud, tratamientos más comunes, etc.) en su labor?
 
-### Preguntas complementarias (para ambos segmentos):
+### Preguntas complementarias para ambos segmentos
 
 - ¿Qué expectativas tendría sobre una plataforma digital que centralice la información ganadera y veterinaria?
 
-- ¿Qué dispositivos usa con más frecuencia para sus actividades laborales (celular, laptop, tablet)? ¿Está familiarizado con el uso de apps?
+- ¿Qué dispositivos usa con más frecuencia para sus actividades laborales (teléfono celular, computadora portátil o tableta)? ¿Está familiarizado con el uso de aplicaciones?
 
 - ¿Qué es lo que más valora en una herramienta digital: rapidez, facilidad de uso, seguridad de datos u otro aspecto?
 
-### Preguntas principales (comunes):
+### Preguntas principales comunes
 
 1. ¿Cómo lleva actualmente el registro de su ganado (peso, salud, vacunas)?
 
@@ -1265,28 +1264,28 @@ Preguntas principales:
 
 5. ¿Ha perdido información relevante alguna vez?
 
-6. ¿Qué contenido educativo le interesaría tener en una app?
+6. ¿Qué contenido educativo le interesaría tener en una aplicación?
 
 7. ¿Qué canales digitales usa actualmente (WhatsApp, redes sociales, etc.)?
 
-Variables demográficas a recolectar: Edad, género, distrito de residencia, educación, tipo de hacienda, frecuencia de registros, ocupación alterna, herramientas digitales que maneja, tipo de celular, acceso a internet, objetivos personales, frustraciones, marcas preferidas, influencia de técnicos o asociaciones.
+Variables demográficas que se recopilarán: edad, género, distrito de residencia, educación, tipo de hacienda, frecuencia de los registros, ocupación alterna, herramientas digitales que maneja, tipo de celular, acceso a internet, objetivos personales, frustraciones, marcas preferidas e influencia de técnicos o asociaciones.
 
 <a id="toc-2-2-2-registro-de-entrevistas"></a>
 
-## 2.2.2. Registro de entrevistas.
+## 2.2.2. Registro de entrevistas
 
 ### Entrevistas al segmento de ganaderos
 
-#### Entrevista 1: Caterina Rodriguez
+#### Entrevista 1: Caterina Rodríguez
 
 <div align="center">
 
 | Campo | Información |
 |-------|-------------|
-| Segmento | Ganadero |
-| Nombres y apellidos | Caterina Rodriguez |
+| Segmento | Ganadera |
+| Nombres y apellidos | Caterina Rodríguez |
 | Edad | 33 años |
-| Distrito | San miguel, Lima |
+| Distrito | San Miguel, Lima |
 | Ocupación | Ganadera con más de 9 años de experiencia |
 | Tipo de ganado | Ganado porcino |
 | Tamaño aproximado del ganado | 16 cabezas de ganado |
@@ -1302,21 +1301,21 @@ Variables demográficas a recolectar: Edad, género, distrito de residencia, edu
 
 **Resumen de la entrevista:**
 
-Caterina Rodríguez es una ganadera de 33 años con aproximadamente ocho años de experiencia en el manejo, principalmente, de ganado vacuno. Actualmente gestiona alrededor de 45 animales junto a un equipo de tres personas (dos familiares y un cuidador). Durante la entrevista, explicó que su gestión de datos se realiza de manera fragmentada: utiliza un cuaderno físico, un cuadro de Excel y su teléfono celular (tomando fotos y notas) para registrar información sobre salud, alimentación y reproducción. Esta forma de trabajo, a la que dedica entre 20 y 30 minutos diarios, le genera dificultades para mantener la información organizada. La entrevistada señaló que los datos suelen traspapelarse o perderse al estar en distintos formatos, o resultar incomprensibles por la mala caligrafía, lo que complica el seguimiento preciso de vacunas y tratamientos.
+Caterina Rodríguez es una ganadera de 33 años con aproximadamente ocho años de experiencia, principalmente en el manejo de ganado vacuno. Actualmente gestiona alrededor de 45 animales junto con un equipo de tres personas (dos familiares y un cuidador). Durante la entrevista, explicó que su gestión de datos se realiza de manera fragmentada: utiliza un cuaderno físico, un cuadro de Excel y su teléfono celular (mediante fotos y notas) para registrar información sobre salud, alimentación y reproducción. Esta forma de trabajo, a la que dedica entre 20 y 30 minutos diarios, le genera dificultades para mantener la información organizada. La entrevistada señaló que los datos suelen traspapelarse o perderse por estar en distintos formatos y que algunos resultan incomprensibles por la mala caligrafía, lo que complica el seguimiento preciso de vacunas y tratamientos.
 
 En cuanto a su perfil tecnológico y forma de trabajo, Caterina se muestra como una persona consciente de la necesidad de optimizar su tiempo y mejorar la toma de decisiones en su ganadería. Valora tener a la mano información vital de cada animal, como edad, peso, historial de enfermedades y tratamientos. Respecto a la tecnología, confía en las herramientas digitales, aunque hasta ahora no ha utilizado ninguna aplicación especializada en el manejo ganadero. Su dispositivo principal es el celular, siendo WhatsApp la aplicación que más utiliza para registrar información y comunicarse, además de usar redes sociales como Facebook y TikTok. El uso de la computadora es mínimo y lo reserva casi exclusivamente para revisar Excel.
 
 La entrevista permitió identificar que Caterina está totalmente dispuesta a utilizar una aplicación móvil o web para el control de su ganado. Destacó que la herramienta ideal debe centralizar la información (usando códigos por animal), contar con un historial médico y reproductivo, y emitir alertas de vacunación y atención. Un punto crucial para ella es que la plataforma sea muy sencilla e intuitiva de usar, ya que sus familiares, que son personas mayores, también deberán interactuar con ella. Además, mostró interés en recibir contenido educativo sobre prevención de enfermedades, alimentación y cuidado de terneros. Esta información sustenta el arquetipo de una ganadera joven que reconoce las limitaciones de los métodos tradicionales y busca una digitalización práctica y accesible que unifique el trabajo de su equipo familiar.
 
 
-#### Entrevista 2: Rebeca Noemi Quiroz Roldan
+#### Entrevista 2: Rebeca Noemí Quiroz Roldán
 
 <div align="center">
 
 | Campo | Información |
 |-------|-------------|
 | Segmento | Ganadera |
-| Nombres y apellidos | Rebeca Noemi Quiroz Roldan |
+| Nombres y apellidos | Rebeca Noemí Quiroz Roldán |
 | Edad | 54 años |
 | Distrito | Lima |
 | Ocupación | Productora ganadera |
@@ -1334,27 +1333,27 @@ La entrevista permitió identificar que Caterina está totalmente dispuesta a ut
 
 **Resumen de la entrevista:**
 
-Rebeca Noemi Quiroz Roldan comentó que su actividad ganadera se enfoca en el cuidado de ganado vacuno y que una de sus mayores preocupaciones aparece cuando se presentan enfermedades como mastitis o cuando los terneros se enferman. Actualmente registra la información mediante cuadernos, apuntes y hojas sueltas. Aunque mencionó que logra manejar su actividad con estos medios, también reconoció que una aplicación podría ayudarle a tener mayor orden y a recordar eventos importantes, como vacunaciones, dosis de medicamentos y controles sanitarios.
+Rebeca Noemí Quiroz Roldán comentó que su actividad ganadera se enfoca en el cuidado de ganado vacuno y que una de sus mayores preocupaciones aparece cuando se presentan enfermedades como mastitis o cuando los terneros se enferman. Actualmente registra la información mediante cuadernos, apuntes y hojas sueltas. Aunque mencionó que logra manejar su actividad con estos medios, también reconoció que una aplicación podría ayudarle a tener mayor orden y a recordar eventos importantes, como vacunaciones, dosis de medicamentos y controles sanitarios.
 
-En sus respuestas se observa una personalidad responsable y preventiva. Rebeca valora la seguridad y la confianza antes de adoptar una herramienta digital, por lo que una solución como AniTec debe transmitir protección de datos, facilidad de uso y utilidad concreta. Su principal canal de interacción es el celular, especialmente WhatsApp, ya que lo usa para comunicarse con familiares, trabajadores y profesionales que la asesoran. Además, suele apoyarse en un ingeniero o especialista para atender problemas sanitarios del ganado, lo que muestra que sus decisiones están influenciadas por personal técnico de confianza.
+En sus respuestas se observa una personalidad responsable y preventiva. Rebeca valora la seguridad y la confianza antes de adoptar una herramienta digital, por lo que una solución como AniTec debe transmitir protección de datos, facilidad de uso y utilidad concreta. Su principal canal de interacción es el celular, especialmente WhatsApp, ya que lo usa para comunicarse con familiares, trabajadores y profesionales que la asesoran. Además, suele apoyarse en un ingeniero o especialista para atender problemas sanitarios del ganado, lo que muestra que sus decisiones están influidas por personal técnico de confianza.
 
-Respecto a tecnología, utiliza smartphone y navegación básica desde el celular. No manifestó rechazo hacia las aplicaciones, pero sí dejó claro que no desea una herramienta complicada. Esta entrevista ayuda a justificar funciones como recordatorios, alertas sanitarias, registro simple de enfermedades y acceso rápido a datos importantes. Sus respuestas aportan evidencia para construir un arquetipo de ganadera que tiene disposición a digitalizarse siempre que la plataforma sea segura, clara y útil para resolver problemas reales del manejo diario.
+Respecto a la tecnología, utiliza un teléfono inteligente y realiza una navegación básica desde el celular. No manifestó rechazo hacia las aplicaciones, pero sí dejó claro que no desea una herramienta complicada. Esta entrevista ayuda a justificar funciones como recordatorios, alertas sanitarias, registro simple de enfermedades y acceso rápido a datos importantes. Sus respuestas aportan evidencia para construir un arquetipo de ganadera dispuesta a digitalizarse siempre que la plataforma sea segura, clara y útil para resolver problemas reales del manejo diario.
 
-#### Entrevista 3: Ursula Trigozo Salcedo
+#### Entrevista 3: Úrsula Trigozo Salcedo
 
 <div align="center">
 
-| Campo | Información                                                                                                                                                                                                                                                                                                             |
-|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Segmento | Ganadero                                                                                                                                                                                                                                                                                                                |
-| Nombres y apellidos | Ursula trigozo Salcedo                                                                                                                                                                                                                                                                                                  |
-| Edad | 64 años                                                                                                                                                                                                                                                                                                                 |
-| Distrito | Lurin, Lima                                                                                                                                                                                                                                                                                                             |
-| Ocupación | Ganadero artesanal                                                                                                                                                                                                                                                                                                      |
-| Tipo de ganado | Ganado vacuno                                                                                                                                                                                                                                                                                                           |
-| Tamaño aproximado del ganado | Hato pequeño familiar                                                                                                                                                                                                                                                                                                   |
-| Inicio de la entrevista | 00:00                                                                                                                                                                                                                                                                                                                   |
-| Duración | 00:10:31                                                                                                                                                                                                                                                                                                                |
+| Campo | Información |
+|---|---|
+| Segmento | Ganadera |
+| Nombres y apellidos | Úrsula Trigozo Salcedo |
+| Edad | 64 años |
+| Distrito | Lurín, Lima |
+| Ocupación | Ganadera artesanal |
+| Tipo de ganado | Ganado vacuno |
+| Tamaño aproximado del ganado | Hato pequeño familiar |
+| Inicio de la entrevista | 00:00 |
+| Duración | 00:10:31 |
 | URL del video | https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQDw1Fks32sxQroa9TMJpBhPAffdaO--WIZy3fKexREgNhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=H1KzAW |
 
 </div>
@@ -1376,14 +1375,14 @@ En este perfil, AniTec debe enfocarse en centralizar la información, ahorrar ti
 
 ### Entrevistas al segmento de veterinarios
 
-#### Entrevista 4: Angela Mendoza
+#### Entrevista 4: Ángela Mendoza
 
 <div align="center">
 
 | Campo | Información |
 |-------|-------------|
 | Segmento | Veterinaria |
-| Nombres y apellidos | Angela Mendoza |
+| Nombres y apellidos | Ángela Mendoza |
 | Edad | 24 años |
 | Distrito | Camaná, Arequipa |
 | Ocupación | Médica veterinaria |
@@ -1401,9 +1400,9 @@ En este perfil, AniTec debe enfocarse en centralizar la información, ahorrar ti
 
 **Resumen de la entrevista:**
 
-Angela Mendoza explicó que en su trabajo como veterinaria observa que muchos productores todavía gestionan la información sanitaria con cuadernos físicos, archivos simples de Excel, fotografías y conversaciones de WhatsApp. Esta dispersión de datos afecta el seguimiento de vacunas, tratamientos, diagnósticos y antecedentes clínicos. También mencionó que, en visitas de emergencia o campañas sanitarias, la falta de información ordenada puede retrasar la atención y complicar la toma de decisiones.
+Ángela Mendoza explicó que en su trabajo como veterinaria observa que muchos productores todavía gestionan la información sanitaria con cuadernos físicos, archivos simples de Excel, fotografías y conversaciones de WhatsApp. Esta dispersión de datos afecta el seguimiento de vacunas, tratamientos, diagnósticos y antecedentes clínicos. También mencionó que, en visitas de emergencia o campañas sanitarias, la falta de información ordenada puede retrasar la atención y complicar la toma de decisiones.
 
-Su perfil evidencia una personalidad organizada, técnica y orientada al servicio. Angela valora la rapidez, la trazabilidad y la claridad de la información porque su trabajo depende de revisar antecedentes antes de indicar tratamientos. Sus canales principales de interacción son WhatsApp, llamadas telefónicas y archivos digitales básicos que comparte con productores. Usa smartphone y laptop para su labor diaria, y se siente cómoda navegando en Google Chrome o usando herramientas web cuando necesita consultar información técnica. Sus influencias profesionales provienen de su formación veterinaria, colegas del sector, campañas sanitarias y necesidades reales observadas en campo.
+Su perfil evidencia una personalidad organizada, técnica y orientada al servicio. Ángela valora la rapidez, la trazabilidad y la claridad de la información porque su trabajo depende de revisar antecedentes antes de indicar tratamientos. Sus canales principales de interacción son WhatsApp, llamadas telefónicas y archivos digitales básicos que comparte con productores. Usa un teléfono inteligente y una computadora portátil para su labor diaria, y se siente cómoda navegando en Google Chrome o usando herramientas web cuando necesita consultar información técnica. Sus influencias profesionales provienen de su formación veterinaria, colegas del sector, campañas sanitarias y necesidades reales observadas en campo.
 
 La entrevistada considera que una herramienta como AniTec sería útil si permite centralizar el historial clínico de cada animal, registrar tratamientos, programar seguimientos y mejorar la comunicación con los ganaderos. Sin embargo, remarcó que la plataforma debe ser rápida y fácil de usar, porque el trabajo veterinario de campo no permite perder tiempo en procesos largos. Esta entrevista aporta evidencia para el arquetipo de veterinaria joven que usa tecnología, pero necesita una solución enfocada en eficiencia clínica y coordinación con productores.
 
@@ -1416,7 +1415,7 @@ La entrevistada considera que una herramienta como AniTec sería útil si permit
 | Segmento | Veterinario |
 | Nombres y apellidos | Jeferson Castro Pariona |
 | Edad | 27 años |
-| Distrito | Ventanilla, Lima (Residencia) |
+| Distrito | Ventanilla, Lima (residencia) |
 | Ocupación | Médico veterinario |
 | Zona de trabajo | Selva central del Perú |
 | Tipo de atención | Atención clínica y sanitaria de ganado en campo |
@@ -1434,17 +1433,17 @@ La entrevistada considera que una herramienta como AniTec sería útil si permit
 
 Jeferson Castro Pariona comentó que el reto más grande y frecuente en la atención veterinaria ganadera es la falta de trazabilidad y la pérdida de continuidad en el historial médico de los animales. Explicó que la información suele estar dispersa en cuadernos, notas físicas, hojas de cálculo o chats de WhatsApp, y que cuando se enfrentan emergencias o se incorporan nuevos animales, debe tomar decisiones clínicas con datos limitados. Esto afecta directamente la planificación sanitaria, la efectividad de los tratamientos y el seguimiento de las intervenciones.
 
-El entrevistado muestra un perfil analítico, práctico y orientado a la tecnología como herramienta de trabajo diario. Utiliza su smartphone para la comunicación y el registro rápido en campo, y su laptop para consultas técnicas más detalladas. Considera fundamental contar con datos concretos antes de intervenir y valora la rapidez, la facilidad de uso y la intuición en cualquier herramienta digital, especialmente considerando los retos de conectividad en el entorno rural.
+El entrevistado muestra un perfil analítico, práctico y orientado a la tecnología como herramienta de trabajo diario. Utiliza su teléfono inteligente para la comunicación y el registro rápido en campo, y su computadora portátil para consultas técnicas más detalladas. Considera fundamental contar con datos concretos antes de intervenir y valora la rapidez, la facilidad de uso y la intuición en cualquier herramienta digital, especialmente considerando los retos de conectividad en el entorno rural.
 
 Según sus respuestas, una plataforma digital (como AniTec) le aportaría un valor significativo si logra centralizar la información sin ser un sistema pesado. Sus funcionalidades clave ideales incluyen: acceso inmediato al historial sanitario del animal, un módulo rápido para registrar diagnósticos y tratamientos, alertas de vacunación o reproducción para programar rutas de campo, y un canal claro de comunicación con el ganadero. También valoró la inclusión de contenido educativo rápido, como fichas técnicas o información sobre brotes en la región. En conclusión, está totalmente dispuesto a digitalizar su labor para reducir los errores derivados de la información dispersa, siempre y cuando la herramienta se integre de forma ágil a su flujo real de trabajo en el campo.
 
 <a id="toc-2-2-3-analisis-de-entrevistas"></a>
 
-## 2.2.3. Análisis de entrevistas.
+## 2.2.3. Análisis de entrevistas
 
 ### Análisis del segmento de Ganaderos
 
-Para el segmento de ganaderos se analizaron 3 entrevistas: Vicente Huamán Alacutte, Rebeca Noemi Quiroz Roldan y Porfirio Salazar Rodriguez. La muestra evidencia un perfil de productores con experiencia práctica, uso frecuente de métodos tradicionales y apertura moderada hacia herramientas digitales siempre que sean simples, útiles y accesibles.
+Para el segmento de ganaderos se analizaron 3 entrevistas: Vicente Huamán Alacutte, Rebeca Noemí Quiroz Roldán y Porfirio Salazar Rodríguez. La muestra evidencia un perfil de productores con experiencia práctica, uso frecuente de métodos tradicionales y apertura moderada hacia herramientas digitales siempre que sean simples, útiles y accesibles.
 
 <div align="center">
 
@@ -1455,8 +1454,8 @@ Para el segmento de ganaderos se analizaron 3 entrevistas: Vicente Huamán Alacu
 | Necesidad de controlar salud y tratamientos | 2 de 3 entrevistados (66.7%) mencionan directamente problemas relacionados con enfermedades, tratamientos o control sanitario. | Vicente menciona control de enfermedades y vacunación; Rebeca menciona mastitis, terneros enfermos y dosis de medicamentos. | El arquetipo necesita alertas sanitarias, historial médico y recordatorios de vacunación o tratamiento. |
 | Uso del celular como canal principal | 3 de 3 entrevistados (100%) muestran familiaridad básica con el celular como medio de comunicación o consulta. | Vicente usa celular y WhatsApp; Rebeca usa principalmente su celular; Porfirio utiliza celular y comunicación por WhatsApp. | La solución debe funcionar bien en pantallas pequeñas y permitir una interacción directa desde dispositivos móviles. |
 | Interés en adoptar tecnología | 3 de 3 entrevistados (100%) reconocen que la tecnología podría ayudar a mejorar su gestión. | Vicente afirma que la tecnología puede profesionalizar el sector; Rebeca estaría dispuesta a usar una aplicación; Porfirio considera que la tecnología podría mejorar su productividad. | El arquetipo no rechaza la tecnología, pero necesita percibir un beneficio claro antes de usarla. |
-| Necesidad de simplicidad | 3 de 3 entrevistados (100%) requieren que la herramienta sea sencilla, clara o fácil de justificar en el trabajo diario. | Vicente pide una app sencilla para el hombre de campo; Rebeca no desea una herramienta complicada; Porfirio evalúa si el beneficio justifica la inversión. | La interfaz debe usar lenguaje simple, formularios directos y pocos pasos para completar tareas. |
-| Influencia de terceros en decisiones | 3 de 3 entrevistados (100%) dependen o se ven influenciados por otras personas del entorno ganadero. | Vicente considera compradores y técnicos; Rebeca se apoya en un especialista; Porfirio aprende de experiencia familiar y otros productores. | El arquetipo toma decisiones con apoyo de redes de confianza, por lo que la app debe transmitir seguridad y utilidad comprobable. |
+| Necesidad de simplicidad | 3 de 3 entrevistados (100%) requieren que la herramienta sea sencilla, clara o fácil de justificar en el trabajo diario. | Vicente pide una aplicación sencilla para el hombre de campo; Rebeca no desea una herramienta complicada; Porfirio evalúa si el beneficio justifica la inversión. | La interfaz debe usar lenguaje simple, formularios directos y pocos pasos para completar tareas. |
+| Influencia de terceros en decisiones | 3 de 3 entrevistados (100%) dependen o se ven influidos por otras personas del entorno ganadero. | Vicente considera compradores y técnicos; Rebeca se apoya en un especialista; Porfirio aprende de la experiencia familiar y de otros productores. | El arquetipo toma decisiones con apoyo de redes de confianza, por lo que la aplicación debe transmitir seguridad y utilidad comprobable. |
 | Sensibilidad al costo | 1 de 3 entrevistados (33.3%) menciona directamente el costo como barrera. | Porfirio indica que necesitaría capital suficiente para pagar una solución digital. | El modelo de adopción debe considerar planes accesibles, prueba gratuita o beneficios económicos visibles. |
 
 </div>
@@ -1467,33 +1466,33 @@ Desde el punto de vista subjetivo, los ganaderos entrevistados valoran la confia
 
 ### Análisis del segmento de Veterinarios
 
-Para el segmento de veterinarios se analizaron 2 entrevistas: Angela Mendoza y Jeferson Castro Pariona. La muestra evidencia un perfil profesional joven, con experiencia en atención de campo, necesidad de información clínica ordenada y uso de herramientas digitales básicas para comunicarse con productores.
+Para el segmento de veterinarios se analizaron 2 entrevistas: Ángela Mendoza y Jeferson Castro Pariona. La muestra evidencia un perfil profesional joven, con experiencia en atención de campo, necesidad de información clínica ordenada y uso de herramientas digitales básicas para comunicarse con productores.
 
 <div align="center">
 
 | Característica identificada | Resultado estadístico | Sustento en entrevistas | Relación con el arquetipo |
 |-----------------------------|----------------------|-------------------------|---------------------------|
-| Profesionales jóvenes | 2 de 2 entrevistados (100%) tienen entre 24 y 27 años. | Angela tiene 24 años; Jeferson tiene 27 años. | El arquetipo puede representarse como un veterinario joven, con mayor disposición a usar herramientas digitales. |
-| Trabajo en campo o zonas descentralizadas | 2 de 2 entrevistados (100%) trabajan o han trabajado en zonas fuera del entorno urbano principal. | Angela trabaja en la sierra sur; Jeferson tiene experiencia en la selva central. | La solución debe considerar rapidez, movilidad y uso en contextos con posible conectividad limitada. |
-| Problemas por registros incompletos o dispersos | 2 de 2 entrevistados (100%) mencionan información sanitaria desordenada o incompleta. | Angela menciona cuadernos, Excel, fotos y WhatsApp; Jeferson menciona cuadernos, notas físicas, hojas de cálculo y chats de WhatsApp. | El arquetipo necesita acceso centralizado al historial clínico y sanitario de los animales. |
-| Uso de WhatsApp y herramientas digitales básicas | 2 de 2 entrevistados (100%) usan canales digitales simples para comunicarse o complementar su trabajo. | Angela usa WhatsApp, llamadas y archivos digitales; Jeferson usa smartphone en campo y laptop para consultas técnicas. | AniTec debe integrarse al flujo real del veterinario y reducir la dependencia de información dispersa. |
-| Necesidad de historial clínico previo | 2 de 2 entrevistados (100%) señalan que conocer antecedentes mejora la atención. | Angela necesita revisar antecedentes antes de tratamientos; Jeferson indica que la falta de trazabilidad obliga a decidir con datos limitados. | El arquetipo requiere fichas clínicas, historial sanitario y acceso rápido a tratamientos previos. |
-| Valoración de rapidez y facilidad de uso | 2 de 2 entrevistados (100%) indican que la herramienta debe ser rápida, intuitiva y adaptada al campo. | Angela remarca que no puede perder tiempo en procesos largos; Jeferson pide rapidez, facilidad de uso e integración ágil al trabajo rural. | La interfaz veterinaria debe permitir registrar atenciones con pocos pasos y consultar datos al instante. |
-| Necesidad de mejorar comunicación con ganaderos | 2 de 2 entrevistados (100%) consideran importante coordinar mejor con productores. | Angela menciona mejorar comunicación con ganaderos; Jeferson valora un canal claro de comunicación con el productor. | El arquetipo necesita funciones de seguimiento, coordinación y comunicación clara con el productor. |
-| Actitud favorable hacia herramientas tecnológicas | 2 de 2 entrevistados (100%) muestran apertura a soluciones digitales para mejorar su trabajo. | Angela considera útil centralizar historial y seguimiento; Jeferson está dispuesto a digitalizar su labor si la herramienta no es pesada y aporta alertas, registro rápido y contenido educativo. | El arquetipo es un usuario con mayor predisposición digital que el ganadero, pero exige eficiencia profesional. |
+| Profesionales jóvenes | 2 de 2 entrevistados (100%) tienen entre 24 y 27 años. | Ángela tiene 24 años; Jeferson tiene 27 años. | El arquetipo puede representarse como un veterinario joven, con mayor disposición a usar herramientas digitales. |
+| Trabajo en campo o zonas descentralizadas | 2 de 2 entrevistados (100%) trabajan o han trabajado en zonas fuera del entorno urbano principal. | Ángela trabaja en la sierra sur; Jeferson tiene experiencia en la selva central. | La solución debe considerar rapidez, movilidad y uso en contextos con posible conectividad limitada. |
+| Problemas por registros incompletos o dispersos | 2 de 2 entrevistados (100%) mencionan información sanitaria desordenada o incompleta. | Ángela menciona cuadernos, Excel, fotos y WhatsApp; Jeferson menciona cuadernos, notas físicas, hojas de cálculo y chats de WhatsApp. | El arquetipo necesita acceso centralizado al historial clínico y sanitario de los animales. |
+| Uso de WhatsApp y herramientas digitales básicas | 2 de 2 entrevistados (100%) usan canales digitales simples para comunicarse o complementar su trabajo. | Ángela usa WhatsApp, llamadas y archivos digitales; Jeferson usa el teléfono inteligente en campo y la computadora portátil para consultas técnicas. | AniTec debe integrarse al flujo real del veterinario y reducir la dependencia de información dispersa. |
+| Necesidad de historial clínico previo | 2 de 2 entrevistados (100%) señalan que conocer antecedentes mejora la atención. | Ángela necesita revisar antecedentes antes de tratamientos; Jeferson indica que la falta de trazabilidad obliga a decidir con datos limitados. | El arquetipo requiere fichas clínicas, historial sanitario y acceso rápido a tratamientos previos. |
+| Valoración de rapidez y facilidad de uso | 2 de 2 entrevistados (100%) indican que la herramienta debe ser rápida, intuitiva y adaptada al campo. | Ángela remarca que no puede perder tiempo en procesos largos; Jeferson pide rapidez, facilidad de uso e integración ágil al trabajo rural. | La interfaz veterinaria debe permitir registrar atenciones con pocos pasos y consultar datos al instante. |
+| Necesidad de mejorar comunicación con ganaderos | 2 de 2 entrevistados (100%) consideran importante coordinar mejor con productores. | Ángela menciona mejorar la comunicación con ganaderos; Jeferson valora un canal claro de comunicación con el productor. | El arquetipo necesita funciones de seguimiento, coordinación y comunicación clara con el productor. |
+| Actitud favorable hacia herramientas tecnológicas | 2 de 2 entrevistados (100%) muestran apertura a soluciones digitales para mejorar su trabajo. | Ángela considera útil centralizar el historial y el seguimiento; Jeferson está dispuesto a digitalizar su labor si la herramienta no es pesada y aporta alertas, registro rápido y contenido educativo. | El arquetipo es un usuario con mayor predisposición digital que el ganadero, pero exige eficiencia profesional. |
 
 </div>
 
 El análisis del segmento veterinario muestra que las principales necesidades están relacionadas con trazabilidad clínica, acceso rápido a información y coordinación con productores. El 100% de los entrevistados menciona problemas por información dispersa y el 100% considera importante contar con antecedentes del animal antes o durante la atención. Esto evidencia que el arquetipo veterinario debe estar construido alrededor de la toma de decisiones clínicas, el seguimiento sanitario y la necesidad de reducir incertidumbre durante el trabajo de campo.
 
-En cuanto a características subjetivas, ambos veterinarios se muestran más familiarizados con la tecnología que el segmento ganadero. Angela representa un perfil organizado, técnico y orientado al servicio, mientras que Jeferson muestra un perfil analítico, práctico y orientado a la tecnología. Ambos valoran la rapidez, la trazabilidad y la utilidad real. Por ello, el arquetipo de veterinario debe representar a un profesional joven, móvil, acostumbrado a usar herramientas digitales básicas, pero que necesita una plataforma más integrada para evitar pérdida de información y mejorar la continuidad de tratamientos.
+En cuanto a características subjetivas, ambos veterinarios se muestran más familiarizados con la tecnología que el segmento ganadero. Ángela representa un perfil organizado, técnico y orientado al servicio, mientras que Jeferson muestra un perfil analítico, práctico y orientado a la tecnología. Ambos valoran la rapidez, la trazabilidad y la utilidad real. Por ello, el arquetipo de veterinario debe representar a un profesional joven, móvil, acostumbrado a usar herramientas digitales básicas, pero que necesita una plataforma más integrada para evitar pérdida de información y mejorar la continuidad de tratamientos.
 
 
 <div style="page-break-before: always;"></div>
 
 <a id="toc-2-3-needfinding"></a>
 
-# 2.3. Needfinding.
+# 2.3. Needfinding
 
 <!-- Documentation marker: Needfinding section. -->
 
@@ -1501,7 +1500,7 @@ En esta sección se presentarán los artefactos resultantes del proceso de anál
 
 <a id="toc-2-3-1-user-personas"></a>
 
-## 2.3.1. User Personas.
+## 2.3.1. User Personas
 
 A continuación, se presentan los User Personas diseñados para representar a los segmentos objetivo identificados durante la fase de investigación. Estos arquetipos detallan variables demográficas, rasgos psicográficos, motivaciones y comportamientos, así como los pains (frustraciones) y gains (objetivos) que enfrentan en su gestión diaria. Asimismo, se analiza su nivel digital y su interacción con soluciones tecnológicas del sector agropecuario. Toda la información ha sido sintetizada a partir de los insights recolectados en las entrevistas y estructurada mediante la plataforma UXPressia para garantizar una representación fiel de las necesidades del usuario.
 
@@ -1519,7 +1518,7 @@ A continuación, se presentan los User Personas diseñados para representar a lo
 
 <a id="toc-2-3-2-user-task-matrix"></a>
 
-## 2.3.2. User Task Matrix.
+## 2.3.2. User Task Matrix
 
 A través de la User Task Matrix, es posible identificar y organizar las principales actividades que los usuarios realizan actualmente dentro de su contexto de trabajo. Al categorizar estas tareas según su frecuencia e importancia, se logra comprender cuáles representan mayores dificultades y necesidades para cada perfil de usuario, permitiendo detectar oportunidades de mejora en la gestión ganadera y veterinaria.
 
@@ -1540,7 +1539,7 @@ La User Task Matrix evidencia que tanto Jorge Luis como Valeria realizan constan
 
 <a id="toc-2-3-3-user-journey-mapping"></a>
 
-## 2.3.3. User Journey Mapping.
+## 2.3.3. User Journey Mapping
 
 En este apartado se describe de manera detallada el recorrido y la experiencia actual de los usuarios dentro de su contexto de trabajo cotidiano, enfocándose específicamente en los dos perfiles clave identificados: productores ganaderos y médicos veterinarios. A través de los User Journey Maps As-Is, se analizan las actividades, emociones, problemas y necesidades que experimentan los usuarios durante la gestión y seguimiento del ganado, sin considerar aún la existencia de una solución tecnológica implementada.
 
@@ -1557,7 +1556,7 @@ User Veterinario:
 
 <a id="toc-2-3-4-empathy-mapping"></a>
 
-## 2.3.4. Empathy Mapping.
+## 2.3.4. Empathy Mapping
 
 En esta sección se presenta el proceso de elaboración de los Empathy Maps correspondientes a los User Personas identificados para el proyecto: el productor ganadero y la médica veterinaria. Para el desarrollo de estos mapas de empatía, el equipo analizó la información obtenida durante la etapa de investigación y needfinding, considerando las necesidades, comportamientos, preocupaciones y motivaciones de cada perfil dentro de su contexto laboral cotidiano.
 
@@ -1575,9 +1574,9 @@ User Veterinario:
 
 <a id="toc-2-3-5-big-picture-eventstorming"></a>
 
-## 2.3.5. Big Picture EventStorming.
+## 2.3.5. Big Picture EventStorming
 
-El presente Big Picture Event Storming se ha desarrollado de manera colaborativa utilizando la plataforma Miro, siguiendo la metodología de Philippe Bourgau para explorar el dominio del negocio de forma holística y establecer un entendimiento compartido. A través de un proceso iterativo en este entorno digital, que incluyó la generación de eventos de dominio, el ordenamiento cronológico y la identificación de puntos críticos dentro de los procesos, se ha logrado mapear la complejidad del sector ganadero en una narrativa visual coherente. Este artefacto no solo permitió identificar riesgos y oportunidades de mejora en la gestión de AniTec, sino que también sentó las bases para la comprensión del dominio y el diseño posterior de la arquitectura del sistema alineada con la realidad operativa de los ganaderos y veterinarios.
+El Big Picture EventStorming se desarrolló de manera colaborativa en Miro para explorar el dominio, ordenar los eventos e identificar puntos críticos en los procesos (Bourgau, 2022; Chandrasekaran, 2023; DDD by Examples, s. f.-a). El artefacto permitió construir una narrativa compartida del sector ganadero y establecer una base para el diseño posterior de la arquitectura de AniTec.
 
 **Paso 1:** Unstructured Exploration (Exploración no estructurada) consiste en una lluvia de ideas colaborativa donde los participantes identifican y registran domain events, que son sucesos relevantes ocurridos dentro del negocio. Estos eventos deben redactarse obligatoriamente en tiempo pasado (por ejemplo, "Livestock registered") y se colocan en notas adhesivas de color naranja sobre la superficie de modelado. En esta etapa inicial, se prioriza el descubrimiento de conceptos y procesos importantes del dominio sobre el orden o la jerarquía, permitiendo identificar eventos relacionados con la autenticación de usuarios, gestión de ganado, procesos sanitarios, operaciones financieras, generación de reportes y envío de notificaciones.
 
@@ -1591,13 +1590,13 @@ El presente Big Picture Event Storming se ha desarrollado de manera colaborativa
 
 ![Event-Storming](markdown/assets/chapter-2/EventStormingPaso3.jpeg)
 
-Enlace para acceder al miro: https://tinyurl.com/EventSorming
+Enlace para acceder al tablero de Miro: https://tinyurl.com/EventSorming
 
 <a id="toc-2-3-6-ubiquitous-language"></a>
 
-## 2.3.6. Ubiquitous Language.
+## 2.3.6. Ubiquitous Language
 
-Siguiendo los conceptos de **Ubiquitous Language** definidos por **Eric Evans (2003)** en su obra _Domain-Driven Design: Tackling Complexity in the Heart of Software_, se presenta el siguiente glosario. Este conjunto de términos constituye el lenguaje común del proyecto, eliminando ambigüedades entre el equipo de ingeniería y los expertos del dominio ganadero.
+Siguiendo el concepto de **Ubiquitous Language** propuesto por Evans (2003), se presenta el siguiente glosario. Este conjunto de términos constituye el lenguaje común del proyecto y reduce ambigüedades entre el equipo de ingeniería y los expertos del dominio ganadero.
 
 | Term (English)              | Término (Español)        | Definition (Definición)                                                                                                                                  |
 | :-------------------------- | :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1606,30 +1605,30 @@ Siguiendo los conceptos de **Ubiquitous Language** definidos por **Eric Evans (2
 | **Herd**                    | Hato                     | Conjunto de animales agrupados dentro de una unidad productiva o finca para su control sanitario, productivo y administrativo.                          |
 | **Farm**                    | Finca                    | Unidad productiva donde el ganadero organiza animales, actividades, registros sanitarios y movimientos financieros.                                     |
 | **Animal**                  | Animal                   | Ejemplar individual registrado por el ganadero para mantener su trazabilidad sanitaria, productiva y económica.                                         |
-| **Health Event**            | Evento Sanitario         | Registro de una vacuna, enfermedad, diagnóstico, tratamiento, incidencia o seguimiento relacionado con la salud de un animal.                           |
-| **Veterinary Client**       | Cliente Veterinario      | Ganadero asignado a un veterinario para que este pueda revisar sus animales, consultar historiales y registrar atenciones sanitarias.                   |
-| **Veterinary History**      | Historial Veterinario    | Expediente clínico consolidado que permite al especialista revisar antecedentes médicos antes de realizar una intervención.                              |
-| **Treatment Protocol**      | Protocolo de Tratamiento | Conjunto de instrucciones médicas y fármacos asignados a un animal para tratar una afección diagnosticada por el veterinario.                            |
+| **Health Event**            | Evento sanitario         | Registro de una vacuna, enfermedad, diagnóstico, tratamiento, incidencia o seguimiento relacionado con la salud de un animal.                           |
+| **Veterinary Client**       | Cliente veterinario      | Ganadero asignado a un veterinario para que este pueda revisar sus animales, consultar historiales y registrar atenciones sanitarias.                   |
+| **Veterinary History**      | Historial veterinario    | Expediente clínico consolidado que permite al especialista revisar antecedentes médicos antes de realizar una intervención.                              |
+| **Treatment Protocol**      | Protocolo de tratamiento | Conjunto de instrucciones médicas y fármacos asignados a un animal para tratar una afección diagnosticada por el veterinario.                            |
 | **Traceability**            | Trazabilidad             | Capacidad de reconstruir el historial completo de un animal, incluyendo origen, salud, peso, actividades y cambios relevantes.                          |
 | **IoT Device**              | Dispositivo IoT          | Equipo asociado a una finca o animal para apoyar el monitoreo de datos como peso, temperatura, humedad, ubicación o actividad.                         |
 | **Metric**                  | Métrica                  | Lectura generada por un dispositivo o registro del sistema que permite analizar el estado de un animal, finca o proceso ganadero.                       |
-| **Farm Activity**           | Actividad Ganadera       | Tarea productiva, sanitaria, financiera o veterinaria programada para organizar el trabajo dentro de la operación ganadera.                             |
-| **Financial Movement**      | Movimiento Financiero    | Ingreso o egreso registrado por el ganadero para controlar la rentabilidad de su operación.                                                             |
-| **Subscription Plan**       | Plan de Suscripción      | Opción de uso de la plataforma que define condiciones, beneficios y precio para el usuario.                                                              |
+| **Farm Activity**           | Actividad ganadera       | Tarea productiva, sanitaria, financiera o veterinaria programada para organizar el trabajo dentro de la operación ganadera.                             |
+| **Financial Movement**      | Movimiento financiero    | Ingreso o egreso registrado por el ganadero para controlar la rentabilidad de su operación.                                                             |
+| **Subscription Plan**       | Plan de suscripción      | Opción de uso de la plataforma que define condiciones, beneficios y precio para el usuario.                                                              |
 | **Payment**                 | Pago                     | Registro económico asociado a la activación o renovación de un plan de suscripción dentro de AniTec.                                                    |
-| **Farm Management**         | Gestión de Hacienda      | Administración de los recursos, personal, animales, actividades y datos que ocurren dentro de la unidad productiva ganadera.                            |
-| **Mobile Application**      | Aplicación Móvil         | Software instalado en un smartphone o tablet que permite al ganadero o veterinario gestionar información del ganado desde el campo.                     |
-| **Native App**              | Aplicación Nativa        | Aplicación desarrollada específicamente para un sistema operativo móvil, como Android con Kotlin, aprovechando capacidades del dispositivo.             |
-| **Cross-Platform App**      | Aplicación Multiplataforma | Aplicación móvil que se ejecuta en más de un sistema operativo a partir de una base de código compartida, manteniendo una experiencia coherente.     |
-| **Push Notification**       | Notificación Push        | Mensaje enviado al dispositivo del usuario para alertar sobre vacunaciones, tratamientos, recordatorios o eventos sanitarios pendientes.                |
-| **Offline Mode**            | Modo Sin Conexión        | Capacidad de la aplicación móvil para registrar o consultar información esencial aunque no exista conexión a internet estable.                          |
-| **Local Persistence**       | Persistencia Local       | Almacenamiento de datos en el dispositivo móvil para conservar borradores, historiales básicos o registros pendientes de sincronización.                |
+| **Farm Management**         | Gestión de hacienda      | Administración de los recursos, personal, animales, actividades y datos que ocurren dentro de la unidad productiva ganadera.                            |
+| **Mobile Application**      | Aplicación móvil         | Software instalado en un teléfono inteligente o una tableta que permite al ganadero o veterinario gestionar información del ganado desde el campo.                     |
+| **Native App**              | Aplicación nativa        | Aplicación desarrollada específicamente para un sistema operativo móvil, como Android con Kotlin, aprovechando capacidades del dispositivo.             |
+| **Cross-Platform App**      | Aplicación multiplataforma | Aplicación móvil que se ejecuta en más de un sistema operativo a partir de una base de código compartida, manteniendo una experiencia coherente.     |
+| **Push Notification**       | Notificación push        | Mensaje enviado al dispositivo del usuario para alertar sobre vacunaciones, tratamientos, recordatorios o eventos sanitarios pendientes.                |
+| **Offline Mode**            | Modo sin conexión        | Capacidad de la aplicación móvil para registrar o consultar información esencial aunque no exista conexión a internet estable.                          |
+| **Local Persistence**       | Persistencia local       | Almacenamiento de datos en el dispositivo móvil para conservar borradores, historiales básicos o registros pendientes de sincronización.                |
 | **Synchronization**         | Sincronización           | Proceso mediante el cual los datos guardados en el dispositivo se actualizan con el servidor cuando se recupera la conectividad.                        |
-| **Camera Capture**          | Captura con Cámara       | Uso de la cámara del dispositivo móvil para identificar animales, registrar evidencias o apoyar la búsqueda visual dentro de la aplicación.             |
-| **Device Capability**       | Capacidad del Dispositivo | Función del hardware o sistema móvil utilizada por la app, como cámara, almacenamiento local, notificaciones o sensores.                               |
-| **Mobile Session**          | Sesión Móvil             | Estado de autenticación del usuario dentro de la aplicación móvil que permite acceder a rutas protegidas y consumir la API de AniTec.                   |
-| **Mobile Dashboard**        | Panel Móvil              | Vista resumida en la aplicación móvil que muestra indicadores, alertas y accesos rápidos para facilitar decisiones en campo.                            |
-| **Responsive Navigation**   | Navegación Móvil         | Estructura de pantallas y menús adaptada a pantallas pequeñas para que el usuario complete tareas con pocos pasos desde el teléfono.                    |
+| **Camera Capture**          | Captura con cámara       | Uso de la cámara del dispositivo móvil para identificar animales, registrar evidencias o apoyar la búsqueda visual dentro de la aplicación.             |
+| **Device Capability**       | Capacidad del dispositivo | Función del hardware o sistema móvil utilizada por la aplicación, como cámara, almacenamiento local, notificaciones o sensores.                               |
+| **Mobile Session**          | Sesión móvil             | Estado de autenticación del usuario dentro de la aplicación móvil que permite acceder a rutas protegidas y consumir la API de AniTec.                   |
+| **Mobile Dashboard**        | Panel móvil              | Vista resumida en la aplicación móvil que muestra indicadores, alertas y accesos rápidos para facilitar decisiones en campo.                            |
+| **Responsive Navigation**   | Navegación móvil         | Estructura de pantallas y menús adaptada a pantallas pequeñas para que el usuario complete tareas con pocos pasos desde el teléfono.                    |
 | **API Consumption**         | Consumo de API           | Comunicación de la aplicación móvil con el backend mediante servicios REST para enviar o recibir datos del dominio ganadero.                            |
 | **Draft Record**            | Borrador                 | Registro temporal guardado en el dispositivo cuando el usuario aún no puede completar o sincronizar una operación por falta de red o tiempo.            |
 | **Accessibility**           | Accesibilidad            | Conjunto de prácticas de diseño móvil que facilitan el uso de la aplicación a personas con distintos niveles de experiencia digital o limitaciones.     |
@@ -1736,14 +1735,14 @@ El To-Be Scenario Mapping representa cómo realizarán sus tareas Jorge Luis Riv
 
 ## 2.4.1. User Stories
 
-Las Epics y las historias siguientes describen resultados esperados para la landing page, las aplicaciones móviles y los servicios. Las User Stories evitan decisiones de interfaz en sus criterios de aceptación; las Technical Stories describen capacidades sin interacción directa y utilizan el rol Developer. Por otro lado, las Spike Stories delimitan investigaciones técnicas breves para reducir incertidumbre y comprobar la viabilidad de una alternativa antes de implementarla.
+Las épicas y las historias siguientes describen resultados esperados para la landing page, las aplicaciones móviles y los servicios. Las User Stories se formulan desde el valor para el usuario y evitan decisiones de interfaz en sus criterios de aceptación (Cohn, 2006; Weerakoon, 2020). Las Technical Stories describen capacidades sin interacción directa y utilizan el rol Developer. Por otro lado, las Spike Stories delimitan investigaciones técnicas breves para reducir incertidumbre y comprobar la viabilidad de una alternativa antes de implementarla.
 ### Epics
 
 <table>
   <thead><tr><th>Epic ID</th><th>Title</th><th>Description</th></tr></thead>
   <tbody>
     <tr><td>EP-001</td><td>Landing Page</td><td>Comunica la propuesta de valor, los segmentos atendidos y los canales de acceso a las aplicaciones móviles de AniTec.</td></tr>
-    <tr><td>EP-002</td><td>Identity and Access Management</td><td>Gestiona el registro, la autenticación, la sesión y la autorización de ganaderos y veterinarios.</td></tr>
+    <tr><td>EP-002</td><td>Identity and Access Management</td><td>Gestiona el registro, la autenticación, la sesión, la autorización y la protección de datos de ganaderos y veterinarios.</td></tr>
     <tr><td>EP-003</td><td>Farm and Livestock Management</td><td>Permite organizar fincas y corrales y registrar, consultar, actualizar y archivar animales, con su fotografía, desde las aplicaciones móviles.</td></tr>
     <tr><td>EP-004</td><td>Sanitary Management</td><td>Centraliza incidencias, diagnósticos, tratamientos, controles e historiales sanitarios de los animales.</td></tr>
     <tr><td>EP-005</td><td>Veterinary Collaboration</td><td>Gestiona la relación autorizada entre ganaderos y veterinarios para el seguimiento de clientes y pacientes.</td></tr>
@@ -1752,7 +1751,7 @@ Las Epics y las historias siguientes describen resultados esperados para la land
     <tr><td>EP-008</td><td>Animal Identification and Autonomous Feature</td><td>Identifica animales mediante códigos QR y la cámara, incorporando una tecnología investigada de forma autónoma.</td></tr>
     <tr><td>EP-009</td><td>Analytics and Reports</td><td>Presenta indicadores sanitarios y operativos relevantes para ganaderos y veterinarios.</td></tr>
     <tr><td>EP-010</td><td>Financial and Subscription Management</td><td>Permite consultar finanzas, planes, pagos y el estado de la suscripción mediante un servicio externo.</td></tr>
-    <tr><td>EP-011</td><td>Accessibility, Internationalization and Resilience</td><td>Asegura una experiencia comprensible, accesible, internacionalizada y tolerante a errores.</td></tr>
+    <tr><td>EP-011</td><td>Accessibility, Internationalization and Resilience</td><td>Asegura una experiencia comprensible, accesible, internacionalizada, oportuna y tolerante a errores.</td></tr>
     <tr><td>EP-012</td><td>Mobile Platforms and Services</td><td>Agrupa la arquitectura y las integraciones técnicas de Android nativo, Flutter, API REST, almacenamiento y distribución.</td></tr>
   </tbody>
 </table>
@@ -1867,19 +1866,19 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
   <tr>
     <th style="text-align: center;">Title</th>
-    <td colspan="3">Registrar una cuenta según el rol</td>
+    <td colspan="3">Crear una cuenta con un rol autorizado</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como ganadero o veterinario, quiero crear una cuenta con mi rol para acceder a las capacidades que corresponden a mi actividad.</td>
+    <td colspan="4">Como ganadero o veterinario, quiero crear una cuenta con un rol autorizado para utilizar las funciones que corresponden a mi actividad.</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4"><b>Scenario 1: Registro válido</b><br><b>Given</b> la persona proporciona datos válidos y selecciona un rol permitido<br><b>When</b> la persona solicita crear su cuenta<br><b>Then</b> el sistema registra la cuenta y asocia el rol seleccionado<br><br><b>Scenario 2: Datos duplicados o inválidos</b><br><b>Given</b> ya existe una cuenta con el mismo correo o los datos incumplen una regla<br><b>When</b> la persona solicita crear su cuenta<br><b>Then</b> el sistema rechaza el registro e informa la causa sin exponer información sensible</td>
+    <td colspan="4"><b>Scenario 1: Registro válido</b><br><b>Given</b> la persona completa los datos obligatorios, acepta los términos y selecciona un rol permitido<br><b>When</b> solicita crear la cuenta<br><b>Then</b> el sistema registra una identidad única, protege la contraseña y asocia el rol seleccionado<br><br><b>Scenario 2: Datos inválidos</b><br><b>Given</b> uno o más datos incumplen las reglas de formato o de contraseña<br><b>When</b> la persona solicita crear la cuenta<br><b>Then</b> el sistema rechaza la solicitud, identifica los campos por corregir y conserva únicamente los datos no sensibles<br><br><b>Scenario 3: Identidad existente</b><br><b>Given</b> ya existe una cuenta con el nombre de usuario o correo proporcionado<br><b>When</b> la persona solicita crear la cuenta<br><b>Then</b> el sistema rechaza el registro sin revelar información adicional de la cuenta existente</td>
   </tr>
 </table>
 
@@ -1898,19 +1897,19 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
   <tr>
     <th style="text-align: center;">Title</th>
-    <td colspan="3">Iniciar sesión</td>
+    <td colspan="3">Iniciar una sesión segura</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como usuario registrado, quiero autenticarme con mis credenciales para consultar de manera segura mi información en AniTec.</td>
+    <td colspan="4">Como usuario registrado, quiero iniciar una sesión segura para acceder a AniTec con las funciones y los datos permitidos para mi rol.</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4"><b>Scenario 1: Credenciales válidas</b><br><b>Given</b> existe una cuenta activa con las credenciales proporcionadas<br><b>When</b> el usuario solicita iniciar sesión<br><b>Then</b> el sistema autentica al usuario y habilita las capacidades de su rol<br><br><b>Scenario 2: Credenciales inválidas</b><br><b>Given</b> las credenciales no corresponden a una cuenta activa<br><b>When</b> el usuario solicita iniciar sesión<br><b>Then</b> el sistema rechaza el acceso mediante un mensaje que no revela qué dato es incorrecto</td>
+    <td colspan="4"><b>Scenario 1: Credenciales válidas</b><br><b>Given</b> existe una cuenta activa con las credenciales proporcionadas<br><b>When</b> el usuario solicita iniciar sesión<br><b>Then</b> el sistema autentica la identidad, emite una sesión con vigencia definida y dirige al usuario a la experiencia de su rol<br><br><b>Scenario 2: Credenciales inválidas</b><br><b>Given</b> las credenciales no corresponden a una cuenta activa<br><b>When</b> el usuario solicita iniciar sesión<br><b>Then</b> el sistema rechaza el acceso, no crea una sesión y muestra un mensaje que no revela cuál dato es incorrecto</td>
   </tr>
 </table>
 
@@ -1929,19 +1928,19 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
   <tr>
     <th style="text-align: center;">Title</th>
-    <td colspan="3">Mantener y finalizar la sesión móvil</td>
+    <td colspan="3">Mantener y cerrar una sesión segura</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como usuario autenticado, quiero conservar mi sesión de manera segura y poder finalizarla para evitar accesos no autorizados a mis datos.</td>
+    <td colspan="4">Como usuario autenticado, quiero mantener una sesión vigente y cerrarla cuando lo decida para evitar accesos posteriores a mi información.</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4"><b>Scenario 1: Sesión vigente</b><br><b>Given</b> el usuario tiene una sesión válida almacenada de forma segura<br><b>When</b> el usuario vuelve a abrir la aplicación<br><b>Then</b> el sistema recupera la sesión y valida su vigencia antes de entregar información protegida<br><br><b>Scenario 2: Cierre de sesión</b><br><b>Given</b> el usuario mantiene una sesión activa<br><b>When</b> el usuario solicita finalizarla<br><b>Then</b> el sistema elimina las credenciales locales y bloquea el acceso a la información protegida</td>
+    <td colspan="4"><b>Scenario 1: Sesión vigente</b><br><b>Given</b> el usuario tiene una sesión válida almacenada de forma segura<br><b>When</b> vuelve a abrir la aplicación<br><b>Then</b> el sistema valida la vigencia antes de mostrar información protegida y recupera la sesión sin solicitar nuevamente las credenciales<br><br><b>Scenario 2: Sesión vencida o inválida</b><br><b>Given</b> la sesión venció, fue revocada o no puede validarse<br><b>When</b> el usuario intenta acceder a una función protegida<br><b>Then</b> el sistema elimina los datos de sesión, oculta la información protegida y solicita una nueva autenticación<br><br><b>Scenario 3: Cierre de sesión</b><br><b>Given</b> el usuario mantiene una sesión activa<br><b>When</b> solicita cerrarla<br><b>Then</b> la aplicación elimina las credenciales locales, bloquea el acceso en el dispositivo y vuelve a la pantalla de acceso</td>
   </tr>
 </table>
 
@@ -1960,19 +1959,19 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
   <tr>
     <th style="text-align: center;">Title</th>
-    <td colspan="3">Acceder únicamente a información autorizada</td>
+    <td colspan="3">Restringir el acceso según el rol y la relación autorizada</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Description</th>
   </tr>
   <tr>
-    <td colspan="4">Como usuario autenticado, quiero acceder solamente a los datos permitidos para mi rol y relaciones vigentes para proteger la información ganadera y clínica.</td>
+    <td colspan="4">Como usuario autenticado, quiero que el sistema limite cada consulta y modificación según mi rol y mis relaciones vigentes para proteger la información ganadera y clínica.</td>
   </tr>
   <tr>
     <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
   </tr>
   <tr>
-    <td colspan="4"><b>Scenario 1: Acceso permitido</b><br><b>Given</b> el usuario posee el rol y la relación requeridos por una operación<br><b>When</b> el usuario solicita consultar o modificar información<br><b>Then</b> el sistema procesa la operación dentro del alcance autorizado<br><br><b>Scenario 2: Acceso denegado</b><br><b>Given</b> el usuario no posee el rol o la relación requeridos<br><b>When</b> el usuario solicita consultar o modificar información protegida<br><b>Then</b> el sistema rechaza la operación y registra el resultado de autorización</td>
+    <td colspan="4"><b>Scenario 1: Consulta autorizada</b><br><b>Given</b> el usuario posee el rol, la propiedad o la relación vigentes requeridos<br><b>When</b> solicita una lista o el detalle de un recurso<br><b>Then</b> el servidor devuelve únicamente los recursos comprendidos en su alcance autorizado<br><br><b>Scenario 2: Modificación no autorizada</b><br><b>Given</b> el usuario no posee el rol, la propiedad o la relación requeridos<br><b>When</b> intenta crear, modificar o eliminar un recurso protegido<br><b>Then</b> el servidor rechaza la operación con el estado correspondiente, no modifica datos y no devuelve información protegida</td>
   </tr>
 </table>
 
@@ -2512,7 +2511,7 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
   <tr>
     <td>US-025</td>
-    <td>Usuario autenticado</td>
+    <td>Usuario</td>
     <td>Must Have</td>
     <td>EP-006</td>
   </tr>
@@ -3154,6 +3153,103 @@ Las Epics y las historias siguientes describen resultados esperados para la land
   </tr>
 </table>
 
+### Non-Functional User Stories
+
+Las siguientes historias expresan atributos de calidad observables y medibles que se aplican de forma transversal a los flujos móviles.
+
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style="text-align: center;">Story ID</th>
+    <th style="text-align: center;">User</th>
+    <th style="text-align: center;">Priority</th>
+    <th style="text-align: center;">Epic</th>
+  </tr>
+  <tr>
+    <td>US-046</td>
+    <td>Usuario</td>
+    <td>Must Have</td>
+    <td>EP-002</td>
+  </tr>
+  <tr>
+    <th style="text-align: center;">Title</th>
+    <td colspan="3">Proteger las credenciales y los datos sensibles</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario, quiero que mis credenciales y datos sensibles se almacenen y transmitan de forma segura para evitar su exposición.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Transmisión segura</b><br><b>Given</b> la aplicación envía credenciales o información personal o sanitaria<br><b>When</b> se comunica con la API<br><b>Then</b> utiliza HTTPS y no incluye datos sensibles en la URL, los registros ni los mensajes de error<br><br><b>Scenario 2: Almacenamiento de credenciales</b><br><b>Given</b> el sistema almacena una contraseña o un token de sesión<br><b>When</b> persiste la credencial en el servidor o el dispositivo<br><b>Then</b> la contraseña se conserva únicamente como un hash seguro y el token utiliza el almacenamiento protegido del sistema operativo<br><br><b>Scenario 3: Eliminación local</b><br><b>Given</b> el usuario cierra la sesión o esta deja de ser válida<br><b>When</b> la aplicación procesa el cierre<br><b>Then</b> elimina el token y los datos protegidos asociados con la sesión</td>
+  </tr>
+</table>
+
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style="text-align: center;">Story ID</th>
+    <th style="text-align: center;">User</th>
+    <th style="text-align: center;">Priority</th>
+    <th style="text-align: center;">Epic</th>
+  </tr>
+  <tr>
+    <td>US-047</td>
+    <td>Usuario móvil</td>
+    <td>Should Have</td>
+    <td>EP-011</td>
+  </tr>
+  <tr>
+    <th style="text-align: center;">Title</th>
+    <td colspan="3">Obtener respuestas oportunas en operaciones frecuentes</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario móvil, quiero que las consultas y acciones frecuentes respondan con rapidez para completar mi trabajo sin esperas innecesarias.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Consulta frecuente</b><br><b>Given</b> un dispositivo de prueba, conectividad estable y el volumen de datos del piloto<br><b>When</b> el usuario abre el dashboard, una lista o un detalle<br><b>Then</b> el 95% de las consultas muestra el resultado utilizable en un máximo de tres segundos<br><br><b>Scenario 2: Operación en proceso</b><br><b>Given</b> una acción tarda más de dos segundos<br><b>When</b> el usuario la confirma<br><b>Then</b> la aplicación muestra su progreso y evita envíos duplicados</td>
+  </tr>
+</table>
+
+<table style="border-collapse: collapse; width: 100%;">
+  <tr>
+    <th style="text-align: center;">Story ID</th>
+    <th style="text-align: center;">User</th>
+    <th style="text-align: center;">Priority</th>
+    <th style="text-align: center;">Epic</th>
+  </tr>
+  <tr>
+    <td>US-048</td>
+    <td>Usuario móvil</td>
+    <td>Must Have</td>
+    <td>EP-011</td>
+  </tr>
+  <tr>
+    <th style="text-align: center;">Title</th>
+    <td colspan="3">Recuperar una operación ante fallos temporales</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Description</th>
+  </tr>
+  <tr>
+    <td colspan="4">Como usuario móvil, quiero recuperar una operación después de un fallo temporal para continuar sin perder ni duplicar los datos ingresados.</td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align: center;">Acceptance Criteria</th>
+  </tr>
+  <tr>
+    <td colspan="4"><b>Scenario 1: Conservación de datos</b><br><b>Given</b> el usuario completó un formulario válido<br><b>When</b> ocurre un error temporal o se agota el tiempo de espera<br><b>Then</b> la aplicación conserva los datos y ofrece reintentar la operación<br><br><b>Scenario 2: Reintento seguro</b><br><b>Given</b> una operación quedó sin confirmación<br><b>When</b> el usuario o la aplicación vuelve a enviarla<br><b>Then</b> el sistema registra como máximo un resultado y muestra su estado final</td>
+  </tr>
+</table>
+
 ### Technical Stories
 
 La estrategia técnica de AniTec considera Android nativo y Flutter porque la selección de un enfoque multiplataforma debe evaluar su adopción, mantenibilidad y consistencia entre plataformas (Jošt & Taneski, 2025). Además, las historias técnicas incorporan pruebas unitarias, de interfaz e integración en distintas configuraciones, debido a que la evidencia reciente identifica una adopción y cobertura todavía limitadas de las pruebas automatizadas en proyectos Android reales (Mahmud et al., 2025).
@@ -3641,10 +3737,11 @@ La siguiente matriz hace trazable cada condición tecnológica obligatoria con u
     <tr><td>Aplicación multiplataforma</td><td>Flutter y Dart, con el mismo alcance funcional y contratos de servicio que la aplicación Android.</td><td>Proyecto Flutter compilable y comparación de los flujos core en las plataformas objetivo definidas por el equipo.</td><td>TS-002, TS-003, TS-004, TS-006 y US-004 a US-043.</td></tr>
     <tr><td>Almacenamiento local</td><td>Room en Android y una base de datos local compatible en Flutter para caché, operaciones pendientes y estado de sincronización.</td><td>Consulta y registro de información esencial sin conexión, seguidos por una sincronización idempotente.</td><td>US-029 a US-032 y TS-005 a TS-007.</td></tr>
     <tr><td>Recurso interno del dispositivo</td><td>Cámara del teléfono para leer el código QR que identifica al animal, con alternativa de búsqueda manual.</td><td>Prueba con permiso concedido, permiso denegado, código válido, código inválido y condiciones reales de iluminación.</td><td>US-033, US-034, TS-010 y SP-001.</td></tr>
-    <tr><td>Servicio REST interno</td><td>API REST propia de AniTec, documentada con OpenAPI y protegida mediante autenticación y autorización por rol y relación.</td><td>Backend público al 70 % en Sprint 1 y al 100 % desde Sprint 2, con documentación accesible.</td><td>US-004 a US-040, TS-004, TS-008 y TS-013.</td></tr>
+    <tr><td>Servicio REST interno</td><td>API REST propia de AniTec, documentada con OpenAPI y protegida mediante autenticación y autorización por rol y relación.</td><td>Backend público al 70% en Sprint 1 y al 100% desde Sprint 2, con documentación accesible.</td><td>US-004 a US-040, TS-004, TS-008 y TS-013.</td></tr>
     <tr><td>Servicio externo</td><td>Stripe Checkout para iniciar pagos y confirmar el estado de la suscripción sin almacenar datos de tarjeta en AniTec.</td><td>Flujos de pago aprobado, rechazado o cancelado y validación del resultado desde el backend.</td><td>US-038 a US-040, SP-002 y TS-011.</td></tr>
     <tr><td>Feature de aprendizaje autónomo</td><td>Investigación, prototipo e integración de Google ML Kit Barcode Scanning para reconocer códigos QR en el dispositivo.</td><td>Informe del Spike, fuentes consultadas, alternativas, riesgos, prueba física y conclusión de viabilidad.</td><td>US-033, TS-010 y SP-001.</td></tr>
     <tr><td>Notificaciones móviles</td><td>Recordatorios locales o remotos asociados con actividades ganaderas y sanitarias.</td><td>Recepción, atención y reprogramación de recordatorios con permisos habilitados o denegados.</td><td>US-025 a US-028 y TS-009.</td></tr>
+    <tr><td>Atributos de calidad no funcionales</td><td>Protección de datos, tiempos de respuesta verificables y recuperación segura ante fallos temporales.</td><td>Pruebas de autorización, transmisión segura, rendimiento y reintentos sin pérdida ni duplicación de datos.</td><td>US-046, US-047, US-048, TS-007, TS-008 y TS-014.</td></tr>
     <tr><td>Despliegue y validación física</td><td>Versiones firmadas y distribuidas mediante Firebase App Distribution o un servicio equivalente.</td><td>Instalación trazable en dispositivos físicos y registro de versión para la Release Review.</td><td>TS-014 y TS-015.</td></tr>
   </tbody>
 </table>
@@ -3767,16 +3864,16 @@ El Impact Mapping conecta objetivos SMART del piloto con los User Personas, los 
       <td>Jorge Luis Rivas — Ganadero</td>
       <td>Registra la información en el lugar donde ocurre y deja de postergarla por falta de una computadora.</td>
       <td>Gestión móvil de fincas y animales.</td>
-      <td>Como ganadero, deseo registrar y consultar mis animales desde el teléfono para mantener su trazabilidad. US-008 a US-013, US-044 y US-045.</td>
+      <td>Como ganadero, deseo registrar y consultar mis animales desde el teléfono para mantener su trazabilidad. US-008 a US-013, US-044, US-045 y US-047.</td>
     </tr>
     <tr>
       <td>Jorge Luis Rivas — Ganadero</td>
       <td>Continúa trabajando durante interrupciones de red y confirma después la sincronización.</td>
       <td>Persistencia local, cola de operaciones y estados de sincronización.</td>
-      <td>Como ganadero, deseo guardar y sincronizar registros sin repetirlos para trabajar con conectividad intermitente. US-029 a US-032.</td>
+      <td>Como ganadero, deseo guardar y sincronizar registros sin repetirlos para trabajar con conectividad intermitente. US-029 a US-032 y US-048.</td>
     </tr>
     <tr>
-      <td rowspan="2"><b>BG-02:</b> Conseguir que al menos el 70 % de los recordatorios sanitarios creados durante el piloto se marquen como atendidos o reprogramados dentro de su plazo, antes del cierre del Sprint 3.</td>
+      <td rowspan="2"><b>BG-02:</b> Conseguir que al menos el 70% de los recordatorios sanitarios creados durante el piloto se marquen como atendidos o reprogramados dentro de su plazo, antes del cierre del Sprint 3.</td>
       <td>Jorge Luis Rivas — Ganadero</td>
       <td>Registra incidencias y consulta actividades pendientes con mayor frecuencia.</td>
       <td>Historial sanitario, calendario y notificaciones móviles.</td>
@@ -3799,10 +3896,10 @@ El Impact Mapping conecta objetivos SMART del piloto con los User Personas, los 
       <td>Jorge Luis Rivas — Ganadero</td>
       <td>Controla quién puede consultar y registrar información sanitaria.</td>
       <td>Solicitudes, aceptación y revocación de acceso.</td>
-      <td>Como ganadero, deseo conceder o revocar acceso veterinario para proteger los datos de mis animales. US-020 a US-022.</td>
+      <td>Como ganadero, deseo conceder o revocar acceso veterinario para proteger los datos de mis animales. US-007, US-020 a US-022 y US-046.</td>
     </tr>
     <tr>
-      <td><b>BG-04:</b> Conseguir que al menos el 80 % de los participantes identifique correctamente un animal mediante QR o la alternativa manual en menos de 30 segundos, durante las pruebas del Sprint 2.</td>
+      <td><b>BG-04:</b> Conseguir que al menos el 80% de los participantes identifique correctamente un animal mediante QR o la alternativa manual en menos de 30 segundos, durante las pruebas del Sprint 2.</td>
       <td>Jorge Luis Rivas y Valeria Mendoza</td>
       <td>Localizan la ficha correcta con menos tiempo y mantienen una alternativa cuando la cámara falla.</td>
       <td>Escaneo QR con Google ML Kit y búsqueda manual.</td>
@@ -3817,21 +3914,21 @@ El Impact Mapping conecta objetivos SMART del piloto con los User Personas, los 
 
 El Product Backlog reúne las User Stories, Technical Stories y Spike Stories del producto, priorizadas según su valor para el negocio. Primero se presentan las historias del core y luego los procesos de soporte. Las historias técnicas y los spikes se ubican antes de las funcionalidades que habilitan. Las estimaciones utilizan la escala 1, 2, 3, 5 u 8.
 
-Durante la planificación de los Sprints 1 y 2 (secciones 4.2.1.1 y 4.2.2.1), el backlog se ajustó según el avance real del producto. La distribución final, detallada en el siguiente cuadro, dejó 24 historias y 114 Story Points en el Sprint 2, y 14 historias y 69 Story Points en el Sprint 3.
+Durante la planificación de los Sprints 1 y 2 (secciones 4.2.1.1 y 4.2.2.1), el backlog se ajustó según el avance real del producto. La distribución final, detallada en el siguiente cuadro, dejó 24 historias y 114 Story Points en el Sprint 2, y 17 historias y 82 Story Points en el Sprint 3.
 
 **Producto mínimo viable (MVP).** El MVP comprende la gestión de fincas y animales (BG-01), el seguimiento sanitario (BG-02), la colaboración con veterinarios (BG-03), la identificación de animales (BG-04) y la base técnica necesaria. Debido a los ajustes de planificación, su alcance queda completo al cierre del Sprint 3 (TB2).
 
 La distribución considera los hitos del curso:
 
-- **Sprint 1 — TB1, semana 7:** landing page desplegada, backend al 70 %, base de la aplicación Android y pantallas core de acceso, gestión de fincas, corrales y animales, y registros sanitarios básicos.
-- **Sprint 2 — AV2, semana 12:** backend al 100 %, primera versión de la aplicación Flutter (inicio del ganadero) y principales funciones core de sanidad, vista del veterinario, actividades, finanzas, analítica, trabajo offline, identificación mediante cámara, suscripciones con Stripe y distribución en Firebase App Distribution.
-- **Sprint 3 — TB2, semana 15:** consentimiento veterinario, notificaciones, cierre de trazabilidad sanitaria y sincronización idempotente, persistencia local en Flutter, accesibilidad, pruebas automatizadas y aplicación completa según el backlog.
+- **Sprint 1 — TB1, semana 7:** landing page desplegada, backend al 70%, base de la aplicación Android y pantallas core de acceso, gestión de fincas, corrales y animales, y registros sanitarios básicos.
+- **Sprint 2 — AV2, semana 12:** backend al 100%, primera versión de la aplicación Flutter (inicio del ganadero) y principales funciones core de sanidad, vista del veterinario, actividades, finanzas, analítica, trabajo offline, identificación mediante cámara, suscripciones con Stripe y distribución en Firebase App Distribution.
+- **Sprint 3 — TB2, semana 15:** consentimiento veterinario, notificaciones, cierre de trazabilidad sanitaria y sincronización idempotente, persistencia local en Flutter, accesibilidad, protección de datos, rendimiento, recuperación ante fallos, pruebas automatizadas y aplicación completa según el backlog.
 
 <table style="text-align: center;">
   <thead>
     <tr>
       <th style="text-align: center;"># Orden</th>
-      <th style="text-align: center;">User Story Id</th>
+      <th style="text-align: center;">User Story ID</th>
       <th style="text-align: center;">Título</th>
       <th style="text-align: center;">Story Points (1 / 2 / 3 / 5 / 8)</th>
       <th style="text-align: center;">Sprint</th>
@@ -3856,10 +3953,10 @@ La distribución considera los hitos del curso:
     <tr><td>16</td><td>TS-003</td><td>Definir la arquitectura móvil por capas y bounded contexts</td><td>5</td><td>Sprint 1</td></tr>
     <tr><td>17</td><td>TS-001</td><td>Configurar la aplicación Android nativa</td><td>5</td><td>Sprint 1</td></tr>
     <tr><td>18</td><td>TS-005</td><td>Implementar persistencia local segura en Android</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>19</td><td>US-004</td><td>Registrar una cuenta según el rol</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>20</td><td>US-005</td><td>Iniciar sesión</td><td>3</td><td>Sprint 1</td></tr>
-    <tr><td>21</td><td>US-007</td><td>Acceder únicamente a información autorizada</td><td>5</td><td>Sprint 1</td></tr>
-    <tr><td>22</td><td>US-006</td><td>Mantener y finalizar la sesión móvil</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>19</td><td>US-004</td><td>Crear una cuenta con un rol autorizado</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>20</td><td>US-005</td><td>Iniciar una sesión segura</td><td>3</td><td>Sprint 1</td></tr>
+    <tr><td>21</td><td>US-007</td><td>Restringir el acceso según el rol y la relación autorizada</td><td>5</td><td>Sprint 1</td></tr>
+    <tr><td>22</td><td>US-006</td><td>Mantener y cerrar una sesión segura</td><td>3</td><td>Sprint 1</td></tr>
     <tr><td>23</td><td>TS-008</td><td>Proteger credenciales y datos de sesión</td><td>5</td><td>Sprint 1</td></tr>
     <tr><td>24</td><td>US-003</td><td>Acceder a una landing page adaptable e internacionalizada</td><td>5</td><td>Sprint 1</td></tr>
     <tr><td>25</td><td>US-017</td><td>Consultar el historial sanitario de un animal</td><td>5</td><td>Sprint 2</td></tr>
@@ -3899,7 +3996,10 @@ La distribución considera los hitos del curso:
     <tr><td>59</td><td>US-018</td><td>Corregir un registro sanitario con trazabilidad</td><td>5</td><td>Sprint 3</td></tr>
     <tr><td>60</td><td>TS-012</td><td>Aplicar internacionalización y accesibilidad móvil</td><td>5</td><td>Sprint 3</td></tr>
     <tr><td>61</td><td>US-042</td><td>Utilizar la aplicación con necesidades de accesibilidad</td><td>5</td><td>Sprint 3</td></tr>
-    <tr><td>62</td><td>TS-014</td><td>Automatizar pruebas de los flujos móviles críticos</td><td>8</td><td>Sprint 3</td></tr>
+    <tr><td>62</td><td>US-046</td><td>Proteger las credenciales y los datos sensibles</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>63</td><td>US-047</td><td>Obtener respuestas oportunas en operaciones frecuentes</td><td>3</td><td>Sprint 3</td></tr>
+    <tr><td>64</td><td>US-048</td><td>Recuperar una operación ante fallos temporales</td><td>5</td><td>Sprint 3</td></tr>
+    <tr><td>65</td><td>TS-014</td><td>Automatizar pruebas de los flujos móviles críticos</td><td>8</td><td>Sprint 3</td></tr>
   </tbody>
 </table>
 
@@ -4053,7 +4153,7 @@ El Candidate Context Discovery aplicó dos técnicas complementarias. **Start-wi
     <tr><th>Bounded Context</th><th>Clasificación</th><th>Responsabilidad y eventos pivote</th><th>Correspondencia técnica actual</th></tr>
   </thead>
   <tbody>
-    <tr><td>Identity and Access Management</td><td>Generic</td><td>Identidad, credenciales, sesiones y roles. UserRegistered, SessionIssued.</td><td>Iam</td></tr>
+    <tr><td>Identity and Access Management</td><td>Generic</td><td>Identidad, credenciales, sesiones, roles y políticas de acceso. UserRegistered, SessionIssued.</td><td>Iam</td></tr>
     <tr><td>Profile Management</td><td>Supporting</td><td>Datos personales y profesionales. ProfileCreated, ProfileUpdated.</td><td>Profiles</td></tr>
     <tr><td>Livestock Management</td><td>Core</td><td>Fincas, hatos, animales e identificación. AnimalRegistered, AnimalIdentified.</td><td>Livestock</td></tr>
     <tr><td>Sanitary Management</td><td>Core</td><td>Incidencias, diagnósticos, tratamientos e historial. HealthEventRecorded, VeterinaryCareRecorded.</td><td>Sanitary</td></tr>
@@ -4198,7 +4298,7 @@ La revisión separa capacidades del dominio de mecanismos de aplicación e infra
     <tr><th>Bounded Context</th><th>Capacidades del dominio</th><th>Capacidades de aplicación o infraestructura</th></tr>
   </thead>
   <tbody>
-    <tr><td>IAM</td><td>Registro, autenticación, sesión y autorización.</td><td>JWT, BCrypt y almacenamiento seguro del token.</td></tr>
+    <tr><td>IAM</td><td>Registro de cuentas, autenticación, vigencia y cierre de sesiones, autorización y confidencialidad.</td><td>JWT, BCrypt, políticas de acceso y almacenamiento seguro del token.</td></tr>
     <tr><td>Profiles</td><td>Creación y actualización de datos personales y profesionales.</td><td>Validación, localización y exposición REST del perfil.</td></tr>
     <tr><td>Livestock</td><td>Fincas, animales, códigos e identificación.</td><td>Cámara, ML Kit, caché local y adaptadores REST.</td></tr>
     <tr><td>Sanitary</td><td>Historial, incidencia, atención, tratamiento y corrección.</td><td>Persistencia local, sincronización y control de versiones.</td></tr>
@@ -4212,7 +4312,7 @@ La revisión separa capacidades del dominio de mecanismos de aplicación e infra
 
 #### Identity and Access Management
 
-Gestiona cuentas, credenciales, sesiones y autorización. Publica un identificador estable y el rol; no administra los datos personales del perfil.
+Gestiona cuentas, credenciales, sesiones y autorización, y protege los datos de autenticación. Publica un identificador estable y el rol; no administra los datos personales del perfil. Este alcance se relaciona con US-004, US-005, US-006, US-007, US-046 y TS-008.
 
 ![Bounded Context Canvas de IAM](markdown/assets/chapter-2/strategic-ddd/bounded-context-canvas-iam.svg)
 
@@ -4485,6 +4585,8 @@ Para mantener el informe legible, las fichas individuales se reservan para aggre
 
 Administrar identidades, credenciales, roles y sesiones para que cada operación de AniTec se ejecute con una identidad autenticada y autorizada.
 
+Este bounded context implementa las historias US-004, US-005, US-006 y US-007, y aplica el atributo de confidencialidad definido en US-046. TS-008 proporciona la capacidad técnica para proteger las credenciales y los datos de sesión.
+
 La base implementada se encuentra en el módulo Iam de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
 <a id="toc-2-6-1-1-domain-layer"></a>
@@ -4499,7 +4601,7 @@ Esta capa documenta el modelo que representa el núcleo de **Identity and Access
 |---|---|
 | **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Mantener identidad, credenciales protegidas y rol del usuario. |
-| **Relaciones** | User se relaciona con UserRole : has; AuthenticatedSession se relaciona con User : belongs to; CredentialPolicy depende de User : validates; IUserRepository depende de User : persists |
+| **Relaciones** | User se relaciona con UserRole (has); AuthenticatedSession se relaciona con User (belongs to); CredentialPolicy depende de User (validates); IUserRepository depende de User (persists). |
 
 **Atributos o dependencias**
 
@@ -4525,7 +4627,7 @@ Esta capa documenta el modelo que representa el núcleo de **Identity and Access
 |---|---|
 | **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Definir los valores válidos de UserRole. |
-| **Relaciones** | User se relaciona con UserRole : has |
+| **Relaciones** | User se relaciona con UserRole (has). |
 
 **Atributos o dependencias**
 
@@ -4545,7 +4647,7 @@ No aplica.
 |---|---|
 | **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Controlar vigencia y revocación de una sesión autenticada. |
-| **Relaciones** | AuthenticatedSession se relaciona con User : belongs to |
+| **Relaciones** | AuthenticatedSession se relaciona con User (belongs to). |
 
 **Atributos o dependencias**
 
@@ -4568,7 +4670,7 @@ No aplica.
 |---|---|
 | **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Validar reglas de nombre de usuario y contraseña. |
-| **Relaciones** | CredentialPolicy depende de User : validates |
+| **Relaciones** | CredentialPolicy depende de User (validates). |
 
 **Atributos o dependencias**
 
@@ -4587,7 +4689,7 @@ No aplica.
 |---|---|
 | **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de User. |
-| **Relaciones** | IUserRepository depende de User : persists |
+| **Relaciones** | IUserRepository depende de User (persists). |
 
 **Atributos o dependencias**
 
@@ -4993,7 +5095,7 @@ Esta capa documenta el modelo que representa el núcleo de **Profile Management*
 |---|---|
 | **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Mantener la información personal y de contacto de un propietario. |
-| **Relaciones** | Profile compone PersonName; Profile compone EmailAddress; Profile compone StreetAddress; IProfileRepository depende de Profile : persists |
+| **Relaciones** | Profile compone PersonName; Profile compone EmailAddress; Profile compone StreetAddress; IProfileRepository depende de Profile (persists). |
 
 **Atributos o dependencias**
 
@@ -5084,7 +5186,7 @@ Esta capa documenta el modelo que representa el núcleo de **Profile Management*
 |---|---|
 | **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de Profile. |
-| **Relaciones** | IProfileRepository depende de Profile : persists |
+| **Relaciones** | IProfileRepository depende de Profile (persists). |
 
 **Atributos o dependencias**
 
@@ -9188,11 +9290,11 @@ El wireframe prescinde del color y de las imágenes para evaluar solo la estruct
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-3/landing-page/LandingMovil_wireframe1.png" alt="Wireframe de movil de la Landing Page" width="500">
-  <p><i>Figura 7. Wireframe de movil de la Landing Page. Fuente: elaboración propia.</i></p>
+  <img src="markdown/assets/chapter-3/landing-page/LandingMovil_wireframe1.png" alt="Wireframe móvil de la landing page" width="500">
+  <p><i>Figura 7. Wireframe móvil de la landing page. Fuente: elaboración propia.</i></p>
 </div>
 
-Link del wireframe movil: https://www.figma.com/design/q7A10f5s09GjpeGGWNdsZG/LandingMovil_wireframe?node-id=0-1&t=FDHM5xffOJs1fj7Z-1 
+Enlace del wireframe móvil: https://www.figma.com/design/q7A10f5s09GjpeGGWNdsZG/LandingMovil_wireframe?node-id=0-1&t=FDHM5xffOJs1fj7Z-1
 
 
 <a id="toc-3-1-3-2-landing-page-mock-up"></a>
@@ -9209,8 +9311,8 @@ El mock-up traduce la estructura anterior al Design System de AniTec: fondo crem
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-3/landing-page/LandingMovil_MockUp1.png" alt="Mock-up de movil de la Landing Page" width="500">
-  <p><i>Figura 9. Mock-up de movil de la Landing Page. Fuente: elaboración propia.</i></p>
+  <img src="markdown/assets/chapter-3/landing-page/LandingMovil_MockUp1.png" alt="Mock-up móvil de la landing page" width="500">
+  <p><i>Figura 9. Mock-up móvil de la landing page. Fuente: elaboración propia.</i></p>
 </div>
 
 Link del MockUp: https://www.figma.com/design/DvQjG8GIupLP7TBQNi5Hr6/LandingMovil_MockUp?node-id=0-1&t=qJgJhyhc97VCfTMW-1 
@@ -9613,23 +9715,23 @@ La versión Android del perfil veterinario documenta la gestión de clientes y v
 
 ### 3.1.4.4. Mobile Applications User Flow Diagrams
 
-Los User Flow Diagrams presentan la navegación propuesta para alcanzar cada user goal definido. Se establece un único flujo estándar por objetivo, aplicable tanto a Android como a Flutter, porque ambas implementaciones comparten la misma arquitectura de información, las mismas acciones esenciales y las mismas condiciones de recuperación. Los diagramas se derivan de los wireflows y emplean mock-ups representativos de las vistas involucradas. Para conservar la legibilidad, cada lámina resume el recorrido en tres pantallas principales y concentra las condiciones secundarias en bloques breves; su explicación detallada se mantiene en el texto. La línea verde continua representa el *happy path*; la línea roja discontinua representa los *unhappy paths* que requieren corrección, reintento o recuperación; y la línea ámbar discontinua identifica una ruta alternativa válida que no constituye un error.
+Los User Flow Diagrams presentan la navegación propuesta para alcanzar cada user goal definido. Se establece un único flujo estándar por objetivo, aplicable tanto a Android como a Flutter, porque ambas implementaciones comparten la misma arquitectura de información y las mismas acciones esenciales. Cada lámina muestra únicamente las pantallas, acciones y condiciones necesarias para comprender la interacción. La línea verde continua representa el *happy path*; la línea roja discontinua representa los *unhappy paths*; y la línea ámbar discontinua identifica una ruta alternativa válida.
 
 | User goal | Happy path | Unhappy paths | Relación |
 |---|---|---|---|
-| Registro e inicio de sesión | Datos válidos y dashboard | Datos inválidos, cuenta existente, credenciales incorrectas y sin red | US-004, US-005, US-006 |
-| Dashboard | Resumen disponible y acceso a módulo | Sin datos, sesión vencida y error del servicio | US-007 y flujos del rol |
-| Registro de animal | Formulario válido y confirmación | Campos faltantes, duplicado, servidor y guardado offline | US-011, TS-004, TS-005 |
-| Consulta y actualización | Recurso autorizado y actualización | Sin permiso, inexistente y conflicto de sincronización | US-010, US-012, US-013 |
-| Historial sanitario | Historial disponible | Historial vacío, filtro sin resultados y acceso denegado | US-014 |
-| Registro sanitario | Datos válidos y confirmación | Validación, permiso insuficiente y sin conexión | US-015 |
+| Registrarse e iniciar sesión | Cuenta creada, sesión segura y dashboard | Datos inválidos, cuenta existente, credenciales incorrectas, sesión vencida y sin red | US-004, US-005, US-006, US-046 y TS-008 |
+| Consultar el dashboard | Resumen disponible y acceso a módulo | Sin datos, sesión vencida y error del servicio | US-007, US-047 y flujos del rol |
+| Registrar un animal | Formulario válido y confirmación | Campos faltantes, duplicado, servidor y guardado offline | US-011, US-048, TS-004 y TS-005 |
+| Consultar o actualizar un animal | Recurso autorizado y actualización | Sin permiso, inexistente y conflicto de sincronización | US-010, US-012, US-013 |
+| Consultar el historial sanitario | Historial disponible | Historial vacío, filtro sin resultados y acceso denegado | US-014 |
+| Registrar un evento sanitario | Datos válidos y confirmación | Validación, permiso insuficiente y sin conexión | US-015 |
 
 #### User Flow 1. Registrarse e iniciar sesión
 
 **User goal:** Crear mi cuenta con el rol que me corresponde e ingresar a AniTec para llegar a mi dashboard.  
 **User Persona:** Jorge Luis Rivas (ganadero) y Valeria Mendoza (médica veterinaria).
 
-Este flujo se deriva del Wireflow 1. En el *happy path*, la persona recorre el onboarding, elige crear una cuenta o iniciar sesión, completa los datos requeridos y llega al dashboard correspondiente a su rol. Si el registro contiene datos inválidos, se mantienen los valores ingresados y se señalan los campos por corregir. Una cuenta existente conduce a Sign in como ruta alternativa válida. Las credenciales incorrectas permiten reintentar y un fallo de conexión conserva el contexto antes de volver a enviar la solicitud.
+Este flujo se deriva del Wireflow 1. En el *happy path*, la persona recorre el onboarding, crea una cuenta con un rol autorizado o ingresa con una cuenta existente y llega al dashboard correspondiente. Los datos inválidos señalan los campos por corregir sin conservar la contraseña; una cuenta existente conduce a Sign in; y las credenciales incorrectas muestran un mensaje genérico. Una sesión vencida vuelve al acceso y un fallo de conexión conserva únicamente el contexto no sensible antes del reintento.
 
 
 <div align="center" style="page-break-inside: avoid;">
@@ -9717,8 +9819,8 @@ Los criterios de interacción de los prototipos derivan de la arquitectura de in
 
 | Usuario | Prototipo Evidencia | Captura del video | Video en Microsoft Stream |
 |---|---|---|---|
-| Ganadero | <img src="markdown/assets/chapter-3/prototypingFigmaEvidence.png" width="650">| <img src="markdown/assets/chapter-3/prototyping.png" width="650">  | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQAoOjKIja11SZkyivBWNnFHAfqWrhmYFjAEtX8G3aZOCPE?e=nkIv3O | 
-| Veterinario | <img src="markdown/assets/chapter-3/prototypingFigmaEvidenceVet.png" width="650"> | <img src="markdown/assets/chapter-3/prototypingVet.png" width="650"> | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQC1i57fMYVmS5YQVocXyarQAfhuAk37q3v1QPCuDFJ7Yyw?e=KRkjwP | 
+| Ganadero | <img src="markdown/assets/chapter-3/prototypingFigmaEvidence.png" width="650"> | <img src="markdown/assets/chapter-3/prototyping.png" width="650"> | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQAoOjKIja11SZkyivBWNnFHAfqWrhmYFjAEtX8G3aZOCPE?e=nkIv3O |
+| Veterinario | <img src="markdown/assets/chapter-3/prototypingFigmaEvidenceVet.png" width="650"> | <img src="markdown/assets/chapter-3/prototypingVet.png" width="650"> | https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215979_upc_edu_pe/IQC1i57fMYVmS5YQVocXyarQAfhuAk37q3v1QPCuDFJ7Yyw?e=KRkjwP |
 
 **Enlace de diseño en Figma:** <https://www.figma.com/design/uRmjCeeukXUb2AnZ2kFQsA/Anitec-2026-2?node-id=1-2&t=GnQ9UR4xNp7TYaA1-1>
 
@@ -10135,10 +10237,10 @@ La tabla siguiente lista las 24 historias comprometidas, sus Story Points y su e
 | TS-003 | Definir la arquitectura móvil por capas y bounded contexts | 5 | Completa. |
 | TS-001 | Configurar la aplicación Android nativa | 5 | Completa. |
 | TS-005 | Implementar persistencia local segura en Android | 5 | Completa: Room y sesión cifrada. |
-| US-004 | Registrar una cuenta según el rol | 5 | Completa. |
-| US-005 | Iniciar sesión | 3 | Completa. |
-| US-007 | Acceder únicamente a información autorizada | 5 | Parcial: el filtrado se hace en la aplicación; el backend aún no filtra por usuario. |
-| US-006 | Mantener y finalizar la sesión móvil | 3 | Completa. |
+| US-004 | Crear una cuenta con un rol autorizado | 5 | Completa. |
+| US-005 | Iniciar una sesión segura | 3 | Completa. |
+| US-007 | Restringir el acceso según el rol y la relación autorizada | 5 | Parcial: el filtrado se hace en la aplicación; el backend aún no filtra por usuario. |
+| US-006 | Mantener y cerrar una sesión segura | 3 | Completa. |
 | TS-008 | Proteger credenciales y datos de sesión | 5 | Completa. |
 | US-003 | Acceder a una landing page adaptable e internacionalizada | 5 | Completa. |
 
@@ -10183,10 +10285,10 @@ El Sprint Backlog descompone las historias comprometidas en tareas comprobables 
 | TS-005 | Implementar persistencia local segura en Android | T-007 | Implementar la caché local con Room | Entidades y DAO por contexto; limpieza de la caché al cerrar sesión. | 8 | Melgarejo Quiroz, Josep Eliu | Done |
 | TS-013 | Adaptar y documentar los servicios backend para móviles | T-008 | Agregar corrales y operaciones masivas al backend | Entidad Corral, relación animal-corral y endpoints de alta, estado y baja masiva. | 10 | Beingolea Montalvo, Sebastian Martin | Done |
 | TS-013 | Adaptar y documentar los servicios backend para móviles | T-009 | Documentar los endpoints con OpenAPI | Swagger UI con esquema Bearer JWT para los endpoints del Sprint. | 4 | Beingolea Montalvo, Sebastian Martin | Done |
-| US-004 | Registrar una cuenta según el rol | T-010 | Pantalla de registro | Formulario con selección de rol y aceptación de los Términos de Servicio. | 6 | Ortega Muñoz, Saul | Done |
-| US-005 | Iniciar sesión | T-011 | Pantalla de inicio de sesión | Formulario, validaciones y mensajes de error recuperables. | 4 | Ortega Muñoz, Saul | Done |
-| US-006 | Mantener y finalizar la sesión móvil | T-012 | Mantener y finalizar la sesión | Sesión persistente, cierre de sesión y retorno al inicio al vencer el token. | 6 | Ortega Muñoz, Saul | Done |
-| US-007 | Acceder únicamente a información autorizada | T-013 | Navegación por rol y filtrado de datos | Barra de navegación por rol y filtrado de fincas, animales y registros del usuario en la aplicación. | 8 | Melgarejo Quiroz, Josep Eliu | To-Review |
+| US-004 | Crear una cuenta con un rol autorizado | T-010 | Pantalla de registro | Formulario con selección de rol y aceptación de los términos del servicio. | 6 | Ortega Muñoz, Saul | Done |
+| US-005 | Iniciar una sesión segura | T-011 | Pantalla de inicio de sesión | Formulario, validaciones y mensajes de error recuperables. | 4 | Ortega Muñoz, Saul | Done |
+| US-006 | Mantener y cerrar una sesión segura | T-012 | Mantener y cerrar la sesión | Sesión persistente, cierre de sesión y retorno al inicio al vencer el token. | 6 | Ortega Muñoz, Saul | Done |
+| US-007 | Restringir el acceso según el rol y la relación autorizada | T-013 | Navegación por rol y filtrado de datos | Barra de navegación por rol y filtrado de fincas, animales y registros del usuario en la aplicación. | 8 | Melgarejo Quiroz, Josep Eliu | To-Review |
 | TS-008 | Proteger credenciales y datos de sesión | T-014 | Cifrar el token de sesión | Almacenamiento con DataStore, Tink (AES-256-GCM) y Android Keystore. | 6 | Beingolea Montalvo, Sebastian Martin | Done |
 | US-008 | Consultar las fincas registradas | T-015 | Lista de fincas | Tarjetas con ubicación, propietario y conteo de corrales y animales. | 4 | Sanchez Silva, Luciana Celeste | Done |
 | US-009 | Registrar y actualizar una finca | T-016 | Formulario de fincas | Alta y edición con validaciones y eliminación con confirmación. | 5 | Sanchez Silva, Luciana Celeste | Done |
@@ -10594,13 +10696,13 @@ Ejemplo de AnimalResource: {"id":1,"tag":"BOV-001","name":"Luna","species":"Bovi
 
 **Registros sanitarios** (/health-events; Rancher y Veterinarian)
 
-Ejemplo de HealthEventResource: {"id":1,"animalId":1,"type":"Vacuna","date":"2026-05-10","description":"Vacuna anual contra carbunco","veterinarian":"Dra. Ana Lopez","diagnosis":"Control preventivo","treatment":"Aplicacion de vacuna","prescription":"Refuerzo anual","followUp":"Revisar proxima campana","nextDueDate":"2026-11-10"}.
+Ejemplo de HealthEventResource: {"id":1,"animalId":1,"type":"Vacuna","date":"2026-05-10","description":"Vacuna anual contra carbunco","veterinarian":"Dra. Ana López","diagnosis":"Control preventivo","treatment":"Aplicación de vacuna","prescription":"Refuerzo anual","followUp":"Revisar próxima campaña","nextDueDate":"2026-11-10"}.
 
 | Related story | HTTP | Call syntax | Parameters / body | Success response | Error responses |
 |---|---|---|---|---|---|
 | US-014 | GET | curl "{BASE_URL}/api/v1/health-events" -H "Authorization: Bearer <token>" | Ninguno. | 200 con la lista de registros sanitarios. | 401; 403. |
 | US-014 | GET | curl "{BASE_URL}/api/v1/health-events/1" -H "Authorization: Bearer <token>" | Ruta: id. | 200 con el HealthEventResource. | 404; 401. |
-| US-015, US-016 | POST | curl -X POST "{BASE_URL}/api/v1/health-events" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{"animalId":1,"type":"Incidencia","date":"2026-10-01","description":"Cojera en la pata trasera","veterinarian":"Dra. Ana Lopez","diagnosis":"","treatment":"","prescription":"","followUp":"","nextDueDate":null}' | Body CreateHealthEventResource: animalId, type, date, description, veterinarian, diagnosis, treatment, prescription, followUp y nextDueDate (opcional). | 201 con el HealthEventResource creado. | 400 datos inválidos; 401; 403. |
+| US-015, US-016 | POST | curl -X POST "{BASE_URL}/api/v1/health-events" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{"animalId":1,"type":"Incidencia","date":"2026-10-01","description":"Cojera en la pata trasera","veterinarian":"Dra. Ana López","diagnosis":"","treatment":"","prescription":"","followUp":"","nextDueDate":null}' | Body CreateHealthEventResource: animalId, type, date, description, veterinarian, diagnosis, treatment, prescription, followUp y nextDueDate (opcional). | 201 con el HealthEventResource creado. | 400 datos inválidos; 401; 403. |
 | US-015 | PUT | curl -X PUT "{BASE_URL}/api/v1/health-events/1" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{...}' | Ruta: id. Body CreateHealthEventResource. | 200 con el registro actualizado. | 404; 400; 401; 403. |
 | US-015 | DELETE | curl -X DELETE "{BASE_URL}/api/v1/health-events/1" -H "Authorization: Bearer <token>" | Ruta: id. | 204 sin contenido. | 404; 401; 403. |
 
@@ -10756,7 +10858,7 @@ Las capturas siguientes muestran los analíticos de colaboración y de commits d
   <p><i>Figura 4.2.1.9.5. Analíticos de colaboración del repositorio anitec-frontend. Fuente: elaboración propia.</i></p>
 </div>
 
-**Interpretación de los analíticos.** Los analíticos de GitHub muestran la actividad de cada repositorio durante el sprint y se leen junto con las tareas del Sprint Backlog (sección 4.2.1.3), porque el número de commits por autor no mide por sí solo el aporte de cada integrante. El trabajo se concentró en la aplicación Android, que reúne 143 de las 205 horas estimadas del sprint (cerca del 70 %) y en la que participaron los cinco integrantes: Josep Melgarejo con 42 horas, Giuseppe Villanueva con 36, Luciana Sanchez con 29, Saul Ortega con 22 y Sebastian Beingolea con 14. El resto se repartió por producto: el backend, con 26 horas a cargo de Sebastian Beingolea (corrales, documentación OpenAPI y pruebas automatizadas); la Landing Page, con 18 horas a cargo de Saul Ortega; los mock-ups móviles, con 12 horas de Luciana Sanchez; y el registro de las aplicaciones en Firebase, con 6 horas de Giuseppe Villanueva. Cada integrante lideró un aspecto y colaboró en al menos otro, como indica la matriz de la sección 4.2.1.2, y el reparto por persona quedó entre 40 y 42 horas.
+**Interpretación de los analíticos.** Los analíticos de GitHub muestran la actividad de cada repositorio durante el sprint y se leen junto con las tareas del Sprint Backlog (sección 4.2.1.3), porque el número de commits por autor no mide por sí solo el aporte de cada integrante. El trabajo se concentró en la aplicación Android, que reúne 143 de las 205 horas estimadas del sprint (cerca del 70%) y en la que participaron los cinco integrantes: Josep Melgarejo con 42 horas, Giuseppe Villanueva con 36, Luciana Sanchez con 29, Saul Ortega con 22 y Sebastian Beingolea con 14. El resto se repartió por producto: el backend, con 26 horas a cargo de Sebastian Beingolea (corrales, documentación OpenAPI y pruebas automatizadas); la landing page, con 18 horas a cargo de Saul Ortega; los mock-ups móviles, con 12 horas de Luciana Sanchez; y el registro de las aplicaciones en Firebase, con 6 horas de Giuseppe Villanueva. Cada integrante lideró un aspecto y colaboró en al menos otro, como indica la matriz de la sección 4.2.1.2, y el reparto por persona quedó entre 40 y 42 horas.
 
 **Conclusión del trabajo en equipo.** Al cierre del Sprint 1 el equipo entregó la Landing Page publicada, el backend desplegado y respaldado por 104 pruebas automatizadas, y una aplicación Android que permite registrarse, iniciar sesión y gestionar fincas, corrales, animales y registros sanitarios. De las 30 tareas del sprint, 28 quedaron en Done y 2 en To-Review, y las historias US-007 y US-012 quedaron parciales: falta que el backend filtre la información por usuario y que se implemente el archivado de animales. El trabajo por productos con un líder por aspecto permitió avanzar en paralelo en Android, backend, Landing Page y diseño. Como aprendizajes, el equipo destaca definir el alcance móvil antes de implementar, probar desde el inicio y mantener alineados el informe y el código. Para el Sprint 2, el foco será la vista del veterinario, la colaboración con el ganadero, las actividades, el trabajo sin conexión y la identificación de animales con la cámara.
 
@@ -10822,7 +10924,7 @@ Además, el sprint cierra dos historias que habían quedado parciales en el Spri
 
 | ID | Título | Estado al cierre del Sprint 2 |
 |---|---|---|
-| US-007 | Acceder únicamente a información autorizada | Completa: el backend filtra fincas, corrales, animales, registros sanitarios, actividades, finanzas, dispositivos, suscripciones y paneles por usuario, y responde 403 ante recursos ajenos. |
+| US-007 | Restringir el acceso según el rol y la relación autorizada | Completa: el backend filtra fincas, corrales, animales, registros sanitarios, actividades, finanzas, dispositivos, suscripciones y paneles por usuario, y responde 403 ante recursos ajenos. |
 | US-012 | Actualizar o archivar un animal | Completa: el animal puede archivarse y restaurarse (estado «Archivado») de forma individual o múltiple, y la lista activa excluye los archivados. |
 
 Las historias US-020, US-021 y US-022 (solicitud, aceptación y revocación del acceso veterinario por parte del ganadero) pasan al Sprint 3: en este sprint el veterinario agrega y retira a sus clientes directamente. Las notificaciones (TS-009 y US-027), la persistencia local en Flutter (TS-006) y la sincronización idempotente (TS-007) también pasan al Sprint 3.
@@ -10857,7 +10959,7 @@ El Sprint Backlog descompone las historias comprometidas en tareas comprobables 
 
 | Story ID | Story Title | Task ID | Task Title | Description | Hours | Assigned To | Status |
 |---|---|---|---|---|---:|---|---|
-| US-007 | Acceder únicamente a información autorizada | T-031 | Filtrar los datos por usuario en el servidor | Servicio de alcance de acceso y su uso en los controladores de fincas, corrales, animales, registros sanitarios, actividades, finanzas, dispositivos, suscripciones y paneles; 403 ante recursos ajenos. | 10 | Beingolea Montalvo, Sebastian Martin | Done |
+| US-007 | Restringir el acceso según el rol y la relación autorizada | T-031 | Filtrar los datos por usuario en el servidor | Servicio de alcance de acceso y su uso en los controladores de fincas, corrales, animales, registros sanitarios, actividades, finanzas, dispositivos, suscripciones y paneles; 403 ante recursos ajenos. | 10 | Beingolea Montalvo, Sebastian Martin | Done |
 | TS-011, SP-002 | Integrar el checkout externo de Stripe; Investigar Stripe | T-032 | Retorno móvil de Stripe y confirmación del pago | Páginas HTTPS de retorno que abren la aplicación por enlace, parámetro de plataforma en el checkout, confirmación del pago y cierre del pago simulado en producción. | 8 | Beingolea Montalvo, Sebastian Martin | Done |
 | US-038 | Consultar planes de suscripción | T-033 | Sembrar y consultar los planes de suscripción | Carga de los tres planes en cualquier entorno cuando la tabla está vacía y consulta desde la aplicación. | 3 | Beingolea Montalvo, Sebastian Martin | Done |
 | US-012 | Actualizar o archivar un animal | T-034 | Archivar animales en el backend | Estado «Archivado», PATCH animals/{id}/status y filtro archived en la lista de animales. | 3 | Beingolea Montalvo, Sebastian Martin | Done |
@@ -11101,12 +11203,12 @@ Las 16 pruebas instrumentadas se ejecutan en el emulador (Medium_Phone_API_37.0,
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-5-3-android-pruebas-unitarias.png" alt="Informe de Gradle de testDebugUnitTest: 214 pruebas, 0 fallos y 100 % correctas" width="800">
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-5-3-android-pruebas-unitarias.png" alt="Informe de Gradle de testDebugUnitTest: 214 pruebas, 0 fallos y 100% correctas" width="800">
   <p><i>Figura 4.2.2.5.3. Resultado de las pruebas unitarias de Android. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-5-4-android-pruebas-instrumentadas.png" alt="Informe de connectedDebugAndroidTest en el emulador: 16 pruebas, 0 fallos y 100 % correctas, con 4 pruebas en el paquete app, que es el de BottomNavigationTest" width="800">
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-5-4-android-pruebas-instrumentadas.png" alt="Informe de connectedDebugAndroidTest en el emulador: 16 pruebas, 0 fallos y 100% correctas, con 4 pruebas en el paquete app, que es el de BottomNavigationTest" width="800">
   <p><i>Figura 4.2.2.5.4. Resultado de las pruebas instrumentadas de Android (4 pruebas del paquete app, que incluye BottomNavigationTest). Fuente: elaboración propia.</i></p>
 </div>
 
@@ -11302,7 +11404,7 @@ Con el Sprint 2 el backend queda completo y publicado, con su documentación Ope
 
 **Planes de suscripción** (/subscription-plans)
 
-Ejemplo de SubscriptionPlanResource: {"id":1,"name":"Ganadero Basico","price":49.00,"stripePriceId":"mock_price_rancher_basic","maxAnimals":80,"isActive":true}. Los planes se cargan al iniciar la API en cualquier entorno, solo si la tabla está vacía.
+Ejemplo de SubscriptionPlanResource: {"id":1,"name":"Ganadero Básico","price":49.00,"stripePriceId":"mock_price_rancher_basic","maxAnimals":80,"isActive":true}. Los planes se cargan al iniciar la API en cualquier entorno, solo si la tabla está vacía.
 
 | Related story | HTTP | Call syntax | Parameters / body | Success response | Error responses |
 |---|---|---|---|---|---|
@@ -11517,7 +11619,7 @@ Las capturas siguientes muestran los analíticos de colaboración y de commits d
   <p><i>Figura 4.2.2.9.5. Analíticos de colaboración del repositorio anitec-landing-page. Fuente: elaboración propia.</i></p>
 </div>
 
-**Interpretación de los analíticos.** Los analíticos de GitHub se leen junto con las tareas del Sprint Backlog, porque el número de commits por autor no mide por sí solo el aporte de cada integrante. El trabajo se concentró en la aplicación Android, que reúne 106 de las 200 horas estimadas (53 %), seguida por el backend, con 40 horas (20 %), la aplicación Flutter, con 34 horas (17 %), y la distribución y la documentación, con 20 horas (10 %). Los cinco integrantes participaron en el desarrollo del backend o de las aplicaciones y cada uno lideró al menos un aspecto: Sebastian Beingolea lideró el backend y colaboró en las pruebas de Flutter, Josep Melgarejo lideró Android, Luciana Sanchez lideró el diseño y Flutter, Giuseppe Villanueva lideró las pruebas y la distribución, y Saul Ortega lideró la Landing Page y colaboró en Android, Flutter y el backend, como indica la matriz de la sección 4.2.2.2. El reparto por persona fue de 40 horas para cada integrante.
+**Interpretación de los analíticos.** Los analíticos de GitHub se leen junto con las tareas del Sprint Backlog, porque el número de commits por autor no mide por sí solo el aporte de cada integrante. El trabajo se concentró en la aplicación Android, que reúne 106 de las 200 horas estimadas (53%), seguida por el backend, con 40 horas (20%), la aplicación Flutter, con 34 horas (17%), y la distribución y la documentación, con 20 horas (10%). Los cinco integrantes participaron en el desarrollo del backend o de las aplicaciones y cada uno lideró al menos un aspecto: Sebastian Beingolea lideró el backend y colaboró en las pruebas de Flutter, Josep Melgarejo lideró Android, Luciana Sanchez lideró el diseño y Flutter, Giuseppe Villanueva lideró las pruebas y la distribución, y Saul Ortega lideró la landing page y colaboró en Android, Flutter y el backend, como indica la matriz de la sección 4.2.2.2. El reparto por persona fue de 40 horas para cada integrante.
 
 **Conclusión del trabajo en equipo.** Al cierre del Sprint 2 el equipo entregó el backend completo con 150 pruebas automatizadas, una aplicación Android con las funciones del ganadero y del veterinario, una primera versión de la aplicación Flutter y la distribución de las dos aplicaciones en Firebase App Distribution. Las 31 tareas del sprint quedaron en Done. De las 24 historias comprometidas, 20 se completaron y 4 quedaron parciales, y las historias del consentimiento veterinario, las notificaciones, la persistencia local en Flutter y la sincronización idempotente pasaron al Sprint 3. Como aprendizajes, el equipo destaca cerrar las historias parciales del sprint anterior, probar en las condiciones reales de uso, como las conexiones simultáneas de la base de datos publicada, y verificar en un dispositivo físico lo que el emulador no permite. Para el Sprint 3, el foco será el consentimiento del ganadero sobre el acceso veterinario, las notificaciones, el trabajo sin conexión con sincronización idempotente, la persistencia local en Flutter, la accesibilidad y la automatización de las pruebas de los flujos críticos.
 
@@ -11547,10 +11649,10 @@ En el caso del segmento ganadero, la evaluación se orienta a la gestión de hat
 
 1. ¿A qué se dedica actualmente dentro de la actividad ganadera y qué tipo de animales maneja?
 2. ¿Cómo registra hoy la información de sus animales, fincas, actividades o gastos?
-3. Al ver el landing page de AniTec, ¿entiende rápidamente qué problema busca resolver la aplicación?
-4. ¿La información del landing page le genera confianza para probar la aplicación? ¿Por qué?
-5. ¿Qué sección del landing page le pareció más útil o clara?
-6. ¿Hubo alguna parte del landing page que le pareció confusa, innecesaria o poco creíble?
+3. Al ver la landing page de AniTec, ¿entiende rápidamente qué problema busca resolver la aplicación?
+4. ¿La información de la landing page le genera confianza para probar la aplicación? ¿Por qué?
+5. ¿Qué sección de la landing page le pareció más útil o clara?
+6. ¿Hubo alguna parte de la landing page que le pareció confusa, innecesaria o poco creíble?
 7. Al iniciar sesión como ganadero, ¿le resultó claro hacia dónde debía ir primero?
 8. ¿El dashboard ganadero le muestra información útil para tomar decisiones rápidas?
 9. ¿Los nombres de las opciones del menú, como hatos, animales, sanidad, finanzas, actividades, IoT y planes, le resultan comprensibles?
@@ -11570,9 +11672,9 @@ En el caso del segmento ganadero, la evaluación se orienta a la gestión de hat
 
 1. ¿Cuál es su experiencia trabajando con ganaderos o productores pecuarios?
 2. ¿Cómo organiza actualmente la información de sus clientes, pacientes y visitas?
-3. Al ver el landing page de AniTec, ¿queda claro que también está pensada para veterinarios?
-4. ¿Qué información del landing page le ayudó más a entender el valor de la aplicación?
-5. ¿Qué información agregaría al landing page para que un veterinario confíe más en AniTec?
+3. Al ver la landing page de AniTec, ¿queda claro que también está pensada para veterinarios?
+4. ¿Qué información de la landing page le ayudó más a entender el valor de la aplicación?
+5. ¿Qué información agregaría a la landing page para que un veterinario confíe más en AniTec?
 6. Al iniciar sesión como veterinario, ¿el dashboard le permite entender rápidamente su carga de trabajo?
 7. ¿La opción de clientes asignados le parece clara y útil?
 8. ¿Le resultó fácil agregar o revisar clientes ganaderos?
@@ -11745,7 +11847,7 @@ Para registrar los hallazgos se utilizó una escala de severidad simple:
 | 3 | Problema importante que puede dificultar el cumplimiento de una tarea. |
 | 4 | Problema crítico que impide completar una tarea principal. |
 
-### Evaluación heurística - Segmento Ganadero:
+### Evaluación heurística — segmento ganadero
 
 | Criterio evaluado | Evidencia observada | Severidad | Recomendación |
 | ----------------- | ------------------- | --------- | ------------- |
@@ -11762,7 +11864,7 @@ Para registrar los hallazgos se utilizó una escala de severidad simple:
 
 <br>
 
-### Evaluación heurística - Segmento Veterinario:
+### Evaluación heurística — segmento veterinario
 
 | Criterio evaluado | Evidencia observada | Severidad | Recomendación |
 | ----------------- | ------------------- | --------- | ------------- |
@@ -11779,7 +11881,7 @@ Para registrar los hallazgos se utilizó una escala de severidad simple:
 
 <br>
 
-### Resumen de hallazgos heurísticos:
+### Resumen de hallazgos heurísticos
 
 La evaluación muestra que **AniTec** cumple adecuadamente con criterios de correspondencia con el mundo real, consistencia, reconocimiento y organización general de la información. Los usuarios comprenden la división por roles y reconocen la utilidad de centralizar animales, sanidad, actividades, finanzas, clientes, pacientes, IoT y suscripciones en una sola plataforma.
 
@@ -11792,23 +11894,19 @@ Los principales puntos de mejora se concentran en **prevención de errores**, **
 
 # Conclusiones
 
-## Conclusiones y recomendaciones
+El proyecto AniTec permitió validar la necesidad de una solución digital orientada a ganaderos y veterinarios, debido a que ambos segmentos requieren mayor orden, trazabilidad y disponibilidad de información sobre animales, fincas, actividades, sanidad y gastos. Las entrevistas y validaciones realizadas confirmaron que el problema identificado es real y que una aplicación móvil puede aportar valor si mantiene una experiencia simple, clara y cercana al contexto ganadero.
 
-### Conclusiones
+El diseño basado en Domain-Driven Design permitió organizar AniTec en nueve bounded contexts: Identity and Access Management, Profile Management, Livestock Management, Sanitary Management, Veterinary Collaboration, Activity Management, Financial Management, Subscription Management y Analytics and Reporting. Esta separación favorece la mantenibilidad, delimita responsabilidades y permite que cada módulo evolucione sin afectar innecesariamente a los demás.
 
-El proyecto AniTec permitió validar la necesidad de una solución digital orientada a ganaderos y veterinarios, debido a que ambos segmentos requieren mayor orden, trazabilidad y disponibilidad de información sobre animales, fincas, actividades, sanidad y gastos. Las entrevistas y validaciones realizadas confirmaron que el problema identificado es real y que una plataforma web puede aportar valor si mantiene una experiencia simple, clara y cercana al contexto ganadero.
+Durante el Sprint 1 se desplegó la landing page, se adaptó el backend para el consumo móvil y se construyó la base de la aplicación Android con los flujos de acceso, fincas, corrales, animales y registros sanitarios. Este avance permitió contar con una primera versión ejecutable y trazable con el Product Backlog.
 
-El diseño del sistema basado en Domain-Driven Design permitió organizar AniTec mediante bounded contexts como IAM, Profiles, Livestock, Sanitary, Financial, Activities, Analytics, Clients, Devices, Metrics y Subscriptions. Esta separación favorece la mantenibilidad del sistema, facilita la asignación de responsabilidades dentro del equipo y permite que cada módulo evolucione sin afectar innecesariamente al resto de la aplicación.
+Durante el Sprint 2 se completó el backend, se ampliaron los flujos de Android para ganaderos y veterinarios y se entregó una primera versión de Flutter. También se incorporaron el trabajo sin conexión, la identificación mediante QR, las suscripciones con Stripe, la analítica y la distribución de versiones móviles.
 
-Durante el Sprint 1 se logró establecer la presencia digital del producto mediante una landing page funcional desplegada en GitHub Pages. Este avance permitió comunicar la propuesta de valor de AniTec, presentar los beneficios principales para ganaderos y veterinarios, y generar una primera base de validación frente a usuarios potenciales.
-
-Durante el Sprint 2 se implementó la aplicación web frontend con Vue, organizada por bounded contexts y conectada inicialmente a datos de prueba mediante my-json-server. Este sprint permitió construir las principales vistas funcionales de la plataforma, validar flujos de navegación y preparar la estructura necesaria para reemplazar progresivamente los datos mock por servicios reales.
-
-Durante el Sprint 3 se desarrolló el backend real de AniTec con ASP.NET Core, Entity Framework Core y MySQL. La API implementa autenticación con JWT, gestión de usuarios, perfiles, hatos, animales, eventos sanitarios, actividades, registros financieros, clientes veterinarios, analíticas, planes, suscripciones y pagos mock. Con ello, el proyecto dejó de depender solamente de datos simulados y pasó a contar con una base de servicios persistentes.
+El Sprint 3 concentra el cierre del consentimiento veterinario, las notificaciones, la sincronización idempotente, la persistencia local en Flutter, la accesibilidad, la protección de datos, el rendimiento, la recuperación ante fallos y las pruebas automatizadas de los flujos críticos.
 
 La documentación de servicios mediante Swagger/OpenAPI permitió verificar los endpoints implementados y facilitar las pruebas manuales del backend. Asimismo, las migraciones de Entity Framework Core permitieron mantener alineada la estructura de la base de datos con las entidades del dominio, reduciendo errores en la configuración y mejorando la trazabilidad técnica del sistema.
 
-El despliegue del backend en Render representa un avance importante para el proyecto, ya que la API queda disponible desde internet y puede ser consumida por el frontend desplegado. Esto permite validar AniTec en un entorno más cercano a producción, comprobar la disponibilidad pública del servicio y preparar futuras pruebas de integración entre frontend, backend y base de datos.
+El despliegue del backend en Render representa un avance importante, ya que permite que las aplicaciones móviles consuman la API desde un entorno publicado. Esto facilita las pruebas de integración entre Android, Flutter, el backend y la base de datos en condiciones más cercanas al uso real.
 
 En relación con el Student Outcome, el equipo evidenció trabajo colaborativo y liderazgo conjunto durante los tres avances. Cada integrante asumió responsabilidades claras por módulo o artefacto, participó en la planificación de tareas, colaboró en la integración del sistema y aportó a la documentación del producto. Esto permitió cumplir los objetivos de cada sprint de forma progresiva y mantener coherencia entre la propuesta, el diseño, el frontend, el backend y el despliegue.
 
@@ -11816,7 +11914,7 @@ En relación con el Student Outcome, el equipo evidenció trabajo colaborativo y
 
 El Problem Statement se mantiene vigente, ya que las validaciones confirmaron que ganaderos y veterinarios siguen enfrentando problemas de desorden, registros manuales y falta de trazabilidad. AniTec responde a una necesidad real al centralizar información sanitaria, productiva, económica y operativa en una sola plataforma.
 
-Las Business Assumptions fueron validadas de forma general, debido a que los usuarios reconocieron valor en contar con una solución web para registrar animales, eventos sanitarios, actividades, finanzas y clientes veterinarios. Sin embargo, todavía se requiere reforzar reportes, alertas y campos específicos para aumentar la utilidad percibida.
+Las Business Assumptions fueron validadas de forma general, debido a que los usuarios reconocieron valor en contar con una solución móvil para registrar animales, eventos sanitarios, actividades, finanzas y clientes veterinarios. Sin embargo, todavía se requiere reforzar los reportes, las alertas y algunos campos específicos para aumentar la utilidad percibida.
 
 Las User Assumptions se confirmaron parcialmente, porque los entrevistados comprendieron la navegación por roles y consideraron útiles los dashboards y módulos principales. Aun así, la experiencia debe seguir simplificándose, especialmente en formularios y mensajes de error.
 
@@ -11826,36 +11924,36 @@ Las Hypothesis Statements fueron parcialmente validadas. Existe interés inicial
 
 Los criterios de éxito quedan planteados como metas para una siguiente etapa de validación con uso real de la aplicación desplegada. Las entrevistas permiten confirmar intención de uso y valor percibido, pero aún falta medir reducción de errores, mejora en precisión de registros y apoyo efectivo a decisiones basadas en datos.
 
-### Recomendaciones
+## Recomendaciones
 
-**Corto plazo:** Se recomienda continuar con la integración completa entre el frontend desplegado en GitHub Pages y el backend desplegado en Render, asegurando que las variables de entorno del frontend apunten a la API real y que los flujos principales funcionen sin depender de my-json-server.
+**Corto plazo:** Se recomienda completar las historias previstas para el Sprint 3 y verificar los flujos principales de Android y Flutter contra el backend publicado, con especial atención a la autorización, la sincronización y la recuperación ante fallos.
 
 **Corto plazo:** Se recomienda fortalecer la autenticación y autorización del sistema, definiendo permisos por rol para ganaderos, veterinarios y administradores. Esto permitiría proteger los endpoints sensibles y asegurar que cada usuario solo acceda a la información correspondiente a su perfil.
 
 **Mediano plazo:** Se recomienda continuar la validación con ganaderos y veterinarios usando la aplicación desplegada, no solo prototipos. Esto permitirá identificar problemas reales de uso, comprensión del lenguaje, dificultad en formularios, utilidad de dashboards y necesidades adicionales en los módulos de sanidad, actividades y finanzas.
 
-**Mediano plazo:** Se recomienda mejorar la experiencia de usuario del frontend en una siguiente iteración, priorizando claridad en dashboards, simplificación de formularios y mejor organización del flujo veterinario por clientes asignados.
+**Mediano plazo:** Se recomienda mejorar la experiencia de las aplicaciones móviles en una siguiente iteración, priorizando la claridad de los paneles, la simplificación de los formularios y la organización del flujo veterinario por clientes autorizados.
 
 **Mediano plazo:** Se recomienda completar y fortalecer las pruebas del backend, incluyendo pruebas de endpoints, validación de reglas de negocio, manejo de errores y pruebas de integración con la base de datos. Esto ayudará a asegurar mayor estabilidad antes de seguir ampliando funcionalidades.
 
-**Futuro roadmap:** Se recomienda mantener actualizada la documentación técnica, incluyendo endpoints, migraciones, evidencias de despliegue, diagramas C4 y decisiones de arquitectura. A medida que AniTec crezca, esta documentación será clave para sostener la colaboración del equipo y facilitar futuras mejoras del producto.
+**Hoja de ruta futura:** Se recomienda mantener actualizada la documentación técnica, incluidos los endpoints, las migraciones, las evidencias de despliegue, los diagramas C4 y las decisiones de arquitectura. A medida que AniTec crezca, esta documentación será clave para sostener la colaboración del equipo y facilitar futuras mejoras del producto.
 
 ---
 
-## Video About The Team
+## Video About the Team
 
-El video About The Team presenta la participación de los integrantes del equipo Titan Team 4 durante el desarrollo de AniTec, destacando las actividades realizadas, los logros alcanzados en el curso y el desarrollo de competencias asociadas al trabajo colaborativo, liderazgo conjunto, planificación de tareas y cumplimiento de objetivos.
+El video About the Team presenta la participación de los integrantes del equipo Titan Team 4 durante el desarrollo de AniTec y destaca las actividades realizadas, los logros alcanzados y las competencias asociadas con el trabajo colaborativo, el liderazgo conjunto, la planificación de tareas y el cumplimiento de objetivos.
 
 **Datos del video:**
 
 | Elemento | Información |
 | -------- | ----------- |
-| Título | Video About The Team - AniTec |
+| Título | Video About the Team — AniTec |
 | Duración | |
-| Público objetivo | Docente del curso, visitantes del landing page e interesados en conocer el proceso de trabajo del equipo |
-| URL publicado en Microsoft Stream |  |
-| URL publicado en YouTube |  |
-| Uso en landing page | El video de YouTube se utiliza como evidencia pública del proceso de trabajo del equipo. |
+| Público objetivo | Docente del curso, visitantes de la landing page y personas interesadas en conocer el proceso de trabajo del equipo |
+| URL publicada en Microsoft Stream |  |
+| URL publicada en YouTube |  |
+| Uso en la landing page | El video de YouTube se utiliza como evidencia pública del proceso de trabajo del equipo. |
 
 **URL del video publicado en Microsoft Stream:**
 
@@ -11914,33 +12012,33 @@ El video About The Team presenta la participación de los integrantes del equipo
 
 <p style="margin-left:36px; text-indent:-36px;">Instituto Nacional de Estadística e Informática. (2026). <em>Estadísticas de las tecnologías de información y comunicación en los hogares: Octubre-noviembre-diciembre 2025</em>. https://www.inei.gob.pe/media/MenuRecursivo/boletines/boletin-tic-oct_dic2025.pdf</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Jošt, G., &amp; Taneski, V. (2025). State-of-the-art cross-platform mobile application development frameworks: A comparative study of market and developer trends. <em>Informatics, 12</em>(2), 45. https://doi.org/10.3390/informatics12020045</p>
+<p style="margin-left:36px; text-indent:-36px;">Jošt, G., &amp; Taneski, V. (2025). State-of-the-art cross-platform mobile application development frameworks: A comparative study of market and developer trends. <em>Informatics, 12</em>(2), Article 45. https://doi.org/10.3390/informatics12020045</p>
 
 <p style="margin-left:36px; text-indent:-36px;">Livestock Manager. (s. f.). <em>Livestock Manager: Made by Pila</em>. Recuperado el 13 de septiembre de 2026, de https://app.livestockfarm.co/</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Mahmud, T., Che, M., Ngu, A., &amp; Yang, G. (2025). Why Android app testing falls short: Empirical insights from open-source projects and a practitioner survey. <em>Empirical Software Engineering, 30</em>, artículo 163. https://doi.org/10.1007/s10664-025-10726-x</p>
+<p style="margin-left:36px; text-indent:-36px;">Mahmud, T., Che, M., Ngu, A., &amp; Yang, G. (2025). Why Android app testing falls short: Empirical insights from open-source projects and a practitioner survey. <em>Empirical Software Engineering, 30</em>, Article 163. https://doi.org/10.1007/s10664-025-10726-x</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Microsoft. (2026a). <em>ASP.NET Core documentation</em>. https://learn.microsoft.com/aspnet/core/</p>
+<p style="margin-left:36px; text-indent:-36px;">Microsoft. (s. f.-a). <em>ASP.NET Core documentation</em>. Recuperado el 3 de noviembre de 2026, de https://learn.microsoft.com/aspnet/core/</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Microsoft. (2026b). <em>Entity Framework Core documentation</em>. https://learn.microsoft.com/ef/core/</p>
+<p style="margin-left:36px; text-indent:-36px;">Microsoft. (s. f.-b). <em>Entity Framework Core documentation</em>. Recuperado el 3 de noviembre de 2026, de https://learn.microsoft.com/ef/core/</p>
 
-<p style="margin-left:36px; text-indent:-36px;">MySQL. (2026). <em>MySQL 8.0 reference manual</em>. https://dev.mysql.com/doc/refman/8.0/en/</p>
+<p style="margin-left:36px; text-indent:-36px;">MySQL. (s. f.). <em>MySQL 8.0 reference manual</em>. Recuperado el 3 de noviembre de 2026, de https://dev.mysql.com/doc/refman/8.0/en/</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Nsabiyeze, A., Zhang, M., Li, J., Zhao, Q., &amp; Zhang, X. (2025). Precision livestock farming for climate-resilient livestock management: A review of real-time monitoring and decision support systems. <em>Journal of Cleaner Production, 524</em>, 146454. https://doi.org/10.1016/j.jclepro.2025.146454</p>
+<p style="margin-left:36px; text-indent:-36px;">Nsabiyeze, A., Zhang, M., Li, J., Zhao, Q., &amp; Zhang, X. (2025). Precision livestock farming for climate-resilient livestock management: A review of real-time monitoring and decision support systems. <em>Journal of Cleaner Production, 524</em>, Article 146454. https://doi.org/10.1016/j.jclepro.2025.146454</p>
 
-<p style="margin-left:36px; text-indent:-36px;">OpenAPI Initiative. (2026). <em>OpenAPI specification</em>. https://spec.openapis.org/oas/latest.html</p>
+<p style="margin-left:36px; text-indent:-36px;">OpenAPI Initiative. (s. f.). <em>OpenAPI specification</em>. Recuperado el 3 de noviembre de 2026, de https://spec.openapis.org/oas/latest.html</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Papadopoulos, G., Papantonatou, M.-Z., Uyar, H., Kriezi, O., Mavrommatis, A., Psiroukis, V., Kasimati, A., Tsiplakou, E., &amp; Fountas, S. (2025). Economic and environmental benefits of digital agricultural technological solutions in livestock farming: A review. <em>Smart Agricultural Technology, 10</em>, 100783. https://doi.org/10.1016/j.atech.2025.100783</p>
+<p style="margin-left:36px; text-indent:-36px;">Papadopoulos, G., Papantonatou, M.-Z., Uyar, H., Kriezi, O., Mavrommatis, A., Psiroukis, V., Kasimati, A., Tsiplakou, E., &amp; Fountas, S. (2025). Economic and environmental benefits of digital agricultural technological solutions in livestock farming: A review. <em>Smart Agricultural Technology, 10</em>, Article 100783. https://doi.org/10.1016/j.atech.2025.100783</p>
 
 <p style="margin-left:36px; text-indent:-36px;">Pressman, R. S. (2010). <em>Ingeniería de software: Un enfoque práctico</em> (7.ª ed.). McGraw-Hill.</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Schwaber, K., &amp; Sutherland, J. (2020). <em>The Scrum Guide</em>. Scrum Guides. https://scrumguides.org/scrum-guide.html</p>
+<p style="margin-left:36px; text-indent:-36px;">Schwaber, K., &amp; Sutherland, J. (2020). <em>The Scrum guide</em>. Scrum Guides. https://scrumguides.org/scrum-guide.html</p>
 
 <p style="margin-left:36px; text-indent:-36px;">Stripe. (s. f.). <em>Use a prebuilt Stripe-hosted payment page</em>. Recuperado el 13 de septiembre de 2026, de https://docs.stripe.com/payments/checkout</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Structurizr. (2026). <em>Structurizr documentation</em>. https://docs.structurizr.com/</p>
+<p style="margin-left:36px; text-indent:-36px;">Structurizr. (s. f.). <em>Structurizr documentation</em>. Recuperado el 3 de noviembre de 2026, de https://docs.structurizr.com/</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Vue.js. (2026). <em>Vue.js documentation</em>. https://vuejs.org/guide/</p>
+<p style="margin-left:36px; text-indent:-36px;">Vue.js. (s. f.). <em>Vue.js documentation</em>. Recuperado el 3 de noviembre de 2026, de https://vuejs.org/guide/</p>
 
 <p style="margin-left:36px; text-indent:-36px;">Weerakoon, S. (2020, 1 de noviembre). <em>How to write a user story for an API product</em>. Medium. https://sameera17w.medium.com/how-to-write-a-user-story-for-an-api-product-7af6abd4ad2e</p>
 
@@ -11959,14 +12057,14 @@ Los siguientes anexos reúnen los enlaces disponibles hasta el TB1. Se incluyen 
 
 ### Segmento de ganaderos
 
-- **Entrevista 1 - Caterina Rodriguez:** <https://tinyurl.com/caterinarodri>
-- **Entrevista 2 - Rebeca Noemi Quiroz Roldan:** <https://tinyurl.com/entrevista2RebecaQuiroz>
-- **Entrevista 3 - Ursula Trigozo Salcedo:** <https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQDw1Fks32sxQroa9TMJpBhPAffdaO--WIZy3fKexREgNhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=H1KzAW>
+- **Entrevista 1 — Caterina Rodríguez:** <https://tinyurl.com/caterinarodri>
+- **Entrevista 2 — Rebeca Noemí Quiroz Roldán:** <https://tinyurl.com/entrevista2RebecaQuiroz>
+- **Entrevista 3 — Úrsula Trigozo Salcedo:** <https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQDw1Fks32sxQroa9TMJpBhPAffdaO--WIZy3fKexREgNhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=H1KzAW>
 
 ### Segmento de veterinarios
 
-- **Entrevista 4 - Angela Mendoza:** <https://tinyurl.com/entrevista4AngelaMendoza>
-- **Entrevista 5 - Jeferson Castro Pariona:** <https://tinyurl.com/b3txtyh3>
+- **Entrevista 4 — Ángela Mendoza:** <https://tinyurl.com/entrevista4AngelaMendoza>
+- **Entrevista 5 — Jeferson Castro Pariona:** <https://tinyurl.com/b3txtyh3>
 
 <div style="page-break-before: always;"></div>
 

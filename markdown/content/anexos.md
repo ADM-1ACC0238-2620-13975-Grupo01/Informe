@@ -10,14 +10,14 @@ Los siguientes anexos reúnen los enlaces disponibles hasta el TB1. Se incluyen 
 
 ### Segmento de ganaderos
 
-- **Entrevista 1 - Caterina Rodriguez:** <https://tinyurl.com/caterinarodri>
-- **Entrevista 2 - Rebeca Noemi Quiroz Roldan:** <https://tinyurl.com/entrevista2RebecaQuiroz>
-- **Entrevista 3 - Ursula Trigozo Salcedo:** <https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQDw1Fks32sxQroa9TMJpBhPAffdaO--WIZy3fKexREgNhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=H1KzAW>
+- **Entrevista 1 — Caterina Rodríguez:** <https://tinyurl.com/caterinarodri>
+- **Entrevista 2 — Rebeca Noemí Quiroz Roldán:** <https://tinyurl.com/entrevista2RebecaQuiroz>
+- **Entrevista 3 — Úrsula Trigozo Salcedo:** <https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQDw1Fks32sxQroa9TMJpBhPAffdaO--WIZy3fKexREgNhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=H1KzAW>
 
 ### Segmento de veterinarios
 
-- **Entrevista 4 - Angela Mendoza:** <https://tinyurl.com/entrevista4AngelaMendoza>
-- **Entrevista 5 - Jeferson Castro Pariona:** <https://tinyurl.com/b3txtyh3>
+- **Entrevista 4 — Ángela Mendoza:** <https://tinyurl.com/entrevista4AngelaMendoza>
+- **Entrevista 5 — Jeferson Castro Pariona:** <https://tinyurl.com/b3txtyh3>
 
 <div style="page-break-before: always;"></div>
 

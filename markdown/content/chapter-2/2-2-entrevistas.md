@@ -1,24 +1,22 @@
-# 2.2. Entrevistas.
+# 2.2. Entrevistas
 
 <!-- Documentation marker: interview research section. -->
 
 Las entrevistas son una herramienta esencial para comprender a fondo a nuestro público objetivo. Para que sean efectivas, deben seguir una estructura clara y directa, utilizando preguntas específicas que permitan recolectar información de valor y datos precisos de los participantes.
 
-<div id='2.2.1.'><h4> 2.2.1. Diseño de entrevistas. </h4></div>
-
 Objetivo: Identificar frustraciones, necesidades, dispositivos disponibles, grado de digitalización y percepción sobre el registro de información ganadera.
 
-## 2.2.1. Diseño de entrevistas.
+## 2.2.1. Diseño de entrevistas
 
-### Segmentos entrevistados:
+### Segmentos entrevistados
 
 - Ganaderos
 
 - Veterinarios
 
-Formato: Entrevistas semiestructuradas, de 25-30 minutos, registradas en video con consentimiento.
+Formato: Entrevistas semiestructuradas, de 25 a 30 minutos, registradas en video con consentimiento.
 
-Preguntas dirigidas al personal de **Ganaderos**.
+Preguntas dirigidas a los **ganaderos**.
 
 Preguntas principales:
 
@@ -46,12 +44,12 @@ Preguntas principales:
 
 - ¿Qué tipo de información considera más importante tener a la mano sobre su ganado?
 
-- ¿Estaría dispuesto a usar una aplicación móvil/web para llevar el control del ganado si fuera sencilla y funcional?
+- ¿Estaría dispuesto a usar una aplicación móvil o web para llevar el control del ganado si fuera sencilla y funcional?
 
 - ¿Qué funcionalidades le gustaría que tenga esta herramienta (alertas, historial médico, reproductivo, reportes, etc.)?
 - ¿Qué beneficios espera al adoptar una herramienta digital para su ganadería?
 
-### Preguntas dirigidas a los **Veterinarios**
+### Preguntas dirigidas a los **veterinarios**
 
 Preguntas principales:
 
@@ -77,7 +75,7 @@ Preguntas principales:
 
 - ¿Le resultaría útil tener acceso al historial médico del animal antes de una consulta?
 
-- ¿Qué tan dispuesto estaría a utilizar una aplicación móvil/web para registrar y acceder al historial de sus pacientes?
+- ¿Qué tan dispuesto estaría a utilizar una aplicación móvil o web para registrar y acceder al historial de sus pacientes?
 
 - ¿Qué funcionalidades considera clave en una herramienta digital veterinaria (calendario, historial, recordatorios, fichas clínicas)?
 
@@ -85,15 +83,15 @@ Preguntas principales:
 
 - ¿Qué tan importante considera el análisis de datos (estadísticas de salud, tratamientos más comunes, etc.) en su labor?
 
-### Preguntas complementarias (para ambos segmentos):
+### Preguntas complementarias para ambos segmentos
 
 - ¿Qué expectativas tendría sobre una plataforma digital que centralice la información ganadera y veterinaria?
 
-- ¿Qué dispositivos usa con más frecuencia para sus actividades laborales (celular, laptop, tablet)? ¿Está familiarizado con el uso de apps?
+- ¿Qué dispositivos usa con más frecuencia para sus actividades laborales (teléfono celular, computadora portátil o tableta)? ¿Está familiarizado con el uso de aplicaciones?
 
 - ¿Qué es lo que más valora en una herramienta digital: rapidez, facilidad de uso, seguridad de datos u otro aspecto?
 
-### Preguntas principales (comunes):
+### Preguntas principales comunes
 
 1. ¿Cómo lleva actualmente el registro de su ganado (peso, salud, vacunas)?
 
@@ -105,26 +103,26 @@ Preguntas principales:
 
 5. ¿Ha perdido información relevante alguna vez?
 
-6. ¿Qué contenido educativo le interesaría tener en una app?
+6. ¿Qué contenido educativo le interesaría tener en una aplicación?
 
 7. ¿Qué canales digitales usa actualmente (WhatsApp, redes sociales, etc.)?
 
-Variables demográficas a recolectar: Edad, género, distrito de residencia, educación, tipo de hacienda, frecuencia de registros, ocupación alterna, herramientas digitales que maneja, tipo de celular, acceso a internet, objetivos personales, frustraciones, marcas preferidas, influencia de técnicos o asociaciones.
+Variables demográficas que se recopilarán: edad, género, distrito de residencia, educación, tipo de hacienda, frecuencia de los registros, ocupación alterna, herramientas digitales que maneja, tipo de celular, acceso a internet, objetivos personales, frustraciones, marcas preferidas e influencia de técnicos o asociaciones.
 
-## 2.2.2. Registro de entrevistas.
+## 2.2.2. Registro de entrevistas
 
 ### Entrevistas al segmento de ganaderos
 
-#### Entrevista 1: Caterina Rodriguez
+#### Entrevista 1: Caterina Rodríguez
 
 <div align="center">
 
 | Campo | Información |
 |-------|-------------|
-| Segmento | Ganadero |
-| Nombres y apellidos | Caterina Rodriguez |
+| Segmento | Ganadera |
+| Nombres y apellidos | Caterina Rodríguez |
 | Edad | 33 años |
-| Distrito | San miguel, Lima |
+| Distrito | San Miguel, Lima |
 | Ocupación | Ganadera con más de 9 años de experiencia |
 | Tipo de ganado | Ganado porcino |
 | Tamaño aproximado del ganado | 16 cabezas de ganado |
@@ -140,21 +138,21 @@ Variables demográficas a recolectar: Edad, género, distrito de residencia, edu
 
 **Resumen de la entrevista:**
 
-Caterina Rodríguez es una ganadera de 33 años con aproximadamente ocho años de experiencia en el manejo, principalmente, de ganado vacuno. Actualmente gestiona alrededor de 45 animales junto a un equipo de tres personas (dos familiares y un cuidador). Durante la entrevista, explicó que su gestión de datos se realiza de manera fragmentada: utiliza un cuaderno físico, un cuadro de Excel y su teléfono celular (tomando fotos y notas) para registrar información sobre salud, alimentación y reproducción. Esta forma de trabajo, a la que dedica entre 20 y 30 minutos diarios, le genera dificultades para mantener la información organizada. La entrevistada señaló que los datos suelen traspapelarse o perderse al estar en distintos formatos, o resultar incomprensibles por la mala caligrafía, lo que complica el seguimiento preciso de vacunas y tratamientos.
+Caterina Rodríguez es una ganadera de 33 años con aproximadamente ocho años de experiencia, principalmente en el manejo de ganado vacuno. Actualmente gestiona alrededor de 45 animales junto con un equipo de tres personas (dos familiares y un cuidador). Durante la entrevista, explicó que su gestión de datos se realiza de manera fragmentada: utiliza un cuaderno físico, un cuadro de Excel y su teléfono celular (mediante fotos y notas) para registrar información sobre salud, alimentación y reproducción. Esta forma de trabajo, a la que dedica entre 20 y 30 minutos diarios, le genera dificultades para mantener la información organizada. La entrevistada señaló que los datos suelen traspapelarse o perderse por estar en distintos formatos y que algunos resultan incomprensibles por la mala caligrafía, lo que complica el seguimiento preciso de vacunas y tratamientos.
 
 En cuanto a su perfil tecnológico y forma de trabajo, Caterina se muestra como una persona consciente de la necesidad de optimizar su tiempo y mejorar la toma de decisiones en su ganadería. Valora tener a la mano información vital de cada animal, como edad, peso, historial de enfermedades y tratamientos. Respecto a la tecnología, confía en las herramientas digitales, aunque hasta ahora no ha utilizado ninguna aplicación especializada en el manejo ganadero. Su dispositivo principal es el celular, siendo WhatsApp la aplicación que más utiliza para registrar información y comunicarse, además de usar redes sociales como Facebook y TikTok. El uso de la computadora es mínimo y lo reserva casi exclusivamente para revisar Excel.
 
 La entrevista permitió identificar que Caterina está totalmente dispuesta a utilizar una aplicación móvil o web para el control de su ganado. Destacó que la herramienta ideal debe centralizar la información (usando códigos por animal), contar con un historial médico y reproductivo, y emitir alertas de vacunación y atención. Un punto crucial para ella es que la plataforma sea muy sencilla e intuitiva de usar, ya que sus familiares, que son personas mayores, también deberán interactuar con ella. Además, mostró interés en recibir contenido educativo sobre prevención de enfermedades, alimentación y cuidado de terneros. Esta información sustenta el arquetipo de una ganadera joven que reconoce las limitaciones de los métodos tradicionales y busca una digitalización práctica y accesible que unifique el trabajo de su equipo familiar.
 
 
-#### Entrevista 2: Rebeca Noemi Quiroz Roldan
+#### Entrevista 2: Rebeca Noemí Quiroz Roldán
 
 <div align="center">
 
 | Campo | Información |
 |-------|-------------|
 | Segmento | Ganadera |
-| Nombres y apellidos | Rebeca Noemi Quiroz Roldan |
+| Nombres y apellidos | Rebeca Noemí Quiroz Roldán |
 | Edad | 54 años |
 | Distrito | Lima |
 | Ocupación | Productora ganadera |
@@ -172,27 +170,27 @@ La entrevista permitió identificar que Caterina está totalmente dispuesta a ut
 
 **Resumen de la entrevista:**
 
-Rebeca Noemi Quiroz Roldan comentó que su actividad ganadera se enfoca en el cuidado de ganado vacuno y que una de sus mayores preocupaciones aparece cuando se presentan enfermedades como mastitis o cuando los terneros se enferman. Actualmente registra la información mediante cuadernos, apuntes y hojas sueltas. Aunque mencionó que logra manejar su actividad con estos medios, también reconoció que una aplicación podría ayudarle a tener mayor orden y a recordar eventos importantes, como vacunaciones, dosis de medicamentos y controles sanitarios.
+Rebeca Noemí Quiroz Roldán comentó que su actividad ganadera se enfoca en el cuidado de ganado vacuno y que una de sus mayores preocupaciones aparece cuando se presentan enfermedades como mastitis o cuando los terneros se enferman. Actualmente registra la información mediante cuadernos, apuntes y hojas sueltas. Aunque mencionó que logra manejar su actividad con estos medios, también reconoció que una aplicación podría ayudarle a tener mayor orden y a recordar eventos importantes, como vacunaciones, dosis de medicamentos y controles sanitarios.
 
-En sus respuestas se observa una personalidad responsable y preventiva. Rebeca valora la seguridad y la confianza antes de adoptar una herramienta digital, por lo que una solución como AniTec debe transmitir protección de datos, facilidad de uso y utilidad concreta. Su principal canal de interacción es el celular, especialmente WhatsApp, ya que lo usa para comunicarse con familiares, trabajadores y profesionales que la asesoran. Además, suele apoyarse en un ingeniero o especialista para atender problemas sanitarios del ganado, lo que muestra que sus decisiones están influenciadas por personal técnico de confianza.
+En sus respuestas se observa una personalidad responsable y preventiva. Rebeca valora la seguridad y la confianza antes de adoptar una herramienta digital, por lo que una solución como AniTec debe transmitir protección de datos, facilidad de uso y utilidad concreta. Su principal canal de interacción es el celular, especialmente WhatsApp, ya que lo usa para comunicarse con familiares, trabajadores y profesionales que la asesoran. Además, suele apoyarse en un ingeniero o especialista para atender problemas sanitarios del ganado, lo que muestra que sus decisiones están influidas por personal técnico de confianza.
 
-Respecto a tecnología, utiliza smartphone y navegación básica desde el celular. No manifestó rechazo hacia las aplicaciones, pero sí dejó claro que no desea una herramienta complicada. Esta entrevista ayuda a justificar funciones como recordatorios, alertas sanitarias, registro simple de enfermedades y acceso rápido a datos importantes. Sus respuestas aportan evidencia para construir un arquetipo de ganadera que tiene disposición a digitalizarse siempre que la plataforma sea segura, clara y útil para resolver problemas reales del manejo diario.
+Respecto a la tecnología, utiliza un teléfono inteligente y realiza una navegación básica desde el celular. No manifestó rechazo hacia las aplicaciones, pero sí dejó claro que no desea una herramienta complicada. Esta entrevista ayuda a justificar funciones como recordatorios, alertas sanitarias, registro simple de enfermedades y acceso rápido a datos importantes. Sus respuestas aportan evidencia para construir un arquetipo de ganadera dispuesta a digitalizarse siempre que la plataforma sea segura, clara y útil para resolver problemas reales del manejo diario.
 
-#### Entrevista 3: Ursula Trigozo Salcedo
+#### Entrevista 3: Úrsula Trigozo Salcedo
 
 <div align="center">
 
-| Campo | Información                                                                                                                                                                                                                                                                                                             |
-|-------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Segmento | Ganadero                                                                                                                                                                                                                                                                                                                |
-| Nombres y apellidos | Ursula trigozo Salcedo                                                                                                                                                                                                                                                                                                  |
-| Edad | 64 años                                                                                                                                                                                                                                                                                                                 |
-| Distrito | Lurin, Lima                                                                                                                                                                                                                                                                                                             |
-| Ocupación | Ganadero artesanal                                                                                                                                                                                                                                                                                                      |
-| Tipo de ganado | Ganado vacuno                                                                                                                                                                                                                                                                                                           |
-| Tamaño aproximado del ganado | Hato pequeño familiar                                                                                                                                                                                                                                                                                                   |
-| Inicio de la entrevista | 00:00                                                                                                                                                                                                                                                                                                                   |
-| Duración | 00:10:31                                                                                                                                                                                                                                                                                                                |
+| Campo | Información |
+|---|---|
+| Segmento | Ganadera |
+| Nombres y apellidos | Úrsula Trigozo Salcedo |
+| Edad | 64 años |
+| Distrito | Lurín, Lima |
+| Ocupación | Ganadera artesanal |
+| Tipo de ganado | Ganado vacuno |
+| Tamaño aproximado del ganado | Hato pequeño familiar |
+| Inicio de la entrevista | 00:00 |
+| Duración | 00:10:31 |
 | URL del video | https://upcedupe-my.sharepoint.com/:v:/g/personal/u20231c019_upc_edu_pe/IQDw1Fks32sxQroa9TMJpBhPAffdaO--WIZy3fKexREgNhU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=H1KzAW |
 
 </div>
@@ -214,14 +212,14 @@ En este perfil, AniTec debe enfocarse en centralizar la información, ahorrar ti
 
 ### Entrevistas al segmento de veterinarios
 
-#### Entrevista 4: Angela Mendoza
+#### Entrevista 4: Ángela Mendoza
 
 <div align="center">
 
 | Campo | Información |
 |-------|-------------|
 | Segmento | Veterinaria |
-| Nombres y apellidos | Angela Mendoza |
+| Nombres y apellidos | Ángela Mendoza |
 | Edad | 24 años |
 | Distrito | Camaná, Arequipa |
 | Ocupación | Médica veterinaria |
@@ -239,9 +237,9 @@ En este perfil, AniTec debe enfocarse en centralizar la información, ahorrar ti
 
 **Resumen de la entrevista:**
 
-Angela Mendoza explicó que en su trabajo como veterinaria observa que muchos productores todavía gestionan la información sanitaria con cuadernos físicos, archivos simples de Excel, fotografías y conversaciones de WhatsApp. Esta dispersión de datos afecta el seguimiento de vacunas, tratamientos, diagnósticos y antecedentes clínicos. También mencionó que, en visitas de emergencia o campañas sanitarias, la falta de información ordenada puede retrasar la atención y complicar la toma de decisiones.
+Ángela Mendoza explicó que en su trabajo como veterinaria observa que muchos productores todavía gestionan la información sanitaria con cuadernos físicos, archivos simples de Excel, fotografías y conversaciones de WhatsApp. Esta dispersión de datos afecta el seguimiento de vacunas, tratamientos, diagnósticos y antecedentes clínicos. También mencionó que, en visitas de emergencia o campañas sanitarias, la falta de información ordenada puede retrasar la atención y complicar la toma de decisiones.
 
-Su perfil evidencia una personalidad organizada, técnica y orientada al servicio. Angela valora la rapidez, la trazabilidad y la claridad de la información porque su trabajo depende de revisar antecedentes antes de indicar tratamientos. Sus canales principales de interacción son WhatsApp, llamadas telefónicas y archivos digitales básicos que comparte con productores. Usa smartphone y laptop para su labor diaria, y se siente cómoda navegando en Google Chrome o usando herramientas web cuando necesita consultar información técnica. Sus influencias profesionales provienen de su formación veterinaria, colegas del sector, campañas sanitarias y necesidades reales observadas en campo.
+Su perfil evidencia una personalidad organizada, técnica y orientada al servicio. Ángela valora la rapidez, la trazabilidad y la claridad de la información porque su trabajo depende de revisar antecedentes antes de indicar tratamientos. Sus canales principales de interacción son WhatsApp, llamadas telefónicas y archivos digitales básicos que comparte con productores. Usa un teléfono inteligente y una computadora portátil para su labor diaria, y se siente cómoda navegando en Google Chrome o usando herramientas web cuando necesita consultar información técnica. Sus influencias profesionales provienen de su formación veterinaria, colegas del sector, campañas sanitarias y necesidades reales observadas en campo.
 
 La entrevistada considera que una herramienta como AniTec sería útil si permite centralizar el historial clínico de cada animal, registrar tratamientos, programar seguimientos y mejorar la comunicación con los ganaderos. Sin embargo, remarcó que la plataforma debe ser rápida y fácil de usar, porque el trabajo veterinario de campo no permite perder tiempo en procesos largos. Esta entrevista aporta evidencia para el arquetipo de veterinaria joven que usa tecnología, pero necesita una solución enfocada en eficiencia clínica y coordinación con productores.
 
@@ -254,7 +252,7 @@ La entrevistada considera que una herramienta como AniTec sería útil si permit
 | Segmento | Veterinario |
 | Nombres y apellidos | Jeferson Castro Pariona |
 | Edad | 27 años |
-| Distrito | Ventanilla, Lima (Residencia) |
+| Distrito | Ventanilla, Lima (residencia) |
 | Ocupación | Médico veterinario |
 | Zona de trabajo | Selva central del Perú |
 | Tipo de atención | Atención clínica y sanitaria de ganado en campo |
@@ -272,15 +270,15 @@ La entrevistada considera que una herramienta como AniTec sería útil si permit
 
 Jeferson Castro Pariona comentó que el reto más grande y frecuente en la atención veterinaria ganadera es la falta de trazabilidad y la pérdida de continuidad en el historial médico de los animales. Explicó que la información suele estar dispersa en cuadernos, notas físicas, hojas de cálculo o chats de WhatsApp, y que cuando se enfrentan emergencias o se incorporan nuevos animales, debe tomar decisiones clínicas con datos limitados. Esto afecta directamente la planificación sanitaria, la efectividad de los tratamientos y el seguimiento de las intervenciones.
 
-El entrevistado muestra un perfil analítico, práctico y orientado a la tecnología como herramienta de trabajo diario. Utiliza su smartphone para la comunicación y el registro rápido en campo, y su laptop para consultas técnicas más detalladas. Considera fundamental contar con datos concretos antes de intervenir y valora la rapidez, la facilidad de uso y la intuición en cualquier herramienta digital, especialmente considerando los retos de conectividad en el entorno rural.
+El entrevistado muestra un perfil analítico, práctico y orientado a la tecnología como herramienta de trabajo diario. Utiliza su teléfono inteligente para la comunicación y el registro rápido en campo, y su computadora portátil para consultas técnicas más detalladas. Considera fundamental contar con datos concretos antes de intervenir y valora la rapidez, la facilidad de uso y la intuición en cualquier herramienta digital, especialmente considerando los retos de conectividad en el entorno rural.
 
 Según sus respuestas, una plataforma digital (como AniTec) le aportaría un valor significativo si logra centralizar la información sin ser un sistema pesado. Sus funcionalidades clave ideales incluyen: acceso inmediato al historial sanitario del animal, un módulo rápido para registrar diagnósticos y tratamientos, alertas de vacunación o reproducción para programar rutas de campo, y un canal claro de comunicación con el ganadero. También valoró la inclusión de contenido educativo rápido, como fichas técnicas o información sobre brotes en la región. En conclusión, está totalmente dispuesto a digitalizar su labor para reducir los errores derivados de la información dispersa, siempre y cuando la herramienta se integre de forma ágil a su flujo real de trabajo en el campo.
 
-## 2.2.3. Análisis de entrevistas.
+## 2.2.3. Análisis de entrevistas
 
 ### Análisis del segmento de Ganaderos
 
-Para el segmento de ganaderos se analizaron 3 entrevistas: Vicente Huamán Alacutte, Rebeca Noemi Quiroz Roldan y Porfirio Salazar Rodriguez. La muestra evidencia un perfil de productores con experiencia práctica, uso frecuente de métodos tradicionales y apertura moderada hacia herramientas digitales siempre que sean simples, útiles y accesibles.
+Para el segmento de ganaderos se analizaron 3 entrevistas: Vicente Huamán Alacutte, Rebeca Noemí Quiroz Roldán y Porfirio Salazar Rodríguez. La muestra evidencia un perfil de productores con experiencia práctica, uso frecuente de métodos tradicionales y apertura moderada hacia herramientas digitales siempre que sean simples, útiles y accesibles.
 
 <div align="center">
 
@@ -291,8 +289,8 @@ Para el segmento de ganaderos se analizaron 3 entrevistas: Vicente Huamán Alacu
 | Necesidad de controlar salud y tratamientos | 2 de 3 entrevistados (66.7%) mencionan directamente problemas relacionados con enfermedades, tratamientos o control sanitario. | Vicente menciona control de enfermedades y vacunación; Rebeca menciona mastitis, terneros enfermos y dosis de medicamentos. | El arquetipo necesita alertas sanitarias, historial médico y recordatorios de vacunación o tratamiento. |
 | Uso del celular como canal principal | 3 de 3 entrevistados (100%) muestran familiaridad básica con el celular como medio de comunicación o consulta. | Vicente usa celular y WhatsApp; Rebeca usa principalmente su celular; Porfirio utiliza celular y comunicación por WhatsApp. | La solución debe funcionar bien en pantallas pequeñas y permitir una interacción directa desde dispositivos móviles. |
 | Interés en adoptar tecnología | 3 de 3 entrevistados (100%) reconocen que la tecnología podría ayudar a mejorar su gestión. | Vicente afirma que la tecnología puede profesionalizar el sector; Rebeca estaría dispuesta a usar una aplicación; Porfirio considera que la tecnología podría mejorar su productividad. | El arquetipo no rechaza la tecnología, pero necesita percibir un beneficio claro antes de usarla. |
-| Necesidad de simplicidad | 3 de 3 entrevistados (100%) requieren que la herramienta sea sencilla, clara o fácil de justificar en el trabajo diario. | Vicente pide una app sencilla para el hombre de campo; Rebeca no desea una herramienta complicada; Porfirio evalúa si el beneficio justifica la inversión. | La interfaz debe usar lenguaje simple, formularios directos y pocos pasos para completar tareas. |
-| Influencia de terceros en decisiones | 3 de 3 entrevistados (100%) dependen o se ven influenciados por otras personas del entorno ganadero. | Vicente considera compradores y técnicos; Rebeca se apoya en un especialista; Porfirio aprende de experiencia familiar y otros productores. | El arquetipo toma decisiones con apoyo de redes de confianza, por lo que la app debe transmitir seguridad y utilidad comprobable. |
+| Necesidad de simplicidad | 3 de 3 entrevistados (100%) requieren que la herramienta sea sencilla, clara o fácil de justificar en el trabajo diario. | Vicente pide una aplicación sencilla para el hombre de campo; Rebeca no desea una herramienta complicada; Porfirio evalúa si el beneficio justifica la inversión. | La interfaz debe usar lenguaje simple, formularios directos y pocos pasos para completar tareas. |
+| Influencia de terceros en decisiones | 3 de 3 entrevistados (100%) dependen o se ven influidos por otras personas del entorno ganadero. | Vicente considera compradores y técnicos; Rebeca se apoya en un especialista; Porfirio aprende de la experiencia familiar y de otros productores. | El arquetipo toma decisiones con apoyo de redes de confianza, por lo que la aplicación debe transmitir seguridad y utilidad comprobable. |
 | Sensibilidad al costo | 1 de 3 entrevistados (33.3%) menciona directamente el costo como barrera. | Porfirio indica que necesitaría capital suficiente para pagar una solución digital. | El modelo de adopción debe considerar planes accesibles, prueba gratuita o beneficios económicos visibles. |
 
 </div>
@@ -303,23 +301,23 @@ Desde el punto de vista subjetivo, los ganaderos entrevistados valoran la confia
 
 ### Análisis del segmento de Veterinarios
 
-Para el segmento de veterinarios se analizaron 2 entrevistas: Angela Mendoza y Jeferson Castro Pariona. La muestra evidencia un perfil profesional joven, con experiencia en atención de campo, necesidad de información clínica ordenada y uso de herramientas digitales básicas para comunicarse con productores.
+Para el segmento de veterinarios se analizaron 2 entrevistas: Ángela Mendoza y Jeferson Castro Pariona. La muestra evidencia un perfil profesional joven, con experiencia en atención de campo, necesidad de información clínica ordenada y uso de herramientas digitales básicas para comunicarse con productores.
 
 <div align="center">
 
 | Característica identificada | Resultado estadístico | Sustento en entrevistas | Relación con el arquetipo |
 |-----------------------------|----------------------|-------------------------|---------------------------|
-| Profesionales jóvenes | 2 de 2 entrevistados (100%) tienen entre 24 y 27 años. | Angela tiene 24 años; Jeferson tiene 27 años. | El arquetipo puede representarse como un veterinario joven, con mayor disposición a usar herramientas digitales. |
-| Trabajo en campo o zonas descentralizadas | 2 de 2 entrevistados (100%) trabajan o han trabajado en zonas fuera del entorno urbano principal. | Angela trabaja en la sierra sur; Jeferson tiene experiencia en la selva central. | La solución debe considerar rapidez, movilidad y uso en contextos con posible conectividad limitada. |
-| Problemas por registros incompletos o dispersos | 2 de 2 entrevistados (100%) mencionan información sanitaria desordenada o incompleta. | Angela menciona cuadernos, Excel, fotos y WhatsApp; Jeferson menciona cuadernos, notas físicas, hojas de cálculo y chats de WhatsApp. | El arquetipo necesita acceso centralizado al historial clínico y sanitario de los animales. |
-| Uso de WhatsApp y herramientas digitales básicas | 2 de 2 entrevistados (100%) usan canales digitales simples para comunicarse o complementar su trabajo. | Angela usa WhatsApp, llamadas y archivos digitales; Jeferson usa smartphone en campo y laptop para consultas técnicas. | AniTec debe integrarse al flujo real del veterinario y reducir la dependencia de información dispersa. |
-| Necesidad de historial clínico previo | 2 de 2 entrevistados (100%) señalan que conocer antecedentes mejora la atención. | Angela necesita revisar antecedentes antes de tratamientos; Jeferson indica que la falta de trazabilidad obliga a decidir con datos limitados. | El arquetipo requiere fichas clínicas, historial sanitario y acceso rápido a tratamientos previos. |
-| Valoración de rapidez y facilidad de uso | 2 de 2 entrevistados (100%) indican que la herramienta debe ser rápida, intuitiva y adaptada al campo. | Angela remarca que no puede perder tiempo en procesos largos; Jeferson pide rapidez, facilidad de uso e integración ágil al trabajo rural. | La interfaz veterinaria debe permitir registrar atenciones con pocos pasos y consultar datos al instante. |
-| Necesidad de mejorar comunicación con ganaderos | 2 de 2 entrevistados (100%) consideran importante coordinar mejor con productores. | Angela menciona mejorar comunicación con ganaderos; Jeferson valora un canal claro de comunicación con el productor. | El arquetipo necesita funciones de seguimiento, coordinación y comunicación clara con el productor. |
-| Actitud favorable hacia herramientas tecnológicas | 2 de 2 entrevistados (100%) muestran apertura a soluciones digitales para mejorar su trabajo. | Angela considera útil centralizar historial y seguimiento; Jeferson está dispuesto a digitalizar su labor si la herramienta no es pesada y aporta alertas, registro rápido y contenido educativo. | El arquetipo es un usuario con mayor predisposición digital que el ganadero, pero exige eficiencia profesional. |
+| Profesionales jóvenes | 2 de 2 entrevistados (100%) tienen entre 24 y 27 años. | Ángela tiene 24 años; Jeferson tiene 27 años. | El arquetipo puede representarse como un veterinario joven, con mayor disposición a usar herramientas digitales. |
+| Trabajo en campo o zonas descentralizadas | 2 de 2 entrevistados (100%) trabajan o han trabajado en zonas fuera del entorno urbano principal. | Ángela trabaja en la sierra sur; Jeferson tiene experiencia en la selva central. | La solución debe considerar rapidez, movilidad y uso en contextos con posible conectividad limitada. |
+| Problemas por registros incompletos o dispersos | 2 de 2 entrevistados (100%) mencionan información sanitaria desordenada o incompleta. | Ángela menciona cuadernos, Excel, fotos y WhatsApp; Jeferson menciona cuadernos, notas físicas, hojas de cálculo y chats de WhatsApp. | El arquetipo necesita acceso centralizado al historial clínico y sanitario de los animales. |
+| Uso de WhatsApp y herramientas digitales básicas | 2 de 2 entrevistados (100%) usan canales digitales simples para comunicarse o complementar su trabajo. | Ángela usa WhatsApp, llamadas y archivos digitales; Jeferson usa el teléfono inteligente en campo y la computadora portátil para consultas técnicas. | AniTec debe integrarse al flujo real del veterinario y reducir la dependencia de información dispersa. |
+| Necesidad de historial clínico previo | 2 de 2 entrevistados (100%) señalan que conocer antecedentes mejora la atención. | Ángela necesita revisar antecedentes antes de tratamientos; Jeferson indica que la falta de trazabilidad obliga a decidir con datos limitados. | El arquetipo requiere fichas clínicas, historial sanitario y acceso rápido a tratamientos previos. |
+| Valoración de rapidez y facilidad de uso | 2 de 2 entrevistados (100%) indican que la herramienta debe ser rápida, intuitiva y adaptada al campo. | Ángela remarca que no puede perder tiempo en procesos largos; Jeferson pide rapidez, facilidad de uso e integración ágil al trabajo rural. | La interfaz veterinaria debe permitir registrar atenciones con pocos pasos y consultar datos al instante. |
+| Necesidad de mejorar comunicación con ganaderos | 2 de 2 entrevistados (100%) consideran importante coordinar mejor con productores. | Ángela menciona mejorar la comunicación con ganaderos; Jeferson valora un canal claro de comunicación con el productor. | El arquetipo necesita funciones de seguimiento, coordinación y comunicación clara con el productor. |
+| Actitud favorable hacia herramientas tecnológicas | 2 de 2 entrevistados (100%) muestran apertura a soluciones digitales para mejorar su trabajo. | Ángela considera útil centralizar el historial y el seguimiento; Jeferson está dispuesto a digitalizar su labor si la herramienta no es pesada y aporta alertas, registro rápido y contenido educativo. | El arquetipo es un usuario con mayor predisposición digital que el ganadero, pero exige eficiencia profesional. |
 
 </div>
 
 El análisis del segmento veterinario muestra que las principales necesidades están relacionadas con trazabilidad clínica, acceso rápido a información y coordinación con productores. El 100% de los entrevistados menciona problemas por información dispersa y el 100% considera importante contar con antecedentes del animal antes o durante la atención. Esto evidencia que el arquetipo veterinario debe estar construido alrededor de la toma de decisiones clínicas, el seguimiento sanitario y la necesidad de reducir incertidumbre durante el trabajo de campo.
 
-En cuanto a características subjetivas, ambos veterinarios se muestran más familiarizados con la tecnología que el segmento ganadero. Angela representa un perfil organizado, técnico y orientado al servicio, mientras que Jeferson muestra un perfil analítico, práctico y orientado a la tecnología. Ambos valoran la rapidez, la trazabilidad y la utilidad real. Por ello, el arquetipo de veterinario debe representar a un profesional joven, móvil, acostumbrado a usar herramientas digitales básicas, pero que necesita una plataforma más integrada para evitar pérdida de información y mejorar la continuidad de tratamientos.
+En cuanto a características subjetivas, ambos veterinarios se muestran más familiarizados con la tecnología que el segmento ganadero. Ángela representa un perfil organizado, técnico y orientado al servicio, mientras que Jeferson muestra un perfil analítico, práctico y orientado a la tecnología. Ambos valoran la rapidez, la trazabilidad y la utilidad real. Por ello, el arquetipo de veterinario debe representar a un profesional joven, móvil, acostumbrado a usar herramientas digitales básicas, pero que necesita una plataforma más integrada para evitar pérdida de información y mejorar la continuidad de tratamientos.

@@ -20,7 +20,7 @@ Esta capa documenta el modelo que representa el núcleo de **Profile Management*
 |---|---|
 | **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Mantener la información personal y de contacto de un propietario. |
-| **Relaciones** | Profile compone PersonName; Profile compone EmailAddress; Profile compone StreetAddress; IProfileRepository depende de Profile : persists |
+| **Relaciones** | Profile compone PersonName; Profile compone EmailAddress; Profile compone StreetAddress; IProfileRepository depende de Profile (persists). |
 
 **Atributos o dependencias**
 
@@ -111,7 +111,7 @@ Esta capa documenta el modelo que representa el núcleo de **Profile Management*
 |---|---|
 | **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de Profile. |
-| **Relaciones** | IProfileRepository depende de Profile : persists |
+| **Relaciones** | IProfileRepository depende de Profile (persists). |
 
 **Atributos o dependencias**
 

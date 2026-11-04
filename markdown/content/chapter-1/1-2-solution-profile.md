@@ -10,7 +10,7 @@ _¿Cuál es la situación problemática?_
 
 Los pequeños y medianos ganaderos suelen distribuir la información de sus animales entre cuadernos, hojas sueltas, archivos y mensajes. Esto dificulta mantener historiales completos, encontrar datos durante una atención, recordar actividades sanitarias y compartir información confiable con el veterinario. La aplicación web tomada como base centraliza parte de esos datos, pero no cubre por sí sola la necesidad de registrar y consultar información mientras el usuario se desplaza por el campo.
 
-La literatura reciente respalda esta necesidad. Las soluciones digitales aplicadas a la ganadería pueden mejorar el monitoreo de la salud, la productividad y el uso de recursos, aunque su adopción todavía depende de factores como el costo, la infraestructura y la integración tecnológica (Papadopoulos et al., 2025). Asimismo, los sistemas de monitoreo en tiempo real y apoyo a decisiones permiten transformar los datos del hato en alertas y acciones oportunas para una gestión más resiliente (Nsabiyeze et al., 2025).
+La literatura reciente respalda esta necesidad. Las soluciones digitales aplicadas a la ganadería pueden mejorar el monitoreo de la salud, la productividad y el uso de recursos, aunque su adopción todavía depende de factores como el costo, la infraestructura y la integración tecnológica (Food and Agriculture Organization of the United Nations, 2022; Papadopoulos et al., 2025). Asimismo, los sistemas de monitoreo en tiempo real y apoyo a decisiones permiten transformar los datos del hato en alertas y acciones oportunas para una gestión más resiliente (Food and Agriculture Organization of the United Nations, 2023; Nsabiyeze et al., 2025).
 
 **Cuándo (When)**
 
@@ -50,7 +50,7 @@ Se diseñarán flujos breves, formularios con validación, estados claros de sin
 
 _¿Cuál es la magnitud del contexto?_
 
-El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y señaló que el 79,6 % tenía unidades de menos de cinco hectáreas (INEI, 2014). Además, durante el primer trimestre de 2025 solo el 20,5 % de los hogares rurales disponía de Internet en el hogar (INEI, 2025). Estas cifras no cuantifican por sí solas el mercado de AniTec, pero muestran la escala de la pequeña producción agropecuaria y la necesidad de diseñar para un entorno de conectividad restringida.
+El IV Censo Nacional Agropecuario registró 2 199 243 productores agropecuarios como personas naturales y señaló que el 79,6% tenía unidades de menos de cinco hectáreas (Instituto Nacional de Estadística e Informática [INEI], 2014). Además, durante el primer trimestre de 2025 solo el 20,5% de los hogares rurales disponía de Internet en el hogar (INEI, 2025). Estas cifras no cuantifican por sí solas el mercado de AniTec, pero muestran la escala de la pequeña producción agropecuaria y la necesidad de diseñar para un entorno de conectividad restringida.
 
 ### Descripción consolidada de los antecedentes y la problemática
 
@@ -60,9 +60,9 @@ La propuesta comprenderá una landing page, una API REST propia, una aplicación
 
 El objetivo del proyecto es reducir la pérdida y fragmentación de información, facilitar el cumplimiento de actividades sanitarias y mejorar el acceso al historial del animal durante el trabajo de campo. La solución deberá mantener coherencia entre plataformas, proteger los datos, comunicar los estados de conexión y funcionar de manera comprensible para usuarios con distintos niveles de experiencia digital.
 
-## 1.2.2. Lean UX Process.
+## 1.2.2. Lean UX Process
 
-### 1.2.2.1. Lean UX Problem Statements.
+### 1.2.2.1. Lean UX Problem Statements
 
 **Problem Statement:**
 
@@ -76,7 +76,7 @@ Nuestro enfoque inicial será pequeños y medianos ganaderos que actualmente dep
 
 Sabremos que hemos tenido éxito cuando observemos una reducción en el uso de registros manuales, un aumento en la frecuencia y precisión de los registros realizados desde la aplicación, una mejora en el cumplimiento de vacunaciones y tratamientos, y una consulta más rápida de los historiales sanitarios por parte de ganaderos y veterinarios.
 
-### 1.2.2.2. Lean UX Assumptions.
+### 1.2.2.2. Lean UX Assumptions
 
 ### **Business Assumptions:**
 
@@ -104,7 +104,7 @@ Sabremos que hemos tenido éxito cuando observemos una reducción en el uso de r
 
 - **Creemos que** AniTec debe ofrecer una experiencia Android intuitiva, legible y estable, pensada para usuarios con distintos niveles de experiencia tecnológica. También debe proteger los datos, comunicar los errores de conexión y permitir recuperar el trabajo pendiente.
 
-### Feature Assumptions:
+### Feature Assumptions
 
 **Feature Assumption 01**
 
@@ -136,7 +136,7 @@ Sabremos que hemos tenido éxito cuando observemos una reducción en el uso de r
 
 **Sabremos que esta funcionalidad es valiosa cuando** los veterinarios utilicen la aplicación Android para registrar y consultar la información sanitaria de los animales atendidos.
 
-### 1.2.2.3. Lean UX Hypothesis Statements.
+### 1.2.2.3. Lean UX Hypothesis Statements
 
 - **Hypothesis Statement 01:**
 
@@ -191,9 +191,9 @@ Sabremos que hemos tenido éxito cuando observemos una reducción en el uso de r
 
   **Con** un módulo para veterinarios integrado en la aplicación Android de AniTec.
 
-### 1.2.2.4. Lean UX Canvas.
+### 1.2.2.4. Lean UX Canvas
 
-El Lean UX Canvas es una herramienta utilizada en el marco del diseño centrado en el usuario (UX) y la metodología Lean, cuyo objetivo es apoyar la creación y mejora de productos de manera ágil y eficiente. Su propósito principal es proporcionar una estructura organizada que fomente la colaboración entre equipos multidisciplinarios. A continuación, se presenta el Lean UX Canvas elaborado por el equipo utilizando la plataforma digital Mural.
+El Lean UX Canvas es una herramienta de diseño centrado en el usuario que permite organizar supuestos, resultados esperados y aprendizaje de manera colaborativa (Gothelf & Seiden, 2021). A continuación, se presenta el canvas elaborado por el equipo en Mural.
 
 ![Lean UX Canvas](../../assets/chapter-1/lean_ux_canvas.png)
-Enlace para acceder al Lean UX Canvas en Mural:  https://tinyurl.com/LeanUxCanvasMural
+Enlace para acceder al Lean UX Canvas en Mural: https://tinyurl.com/LeanUxCanvasMural

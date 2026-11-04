@@ -48,10 +48,10 @@ La tabla siguiente lista las 24 historias comprometidas, sus Story Points y su e
 | TS-003 | Definir la arquitectura móvil por capas y bounded contexts | 5 | Completa. |
 | TS-001 | Configurar la aplicación Android nativa | 5 | Completa. |
 | TS-005 | Implementar persistencia local segura en Android | 5 | Completa: Room y sesión cifrada. |
-| US-004 | Registrar una cuenta según el rol | 5 | Completa. |
-| US-005 | Iniciar sesión | 3 | Completa. |
-| US-007 | Acceder únicamente a información autorizada | 5 | Parcial: el filtrado se hace en la aplicación; el backend aún no filtra por usuario. |
-| US-006 | Mantener y finalizar la sesión móvil | 3 | Completa. |
+| US-004 | Crear una cuenta con un rol autorizado | 5 | Completa. |
+| US-005 | Iniciar una sesión segura | 3 | Completa. |
+| US-007 | Restringir el acceso según el rol y la relación autorizada | 5 | Parcial: el filtrado se hace en la aplicación; el backend aún no filtra por usuario. |
+| US-006 | Mantener y cerrar una sesión segura | 3 | Completa. |
 | TS-008 | Proteger credenciales y datos de sesión | 5 | Completa. |
 | US-003 | Acceder a una landing page adaptable e internacionalizada | 5 | Completa. |
 
@@ -96,10 +96,10 @@ El Sprint Backlog descompone las historias comprometidas en tareas comprobables 
 | TS-005 | Implementar persistencia local segura en Android | T-007 | Implementar la caché local con Room | Entidades y DAO por contexto; limpieza de la caché al cerrar sesión. | 8 | Melgarejo Quiroz, Josep Eliu | Done |
 | TS-013 | Adaptar y documentar los servicios backend para móviles | T-008 | Agregar corrales y operaciones masivas al backend | Entidad Corral, relación animal-corral y endpoints de alta, estado y baja masiva. | 10 | Beingolea Montalvo, Sebastian Martin | Done |
 | TS-013 | Adaptar y documentar los servicios backend para móviles | T-009 | Documentar los endpoints con OpenAPI | Swagger UI con esquema Bearer JWT para los endpoints del Sprint. | 4 | Beingolea Montalvo, Sebastian Martin | Done |
-| US-004 | Registrar una cuenta según el rol | T-010 | Pantalla de registro | Formulario con selección de rol y aceptación de los Términos de Servicio. | 6 | Ortega Muñoz, Saul | Done |
-| US-005 | Iniciar sesión | T-011 | Pantalla de inicio de sesión | Formulario, validaciones y mensajes de error recuperables. | 4 | Ortega Muñoz, Saul | Done |
-| US-006 | Mantener y finalizar la sesión móvil | T-012 | Mantener y finalizar la sesión | Sesión persistente, cierre de sesión y retorno al inicio al vencer el token. | 6 | Ortega Muñoz, Saul | Done |
-| US-007 | Acceder únicamente a información autorizada | T-013 | Navegación por rol y filtrado de datos | Barra de navegación por rol y filtrado de fincas, animales y registros del usuario en la aplicación. | 8 | Melgarejo Quiroz, Josep Eliu | To-Review |
+| US-004 | Crear una cuenta con un rol autorizado | T-010 | Pantalla de registro | Formulario con selección de rol y aceptación de los términos del servicio. | 6 | Ortega Muñoz, Saul | Done |
+| US-005 | Iniciar una sesión segura | T-011 | Pantalla de inicio de sesión | Formulario, validaciones y mensajes de error recuperables. | 4 | Ortega Muñoz, Saul | Done |
+| US-006 | Mantener y cerrar una sesión segura | T-012 | Mantener y cerrar la sesión | Sesión persistente, cierre de sesión y retorno al inicio al vencer el token. | 6 | Ortega Muñoz, Saul | Done |
+| US-007 | Restringir el acceso según el rol y la relación autorizada | T-013 | Navegación por rol y filtrado de datos | Barra de navegación por rol y filtrado de fincas, animales y registros del usuario en la aplicación. | 8 | Melgarejo Quiroz, Josep Eliu | To-Review |
 | TS-008 | Proteger credenciales y datos de sesión | T-014 | Cifrar el token de sesión | Almacenamiento con DataStore, Tink (AES-256-GCM) y Android Keystore. | 6 | Beingolea Montalvo, Sebastian Martin | Done |
 | US-008 | Consultar las fincas registradas | T-015 | Lista de fincas | Tarjetas con ubicación, propietario y conteo de corrales y animales. | 4 | Sanchez Silva, Luciana Celeste | Done |
 | US-009 | Registrar y actualizar una finca | T-016 | Formulario de fincas | Alta y edición con validaciones y eliminación con confirmación. | 5 | Sanchez Silva, Luciana Celeste | Done |
@@ -507,13 +507,13 @@ Ejemplo de `AnimalResource`: `{"id":1,"tag":"BOV-001","name":"Luna","species":"B
 
 **Registros sanitarios** (`/health-events`; Rancher y Veterinarian)
 
-Ejemplo de `HealthEventResource`: `{"id":1,"animalId":1,"type":"Vacuna","date":"2026-05-10","description":"Vacuna anual contra carbunco","veterinarian":"Dra. Ana Lopez","diagnosis":"Control preventivo","treatment":"Aplicacion de vacuna","prescription":"Refuerzo anual","followUp":"Revisar proxima campana","nextDueDate":"2026-11-10"}`.
+Ejemplo de `HealthEventResource`: `{"id":1,"animalId":1,"type":"Vacuna","date":"2026-05-10","description":"Vacuna anual contra carbunco","veterinarian":"Dra. Ana López","diagnosis":"Control preventivo","treatment":"Aplicación de vacuna","prescription":"Refuerzo anual","followUp":"Revisar próxima campaña","nextDueDate":"2026-11-10"}`.
 
 | Related story | HTTP | Call syntax | Parameters / body | Success response | Error responses |
 |---|---|---|---|---|---|
 | US-014 | GET | `curl "{BASE_URL}/api/v1/health-events" -H "Authorization: Bearer <token>"` | Ninguno. | `200` con la lista de registros sanitarios. | `401`; `403`. |
 | US-014 | GET | `curl "{BASE_URL}/api/v1/health-events/1" -H "Authorization: Bearer <token>"` | Ruta: `id`. | `200` con el `HealthEventResource`. | `404`; `401`. |
-| US-015, US-016 | POST | `curl -X POST "{BASE_URL}/api/v1/health-events" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{"animalId":1,"type":"Incidencia","date":"2026-10-01","description":"Cojera en la pata trasera","veterinarian":"Dra. Ana Lopez","diagnosis":"","treatment":"","prescription":"","followUp":"","nextDueDate":null}'` | Body `CreateHealthEventResource`: `animalId`, `type`, `date`, `description`, `veterinarian`, `diagnosis`, `treatment`, `prescription`, `followUp` y `nextDueDate` (opcional). | `201` con el `HealthEventResource` creado. | `400` datos inválidos; `401`; `403`. |
+| US-015, US-016 | POST | `curl -X POST "{BASE_URL}/api/v1/health-events" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{"animalId":1,"type":"Incidencia","date":"2026-10-01","description":"Cojera en la pata trasera","veterinarian":"Dra. Ana López","diagnosis":"","treatment":"","prescription":"","followUp":"","nextDueDate":null}'` | Body `CreateHealthEventResource`: `animalId`, `type`, `date`, `description`, `veterinarian`, `diagnosis`, `treatment`, `prescription`, `followUp` y `nextDueDate` (opcional). | `201` con el `HealthEventResource` creado. | `400` datos inválidos; `401`; `403`. |
 | US-015 | PUT | `curl -X PUT "{BASE_URL}/api/v1/health-events/1" -H "Authorization: Bearer <token>" -H "Content-Type: application/json" -d '{...}'` | Ruta: `id`. Body `CreateHealthEventResource`. | `200` con el registro actualizado. | `404`; `400`; `401`; `403`. |
 | US-015 | DELETE | `curl -X DELETE "{BASE_URL}/api/v1/health-events/1" -H "Authorization: Bearer <token>"` | Ruta: `id`. | `204` sin contenido. | `404`; `401`; `403`. |
 
@@ -669,7 +669,7 @@ Las capturas siguientes muestran los analíticos de colaboración y de commits d
   <p><i>Figura 4.2.1.9.5. Analíticos de colaboración del repositorio anitec-frontend. Fuente: elaboración propia.</i></p>
 </div>
 
-**Interpretación de los analíticos.** Los analíticos de GitHub muestran la actividad de cada repositorio durante el sprint y se leen junto con las tareas del Sprint Backlog (sección 4.2.1.3), porque el número de commits por autor no mide por sí solo el aporte de cada integrante. El trabajo se concentró en la aplicación Android, que reúne 143 de las 205 horas estimadas del sprint (cerca del 70 %) y en la que participaron los cinco integrantes: Josep Melgarejo con 42 horas, Giuseppe Villanueva con 36, Luciana Sanchez con 29, Saul Ortega con 22 y Sebastian Beingolea con 14. El resto se repartió por producto: el backend, con 26 horas a cargo de Sebastian Beingolea (corrales, documentación OpenAPI y pruebas automatizadas); la Landing Page, con 18 horas a cargo de Saul Ortega; los mock-ups móviles, con 12 horas de Luciana Sanchez; y el registro de las aplicaciones en Firebase, con 6 horas de Giuseppe Villanueva. Cada integrante lideró un aspecto y colaboró en al menos otro, como indica la matriz de la sección 4.2.1.2, y el reparto por persona quedó entre 40 y 42 horas.
+**Interpretación de los analíticos.** Los analíticos de GitHub muestran la actividad de cada repositorio durante el sprint y se leen junto con las tareas del Sprint Backlog (sección 4.2.1.3), porque el número de commits por autor no mide por sí solo el aporte de cada integrante. El trabajo se concentró en la aplicación Android, que reúne 143 de las 205 horas estimadas del sprint (cerca del 70%) y en la que participaron los cinco integrantes: Josep Melgarejo con 42 horas, Giuseppe Villanueva con 36, Luciana Sanchez con 29, Saul Ortega con 22 y Sebastian Beingolea con 14. El resto se repartió por producto: el backend, con 26 horas a cargo de Sebastian Beingolea (corrales, documentación OpenAPI y pruebas automatizadas); la landing page, con 18 horas a cargo de Saul Ortega; los mock-ups móviles, con 12 horas de Luciana Sanchez; y el registro de las aplicaciones en Firebase, con 6 horas de Giuseppe Villanueva. Cada integrante lideró un aspecto y colaboró en al menos otro, como indica la matriz de la sección 4.2.1.2, y el reparto por persona quedó entre 40 y 42 horas.
 
 **Conclusión del trabajo en equipo.** Al cierre del Sprint 1 el equipo entregó la Landing Page publicada, el backend desplegado y respaldado por 104 pruebas automatizadas, y una aplicación Android que permite registrarse, iniciar sesión y gestionar fincas, corrales, animales y registros sanitarios. De las 30 tareas del sprint, 28 quedaron en Done y 2 en To-Review, y las historias US-007 y US-012 quedaron parciales: falta que el backend filtre la información por usuario y que se implemente el archivado de animales. El trabajo por productos con un líder por aspecto permitió avanzar en paralelo en Android, backend, Landing Page y diseño. Como aprendizajes, el equipo destaca definir el alcance móvil antes de implementar, probar desde el inicio y mantener alineados el informe y el código. Para el Sprint 2, el foco será la vista del veterinario, la colaboración con el ganadero, las actividades, el trabajo sin conexión y la identificación de animales con la cámara.
 
