@@ -2273,9 +2273,36 @@ Durante la planificación de los Sprints 1 y 2 (secciones 4.2.1.1 y 4.2.2.1), el
 
 La distribución considera los hitos del curso:
 
-- **Sprint 1 — TB1, semana 7:** landing page desplegada, backend al 70%, base de la aplicación Android y pantallas core de acceso, gestión de fincas, corrales y animales, y registros sanitarios básicos.
-- **Sprint 2 — AV2, semana 12:** backend al 100%, primera versión de la aplicación Flutter (inicio del ganadero) y principales funciones core de sanidad, vista del veterinario, actividades, finanzas, analítica, trabajo offline, identificación mediante cámara, suscripciones con Stripe y distribución en Firebase App Distribution.
-- **Sprint 3 — TB2, semana 15:** consentimiento veterinario, notificaciones, cierre de trazabilidad sanitaria y sincronización idempotente, persistencia local en Flutter, accesibilidad, protección de datos, rendimiento, recuperación ante fallos, pruebas automatizadas y aplicación completa según el backlog.
+**Sprint 1 — TB1, semana 7 (24 historias, 105 Story Points).** Construye la base ejecutable del producto: lo mínimo para que un usuario se registre y empiece a llevar su ganado desde el teléfono, y para que el producto tenga presencia pública. Incluye:
+
+- La Landing Page desplegada, adaptable a móvil y con selector de idioma, con la propuesta de valor y las soluciones para cada segmento (US-001, US-002 y US-003; 11 Story Points).
+- Cuentas y acceso: registro con un rol, inicio y cierre de sesión seguros, restricción del acceso según el rol y protección del token de sesión (US-004, US-005, US-006, US-007 y TS-008; 21 Story Points).
+- Gestión del hato en la aplicación Android: fincas, corrales y animales, con registro individual y masivo, búsqueda, ficha técnica, edición, archivado y fotografía (US-008, US-009, US-010, US-011, US-012, US-013, US-044 y US-045; 32 Story Points).
+- Registros sanitarios básicos: consulta de eventos, registro de incidencias y registro de diagnóstico y tratamiento (US-014, US-015 y US-016; 13 Story Points).
+- La base técnica: proyecto Android nativo, arquitectura por capas y bounded contexts, cliente REST, caché local y backend adaptado y documentado para móviles, con el backend al 70 % (TS-001, TS-003, TS-004, TS-005 y TS-013; 28 Story Points).
+
+**Sprint 2 — AV2, semana 12 (24 historias, 114 Story Points).** Completa la aplicación Android, deja el backend al 100 % y publicado, y ofrece una primera versión de la aplicación Flutter, de modo que los evaluadores puedan instalar las aplicaciones y recorrer los flujos del ganadero y del veterinario. Incluye:
+
+- La vista del veterinario: clientes y pacientes autorizados, antecedentes e historial sanitario (US-017, US-023 y US-024; 13 Story Points).
+- Las actividades y las finanzas del ganadero: consulta y gestión de actividades, y registro y consulta de movimientos financieros (US-025, US-026 y US-037; 13 Story Points).
+- La analítica: indicadores del hato para el ganadero e indicadores sanitarios de los clientes para el veterinario (US-035 y US-036; 10 Story Points).
+- El trabajo sin conexión: consulta de lo esencial, trabajo pendiente y sincronización de las operaciones guardadas (US-029, US-030 y US-031; 18 Story Points).
+- La identificación de animales: investigación con Google ML Kit, escaneo de códigos QR con la cámara y búsqueda manual como alternativa (SP-001, TS-010, US-033 y US-034; 18 Story Points).
+- Las suscripciones con Stripe: investigación, planes, checkout externo, inicio del pago y consulta de su resultado (SP-002, US-038, TS-011, US-039 y US-040; 26 Story Points).
+- El idioma y los errores: cambio de idioma y mensajes de error y de conectividad comprensibles (US-041 y US-043; 6 Story Points).
+- Flutter y distribución: proyecto Flutter con inicio de sesión e inicio del ganadero, y compilación firmada con distribución en Firebase App Distribution (TS-002 y TS-015; 10 Story Points).
+
+Además, el sprint cierra US-007 y US-012, que quedaron parciales en el Sprint 1 (el filtrado de los datos por usuario en el servidor y el archivado de animales). Sus Story Points ya se contaron en ese sprint.
+
+**Sprint 3 — TB2, semana 15 (17 historias, 82 Story Points).** Completa el producto según el backlog: añade el consentimiento del ganadero sobre el acceso veterinario, las notificaciones, la sincronización fiable y los requisitos de calidad. Su planificación se hará al iniciar el sprint; por ahora sus historias están en la lista Todo del tablero de Trello. Incluye:
+
+- El consentimiento veterinario: recibir una solicitud de seguimiento, aceptarla o rechazarla y revocar el acceso (US-020, US-021 y US-022; 9 Story Points).
+- Las notificaciones móviles y las notificaciones de actividad (TS-009 y US-027; 10 Story Points).
+- El cierre de la trazabilidad sanitaria y de las actividades: programar un control posterior, corregir un registro con trazabilidad y atender o reprogramar una actividad (US-019, US-018 y US-028; 11 Story Points).
+- La persistencia local en Flutter, la sincronización idempotente y la resolución de errores o conflictos de sincronización (TS-006, TS-007 y US-032; 21 Story Points).
+- La internacionalización y la accesibilidad móvil (TS-012 y US-042; 10 Story Points).
+- La protección de las credenciales y los datos sensibles, las respuestas oportunas en las operaciones frecuentes y la recuperación ante fallos temporales (US-046, US-047 y US-048; 13 Story Points).
+- La automatización de las pruebas de los flujos móviles críticos (TS-014; 8 Story Points).
 
 <table style="text-align: center;">
   <thead>
@@ -2355,3 +2382,12 @@ La distribución considera los hitos del curso:
     <tr><td>65</td><td>TS-014</td><td>Automatizar pruebas de los flujos móviles críticos</td><td>8</td><td>Sprint 3</td></tr>
   </tbody>
 </table>
+
+**Seguimiento en Trello.** Las tareas de los tres sprints se gestionan en un solo tablero de Trello, con las listas Todo, In-Process, To-Review y Done. El Sprint Backlog de cada sprint se detalla en las secciones 4.2.1.3 y 4.2.2.3. En la captura, las 61 tareas de los Sprints 1 y 2 están en Done y las 17 historias del Sprint 3 en Todo.
+
+- **Board URL:** [URL pública del tablero único de los tres sprints.](https://trello.com/invite/b/6af2a28dd987f87005f6ced9/ATTI7e2d0017436a4884462efe36555772a2621DEA6B/anitec-appmoviles)
+
+<div align="center">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-3-1-trello-tablero-unico.png" alt="Tablero único de Trello de los tres sprints con las listas Todo (17 tarjetas), In-Process, To-Review y Done (61 tarjetas)" width="800">
+  <p><i>Figura 2.4.3.1. Tablero único de Trello de los Sprints 1, 2 y 3. Fuente: elaboración propia.</i></p>
+</div>
