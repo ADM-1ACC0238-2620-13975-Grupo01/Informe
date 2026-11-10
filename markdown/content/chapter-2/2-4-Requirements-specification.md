@@ -2383,11 +2383,11 @@ Además, el sprint cierra US-007 y US-012, que quedaron parciales en el Sprint 1
   </tbody>
 </table>
 
-**Seguimiento en Trello.** Las tareas de los tres sprints se gestionan en un solo tablero de Trello, con las listas Todo, In-Process, To-Review y Done. El Sprint Backlog de cada sprint se detalla en las secciones 4.2.1.3 y 4.2.2.3. En la captura, las 61 tareas de los Sprints 1 y 2 están en Done y las 17 historias del Sprint 3 en Todo.
+**Seguimiento en Trello.** Las tareas de los tres sprints se gestionan en un solo tablero de Trello, con una lista de trabajo y una lista «done» por sprint. El Sprint Backlog de cada sprint se detalla en las secciones 4.2.1.3 y 4.2.2.3. En la captura, las 30 tareas del Sprint 1 están en «Sprint 1 done», las 31 del Sprint 2 en «Sprint 2 done» y las 17 historias del Sprint 3 en «Sprint 3».
 
 - **Board URL:** [URL pública del tablero único de los tres sprints.](https://trello.com/invite/b/6af2a28dd987f87005f6ced9/ATTI7e2d0017436a4884462efe36555772a2621DEA6B/anitec-appmoviles)
 
 <div align="center">
-  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-3-1-trello-tablero-unico.png" alt="Tablero único de Trello de los tres sprints con las listas Todo (17 tarjetas), In-Process, To-Review y Done (61 tarjetas)" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-3-1-trello-tablero-unico.png" alt="Tablero único de Trello con las listas Sprint 1, Sprint 2, Sprint 3, Sprint 1 done (30 tarjetas), Sprint 2 done (31 tarjetas) y Sprint 3 done, además de In-Process" width="800">
   <p><i>Figura 2.4.3.1. Tablero único de Trello de los Sprints 1, 2 y 3. Fuente: elaboración propia.</i></p>
 </div>

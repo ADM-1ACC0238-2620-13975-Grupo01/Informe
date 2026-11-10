@@ -14,7 +14,7 @@ Las herramientas se agrupan según la actividad que soportan e incluyen su prop�
 
 | Herramienta | Propósito | Referencia |
 |---|---|---|
-| Trello | Organizar el Sprint Backlog y los estados de las tareas (Todo, In-Process, To-Review, Done). | <https://trello.com> |
+| Trello | Organizar el Sprint Backlog de los tres sprints en un solo tablero, con una lista de trabajo y una lista «done» por sprint, además de In-Process y To-Review. | <https://trello.com> |
 | GitHub Issues / Projects | Dar trazabilidad a incidencias, cambios y trabajo de cada repositorio. | <https://github.com/features/issues> |
 
 **Requirements Management**
