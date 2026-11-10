@@ -10299,14 +10299,14 @@ La matriz LACX indica un líder (L) y los colaboradores (C) de cada aspecto del 
 
 ### 4.2.1.3. Sprint Backlog 1
 
-El Sprint Backlog descompone las historias comprometidas en tareas comprobables y refleja el objetivo del sprint: una primera aplicación Android ejecutable, respaldada por la API del backend y por la Landing Page publicada. El tablero utiliza los estados Todo, In-Process, To-Review y Done.
+El Sprint Backlog descompone las historias comprometidas en tareas comprobables y refleja el objetivo del sprint: una primera aplicación Android ejecutable, respaldada por la API del backend y por la Landing Page publicada. Desde el Sprint 2, los tres sprints se gestionan en un solo tablero de Trello, con una lista de trabajo y una lista «done» por sprint; las 30 tareas del Sprint 1 están en «Sprint 1 done». T-013 y T-019, que cerraron el sprint en To-Review, pasaron a Done al completarse en el Sprint 2.
 
 - **Sprint Goal:** ofrecer una primera aplicación Android ejecutable para ganaderos y veterinarios (ver 4.2.1.1).
-- **Board URL:** [URL pública del tablero.](https://trello.com/invite/b/6a4ecb3af66dcec21f2d23be/ATTIc5c2e19d1656e989be48cf69d975850827DF607A/sprint1-anitec)
+- **Board URL:** [URL pública del tablero único de los tres sprints.](https://trello.com/invite/b/6af2a28dd987f87005f6ced9/ATTI7e2d0017436a4884462efe36555772a2621DEA6B/anitec-appmoviles)
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/TrelloSprin1Appmoviles.png" width="800">
-  <p><i>Figura 4.2.1.3.1 Tablero de Trello Sprint 1 Fuente: elaboración propia.</i></p>
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-3-1-trello-tablero-unico.png" alt="Tablero único de Trello con las listas Sprint 1, Sprint 2, Sprint 3, Sprint 1 done (30 tarjetas), Sprint 2 done (31 tarjetas) y Sprint 3 done, además de In-Process" width="800">
+  <p><i>Figura 4.2.1.3.1. Tablero único de Trello; el Sprint 1 está en la lista «Sprint 1 done». Fuente: elaboración propia.</i></p>
 </div>
 
 
