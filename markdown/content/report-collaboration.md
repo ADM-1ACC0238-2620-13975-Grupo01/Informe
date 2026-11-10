@@ -124,7 +124,7 @@ El repositorio del informe conserva el historial de los cambios documentales del
 ### *Grafo general de commits AV2*
 
 <div align="center">
-  <img src="../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio Informe, Insights → Network (grafo de commits) con los commits del periodo del AV2" width="650">
+  <img src="../assets/chapter-4/sprint2/colab-av2-general.png" alt="Commits por semana del repositorio Informe, del 8 de agosto al 7 de noviembre de 2026, con el aumento de commits en la semana del 2 de noviembre" width="650">
 </div>
 
 ### *Commits por integrante AV2*
@@ -132,29 +132,29 @@ El repositorio del informe conserva el historial de los cambios documentales del
 *Luciana Celeste Sanchez Silva*
 
 <div align="center">
-  <img src="../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Luciana Sanchez en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+  <img src="../assets/chapter-4/sprint2/colab-av2-luciana.png" alt="Commits de Luciana Sanchez (luccsss) en el repositorio Informe: 64 commits" width="650">
 </div>
 
 *Josep Eliu Melgarejo Quiroz*
 
 <div align="center">
-  <img src="../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Josep Melgarejo en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+  <img src="../assets/chapter-4/sprint2/colab-av2-josep.png" alt="Commits de Josep Melgarejo (Melga1502) en el repositorio Informe: 49 commits" width="650">
 </div>
 
 *Sebastian Martin Beingolea Montalvo*
 
 <div align="center">
-  <img src="../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Sebastian Beingolea en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+  <img src="../assets/chapter-4/sprint2/colab-av2-sebastian.png" alt="Commits de Sebastian Beingolea (smbmontalvo) en el repositorio Informe: 22 commits" width="650">
 </div>
 
 *Saul Ortega Muñoz*
 
 <div align="center">
-  <img src="../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Saul Ortega en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+  <img src="../assets/chapter-4/sprint2/colab-av2-saul.png" alt="Commits de Saul Ortega (Ss1lent10) en el repositorio Informe: 30 commits" width="650">
 </div>
 
 *Giuseppe Villanueva Rodriguez*
 
 <div align="center">
-  <img src="../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Giuseppe Villanueva en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+  <img src="../assets/chapter-4/sprint2/colab-av2-giuseppe.png" alt="Commits de Giuseppe Villanueva (Giuseppe152004) en el repositorio Informe: 43 commits" width="650">
 </div>

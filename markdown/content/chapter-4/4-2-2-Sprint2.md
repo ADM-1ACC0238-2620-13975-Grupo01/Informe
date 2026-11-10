@@ -730,28 +730,23 @@ Los repositorios del proyecto son:
 Las capturas siguientes muestran los analíticos de colaboración y de commits de GitHub (**Insights → Contributors** y **Insights → Commits**) de cada repositorio.
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio Informe, Insights → Contributors, mostrando los commits por integrante" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-9-1-github-contributors-informe.png" alt="Insights → Contributors del repositorio Informe: commits por semana y los cinco integrantes con sus commits, líneas añadidas y eliminadas" width="800">
   <p><i>Figura 4.2.2.9.1. Analíticos de colaboración del repositorio Informe. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio anitec-android, Insights → Contributors" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-9-2-github-contributors-android.png" alt="Insights → Contributors del repositorio anitec-android: commits por semana y los cinco integrantes con sus commits" width="800">
   <p><i>Figura 4.2.2.9.2. Analíticos de colaboración del repositorio anitec-android. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio anitec-backend, Insights → Contributors" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-9-3-github-contributors-backend.png" alt="Insights → Contributors del repositorio anitec-backend: commits por semana y los cinco integrantes con sus commits" width="800">
   <p><i>Figura 4.2.2.9.3. Analíticos de colaboración del repositorio anitec-backend. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio anitec-flutter, Insights → Contributors" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-9-4-github-contributors-flutter.png" alt="Insights → Contributors del repositorio anitec-flutter: commits por semana y los cinco integrantes con sus commits" width="800">
   <p><i>Figura 4.2.2.9.4. Analíticos de colaboración del repositorio anitec-flutter. Fuente: elaboración propia.</i></p>
-</div>
-
-<div align="center">
-  <img src="../../assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio anitec-landing-page, Insights → Contributors (solo si hay commits en el Sprint 2)" width="800">
-  <p><i>Figura 4.2.2.9.5. Analíticos de colaboración del repositorio anitec-landing-page. Fuente: elaboración propia.</i></p>
 </div>
 
 **Interpretación de los analíticos.** Los analíticos de GitHub se leen junto con las tareas del Sprint Backlog, porque el número de commits por autor no mide por sí solo el aporte de cada integrante. El trabajo se concentró en la aplicación Android, que reúne 106 de las 200 horas estimadas (53 %), seguida por el backend, con 40 horas (20 %), la aplicación Flutter, con 34 horas (17 %), y la distribución y la documentación, con 20 horas (10 %). Los cinco integrantes participaron en el desarrollo del backend o de las aplicaciones y cada uno lideró al menos un aspecto: Sebastian Beingolea lideró el backend y colaboró en las pruebas de Flutter, Josep Melgarejo lideró Android, Luciana Sanchez lideró el diseño y Flutter, Giuseppe Villanueva lideró las pruebas y la distribución, y Saul Ortega lideró la Landing Page y colaboró en Android, Flutter y el backend, como indica la matriz de la sección 4.2.2.2. El reparto por persona fue de 40 horas para cada integrante.

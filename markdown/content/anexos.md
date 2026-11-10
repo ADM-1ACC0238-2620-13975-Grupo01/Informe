@@ -94,10 +94,10 @@ Hasta el AV1 no se habían incorporado enlaces públicos de videos. Con el TB1 s
 
 ### Videos del AV2 (Sprint 2)
 
-Pendiente de completar: los enlaces se agregarán cuando los videos estén grabados.
+El video About the Product ya está publicado; los demás enlaces se agregarán cuando los videos estén grabados.
 
 - **Validación de la aplicación (primera versión):** pendiente de completar (enlace al video).
-- **About the Product (primera versión):** pendiente de completar (enlace al video).
+- **About the Product (primera versión):** [Ver video About the Product](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBcZwe2PKhdRbF-7-NW9NUXAY2QsIKGL7AR8OI2yNviFJ8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=DQ6rMa)
 - **About the Team (primera versión):** pendiente de completar (enlace al video).
 - **Ejecución del Sprint 2: Backend, aplicación Android y aplicación Flutter:** pendiente de completar (enlaces a los videos).
 

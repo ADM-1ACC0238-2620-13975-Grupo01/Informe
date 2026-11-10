@@ -217,7 +217,7 @@ El repositorio del informe conserva el historial de los cambios documentales del
 ### *Grafo general de commits AV2*
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio Informe, Insights → Network (grafo de commits) con los commits del periodo del AV2" width="650">
+  <img src="markdown/assets/chapter-4/sprint2/colab-av2-general.png" alt="Commits por semana del repositorio Informe, del 8 de agosto al 7 de noviembre de 2026, con el aumento de commits en la semana del 2 de noviembre" width="650">
 </div>
 
 ### *Commits por integrante AV2*
@@ -225,31 +225,31 @@ El repositorio del informe conserva el historial de los cambios documentales del
 *Luciana Celeste Sanchez Silva*
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Luciana Sanchez en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+  <img src="markdown/assets/chapter-4/sprint2/colab-av2-luciana.png" alt="Commits de Luciana Sanchez (luccsss) en el repositorio Informe: 64 commits" width="650">
 </div>
 
 *Josep Eliu Melgarejo Quiroz*
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Josep Melgarejo en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+  <img src="markdown/assets/chapter-4/sprint2/colab-av2-josep.png" alt="Commits de Josep Melgarejo (Melga1502) en el repositorio Informe: 49 commits" width="650">
 </div>
 
 *Sebastian Martin Beingolea Montalvo*
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Sebastian Beingolea en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+  <img src="markdown/assets/chapter-4/sprint2/colab-av2-sebastian.png" alt="Commits de Sebastian Beingolea (smbmontalvo) en el repositorio Informe: 22 commits" width="650">
 </div>
 
 *Saul Ortega Muñoz*
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Saul Ortega en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+  <img src="markdown/assets/chapter-4/sprint2/colab-av2-saul.png" alt="Commits de Saul Ortega (Ss1lent10) en el repositorio Informe: 30 commits" width="650">
 </div>
 
 *Giuseppe Villanueva Rodriguez*
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: commits de Giuseppe Villanueva en el repositorio Informe durante el AV2 (misma forma que las capturas del TB1)" width="650">
+  <img src="markdown/assets/chapter-4/sprint2/colab-av2-giuseppe.png" alt="Commits de Giuseppe Villanueva (Giuseppe152004) en el repositorio Informe: 43 commits" width="650">
 </div>
 
 
@@ -11451,28 +11451,23 @@ Los repositorios del proyecto son:
 Las capturas siguientes muestran los analíticos de colaboración y de commits de GitHub (**Insights → Contributors** y **Insights → Commits**) de cada repositorio.
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio Informe, Insights → Contributors, mostrando los commits por integrante" width="800">
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-9-1-github-contributors-informe.png" alt="Insights → Contributors del repositorio Informe: commits por semana y los cinco integrantes con sus commits, líneas añadidas y eliminadas" width="800">
   <p><i>Figura 4.2.2.9.1. Analíticos de colaboración del repositorio Informe. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio anitec-android, Insights → Contributors" width="800">
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-9-2-github-contributors-android.png" alt="Insights → Contributors del repositorio anitec-android: commits por semana y los cinco integrantes con sus commits" width="800">
   <p><i>Figura 4.2.2.9.2. Analíticos de colaboración del repositorio anitec-android. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio anitec-backend, Insights → Contributors" width="800">
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-9-3-github-contributors-backend.png" alt="Insights → Contributors del repositorio anitec-backend: commits por semana y los cinco integrantes con sus commits" width="800">
   <p><i>Figura 4.2.2.9.3. Analíticos de colaboración del repositorio anitec-backend. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio anitec-flutter, Insights → Contributors" width="800">
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-9-4-github-contributors-flutter.png" alt="Insights → Contributors del repositorio anitec-flutter: commits por semana y los cinco integrantes con sus commits" width="800">
   <p><i>Figura 4.2.2.9.4. Analíticos de colaboración del repositorio anitec-flutter. Fuente: elaboración propia.</i></p>
-</div>
-
-<div align="center">
-  <img src="markdown/assets/chapter-4/captura-pendiente.svg" alt="Captura pendiente: GitHub del repositorio anitec-landing-page, Insights → Contributors (solo si hay commits en el Sprint 2)" width="800">
-  <p><i>Figura 4.2.2.9.5. Analíticos de colaboración del repositorio anitec-landing-page. Fuente: elaboración propia.</i></p>
 </div>
 
 **Interpretación de los analíticos.** Los analíticos de GitHub se leen junto con las tareas del Sprint Backlog, porque el número de commits por autor no mide por sí solo el aporte de cada integrante. El trabajo se concentró en la aplicación Android, que reúne 106 de las 200 horas estimadas (53 %), seguida por el backend, con 40 horas (20 %), la aplicación Flutter, con 34 horas (17 %), y la distribución y la documentación, con 20 horas (10 %). Los cinco integrantes participaron en el desarrollo del backend o de las aplicaciones y cada uno lideró al menos un aspecto: Sebastian Beingolea lideró el backend y colaboró en las pruebas de Flutter, Josep Melgarejo lideró Android, Luciana Sanchez lideró el diseño y Flutter, Giuseppe Villanueva lideró las pruebas y la distribución, y Saul Ortega lideró la Landing Page y colaboró en Android, Flutter y el backend, como indica la matriz de la sección 4.2.2.2. El reparto por persona fue de 40 horas para cada integrante.
@@ -12001,10 +11996,10 @@ Hasta el AV1 no se habían incorporado enlaces públicos de videos. Con el TB1 s
 
 ### Videos del AV2 (Sprint 2)
 
-Pendiente de completar: los enlaces se agregarán cuando los videos estén grabados.
+El video About the Product ya está publicado; los demás enlaces se agregarán cuando los videos estén grabados.
 
 - **Validación de la aplicación (primera versión):** pendiente de completar (enlace al video).
-- **About the Product (primera versión):** pendiente de completar (enlace al video).
+- **About the Product (primera versión):** [Ver video About the Product](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBcZwe2PKhdRbF-7-NW9NUXAY2QsIKGL7AR8OI2yNviFJ8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=DQ6rMa)
 - **About the Team (primera versión):** pendiente de completar (enlace al video).
 - **Ejecución del Sprint 2: Backend, aplicación Android y aplicación Flutter:** pendiente de completar (enlaces a los videos).
 
