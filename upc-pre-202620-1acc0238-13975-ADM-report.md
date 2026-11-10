@@ -10947,14 +10947,14 @@ La matriz LACX indica un líder (L) y los colaboradores (C) de cada aspecto del 
 
 ### 4.2.2.3. Sprint Backlog 2
 
-El Sprint Backlog descompone las historias comprometidas en tareas comprobables y refleja el objetivo del sprint: una aplicación Android completa y una primera versión de Flutter, respaldadas por el backend publicado y distribuidas en Firebase. El tablero utiliza los estados Todo, In-Process, To-Review y Done. Las tareas se repartieron en partes iguales entre los cinco integrantes, 40 horas estimadas por persona.
+El Sprint Backlog descompone las historias comprometidas en tareas comprobables y refleja el objetivo del sprint: una aplicación Android completa y una primera versión de Flutter, respaldadas por el backend publicado y distribuidas en Firebase. El tablero utiliza los estados Todo, In-Process, To-Review y Done. A partir de este sprint los tres sprints se gestionan en un solo tablero de Trello: las 30 tareas del Sprint 1 y las 31 del Sprint 2 están en Done y las 17 historias del Sprint 3 en Todo. Las tareas del Sprint 2 se repartieron en partes iguales entre los cinco integrantes, 40 horas estimadas por persona.
 
 - **Sprint Goal:** completar la aplicación Android y ofrecer una primera versión de Flutter, con el backend publicado (ver 4.2.2.1).
-- **Board URL:** [URL pública del tablero.](https://trello.com/invite/b/6ae518ef13f4384d30ddf5ae/ATTIddf21ca0033b4cdf25536964c37ce5083F23904B/sprint-2-app-moviles)
+- **Board URL:** [URL pública del tablero único de los tres sprints.](https://trello.com/invite/b/6af2a28dd987f87005f6ced9/ATTI7e2d0017436a4884462efe36555772a2621DEA6B/anitec-appmoviles)
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-3-1-trello-sprint2.png" alt="Tablero de Trello del Sprint 2 con las listas To-do, To-review, In-process y Done y las 31 tarjetas del sprint en Done" width="800">
-  <p><i>Figura 4.2.2.3.1. Tablero de Trello del Sprint 2. Fuente: elaboración propia.</i></p>
+  <img src="markdown/assets/chapter-4/sprint2/fig-4-2-2-3-1-trello-tablero-unico.png" alt="Tablero único de Trello de los tres sprints con las listas Todo (17 tarjetas), In-Process, To-Review y Done (61 tarjetas)" width="800">
+  <p><i>Figura 4.2.2.3.1. Tablero único de Trello de los Sprints 1, 2 y 3. Fuente: elaboración propia.</i></p>
 </div>
 
 | Story ID | Story Title | Task ID | Task Title | Description | Hours | Assigned To | Status |
