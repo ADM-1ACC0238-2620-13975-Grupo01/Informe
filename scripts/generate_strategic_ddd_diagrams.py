@@ -32,7 +32,7 @@ COLORS = {
     "white": "#FFFFFF",
 }
 
-
+# Splits text into lines of a maximum specified width while preserving paragraph breaks.
 def lines(text: str, width: int) -> list[str]:
     """Divide un texto en líneas de como máximo width caracteres, respetando los saltos de línea."""
     result: list[str] = []
@@ -174,7 +174,7 @@ def draw_candidate_contexts():
 # Color de cada tipo de elemento en los domain message flows.
 FLOW_COLORS = {"actor": COLORS["yellow_light"], "command": COLORS["blue_light"], "context": COLORS["green_light"], "event": COLORS["orange_light"], "external": "#F4CCCC", "local": COLORS["purple_light"]}
 
-
+# Generates and saves an SVG domain story visualization depicting a sequential flow of steps and messages.
 def draw_flow(filename: str, heading: str, subtitle: str, steps: list[tuple[str, str, str]], messages: list[str]):
     """Dibuja un domain story como una fila de pasos unidos por flechas con sus mensajes."""
     width = max(1500, 80 + len(steps) * 215)
@@ -200,7 +200,7 @@ def draw_flow(filename: str, heading: str, subtitle: str, steps: list[tuple[str,
     svg.multiline(65, 408, subtitle, width=max(100, int((width - 140) / 9)), size=16)
     svg.save(filename)
 
-
+# Generates the six core domain stories (visual event flows) for the strategic design documentation.
 def draw_domain_message_flows():
     """Genera los seis domain stories del diseño estratégico."""
     draw_flow(
@@ -318,7 +318,7 @@ CANVAS_VISUALS = {
     "analytics": {"domain": "Supporting", "business": "Engagement", "evolution": "Custom built", "actor": "Rancher / Veterinarian", "downstream": "Rancher / Veterinarian", "reads": ["Dashboard", "Date Range", "Authorized Scope"], "incoming": ["Livestock Updated", "Health Event Recorded", "Financial Movement Recorded"]},
 }
 
-
+# Renders a sticky note graphic element containing vertically and horizontally centered wrapped text.
 def sticky(svg: Svg, x: int, y: int, w: int, h: int, value: str, fill: str, stroke: str, chars: int = 18, size: int = 12):
     """Dibuja una nota adhesiva con el texto centrado."""
     svg.rect(x, y, w, h, fill, stroke=stroke, radius=1, shadow=True, sw=1)
@@ -327,7 +327,7 @@ def sticky(svg: Svg, x: int, y: int, w: int, h: int, value: str, fill: str, stro
     for index, line in enumerate(wrapped):
         svg.text(x + w / 2, start_y + index * int(size * 1.22), line, size=size, fill="#404040", anchor="middle")
 
-
+# Renders a bulleted list of text items separated by semicolons or periods onto the SVG canvas.
 def bullet_text(svg: Svg, x: int, y: int, value: str, chars: int, size: int = 13):
     """Escribe una lista con viñetas a partir de un texto separado por punto y coma o por punto."""
     items = [item.strip().rstrip(".") for item in value.replace(". ", "; ").split(";") if item.strip()]
@@ -340,7 +340,7 @@ def bullet_text(svg: Svg, x: int, y: int, value: str, chars: int, size: int = 13
             cursor += int(size * 1.28)
         cursor += 5
 
-
+# Generates and saves a detailed Bounded Context Canvas SVG graphic based on provided contextual data.
 def draw_canvas(key: str, data: dict[str, str]):
     """Genera el Bounded Context Canvas de un contexto a partir de sus datos."""
     visual = CANVAS_VISUALS[key]
@@ -421,7 +421,7 @@ def draw_canvas(key: str, data: dict[str, str]):
     svg.text(1560, 1244, "Template Bounded Context Canvas after DDD Crew Version 1", size=11, fill="#666666", anchor="end")
     svg.save(f"bounded-context-canvas-{key}.svg")
 
-
+# Generates the strategic Context Map SVG visualization showing bounded contexts and their numbered relationships.
 def draw_context_map():
     """Genera el context map con las relaciones numeradas entre los bounded contexts."""
     svg = Svg(1800, 1430, "Context Mapping de AniTec")
@@ -450,7 +450,7 @@ def draw_context_map():
         svg.multiline(x + w / 2, y + 40, label, width=25, size=18, weight="bold", fill=COLORS["navy"], anchor="middle")
         svg.text(x + w / 2, y + 91, kind, size=14, fill=COLORS["gray_dark"], anchor="middle")
         boxes[key] = (x, y, w, h)
-
+# Renders a circular badge with a centered relationship index number onto the SVG canvas.
     def badge(x, y, number):
         """Dibuja el círculo con el número de una relación."""
         svg.rect(x - 17, y - 15, 34, 30, COLORS["white"], stroke=COLORS["navy"], radius=15, sw=2)

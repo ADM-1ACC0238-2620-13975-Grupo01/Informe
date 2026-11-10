@@ -1,5 +1,7 @@
 # 1.1. Startup Profile
 
+<!-- Documentation marker: Startup Profile section. -->
+
 En esta sección se presenta la startup responsable de AniTec y a los integrantes del equipo que desarrollarán la solución durante el curso de Aplicaciones para Dispositivos Móviles.
 
 ## 1.1.1. Descripción de la Startup
@@ -49,7 +51,7 @@ El ecosistema se complementará con la landing page existente, que comunicará l
       <h3>Josep Eliu Melgarejo Quiroz</h3>
       <h4>u202315165</h4>
       <p>
-        Mi nombre es Josep Eliu Melgarejo Quiroz, tengo 21 años y nací en Huaral, aunque actualmente vivo en San Miguel, Lima. Me encuentro cursando el 5.º ciclo de la carrera de Ingeniería de Software en la UPC. Siempre me fascinó el ámbito tecnológico y, como era un apasionado por los juegos, fui conociendo poco a poco el mundo de la programación, lo que me llevó a decidir estudiar esta carrera. Me comprometo a apoyar y motivar siempre a mis compañeros para realizar el mejor trabajo posible y dar el 100 % de mi capacidad en este proyecto.
+        Mi nombre es Josep Eliu Melgarejo Quiroz, tengo 21 años y nací en Huaral, aunque actualmente vivo en San Miguel, Lima. Me encuentro cursando el 5.º ciclo de la carrera de Ingeniería de Software en la UPC. Siempre me fascinó el ámbito tecnológico y, como era un apasionado por los juegos, fui conociendo poco a poco el mundo de la programación, lo que me llevó a decidir estudiar esta carrera. Me comprometo a apoyar y motivar siempre a mis compañeros para realizar el mejor trabajo posible y dar el 100% de mi capacidad en este proyecto.
       </p>
     </td>
   </tr>

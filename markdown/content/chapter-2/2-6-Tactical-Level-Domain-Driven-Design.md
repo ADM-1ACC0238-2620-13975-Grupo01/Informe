@@ -2,6 +2,8 @@
 
 # 2.6. Tactical-Level Domain-Driven Design
 
+<!-- Documentation marker: tactical DDD section. -->
+
 Esta sección describe cómo los nueve bounded contexts identificados en el diseño estratégico se materializan en clases, capas, componentes y estructuras de persistencia. La propuesta utiliza un enfoque híbrido trazable: conserva nombres y responsabilidades del backend heredado y marca como no implementados los elementos requeridos para Android, Flutter y la evolución del dominio que todavía no existen en el código.
 
 Para todos los contextos se aplican las siguientes convenciones:

@@ -20,3 +20,4 @@ Las entradas de la versión 1 corresponden al avance AV1 del curso de Aplicacion
 | 3.1 | 25/10/2026 | Josep Eliu Melgarejo Quiroz | Documentación del Sprint 2 en el capítulo IV (4.2.2): matriz LACX, Sprint Backlog, evidencias de desarrollo, pruebas, ejecución, servicios y despliegue, y colaboración del equipo. |
 | 3.2 | 25/10/2026 | Josep Eliu Melgarejo Quiroz | Actualización de la configuración de despliegue (4.1): aplicación Flutter, firma de las compilaciones, distribución en Firebase App Distribution, datos de demostración y límite de conexiones del backend. |
 | 3.3 | 25/10/2026 | Josep Eliu Melgarejo Quiroz | Actualización del registro de versiones, del Project Report Collaboration Insights, del Student Outcome y del anexo F para el AV2. |
+| 3.4 | 03/11/2026 | Luciana Celeste Sanchez Silva | Mejora de las User Stories de IAM y su trazabilidad, incorporación de requisitos no funcionales y corrección de referencias en formato APA 7, ortografía y espaciado. |

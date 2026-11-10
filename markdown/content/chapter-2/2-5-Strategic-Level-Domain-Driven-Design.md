@@ -1,5 +1,7 @@
 # 2.5. Strategic-Level Domain-Driven Design
 
+<!-- Documentation marker: strategic DDD section. -->
+
 El diseño estratégico de AniTec utiliza Domain-Driven Design para separar el dominio ganadero en modelos con responsabilidades, reglas y lenguaje propios. El proceso parte del Big Picture EventStorming de la sección 2.3.5, lo contrasta con los User Personas, entrevistas y requisitos de la sección 2.4, y concluye con bounded contexts y relaciones que pueden mantenerse de forma coherente en el backend y en las aplicaciones móviles.
 
 La revisión recupera la evidencia del trabajo anterior —especialmente los pasos 4 al 10 del EventStorming, los canvases de Livestock, Sanitary, Financial y Analytics, y la estructura modular del backend— y la adapta al alcance actual: una aplicación Android nativa, una aplicación multiplataforma, operación offline, identificación QR, colaboración veterinaria, notificaciones y pagos mediante Stripe.
@@ -137,7 +139,7 @@ El Candidate Context Discovery aplicó dos técnicas complementarias. **Start-wi
     <tr><th>Bounded Context</th><th>Clasificación</th><th>Responsabilidad y eventos pivote</th><th>Correspondencia técnica actual</th></tr>
   </thead>
   <tbody>
-    <tr><td>Identity and Access Management</td><td>Generic</td><td>Identidad, credenciales, sesiones y roles. `UserRegistered`, `SessionIssued`.</td><td><code>Iam</code></td></tr>
+    <tr><td>Identity and Access Management</td><td>Generic</td><td>Identidad, credenciales, sesiones, roles y políticas de acceso. `UserRegistered`, `SessionIssued`.</td><td><code>Iam</code></td></tr>
     <tr><td>Profile Management</td><td>Supporting</td><td>Datos personales y profesionales. `ProfileCreated`, `ProfileUpdated`.</td><td><code>Profiles</code></td></tr>
     <tr><td>Livestock Management</td><td>Core</td><td>Fincas, hatos, animales e identificación. `AnimalRegistered`, `AnimalIdentified`.</td><td><code>Livestock</code></td></tr>
     <tr><td>Sanitary Management</td><td>Core</td><td>Incidencias, diagnósticos, tratamientos e historial. `HealthEventRecorded`, `VeterinaryCareRecorded`.</td><td><code>Sanitary</code></td></tr>
@@ -278,7 +280,7 @@ La revisión separa capacidades del dominio de mecanismos de aplicación e infra
     <tr><th>Bounded Context</th><th>Capacidades del dominio</th><th>Capacidades de aplicación o infraestructura</th></tr>
   </thead>
   <tbody>
-    <tr><td>IAM</td><td>Registro, autenticación, sesión y autorización.</td><td>JWT, BCrypt y almacenamiento seguro del token.</td></tr>
+    <tr><td>IAM</td><td>Registro de cuentas, autenticación, vigencia y cierre de sesiones, autorización y confidencialidad.</td><td>JWT, BCrypt, políticas de acceso y almacenamiento seguro del token.</td></tr>
     <tr><td>Profiles</td><td>Creación y actualización de datos personales y profesionales.</td><td>Validación, localización y exposición REST del perfil.</td></tr>
     <tr><td>Livestock</td><td>Fincas, animales, códigos e identificación.</td><td>Cámara, ML Kit, caché local y adaptadores REST.</td></tr>
     <tr><td>Sanitary</td><td>Historial, incidencia, atención, tratamiento y corrección.</td><td>Persistencia local, sincronización y control de versiones.</td></tr>
@@ -292,7 +294,7 @@ La revisión separa capacidades del dominio de mecanismos de aplicación e infra
 
 #### Identity and Access Management
 
-Gestiona cuentas, credenciales, sesiones y autorización. Publica un identificador estable y el rol; no administra los datos personales del perfil.
+Gestiona cuentas, credenciales, sesiones y autorización, y protege los datos de autenticación. Publica un identificador estable y el rol; no administra los datos personales del perfil. Este alcance se relaciona con US-004, US-005, US-006, US-007, US-046 y TS-008.
 
 ![Bounded Context Canvas de IAM](../../assets/chapter-2/strategic-ddd/bounded-context-canvas-iam.svg)
 

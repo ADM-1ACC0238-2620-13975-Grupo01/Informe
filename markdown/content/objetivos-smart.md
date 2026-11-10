@@ -48,7 +48,7 @@ Durante su primer año después de graduarse, Josep construirá evidencias de su
 | Criterio SMART | Aplicación concreta |
 |---|---|
 | **Específico** | Aprender metodologías ágiles y coordinar una iniciativa académica, comunitaria o laboral de 3 a 5 participantes. |
-| **Medible** | Completar 60 horas de formación, entregar al menos el 80 % del alcance acordado y registrar 3 aprendizajes en una retrospectiva. |
+| **Medible** | Completar 60 horas de formación, entregar al menos el 80% del alcance acordado y registrar 3 aprendizajes en una retrospectiva. |
 | **Alcanzable** | Empezará con un equipo y un alcance reducidos, utilizando un backlog y reuniones breves de seguimiento. |
 | **Relevante** | La experiencia mejorará su capacidad de colaborar y asumir gradualmente responsabilidades de coordinación. |
 | **Temporal** | Completará la formación y la iniciativa dentro de los 18 meses posteriores a su graduación. |
@@ -72,7 +72,7 @@ Durante el primer año después de graduarse, Saul buscará incorporarse al desa
 | Criterio SMART | Aplicación concreta |
 |---|---|
 | **Específico** | Fortalecer pruebas unitarias, pruebas de interfaz, seguridad básica y generación de versiones móviles. |
-| **Medible** | Completar 80 horas de formación, cubrir al menos el 70 % de la lógica crítica y corregir todos los defectos de severidad alta detectados. |
+| **Medible** | Completar 80 horas de formación, cubrir al menos el 70% de la lógica crítica y corregir todos los defectos de severidad alta detectados. |
 | **Alcanzable** | Dedicará 3 horas semanales, conservará reportes de prueba y solicitará revisión de código antes de cada versión importante. |
 | **Relevante** | Estas prácticas mejorarán la estabilidad de sus aplicaciones y su perfil como desarrollador móvil. |
 | **Temporal** | Completará la formación y las mejoras dentro de los 18 meses posteriores a su graduación. |

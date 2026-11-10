@@ -1,8 +1,7 @@
-"""Genera seis User Flow Diagrams estandar a partir de los mock-ups de AniTec.
+"""Genera seis User Flow Diagrams directos a partir de los mock-ups de AniTec.
 
-Cada diagrama representa un user goal independientemente de la implementacion en
-Flutter o Android. Las pantallas se usan como referencias visuales y los detalles
-de recuperacion se explican en el texto del informe para mantener la legibilidad.
+Cada lámina contiene solo las pantallas, acciones y condiciones necesarias para
+comprender la interacción principal y sus rutas secundarias.
 """
 
 from __future__ import annotations
@@ -20,19 +19,16 @@ OUTPUT = ASSETS / "user-flow-diagrams"
 OUTPUT.mkdir(parents=True, exist_ok=True)
 
 # Tamaño en píxeles de cada diagrama y colores de nodos, ramas, texto y bordes.
-CANVAS = (2200, 1080)
+CANVAS = (2200, 1200)
 GREEN = "#3F7F2A"
 GREEN_LIGHT = "#EAF5E5"
 RED = "#B42318"
-RED_LIGHT = "#FDECEA"
 AMBER = "#9A5B00"
-AMBER_LIGHT = "#FFF3D6"
 INK = "#17313F"
-MUTED = "#52636D"
 BORDER = "#AEBCC2"
 SHADOW = "#DDE5E8"
 
-
+# Carga la fuente Arial o DejaVu Sans en el tamaño indicado; si no existen, usa la fuente por defecto.
 def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
     """Carga Arial o DejaVu Sans en el tamaño indicado; si no existen, usa la fuente por defecto."""
     candidates = [
@@ -46,45 +42,37 @@ def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
 
 
 # Fuentes cargadas una sola vez y reutilizadas en todos los diagramas.
-F_TITLE = font(46, True)
-F_SUBTITLE = font(25)
-F_NODE = font(28, True)
+F_NODE = font(27, True)
 F_ACTION = font(22, True)
-F_DECISION = font(26, True)
-F_BRANCH = font(24, True)
-F_BRANCH_BODY = font(21)
-F_SMALL = font(18)
+F_BRANCH = font(25, True)
 
-
+# Pantalla del flujo con su etiqueta y la ruta de la imagen del mock-up.
 @dataclass(frozen=True)
 class ScreenNode:
     """Pantalla del flujo con su etiqueta y la imagen del mock-up."""
     label: str
     image: Path
 
-
+# Resultado posible después de la decisión del flujo, indicando su título, respuesta y si es una alternativa.
 @dataclass(frozen=True)
 class Branch:
-    """Resultado posible después de la decisión del flujo."""
-    title: str
-    response: str
+    """Desvío del flujo con la condición y la acción que permite continuar."""
+    condition: str
+    next_action: str
+    source_index: int
+    image: Path
     alternative: bool = False
 
-
+# User flow completo que agrupa las pantallas, acciones, decisiones y ramas del proceso de negocio.
 @dataclass(frozen=True)
 class Flow:
-    """User flow completo: pantallas, acciones, decisión y ramas."""
     slug: str
-    title: str
-    personas: str
     nodes: tuple[ScreenNode, ScreenNode, ScreenNode]
-    actions: tuple[str, str, str]
-    decision: str
+    actions: tuple[str, str, str, str]
     branches: tuple[Branch, Branch, Branch]
 
-
+# Devuelve la ruta de un mock-up de Flutter o Android y genera un error si el archivo no existe.
 def mockup(platform: str, role: str, filename: str) -> Path:
-    """Devuelve la ruta de un mock-up de Flutter o Android y falla si no existe."""
     platform_folder = {
         "flutter": "mock-upsMobileFlutter",
         "android": "mock-upsMobileAndroid",
@@ -95,17 +83,16 @@ def mockup(platform: str, role: str, filename: str) -> Path:
         raise FileNotFoundError(path)
     return path
 
-
+# Devuelve la ruta del archivo de mock-up "iPhone 17 - N" de Flutter para el rol indicado.
 def flutter_screen(role: str, number: int) -> Path:
-    """Devuelve el mock-up "iPhone 17 - N" de Flutter para el rol indicado."""
     return mockup("flutter", role, f"iPhone 17 - {number}.png")
 
-
+# Devuelve la ruta del archivo de mock-up "Android Compact - N" de Android para el rol indicado.
 def android_screen(role: str, number: int) -> Path:
     """Devuelve el mock-up "Android Compact - N" de Android para el rol indicado."""
     return mockup("android", role, f"Android Compact - {number}.png")
 
-
+# Devuelve la ruta del mock-up correspondiente al rol de ganadero utilizando su nombre de archivo específico.
 def named(platform: str, filename: str) -> Path:
     """Devuelve un mock-up del ganadero por su nombre de archivo."""
     return mockup(platform, "rancher", filename)
@@ -127,7 +114,7 @@ def wrap(draw: ImageDraw.ImageDraw, text: str, selected_font: ImageFont.ImageFon
         lines.append(current)
     return lines
 
-
+# Dibuja texto centrado vertical y horizontalmente dentro de una caja delimitadora específica.
 def centered_text(
     draw: ImageDraw.ImageDraw,
     text: str,
@@ -149,6 +136,36 @@ def centered_text(
         y += line_height + gap
 
 
+# Dibuja una flecha entre dos puntos, con soporte opcional para líneas discontinuas y grosor personalizado.
+def dashed_line(
+    draw: ImageDraw.ImageDraw,
+    start: tuple[int, int],
+    end: tuple[int, int],
+    color: str,
+    width: int = 4,
+) -> None:
+    """Dibuja una línea discontinua sin punta de flecha."""
+    x1, y1 = start
+    x2, y2 = end
+    distance = max(abs(x2 - x1), abs(y2 - y1))
+    segments = max(1, distance // 18)
+    for index in range(segments):
+        if index % 2:
+            continue
+        t1 = index / segments
+        t2 = min(1, (index + 1) / segments)
+        draw.line(
+            (
+                x1 + (x2 - x1) * t1,
+                y1 + (y2 - y1) * t1,
+                x1 + (x2 - x1) * t2,
+                y1 + (y2 - y1) * t2,
+            ),
+            fill=color,
+            width=width,
+        )
+
+
 def arrow(
     draw: ImageDraw.ImageDraw,
     start: tuple[int, int],
@@ -163,23 +180,7 @@ def arrow(
     x1, y1 = start
     x2, y2 = end
     if dashed:
-        distance = max(abs(x2 - x1), abs(y2 - y1))
-        segments = max(1, distance // 18)
-        for index in range(segments):
-            if index % 2:
-                continue
-            t1 = index / segments
-            t2 = min(1, (index + 1) / segments)
-            draw.line(
-                (
-                    x1 + (x2 - x1) * t1,
-                    y1 + (y2 - y1) * t1,
-                    x1 + (x2 - x1) * t2,
-                    y1 + (y2 - y1) * t2,
-                ),
-                fill=color,
-                width=width,
-            )
+        dashed_line(draw, start, end, color, width)
     else:
         draw.line((x1, y1, x2, y2), fill=color, width=width)
     angle = math.atan2(y2 - y1, x2 - x1)
@@ -208,7 +209,7 @@ def draw_screen_card(
     y: int,
 ) -> tuple[int, int, int, int]:
     """Dibuja la tarjeta de una pantalla con su sombra, captura y etiqueta, y devuelve su caja."""
-    width, height = 330, 610
+    width, height = 330, 590
     draw.rounded_rectangle((x + 9, y + 10, x + width + 9, y + height + 10), radius=24, fill=SHADOW)
     draw.rounded_rectangle((x, y, x + width, y + height), radius=24, fill="white", outline=BORDER, width=3)
     draw.rounded_rectangle((x, y, x + width, y + 64), radius=24, fill=GREEN_LIGHT, outline=GREEN, width=3)
@@ -218,14 +219,23 @@ def draw_screen_card(
     return (x, y, x + width, y + height)
 
 
-def draw_decision(draw: ImageDraw.ImageDraw, center: tuple[int, int], label: str) -> tuple[int, int, int, int]:
-    """Dibuja el rombo de decisión con su texto y devuelve su caja."""
-    cx, cy = center
-    points = [(cx, cy - 110), (cx + 150, cy), (cx, cy + 110), (cx - 150, cy)]
-    draw.polygon(points, fill="#F2F7EF", outline=GREEN)
-    draw.line(points + [points[0]], fill=GREEN, width=4, joint="curve")
-    centered_text(draw, label, (cx - 105, cy - 60, cx + 105, cy + 60), F_DECISION, INK)
-    return (cx - 150, cy - 110, cx + 150, cy + 110)
+def draw_branch_screen(
+    canvas: Image.Image,
+    draw: ImageDraw.ImageDraw,
+    branch: Branch,
+    center_x: int,
+    y: int,
+) -> None:
+    """Dibuja la pantalla y las etiquetas mínimas de una ruta secundaria."""
+    color = AMBER if branch.alternative else RED
+    centered_text(draw, branch.condition, (center_x - 300, y - 78, center_x + 300, y - 20), F_BRANCH, color)
+
+    image_box = (center_x - 110, y, center_x + 110, y + 300)
+    draw.rounded_rectangle((image_box[0] + 7, image_box[1] + 8, image_box[2] + 7, image_box[3] + 8), radius=18, fill=SHADOW)
+    draw.rounded_rectangle(image_box, radius=18, fill="white", outline=color, width=3)
+    paste_phone(canvas, branch.image, (image_box[0] + 10, image_box[1] + 10, image_box[2] - 10, image_box[3] - 10))
+
+    centered_text(draw, branch.next_action, (center_x - 300, y + 320, center_x + 300, y + 380), F_ACTION, INK)
 
 
 def build(flow: Flow) -> None:
@@ -233,56 +243,59 @@ def build(flow: Flow) -> None:
     image = Image.new("RGB", CANVAS, "white")
     draw = ImageDraw.Draw(image)
 
-    draw.text((70, 34), flow.title, font=F_TITLE, fill=INK)
-    draw.text((72, 92), f"User Persona: {flow.personas}", font=F_SUBTITLE, fill=MUTED)
-    draw.text((72, 126), "Flujo estándar para Android y Flutter · Mock-ups representativos", font=F_SUBTITLE, fill=MUTED)
+    y = 70
+    card_xs = (140, 935, 1730)
+    cards = tuple(draw_screen_card(image, draw, node, x, y) for node, x in zip(flow.nodes, card_xs))
 
-    # El color se acompana de linea y etiqueta para no depender solo del color.
-    draw.line((1625, 72, 1740, 72), fill=GREEN, width=7)
-    draw.text((1755, 55), "Happy path", font=F_ACTION, fill=GREEN)
-    arrow(draw, (1625, 118), (1740, 118), RED, width=5, dashed=True)
-    draw.text((1755, 101), "Unhappy / alternativa", font=F_ACTION, fill=RED)
+    mid_y = 365
+    draw.ellipse((24, mid_y - 17, 58, mid_y + 17), fill=GREEN)
+    arrow(draw, (58, mid_y), (cards[0][0] - 10, mid_y), GREEN)
+    arrow(draw, (cards[0][2] + 10, mid_y), (cards[1][0] - 10, mid_y), GREEN)
+    arrow(draw, (cards[1][2] + 10, mid_y), (cards[2][0] - 10, mid_y), GREEN)
+    arrow(draw, (cards[2][2] + 10, mid_y), (2142, mid_y), GREEN)
+    draw.ellipse((2140, mid_y - 19, 2178, mid_y + 19), outline=GREEN, width=5)
+    draw.ellipse((2148, mid_y - 11, 2170, mid_y + 11), fill=GREEN)
 
-    y = 190
-    card1 = draw_screen_card(image, draw, flow.nodes[0], 70, y)
-    card2 = draw_screen_card(image, draw, flow.nodes[1], 550, y)
-    decision = draw_decision(draw, (1120, 495), flow.decision)
-    card3 = draw_screen_card(image, draw, flow.nodes[2], 1390, y)
+    action_boxes = (
+        (5, mid_y - 82, cards[0][0] - 10, mid_y - 28),
+        (cards[0][2] + 14, mid_y - 82, cards[1][0] - 14, mid_y - 28),
+        (cards[1][2] + 14, mid_y - 82, cards[2][0] - 14, mid_y - 28),
+        (cards[2][2] + 14, mid_y - 82, 2195, mid_y - 28),
+    )
+    for label, box in zip(flow.actions, action_boxes):
+        centered_text(draw, label, box, F_ACTION, GREEN)
 
-    mid_y = 495
-    draw.ellipse((8, mid_y - 17, 42, mid_y + 17), fill=GREEN)
-    arrow(draw, (42, mid_y), (card1[0] - 10, mid_y), GREEN)
-    arrow(draw, (card1[2] + 10, mid_y), (card2[0] - 10, mid_y), GREEN)
-    arrow(draw, (card2[2] + 10, mid_y), (decision[0] - 10, mid_y), GREEN)
-    arrow(draw, (decision[2] + 10, mid_y), (card3[0] - 10, mid_y), GREEN)
-    arrow(draw, (card3[2] + 10, mid_y), (1900, mid_y), GREEN)
-    draw.ellipse((1900, mid_y - 19, 1938, mid_y + 19), outline=GREEN, width=5)
-    draw.ellipse((1908, mid_y - 11, 1930, mid_y + 11), fill=GREEN)
-
-    centered_text(draw, flow.actions[0], (card1[2] + 8, mid_y - 74, card2[0] - 8, mid_y - 24), F_ACTION, GREEN)
-    centered_text(draw, flow.actions[1], (card2[2] + 8, mid_y - 74, decision[0] - 8, mid_y - 24), F_ACTION, GREEN)
-    centered_text(draw, "Sí", (decision[2] + 10, mid_y - 70, card3[0] - 10, mid_y - 25), F_ACTION, GREEN)
-    centered_text(draw, flow.actions[2], (card3[2] + 8, mid_y - 74, 1900, mid_y - 24), F_ACTION, GREEN)
-
-    branch_y = 855
-    branch_w = 620
-    branch_h = 155
-    branch_xs = (70, 790, 1510)
-    for index, (branch, bx) in enumerate(zip(flow.branches, branch_xs)):
+    branch_y = 820
+    branch_centers = (300, 1100, 1900)
+    source_counts = {
+        source_index: sum(branch.source_index == source_index for branch in flow.branches)
+        for source_index in range(len(cards))
+    }
+    source_positions: dict[int, int] = {}
+    for index, (branch, target_x) in enumerate(zip(flow.branches, branch_centers)):
         color = AMBER if branch.alternative else RED
-        fill = AMBER_LIGHT if branch.alternative else RED_LIGHT
-        tag = "RUTA ALTERNATIVA" if branch.alternative else "UNHAPPY PATH"
-        target_x = bx + branch_w // 2
-        lane_y = 820 + index * 8
-        arrow(draw, (1120, decision[3] + 8), (1120, lane_y), color, width=4, dashed=True)
-        arrow(draw, (1120, lane_y), (target_x, lane_y), color, width=4, dashed=True)
-        arrow(draw, (target_x, lane_y), (target_x, branch_y - 8), color, width=4, dashed=True)
-        draw.rounded_rectangle((bx, branch_y, bx + branch_w, branch_y + branch_h), radius=20, fill=fill, outline=color, width=3)
-        draw.text((bx + 22, branch_y + 15), tag, font=F_SMALL, fill=color)
-        draw.text((bx + 22, branch_y + 47), branch.title, font=F_BRANCH, fill=color)
-        centered_text(draw, branch.response, (bx + 22, branch_y + 78, bx + branch_w - 22, branch_y + branch_h - 12), F_BRANCH_BODY, INK)
+        source = cards[branch.source_index]
+        position = source_positions.get(branch.source_index, 0)
+        source_positions[branch.source_index] = position + 1
+        total_from_source = source_counts[branch.source_index]
+        offset = int((position - (total_from_source - 1) / 2) * 48)
+        anchor_x = (source[0] + source[2]) // 2 + offset
+        decision_y = 682 + index * 12
+        draw.line((anchor_x, source[3] + 8, anchor_x, decision_y - 13), fill=color, width=4)
+        diamond = [(anchor_x, decision_y - 13), (anchor_x + 13, decision_y), (anchor_x, decision_y + 13), (anchor_x - 13, decision_y)]
+        draw.polygon(diamond, fill="white", outline=color)
+        draw.line(diamond + [diamond[0]], fill=color, width=3)
 
-    draw.text((70, 1038), "Fuente: elaboración propia a partir de los mock-ups de AniTec.", font=F_SMALL, fill=MUTED)
+        if abs(anchor_x - target_x) < 24:
+            # Si origen y destino están alineados, evita una flecha horizontal de pocos píxeles.
+            arrow(draw, (anchor_x, decision_y + 13), (target_x, branch_y - 86), color, width=4, dashed=True)
+        else:
+            # El tramo horizontal solo enruta; la dirección se indica al descender al destino.
+            dashed_line(draw, (anchor_x, decision_y + 13), (target_x, decision_y + 13), color, width=4)
+            arrow(draw, (target_x, decision_y + 13), (target_x, branch_y - 86), color, width=4, dashed=True)
+        arrow(draw, (target_x, branch_y - 16), (target_x, branch_y - 5), color, width=4, dashed=True)
+        draw_branch_screen(image, draw, branch, target_x, branch_y)
+
     image.save(OUTPUT / f"{flow.slug}.png", optimize=True)
 
 
@@ -291,104 +304,181 @@ def flows() -> list[Flow]:
     return [
         Flow(
             "user-flow-01-registro-inicio-sesion",
-            "User Flow 1 - Registrarse e iniciar sesión",
-            "Jorge Luis Rivas y Valeria Mendoza",
             (
                 ScreenNode("Conocer AniTec", flutter_screen("iam", 1)),
-                ScreenNode("Crear cuenta o ingresar", flutter_screen("iam", 4)),
+                ScreenNode("Crear una cuenta", flutter_screen("iam", 3)),
                 ScreenNode("Llegar al dashboard", named("flutter", "01 Dashboard.png")),
             ),
-            ("Continuar", "Enviar datos", "Acceso correcto"),
-            "¿Acceso válido?",
+            ("Abrir AniTec", "Tocar Get Started", "Enviar datos de acceso", "Sesión iniciada"),
             (
-                Branch("Datos o credenciales inválidos", "Corregir y volver a enviar."),
-                Branch("Cuenta existente", "Cambiar a Sign in.", True),
-                Branch("Sin conexión", "Conservar los datos y reintentar."),
+                Branch(
+                    "Si los datos son inválidos",
+                    "Corregir y volver a enviar",
+                    1,
+                    flutter_screen("iam", 3),
+                ),
+                Branch(
+                    "Si la cuenta ya existe",
+                    "Ingresar las credenciales existentes",
+                    1,
+                    flutter_screen("iam", 4),
+                    True,
+                ),
+                Branch(
+                    "Si no hay conexión",
+                    "Reintentar al recuperar la red",
+                    1,
+                    flutter_screen("iam", 3),
+                ),
             ),
         ),
         Flow(
             "user-flow-02-consultar-dashboard",
-            "User Flow 2 - Consultar dashboard",
-            "Jorge Luis Rivas y Valeria Mendoza",
             (
                 ScreenNode("Iniciar sesión", android_screen("iam", 9)),
                 ScreenNode("Consultar resumen", named("android", "01 Dashboard.png")),
                 ScreenNode("Abrir un módulo", named("android", "02 Animals.png")),
             ),
-            ("Ingresar", "Cargar resumen", "Elegir módulo"),
-            "¿Resumen disponible?",
+            ("Autenticarse", "Cargar datos del rol", "Elegir módulo", "Módulo disponible"),
             (
-                Branch("Sin datos o cargando", "Mostrar estado inicial o de carga."),
-                Branch("Sesión vencida", "Volver a iniciar sesión."),
-                Branch("Servicio o acceso no disponible", "Reintentar o recuperar acceso."),
+                Branch(
+                    "Si aún no existen datos",
+                    "Agregar la primera finca o cliente",
+                    1,
+                    android_screen("rancher", 10),
+                    True,
+                ),
+                Branch(
+                    "Si la sesión venció",
+                    "Iniciar sesión nuevamente",
+                    1,
+                    android_screen("vet", 43),
+                ),
+                Branch(
+                    "Si el servicio no responde",
+                    "Reintentar o abrir datos guardados",
+                    1,
+                    android_screen("vet", 42),
+                ),
             ),
         ),
         Flow(
             "user-flow-03-registrar-animal",
-            "User Flow 3 - Registrar animal",
-            "Jorge Luis Rivas (ganadero)",
             (
                 ScreenNode("Abrir Animals", named("flutter", "02 Animals.png")),
                 ScreenNode("Completar registro", named("flutter", "08 New animal.png")),
                 ScreenNode("Revisar animal", named("flutter", "07 Animal detail.png")),
             ),
-            ("Tocar +", "Guardar", "Registro creado"),
-            "¿Registro válido?",
+            ("Entrar a Animals", "Tocar +", "Guardar ficha del animal", "Registro creado"),
             (
-                Branch("Campos o tag inválidos", "Corregir sin perder la información."),
-                Branch("Sin conexión", "Guardar como pendiente de sincronización."),
-                Branch("Varios animales", "Usar el registro masivo.", True),
+                Branch(
+                    "Si faltan datos o el tag es inválido",
+                    "Corregir los campos",
+                    1,
+                    android_screen("rancher", 15),
+                ),
+                Branch(
+                    "Si no hay conexión",
+                    "Sincronizar al recuperar la red",
+                    1,
+                    named("android", "11 Sync status.png"),
+                ),
+                Branch(
+                    "Si se registrarán varios animales",
+                    "Completar y registrar el grupo",
+                    0,
+                    named("android", "20 Bulk registration.png"),
+                    True,
+                ),
             ),
         ),
         Flow(
             "user-flow-04-consultar-actualizar-animal",
-            "User Flow 4 - Consultar o actualizar animal",
-            "Jorge Luis Rivas (ganadero)",
             (
                 ScreenNode("Buscar animal", named("android", "02 Animals.png")),
                 ScreenNode("Revisar detalle", named("android", "07 Animal detail.png")),
                 ScreenNode("Editar y guardar", named("android", "19 Edit animal.png")),
             ),
-            ("Seleccionar", "Tocar Edit", "Cambios guardados"),
-            "¿Cambios válidos?",
+            ("Abrir Animals", "Seleccionar resultado", "Editar y guardar datos", "Cambios guardados"),
             (
-                Branch("Sin resultados", "Limpiar o ajustar la búsqueda."),
-                Branch("Solo lectura", "Consultar sin modificar."),
-                Branch("Conflicto de sincronización", "Elegir la versión que se conservará."),
+                Branch(
+                    "Si la búsqueda no devuelve resultados",
+                    "Ajustar o limpiar la búsqueda",
+                    0,
+                    android_screen("rancher", 12),
+                ),
+                Branch(
+                    "Si el recurso es de solo lectura",
+                    "Consultar o recuperar el permiso",
+                    1,
+                    named("android", "07 Animal detail.png"),
+                ),
+                Branch(
+                    "Si existe un conflicto de sincronización",
+                    "Elegir la versión que se conservará",
+                    2,
+                    named("android", "11 Sync status.png"),
+                ),
             ),
         ),
         Flow(
             "user-flow-05-historial-sanitario",
-            "User Flow 5 - Consultar historial sanitario",
-            "Jorge Luis Rivas y Valeria Mendoza",
             (
                 ScreenNode("Seleccionar paciente", named("flutter", "07 Animal detail.png")),
                 ScreenNode("Abrir Health history", flutter_screen("rancher", 17)),
                 ScreenNode("Revisar registro", flutter_screen("vet", 60)),
             ),
-            ("Abrir detalle", "Ver historial", "Elegir registro"),
-            "¿Historial accesible?",
+            ("Abrir paciente", "Ver historial", "Elegir registro sanitario", "Detalle consultado"),
             (
-                Branch("Sin registros", "Mostrar estado vacío y acción disponible."),
-                Branch("Sin permiso", "Solicitar o restablecer el acceso."),
-                Branch("Modo offline", "Mostrar la copia local identificada."),
+                Branch(
+                    "Si el animal no tiene registros",
+                    "Registrar el primer evento sanitario",
+                    1,
+                    android_screen("rancher", 14),
+                ),
+                Branch(
+                    "Si el acceso fue revocado",
+                    "Solicitar acceso nuevamente",
+                    0,
+                    android_screen("vet", 60),
+                ),
+                Branch(
+                    "Si se consulta sin conexión",
+                    "Consultar la copia local",
+                    1,
+                    android_screen("vet", 59),
+                    True,
+                ),
             ),
         ),
         Flow(
             "user-flow-06-registrar-evento-sanitario",
-            "User Flow 6 - Registrar evento sanitario",
-            "Jorge Luis Rivas y Valeria Mendoza",
             (
                 ScreenNode("Abrir paciente", named("android", "07 Animal detail.png")),
                 ScreenNode("Registrar evento", android_screen("vet", 61)),
                 ScreenNode("Confirmar en historial", android_screen("vet", 63)),
             ),
-            ("Elegir acción", "Guardar", "Evento registrado"),
-            "¿Evento válido?",
+            ("Abrir paciente", "Elegir acción sanitaria", "Guardar datos del evento", "Evento registrado"),
             (
-                Branch("Datos incompletos", "Corregir sin cerrar el formulario."),
-                Branch("Sin conexión o permiso", "Guardar pendiente o recuperar acceso."),
-                Branch("Programar seguimiento", "Crear una actividad posterior.", True),
+                Branch(
+                    "Si los datos están incompletos",
+                    "Corregir y volver a guardar",
+                    1,
+                    android_screen("vet", 62),
+                ),
+                Branch(
+                    "Si no hay conexión o se pierde el permiso",
+                    "Sincronizar o restablecer el acceso",
+                    1,
+                    android_screen("vet", 82),
+                ),
+                Branch(
+                    "Si se requiere seguimiento",
+                    "Programar la actividad posterior",
+                    2,
+                    android_screen("vet", 67),
+                    True,
+                ),
             ),
         ),
     ]

@@ -2,6 +2,8 @@
 
 # 2.6.9. Bounded Context: Analytics and Reporting
 
+<!-- Documentation marker: Analytics and Reporting section. -->
+
 Construir proyecciones y métricas de consulta para los dashboards sin adquirir propiedad sobre los registros de los contextos fuente.
 
 La base implementada se encuentra en el módulo `Analytics` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.

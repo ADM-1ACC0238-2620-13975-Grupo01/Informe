@@ -2,6 +2,8 @@
 
 # 2.6.3. Bounded Context: Livestock Management
 
+<!-- Documentation marker: Livestock Management section. -->
+
 Gestionar fincas, hatos, animales e identificadores QR como fuente de referencia para los demás procesos ganaderos.
 
 La base implementada se encuentra en el módulo `Livestock` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.

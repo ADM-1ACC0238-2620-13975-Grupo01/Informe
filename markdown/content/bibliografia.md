@@ -44,32 +44,32 @@
 
 <p style="margin-left:36px; text-indent:-36px;">Instituto Nacional de Estadística e Informática. (2026). <em>Estadísticas de las tecnologías de información y comunicación en los hogares: Octubre-noviembre-diciembre 2025</em>. https://www.inei.gob.pe/media/MenuRecursivo/boletines/boletin-tic-oct_dic2025.pdf</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Jošt, G., &amp; Taneski, V. (2025). State-of-the-art cross-platform mobile application development frameworks: A comparative study of market and developer trends. <em>Informatics, 12</em>(2), 45. https://doi.org/10.3390/informatics12020045</p>
+<p style="margin-left:36px; text-indent:-36px;">Jošt, G., &amp; Taneski, V. (2025). State-of-the-art cross-platform mobile application development frameworks: A comparative study of market and developer trends. <em>Informatics, 12</em>(2), Article 45. https://doi.org/10.3390/informatics12020045</p>
 
 <p style="margin-left:36px; text-indent:-36px;">Livestock Manager. (s. f.). <em>Livestock Manager: Made by Pila</em>. Recuperado el 13 de septiembre de 2026, de https://app.livestockfarm.co/</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Mahmud, T., Che, M., Ngu, A., &amp; Yang, G. (2025). Why Android app testing falls short: Empirical insights from open-source projects and a practitioner survey. <em>Empirical Software Engineering, 30</em>, artículo 163. https://doi.org/10.1007/s10664-025-10726-x</p>
+<p style="margin-left:36px; text-indent:-36px;">Mahmud, T., Che, M., Ngu, A., &amp; Yang, G. (2025). Why Android app testing falls short: Empirical insights from open-source projects and a practitioner survey. <em>Empirical Software Engineering, 30</em>, Article 163. https://doi.org/10.1007/s10664-025-10726-x</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Microsoft. (2026a). <em>ASP.NET Core documentation</em>. https://learn.microsoft.com/aspnet/core/</p>
+<p style="margin-left:36px; text-indent:-36px;">Microsoft. (s. f.-a). <em>ASP.NET Core documentation</em>. Recuperado el 3 de noviembre de 2026, de https://learn.microsoft.com/aspnet/core/</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Microsoft. (2026b). <em>Entity Framework Core documentation</em>. https://learn.microsoft.com/ef/core/</p>
+<p style="margin-left:36px; text-indent:-36px;">Microsoft. (s. f.-b). <em>Entity Framework Core documentation</em>. Recuperado el 3 de noviembre de 2026, de https://learn.microsoft.com/ef/core/</p>
 
-<p style="margin-left:36px; text-indent:-36px;">MySQL. (2026). <em>MySQL 8.0 reference manual</em>. https://dev.mysql.com/doc/refman/8.0/en/</p>
+<p style="margin-left:36px; text-indent:-36px;">MySQL. (s. f.). <em>MySQL 8.0 reference manual</em>. Recuperado el 3 de noviembre de 2026, de https://dev.mysql.com/doc/refman/8.0/en/</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Nsabiyeze, A., Zhang, M., Li, J., Zhao, Q., &amp; Zhang, X. (2025). Precision livestock farming for climate-resilient livestock management: A review of real-time monitoring and decision support systems. <em>Journal of Cleaner Production, 524</em>, 146454. https://doi.org/10.1016/j.jclepro.2025.146454</p>
+<p style="margin-left:36px; text-indent:-36px;">Nsabiyeze, A., Zhang, M., Li, J., Zhao, Q., &amp; Zhang, X. (2025). Precision livestock farming for climate-resilient livestock management: A review of real-time monitoring and decision support systems. <em>Journal of Cleaner Production, 524</em>, Article 146454. https://doi.org/10.1016/j.jclepro.2025.146454</p>
 
-<p style="margin-left:36px; text-indent:-36px;">OpenAPI Initiative. (2026). <em>OpenAPI specification</em>. https://spec.openapis.org/oas/latest.html</p>
+<p style="margin-left:36px; text-indent:-36px;">OpenAPI Initiative. (s. f.). <em>OpenAPI specification</em>. Recuperado el 3 de noviembre de 2026, de https://spec.openapis.org/oas/latest.html</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Papadopoulos, G., Papantonatou, M.-Z., Uyar, H., Kriezi, O., Mavrommatis, A., Psiroukis, V., Kasimati, A., Tsiplakou, E., &amp; Fountas, S. (2025). Economic and environmental benefits of digital agricultural technological solutions in livestock farming: A review. <em>Smart Agricultural Technology, 10</em>, 100783. https://doi.org/10.1016/j.atech.2025.100783</p>
+<p style="margin-left:36px; text-indent:-36px;">Papadopoulos, G., Papantonatou, M.-Z., Uyar, H., Kriezi, O., Mavrommatis, A., Psiroukis, V., Kasimati, A., Tsiplakou, E., &amp; Fountas, S. (2025). Economic and environmental benefits of digital agricultural technological solutions in livestock farming: A review. <em>Smart Agricultural Technology, 10</em>, Article 100783. https://doi.org/10.1016/j.atech.2025.100783</p>
 
 <p style="margin-left:36px; text-indent:-36px;">Pressman, R. S. (2010). <em>Ingeniería de software: Un enfoque práctico</em> (7.ª ed.). McGraw-Hill.</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Schwaber, K., &amp; Sutherland, J. (2020). <em>The Scrum Guide</em>. Scrum Guides. https://scrumguides.org/scrum-guide.html</p>
+<p style="margin-left:36px; text-indent:-36px;">Schwaber, K., &amp; Sutherland, J. (2020). <em>The Scrum guide</em>. Scrum Guides. https://scrumguides.org/scrum-guide.html</p>
 
 <p style="margin-left:36px; text-indent:-36px;">Stripe. (s. f.). <em>Use a prebuilt Stripe-hosted payment page</em>. Recuperado el 13 de septiembre de 2026, de https://docs.stripe.com/payments/checkout</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Structurizr. (2026). <em>Structurizr documentation</em>. https://docs.structurizr.com/</p>
+<p style="margin-left:36px; text-indent:-36px;">Structurizr. (s. f.). <em>Structurizr documentation</em>. Recuperado el 3 de noviembre de 2026, de https://docs.structurizr.com/</p>
 
-<p style="margin-left:36px; text-indent:-36px;">Vue.js. (2026). <em>Vue.js documentation</em>. https://vuejs.org/guide/</p>
+<p style="margin-left:36px; text-indent:-36px;">Vue.js. (s. f.). <em>Vue.js documentation</em>. Recuperado el 3 de noviembre de 2026, de https://vuejs.org/guide/</p>
 
 <p style="margin-left:36px; text-indent:-36px;">Weerakoon, S. (2020, 1 de noviembre). <em>How to write a user story for an API product</em>. Medium. https://sameera17w.medium.com/how-to-write-a-user-story-for-an-api-product-7af6abd4ad2e</p>

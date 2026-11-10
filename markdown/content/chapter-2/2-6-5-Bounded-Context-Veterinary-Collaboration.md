@@ -2,6 +2,8 @@
 
 # 2.6.5. Bounded Context: Veterinary Collaboration
 
+<!-- Documentation marker: Veterinary Collaboration section. -->
+
 Administrar solicitudes y autorizaciones entre ganaderos y veterinarios, delimitando clientes, pacientes y alcance de acceso.
 
 La base implementada se encuentra en el módulo `Clients` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.

@@ -2,7 +2,11 @@
 
 # 2.6.1. Bounded Context: Identity and Access Management
 
+<!-- Documentation marker: Identity and Access Management section. -->
+
 Administrar identidades, credenciales, roles y sesiones para que cada operación de AniTec se ejecute con una identidad autenticada y autorizada.
+
+Este bounded context implementa las historias US-004, US-005, US-006 y US-007, y aplica el atributo de confidencialidad definido en US-046. TS-008 proporciona la capacidad técnica para proteger las credenciales y los datos de sesión.
 
 La base implementada se encuentra en el módulo `Iam` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
 
@@ -18,7 +22,7 @@ Esta capa documenta el modelo que representa el núcleo de **Identity and Access
 |---|---|
 | **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Mantener identidad, credenciales protegidas y rol del usuario. |
-| **Relaciones** | User se relaciona con UserRole : has; AuthenticatedSession se relaciona con User : belongs to; CredentialPolicy depende de User : validates; IUserRepository depende de User : persists |
+| **Relaciones** | User se relaciona con UserRole (has); AuthenticatedSession se relaciona con User (belongs to); CredentialPolicy depende de User (validates); IUserRepository depende de User (persists). |
 
 **Atributos o dependencias**
 
@@ -44,7 +48,7 @@ Esta capa documenta el modelo que representa el núcleo de **Identity and Access
 |---|---|
 | **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Definir los valores válidos de UserRole. |
-| **Relaciones** | User se relaciona con UserRole : has |
+| **Relaciones** | User se relaciona con UserRole (has). |
 
 **Atributos o dependencias**
 
@@ -64,7 +68,7 @@ No aplica.
 |---|---|
 | **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Controlar vigencia y revocación de una sesión autenticada. |
-| **Relaciones** | AuthenticatedSession se relaciona con User : belongs to |
+| **Relaciones** | AuthenticatedSession se relaciona con User (belongs to). |
 
 **Atributos o dependencias**
 
@@ -87,7 +91,7 @@ No aplica.
 |---|---|
 | **Producto y estado** | Backend, Android y Flutter (modelo canónico) — **No implementado** |
 | **Propósito** | Validar reglas de nombre de usuario y contraseña. |
-| **Relaciones** | CredentialPolicy depende de User : validates |
+| **Relaciones** | CredentialPolicy depende de User (validates). |
 
 **Atributos o dependencias**
 
@@ -106,7 +110,7 @@ No aplica.
 |---|---|
 | **Producto y estado** | Backend; modelo equivalente en Android y Flutter — **Implementado** |
 | **Propósito** | Abstraer la persistencia de User. |
-| **Relaciones** | IUserRepository depende de User : persists |
+| **Relaciones** | IUserRepository depende de User (persists). |
 
 **Atributos o dependencias**
 

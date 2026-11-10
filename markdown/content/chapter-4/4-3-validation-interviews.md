@@ -21,10 +21,10 @@ En el caso del segmento ganadero, la evaluación se orienta a la gestión de hat
 
 1. ¿A qué se dedica actualmente dentro de la actividad ganadera y qué tipo de animales maneja?
 2. ¿Cómo registra hoy la información de sus animales, fincas, actividades o gastos?
-3. Al ver el landing page de AniTec, ¿entiende rápidamente qué problema busca resolver la aplicación?
-4. ¿La información del landing page le genera confianza para probar la aplicación? ¿Por qué?
-5. ¿Qué sección del landing page le pareció más útil o clara?
-6. ¿Hubo alguna parte del landing page que le pareció confusa, innecesaria o poco creíble?
+3. Al ver la landing page de AniTec, ¿entiende rápidamente qué problema busca resolver la aplicación?
+4. ¿La información de la landing page le genera confianza para probar la aplicación? ¿Por qué?
+5. ¿Qué sección de la landing page le pareció más útil o clara?
+6. ¿Hubo alguna parte de la landing page que le pareció confusa, innecesaria o poco creíble?
 7. Al iniciar sesión como ganadero, ¿le resultó claro hacia dónde debía ir primero?
 8. ¿El dashboard ganadero le muestra información útil para tomar decisiones rápidas?
 9. ¿Los nombres de las opciones del menú, como hatos, animales, sanidad, finanzas, actividades, IoT y planes, le resultan comprensibles?
@@ -44,9 +44,9 @@ En el caso del segmento ganadero, la evaluación se orienta a la gestión de hat
 
 1. ¿Cuál es su experiencia trabajando con ganaderos o productores pecuarios?
 2. ¿Cómo organiza actualmente la información de sus clientes, pacientes y visitas?
-3. Al ver el landing page de AniTec, ¿queda claro que también está pensada para veterinarios?
-4. ¿Qué información del landing page le ayudó más a entender el valor de la aplicación?
-5. ¿Qué información agregaría al landing page para que un veterinario confíe más en AniTec?
+3. Al ver la landing page de AniTec, ¿queda claro que también está pensada para veterinarios?
+4. ¿Qué información de la landing page le ayudó más a entender el valor de la aplicación?
+5. ¿Qué información agregaría a la landing page para que un veterinario confíe más en AniTec?
 6. Al iniciar sesión como veterinario, ¿el dashboard le permite entender rápidamente su carga de trabajo?
 7. ¿La opción de clientes asignados le parece clara y útil?
 8. ¿Le resultó fácil agregar o revisar clientes ganaderos?
@@ -219,7 +219,7 @@ Para registrar los hallazgos se utilizó una escala de severidad simple:
 | 3 | Problema importante que puede dificultar el cumplimiento de una tarea. |
 | 4 | Problema crítico que impide completar una tarea principal. |
 
-### Evaluación heurística - Segmento Ganadero:
+### Evaluación heurística — segmento ganadero
 
 | Criterio evaluado | Evidencia observada | Severidad | Recomendación |
 | ----------------- | ------------------- | --------- | ------------- |
@@ -236,7 +236,7 @@ Para registrar los hallazgos se utilizó una escala de severidad simple:
 
 <br>
 
-### Evaluación heurística - Segmento Veterinario:
+### Evaluación heurística — segmento veterinario
 
 | Criterio evaluado | Evidencia observada | Severidad | Recomendación |
 | ----------------- | ------------------- | --------- | ------------- |
@@ -253,7 +253,7 @@ Para registrar los hallazgos se utilizó una escala de severidad simple:
 
 <br>
 
-### Resumen de hallazgos heurísticos:
+### Resumen de hallazgos heurísticos
 
 La evaluación muestra que **AniTec** cumple adecuadamente con criterios de correspondencia con el mundo real, consistencia, reconocimiento y organización general de la información. Los usuarios comprenden la división por roles y reconocen la utilidad de centralizar animales, sanidad, actividades, finanzas, clientes, pacientes, IoT y suscripciones en una sola plataforma.
 

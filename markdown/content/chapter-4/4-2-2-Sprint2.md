@@ -59,7 +59,7 @@ Además, el sprint cierra dos historias que habían quedado parciales en el Spri
 
 | ID | Título | Estado al cierre del Sprint 2 |
 |---|---|---|
-| US-007 | Acceder únicamente a información autorizada | Completa: el backend filtra fincas, corrales, animales, registros sanitarios, actividades, finanzas, dispositivos, suscripciones y paneles por usuario, y responde `403` ante recursos ajenos. |
+| US-007 | Restringir el acceso según el rol y la relación autorizada | Completa: el backend filtra fincas, corrales, animales, registros sanitarios, actividades, finanzas, dispositivos, suscripciones y paneles por usuario, y responde `403` ante recursos ajenos. |
 | US-012 | Actualizar o archivar un animal | Completa: el animal puede archivarse y restaurarse (estado «Archivado») de forma individual o múltiple, y la lista activa excluye los archivados. |
 
 Las historias US-020, US-021 y US-022 (solicitud, aceptación y revocación del acceso veterinario por parte del ganadero) pasan al Sprint 3: en este sprint el veterinario agrega y retira a sus clientes directamente. Las notificaciones (TS-009 y US-027), la persistencia local en Flutter (TS-006) y la sincronización idempotente (TS-007) también pasan al Sprint 3.
@@ -94,7 +94,7 @@ El Sprint Backlog descompone las historias comprometidas en tareas comprobables 
 
 | Story ID | Story Title | Task ID | Task Title | Description | Hours | Assigned To | Status |
 |---|---|---|---|---|---:|---|---|
-| US-007 | Acceder únicamente a información autorizada | T-031 | Filtrar los datos por usuario en el servidor | Servicio de alcance de acceso y su uso en los controladores de fincas, corrales, animales, registros sanitarios, actividades, finanzas, dispositivos, suscripciones y paneles; `403` ante recursos ajenos. | 10 | Beingolea Montalvo, Sebastian Martin | Done |
+| US-007 | Restringir el acceso según el rol y la relación autorizada | T-031 | Filtrar los datos por usuario en el servidor | Servicio de alcance de acceso y su uso en los controladores de fincas, corrales, animales, registros sanitarios, actividades, finanzas, dispositivos, suscripciones y paneles; `403` ante recursos ajenos. | 10 | Beingolea Montalvo, Sebastian Martin | Done |
 | TS-011, SP-002 | Integrar el checkout externo de Stripe; Investigar Stripe | T-032 | Retorno móvil de Stripe y confirmación del pago | Páginas HTTPS de retorno que abren la aplicación por enlace, parámetro de plataforma en el checkout, confirmación del pago y cierre del pago simulado en producción. | 8 | Beingolea Montalvo, Sebastian Martin | Done |
 | US-038 | Consultar planes de suscripción | T-033 | Sembrar y consultar los planes de suscripción | Carga de los tres planes en cualquier entorno cuando la tabla está vacía y consulta desde la aplicación. | 3 | Beingolea Montalvo, Sebastian Martin | Done |
 | US-012 | Actualizar o archivar un animal | T-034 | Archivar animales en el backend | Estado «Archivado», `PATCH animals/{id}/status` y filtro `archived` en la lista de animales. | 3 | Beingolea Montalvo, Sebastian Martin | Done |
@@ -338,12 +338,12 @@ Las 16 pruebas instrumentadas se ejecutan en el emulador (`Medium_Phone_API_37.0
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-5-3-android-pruebas-unitarias.png" alt="Informe de Gradle de testDebugUnitTest: 214 pruebas, 0 fallos y 100 % correctas" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-5-3-android-pruebas-unitarias.png" alt="Informe de Gradle de testDebugUnitTest: 214 pruebas, 0 fallos y 100% correctas" width="800">
   <p><i>Figura 4.2.2.5.3. Resultado de las pruebas unitarias de Android. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-5-4-android-pruebas-instrumentadas.png" alt="Informe de connectedDebugAndroidTest en el emulador: 16 pruebas, 0 fallos y 100 % correctas, con 4 pruebas en el paquete app, que es el de BottomNavigationTest" width="800">
+  <img src="../../assets/chapter-4/sprint2/fig-4-2-2-5-4-android-pruebas-instrumentadas.png" alt="Informe de connectedDebugAndroidTest en el emulador: 16 pruebas, 0 fallos y 100% correctas, con 4 pruebas en el paquete app, que es el de BottomNavigationTest" width="800">
   <p><i>Figura 4.2.2.5.4. Resultado de las pruebas instrumentadas de Android (4 pruebas del paquete app, que incluye BottomNavigationTest). Fuente: elaboración propia.</i></p>
 </div>
 
@@ -539,7 +539,7 @@ Con el Sprint 2 el backend queda completo y publicado, con su documentación Ope
 
 **Planes de suscripción** (`/subscription-plans`)
 
-Ejemplo de `SubscriptionPlanResource`: `{"id":1,"name":"Ganadero Basico","price":49.00,"stripePriceId":"mock_price_rancher_basic","maxAnimals":80,"isActive":true}`. Los planes se cargan al iniciar la API en cualquier entorno, solo si la tabla está vacía.
+Ejemplo de `SubscriptionPlanResource`: `{"id":1,"name":"Ganadero Básico","price":49.00,"stripePriceId":"mock_price_rancher_basic","maxAnimals":80,"isActive":true}`. Los planes se cargan al iniciar la API en cualquier entorno, solo si la tabla está vacía.
 
 | Related story | HTTP | Call syntax | Parameters / body | Success response | Error responses |
 |---|---|---|---|---|---|
@@ -749,6 +749,6 @@ Las capturas siguientes muestran los analíticos de colaboración y de commits d
   <p><i>Figura 4.2.2.9.4. Analíticos de colaboración del repositorio anitec-flutter. Fuente: elaboración propia.</i></p>
 </div>
 
-**Interpretación de los analíticos.** Los analíticos de GitHub se leen junto con las tareas del Sprint Backlog, porque el número de commits por autor no mide por sí solo el aporte de cada integrante. El trabajo se concentró en la aplicación Android, que reúne 106 de las 200 horas estimadas (53 %), seguida por el backend, con 40 horas (20 %), la aplicación Flutter, con 34 horas (17 %), y la distribución y la documentación, con 20 horas (10 %). Los cinco integrantes participaron en el desarrollo del backend o de las aplicaciones y cada uno lideró al menos un aspecto: Sebastian Beingolea lideró el backend y colaboró en las pruebas de Flutter, Josep Melgarejo lideró Android, Luciana Sanchez lideró el diseño y Flutter, Giuseppe Villanueva lideró las pruebas y la distribución, y Saul Ortega lideró la Landing Page y colaboró en Android, Flutter y el backend, como indica la matriz de la sección 4.2.2.2. El reparto por persona fue de 40 horas para cada integrante.
+**Interpretación de los analíticos.** Los analíticos de GitHub se leen junto con las tareas del Sprint Backlog, porque el número de commits por autor no mide por sí solo el aporte de cada integrante. El trabajo se concentró en la aplicación Android, que reúne 106 de las 200 horas estimadas (53%), seguida por el backend, con 40 horas (20%), la aplicación Flutter, con 34 horas (17%), y la distribución y la documentación, con 20 horas (10%). Los cinco integrantes participaron en el desarrollo del backend o de las aplicaciones y cada uno lideró al menos un aspecto: Sebastian Beingolea lideró el backend y colaboró en las pruebas de Flutter, Josep Melgarejo lideró Android, Luciana Sanchez lideró el diseño y Flutter, Giuseppe Villanueva lideró las pruebas y la distribución, y Saul Ortega lideró la landing page y colaboró en Android, Flutter y el backend, como indica la matriz de la sección 4.2.2.2. El reparto por persona fue de 40 horas para cada integrante.
 
 **Conclusión del trabajo en equipo.** Al cierre del Sprint 2 el equipo entregó el backend completo con 150 pruebas automatizadas, una aplicación Android con las funciones del ganadero y del veterinario, una primera versión de la aplicación Flutter y la distribución de las dos aplicaciones en Firebase App Distribution. Las 31 tareas del sprint quedaron en Done. De las 24 historias comprometidas, 20 se completaron y 4 quedaron parciales, y las historias del consentimiento veterinario, las notificaciones, la persistencia local en Flutter y la sincronización idempotente pasaron al Sprint 3. Como aprendizajes, el equipo destaca cerrar las historias parciales del sprint anterior, probar en las condiciones reales de uso, como las conexiones simultáneas de la base de datos publicada, y verificar en un dispositivo físico lo que el emulador no permite. Para el Sprint 3, el foco será el consentimiento del ganadero sobre el acceso veterinario, las notificaciones, el trabajo sin conexión con sincronización idempotente, la persistencia local en Flutter, la accesibilidad y la automatización de las pruebas de los flujos críticos.

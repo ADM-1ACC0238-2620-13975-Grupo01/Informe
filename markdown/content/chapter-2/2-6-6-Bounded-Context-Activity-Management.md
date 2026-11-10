@@ -2,6 +2,8 @@
 
 # 2.6.6. Bounded Context: Activity Management
 
+<!-- Documentation marker: Activity Management section. -->
+
 Planificar actividades ganaderas y sanitarias, controlar su estado y decidir cuándo corresponde generar un recordatorio.
 
 La base implementada se encuentra en el módulo `Activities` de la API ASP.NET Core. El diseño móvil de Android y Flutter se documenta como **no implementado** porque esos clientes todavía no existen en el workspace. Los tres productos comparten contratos REST y lenguaje ubicuo, mientras la API conserva las reglas autoritativas.
