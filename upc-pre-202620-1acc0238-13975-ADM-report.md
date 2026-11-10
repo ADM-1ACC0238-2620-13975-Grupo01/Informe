@@ -11980,10 +11980,10 @@ El video About the Team presenta la participación de los integrantes del equipo
 | Elemento | Información |
 | -------- | ----------- |
 | Título | Video About the Team — AniTec |
-| Duración | |
+| Duración | 5 min 22 s |
 | Público objetivo | Docente del curso, visitantes de la landing page y personas interesadas en conocer el proceso de trabajo del equipo |
 | URL publicada en Microsoft Stream | [Ver video About the Team](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBs8pOR_ON9R7t3I62NIdowAefCYvQ1QxYzdkCpkamyplY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=22j0OG) |
-| URL publicada en YouTube |  |
+| URL publicada en YouTube | [Ver video en YouTube](https://youtu.be/H8bZXUCpMkE) |
 | Uso en la landing page | El video de YouTube se utiliza como evidencia pública del proceso de trabajo del equipo. |
 
 **URL del video publicado en Microsoft Stream:**
@@ -11992,6 +11992,7 @@ El video About the Team presenta la participación de los integrantes del equipo
 
 **URL del video publicado en YouTube:**
 
+<https://youtu.be/H8bZXUCpMkE>
 
 <div align="center">
     <img src="markdown/assets/chapter-5/video-about-the-team.png" alt="Fotograma del video About the Team: un integrante del equipo hablando a la cámara" width="700">
@@ -12180,7 +12181,7 @@ Ya están publicados el video de validación de la aplicación, el About the Pro
 
 - **Validación de la aplicación (primera versión):** [Ver video de validación](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQDiiPLM7lSIRq_AXq1quEsJAZQSdmpDRQIoMTHSdPOcd-Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=7F7dcc) (es el mismo video de la aplicación Android).
 - **About the Product (primera versión):** [Ver video About the Product](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBcZwe2PKhdRbF-7-NW9NUXAY2QsIKGL7AR8OI2yNviFJ8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=DQ6rMa)
-- **About the Team (primera versión):** [Ver video About the Team](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBs8pOR_ON9R7t3I62NIdowAefCYvQ1QxYzdkCpkamyplY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=22j0OG)
+- **About the Team (primera versión):** [Ver video About the Team](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBs8pOR_ON9R7t3I62NIdowAefCYvQ1QxYzdkCpkamyplY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=22j0OG) · [Ver en YouTube](https://youtu.be/H8bZXUCpMkE)
 - **Ejecución del Sprint 2 (Backend):** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQCERFJ0rj7SR6dhIdCez6aFAYny-M67fgmsw5IKjxa5TCY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=nWZUtK)
 - **Ejecución del Sprint 2 (aplicación Android):** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQDiiPLM7lSIRq_AXq1quEsJAZQSdmpDRQIoMTHSdPOcd-Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=7F7dcc)
 - **Ejecución del Sprint 2 (aplicación Flutter):** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBwHgm1H2tgTIanbLuMtNRjAXwEqHOK2LyV-QCR77hd8SQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=KfXcaf)
