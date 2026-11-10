@@ -18,7 +18,7 @@ La planificación del Sprint 2 parte del Product Backlog del AV1, que asignaba a
   <tr><th>Location</th><td>Discord (reunión virtual)</td></tr>
   <tr><th>Prepared By</th><td>Melgarejo Quiroz, Josep Eliu</td></tr>
   <tr><th>Attendees</th><td>Beingolea Montalvo, Sebastian Martin / Melgarejo Quiroz, Josep Eliu / Ortega Muñoz, Saul / Sanchez Silva, Luciana Celeste / Villanueva Rodriguez, Giuseppe</td></tr>
-  <tr><th>Sprint 1 Review Summary</th><td>El Sprint 1 entregó la Landing Page publicada, el backend desplegado con 104 pruebas automatizadas y la aplicación Android con autenticación, fincas, corrales, animales y registros sanitarios. De las 30 tareas, 28 quedaron en Done y 2 en To-Review; de las 24 historias, 22 se completaron y 2 quedaron parciales (US-007, porque el backend aún no filtraba por usuario, y US-012, porque faltaba archivar animales), por lo que se completaron 95 de los 105 Story Points comprometidos. La retroalimentación recibida en la revisión del TB1: pendiente de completar.</td></tr>
+  <tr><th>Sprint 1 Review Summary</th><td>El Sprint 1 entregó la Landing Page publicada, el backend desplegado con 104 pruebas automatizadas y la aplicación Android con autenticación, fincas, corrales, animales y registros sanitarios. De las 30 tareas, 28 quedaron en Done y 2 en To-Review; de las 24 historias, 22 se completaron y 2 quedaron parciales (US-007, porque el backend aún no filtraba por usuario, y US-012, porque faltaba archivar animales), por lo que se completaron 95 de los 105 Story Points comprometidos. En la revisión del TB1 se indicó mejorar el canvas, ordenar el Product Backlog y reunir todos los sprints en un solo tablero de Trello; el equipo atiende estas observaciones a partir de este sprint.</td></tr>
   <tr><th>Sprint 1 Retrospective Summary</th><td>Como aciertos, el equipo valoró repartir el trabajo por aspecto con un líder por producto, haber escrito pruebas automatizadas del backend que descubrieron un error de permisos y mantener el informe alineado con el código. Como oportunidades de mejora, identificó cerrar antes las historias parciales (filtrado por usuario en el servidor y archivado), preparar la firma y la distribución de la aplicación desde el inicio del sprint y comprobar en un dispositivo físico lo que el emulador no permite probar, como la cámara y la lectura de códigos QR.</td></tr>
   <tr><th colspan="2">Sprint Goal &amp; User Stories</th></tr>
   <tr><th>Sprint 2 Goal</th><td><b>Nuestro foco</b> es completar la aplicación Android para ganaderos y veterinarios, con el backend completo y publicado, y ofrecer una primera versión de la aplicación Flutter. <b>Creemos que</b> entrega al ganadero el control de su hato (finanzas, analítica, trabajo sin conexión, identificación de animales con el QR y suscripción) y al veterinario la atención de sus clientes y pacientes, desde aplicaciones que los evaluadores pueden instalar. <b>Lo confirmaremos cuando</b> los evaluadores instalen las dos aplicaciones desde Firebase App Distribution con el vínculo de invitación, inicien sesión contra el backend publicado y recorran los flujos del ganadero y del veterinario con los datos de demostración.</td></tr>
@@ -513,11 +513,11 @@ El Sprint 2 permite instalar las aplicaciones Android y Flutter desde Firebase A
   <p><i>Figura 4.2.2.6.23. Instalación de la aplicación desde Firebase App Distribution. Fuente: elaboración propia.</i></p>
 </div>
 
-**Videos de ejecución del Sprint 2.** Pendiente de completar: los enlaces se agregarán cuando estén grabados.
+**Videos de ejecución del Sprint 2.**
 
-- **Backend:** pendiente de completar (enlace al video).
-- **App Android:** pendiente de completar (enlace al video).
-- **App Flutter:** pendiente de completar (enlace al video).
+- **Backend:** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQCERFJ0rj7SR6dhIdCez6aFAYny-M67fgmsw5IKjxa5TCY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=nWZUtK)
+- **App Android:** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQDiiPLM7lSIRq_AXq1quEsJAZQSdmpDRQIoMTHSdPOcd-Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=7F7dcc)
+- **App Flutter:** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBwHgm1H2tgTIanbLuMtNRjAXwEqHOK2LyV-QCR77hd8SQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=KfXcaf)
 
 <a id="toc-4-2-2-7-services-documentation-evidence-for-sprint-review"></a>
 

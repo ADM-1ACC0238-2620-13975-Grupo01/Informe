@@ -94,12 +94,14 @@ Hasta el AV1 no se habían incorporado enlaces públicos de videos. Con el TB1 s
 
 ### Videos del AV2 (Sprint 2)
 
-El video About the Product ya está publicado; los demás enlaces se agregarán cuando los videos estén grabados.
+Ya están publicados el video de validación de la aplicación, el About the Product y los videos de ejecución del Sprint 2; el video About the Team se agregará cuando esté grabado.
 
-- **Validación de la aplicación (primera versión):** pendiente de completar (enlace al video).
+- **Validación de la aplicación (primera versión):** [Ver video de validación](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQDiiPLM7lSIRq_AXq1quEsJAZQSdmpDRQIoMTHSdPOcd-Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=7F7dcc) (es el mismo video de la aplicación Android).
 - **About the Product (primera versión):** [Ver video About the Product](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBcZwe2PKhdRbF-7-NW9NUXAY2QsIKGL7AR8OI2yNviFJ8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=DQ6rMa)
 - **About the Team (primera versión):** pendiente de completar (enlace al video).
-- **Ejecución del Sprint 2: Backend, aplicación Android y aplicación Flutter:** pendiente de completar (enlaces a los videos).
+- **Ejecución del Sprint 2 (Backend):** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQCERFJ0rj7SR6dhIdCez6aFAYny-M67fgmsw5IKjxa5TCY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=nWZUtK)
+- **Ejecución del Sprint 2 (aplicación Android):** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQDiiPLM7lSIRq_AXq1quEsJAZQSdmpDRQIoMTHSdPOcd-Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=7F7dcc)
+- **Ejecución del Sprint 2 (aplicación Flutter):** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBwHgm1H2tgTIanbLuMtNRjAXwEqHOK2LyV-QCR77hd8SQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=KfXcaf)
 
 ### Distribución de las aplicaciones (Firebase App Distribution)
 

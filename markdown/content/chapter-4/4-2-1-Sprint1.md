@@ -402,7 +402,7 @@ La captura demuestra que la documentación interactiva carga desde el entorno pu
 
 Las capturas muestran la implementación de la Landing Page de AniTec en navegadores. Se verificó la correcta visualización del contenido, la navegación entre secciones y la adaptación responsive de la interfaz para distintos tamaños de pantalla.
 
-**Aplicación Android.** La captura del inicio de sesión ya está incorporada; las demás se añadirán desde el emulador y el dispositivo físico.
+**Aplicación Android.** Las capturas siguientes muestran el inicio de sesión y las pantallas principales de la aplicación Android en ejecución.
 
 <div align="center">
   <img src="../../assets/chapter-4/android-login.png" width="300">
@@ -412,33 +412,33 @@ Las capturas muestran la implementación de la Landing Page de AniTec en navegad
 La captura evidencia el correcto funcionamiento de la aplicación Android instalada en el emulador, mostrando la interfaz nativa para el inicio de sesión de ganaderos y veterinarios.
 
 <div align="center">
-  <img src="../../assets/chapter-4/AndroidSS/android-home.png" alt="Captura pendiente: Inicio del ganadero" width="400">
+  <img src="../../assets/chapter-4/AndroidSS/android-home.png" alt="Pantalla de inicio del ganadero en la aplicación Android" width="400">
   <p><i>Figura 4.2.1.6.4. Inicio del ganadero. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/AndroidSS/android-farms.png" alt="Captura pendiente: Lista de fincas y formulario" width="400">
+  <img src="../../assets/chapter-4/AndroidSS/android-farms.png" alt="Lista de fincas de la aplicación Android con sus corrales, sus animales y el botón para crear una finca" width="400">
   <p><i>Figura 4.2.1.6.5. Lista de fincas. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/AndroidSS/android-activities.png" alt="Captura pendiente: Lista de corrales y formulario" width="400">
+  <img src="../../assets/chapter-4/AndroidSS/android-activities.png" alt="Lista de actividades de la aplicación Android" width="400">
   <p><i>Figura 4.2.1.6.6. Lista de actividades. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/AndroidSS/android-finance.png" alt="Captura pendiente: Lista de animales con búsqueda y selección múltiple" width="400">
-  <p><i>Figura 4.2.1.6.7. Pantalla de fiananzas Fuente: elaboración propia.</i></p>
+  <img src="../../assets/chapter-4/AndroidSS/android-finance.png" alt="Pantalla de finanzas de la aplicación Android" width="400">
+  <p><i>Figura 4.2.1.6.7. Pantalla de finanzas. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/AndroidSS/android-analytics.png" alt="Captura pendiente: Ficha técnica del animal" width="400">
-  <p><i>Figura 4.2.1.6.8. Pantalla de analiticas. Fuente: elaboración propia.</i></p>
+  <img src="../../assets/chapter-4/AndroidSS/android-analytics.png" alt="Pantalla de analíticas de la aplicación Android" width="400">
+  <p><i>Figura 4.2.1.6.8. Pantalla de analíticas. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/AndroidSS/android-health.png" alt="Captura pendiente: Formulario de registro de animal con fotografía" width="400">
-  <p><i>Figura 4.2.1.6.9. Pantalla de sanidad Fuente: elaboración propia.</i></p>
+  <img src="../../assets/chapter-4/AndroidSS/android-health.png" alt="Lista de registros sanitarios de la aplicación Android" width="400">
+  <p><i>Figura 4.2.1.6.9. Pantalla de sanidad. Fuente: elaboración propia.</i></p>
 </div>
 
 
@@ -534,22 +534,22 @@ Una solicitud con un rol no autorizado responde `403`: las pruebas de integraci�
 La figura respalda que OpenAPI está disponible públicamente y que los endpoints del Sprint 1 pueden ejercitarse desde Swagger.
 
 <div align="center">
-  <img src="../../assets/chapter-4/backend/LoginToken.png" alt="Captura pendiente: POST /authentication/sign-in con datos de muestra y su respuesta con token" width="800">
+  <img src="../../assets/chapter-4/backend/LoginToken.png" alt="POST /authentication/sign-in en Swagger con el usuario de muestra y la respuesta 200 con los datos del usuario y su token" width="800">
   <p><i>Figura 4.2.1.7.2. POST /authentication/sign-in con datos de muestra y su respuesta con token. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/backend/getAnimals.png" alt="Captura pendiente: GET /animals autorizado con el token" width="800">
+  <img src="../../assets/chapter-4/backend/getAnimals.png" alt="GET /animals en Swagger, autorizado con el token" width="800">
   <p><i>Figura 4.2.1.7.3. GET /animals autorizado con el token. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/backend/postAnimales.png" alt="Captura pendiente: POST /animals con un animal de muestra y su respuesta 201" width="800">
+  <img src="../../assets/chapter-4/backend/postAnimales.png" alt="POST /animals en Swagger con un animal de muestra y la respuesta 201" width="800">
   <p><i>Figura 4.2.1.7.4. POST /animals con un animal de muestra y su respuesta 201. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/backend/SinToken.png" alt="Captura pendiente: Respuesta 401 al llamar un endpoint sin token" width="800">
+  <img src="../../assets/chapter-4/backend/SinToken.png" alt="GET /animals en Swagger sin token y la respuesta 401 Unauthorized con el mensaje «Missing or invalid token»" width="800">
   <p><i>Figura 4.2.1.7.5. Respuesta 401 al llamar un endpoint sin token. Fuente: elaboración propia.</i></p>
 </div>
 
@@ -609,12 +609,12 @@ Las capturas demuestran la publicación del servicio y la administración de sec
 3. Verificar la URL pública (<https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/>). Verificado: carga la versión de la aplicación móvil y sus imágenes responden `200`.
 
 <div align="center">
-  <img src="../../assets/chapter-4/githubLandingpage.png" alt="Captura pendiente: Configuración de GitHub Pages del repositorio de la Landing Page" width="800">
+  <img src="../../assets/chapter-4/githubLandingpage.png" alt="Configuración de GitHub Pages del repositorio anitec-landing-page: sitio publicado desde la rama main y la carpeta raíz" width="800">
   <p><i>Figura 4.2.1.8.3. Configuración de GitHub Pages del repositorio de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/Ladingconurl.png" alt="Captura pendiente: Landing Page publicada en la URL de la organización" width="800">
+  <img src="../../assets/chapter-4/Ladingconurl.png" alt="Landing Page de AniTec publicada en la URL de GitHub Pages de la organización" width="800">
   <p><i>Figura 4.2.1.8.4. Landing Page publicada en la URL de la organización. Fuente: elaboración propia.</i></p>
 </div>
 
@@ -645,27 +645,27 @@ Los repositorios del proyecto son:
 Las capturas siguientes muestran los analíticos de colaboración y de commits de GitHub (**Insights → Contributors** y **Insights → Commits**) de cada repositorio.
 
 <div align="center">
-  <img src="../../assets/chapter-4/commitsInformeSprint1.png" alt="Captura pendiente: Analíticos de colaboración del repositorio Informe" width="800">
+  <img src="../../assets/chapter-4/commitsInformeSprint1.png" alt="Analíticos de colaboración (Insights → Contributors) del repositorio Informe: commits por semana y por integrante" width="800">
   <p><i>Figura 4.2.1.9.1. Analíticos de colaboración del repositorio Informe. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/AndroidCommits.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-android" width="800">
+  <img src="../../assets/chapter-4/AndroidCommits.png" alt="Analíticos de colaboración (Insights → Contributors) del repositorio anitec-android: commits por semana y por integrante" width="800">
   <p><i>Figura 4.2.1.9.2. Analíticos de colaboración del repositorio anitec-android. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/CommitsbackSprint1.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-backend" width="800">
+  <img src="../../assets/chapter-4/CommitsbackSprint1.png" alt="Analíticos de colaboración (Insights → Contributors) del repositorio anitec-backend: commits por semana y por integrante" width="800">
   <p><i>Figura 4.2.1.9.3. Analíticos de colaboración del repositorio anitec-backend. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/CommitLandingSprint1.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-landing-page" width="800">
+  <img src="../../assets/chapter-4/CommitLandingSprint1.png" alt="Analíticos de colaboración (Insights → Contributors) del repositorio anitec-landing-page: commits por semana y por integrante" width="800">
   <p><i>Figura 4.2.1.9.4. Analíticos de colaboración del repositorio anitec-landing-page. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="../../assets/chapter-4/CommitsFrontSprint1.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-frontend" width="800">
+  <img src="../../assets/chapter-4/CommitsFrontSprint1.png" alt="Analíticos de colaboración (Insights → Contributors) del repositorio anitec-frontend: commits por semana y por integrante" width="800">
   <p><i>Figura 4.2.1.9.5. Analíticos de colaboración del repositorio anitec-frontend. Fuente: elaboración propia.</i></p>
 </div>
 

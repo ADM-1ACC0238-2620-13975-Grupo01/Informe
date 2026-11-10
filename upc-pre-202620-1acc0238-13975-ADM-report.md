@@ -10591,7 +10591,7 @@ La captura demuestra que la documentación interactiva carga desde el entorno pu
 
 Las capturas muestran la implementación de la Landing Page de AniTec en navegadores. Se verificó la correcta visualización del contenido, la navegación entre secciones y la adaptación responsive de la interfaz para distintos tamaños de pantalla.
 
-**Aplicación Android.** La captura del inicio de sesión ya está incorporada; las demás se añadirán desde el emulador y el dispositivo físico.
+**Aplicación Android.** Las capturas siguientes muestran el inicio de sesión y las pantallas principales de la aplicación Android en ejecución.
 
 <div align="center">
   <img src="markdown/assets/chapter-4/android-login.png" width="300">
@@ -10601,33 +10601,33 @@ Las capturas muestran la implementación de la Landing Page de AniTec en navegad
 La captura evidencia el correcto funcionamiento de la aplicación Android instalada en el emulador, mostrando la interfaz nativa para el inicio de sesión de ganaderos y veterinarios.
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/AndroidSS/android-home.png" alt="Captura pendiente: Inicio del ganadero" width="400">
+  <img src="markdown/assets/chapter-4/AndroidSS/android-home.png" alt="Pantalla de inicio del ganadero en la aplicación Android" width="400">
   <p><i>Figura 4.2.1.6.4. Inicio del ganadero. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/AndroidSS/android-farms.png" alt="Captura pendiente: Lista de fincas y formulario" width="400">
+  <img src="markdown/assets/chapter-4/AndroidSS/android-farms.png" alt="Lista de fincas de la aplicación Android con sus corrales, sus animales y el botón para crear una finca" width="400">
   <p><i>Figura 4.2.1.6.5. Lista de fincas. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/AndroidSS/android-activities.png" alt="Captura pendiente: Lista de corrales y formulario" width="400">
+  <img src="markdown/assets/chapter-4/AndroidSS/android-activities.png" alt="Lista de actividades de la aplicación Android" width="400">
   <p><i>Figura 4.2.1.6.6. Lista de actividades. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/AndroidSS/android-finance.png" alt="Captura pendiente: Lista de animales con búsqueda y selección múltiple" width="400">
-  <p><i>Figura 4.2.1.6.7. Pantalla de fiananzas Fuente: elaboración propia.</i></p>
+  <img src="markdown/assets/chapter-4/AndroidSS/android-finance.png" alt="Pantalla de finanzas de la aplicación Android" width="400">
+  <p><i>Figura 4.2.1.6.7. Pantalla de finanzas. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/AndroidSS/android-analytics.png" alt="Captura pendiente: Ficha técnica del animal" width="400">
-  <p><i>Figura 4.2.1.6.8. Pantalla de analiticas. Fuente: elaboración propia.</i></p>
+  <img src="markdown/assets/chapter-4/AndroidSS/android-analytics.png" alt="Pantalla de analíticas de la aplicación Android" width="400">
+  <p><i>Figura 4.2.1.6.8. Pantalla de analíticas. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/AndroidSS/android-health.png" alt="Captura pendiente: Formulario de registro de animal con fotografía" width="400">
-  <p><i>Figura 4.2.1.6.9. Pantalla de sanidad Fuente: elaboración propia.</i></p>
+  <img src="markdown/assets/chapter-4/AndroidSS/android-health.png" alt="Lista de registros sanitarios de la aplicación Android" width="400">
+  <p><i>Figura 4.2.1.6.9. Pantalla de sanidad. Fuente: elaboración propia.</i></p>
 </div>
 
 
@@ -10723,22 +10723,22 @@ Una solicitud con un rol no autorizado responde 403: las pruebas de integración
 La figura respalda que OpenAPI está disponible públicamente y que los endpoints del Sprint 1 pueden ejercitarse desde Swagger.
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/backend/LoginToken.png" alt="Captura pendiente: POST /authentication/sign-in con datos de muestra y su respuesta con token" width="800">
+  <img src="markdown/assets/chapter-4/backend/LoginToken.png" alt="POST /authentication/sign-in en Swagger con el usuario de muestra y la respuesta 200 con los datos del usuario y su token" width="800">
   <p><i>Figura 4.2.1.7.2. POST /authentication/sign-in con datos de muestra y su respuesta con token. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/backend/getAnimals.png" alt="Captura pendiente: GET /animals autorizado con el token" width="800">
+  <img src="markdown/assets/chapter-4/backend/getAnimals.png" alt="GET /animals en Swagger, autorizado con el token" width="800">
   <p><i>Figura 4.2.1.7.3. GET /animals autorizado con el token. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/backend/postAnimales.png" alt="Captura pendiente: POST /animals con un animal de muestra y su respuesta 201" width="800">
+  <img src="markdown/assets/chapter-4/backend/postAnimales.png" alt="POST /animals en Swagger con un animal de muestra y la respuesta 201" width="800">
   <p><i>Figura 4.2.1.7.4. POST /animals con un animal de muestra y su respuesta 201. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/backend/SinToken.png" alt="Captura pendiente: Respuesta 401 al llamar un endpoint sin token" width="800">
+  <img src="markdown/assets/chapter-4/backend/SinToken.png" alt="GET /animals en Swagger sin token y la respuesta 401 Unauthorized con el mensaje «Missing or invalid token»" width="800">
   <p><i>Figura 4.2.1.7.5. Respuesta 401 al llamar un endpoint sin token. Fuente: elaboración propia.</i></p>
 </div>
 
@@ -10798,12 +10798,12 @@ Las capturas demuestran la publicación del servicio y la administración de sec
 3. Verificar la URL pública (<https://adm-1acc0238-2620-13975-grupo01.github.io/anitec-landing-page/>). Verificado: carga la versión de la aplicación móvil y sus imágenes responden 200.
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/githubLandingpage.png" alt="Captura pendiente: Configuración de GitHub Pages del repositorio de la Landing Page" width="800">
+  <img src="markdown/assets/chapter-4/githubLandingpage.png" alt="Configuración de GitHub Pages del repositorio anitec-landing-page: sitio publicado desde la rama main y la carpeta raíz" width="800">
   <p><i>Figura 4.2.1.8.3. Configuración de GitHub Pages del repositorio de la Landing Page. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/Ladingconurl.png" alt="Captura pendiente: Landing Page publicada en la URL de la organización" width="800">
+  <img src="markdown/assets/chapter-4/Ladingconurl.png" alt="Landing Page de AniTec publicada en la URL de GitHub Pages de la organización" width="800">
   <p><i>Figura 4.2.1.8.4. Landing Page publicada en la URL de la organización. Fuente: elaboración propia.</i></p>
 </div>
 
@@ -10834,27 +10834,27 @@ Los repositorios del proyecto son:
 Las capturas siguientes muestran los analíticos de colaboración y de commits de GitHub (**Insights → Contributors** y **Insights → Commits**) de cada repositorio.
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/commitsInformeSprint1.png" alt="Captura pendiente: Analíticos de colaboración del repositorio Informe" width="800">
+  <img src="markdown/assets/chapter-4/commitsInformeSprint1.png" alt="Analíticos de colaboración (Insights → Contributors) del repositorio Informe: commits por semana y por integrante" width="800">
   <p><i>Figura 4.2.1.9.1. Analíticos de colaboración del repositorio Informe. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/AndroidCommits.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-android" width="800">
+  <img src="markdown/assets/chapter-4/AndroidCommits.png" alt="Analíticos de colaboración (Insights → Contributors) del repositorio anitec-android: commits por semana y por integrante" width="800">
   <p><i>Figura 4.2.1.9.2. Analíticos de colaboración del repositorio anitec-android. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/CommitsbackSprint1.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-backend" width="800">
+  <img src="markdown/assets/chapter-4/CommitsbackSprint1.png" alt="Analíticos de colaboración (Insights → Contributors) del repositorio anitec-backend: commits por semana y por integrante" width="800">
   <p><i>Figura 4.2.1.9.3. Analíticos de colaboración del repositorio anitec-backend. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/CommitLandingSprint1.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-landing-page" width="800">
+  <img src="markdown/assets/chapter-4/CommitLandingSprint1.png" alt="Analíticos de colaboración (Insights → Contributors) del repositorio anitec-landing-page: commits por semana y por integrante" width="800">
   <p><i>Figura 4.2.1.9.4. Analíticos de colaboración del repositorio anitec-landing-page. Fuente: elaboración propia.</i></p>
 </div>
 
 <div align="center">
-  <img src="markdown/assets/chapter-4/CommitsFrontSprint1.png" alt="Captura pendiente: Analíticos de colaboración del repositorio anitec-frontend" width="800">
+  <img src="markdown/assets/chapter-4/CommitsFrontSprint1.png" alt="Analíticos de colaboración (Insights → Contributors) del repositorio anitec-frontend: commits por semana y por integrante" width="800">
   <p><i>Figura 4.2.1.9.5. Analíticos de colaboración del repositorio anitec-frontend. Fuente: elaboración propia.</i></p>
 </div>
 
@@ -10883,7 +10883,7 @@ La planificación del Sprint 2 parte del Product Backlog del AV1, que asignaba a
   <tr><th>Location</th><td>Discord (reunión virtual)</td></tr>
   <tr><th>Prepared By</th><td>Melgarejo Quiroz, Josep Eliu</td></tr>
   <tr><th>Attendees</th><td>Beingolea Montalvo, Sebastian Martin / Melgarejo Quiroz, Josep Eliu / Ortega Muñoz, Saul / Sanchez Silva, Luciana Celeste / Villanueva Rodriguez, Giuseppe</td></tr>
-  <tr><th>Sprint 1 Review Summary</th><td>El Sprint 1 entregó la Landing Page publicada, el backend desplegado con 104 pruebas automatizadas y la aplicación Android con autenticación, fincas, corrales, animales y registros sanitarios. De las 30 tareas, 28 quedaron en Done y 2 en To-Review; de las 24 historias, 22 se completaron y 2 quedaron parciales (US-007, porque el backend aún no filtraba por usuario, y US-012, porque faltaba archivar animales), por lo que se completaron 95 de los 105 Story Points comprometidos. La retroalimentación recibida en la revisión del TB1: pendiente de completar.</td></tr>
+  <tr><th>Sprint 1 Review Summary</th><td>El Sprint 1 entregó la Landing Page publicada, el backend desplegado con 104 pruebas automatizadas y la aplicación Android con autenticación, fincas, corrales, animales y registros sanitarios. De las 30 tareas, 28 quedaron en Done y 2 en To-Review; de las 24 historias, 22 se completaron y 2 quedaron parciales (US-007, porque el backend aún no filtraba por usuario, y US-012, porque faltaba archivar animales), por lo que se completaron 95 de los 105 Story Points comprometidos. En la revisión del TB1 se indicó mejorar el canvas, ordenar el Product Backlog y reunir todos los sprints en un solo tablero de Trello; el equipo atiende estas observaciones a partir de este sprint.</td></tr>
   <tr><th>Sprint 1 Retrospective Summary</th><td>Como aciertos, el equipo valoró repartir el trabajo por aspecto con un líder por producto, haber escrito pruebas automatizadas del backend que descubrieron un error de permisos y mantener el informe alineado con el código. Como oportunidades de mejora, identificó cerrar antes las historias parciales (filtrado por usuario en el servidor y archivado), preparar la firma y la distribución de la aplicación desde el inicio del sprint y comprobar en un dispositivo físico lo que el emulador no permite probar, como la cámara y la lectura de códigos QR.</td></tr>
   <tr><th colspan="2">Sprint Goal &amp; User Stories</th></tr>
   <tr><th>Sprint 2 Goal</th><td><b>Nuestro foco</b> es completar la aplicación Android para ganaderos y veterinarios, con el backend completo y publicado, y ofrecer una primera versión de la aplicación Flutter. <b>Creemos que</b> entrega al ganadero el control de su hato (finanzas, analítica, trabajo sin conexión, identificación de animales con el QR y suscripción) y al veterinario la atención de sus clientes y pacientes, desde aplicaciones que los evaluadores pueden instalar. <b>Lo confirmaremos cuando</b> los evaluadores instalen las dos aplicaciones desde Firebase App Distribution con el vínculo de invitación, inicien sesión contra el backend publicado y recorran los flujos del ganadero y del veterinario con los datos de demostración.</td></tr>
@@ -11378,11 +11378,11 @@ El Sprint 2 permite instalar las aplicaciones Android y Flutter desde Firebase A
   <p><i>Figura 4.2.2.6.23. Instalación de la aplicación desde Firebase App Distribution. Fuente: elaboración propia.</i></p>
 </div>
 
-**Videos de ejecución del Sprint 2.** Pendiente de completar: los enlaces se agregarán cuando estén grabados.
+**Videos de ejecución del Sprint 2.**
 
-- **Backend:** pendiente de completar (enlace al video).
-- **App Android:** pendiente de completar (enlace al video).
-- **App Flutter:** pendiente de completar (enlace al video).
+- **Backend:** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQCERFJ0rj7SR6dhIdCez6aFAYny-M67fgmsw5IKjxa5TCY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=nWZUtK)
+- **App Android:** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQDiiPLM7lSIRq_AXq1quEsJAZQSdmpDRQIoMTHSdPOcd-Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=7F7dcc)
+- **App Flutter:** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBwHgm1H2tgTIanbLuMtNRjAXwEqHOK2LyV-QCR77hd8SQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=KfXcaf)
 
 <a id="toc-4-2-2-7-services-documentation-evidence-for-sprint-review"></a>
 
@@ -12136,12 +12136,14 @@ Hasta el AV1 no se habían incorporado enlaces públicos de videos. Con el TB1 s
 
 ### Videos del AV2 (Sprint 2)
 
-El video About the Product ya está publicado; los demás enlaces se agregarán cuando los videos estén grabados.
+Ya están publicados el video de validación de la aplicación, el About the Product y los videos de ejecución del Sprint 2; el video About the Team se agregará cuando esté grabado.
 
-- **Validación de la aplicación (primera versión):** pendiente de completar (enlace al video).
+- **Validación de la aplicación (primera versión):** [Ver video de validación](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQDiiPLM7lSIRq_AXq1quEsJAZQSdmpDRQIoMTHSdPOcd-Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=7F7dcc) (es el mismo video de la aplicación Android).
 - **About the Product (primera versión):** [Ver video About the Product](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBcZwe2PKhdRbF-7-NW9NUXAY2QsIKGL7AR8OI2yNviFJ8?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=DQ6rMa)
 - **About the Team (primera versión):** pendiente de completar (enlace al video).
-- **Ejecución del Sprint 2: Backend, aplicación Android y aplicación Flutter:** pendiente de completar (enlaces a los videos).
+- **Ejecución del Sprint 2 (Backend):** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQCERFJ0rj7SR6dhIdCez6aFAYny-M67fgmsw5IKjxa5TCY?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=nWZUtK)
+- **Ejecución del Sprint 2 (aplicación Android):** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQDiiPLM7lSIRq_AXq1quEsJAZQSdmpDRQIoMTHSdPOcd-Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=7F7dcc)
+- **Ejecución del Sprint 2 (aplicación Flutter):** [Ver video de ejecución](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202315165_upc_edu_pe/IQBwHgm1H2tgTIanbLuMtNRjAXwEqHOK2LyV-QCR77hd8SQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=KfXcaf)
 
 ### Distribución de las aplicaciones (Firebase App Distribution)
 
