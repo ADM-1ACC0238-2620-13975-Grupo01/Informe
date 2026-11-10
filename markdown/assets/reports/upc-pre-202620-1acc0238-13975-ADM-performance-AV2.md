@@ -29,7 +29,7 @@
     <tr>
         <td><b>1</b></td>
         <td>Sanchez Silva, Luciana Celeste</td>
-        <td>Pantallas de actividades y finanzas, inicio de sesión e inicio del ganadero en Flutter, videos del AV2, user stories no funcionales y user flow diagrams</td>
+        <td>Pantallas de actividades y finanzas, inicio en Flutter, videos del AV2 y user flows</td>
         <td></td>
         <td></td>
         <td></td>
@@ -39,7 +39,7 @@
     <tr>
         <td><b>2</b></td>
         <td>Melgarejo Quiroz, Josep Eliu</td>
-        <td>Vista del veterinario, trabajo sin conexión y suscripciones en Android, documentación del Sprint 2 y planificación del sprint</td>
+        <td>Vista del veterinario, modo sin conexión, suscripciones en Android e informe</td>
         <td></td>
         <td></td>
         <td></td>
@@ -49,7 +49,7 @@
     <tr>
         <td><b>3</b></td>
         <td>Sebastian Martin Beingolea Montalvo</td>
-        <td>Filtrado de datos por usuario, Stripe y suscripciones, archivado de animales, backend publicado y pruebas de Flutter</td>
+        <td>Backend: datos por usuario, Stripe, archivado y despliegue; pruebas de Flutter</td>
         <td></td>
         <td></td>
         <td></td>
@@ -59,7 +59,7 @@
     <tr>
         <td><b>4</b></td>
         <td>Saul Ortega Muñoz</td>
-        <td>Dispositivos IoT, escáner QR, proyecto Flutter, pruebas de integración y BDD del backend, idioma y mensajes de error</td>
+        <td>Dispositivos IoT, escáner QR, proyecto Flutter y pruebas del backend</td>
         <td></td>
         <td></td>
         <td></td>
@@ -69,7 +69,7 @@
     <tr>
         <td><b>5</b></td>
         <td>Giuseppe Villanueva Rodriguez</td>
-        <td>Analítica y archivado en Android, firma y distribución de las apps en Firebase y pruebas de Android</td>
+        <td>Analítica y archivado en Android, distribución en Firebase y pruebas</td>
         <td></td>
         <td></td>
         <td></td>
