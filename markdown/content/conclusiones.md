@@ -10,7 +10,7 @@ Durante el Sprint 1 se desplegó la landing page, se adaptó el backend para el 
 
 Durante el Sprint 2 se completó el backend, se ampliaron los flujos de Android para ganaderos y veterinarios y se entregó una primera versión de Flutter. También se incorporaron el trabajo sin conexión, la identificación mediante QR, las suscripciones con Stripe, la analítica y la distribución de versiones móviles.
 
-El Sprint 3 concentra el cierre del consentimiento veterinario, las notificaciones, la sincronización idempotente, la persistencia local en Flutter, la accesibilidad, la protección de datos, el rendimiento, la recuperación ante fallos y las pruebas automatizadas de los flujos críticos.
+Durante el Sprint 3 se incorporaron en el backend y en Android el consentimiento del ganadero sobre el acceso veterinario, las solicitudes idempotentes y la detección de conflictos de edición con versiones, además de los recordatorios locales de las actividades, la corrección del contraste y de los nombres accesibles, y las pruebas automáticas de integración y de interfaz de los flujos críticos. A la fecha de redacción siguen abiertas la persistencia local en Flutter, la corrección de registros sanitarios con trazabilidad, las mediciones de protección de datos, rendimiento y recuperación ante fallos, el redespliegue del servicio publicado y la nueva distribución de las aplicaciones (sección 4.2.3).
 
 La documentación de servicios mediante Swagger/OpenAPI permitió verificar los endpoints implementados y facilitar las pruebas manuales del backend. Asimismo, las migraciones de Entity Framework Core permitieron mantener alineada la estructura de la base de datos con las entidades del dominio, reduciendo errores en la configuración y mejorando la trazabilidad técnica del sistema.
 
@@ -34,7 +34,7 @@ Los criterios de éxito quedan planteados como metas para una siguiente etapa de
 
 ## Recomendaciones
 
-**Corto plazo:** Se recomienda completar las historias previstas para el Sprint 3 y verificar los flujos principales de Android y Flutter contra el backend publicado, con especial atención a la autorización, la sincronización y la recuperación ante fallos.
+**Corto plazo:** Se recomienda completar las historias del Sprint 3 que siguen pendientes o parciales (sección 4.2.3.1), redesplegar el backend y distribuir las nuevas versiones, y verificar los flujos principales de Android y Flutter contra el backend publicado, con especial atención a la autorización, la sincronización y la recuperación ante fallos.
 
 **Corto plazo:** Se recomienda fortalecer la autenticación y autorización del sistema, definiendo permisos por rol para ganaderos, veterinarios y administradores. Esto permitiría proteger los endpoints sensibles y asegurar que cada usuario solo acceda a la información correspondiente a su perfil.
 

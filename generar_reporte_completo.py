@@ -54,6 +54,7 @@ SECTIONS = [
         "chapter-4/4-2-0-Landing-Page-and-Mobile-Application-Implementation.md",
         "chapter-4/4-2-1-Sprint1.md",
         "chapter-4/4-2-2-Sprint2.md",
+        "chapter-4/4-2-3-Sprint3.md",
         "chapter-4/4-3-validation-interviews.md",
     ]),
     (None, ["conclusiones.md", "bibliografia.md", "anexos.md"]),
